@@ -1,0 +1,294 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{89801E8D-4598-4939-9F47-E648EFA762FE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <MyType>WindowsForms</MyType>
+    <RootNamespace>LocalUpdatePublisher</RootNamespace>
+    <AssemblyName>LocalUpdatePublisher</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <OptionInfer>Off</OptionInfer>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Bryan Dam\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <ApplicationIcon>Resources\reload.ico</ApplicationIcon>
+    <RemoveIntegerChecks>False</RemoveIntegerChecks>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <OptionCompare>Binary</OptionCompare>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE=1</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <ItemGroup>
+    <Reference Include="CabLib">
+      <HintPath>Resources\CabLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.UpdateServices.Administration" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Compile Include="Classes\ComboTargetGroups.vb" />
+    <Compile Include="Classes\ComboVendors.vb" />
+    <Compile Include="Classes\ConnectionManager.vb" />
+    <Compile Include="Classes\CustomTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\DataGridViewState.vb" />
+    <Compile Include="Classes\GuidCollectionEditor.Designer.vb">
+      <DependentUpon>GuidCollectionEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GuidCollectionEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Rule.vb" />
+    <Compile Include="Classes\RuleCollection.vb" />
+    <Compile Include="Classes\RulesEditor.Designer.vb">
+      <DependentUpon>RulesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\RulesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\SecureTextBox.Designer.vb">
+      <DependentUpon>SecureTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SecureTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings.vb" />
+    <Compile Include="Classes\UpdateServer.vb" />
+    <Compile Include="Classes\UpdateServerCollection.vb" />
+    <Compile Include="Forms\AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CertificateInfoForm.Designer.vb">
+      <DependentUpon>CertificateInfoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CertificateInfoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectionSettingsForm.Designer.vb">
+      <DependentUpon>ConnectionSettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConnectionSettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportCatalogForm.Designer.vb">
+      <DependentUpon>ExportCatalogForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExportCatalogForm.vb" />
+    <Compile Include="Forms\ApprovalProgressForm.Designer.vb">
+      <DependentUpon>ApprovalProgressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApprovalProgressForm.vb" />
+    <Compile Include="Forms\ImportCatalogForm.Designer.vb">
+      <DependentUpon>ImportCatalogForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImportCatalogForm.vb" />
+    <Compile Include="Forms\PrerequisiteUpdatesForm.Designer.vb">
+      <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrerequisiteUpdatesForm.vb" />
+    <Compile Include="Forms\ReturnCodesForm.Designer.vb">
+      <DependentUpon>ReturnCodesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReturnCodesForm.vb" />
+    <Compile Include="Forms\SavedRulesForm.Designer.vb">
+      <DependentUpon>SavedRulesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SavedRulesForm.vb" />
+    <Compile Include="Forms\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageBoxForm.Designer.vb">
+      <DependentUpon>MessageBoxForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MessageBoxForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordForm.Designer.vb">
+      <DependentUpon>PasswordForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasswordForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressForm.Designer.vb">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RulesForm.Designer.vb">
+      <DependentUpon>RulesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RulesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.vb">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupersededUpdatesForm.Designer.vb">
+      <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupersededUpdatesForm.vb" />
+    <Compile Include="Forms\ApprovalForm.Designer.vb">
+      <DependentUpon>ApprovalForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApprovalForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.Designer.vb">
+      <DependentUpon>UpdateForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateSelectionForm.Designer.vb">
+      <DependentUpon>UpdateSelectionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateSelectionForm.vb" />
+    <Compile Include="Modules\Data Routines.vb" />
+    <Compile Include="Modules\Enumerations.vb" />
+    <Compile Include="Modules\Globals.vb" />
+    <Compile Include="Program.vb" />
+    <Compile Include="Properties\AssemblyInfo.vb" />
+    <Compile Include="Properties\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Classes\GuidCollectionEditor.resx">
+      <DependentUpon>GuidCollectionEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\RulesEditor.resx">
+      <DependentUpon>RulesEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApprovalProgressForm.resx">
+      <DependentUpon>ApprovalProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CertificateInfoForm.resx">
+      <DependentUpon>CertificateInfoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectionSettingsForm.resx">
+      <DependentUpon>ConnectionSettingsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportCatalogForm.resx">
+      <DependentUpon>ExportCatalogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportCatalogForm.resx">
+      <DependentUpon>ImportCatalogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrerequisiteUpdatesForm.resx">
+      <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnCodesForm.resx">
+      <DependentUpon>ReturnCodesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SavedRulesForm.resx">
+      <DependentUpon>SavedRulesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordForm.resx">
+      <DependentUpon>PasswordForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressForm.resx">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulesForm.resx">
+      <DependentUpon>RulesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupersededUpdatesForm.resx">
+      <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApprovalForm.resx">
+      <DependentUpon>ApprovalForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.resx">
+      <DependentUpon>UpdateForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateSelectionForm.resx">
+      <DependentUpon>UpdateSelectionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\attention.ico" />
+    <None Include="Resources\check.ico" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\info.ico" />
+    <None Include="Resources\previous.ico" />
+    <None Include="Resources\reload.ico" />
+    <Folder Include="Modules" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward.ico" />
+  </ItemGroup>
+</Project>
