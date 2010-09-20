@@ -3,3 +3,5 @@ Validation - Quirk for update form.  Implement for Rules form.
 Computer Report - Crashes when group is changed.
 Import - Demote classification
 Cert - Demote to just Code Signing.
+Product Pulldown - Filter based on Vendor using treenode.
+Metadata Updates/Export Catalog - Implement OriginalURI for InstallableItem.

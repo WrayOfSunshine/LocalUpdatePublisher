@@ -37,13 +37,14 @@ Partial Class SettingsForm
 		Me.chkRememberTreeNode = New System.Windows.Forms.CheckBox
 		Me.btnClose = New System.Windows.Forms.Button
 		Me.chkReportRollup = New System.Windows.Forms.CheckBox
+		Me.chkIncludeApproved = New System.Windows.Forms.CheckBox
 		Me.SuspendLayout
 		'
 		'chkRememberTreeNode
 		'
 		Me.chkRememberTreeNode.Location = New System.Drawing.Point(12, 14)
 		Me.chkRememberTreeNode.Name = "chkRememberTreeNode"
-		Me.chkRememberTreeNode.Size = New System.Drawing.Size(249, 24)
+		Me.chkRememberTreeNode.Size = New System.Drawing.Size(250, 24)
 		Me.chkRememberTreeNode.TabIndex = 0
 		Me.chkRememberTreeNode.Text = "Remember last selection."
 		Me.chkRememberTreeNode.UseVisualStyleBackColor = true
@@ -52,7 +53,7 @@ Partial Class SettingsForm
 		'btnClose
 		'
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnClose.Location = New System.Drawing.Point(12, 64)
+		Me.btnClose.Location = New System.Drawing.Point(12, 90)
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.Size = New System.Drawing.Size(106, 27)
 		Me.btnClose.TabIndex = 16
@@ -63,17 +64,28 @@ Partial Class SettingsForm
 		'
 		Me.chkReportRollup.Location = New System.Drawing.Point(12, 37)
 		Me.chkReportRollup.Name = "chkReportRollup"
-		Me.chkReportRollup.Size = New System.Drawing.Size(249, 24)
+		Me.chkReportRollup.Size = New System.Drawing.Size(250, 24)
 		Me.chkReportRollup.TabIndex = 17
 		Me.chkReportRollup.Text = "Rollup dowstream clients."
 		Me.chkReportRollup.UseVisualStyleBackColor = true
 		AddHandler Me.chkReportRollup.CheckedChanged, AddressOf Me.ChkReportRollupCheckedChanged
 		'
+		'chkIncludeApproved
+		'
+		Me.chkIncludeApproved.Location = New System.Drawing.Point(12, 60)
+		Me.chkIncludeApproved.Name = "chkIncludeApproved"
+		Me.chkIncludeApproved.Size = New System.Drawing.Size(250, 24)
+		Me.chkIncludeApproved.TabIndex = 18
+		Me.chkIncludeApproved.Text = "Include approved updates only in percentages."
+		Me.chkIncludeApproved.UseVisualStyleBackColor = true
+		AddHandler Me.chkIncludeApproved.CheckedChanged, AddressOf Me.ChkIncludeApprovedCheckedChanged
+		'
 		'SettingsForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(258, 100)
+		Me.ClientSize = New System.Drawing.Size(263, 129)
+		Me.Controls.Add(Me.chkIncludeApproved)
 		Me.Controls.Add(Me.chkReportRollup)
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.chkRememberTreeNode)
@@ -85,6 +97,7 @@ Partial Class SettingsForm
 		AddHandler Load, AddressOf Me.SettingsLoad
 		Me.ResumeLayout(false)
 	End Sub
+	Private chkIncludeApproved As System.Windows.Forms.CheckBox
 	Private chkReportRollup As System.Windows.Forms.CheckBox
 	Private btnClose As System.Windows.Forms.Button
 	Private chkRememberTreeNode As System.Windows.Forms.CheckBox
