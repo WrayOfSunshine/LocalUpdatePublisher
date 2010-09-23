@@ -74,14 +74,9 @@ Partial Class MainForm
 		Me.btnComputerListRefresh = New System.Windows.Forms.Button
 		Me.cboComputerStatus = New System.Windows.Forms.ComboBox
 		Me._dgvMain = New System.Windows.Forms.DataGridView
-		Me.cmDgvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.pnlComputers = New System.Windows.Forms.Panel
 		Me.tabMainComputers = New System.Windows.Forms.TabControl
 		Me.tabComputerInfo = New System.Windows.Forms.TabPage
-		Me.lblUpdateNoStatusNum = New System.Windows.Forms.Label
-		Me.lblUpdatesInstalledorNANum = New System.Windows.Forms.Label
-		Me.lblUpdatesNeededNum = New System.Windows.Forms.Label
-		Me.lblUpdatesWErrorsNum = New System.Windows.Forms.Label
 		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
 		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
 		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
@@ -139,11 +134,16 @@ Partial Class MainForm
 		Me.lblComputerGroup = New System.Windows.Forms.Label
 		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
 		Me.cboTargetGroup = New System.Windows.Forms.ComboBox
+		Me.cmDgvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.statusStrip = New System.Windows.Forms.StatusStrip
 		Me.toolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
 		Me.toolStripStatusLabelLink = New System.Windows.Forms.ToolStripStatusLabel
 		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.importFileDialog = New System.Windows.Forms.OpenFileDialog
+		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
+		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
 		Me.menuStrip.SuspendLayout
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
@@ -541,11 +541,6 @@ Partial Class MainForm
 		AddHandler Me._dgvMain.Leave, AddressOf Me.dgvMainLeave
 		AddHandler Me._dgvMain.KeyUp, AddressOf Me.dgvMainKeyUp
 		'
-		'cmDgvMain
-		'
-		Me.cmDgvMain.Name = "Data Grid Context Menu"
-		Me.cmDgvMain.Size = New System.Drawing.Size(61, 4)
-		'
 		'pnlComputers
 		'
 		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
@@ -570,10 +565,11 @@ Partial Class MainForm
 		'
 		'tabComputerInfo
 		'
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdateNoStatusNum)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNANum)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesNeededNum)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesWErrorsNum)
+		Me.tabComputerInfo.BackColor = System.Drawing.Color.Transparent
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesNeededNum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesInstalledorNANum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdateNoStatusNum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesWErrorsNum)
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdateNoStatus)
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA)
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesNeeded)
@@ -584,39 +580,6 @@ Partial Class MainForm
 		Me.tabComputerInfo.Size = New System.Drawing.Size(671, 452)
 		Me.tabComputerInfo.TabIndex = 0
 		Me.tabComputerInfo.Text = "Info"
-		Me.tabComputerInfo.UseVisualStyleBackColor = true
-		'
-		'lblUpdateNoStatusNum
-		'
-		Me.lblUpdateNoStatusNum.Location = New System.Drawing.Point(167, 75)
-		Me.lblUpdateNoStatusNum.Name = "lblUpdateNoStatusNum"
-		Me.lblUpdateNoStatusNum.Size = New System.Drawing.Size(62, 18)
-		Me.lblUpdateNoStatusNum.TabIndex = 11
-		Me.lblUpdateNoStatusNum.Text = "##"
-		'
-		'lblUpdatesInstalledorNANum
-		'
-		Me.lblUpdatesInstalledorNANum.Location = New System.Drawing.Point(167, 54)
-		Me.lblUpdatesInstalledorNANum.Name = "lblUpdatesInstalledorNANum"
-		Me.lblUpdatesInstalledorNANum.Size = New System.Drawing.Size(62, 18)
-		Me.lblUpdatesInstalledorNANum.TabIndex = 10
-		Me.lblUpdatesInstalledorNANum.Text = "##"
-		'
-		'lblUpdatesNeededNum
-		'
-		Me.lblUpdatesNeededNum.Location = New System.Drawing.Point(167, 33)
-		Me.lblUpdatesNeededNum.Name = "lblUpdatesNeededNum"
-		Me.lblUpdatesNeededNum.Size = New System.Drawing.Size(62, 18)
-		Me.lblUpdatesNeededNum.TabIndex = 9
-		Me.lblUpdatesNeededNum.Text = "##"
-		'
-		'lblUpdatesWErrorsNum
-		'
-		Me.lblUpdatesWErrorsNum.Location = New System.Drawing.Point(167, 12)
-		Me.lblUpdatesWErrorsNum.Name = "lblUpdatesWErrorsNum"
-		Me.lblUpdatesWErrorsNum.Size = New System.Drawing.Size(62, 18)
-		Me.lblUpdatesWErrorsNum.TabIndex = 8
-		Me.lblUpdatesWErrorsNum.Text = "##"
 		'
 		'lblUpdateNoStatus
 		'
@@ -1250,6 +1213,11 @@ Partial Class MainForm
 		Me.cboTargetGroup.TabIndex = 0
 		AddHandler Me.cboTargetGroup.SelectedIndexChanged, AddressOf Me.CboTargetGroupSelectedIndexChanged
 		'
+		'cmDgvMain
+		'
+		Me.cmDgvMain.Name = "Data Grid Context Menu"
+		Me.cmDgvMain.Size = New System.Drawing.Size(61, 4)
+		'
 		'statusStrip
 		'
 		Me.statusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel, Me.toolStripStatusLabelLink})
@@ -1281,6 +1249,50 @@ Partial Class MainForm
 		'
 		Me.exportFileDialog.DefaultExt = "tab"
 		Me.exportFileDialog.Filter = "Tab Delimited|*.tab"
+		'
+		'txtUpdatesWErrorsNum
+		'
+		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
+		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
+		Me.txtUpdatesWErrorsNum.ReadOnly = true
+		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesWErrorsNum.TabIndex = 12
+		Me.txtUpdatesWErrorsNum.Text = "##"
+		'
+		'txtUpdateNoStatusNum
+		'
+		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
+		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
+		Me.txtUpdateNoStatusNum.ReadOnly = true
+		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdateNoStatusNum.TabIndex = 13
+		Me.txtUpdateNoStatusNum.Text = "##"
+		'
+		'txtUpdatesInstalledorNANum
+		'
+		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
+		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
+		Me.txtUpdatesInstalledorNANum.ReadOnly = true
+		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesInstalledorNANum.TabIndex = 14
+		Me.txtUpdatesInstalledorNANum.Text = "##"
+		'
+		'txtUpdatesNeededNum
+		'
+		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
+		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
+		Me.txtUpdatesNeededNum.ReadOnly = true
+		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesNeededNum.TabIndex = 15
+		Me.txtUpdatesNeededNum.Text = "##"
 		'
 		'MainForm
 		'
@@ -1314,6 +1326,7 @@ Partial Class MainForm
 		Me.pnlComputers.ResumeLayout(false)
 		Me.tabMainComputers.ResumeLayout(false)
 		Me.tabComputerInfo.ResumeLayout(false)
+		Me.tabComputerInfo.PerformLayout
 		Me.tabComputerStatus.ResumeLayout(false)
 		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabComputerReport.ResumeLayout(false)
@@ -1331,6 +1344,10 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private txtUpdatesWErrorsNum As System.Windows.Forms.TextBox
+	Private txtUpdateNoStatusNum As System.Windows.Forms.TextBox
+	Private txtUpdatesInstalledorNANum As System.Windows.Forms.TextBox
+	Private txtUpdatesNeededNum As System.Windows.Forms.TextBox
 	Private chkInheritApprovals As System.Windows.Forms.CheckBox
 	Private chkApprovedOnly As System.Windows.Forms.CheckBox
 	Private lblPackageType As System.Windows.Forms.Label
@@ -1379,10 +1396,6 @@ Partial Class MainForm
 	Private dgvUpdateReport As System.Windows.Forms.DataGridView
 	Private tabMainComputers As System.Windows.Forms.TabControl
 	Private dgvComputerReport As System.Windows.Forms.DataGridView
-	Private lblUpdatesWErrorsNum As System.Windows.Forms.Label
-	Private lblUpdatesNeededNum As System.Windows.Forms.Label
-	Private lblUpdatesInstalledorNANum As System.Windows.Forms.Label
-	Private lblUpdateNoStatusNum As System.Windows.Forms.Label
 	Private lblComputerUpdateStatus As System.Windows.Forms.Label
 	Private tabComputerReport As System.Windows.Forms.TabPage
 	Private lblUpdatesWErrors As System.Windows.Forms.Label

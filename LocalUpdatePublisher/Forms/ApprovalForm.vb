@@ -64,11 +64,13 @@ Public Partial Class ApprovalForm
 	
 	'Approve for Removal.
 	Private Sub ApproveForRemovalToolStripMenuItemClick(sender As Object, e As EventArgs)
-		'Make sure this update can be uninstalled
-		If _selectedUpdate.UninstallationBehavior.IsSupported Then
+		'Make sure this is a single update that can be uninstalled
+		If _multipleUpdates Then
+			Msgbox ("You cannot uninstall multiple updates.")
+		Else If Not _selectedUpdate Is Nothing AndAlso _selectedUpdate.UninstallationBehavior.IsSupported Then
 			Call SetApprovals(UpdateApprovalAction.Uninstall)
 		Else
-			Msgbox ("This update cannot be uninstalled")
+			Msgbox ("This update cannot be uninstalled.")
 		End If
 		
 	End Sub
@@ -147,12 +149,15 @@ Public Partial Class ApprovalForm
 			Dim computerGroup As IComputerTargetGroup = DirectCast(My.Forms.MainForm.ComputerNode.Nodes(0).Tag, IComputerTargetGroup)
 			
 			'Load the existing approvals.
-			If  Not _selectedUpdate Is Nothing Then
+			If  _multipleUpdates Then
+				tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
+				tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, "No Approval"})
 				
+			Else If Not _selectedUpdate Is Nothing Then
 				'Get the approvals
 				tmpApprovals =_selectedUpdate.GetUpdateApprovals(computerGroup)
 				
-				If tmpApprovals.Count > 0 And Not _multipleUpdates Then
+				If tmpApprovals.Count > 0 Then
 					tmpApproval = tmpApprovals.Item(0).Action 'Save  approval.
 					tmpRow = Me.dgvApprovals.Rows.Add(New String() { computerGroup.Name, tmpApproval.ToDisplayString()})
 					Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval
@@ -162,11 +167,13 @@ Public Partial Class ApprovalForm
 				End If
 			End If
 			
-			'Set the target group value to equal the computerGroup.
-			Me.dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = computerGroup
-			
-			Call LoadData(My.Forms.MainForm.ComputerNode.Nodes(0))
-			
+			'Make sure a row was added and tmpRow is a valid index.
+			If tmpRow < Me.dgvApprovals.Rows.Count
+				'Set the target group value to equal the computerGroup.
+				Me.dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = computerGroup
+				
+				Call LoadData(My.Forms.MainForm.ComputerNode.Nodes(0))
+			End If
 			
 		Else 'Is not the main computer node.
 			
@@ -177,15 +184,8 @@ Public Partial Class ApprovalForm
 				'Now loop through all any child nodes.
 				For Each tmpNode As TreeNode In node.Nodes
 					
-					
-					'Get approval for this computer group.
-					tmpApprovals = _selectedUpdate.GetUpdateApprovals(DirectCast(tmpNode.Tag, IComputerTargetGroup))
-					
-					'If there is an approval already then load it, do not over-ride with the parent's approval.
-					If tmpApprovals.Count > 0 And Not _multipleUpdates Then
-						tmpApproval = tmpApprovals.Item(0).Action
-						tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.ToDisplayString()})
-						Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval
+					If  _multipleUpdates Then
+						tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, "No Approval"})
 						
 						'Set padding depth.
 						Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
@@ -193,39 +193,57 @@ Public Partial Class ApprovalForm
 						dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
 						
 						dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
-						'If there is no approval then inherit the parent's approval.
-					Else
 						
-						'Get approval for this node's parent group.
-						tmpApprovals = GetParentApprovals(DirectCast(node.Tag, IComputerTargetGroup))
+					Else If Not _selectedUpdate Is Nothing Then
+						
+						'Get approval for this computer group.
+						tmpApprovals = _selectedUpdate.GetUpdateApprovals(DirectCast(tmpNode.Tag, IComputerTargetGroup))
 						
 						'If there is an approval already then load it, do not over-ride with the parent's approval.
-						If tmpApprovals.Count > 0 And Not _multipleUpdates Then							
-							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.ToDisplayString() & " (inherited)"})
+						If tmpApprovals.Count > 0 Then
+							tmpApproval = tmpApprovals.Item(0).Action
+							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.ToDisplayString()})
+							Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval
 							
 							'Set padding depth.
 							Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
 							tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
 							dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
 							
+							dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
 							'If there is no approval then inherit the parent's approval.
-						Else							
-							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, "No Approval"})
+						Else
 							
+							'Get approval for this node's parent group.
+							tmpApprovals = GetParentApprovals(DirectCast(node.Tag, IComputerTargetGroup))
 							
-							'Set padding depth.
-							Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
-							tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
-							dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+							'If there is an approval already then load it, do not over-ride with the parent's approval.
+							If tmpApprovals.Count > 0 Then
+								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.ToDisplayString() & " (inherited)"})
+								
+								'Set padding depth.
+								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
+								tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
+								dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+								
+								'If there is no approval then inherit the parent's approval.
+							Else
+								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, "No Approval"})
+								
+								'Set padding depth.
+								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
+								tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
+								dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+							End If
+							dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
 						End If
-						dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
 					End If
 					Call LoadData(tmpNode)
 				Next
 			End If 'Selected update is nothing.
 		End If 'Main computer node or child node.
 	End Sub
-
+	
 	'Get approvals recursively.
 	Private Function GetParentApprovals ( computerGroup As IComputerTargetGroup ) As UpdateApprovalCollection
 		'Get the group's approvals for the selected udpate.

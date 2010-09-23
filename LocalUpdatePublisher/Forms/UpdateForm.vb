@@ -23,6 +23,7 @@ Imports System.IO
 Imports System.Text
 Imports System.ComponentModel
 Imports System.Security
+Imports System.Security.Cryptography
 
 Public Partial Class UpdateForm
 	
@@ -234,6 +235,7 @@ Public Partial Class UpdateForm
 		If Me.DlgUpdateFile.ShowDialog = VbOK Then
 			Dim TmpFile As FileInfo = New FileInfo (DlgUpdateFile.FileName)
 			
+			Me.txtOriginalURL.Enabled = True
 			Me.TxtUpdateFile.Text = TmpFile.Name
 			Me.TxtUpdateFile.Tag = TmpFile
 			
@@ -250,10 +252,9 @@ Public Partial Class UpdateForm
 			
 			
 		Else 'User Didn'T Select A File.
+			Me.txtOriginalURL.Enabled = False
 			Me.TxtUpdateFile.Text = ""
 			Me.TxtUpdateFile.Tag = Nothing
-			Me.BtnNext.Enabled = False
-			
 		End If
 		
 		Me.ValidateChildren
@@ -504,7 +505,7 @@ Public Partial Class UpdateForm
 							"Win32Exception: " & X.Message)
 					End Try
 				End If 'If This Is A Revision.
-				
+			
 			Case "tabPackageInfo"
 				Try
 					'Save The Info From The Form Into The SDP Object.
@@ -577,8 +578,33 @@ Public Partial Class UpdateForm
 									DirectCast(_Sdp.InstallableItems.Item(0), WindowsInstallerPatchItem).InstallCommandLine = Me.TxtCommandLine.Text
 								End If
 						End Select
+						
+						'Add the original url if it is present
+						If Not String.IsNullOrEmpty( Me.txtOriginalURL.Text ) Then
+							Dim fileInfo As FileInfo
+							Dim hashProvider As SHA1CryptoServiceProvider = New SHA1CryptoServiceProvider
+							Dim digest As String
+							Dim inStream As FileStream
+							Dim fileItem As FileForInstallableItem = New FileForInstallableItem
+							
+							'Get the SHA1 hash of the file.
+							fileInfo = DirectCast(Me.txtUpdateFile.Tag,FileInfo)
+							inStream = fileInfo.OpenRead()
+							digest = Convert.ToBase64String(hashProvider.ComputeHash(inStream))
+							instream.Close
+							
+							'Setup the FileForInstallable Item
+							fileItem.FileName = fileInfo.Name
+							fileItem.OriginUri = New Uri(Me.txtOriginalURL.Text)
+							fileItem.Digest = digest
+							fileItem.Modified = fileinfo.LastWriteTimeUtc
+							fileItem.Size = fileInfo.Length
+							
+							'Assign it to the SDP.
+							_Sdp.InstallableItems(0).OriginalSourceFile = fileItem
+						End If
+						
 					End If 'There Is At Least One InstallableItme Object.
-					
 					
 					'Create Temporary Prerequisite Group And Add Updates To It.
 					Dim TmpPrerequisiteGroup As PrerequisiteGroup = New PrerequisiteGroup
@@ -721,7 +747,7 @@ Public Partial Class UpdateForm
 					
 					'Publish Package According The Meta Data Only Checkbox.
 					Dim Result As Boolean = False
-					If CboMetadataOnly.Checked Then
+					If chkMetadataOnly.Checked Then
 						Result = ConnectionManager.PublishPackageMetaData(_Sdp)
 					Else
 						Result = ConnectionManager.PublishPackage(_Sdp,FileList)
@@ -902,12 +928,70 @@ Public Partial Class UpdateForm
 	#End Region
 	
 	#Region "Validation"
-	'A Generic Validated Routine That Sets The Sender Control'S As Validated
+	'If we publish a metadata update only then the user must give an original URL and
+	' the update cannot contain additional files.
+	Sub CboMetadataOnlyCheckedChanged(sender As Object, e As EventArgs)
+		If chkMetaDataOnly.Checked Then
+			
+			'Prevent user from selecting metadata only if they have additional files.
+			If Me.dgvAdditionalFiles.Rows.Count > 0 Then
+				Msgbox ("You cannot publish a metadata only update with additional files.")
+				chkMetaDataOnly.Checked = False
+				Exit Sub
+			End If
+			
+			Me.btnAddFile.Enabled = False
+			Me.btnAddDir.Enabled = False
+			Me.dgvAdditionalFiles.Enabled = False
+			
+			If String.IsNullOrEmpty( Me.txtOriginalURL.Text ) Then
+				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"No URL Is Given")
+			End If
+		Else
+			Me.btnAddFile.Enabled = True
+			Me.btnAddDir.Enabled = True
+			Me.dgvAdditionalFiles.Enabled = True
+			
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"")
+		End If
+		
+		Me.ValidateChildren
+	End Sub
+	
+	'Validate that the source URL is valid and points to the selected file.
+	Sub TxtOriginalURLTextChanged(sender As Object, e As EventArgs)
+		If String.IsNullOrEmpty(Me.txtOriginalURL.Text) AndAlso Me.chkMetadataOnly.Checked Then
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"No URL Given.")
+		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURL.Text, UriKind.Absolute) Then
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"Not valid URI.")
+		ElseIf Not Me.txtOriginalURL.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"File name does not match.")
+		Else
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"")
+		End If
+		
+		Me.ValidateChildren
+	End Sub
+	
+	'Enable and Disable the appropriate details based on the package type.
+	Sub CboPackageTypeSelectedIndexChanged(sender As Object, e As EventArgs)
+		If DirectCast(Me.cboPackageType.SelectedIndex, PackageType) = PackageType.Application Then
+			Me.txtBulletinID.Enabled = False
+			Me.txtArticleID.Enabled = False
+			Me.txtCVEID.Enabled = False
+		Else
+			Me.txtBulletinID.Enabled = True
+			Me.txtArticleID.Enabled = True
+			Me.txtCVEID.Enabled = True
+		End If
+	End Sub
+	
+	'A Generic Validated Routine That Sets The Sender Control's As Validated
 	Sub ControlValidated(Sender As Object, E As EventArgs)
 		Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control),"")
 	End Sub
 	
-	'A Generic Validating Routine That Verify The Sender Control'S Have Something Entered.
+	'A Generic Validating Routine That Verify The Sender Control's Have Something Entered.
 	Sub ControlValidating(Sender As Object, E As CancelEventArgs)
 		Try
 			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox
@@ -933,7 +1017,7 @@ Public Partial Class UpdateForm
 			Select Case tabsImportUpdate.SelectedTab.Name
 					'Verify A File Has Been Given.
 				Case "tabIntro"
-					If Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(TxtUpdateFile)) Then
+					If Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtUpdateFile)) Then
 						Invalid = True
 					End If
 					
@@ -947,7 +1031,8 @@ Public Partial Class UpdateForm
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboVendor))  OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboProduct)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboImpact)) OrElse _
-						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboRebootBehavior))
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboRebootBehavior))OrElse _
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtOriginalURL))
 						Invalid = True
 					End If
 					
@@ -992,5 +1077,4 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#End Region
-	
 End Class

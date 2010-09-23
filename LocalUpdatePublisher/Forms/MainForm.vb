@@ -19,7 +19,7 @@ Imports System.ComponentModel
 Imports System.Security.Cryptography.X509Certificates
 
 Public Partial Class MainForm
-	Private _currentRowIndex As New Integer
+	'Private _currentRowIndex As New Integer
 	Private _serverNode As TreeNode
 	Private _rootNode As TreeNode
 	Private _originalValue As String
@@ -420,12 +420,12 @@ Public Partial Class MainForm
 	
 	'Clear the update tab
 	Sub ClearUpdateInfo
-		Call ClearAllControls( tabUpdateInfo.Controls )
+		Call ClearAllControls( Me.tabUpdateInfo.Controls )
 	End Sub
 	
 	'Clear the computer tab
 	Sub ClearComputerInfo
-		Call ClearAllControls( tabComputerInfo.Controls )
+		Call ClearAllControls( Me.tabComputerInfo.Controls)
 	End Sub
 	
 	'This code is lifted and modified from StackOverFlow.com
@@ -454,6 +454,10 @@ Public Partial Class MainForm
 				Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
 				dtp.Value = Now()
 			End If
+			If (ctrl.GetType() Is GetType(DataGridView)) Then
+				Dim dgv As DataGridView = CType(ctrl, DataGridView)
+				dgv.DataSource = Nothing
+			End If
 			
 			'If "Recurse" is true, then also clear controls within any sub-containers
 			If Recurse Then
@@ -464,6 +468,10 @@ Public Partial Class MainForm
 				If ctrl.GetType() Is GetType(GroupBox) Then
 					Dim grbx As GroupBox = CType(ctrl, GroupBox)
 					ClearAllControls(grbx.Controls, Recurse)
+				End If
+				If ctrl.GetType Is GetType(TabPage) Then
+					Dim tbpg As TabPage = CType(ctrl, TabPage)
+					ClearAllcontrols(tbpg.Controls, Recurse)
 				End If
 			End If
 		Next
@@ -788,8 +796,8 @@ Public Partial Class MainForm
 					Next
 					
 					Try
-					'Remove the package.
-					ConnectionManager.ParentServer.DeleteUpdate( update.Id.UpdateId )
+						'Remove the package.
+						ConnectionManager.ParentServer.DeleteUpdate( update.Id.UpdateId )
 					Catch x As WsusObjectNotFoundException
 						Msgbox ("WsusObjectNotFoundException: " & x.Message)
 					Catch x As InvalidOperationException
@@ -1384,14 +1392,14 @@ Public Partial Class MainForm
 			
 			Dim r As Rectangle = _dgvMain.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true)
 			cmDgvMain.Show(DirectCast(sender, Control), r.Left + e.X, r.Top + e.Y)
-		'If user left clicks on a header row and rows are selected.
-		Else If  _dgvMain.SelectedRows.Count > 0 AndAlso e.Button = MouseButtons.Left Then
+			'If user left clicks on a header row and rows are selected.
+		Else If  _dgvMain.SelectedRows.Count = 1 AndAlso e.Button = MouseButtons.Left Then
 			'Save the currently selected row based on the currently selected tree node.
 			If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-				_originalValue = DirectCast(_dgvMain.Rows(e.RowIndex).Cells.Item("ComputerName").Value, String)
+				_originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
 				
 			Else If TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-				_originalValue = DirectCast(_dgvMain.Rows(e.RowIndex).Cells.Item("Title").Value, String)
+				_originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Title").Value, String)
 			End If
 		Else
 			_originalValue = Nothing
@@ -1402,7 +1410,7 @@ Public Partial Class MainForm
 	'This routine captures the current row's value before a sort.
 	Sub DgvComputerReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
 		'If a valid header was clicked and there is a row selected then save its info.
-		If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvComputerReport.SelectedRows.Count > 0 Then
+		If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvComputerReport.SelectedRows.Count = 1 Then
 			'Save the currently selected update.
 			_originalValue = DirectCast(dgvComputerReport.CurrentRow.Cells.Item("UpdateTitle").Value, String)
 		Else If e.RowIndex <> -1
@@ -1432,7 +1440,7 @@ Public Partial Class MainForm
 	'This routine captures the current row's value before a sort.
 	Sub DgvUpdateReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
 		'If a valid header was clicked and there is a row selected then save its info.
-		If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvUpdateReport.SelectedRows.Count > 0 Then
+		If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvUpdateReport.SelectedRows.Count = 1 Then
 			'Save the currently selected update.
 			_originalValue = DirectCast(dgvUpdateReport.CurrentRow.Cells.Item("ComputerName").Value, String)
 		Else If e.RowIndex <> -1
@@ -1547,7 +1555,7 @@ Public Partial Class MainForm
 			TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then
 			
 			'If we are maintaining the status then save the status.
-			If maintainSelectedRow And Not _dgvMain.SelectedRows.Count = 0 Then
+			If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
 				originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
 			Else
 				maintainSelectedRow = False
@@ -1555,7 +1563,7 @@ Public Partial Class MainForm
 			End If
 			
 			'Set current row to negative one.
-			Me._currentRowIndex = -1
+			'Me._currentRowIndex = -1
 			
 			'Set the datasource to list of computers.  If nothing then exit sub.
 			_dgvMain.DataSource = GetComputerList(DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup))
@@ -1608,7 +1616,7 @@ Public Partial Class MainForm
 				exportListToolStripMenuItem.Enabled = True
 				
 				'Load the selected computer's info.
-				Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
+				'Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
 				
 				'If the user is currently on the report tab then update it.
 				' Otherwise, clear the combo selections.
@@ -1625,7 +1633,7 @@ Public Partial Class MainForm
 				btnComputerListRefresh.Enabled = False
 				exportListToolStripMenuItem.Enabled = False
 				
-				Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
+				'Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
 				Me.dgvUpdateReport.DataSource = Nothing
 				Me.cboTargetGroup.SelectedIndex =  -1
 				Me.cboUpdateStatus.SelectedIndex = -1
@@ -1654,7 +1662,7 @@ Public Partial Class MainForm
 		Me.Update
 		
 		'Set current row to negative one.
-		Me._currentRowIndex = -1
+		'Me._currentRowIndex = -1
 		
 		If Me.treeView.SelectedNode Is Nothing OrElse _
 			Me.treeView.SelectedNode.Tag Is Nothing Then
@@ -1669,7 +1677,7 @@ Public Partial Class MainForm
 			If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
 				
 				'If we are maintaining the status then save the status.
-				If maintainSelectedRow And Not _dgvMain.SelectedRows.Count = 0 Then
+				If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
 					originalValue = _dgvMain.CurrentRow.Cells.Item("Id").Value.ToString
 				Else
 					maintainSelectedRow = False
@@ -1749,7 +1757,7 @@ Public Partial Class MainForm
 			Exit Sub
 			'Computer Node
 		ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-			_currentRowIndex = rowIndex 'Set new row as current.
+			'_currentRowIndex = rowIndex 'Set new row as current.
 			
 			Call LoadComputerInfo( rowIndex )
 			
@@ -1766,7 +1774,7 @@ Public Partial Class MainForm
 			End If
 			'Update node.
 		ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-			_currentRowIndex = rowIndex 'Set new row as current.
+			'_currentRowIndex = rowIndex 'Set new row as current.
 			
 			'Load the currently selected udpate's data.
 			Call LoadUpdateInfo( rowIndex )
@@ -1788,19 +1796,19 @@ Public Partial Class MainForm
 	
 	'Load the update info for the currently selected update.
 	Sub LoadUpdateInfo( rowIndex As Integer )
+		Me.Cursor = Cursors.WaitCursor 'Set wait cursor.
+		
+		Call ClearUpdateInfo
 		
 		'Exit if the index passed in is not withing range.
 		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
 		
 		Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
 		
-		Me.Cursor = Cursors.WaitCursor 'Set wait cursor.
-		
-		Call ClearUpdateInfo
 		
 		'Make sure that the rowIndex is within range, at least one row is selected, and the node selected
 		' is an update category.
-		If Me._dgvMain.Rows.Count > rowIndex AndAlso Me._dgvMain.SelectedRows.Count > 0 AndAlso _
+		If Me._dgvMain.Rows.Count > rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 AndAlso _
 			TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
 			
 			'Load the data
@@ -1853,7 +1861,7 @@ Public Partial Class MainForm
 		
 		'Make sure we are in a data row, not the header and that the tree node
 		' selected has a tag on which we can base how to load the data
-		If Me._dgvMain.Rows.Count <= rowIndex OrElse Me._dgvMain.SelectedRows.Count = 0 Then
+		If Me._dgvMain.Rows.Count <= rowIndex OrElse Me._dgvMain.SelectedRows.Count <> 1 Then
 			_noEvents = True
 			'Clear the data source of the status DGV.
 			Me.dgvUpdateStatus.DataSource = Nothing
@@ -1887,7 +1895,7 @@ Public Partial Class MainForm
 		
 		Call ClearComputerInfo
 		
-		If Me._dgvMain.Rows.Count >= rowIndex Then
+		If Me._dgvMain.Rows.Count >= rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 Then
 			'Set the update scope to only include locally published updates for the selected group.
 			Dim tmpUpdateScope As UpdateScope = New UpdateScope
 			tmpUpdateScope.UpdateSources = UpdateSources.Other
@@ -1898,10 +1906,10 @@ Public Partial Class MainForm
 			End If
 			
 			Dim tmpUpdateSummary As IUpdateSummary = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IComputerTarget").Value, IComputerTarget).GetUpdateInstallationSummary(tmpUpdateScope)
-			Me.lblUpdatesWErrorsNum.Text = CStr(tmpUpdateSummary.FailedCount)
-			Me.lblUpdatesNeededNum.Text = CStr(tmpUpdateSummary.NotInstalledCount)
-			Me.lblUpdatesInstalledorNANum.Text = CStr(tmpUpdateSummary.NotApplicableCount + tmpUpdateSummary.InstalledCount)
-			Me.lblUpdateNoStatusNum.Text = CStr(tmpUpdateSummary.UnknownCount)
+			Me.txtUpdatesWErrorsNum.Text = CStr(tmpUpdateSummary.FailedCount)
+			Me.txtUpdatesNeededNum.Text = CStr(tmpUpdateSummary.NotInstalledCount)
+			Me.txtUpdatesInstalledorNANum.Text = CStr(tmpUpdateSummary.NotApplicableCount + tmpUpdateSummary.InstalledCount)
+			Me.txtUpdateNoStatusNum.Text = CStr(tmpUpdateSummary.UnknownCount)
 		End If
 		
 		Me.Cursor = Cursors.Arrow 'Set arrow cursor
@@ -1942,7 +1950,7 @@ Public Partial Class MainForm
 	
 	'Load the report data for the currently selected computer.
 	Sub LoadComputerReport (rowIndex As Integer, maintainSelectedRow As Boolean)
-
+		
 		Dim originalValue As String
 		Me.Cursor = Cursors.WaitCursor 'Set wait cursor
 		_noEvents = True
@@ -1954,7 +1962,7 @@ Public Partial Class MainForm
 		Else
 			
 			'If we are maintaining the status then save the status.
-			If maintainSelectedRow And Not dgvComputerReport.SelectedRows.Count = 0 Then
+			If maintainSelectedRow And dgvComputerReport.SelectedRows.Count = 1 Then
 				originalValue = DirectCast(dgvComputerReport.CurrentRow.Cells.Item("UpdateTitle").Value, String)
 			Else
 				maintainSelectedRow = False
@@ -2032,7 +2040,7 @@ Public Partial Class MainForm
 			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.Text = "Any"
 			
 			'If we are maintaining the status then save the status.
-			If maintainSelectedRow And Not dgvUpdateReport.SelectedRows.Count = 0 Then
+			If maintainSelectedRow And dgvUpdateReport.SelectedRows.Count = 1 Then
 				originalValue = DirectCast(dgvUpdateReport.Rows(rowIndex).Cells.Item("ComputerName").Value, String)
 			Else
 				maintainSelectedRow = False
