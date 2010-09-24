@@ -19,7 +19,6 @@ Imports System.ComponentModel
 Imports System.Security.Cryptography.X509Certificates
 
 Public Partial Class MainForm
-	'Private _currentRowIndex As New Integer
 	Private _serverNode As TreeNode
 	Private _rootNode As TreeNode
 	Private _originalValue As String
@@ -33,17 +32,10 @@ Public Partial Class MainForm
 		End Get
 	End Property
 	
-	Private _vendors As String
-	ReadOnly Property Vendors()  As String
+	Private _vendorCollection As New VendorCollection
+	ReadOnly Property VendorCollection() As VendorCollection
 		Get
-			Return _vendors
-		End Get
-	End Property
-	
-	Private _products As String
-	ReadOnly Property Products()  As String
-		Get
-			Return _products
+			Return _vendorCollection
 		End Get
 	End Property
 	
@@ -203,7 +195,9 @@ Public Partial Class MainForm
 			_noEvents = True
 			toolStripStatusLabel.Text = "Loading update report"
 			Me.Update
-			Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+			If Not Me._dgvMain.CurrentRow Is Nothing Then
+				Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+			End If
 			toolStripStatusLabel.Text = ""
 			_noEvents = False
 		End If
@@ -257,7 +251,9 @@ Public Partial Class MainForm
 		_noEvents = True
 		toolStripStatusLabel.Text = "Loading computer report"
 		Me.Update
-		Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
+		If Not Me._dgvMain.CurrentRow Is Nothing Then
+			Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
+		End If
 		toolStripStatusLabel.Text = ""
 		_noEvents = False
 		Cursor = Cursors.Arrow 'Set arrow cursor.
@@ -274,7 +270,11 @@ Public Partial Class MainForm
 		_noEvents = True
 		toolStripStatusLabel.Text = "Loading update report"
 		Me.Update
-		Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+		
+		If Not Me.DgvMain.CurrentRow Is Nothing Then
+			Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+		End If
+		
 		toolStripStatusLabel.Text = ""
 		_noEvents = False
 		Cursor = Cursors.Arrow 'Set arrow cursor.
@@ -295,12 +295,16 @@ Public Partial Class MainForm
 	
 	'Open the list of prerequisite updates.
 	Sub LblPrerequisitesClick(sender As Object, e As EventArgs)
-		PrerequisiteUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+		If Not Me._dgvMain.CurrentRow Is Nothing Then
+			PrerequisiteUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+		End If
 	End Sub
 	
 	'Open the list of superseded updates.
 	Sub LblSupersedesClick(sender As Object, e As EventArgs)
-		SupersededUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+		If Not Me._dgvMain.CurrentRow Is Nothing Then
+			SupersededUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+		End If
 	End Sub
 	
 	Sub ToolStripStatusLabelLinkClick(sender As Object, e As EventArgs)
@@ -542,43 +546,46 @@ Public Partial Class MainForm
 	
 	'Export the current update to a CAB file.
 	Sub ExportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
-		Dim update As IUpdate = DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate)
 		
-		exportFileDialog.Reset
-		exportFileDialog.Filter = "CAB Files|*.cab"
-		
-		If Not update Is Nothing AndAlso _
-			Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
+		If Not Me._dgvMain.CurrentRow Is Nothing
+			Dim update As IUpdate = DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate)
 			
-			'Create Temporary Folder.
-			Dim tmpFolder As New DirectoryInfo( Path.Combine(Path.GetTempPath, Path.GetRandomFileName) )
-			tmpFolder.Create
+			exportFileDialog.Reset
+			exportFileDialog.Filter = "CAB Files|*.cab"
 			
-			'Save the SDP file to the temp folder.
-			Dim sdpFile As String = Path.Combine(tmpFolder.ToString, update.Id.UpdateId.ToString & ".xml")
-			ConnectionManager.ParentServer.ExportPackageMetadata(update.Id, sdpFile)
-			
-			Dim tmpSDP As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFile)
-			
-			If tmpSDP.InstallableItems.Count > 0 Then
+			If Not update Is Nothing AndAlso _
+				Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
 				
-				Dim cabFile As New FileInfo("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & update.Id.UpdateId.ToString & "\" & tmpSDP.InstallableItems(0).Id.ToString & "_1.cab")
+				'Create Temporary Folder.
+				Dim tmpFolder As New DirectoryInfo( Path.Combine(Path.GetTempPath, Path.GetRandomFileName) )
+				tmpFolder.Create
 				
-				If cabFile.Exists Then
+				'Save the SDP file to the temp folder.
+				Dim sdpFile As String = Path.Combine(tmpFolder.ToString, update.Id.UpdateId.ToString & ".xml")
+				ConnectionManager.ParentServer.ExportPackageMetadata(update.Id, sdpFile)
+				
+				Dim tmpSDP As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFile)
+				
+				If tmpSDP.InstallableItems.Count > 0 Then
 					
-					'Move the CAB to temp folder.
-					File.Copy(cabFile.ToString, Path.Combine(tmpFolder.ToString, update.Id.UpdateId.ToString & ".cab"), True)
+					Dim cabFile As New FileInfo("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & update.Id.UpdateId.ToString & "\" & tmpSDP.InstallableItems(0).Id.ToString & "_1.cab")
 					
-					'Create CAB of the temp folder.
-					Dim cabCompressed As CabLib.Compress = New CabLib.Compress
-					cabCompressed.CompressFolder(tmpFolder.ToString, exportFileDialog.FileName, "", True, True, 0)
-				Else
-					Msgbox("The package content does not exist in the UpdateServicesPackages folder.")
+					If cabFile.Exists Then
+						
+						'Move the CAB to temp folder.
+						File.Copy(cabFile.ToString, Path.Combine(tmpFolder.ToString, update.Id.UpdateId.ToString & ".cab"), True)
+						
+						'Create CAB of the temp folder.
+						Dim cabCompressed As CabLib.Compress = New CabLib.Compress
+						cabCompressed.CompressFolder(tmpFolder.ToString, exportFileDialog.FileName, "", True, True, 0)
+					Else
+						Msgbox("The package content does not exist in the UpdateServicesPackages folder.")
+					End If
+					
+					'Delete the temporary folder.
+					tmpFolder.Delete(True)
+					
 				End If
-				
-				'Delete the temporary folder.
-				tmpFolder.Delete(True)
-				
 			End If
 		End If
 	End Sub
@@ -741,7 +748,7 @@ Public Partial Class MainForm
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
 			response = Msgbox("Do you wish to decline these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
-		Else
+		Else If Not Me._dgvMain.CurrentRow Is Nothing
 			response = Msgbox("Do you wish to decline " & _
 				DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) , _
 				vbYesNo)
@@ -774,7 +781,7 @@ Public Partial Class MainForm
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
 			response = Msgbox("Do you wish to remove these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
-		Else
+		Else If Not Me._dgvMain.CurrentRow Is Nothing
 			response = Msgbox("Do you wish to remove " & _
 				DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) , _
 				vbYesNo)
@@ -878,7 +885,7 @@ Public Partial Class MainForm
 			'Prompt user for confirmation.
 			If Me._dgvMain.SelectedRows.Count > 1 Then
 				response = Msgbox("Do you wish to re-sign these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
-			Else
+			Else If Not Me._dgvMain.CurrentRow Is Nothing
 				response = Msgbox("Do you wish to re-sign " & _
 					DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) & "?" , _
 					vbYesNo)
@@ -1255,10 +1262,7 @@ Public Partial Class MainForm
 		If Not _updateNode Is Nothing Then
 			_updateNode.Nodes.Clear
 			
-			My.Forms.UpdateForm.ClearProducts
-			My.Forms.UpdateForm.ClearVendors
-			_vendors = ""
-			_products = ""
+			Me._vendorCollection.Clear
 			
 			If ConnectionManager.Connected Then 'Make sure we're connected still.
 				
@@ -1274,10 +1278,13 @@ Public Partial Class MainForm
 						tmpNode.Tag = category
 						
 						'Add the vendor to the import update dropdown.
-						_vendors += vbNewline & category.Title
+						'_vendors += vbNewline & category.Title
+						Dim tmpVendor As New Vendor(category.Title)
 						
 						'If there might be subcategories then load them.
 						If category.ProhibitsSubcategories = False Then
+							Dim tmpProductCollection As Collections.Generic.List(Of String) = New Collections.Generic.List(Of String)
+							
 							'Now add the categories under the locally published category.
 							For Each subCategory As IUpdateCategory In category.GetSubcategories
 								
@@ -1291,7 +1298,7 @@ Public Partial Class MainForm
 								tmpSubNode.Tag = subCategory
 								
 								'Add the software package to the import update dropdown
-								_products += vbNewline & subCategory.Title
+								tmpProductCollection.Add( subCategory.Title )
 								
 								'								Else
 								'									'Remove the parent node.
@@ -1301,6 +1308,13 @@ Public Partial Class MainForm
 								'									_vendors.Replace(category.Title,"")
 								'								End If
 							Next
+							
+							'Add the products to the vendor object.
+							tmpVendor.Products = tmpProductCollection
+							
+							'Add the vendor the the vendor collection.
+							Me._vendorCollection.Add(tmpVendor)
+							
 						End If
 					End if
 				Next
@@ -1413,7 +1427,7 @@ Public Partial Class MainForm
 		If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvComputerReport.SelectedRows.Count = 1 Then
 			'Save the currently selected update.
 			_originalValue = DirectCast(dgvComputerReport.CurrentRow.Cells.Item("UpdateTitle").Value, String)
-		Else If e.RowIndex <> -1
+		Else If e.RowIndex <> -1 AndAlso Not Me._dgvMain.CurrentRow Is Nothing Then
 			_originalValue = Nothing
 			
 			'If the column is the status column and this update has failed then display the error history.
@@ -1492,7 +1506,9 @@ Public Partial Class MainForm
 						End If
 					Next
 				End If
-				Call LoadRow ( _dgvMain.CurrentRow.Index )
+				If Not Me._dgvMain.CurrentRow Is Nothing Then
+					Call LoadRow ( _dgvMain.CurrentRow.Index )
+				End If
 			End If
 		End If
 	End Sub
@@ -1717,14 +1733,17 @@ Public Partial Class MainForm
 					End If
 					
 					'Load the currently selected udpate's data.
-					Call LoadUpdateInfo( Me._dgvMain.CurrentRow.Index)
-					Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
+					If Not Me._dgvMain.CurrentRow Is Nothing Then
+						Call LoadUpdateInfo( Me._dgvMain.CurrentRow.Index)
+						Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
+					End If
 					
 					'If the user is currently on the report tab then update it.
 					' Otherwise, clear the combo selections.
 					If Me.tabMainUpdates.SelectedTab.Name = Me.tabUpdateReport.Name Then
-						
-						Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
+						If Not Me._dgvMain.CurrentRow Is Nothing Then
+							Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
+						End If
 						Call LoadDgvState(dgvUpdateReport)
 						
 					Else
@@ -1774,7 +1793,6 @@ Public Partial Class MainForm
 			End If
 			'Update node.
 		ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-			'_currentRowIndex = rowIndex 'Set new row as current.
 			
 			'Load the currently selected udpate's data.
 			Call LoadUpdateInfo( rowIndex )
@@ -2040,8 +2058,8 @@ Public Partial Class MainForm
 			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.Text = "Any"
 			
 			'If we are maintaining the status then save the status.
-			If maintainSelectedRow And dgvUpdateReport.SelectedRows.Count = 1 Then
-				originalValue = DirectCast(dgvUpdateReport.Rows(rowIndex).Cells.Item("ComputerName").Value, String)
+			If maintainSelectedRow AndAlso Not dgvUpdateReport.CurrentRow Is Nothing Then
+				originalValue = DirectCast(dgvUpdateReport.CurrentRow.Cells.Item("ComputerName").Value, String)
 			Else
 				maintainSelectedRow = False
 				originalValue = ""

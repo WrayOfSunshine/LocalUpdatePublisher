@@ -65,13 +65,11 @@ Public Partial Class UpdateForm
 			_TabsHidden.RemoveAt(0)
 		End If
 		
-		'Clear The Product And Vendor Combo Boxes And Load Them From
-		' The Strings Created In The Main Form.  These Strings Are Created
-		' As The Main Form Loads The Updates And Vendors Into The Tree View.
-		Me.CboProduct.Items.Clear
-		Me.CboProduct.Items.AddRange(Split(My.Forms.MainForm.Products ,VbNewLine))
+		'Load the vendor combo box.
 		Me.CboVendor.Items.Clear
-		Me.CboVendor.Items.AddRange(Split(My.Forms.MainForm.Vendors ,VbNewLine))
+		For Each tmpVendor As Vendor In My.Forms.MainForm.VendorCollection
+			Me.cboVendor.Items.Add(tmpVendor.Name)
+		Next
 		
 		Me.DialogResult = DialogResult.Cancel
 		Return MyBase.ShowDialog() 'Return The Dialog Result.
@@ -111,29 +109,17 @@ Public Partial Class UpdateForm
 			Me.TabsImportUpdate.TabPages.RemoveAt(Me.TabIntro.TabIndex)
 		End If
 		
-		'Clear The Product And Vendor Combo Boxes And Load Them From
-		' The Strings Created In The Main Form.  These Strings Are Created
-		' As The Main Form Loads The Updates And Vendors Into The Tree View.
-		Me.CboProduct.Items.Clear
-		Me.CboProduct.Items.AddRange(Split(My.Forms.MainForm.Products ,VbNewLine))
+		'Load the vendor combo box.
 		Me.CboVendor.Items.Clear
-		Me.CboVendor.Items.AddRange(Split(My.Forms.MainForm.Vendors ,VbNewLine))
+		For Each tmpVendor As Vendor In My.Forms.MainForm.VendorCollection
+			Me.cboVendor.Items.Add(tmpVendor.Name)
+		Next
 		
 		Me.ValidateChildren
 		
 		Me.DialogResult = DialogResult.Cancel
 		Return MyBase.ShowDialog() 'Return The Dialog Result.
 	End Function
-	
-	'Clear The Product Combobox
-	Sub ClearProducts
-		Me.CboProduct.Items.Clear
-	End Sub
-	
-	'Clear The Vendor Combobox
-	Sub ClearVendors
-		Me.CboVendor.Items.Clear
-	End Sub
 	
 	'Allow The User To Edit The Metadata.
 	Sub BtnMetaDataEditClick(Sender As Object, E As EventArgs)
@@ -153,6 +139,8 @@ Public Partial Class UpdateForm
 	'This Routine Goes To The Previous Tab And Hides Buttons Accordingly.
 	Private Sub BtnPreviousClick(Sender As Object, E As EventArgs)
 		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex - 1
+		
+		Call SetMetadataOnly
 		
 		'Show And Hide The Previous Button As Needed.
 		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
@@ -189,6 +177,8 @@ Public Partial Class UpdateForm
 		'Move To The Next Tab.
 		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex + 1
 		
+		Call SetMetadataOnly
+		
 		'Show And Hide The Previous Button As Needed.
 		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
 			Me.BtnPrevious.Show
@@ -207,6 +197,15 @@ Public Partial Class UpdateForm
 		End If
 		
 		Me.ValidateChildren
+	End Sub
+		
+	'Depending on the current tab, enable or disable the metadata only check box.
+	Private Sub SetMetadataOnly
+		If TabsImportUpdate.SelectedTab.Name = "tabIntro" OrElse TabsImportUpdate.SelectedTab.Name = "tabPackageInfo" Then
+			Me.chkMetadataOnly.Enabled = True
+		Else
+			Me.chkMetadataOnly.Enabled = False
+		End If
 	End Sub
 	
 	'If The User Cancels, Close The Form.
@@ -413,10 +412,10 @@ Public Partial Class UpdateForm
 	' Return A Boolean Depending Upon The Success Of The Action.
 	Function PerformAction As Boolean
 		
-		'Import The File And Set The Appropriate Fields If This Isn'T A Revision.
+		'Import The File And Set The Appropriate Fields If This Isn't A Revision.
 		Select Case TabsImportUpdate.SelectedTab.Name
 			Case "tabIntro"
-				'Don'T Do Anything If This Is A Revision.
+				'Don't Do Anything If This Is A Revision.
 				If Not Me._Revision Then
 					'Create New Software Distribution Package.
 					_Sdp = New SoftwareDistributionPackage
@@ -505,7 +504,7 @@ Public Partial Class UpdateForm
 							"Win32Exception: " & X.Message)
 					End Try
 				End If 'If This Is A Revision.
-			
+				
 			Case "tabPackageInfo"
 				Try
 					'Save The Info From The Form Into The SDP Object.
@@ -1077,4 +1076,19 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#End Region
+	
+	
+	'Populate the Product combo box.
+	Sub CboVendorSelectedIndexChanged(sender As Object, e As EventArgs)
+		Me.cboProduct.Items.Clear
+		'Load the products combo with the selected vendor.
+		If My.Forms.MainForm.VendorCollection.Contains(Me.cboVendor.Text) Then
+			For Each tmpProduct As String In My.Forms.MainForm.VendorCollection(Me.cboVendor.Text).Products
+				Me.cboProduct.Items.Add(tmpProduct)
+			Next
+		End If
+		
+		'Now validate the combo.
+		ValidateCombo( sender, e )
+	End Sub
 End Class

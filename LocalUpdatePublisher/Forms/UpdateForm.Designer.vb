@@ -169,7 +169,7 @@ Partial Class UpdateForm
 		'
 		'btnAddDir
 		'
-		Me.btnAddDir.Location = New System.Drawing.Point(534, 136)
+		Me.btnAddDir.Location = New System.Drawing.Point(534, 110)
 		Me.btnAddDir.Name = "btnAddDir"
 		Me.btnAddDir.Size = New System.Drawing.Size(53, 19)
 		Me.btnAddDir.TabIndex = 11
@@ -206,7 +206,7 @@ Partial Class UpdateForm
 		'
 		'btnAddFile
 		'
-		Me.btnAddFile.Location = New System.Drawing.Point(534, 157)
+		Me.btnAddFile.Location = New System.Drawing.Point(534, 131)
 		Me.btnAddFile.Name = "btnAddFile"
 		Me.btnAddFile.Size = New System.Drawing.Size(53, 19)
 		Me.btnAddFile.TabIndex = 7
@@ -221,11 +221,11 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvAdditionalFiles.ColumnHeadersVisible = false
 		Me.dgvAdditionalFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FileName, Me.RemoveFile, Me.FileObject})
-		Me.dgvAdditionalFiles.Location = New System.Drawing.Point(94, 140)
+		Me.dgvAdditionalFiles.Location = New System.Drawing.Point(94, 114)
 		Me.dgvAdditionalFiles.Name = "dgvAdditionalFiles"
 		Me.dgvAdditionalFiles.ReadOnly = true
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
-		Me.dgvAdditionalFiles.Size = New System.Drawing.Size(435, 322)
+		Me.dgvAdditionalFiles.Size = New System.Drawing.Size(435, 397)
 		Me.dgvAdditionalFiles.TabIndex = 6
 		AddHandler Me.dgvAdditionalFiles.CellContentClick, AddressOf Me.DgvAdditionalFilesCellContentClick
 		'
@@ -258,7 +258,7 @@ Partial Class UpdateForm
 		'lblAdditionalFiles
 		'
 		Me.lblAdditionalFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblAdditionalFiles.Location = New System.Drawing.Point(4, 140)
+		Me.lblAdditionalFiles.Location = New System.Drawing.Point(4, 114)
 		Me.lblAdditionalFiles.Name = "lblAdditionalFiles"
 		Me.lblAdditionalFiles.Size = New System.Drawing.Size(84, 15)
 		Me.lblAdditionalFiles.TabIndex = 5
@@ -563,7 +563,7 @@ Partial Class UpdateForm
 		Me.cboVendor.Size = New System.Drawing.Size(457, 21)
 		Me.cboVendor.TabIndex = 17
 		AddHandler Me.cboVendor.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
 		AddHandler Me.cboVendor.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.cboVendor.TextChanged, AddressOf Me.ValidateCombo
 		'

@@ -103,6 +103,8 @@
     <Compile Include="Classes\Settings.vb" />
     <Compile Include="Classes\UpdateServer.vb" />
     <Compile Include="Classes\UpdateServerCollection.vb" />
+    <Compile Include="Classes\Vendor.vb" />
+    <Compile Include="Classes\VendorCollection.vb" />
     <Compile Include="Forms\AboutForm.Designer.vb">
       <DependentUpon>AboutForm.vb</DependentUpon>
     </Compile>

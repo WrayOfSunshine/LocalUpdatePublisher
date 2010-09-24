@@ -79,7 +79,6 @@ Partial Class ProgressForm
 		Me.Name = "ProgressForm"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Progress"
-		Me.TopMost = true
 		Me.ResumeLayout(false)
 	End Sub
 	Private lblCurrentStep As System.Windows.Forms.Label
