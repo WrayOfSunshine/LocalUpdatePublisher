@@ -33,6 +33,7 @@ Partial Class RulesForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RulesForm))
 		Me.lblInfo = New System.Windows.Forms.Label
 		Me.cboRuleType = New System.Windows.Forms.ComboBox
@@ -77,7 +78,6 @@ Partial Class RulesForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.lblRegistryValueType = New System.Windows.Forms.Label
 		Me.cboRegistryValueType = New System.Windows.Forms.ComboBox
-		Me.picRegistryValueType = New System.Windows.Forms.PictureBox
 		Me.splitContainer = New System.Windows.Forms.SplitContainer
 		Me.pnlComponentCollection = New System.Windows.Forms.Panel
 		Me.gceComponentCollection = New LocalUpdatePublisher.GuidCollectionEditor
@@ -98,41 +98,28 @@ Partial Class RulesForm
 		Me.txtMaxVersion = New System.Windows.Forms.TextBox
 		Me.lblMaxVersion = New System.Windows.Forms.Label
 		Me.pnlPatchCode = New System.Windows.Forms.Panel
-		Me.picPatchCode = New System.Windows.Forms.PictureBox
 		Me.txtPatchCode = New System.Windows.Forms.TextBox
 		Me.lblPatchCode = New System.Windows.Forms.Label
 		Me.pnlProductCode = New System.Windows.Forms.Panel
-		Me.picProductCode = New System.Windows.Forms.PictureBox
 		Me.txtProductCode = New System.Windows.Forms.TextBox
 		Me.lblProductCode = New System.Windows.Forms.Label
 		Me.pnlRegistry32Bit = New System.Windows.Forms.Panel
 		Me.pnlQuery = New System.Windows.Forms.Panel
-		Me.picQuery = New System.Windows.Forms.PictureBox
 		Me.pnlDate = New System.Windows.Forms.Panel
-		Me.picDate = New System.Windows.Forms.PictureBox
 		Me.pnlData = New System.Windows.Forms.Panel
-		Me.picData = New System.Windows.Forms.PictureBox
 		Me.pnlVersion = New System.Windows.Forms.Panel
-		Me.picVersion = New System.Windows.Forms.PictureBox
 		Me.pnlFilePath = New System.Windows.Forms.Panel
-		Me.picFilePath = New System.Windows.Forms.PictureBox
 		Me.pnlEnvironmentVariable = New System.Windows.Forms.Panel
 		Me.pnlRegistryValueType = New System.Windows.Forms.Panel
 		Me.pnlRegistryValue = New System.Windows.Forms.Panel
-		Me.picRegistryValue = New System.Windows.Forms.PictureBox
 		Me.pnlRegistryKey = New System.Windows.Forms.Panel
-		Me.picRegistryKey = New System.Windows.Forms.PictureBox
 		Me.pnlProcessorType = New System.Windows.Forms.Panel
-		Me.picProcessorType = New System.Windows.Forms.PictureBox
 		Me.pnlLanguage = New System.Windows.Forms.Panel
-		Me.picLanguage = New System.Windows.Forms.PictureBox
 		Me.pnlProductType = New System.Windows.Forms.Panel
 		Me.pnlServicePack = New System.Windows.Forms.Panel
 		Me.pnlOSVersion = New System.Windows.Forms.Panel
-		Me.picOSVersion = New System.Windows.Forms.PictureBox
 		Me.pnlComparison = New System.Windows.Forms.Panel
-		Me.picComparison = New System.Windows.Forms.PictureBox
-		CType(Me.picRegistryValueType,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.errorProviderRules = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.splitContainer.Panel1.SuspendLayout
 		Me.splitContainer.Panel2.SuspendLayout
 		Me.splitContainer.SuspendLayout
@@ -142,36 +129,24 @@ Partial Class RulesForm
 		Me.pnlMinVersion.SuspendLayout
 		Me.pnlMaxVersion.SuspendLayout
 		Me.pnlPatchCode.SuspendLayout
-		CType(Me.picPatchCode,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlProductCode.SuspendLayout
-		CType(Me.picProductCode,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlRegistry32Bit.SuspendLayout
 		Me.pnlQuery.SuspendLayout
-		CType(Me.picQuery,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlDate.SuspendLayout
-		CType(Me.picDate,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlData.SuspendLayout
-		CType(Me.picData,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlVersion.SuspendLayout
-		CType(Me.picVersion,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlFilePath.SuspendLayout
-		CType(Me.picFilePath,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlEnvironmentVariable.SuspendLayout
 		Me.pnlRegistryValueType.SuspendLayout
 		Me.pnlRegistryValue.SuspendLayout
-		CType(Me.picRegistryValue,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlRegistryKey.SuspendLayout
-		CType(Me.picRegistryKey,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlProcessorType.SuspendLayout
-		CType(Me.picProcessorType,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlLanguage.SuspendLayout
-		CType(Me.picLanguage,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlProductType.SuspendLayout
 		Me.pnlServicePack.SuspendLayout
 		Me.pnlOSVersion.SuspendLayout
-		CType(Me.picOSVersion,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlComparison.SuspendLayout
-		CType(Me.picComparison,System.ComponentModel.ISupportInitialize).BeginInit
+		CType(Me.errorProviderRules,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
 		'lblInfo
@@ -241,7 +216,7 @@ Partial Class RulesForm
 		Me.txtOSMinorVersion.Name = "txtOSMinorVersion"
 		Me.txtOSMinorVersion.Size = New System.Drawing.Size(20, 20)
 		Me.txtOSMinorVersion.TabIndex = 6
-		AddHandler Me.txtOSMinorVersion.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtOSMinorVersion.TextChanged, AddressOf Me.ValidateForm
 		'
 		'txtOSMajorVersion
 		'
@@ -249,7 +224,7 @@ Partial Class RulesForm
 		Me.txtOSMajorVersion.Name = "txtOSMajorVersion"
 		Me.txtOSMajorVersion.Size = New System.Drawing.Size(20, 20)
 		Me.txtOSMajorVersion.TabIndex = 5
-		AddHandler Me.txtOSMajorVersion.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtOSMajorVersion.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblServicePack
 		'
@@ -309,7 +284,7 @@ Partial Class RulesForm
 		Me.cboComparison.Name = "cboComparison"
 		Me.cboComparison.Size = New System.Drawing.Size(185, 21)
 		Me.cboComparison.TabIndex = 3
-		AddHandler Me.cboComparison.SelectedIndexChanged, AddressOf Me.VerifyForm
+		AddHandler Me.cboComparison.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblLanguage
 		'
@@ -329,7 +304,7 @@ Partial Class RulesForm
 		Me.cboLanguage.Name = "cboLanguage"
 		Me.cboLanguage.Size = New System.Drawing.Size(185, 21)
 		Me.cboLanguage.TabIndex = 11
-		AddHandler Me.cboLanguage.SelectedIndexChanged, AddressOf Me.VerifyForm
+		AddHandler Me.cboLanguage.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblProcessorType
 		'
@@ -349,7 +324,7 @@ Partial Class RulesForm
 		Me.cboProcessorType.Name = "cboProcessorType"
 		Me.cboProcessorType.Size = New System.Drawing.Size(185, 21)
 		Me.cboProcessorType.TabIndex = 12
-		AddHandler Me.cboProcessorType.SelectedIndexChanged, AddressOf Me.VerifyForm
+		AddHandler Me.cboProcessorType.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblEnvironmentVariable
 		'
@@ -376,7 +351,7 @@ Partial Class RulesForm
 		Me.txtVersion.Name = "txtVersion"
 		Me.txtVersion.Size = New System.Drawing.Size(185, 20)
 		Me.txtVersion.TabIndex = 20
-		AddHandler Me.txtVersion.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtVersion.Validating, AddressOf Me.ValidateVersion
 		'
 		'lblVersion
@@ -394,7 +369,7 @@ Partial Class RulesForm
 		Me.txtRegistryValue.Name = "txtRegistryValue"
 		Me.txtRegistryValue.Size = New System.Drawing.Size(185, 20)
 		Me.txtRegistryValue.TabIndex = 15
-		AddHandler Me.txtRegistryValue.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtRegistryValue.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblRegistryValue
 		'
@@ -420,7 +395,7 @@ Partial Class RulesForm
 		Me.txtRegistrySubKey.Name = "txtRegistrySubKey"
 		Me.txtRegistrySubKey.Size = New System.Drawing.Size(260, 20)
 		Me.txtRegistrySubKey.TabIndex = 14
-		AddHandler Me.txtRegistrySubKey.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtRegistrySubKey.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblRegistryKey
 		'
@@ -440,6 +415,7 @@ Partial Class RulesForm
 		Me.cboRegistryKey.Name = "cboRegistryKey"
 		Me.cboRegistryKey.Size = New System.Drawing.Size(145, 21)
 		Me.cboRegistryKey.TabIndex = 13
+		AddHandler Me.cboRegistryKey.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'txtFilePath
 		'
@@ -447,7 +423,7 @@ Partial Class RulesForm
 		Me.txtFilePath.Name = "txtFilePath"
 		Me.txtFilePath.Size = New System.Drawing.Size(410, 20)
 		Me.txtFilePath.TabIndex = 19
-		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblFilePath
 		'
@@ -469,7 +445,7 @@ Partial Class RulesForm
 		Me.dtpDate.ShowUpDown = true
 		Me.dtpDate.Size = New System.Drawing.Size(185, 20)
 		Me.dtpDate.TabIndex = 22
-		AddHandler Me.dtpDate.ValueChanged, AddressOf Me.VerifyForm
+		AddHandler Me.dtpDate.ValueChanged, AddressOf Me.ValidateForm
 		'
 		'lblDate
 		'
@@ -497,7 +473,7 @@ Partial Class RulesForm
 		Me.txtData.Name = "txtData"
 		Me.txtData.Size = New System.Drawing.Size(185, 20)
 		Me.txtData.TabIndex = 21
-		AddHandler Me.txtData.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtData.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblData
 		'
@@ -520,7 +496,7 @@ Partial Class RulesForm
 		Me.txtQuery.Name = "txtQuery"
 		Me.txtQuery.Size = New System.Drawing.Size(410, 20)
 		Me.txtQuery.TabIndex = 23
-		AddHandler Me.txtQuery.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtQuery.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblQuery
 		'
@@ -545,7 +521,7 @@ Partial Class RulesForm
 		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnAdd.Enabled = false
-		Me.btnAdd.Location = New System.Drawing.Point(372, 445)
+		Me.btnAdd.Location = New System.Drawing.Point(372, 440)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(75, 24)
 		Me.btnAdd.TabIndex = 24
@@ -557,7 +533,7 @@ Partial Class RulesForm
 		'
 		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(453, 445)
+		Me.btnCancel.Location = New System.Drawing.Point(453, 440)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.Size = New System.Drawing.Size(75, 24)
 		Me.btnCancel.TabIndex = 25
@@ -583,16 +559,7 @@ Partial Class RulesForm
 		Me.cboRegistryValueType.Name = "cboRegistryValueType"
 		Me.cboRegistryValueType.Size = New System.Drawing.Size(185, 21)
 		Me.cboRegistryValueType.TabIndex = 17
-		AddHandler Me.cboRegistryValueType.SelectedIndexChanged, AddressOf Me.VerifyForm
-		'
-		'picRegistryValueType
-		'
-		Me.picRegistryValueType.Location = New System.Drawing.Point(310, 0)
-		Me.picRegistryValueType.Name = "picRegistryValueType"
-		Me.picRegistryValueType.Size = New System.Drawing.Size(21, 21)
-		Me.picRegistryValueType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picRegistryValueType.TabIndex = 45
-		Me.picRegistryValueType.TabStop = false
+		AddHandler Me.cboRegistryValueType.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'splitContainer
 		'
@@ -634,7 +601,7 @@ Partial Class RulesForm
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlServicePack)
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlOSVersion)
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlComparison)
-		Me.splitContainer.Size = New System.Drawing.Size(565, 474)
+		Me.splitContainer.Size = New System.Drawing.Size(565, 469)
 		Me.splitContainer.TabIndex = 45
 		Me.splitContainer.TabStop = false
 		'
@@ -659,7 +626,7 @@ Partial Class RulesForm
 		Me.gceComponentCollection.RequireGuids = true
 		Me.gceComponentCollection.Size = New System.Drawing.Size(320, 101)
 		Me.gceComponentCollection.TabIndex = 16
-		AddHandler Me.gceComponentCollection.ValidInputChanged, AddressOf Me.VerifyForm
+		AddHandler Me.gceComponentCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkComponentCollection_requireAll
 		'
@@ -700,7 +667,7 @@ Partial Class RulesForm
 		Me.gceFeatureCollection.RequireGuids = false
 		Me.gceFeatureCollection.Size = New System.Drawing.Size(320, 101)
 		Me.gceFeatureCollection.TabIndex = 16
-		AddHandler Me.gceFeatureCollection.ValidInputChanged, AddressOf Me.VerifyForm
+		AddHandler Me.gceFeatureCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkFeatureCollection_requireAll
 		'
@@ -741,7 +708,7 @@ Partial Class RulesForm
 		Me.gceProductCollection.RequireGuids = true
 		Me.gceProductCollection.Size = New System.Drawing.Size(320, 101)
 		Me.gceProductCollection.TabIndex = 16
-		AddHandler Me.gceProductCollection.ValidInputChanged, AddressOf Me.VerifyForm
+		AddHandler Me.gceProductCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkProductCollection_requireAll
 		'
@@ -777,7 +744,7 @@ Partial Class RulesForm
 		Me.txtMinVersion.Name = "txtMinVersion"
 		Me.txtMinVersion.Size = New System.Drawing.Size(185, 20)
 		Me.txtMinVersion.TabIndex = 20
-		AddHandler Me.txtMinVersion.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtMinVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtMinVersion.Validating, AddressOf Me.ValidateVersion
 		'
 		'lblMinVersion
@@ -805,7 +772,7 @@ Partial Class RulesForm
 		Me.txtMaxVersion.Name = "txtMaxVersion"
 		Me.txtMaxVersion.Size = New System.Drawing.Size(185, 20)
 		Me.txtMaxVersion.TabIndex = 20
-		AddHandler Me.txtMaxVersion.TextChanged, AddressOf Me.VerifyForm
+		AddHandler Me.txtMaxVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtMaxVersion.Validating, AddressOf Me.ValidateVersion
 		'
 		'lblMaxVersion
@@ -819,7 +786,6 @@ Partial Class RulesForm
 		'
 		'pnlPatchCode
 		'
-		Me.pnlPatchCode.Controls.Add(Me.picPatchCode)
 		Me.pnlPatchCode.Controls.Add(Me.txtPatchCode)
 		Me.pnlPatchCode.Controls.Add(Me.lblPatchCode)
 		Me.pnlPatchCode.Location = New System.Drawing.Point(0, 410)
@@ -827,15 +793,6 @@ Partial Class RulesForm
 		Me.pnlPatchCode.Size = New System.Drawing.Size(555, 21)
 		Me.pnlPatchCode.TabIndex = 63
 		Me.pnlPatchCode.Visible = false
-		'
-		'picPatchCode
-		'
-		Me.picPatchCode.Location = New System.Drawing.Point(360, 0)
-		Me.picPatchCode.Name = "picPatchCode"
-		Me.picPatchCode.Size = New System.Drawing.Size(21, 21)
-		Me.picPatchCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picPatchCode.TabIndex = 35
-		Me.picPatchCode.TabStop = false
 		'
 		'txtPatchCode
 		'
@@ -846,8 +803,7 @@ Partial Class RulesForm
 		Me.txtPatchCode.Name = "txtPatchCode"
 		Me.txtPatchCode.Size = New System.Drawing.Size(234, 20)
 		Me.txtPatchCode.TabIndex = 23
-		AddHandler Me.txtPatchCode.TextChanged, AddressOf Me.VerifyForm
-		AddHandler Me.txtPatchCode.Validating, AddressOf ValidateGuid
+		AddHandler Me.txtPatchCode.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblPatchCode
 		'
@@ -860,7 +816,6 @@ Partial Class RulesForm
 		'
 		'pnlProductCode
 		'
-		Me.pnlProductCode.Controls.Add(Me.picProductCode)
 		Me.pnlProductCode.Controls.Add(Me.txtProductCode)
 		Me.pnlProductCode.Controls.Add(Me.lblProductCode)
 		Me.pnlProductCode.Location = New System.Drawing.Point(0, 385)
@@ -868,15 +823,6 @@ Partial Class RulesForm
 		Me.pnlProductCode.Size = New System.Drawing.Size(555, 21)
 		Me.pnlProductCode.TabIndex = 62
 		Me.pnlProductCode.Visible = false
-		'
-		'picProductCode
-		'
-		Me.picProductCode.Location = New System.Drawing.Point(360, 0)
-		Me.picProductCode.Name = "picProductCode"
-		Me.picProductCode.Size = New System.Drawing.Size(21, 21)
-		Me.picProductCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picProductCode.TabIndex = 35
-		Me.picProductCode.TabStop = false
 		'
 		'txtProductCode
 		'
@@ -887,8 +833,7 @@ Partial Class RulesForm
 		Me.txtProductCode.Name = "txtProductCode"
 		Me.txtProductCode.Size = New System.Drawing.Size(234, 20)
 		Me.txtProductCode.TabIndex = 23
-		AddHandler Me.txtProductCode.TextChanged, AddressOf Me.VerifyForm
-		AddHandler Me.txtProductCode.Validating, AddressOf ValidateGuid
+		AddHandler Me.txtProductCode.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblProductCode
 		'
@@ -910,7 +855,6 @@ Partial Class RulesForm
 		'
 		'pnlQuery
 		'
-		Me.pnlQuery.Controls.Add(Me.picQuery)
 		Me.pnlQuery.Controls.Add(Me.txtQuery)
 		Me.pnlQuery.Controls.Add(Me.lblQuery)
 		Me.pnlQuery.Location = New System.Drawing.Point(0, 360)
@@ -919,18 +863,8 @@ Partial Class RulesForm
 		Me.pnlQuery.TabIndex = 59
 		Me.pnlQuery.Visible = false
 		'
-		'picQuery
-		'
-		Me.picQuery.Location = New System.Drawing.Point(535, 0)
-		Me.picQuery.Name = "picQuery"
-		Me.picQuery.Size = New System.Drawing.Size(21, 21)
-		Me.picQuery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picQuery.TabIndex = 35
-		Me.picQuery.TabStop = false
-		'
 		'pnlDate
 		'
-		Me.pnlDate.Controls.Add(Me.picDate)
 		Me.pnlDate.Controls.Add(Me.dtpDate)
 		Me.pnlDate.Controls.Add(Me.lblDate)
 		Me.pnlDate.Location = New System.Drawing.Point(0, 335)
@@ -939,18 +873,8 @@ Partial Class RulesForm
 		Me.pnlDate.TabIndex = 58
 		Me.pnlDate.Visible = false
 		'
-		'picDate
-		'
-		Me.picDate.Location = New System.Drawing.Point(310, 0)
-		Me.picDate.Name = "picDate"
-		Me.picDate.Size = New System.Drawing.Size(21, 21)
-		Me.picDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picDate.TabIndex = 28
-		Me.picDate.TabStop = false
-		'
 		'pnlData
 		'
-		Me.pnlData.Controls.Add(Me.picData)
 		Me.pnlData.Controls.Add(Me.txtData)
 		Me.pnlData.Controls.Add(Me.lblData)
 		Me.pnlData.Controls.Add(Me.lblDataInfo)
@@ -960,18 +884,8 @@ Partial Class RulesForm
 		Me.pnlData.TabIndex = 57
 		Me.pnlData.Visible = false
 		'
-		'picData
-		'
-		Me.picData.Location = New System.Drawing.Point(413, 0)
-		Me.picData.Name = "picData"
-		Me.picData.Size = New System.Drawing.Size(21, 21)
-		Me.picData.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picData.TabIndex = 32
-		Me.picData.TabStop = false
-		'
 		'pnlVersion
 		'
-		Me.pnlVersion.Controls.Add(Me.picVersion)
 		Me.pnlVersion.Controls.Add(Me.txtVersion)
 		Me.pnlVersion.Controls.Add(Me.lblVersion)
 		Me.pnlVersion.Location = New System.Drawing.Point(0, 285)
@@ -980,18 +894,8 @@ Partial Class RulesForm
 		Me.pnlVersion.TabIndex = 56
 		Me.pnlVersion.Visible = false
 		'
-		'picVersion
-		'
-		Me.picVersion.Location = New System.Drawing.Point(310, 0)
-		Me.picVersion.Name = "picVersion"
-		Me.picVersion.Size = New System.Drawing.Size(21, 21)
-		Me.picVersion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picVersion.TabIndex = 21
-		Me.picVersion.TabStop = false
-		'
 		'pnlFilePath
 		'
-		Me.pnlFilePath.Controls.Add(Me.picFilePath)
 		Me.pnlFilePath.Controls.Add(Me.txtFilePath)
 		Me.pnlFilePath.Controls.Add(Me.lblFilePath)
 		Me.pnlFilePath.Location = New System.Drawing.Point(0, 260)
@@ -999,15 +903,6 @@ Partial Class RulesForm
 		Me.pnlFilePath.Size = New System.Drawing.Size(555, 21)
 		Me.pnlFilePath.TabIndex = 55
 		Me.pnlFilePath.Visible = false
-		'
-		'picFilePath
-		'
-		Me.picFilePath.Location = New System.Drawing.Point(535, 0)
-		Me.picFilePath.Name = "picFilePath"
-		Me.picFilePath.Size = New System.Drawing.Size(21, 21)
-		Me.picFilePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picFilePath.TabIndex = 20
-		Me.picFilePath.TabStop = false
 		'
 		'pnlEnvironmentVariable
 		'
@@ -1021,7 +916,6 @@ Partial Class RulesForm
 		'
 		'pnlRegistryValueType
 		'
-		Me.pnlRegistryValueType.Controls.Add(Me.picRegistryValueType)
 		Me.pnlRegistryValueType.Controls.Add(Me.cboRegistryValueType)
 		Me.pnlRegistryValueType.Controls.Add(Me.lblRegistryValueType)
 		Me.pnlRegistryValueType.Location = New System.Drawing.Point(0, 210)
@@ -1032,7 +926,6 @@ Partial Class RulesForm
 		'
 		'pnlRegistryValue
 		'
-		Me.pnlRegistryValue.Controls.Add(Me.picRegistryValue)
 		Me.pnlRegistryValue.Controls.Add(Me.lblRegistryValue)
 		Me.pnlRegistryValue.Controls.Add(Me.txtRegistryValue)
 		Me.pnlRegistryValue.Location = New System.Drawing.Point(0, 185)
@@ -1041,18 +934,8 @@ Partial Class RulesForm
 		Me.pnlRegistryValue.TabIndex = 52
 		Me.pnlRegistryValue.Visible = false
 		'
-		'picRegistryValue
-		'
-		Me.picRegistryValue.Location = New System.Drawing.Point(310, 0)
-		Me.picRegistryValue.Name = "picRegistryValue"
-		Me.picRegistryValue.Size = New System.Drawing.Size(21, 21)
-		Me.picRegistryValue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picRegistryValue.TabIndex = 46
-		Me.picRegistryValue.TabStop = false
-		'
 		'pnlRegistryKey
 		'
-		Me.pnlRegistryKey.Controls.Add(Me.picRegistryKey)
 		Me.pnlRegistryKey.Controls.Add(Me.txtRegistrySubKey)
 		Me.pnlRegistryKey.Controls.Add(Me.lblRegistryKey)
 		Me.pnlRegistryKey.Controls.Add(Me.cboRegistryKey)
@@ -1062,18 +945,8 @@ Partial Class RulesForm
 		Me.pnlRegistryKey.TabIndex = 51
 		Me.pnlRegistryKey.Visible = false
 		'
-		'picRegistryKey
-		'
-		Me.picRegistryKey.Location = New System.Drawing.Point(535, 0)
-		Me.picRegistryKey.Name = "picRegistryKey"
-		Me.picRegistryKey.Size = New System.Drawing.Size(21, 21)
-		Me.picRegistryKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picRegistryKey.TabIndex = 38
-		Me.picRegistryKey.TabStop = false
-		'
 		'pnlProcessorType
 		'
-		Me.pnlProcessorType.Controls.Add(Me.picProcessorType)
 		Me.pnlProcessorType.Controls.Add(Me.cboProcessorType)
 		Me.pnlProcessorType.Controls.Add(Me.lblProcessorType)
 		Me.pnlProcessorType.Location = New System.Drawing.Point(0, 135)
@@ -1082,18 +955,8 @@ Partial Class RulesForm
 		Me.pnlProcessorType.TabIndex = 50
 		Me.pnlProcessorType.Visible = false
 		'
-		'picProcessorType
-		'
-		Me.picProcessorType.Location = New System.Drawing.Point(310, 0)
-		Me.picProcessorType.Name = "picProcessorType"
-		Me.picProcessorType.Size = New System.Drawing.Size(21, 21)
-		Me.picProcessorType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picProcessorType.TabIndex = 13
-		Me.picProcessorType.TabStop = false
-		'
 		'pnlLanguage
 		'
-		Me.pnlLanguage.Controls.Add(Me.picLanguage)
 		Me.pnlLanguage.Controls.Add(Me.cboLanguage)
 		Me.pnlLanguage.Controls.Add(Me.lblLanguage)
 		Me.pnlLanguage.Location = New System.Drawing.Point(0, 110)
@@ -1101,15 +964,6 @@ Partial Class RulesForm
 		Me.pnlLanguage.Size = New System.Drawing.Size(555, 21)
 		Me.pnlLanguage.TabIndex = 49
 		Me.pnlLanguage.Visible = false
-		'
-		'picLanguage
-		'
-		Me.picLanguage.Location = New System.Drawing.Point(310, 0)
-		Me.picLanguage.Name = "picLanguage"
-		Me.picLanguage.Size = New System.Drawing.Size(21, 21)
-		Me.picLanguage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picLanguage.TabIndex = 12
-		Me.picLanguage.TabStop = false
 		'
 		'pnlProductType
 		'
@@ -1135,7 +989,6 @@ Partial Class RulesForm
 		'
 		'pnlOSVersion
 		'
-		Me.pnlOSVersion.Controls.Add(Me.picOSVersion)
 		Me.pnlOSVersion.Controls.Add(Me.txtOSMinorVersion)
 		Me.pnlOSVersion.Controls.Add(Me.txtOSMajorVersion)
 		Me.pnlOSVersion.Controls.Add(Me.cboOSVersion)
@@ -1146,19 +999,9 @@ Partial Class RulesForm
 		Me.pnlOSVersion.TabIndex = 46
 		Me.pnlOSVersion.Visible = false
 		'
-		'picOSVersion
-		'
-		Me.picOSVersion.Location = New System.Drawing.Point(360, 0)
-		Me.picOSVersion.Name = "picOSVersion"
-		Me.picOSVersion.Size = New System.Drawing.Size(21, 21)
-		Me.picOSVersion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picOSVersion.TabIndex = 7
-		Me.picOSVersion.TabStop = false
-		'
 		'pnlComparison
 		'
 		Me.pnlComparison.BackColor = System.Drawing.SystemColors.Control
-		Me.pnlComparison.Controls.Add(Me.picComparison)
 		Me.pnlComparison.Controls.Add(Me.cboComparison)
 		Me.pnlComparison.Controls.Add(Me.lblComparison)
 		Me.pnlComparison.ForeColor = System.Drawing.SystemColors.ControlText
@@ -1168,14 +1011,10 @@ Partial Class RulesForm
 		Me.pnlComparison.TabIndex = 45
 		Me.pnlComparison.Visible = false
 		'
-		'picComparison
+		'errorProviderRules
 		'
-		Me.picComparison.Location = New System.Drawing.Point(310, 0)
-		Me.picComparison.Name = "picComparison"
-		Me.picComparison.Size = New System.Drawing.Size(21, 21)
-		Me.picComparison.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-		Me.picComparison.TabIndex = 4
-		Me.picComparison.TabStop = false
+		Me.errorProviderRules.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.errorProviderRules.ContainerControl = Me
 		'
 		'RulesForm
 		'
@@ -1183,7 +1022,7 @@ Partial Class RulesForm
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(565, 474)
+		Me.ClientSize = New System.Drawing.Size(565, 469)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.splitContainer)
@@ -1196,7 +1035,6 @@ Partial Class RulesForm
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Create Install Rule"
-		CType(Me.picRegistryValueType,System.ComponentModel.ISupportInitialize).EndInit
 		Me.splitContainer.Panel1.ResumeLayout(false)
 		Me.splitContainer.Panel2.ResumeLayout(false)
 		Me.splitContainer.ResumeLayout(false)
@@ -1209,47 +1047,36 @@ Partial Class RulesForm
 		Me.pnlMaxVersion.PerformLayout
 		Me.pnlPatchCode.ResumeLayout(false)
 		Me.pnlPatchCode.PerformLayout
-		CType(Me.picPatchCode,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlProductCode.ResumeLayout(false)
 		Me.pnlProductCode.PerformLayout
-		CType(Me.picProductCode,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlRegistry32Bit.ResumeLayout(false)
 		Me.pnlQuery.ResumeLayout(false)
 		Me.pnlQuery.PerformLayout
-		CType(Me.picQuery,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlDate.ResumeLayout(false)
-		CType(Me.picDate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlData.ResumeLayout(false)
 		Me.pnlData.PerformLayout
-		CType(Me.picData,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlVersion.ResumeLayout(false)
 		Me.pnlVersion.PerformLayout
-		CType(Me.picVersion,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlFilePath.ResumeLayout(false)
 		Me.pnlFilePath.PerformLayout
-		CType(Me.picFilePath,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlEnvironmentVariable.ResumeLayout(false)
 		Me.pnlRegistryValueType.ResumeLayout(false)
 		Me.pnlRegistryValue.ResumeLayout(false)
 		Me.pnlRegistryValue.PerformLayout
-		CType(Me.picRegistryValue,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlRegistryKey.ResumeLayout(false)
 		Me.pnlRegistryKey.PerformLayout
-		CType(Me.picRegistryKey,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlProcessorType.ResumeLayout(false)
-		CType(Me.picProcessorType,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlLanguage.ResumeLayout(false)
-		CType(Me.picLanguage,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlProductType.ResumeLayout(false)
 		Me.pnlServicePack.ResumeLayout(false)
 		Me.pnlServicePack.PerformLayout
 		Me.pnlOSVersion.ResumeLayout(false)
 		Me.pnlOSVersion.PerformLayout
-		CType(Me.picOSVersion,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlComparison.ResumeLayout(false)
-		CType(Me.picComparison,System.ComponentModel.ISupportInitialize).EndInit
+		CType(Me.errorProviderRules,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private errorProviderRules As System.Windows.Forms.ErrorProvider
 	Private chkComponentCollection_requireAll As System.Windows.Forms.CheckBox
 	Private lblComponentCollection As System.Windows.Forms.Label
 	Private chkFeatureCollection_requireAll As System.Windows.Forms.CheckBox
@@ -1263,11 +1090,9 @@ Partial Class RulesForm
 	Private gceProductCollection As LocalUpdatePublisher.GuidCollectionEditor
 	Private lblProductCode As System.Windows.Forms.Label
 	Private txtProductCode As System.Windows.Forms.TextBox
-	Private picProductCode As System.Windows.Forms.PictureBox
 	Private pnlProductCode As System.Windows.Forms.Panel
 	Private lblPatchCode As System.Windows.Forms.Label
 	Private txtPatchCode As System.Windows.Forms.TextBox
-	Private picPatchCode As System.Windows.Forms.PictureBox
 	Private pnlPatchCode As System.Windows.Forms.Panel
 	Private lblMaxVersion As System.Windows.Forms.Label
 	Private txtMaxVersion As System.Windows.Forms.TextBox
@@ -1287,20 +1112,15 @@ Partial Class RulesForm
 	Private cboLanguage As System.Windows.Forms.ComboBox
 	Private cboRegistryValueType As System.Windows.Forms.ComboBox
 	Private pnlRegistry32Bit As System.Windows.Forms.Panel
-	Private picRegistryValue As System.Windows.Forms.PictureBox
 	Private splitContainer As System.Windows.Forms.SplitContainer
 	Private lblRegistryValueType As System.Windows.Forms.Label
 	Private pnlRegistryValueType As System.Windows.Forms.Panel
-	Private picRegistryValueType As System.Windows.Forms.PictureBox
 	Private lblProcessorType As System.Windows.Forms.Label
-	Private picProcessorType As System.Windows.Forms.PictureBox
 	Private pnlProcessorType As System.Windows.Forms.Panel
 	Private lblLanguage As System.Windows.Forms.Label
-	Private picLanguage As System.Windows.Forms.PictureBox
 	Private pnlLanguage As System.Windows.Forms.Panel
 	Private lblVersion As System.Windows.Forms.Label
 	Private txtVersion As System.Windows.Forms.TextBox
-	Private picVersion As System.Windows.Forms.PictureBox
 	Private pnlVersion As System.Windows.Forms.Panel
 	Private txtSPMajorVersion As System.Windows.Forms.TextBox
 	Private txtSPMinorVersion As System.Windows.Forms.TextBox
@@ -1311,14 +1131,11 @@ Partial Class RulesForm
 	Private lblServicePack As System.Windows.Forms.Label
 	Private lbl_OSVersion As System.Windows.Forms.Label
 	Private lblComparison As System.Windows.Forms.Label
-	Private picComparison As System.Windows.Forms.PictureBox
 	Private pnlComparison As System.Windows.Forms.Panel
-	Private picOSVersion As System.Windows.Forms.PictureBox
 	Private lblEnvironmentVariable As System.Windows.Forms.Label
 	Private pnlEnvironmentVariable As System.Windows.Forms.Panel
 	Private txtQuery As System.Windows.Forms.TextBox
 	Private lblQuery As System.Windows.Forms.Label
-	Private picQuery As System.Windows.Forms.PictureBox
 	Private pnlQuery As System.Windows.Forms.Panel
 	Private lblProductType As System.Windows.Forms.Label
 	Private txtRegistryValue As System.Windows.Forms.TextBox
@@ -1328,19 +1145,15 @@ Partial Class RulesForm
 	Private txtRegistrySubKey As System.Windows.Forms.TextBox
 	Private lblRegistryKey As System.Windows.Forms.Label
 	Private pnlRegistryKey As System.Windows.Forms.Panel
-	Private picRegistryKey As System.Windows.Forms.PictureBox
 	Private txtFilePath As System.Windows.Forms.TextBox
 	Private lblFilePath As System.Windows.Forms.Label
-	Private picFilePath As System.Windows.Forms.PictureBox
 	Private pnlFilePath As System.Windows.Forms.Panel
 	Private dtpDate As System.Windows.Forms.DateTimePicker
 	Private lblDate As System.Windows.Forms.Label
-	Private picDate As System.Windows.Forms.PictureBox
 	Private pnlDate As System.Windows.Forms.Panel
 	Private lblDataInfo As System.Windows.Forms.Label
 	Private txtData As System.Windows.Forms.TextBox
 	Private lblData As System.Windows.Forms.Label
-	Private picData As System.Windows.Forms.PictureBox
 	Private pnlData As System.Windows.Forms.Panel
 	Private btnCancel As System.Windows.Forms.Button
 	Private btnAdd As System.Windows.Forms.Button

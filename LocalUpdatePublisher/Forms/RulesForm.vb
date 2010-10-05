@@ -45,7 +45,7 @@ Public Partial Class RulesForm
 		' Currently we use the first item to test if the array is already
 		' loaded into the combobox.
 		_numericComparisons =  New String() {"Equal To", "Less Than", "Less Than or Equal To", "Greater Than", "Greater Than or Equal To"}
-		_stringComparisons =  New String() {"Begins With", "Ends With", "Contains", "Equals"}
+		_stringComparisons =  New String() {"Begins With", "Ends With", "Contains", "Equal To"}
 		
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -56,7 +56,7 @@ Public Partial Class RulesForm
 			cboRuleType.Items.Add([Enum].Parse(GetType(RuleTypes), tmpRuleType))
 		Next
 		
-		Call SetVerificationIcons
+		Call ValidateFields
 	End Sub
 	
 	#Region "Events"
@@ -148,9 +148,6 @@ Public Partial Class RulesForm
 								Me.txtData.Text = ""
 								Me.lblData.Text = "Build Number"
 								Me.lblDataInfo.Hide
-								Me.picData.Left = Me.txtData.Left + Me.txtData.Width + 5
-								Me.picData.Hide
-								Me.picData.Tag = True
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlProductType"
@@ -190,8 +187,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlVersion"
-								Me.picVersion.Hide
-								Me.picVersion.Tag = True
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case Else
@@ -205,7 +200,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -216,8 +210,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
-								Me.picVersion.Hide
-								Me.picVersion.Tag = True
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -258,7 +250,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -318,7 +309,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -373,9 +363,6 @@ Public Partial Class RulesForm
 								Me.lblData.Text = "Size:"
 								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
 								Me.lblDataInfo.Show
-								Me.picData.Show
-								Me.picData.Tag = False
-								Me.picData.Left = Me.lblDataInfo.Left + me.lblDataInfo.Width + 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -389,7 +376,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -414,9 +400,6 @@ Public Partial Class RulesForm
 								Me.lblData.Text = "Size:"
 								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
 								Me.lblDataInfo.Show
-								Me.picData.Show
-								Me.picData.Tag = False
-								Me.picData.Left = Me.lblDataInfo.Left + me.lblDataInfo.Width + 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -442,8 +425,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
-								Me.picVersion.Show
-								Me.picVersion.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -457,7 +438,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -477,8 +457,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlVersion"
-								Me.picVersion.Show
-								Me.picVersion.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -506,7 +484,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -527,7 +504,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -548,9 +524,6 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
 								Me.txtData.Text = ""
-								Me.picData.Left = Me.txtData.Left + Me.txtData.Width + 5
-								Me.picData.Show
-								Me.picData.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -564,7 +537,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -585,9 +557,6 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
 								Me.txtData.Text = ""
-								Me.picData.Left = Me.txtData.Left + Me.txtData.Width + 5
-								Me.picData.Show
-								Me.picData.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -601,7 +570,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -618,8 +586,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
-								Me.picVersion.Show
-								Me.picVersion.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -633,7 +599,6 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
-								Me.picRegistryValue.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
@@ -654,9 +619,6 @@ Public Partial Class RulesForm
 								Me.txtData.Text = ""
 								Me.lblData.Text = "String:"
 								Me.lblDataInfo.Hide
-								Me.picData.Left = Me.txtData.Left + Me.txtData.Width + 5
-								Me.picData.Show
-								Me.picData.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -671,9 +633,6 @@ Public Partial Class RulesForm
 								Me.txtData.Text = ""
 								Me.lblData.Text = "WMI Namespace:"
 								Me.lblDataInfo.Hide
-								Me.picData.Left = Me.txtData.Left + Me.txtData.Width + 5
-								Me.picData.Show
-								Me.picData.Tag = False
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlQuery"
@@ -777,7 +736,7 @@ Public Partial Class RulesForm
 					Next
 			End Select
 			
-			Call VerifyForm
+			Call ValidateForm
 		End If 'Combobox has a selection.
 	End Sub
 	
@@ -2128,312 +2087,205 @@ Public Partial Class RulesForm
 		End If
 	End Sub
 	
-	Private Sub VerifyForm(sender As Object, e As EventArgs)
-		VerifyForm()
+	Private Sub ValidateForm(sender As Object, e As EventArgs)
+		ValidateForm()
 	End Sub
 	
 	'Verify the form and set the icons accordinly.
-	Sub VerifyForm
-		Call SetVerificationIcons
-		Call VerifyRule
+	Sub ValidateForm
+		Call ValidateFields
+		Call ValidateRule
 	End Sub
 	
-	'Update verification icons.
-	Sub SetVerificationIcons
-		'Set the picture boxes icons and tags.
+	'Validate the individual fields.
+	Sub ValidateFields
+		
 		If Me.cboComparison.SelectedIndex = -1 Then
-			Me.picComparison.Image = My.Resources.attention.ToBitmap
-			Me.picComparison.Tag = False
+			Me.errorProviderRules.SetError(Me.cboComparison,"You must select a comparison.")
 		Else
-			Me.picComparison.Image = My.Resources.check.ToBitmap
-			Me.picComparison.Tag = True
+			Me.errorProviderRules.SetError(Me.cboComparison,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtOSMajorVersion.Text) Or String.IsNullOrEmpty(Me.txtOSMinorVersion.Text) Then
-			Me.picOSVersion.Image = My.Resources.attention.ToBitmap
-			Me.picOSVersion.Tag = False
+			Me.errorProviderRules.SetError(Me.txtOSMinorVersion,"You must enter a major and minor OS version.")
 		Else
-			Me.picOSVersion.Image = My.Resources.check.ToBitmap
-			Me.picOSVersion.Tag = True
+			Me.errorProviderRules.SetError(Me.txtOSMinorVersion,"")
 		End If
 		
-		'The language selection is only validated when the rule type is Windows Language
-		If Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage Then
-			Me.picLanguage.Show
-			
-			'Validate the value.
-			If Me.cboLanguage.SelectedIndex = -1 Then
-				Me.picLanguage.Image = My.Resources.attention.ToBitmap
-				Me.picLanguage.Tag = False
-			Else
-				Me.picLanguage.Image = My.Resources.check.ToBitmap
-				Me.picLanguage.Tag = True
-			End If
+		If Me.cboLanguage.SelectedIndex = -1 Then
+			Select Case Me.cboRuleType.SelectedIndex
+				Case RuleTypes.WindowsLanguage
+					Me.errorProviderRules.SetError(Me.cboLanguage,"You must select a language.")
+				Case Else
+					Me.errorProviderRules.SetError(Me.cboLanguage,"")
+			End Select
 		Else
-			Me.picLanguage.Hide
+			Me.errorProviderRules.SetError(Me.cboLanguage,"")
 		End If
-		
-		
 		
 		If Me.cboProcessorType.SelectedIndex = -1 Then
-			Me.picProcessorType.Image = My.Resources.attention.ToBitmap
-			Me.picProcessorType.Tag = False
+			Me.errorProviderRules.SetError(Me.cboProcessorType,"You must select a processor type.")
 		Else
-			Me.picProcessorType.Image = My.Resources.check.ToBitmap
-			Me.picProcessorType.Tag = True
+			Me.errorProviderRules.SetError(Me.cboProcessorType,"")
 		End If
-		
-		If String.IsNullOrEmpty(Me.txtRegistrySubKey.Text) Then
-			Me.picRegistryKey.Image = My.Resources.attention.ToBitmap
-			Me.picRegistryKey.Tag = False
-		Else
-			Me.picRegistryKey.Image = My.Resources.check.ToBitmap
-			Me.picRegistryKey.Tag = True
-		End If
-		
-		'The registry value key is only validated when the rule type is Registry Value Exists
-		' and the Registry Value Type isn't REG_SZ.  So only show it in that case.
-		If Me.cboRuleType.SelectedIndex = RuleTypes.RegistryValueExists And _
-			Not Me.cboRegistryValueType.Text = "REG_SZ" And _
-			Not Me.cboRegistryValueType.SelectedIndex = -1 Then
-			Me.picRegistryValue.Show()
 			
-			'Validate the value.
-			If String.IsNullOrEmpty(Me.txtRegistryValue.Text) Then
-				Me.picRegistryValue.Image = My.Resources.attention.ToBitmap
-				Me.picRegistryValue.Tag = False
-			Else
-				Me.picRegistryValue.Image = My.Resources.check.ToBitmap
-				Me.picRegistryValue.Tag = True
-			End If
+		If Me.cboRegistryKey.SelectedIndex = -1 Then
+			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"You must select a registry key.")
+		Else If String.IsNullOrEmpty(Me.txtRegistrySubKey.Text) Then
+			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"You must enter a registry sub key.")
 		Else
-			Me.picRegistryValue.Hide()
+			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"")
 		End If
 		
 		If Me.cboRegistryValueType.SelectedIndex = -1 Then
-			Me.picRegistryValueType.Image = My.Resources.attention.ToBitmap
-			Me.picRegistryValueType.Tag = False
+			Me.errorProviderRules.SetError(Me.cboRegistryValueType,"You must select a registry value type.")
 		Else
-			Me.picRegistryValueType.Image = My.Resources.check.ToBitmap
-			Me.picRegistryValueType.Tag = True
+			Me.errorProviderRules.SetError(Me.cboRegistryValueType,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtFilePath.Text) Then
-			Me.picFilePath.Image = My.Resources.attention.ToBitmap
-			Me.picFilePath.Tag = False
+			Me.errorProviderRules.SetError(Me.txtFilePath,"You must enter a file path.")
 		Else
-			Me.picFilePath.Image = My.Resources.check.ToBitmap
-			Me.picFilePath.Tag = True
+			Me.errorProviderRules.SetError(Me.txtFilePath,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtVersion.Text) Then
-			Me.picVersion.Image = My.Resources.attention.ToBitmap
-			Me.picVersion.Tag = False
+			Select Case Me.cboRuleType.SelectedIndex
+				Case RuleTypes.FileVersion
+					Me.errorProviderRules.SetError(Me.txtVersion,"You must enter a version.")
+				Case RuleTypes.FileVersionWithRegistry
+					Me.errorProviderRules.SetError(Me.txtVersion,"You must enter a version.")
+				Case Else
+					Me.errorProviderRules.SetError(Me.txtVersion,"")
+			End Select
 		Else
-			Me.picVersion.Image = My.Resources.check.ToBitmap
-			Me.picVersion.Tag = True
+			Me.errorProviderRules.SetError(Me.txtVersion,"")
 		End If
 		
 		'TODO: for RegDWord and RegExpandSz rule, this must be numeric
+		'Set the Data field error based on the selected rule type since this field is repurposed for several rules.
 		If String.IsNullOrEmpty(Me.txtData.Text) Then
-			Me.picData.Image = My.Resources.attention.ToBitmap
-			Me.picData.Tag = False
+			Select Case Me.cboRuleType.SelectedIndex
+				Case RuleTypes.FileSize
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter file size.")
+				Case RuleTypes.FileSizeWithRegistry
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter file size.")
+				Case RuleTypes.RegistryDWORDValue
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+				Case RuleTypes.RegistryExpandSzValue
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+				Case RuleTypes.RegistrySzValue
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+				Case RuleTypes.WMIQuery
+					Me.errorProviderRules.SetError(Me.txtData,"Must enter a namespace.")
+				Case Else
+					Me.errorProviderRules.SetError(Me.txtData,"")
+			End Select
 		Else
-			Me.picData.Image = My.Resources.check.ToBitmap
-			Me.picData.Tag = True
+			Me.errorProviderRules.SetError(Me.txtData,"")
 		End If
 		
 		If Not Me.dtpDate.Checked Then
-			Me.picDate.Image = My.Resources.attention.ToBitmap
-			Me.picDate.Tag = False
+			Me.errorProviderRules.SetError(Me.dtpDate,"You must select a date.")
 		Else
-			Me.picDate.Image = My.Resources.check.ToBitmap
-			Me.picDate.Tag = True
+			Me.errorProviderRules.SetError(Me.dtpDate,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtQuery.Text) Then
-			Me.picQuery.Image = My.Resources.attention.ToBitmap
-			Me.picQuery.Tag = False
+			Me.errorProviderRules.SetError(Me.txtQuery,"You must enter a query.")
 		Else
-			Me.picQuery.Image = My.Resources.check.ToBitmap
-			Me.picQuery.Tag = True
+			Me.errorProviderRules.SetError(Me.txtQuery,"")
 		End If
 		
 		Try
 			Dim g As New Guid(Me.txtProductCode.Text)
-			Me.picProductCode.Image = My.Resources.check.ToBitmap
-			Me.picProductCode.Tag = True
+			Me.errorProviderRules.SetError(Me.txtProductCode,"")
 		Catch
-			Me.picProductCode.Image = My.Resources.attention.ToBitmap
-			Me.picProductCode.Tag = False
+			Me.errorProviderRules.SetError(Me.txtProductCode,"You must enter a valid GUID.")
 		End Try
 		
 		Try
 			Dim g As New Guid(Me.txtPatchCode.Text)
-			Me.picPatchCode.Image = My.Resources.check.ToBitmap
-			Me.picPatchCode.Tag = True
+			Me.errorProviderRules.SetError(Me.txtPatchCode,"")
 		Catch
-			Me.picPatchCode.Image = My.Resources.attention.ToBitmap
-			Me.picPatchCode.Tag = False
+			Me.errorProviderRules.SetError(Me.txtPatchCode,"You must enter a valid GUID.")
 		End Try
 	End Sub
 	
 	'Enable or disable the Add Rule button based on current rule
 	' and which fields are valid.  The verification looks to see if
 	' the appropriate validation picture boxes have the proper boolean in their tag.
-	Sub VerifyRule
+	Sub ValidateRule
+		
 		If Me.cboRuleType.SelectedIndex >= 0 Then 'Verify based on combobox selection.
 			Select Case Me.cboRuleType.SelectedIndex
 				Case RuleTypes.WindowsVersion
-					If DirectCast(Me.picComparison.Tag, Boolean) And DirectCast(Me.picOSVersion.Tag,Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtOSMinorVersion))
 				Case RuleTypes.WindowsLanguage
-					If DirectCast(Me.picLanguage.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboLanguage))
 				Case RuleTypes.ProcessorArchitecture
-					If DirectCast(Me.picProcessorType.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboProcessorType))
 				Case RuleTypes.FileExists
-					If DirectCast(Me.picFilePath.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtFilePath))
 				Case RuleTypes.FileExistsWithRegistry
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) and DirectCast(Me.picFilePath.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.txtFilePath))
 				Case RuleTypes.FileCreation
-					If DirectCast(Me.picFilePath.Tag, Boolean) and DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picDate.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtFilePath) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.dtpDate))
 				Case RuleTypes.FileCreationWithRegistry
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picDate.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.txtRegistryValue) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.dtpDate))
 				Case RuleTypes.FileModified
-					If DirectCast(Me.picFilePath.Tag, Boolean) and DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picDate.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtFilePath) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.dtpDate))
 				Case RuleTypes.FileModifiedWithRegistry
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picFilePath.Tag, Boolean) _
-						and DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picDate.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.txtFilePath)& Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.dtpDate))
 				Case RuleTypes.FileSize
-					If DirectCast(Me.picFilePath.Tag, Boolean) and DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picData.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled =  String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtFilePath) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.FileSizeWithRegistry
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picFilePath.Tag, Boolean) And _
-						DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picData.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.txtFilePath) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.FileVersion
-					If DirectCast(Me.picFilePath.Tag, Boolean) and DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picVersion.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty( Me.errorProviderRules.GetError(Me.txtFilePath) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtVersion))
 				Case RuleTypes.FileVersionWithRegistry
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picFilePath.Tag, Boolean) And _
-						DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picVersion.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty( Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.txtFilePath)  & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtVersion))
 				Case RuleTypes.RegistryKeyExists
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) )
 				Case RuleTypes.RegistryValueExists
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) and DirectCast(Me.picRegistryValueType.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.cboRegistryValueType))
 				Case RuleTypes.RegistryDWORDValue
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picData.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.RegistryExpandSzValue
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picData.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.RegistryVersionInSz
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picVersion.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty( Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtVersion))
 				Case RuleTypes.RegistrySzValue
-					If DirectCast(Me.picRegistryKey.Tag, Boolean) And DirectCast(Me.picComparison.Tag, Boolean) and DirectCast(Me.picData.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty( Me.errorProviderRules.GetError(Me.cboRegistryKey) & Me.errorProviderRules.GetError(Me.txtRegistrySubKey) & Me.errorProviderRules.GetError(Me.cboComparison) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.WMIQuery
-					If DirectCast(Me.picData.Tag, Boolean) And DirectCast(Me.picQuery.Tag, Boolean) Then
-						Me.btnAdd.Enabled = True
-					Else
-						Me.btnAdd.Enabled = False
-					End If
+					btnAdd.Enabled = String.IsNullOrEmpty( Me.errorProviderRules.GetError(Me.txtQuery) & Me.errorProviderRules.GetError(Me.txtData))
 				Case RuleTypes.MsiComponentInstalled
 					btnAdd.Enabled = gceProductCollection.ValidInput AndAlso gceComponentCollection.ValidInput
 				Case RuleTypes.MsiFeatureInstalled
 					btnAdd.Enabled = gceProductCollection.ValidInput AndAlso gceFeatureCollection.ValidInput
 				Case RuleTypes.MsiPatchInstalled
-					btnAdd.Enabled = FieldsValid(New Control() {picProductCode, picPatchCode})
+					btnAdd.Enabled = Me.gceProductCollection.ValidInput AndAlso String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtPatchCode))
 				Case RuleTypes.MsiProductInstalled
-					btnAdd.Enabled = FieldsValid(New Control() {picProductCode})
+					btnAdd.Enabled = String.IsNullOrEmpty(Me.errorProviderRules.GetError(Me.txtProductCode))
 			End Select
 		End If 'Combobox has selection.
 	End Sub
 	
 	
-	' AND's the Tag fields of all passed controls
-	' Receives controls who's Tag's indicate true = valid, false = invalid
-	' Returns true if all controls have a boolean tag that is true
-	Private Function FieldsValid(controls As Control()) As Boolean
-		Dim total As Boolean = True
-		For Each tmpControl As Control In controls
-			If TypeOf tmpControl.Tag Is Boolean Then
-				total = total AndAlso CBool(tmpControl.Tag)
-			Else
-				Return False
-			End If
-		Next
-		Return total
-	End Function
+	'	' AND's the Tag fields of all passed controls
+	'	' Receives controls who's Tag's indicate true = valid, false = invalid
+	'	' Returns true if all controls have a boolean tag that is true
+	'	Private Function FieldsValid(controls As Control()) As Boolean
+	'		Dim total As Boolean = True
+	'		For Each tmpControl As Control In controls
+	'			If TypeOf Me.errorProviderRules.GetErrortmpControl.Tag Is Boolean Then
+	'				total = total AndAlso CBool(tmpControl.Tag)
+	'			Else
+	'				Return False
+	'			End If
+	'		Next
+	'		Return total
+	'	End Function
 	#END Region
 	
 End Class

@@ -680,12 +680,12 @@ Public Partial Class MainForm
 	
 	'Go to the help Wiki.
 	Sub LupHelpToolStripMenuItemClick(sender As Object, e As EventArgs)
-		System.Diagnostics.Process.Start("https://sourceforge.net/apps/mediawiki/localupdatepubl")
+		System.Diagnostics.Process.Start("http://sourceforge.net/apps/mediawiki/localupdatepubl")
 	End Sub
 	
 	'Go to the help forum.
 	Sub HelpForumsToolStripMenuItemClick(sender As Object, e As EventArgs)
-		System.Diagnostics.Process.Start("https://sourceforge.net/projects/localupdatepubl/forums/forum/1076879")
+		System.Diagnostics.Process.Start("http://sourceforge.net/projects/localupdatepubl/forums")
 	End Sub
 	
 	#End Region

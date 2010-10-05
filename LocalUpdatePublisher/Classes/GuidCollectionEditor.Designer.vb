@@ -25,16 +25,17 @@ Partial Class GuidCollectionEditor
 	''' the contents of this method with the code editor.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GuidCollectionEditor))
 		Me.dgv = New System.Windows.Forms.DataGridView
 		Me.dgvItems = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.panel1 = New System.Windows.Forms.Panel
-		Me.picValid = New System.Windows.Forms.PictureBox
 		Me.btnRemove = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button
+		Me.errorProviderGUID = New System.Windows.Forms.ErrorProvider(Me.components)
 		CType(Me.dgv,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.panel1.SuspendLayout
-		CType(Me.picValid,System.ComponentModel.ISupportInitialize).BeginInit
+		CType(Me.errorProviderGUID,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
 		'dgv
@@ -66,7 +67,6 @@ Partial Class GuidCollectionEditor
 		'
 		'panel1
 		'
-		Me.panel1.Controls.Add(Me.picValid)
 		Me.panel1.Controls.Add(Me.btnRemove)
 		Me.panel1.Controls.Add(Me.btnAdd)
 		Me.panel1.Dock = System.Windows.Forms.DockStyle.Right
@@ -75,19 +75,10 @@ Partial Class GuidCollectionEditor
 		Me.panel1.Size = New System.Drawing.Size(30, 127)
 		Me.panel1.TabIndex = 1
 		'
-		'picValid
-		'
-		Me.picValid.Location = New System.Drawing.Point(5, 3)
-		Me.picValid.Name = "picValid"
-		Me.picValid.Size = New System.Drawing.Size(21, 21)
-		Me.picValid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.picValid.TabIndex = 2
-		Me.picValid.TabStop = false
-		'
 		'btnRemove
 		'
 		Me.btnRemove.Image = CType(resources.GetObject("btnRemove.Image"),System.Drawing.Image)
-		Me.btnRemove.Location = New System.Drawing.Point(3, 61)
+		Me.btnRemove.Location = New System.Drawing.Point(3, 34)
 		Me.btnRemove.Name = "btnRemove"
 		Me.btnRemove.Size = New System.Drawing.Size(25, 25)
 		Me.btnRemove.TabIndex = 1
@@ -97,12 +88,17 @@ Partial Class GuidCollectionEditor
 		'btnAdd
 		'
 		Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"),System.Drawing.Image)
-		Me.btnAdd.Location = New System.Drawing.Point(3, 30)
+		Me.btnAdd.Location = New System.Drawing.Point(3, 3)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(25, 25)
 		Me.btnAdd.TabIndex = 0
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.btnAdd_Click
+		'
+		'errorProviderGUID
+		'
+		Me.errorProviderGUID.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+		Me.errorProviderGUID.ContainerControl = Me
 		'
 		'GuidCollectionEditor
 		'
@@ -115,9 +111,10 @@ Partial Class GuidCollectionEditor
 		AddHandler Load, AddressOf Me.GuidCollectionEditor_Load
 		CType(Me.dgv,System.ComponentModel.ISupportInitialize).EndInit
 		Me.panel1.ResumeLayout(false)
-		CType(Me.picValid,System.ComponentModel.ISupportInitialize).EndInit
+		CType(Me.errorProviderGUID,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private errorProviderGUID As System.Windows.Forms.ErrorProvider
 	
 	#End Region
 	
@@ -125,7 +122,6 @@ Partial Class GuidCollectionEditor
 	Private panel1 As System.Windows.Forms.Panel
 	Private btnRemove As System.Windows.Forms.Button
 	Private btnAdd As System.Windows.Forms.Button
-	Private picValid As System.Windows.Forms.PictureBox
 	Private dgvItems As System.Windows.Forms.DataGridViewTextBoxColumn
 	
 End Class

@@ -118,11 +118,9 @@ Public Partial Class GuidCollectionEditor
 		End If
 		
 		If countOK AndAlso guidsValid Then
-            picValid.Image = My.Resources.check.ToBitmap
-            picValid.Tag = True
+			Me.errorProviderGUID.SetError(Me.dgv, "Invalid input.")
         Else
-            picValid.Image = My.Resources.attention.ToBitmap
-            picValid.Tag = False
+            Me.errorProviderGUID.SetError(Me.dgv, "")
 		End If
 		
 		RaiseEvent ValidInputChanged(Me, New EventArgs())
@@ -131,8 +129,8 @@ Public Partial Class GuidCollectionEditor
 	'True if the input is valid given the configured rules.
 	Public ReadOnly Property ValidInput() As Boolean
 		Get
-			If TypeOf picValid.Tag Is Boolean Then
-				Return CBool(picValid.Tag)
+			If String.IsNullOrEmpty(Me.errorProviderGUID.GetError(Me.dgv)) Then
+				Return True
 			Else
 				Return False
 			End If
