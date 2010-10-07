@@ -1818,18 +1818,18 @@ Public Partial Class MainForm
 		
 		Call ClearUpdateInfo
 		
-		'Exit if the index passed in is not withing range.
-		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
-		
-		Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
+'		'Exit if the index passed in is not withing range.
+'		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
 		
 		
+								
 		'Make sure that the rowIndex is within range, at least one row is selected, and the node selected
 		' is an update category.
 		If Me._dgvMain.Rows.Count > rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 AndAlso _
 			TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-			
+									
 			'Load the data
+			Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
 			If update.UpdateType = UpdateType.Software Then
 				Me.txtPackageType.Text = "Update"
 			Else If update.UpdateType = UpdateType.SoftwareApplication

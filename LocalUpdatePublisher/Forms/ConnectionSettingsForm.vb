@@ -58,9 +58,10 @@ Public Partial Class ConnectionSettingsForm
 	'When the user checks the SSH checkbox set the default port
 	' for that selection.
 	Private Sub chkSslCheckedChanged(sender As Object, e As EventArgs)
-		If Me.chkSsl.Checked Then
+		
+		If Me.chkSsl.Checked AndAlso Me.txtPort.Text = "80" Then
 			Me.txtPort.Text = "443"
-		Else
+		Else If Me.txtPort.Text = "443"
 			Me.txtPort.Text = "80"
 		End If
 	End Sub
@@ -73,14 +74,14 @@ Public Partial Class ConnectionSettingsForm
 			Call ClearForm
 		Else If cboServers.SelectedIndex = cboServers.Items.Count - 1 Then
 			btnDelete.Enabled = False
-			txtName.Text = ""
-			txtPort.Text = "80"
+			txtName.Text = ""			
 			chkSsl.Checked = False
+			txtPort.Text = "80"
 		Else
 			btnDelete.Enabled = True
 			txtName.Text = ConnectionManager.ServerCollection.Item(cboServers.SelectedIndex).Name
-			txtPort.Text = CStr(ConnectionManager.ServerCollection.Item(cboServers.SelectedIndex).Port)
 			chkSsl.Checked = ConnectionManager.ServerCollection.Item(cboServers.SelectedIndex).Ssl
+			txtPort.Text = CStr(ConnectionManager.ServerCollection.Item(cboServers.SelectedIndex).Port)			
 		End If
 	End Sub
 	
@@ -105,4 +106,5 @@ Public Partial Class ConnectionSettingsForm
 		txtPort.Text = "80"
 		chkSsl.Checked = False
 	End Sub
+	
 End Class

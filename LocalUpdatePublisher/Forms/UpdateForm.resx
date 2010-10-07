@@ -121,16 +121,13 @@
     <value>This wizard will bring you through the process of create a locally published software package.  You must select an MSI, MSP, or EXE file as the update file.  If the EXE file has an embedded MSI file then you must enter the relative path.  If there are other supporting files needed, such as transform files, then use the additional files list to add them.</value>
   </data>
   <data name="isInstalledRules.Instructions" xml:space="preserve">
-    <value>Use this form to create, edit, remove, and group rules that determine if this software package is already installed.  If you created this update using a MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package is already installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
   </data>
   <data name="isInstallableRules.Instructions" xml:space="preserve">
-    <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using a MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
   </data>
   <data name="lblIsSuperseded.Text" xml:space="preserve">
     <value>This form lists the rules that determine if the software package is superseded.  If you created this update using a MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
-  </data>
-  <data name="lblMetaData.Text" xml:space="preserve">
-    <value>Use this form to review the metadata used by the previous is installabe, is installed, or is superceded rules.  If you created this update using a MSI or MSP file you will see the automatically generated rule at the installable item level.</value>
   </data>
   <metadata name="dlgUpdateFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

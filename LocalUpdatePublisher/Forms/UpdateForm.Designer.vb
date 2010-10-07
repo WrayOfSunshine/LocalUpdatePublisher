@@ -889,7 +889,8 @@ Partial Class UpdateForm
 		Me.lblMetaData.Name = "lblMetaData"
 		Me.lblMetaData.Size = New System.Drawing.Size(598, 41)
 		Me.lblMetaData.TabIndex = 40
-		Me.lblMetaData.Text = resources.GetString("lblMetaData.Text")
+		Me.lblMetaData.Text = "Use this form to review the metadata used by the previous is installable, is inst"& _ 
+		"alled, or is superseded rules."
 		'
 		'txtInstallableItemMetaData
 		'

@@ -1091,4 +1091,5 @@ Public Partial Class UpdateForm
 		'Now validate the combo.
 		ValidateCombo( sender, e )
 	End Sub
+
 End Class
