@@ -133,17 +133,21 @@ Public Partial Class RulesForm
 								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
-								End If
+								End If								
 								
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlOSVersion"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlServicePack"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + ( 2 * _spacingConstant )
 							Case "pnlData"
+								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
 								Me.txtData.Text = ""
 								Me.lblData.Text = "Build Number"
@@ -151,6 +155,7 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlProductType"
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -161,6 +166,7 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlLanguage"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case Else
@@ -171,6 +177,7 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlProcessorType"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case Else
@@ -181,12 +188,15 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlEnvironmentVariable"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlFilePath"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlVersion"
+								controlObject.TabIndex =3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case Else
@@ -197,19 +207,24 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlFilePath"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -220,9 +235,11 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlEnvironmentVariable"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlFilePath"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlComparison"
@@ -233,9 +250,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
 								
+								
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlDate"
+								controlObject.TabIndex = 4
 								Me.lblDate.Text = "Created Date:"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
@@ -247,28 +267,35 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlFilePath"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
-							Case "pnlComparison"
+							Case "pnlComparison"								
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
 								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlDate"
+								controlObject.TabIndex = 6
 								Me.lblDate.Text = "Created Date:"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
@@ -280,9 +307,11 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlEnvironmentVariable"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlFilePath"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlComparison"
@@ -292,9 +321,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlDate"
+								controlObject.TabIndex = 4
 								Me.lblDate.Text = "Modified Date:"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
@@ -306,20 +338,25 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlFilePath"
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlComparison"
@@ -329,9 +366,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 6
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlDate"
+								controlObject.TabIndex = 7
 								Me.lblDate.Text = "Modified Date:"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
@@ -343,9 +383,11 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlEnvironmentVariable"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlFilePath"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlComparison"
@@ -355,9 +397,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
+								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
 								Me.txtData.Text = ""
 								Me.lblData.Text = "Size:"
@@ -373,16 +418,20 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlFilePath"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlComparison"
@@ -392,9 +441,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlData"
+								controlObject.TabIndex = 6
 								Me.txtData.Width = Me.txtVersion.Width
 								Me.txtData.Text = ""
 								Me.lblData.Text = "Size:"
@@ -410,9 +462,11 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlEnvironmentVariable"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlFilePath"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlComparison"
@@ -422,9 +476,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -435,16 +492,20 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlFilePath"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlComparison"
@@ -454,9 +515,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlVersion"
+								controlObject.TabIndex = 6
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -467,9 +531,11 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.cboRegistryKey.Left
@@ -481,16 +547,20 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
 							Case "pnlRegistryValueType"
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case Else
@@ -501,12 +571,15 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
@@ -517,9 +590,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
+								controlObject.TabIndex = 5
 								Me.lblData.Text = "DWORD Value:"
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
@@ -534,12 +610,15 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
@@ -550,9 +629,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_stringComparisons)
 								End If
+								
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
+								controlObject.TabIndex = 5
 								Me.lblData.Text = "String:"
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
@@ -567,12 +649,15 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
@@ -583,9 +668,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_stringComparisons)
 								End If
+								
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlVersion"
+								controlObject.TabIndex = 5
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -596,12 +684,15 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlRegistryKey"
+								controlObject.TabIndex = 1
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlRegistryValue"
+								controlObject.TabIndex = 2
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 							Case "pnlRegistry32Bit"
+								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.pnlRegistryValue.Left + Me.pnlRegistryValue.Width + 5
@@ -612,9 +703,12 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
+								
+								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
+								controlObject.TabIndex = 5
 								Me.txtData.Width = Me.txtFilePath.Width
 								Me.txtData.Text = ""
 								Me.lblData.Text = "String:"
@@ -629,6 +723,7 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlData"
+								controlObject.TabIndex = 1
 								Me.txtData.Width = Me.txtFilePath.Width
 								Me.txtData.Text = ""
 								Me.lblData.Text = "WMI Namespace:"
@@ -636,6 +731,7 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant
 							Case "pnlQuery"
+								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Height = controlObject.Parent.Height - controlObject.Top - btnAdd.Height - _spacingConstant
 								controlObject.Show
@@ -647,18 +743,22 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCode"
+								controlObject.TabIndex = 1
 								controlObject.Top = _startingYConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlMaxVersion"
+								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlMinVersion"
+								controlObject.TabIndex = 3
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
 							Case "pnlLanguage"
+								controlObject.TabIndex = 4
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
@@ -671,22 +771,27 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCode"
+								controlObject.TabIndex = 1
 								controlObject.Top = _startingYConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlPatchCode"
+								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlMaxVersion"
+								controlObject.TabIndex = 3
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
 							Case "pnlMinVersion"
+								controlObject.TabIndex = 4
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
 							Case "pnlLanguage"
+								controlObject.TabIndex = 5
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
@@ -699,10 +804,12 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCollection"
+								controlObject.TabIndex = 1
 								controlObject.Top = _startingYConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlComponentCollection"
+								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + (5 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
@@ -715,10 +822,12 @@ Public Partial Class RulesForm
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCollection"
+								controlObject.TabIndex = 1
 								controlObject.Top = _startingYConstant
 								controlObject.Show()
 								Exit Select
 							Case "pnlFeatureCollection"
+								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + (5 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
@@ -1728,6 +1837,9 @@ Public Partial Class RulesForm
 		
 		Select Case xmlReader.LocalName 'Now create the rules based on the xml element's name
 			Case "WindowsVersion"
+				'Select the rule type.
+				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsVersion
+				
 				'Load the data.
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtOSMajorVersion.Text = xmlReader.GetAttribute("MajorVersion")
@@ -1739,49 +1851,54 @@ Public Partial Class RulesForm
 				Me.cboServicePack.Text = GetServicePackText
 				Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
 				
-				'Select the rule type.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsVersion
 			Case "WindowsLanguage"
+				'Select the rule type.
+				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage
+				
 				'Load the data.
 				Me.cboLanguage.Text = GetLanguageText(xmlReader.GetAttribute("Language"))
 				
-				'Select the rule type.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage
 			Case "Processor"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.ProcessorArchitecture
+				
 				'Load the data.
 				Me.cboProcessorType.Text = GetProcessorTypeText(xmlReader.GetAttribute("Architecture"))
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.ProcessorArchitecture
 			Case "FileExists"
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
-				
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileExists
-			Case "FileExistsPrependRegSz"
+				
 				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
 				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
 				
+			Case "FileExistsPrependRegSz"
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileExistsWithRegistry
-			Case "FileCreated"
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Created")
 				
+				'Load the data.
+				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
+			Case "FileCreated"
 				'Select the Rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileCreation
+				
+				'Load the data.
+				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+				Me.dtpDate.Text = xmlReader.GetAttribute("Created")
+				
 			Case "FileCreatedPrependRegSz"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.FileCreationWithRegistry
+				
 				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1790,18 +1907,20 @@ Public Partial Class RulesForm
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.dtpDate.Text = xmlReader.GetAttribute("Created")
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileCreationWithRegistry
 			Case "FileModified"
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Modified")
-				
 				'Select the Rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileModified
+				
+				'Load the data.
+				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+				Me.dtpDate.Text = xmlReader.GetAttribute("Modified")
+				
 			Case "FileModifiedPrependRegSz"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.FileModifiedWithRegistry
+				
 				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1810,18 +1929,21 @@ Public Partial Class RulesForm
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.dtpDate.Text = xmlReader.GetAttribute("Modified")
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileModifiedWithRegistry
-			Case "FileSize"
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Size")
 				
+			Case "FileSize"
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileSize
+				
+				'Load the data.
+				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+				Me.txtData.Text = xmlReader.GetAttribute("Size")
+				
 			Case "FileSizePrependRegSz"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.FileSizeWithRegistry
+				
 				'Load the data
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1831,18 +1953,20 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtData.Text = xmlReader.GetAttribute("Size")
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileSizeWithRegistry
 			Case "FileVersion"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersion
+				
 				'Load the data
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersion
 			Case "FileVersionPrependRegSz"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersionWithRegistry
+				
 				'Load the data
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1852,17 +1976,19 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersionWithRegistry
 			Case "RegKeyExists"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryKeyExists
+				
 				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
 				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryKeyExists
 			Case "RegValueExists"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryValueExists
+				
 				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1870,20 +1996,10 @@ Public Partial Class RulesForm
 				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 				Me.cboRegistryValueType.Text = xmlReader.GetAttribute("Type")
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryValueExists
 			Case "RegDword"
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Data")
-				
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryDWORDValue
-			Case "RegExpandSz"
+				
 				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1892,10 +2008,11 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtData.Text = xmlReader.GetAttribute("Data")
 				
+			Case "RegExpandSz"
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryExpandSzValue
-			Case "RegSzToVersion"
-				'Load the data
+				
+				'Load the data.
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
 				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
@@ -1903,9 +2020,10 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtData.Text = xmlReader.GetAttribute("Data")
 				
+			Case "RegSzToVersion"
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryVersionInSz
-			Case "RegSz"
+				
 				'Load the data
 				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
 				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
@@ -1914,126 +2032,140 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtData.Text = xmlReader.GetAttribute("Data")
 				
+			Case "RegSz"
 				'Select the rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.RegistrySzValue
+				
+				'Load the data
+				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+				Me.txtData.Text = xmlReader.GetAttribute("Data")
+				
 			Case "WmiQuery"
+				'Select the rule.
+				Me.cboRuleType.SelectedIndex = RuleTypes.WMIQuery
+				
 				'Load the Data.
 				Me.txtData.Text = xmlReader.GetAttribute("Namespace")
 				Me.txtQuery.Text = xmlReader.GetAttribute("WqlQuery")
 				
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WMIQuery
 			Case "MsiPatchInstalledForProduct"
+				'Select the rule.
+				Me.cboRuleType.SelectedItem = RuleTypes.MsiPatchInstalled				
 				
+				'Load the Data.
 				Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
 				Me.txtPatchCode.Text = xmlReader.GetAttribute("PatchCode")
 				Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
 				Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
 				Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
 				
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiPatchInstalled
-				Exit Select
-				
 			Case "MsiProductInstalled"
+				'Select the rule.
+				Me.cboRuleType.SelectedItem = RuleTypes.MsiProductInstalled
 				
+				'Load the Data.
 				Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
 				Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
 				Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
 				Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
 				
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiProductInstalled
-				Exit Select
-				
 			Case "MsiComponentInstalledForProduct"
-				If True Then
-					Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
-					Dim acr As String = xmlReader.GetAttribute("AllComponentsRequired")
-					chkProductCollection_requireAll.Checked = (If(apr, String.Empty)).ToLowerInvariant() = "true"
-					chkComponentCollection_requireAll.Checked = (If(acr, String.Empty)).ToLowerInvariant() = "true"
-					
-					Dim products As New List(Of String)()
-					Dim components As New List(Of String)()
+				'Select the rule.
+				Me.cboRuleType.SelectedItem = RuleTypes.MsiComponentInstalled
+				
+				'Load the Data.
+				Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
+				Dim acr As String = xmlReader.GetAttribute("AllComponentsRequired")
+				chkProductCollection_requireAll.Checked = (If(apr, String.Empty)).ToLowerInvariant() = "true"
+				chkComponentCollection_requireAll.Checked = (If(acr, String.Empty)).ToLowerInvariant() = "true"
+				
+				Dim products As New List(Of String)()
+				Dim components As New List(Of String)()
+				
+				xmlReader.Read()
+				Do
+					If xmlReader.NodeType = XmlNodeType.Element Then
+						Dim n As XmlNodeType = xmlReader.MoveToContent()
+						If n = XmlNodeType.Element Then
+							Try
+								Dim x As String = xmlReader.ReadString()
+								If x.Length = 34 Then
+									x = x.Substring(1, 32)
+								End If
+								Dim g As New Guid(x)
+								If xmlReader.LocalName = "Component" Then
+									components.Add(g.ToString("D"))
+								ElseIf xmlReader.LocalName = "Product" Then
+									products.Add(g.ToString("D"))
+								End If
+							Catch
+							End Try
+						End If
+					End If
 					
 					xmlReader.Read()
-					Do
-						If xmlReader.NodeType = XmlNodeType.Element Then
-							Dim n As XmlNodeType = xmlReader.MoveToContent()
-							If n = XmlNodeType.Element Then
-								Try
-									Dim x As String = xmlReader.ReadString()
+					
+					If xmlReader.EOF Then
+						Exit Do
+					End If
+				Loop While ((xmlReader.LocalName <> "MsiComponentInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
+				
+				gceProductCollection.Items = products
+				gceComponentCollection.Items = components
+				
+				
+			Case "MsiFeatureInstalledForProduct"
+				'Select the rule.
+				Me.cboRuleType.SelectedItem = RuleTypes.MsiFeatureInstalled
+				
+				'Load the Data.
+				
+				Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
+				Dim afr As String = xmlReader.GetAttribute("AllFeaturesRequired")
+				chkProductCollection_requireAll.Checked = String.IsNullOrEmpty(apr)
+				chkFeatureCollection_requireAll.Checked = String.IsNullOrEmpty(afr)
+				
+				Dim products As New List(Of String)()
+				Dim features As New List(Of String)()
+				
+				xmlReader.Read()
+				Do
+					If xmlReader.NodeType = XmlNodeType.Element Then
+						Dim n As XmlNodeType = xmlReader.MoveToContent()
+						If n = XmlNodeType.Element Then
+							Try
+								Dim x As String = xmlReader.ReadString()
+								
+								If xmlReader.LocalName = "Feature" Then
+									features.Add(x)
+								ElseIf xmlReader.LocalName = "Product" Then
 									If x.Length = 34 Then
 										x = x.Substring(1, 32)
 									End If
 									Dim g As New Guid(x)
-									If xmlReader.LocalName = "Component" Then
-										components.Add(g.ToString("D"))
-									ElseIf xmlReader.LocalName = "Product" Then
-										products.Add(g.ToString("D"))
-									End If
-								Catch
-								End Try
-							End If
+									products.Add(g.ToString("D"))
+								End If
+							Catch
+							End Try
 						End If
-						
-						xmlReader.Read()
-						
-						If xmlReader.EOF Then
-							Exit Do
-						End If
-					Loop While ((xmlReader.LocalName <> "MsiComponentInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
-					
-					gceProductCollection.Items = products
-					gceComponentCollection.Items = components
-					
-					Me.cboRuleType.SelectedItem = RuleTypes.MsiComponentInstalled
-				End If
-				Exit Select
-				
-			Case "MsiFeatureInstalledForProduct"
-				If True Then
-					Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
-					Dim afr As String = xmlReader.GetAttribute("AllFeaturesRequired")
-					chkProductCollection_requireAll.Checked = String.IsNullOrEmpty(apr)
-					chkFeatureCollection_requireAll.Checked = String.IsNullOrEmpty(afr)
-					
-					Dim products As New List(Of String)()
-					Dim features As New List(Of String)()
+					End If
 					
 					xmlReader.Read()
-					Do
-						If xmlReader.NodeType = XmlNodeType.Element Then
-							Dim n As XmlNodeType = xmlReader.MoveToContent()
-							If n = XmlNodeType.Element Then
-								Try
-									Dim x As String = xmlReader.ReadString()
-									
-									If xmlReader.LocalName = "Feature" Then
-										features.Add(x)
-									ElseIf xmlReader.LocalName = "Product" Then
-										If x.Length = 34 Then
-											x = x.Substring(1, 32)
-										End If
-										Dim g As New Guid(x)
-										products.Add(g.ToString("D"))
-									End If
-								Catch
-								End Try
-							End If
-						End If
-						
-						xmlReader.Read()
-						
-						If xmlReader.EOF Then
-							Exit Do
-						End If
-					Loop While ((xmlReader.LocalName <> "MsiFeatureInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
 					
-					gceProductCollection.Items = products
-					gceFeatureCollection.Items = features
-					
-					Me.cboRuleType.SelectedItem = RuleTypes.MsiFeatureInstalled
-				End If
-				Exit Select
+					If xmlReader.EOF Then
+						Exit Do
+					End If
+				Loop While ((xmlReader.LocalName <> "MsiFeatureInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
+				
+				gceProductCollection.Items = products
+				gceFeatureCollection.Items = features
+				
+				
+				
 			Case Else
 				Msgbox ("This rule is not recognized: " & xmlreader.LocalName.Replace("bar:",""))
 		End Select
@@ -2128,7 +2260,7 @@ Public Partial Class RulesForm
 		Else
 			Me.errorProviderRules.SetError(Me.cboProcessorType,"")
 		End If
-			
+		
 		If Me.cboRegistryKey.SelectedIndex = -1 Then
 			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"You must select a registry key.")
 		Else If String.IsNullOrEmpty(Me.txtRegistrySubKey.Text) Then

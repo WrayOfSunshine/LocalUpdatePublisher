@@ -55,6 +55,7 @@ Partial Class GuidCollectionEditor
 		Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
 		Me.dgv.Size = New System.Drawing.Size(290, 127)
 		Me.dgv.TabIndex = 0
+		Me.dgv.TabStop = false
 		AddHandler Me.dgv.CellEndEdit, AddressOf Me.dgv_CellEndEdit
 		AddHandler Me.dgv.SelectionChanged, AddressOf Me.dgv_SelectionChanged
 		'

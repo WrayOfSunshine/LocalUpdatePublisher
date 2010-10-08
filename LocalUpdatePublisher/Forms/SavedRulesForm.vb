@@ -32,7 +32,7 @@ Public Partial Class SavedRulesForm
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
-					dgvRules.Rows(tmpRow).Cells(1).Value = tmpRule.Name
+					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
 				MyBase.ShowDialog
@@ -42,7 +42,7 @@ Public Partial Class SavedRulesForm
 				
 				'Add selected rules to temporary collection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+					If DirectCast(tmpRow.Cells("Include").Value, CheckBox).Checked Then
 						tmpRuleCollection.Add(appSettings.SavedRuleCollection(tmpRow.Index))
 					End If
 				Next
@@ -56,7 +56,7 @@ Public Partial Class SavedRulesForm
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
-					dgvRules.Rows(tmpRow).Cells(1).Value = tmpRule.Name
+					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
 				MyBase.ShowDialog
@@ -78,7 +78,7 @@ Public Partial Class SavedRulesForm
 				'Load rules from the imported collection.
 				For Each tmpRule As Rule In _ruleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
-					dgvRules.Rows(tmpRow).Cells(1).Value = tmpRule.Name
+					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
 				MyBase.ShowDialog
@@ -91,7 +91,7 @@ Public Partial Class SavedRulesForm
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
-					dgvRules.Rows(tmpRow).Cells(1).Value = tmpRule.Name
+					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
 				MyBase.ShowDialog

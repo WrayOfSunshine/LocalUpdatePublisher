@@ -154,7 +154,7 @@ Partial Class RulesForm
 		Me.lblInfo.Location = New System.Drawing.Point(25, 4)
 		Me.lblInfo.Name = "lblInfo"
 		Me.lblInfo.Size = New System.Drawing.Size(388, 15)
-		Me.lblInfo.TabIndex = 0
+		Me.lblInfo.TabIndex = 3
 		Me.lblInfo.Text = "Use this form to create a new rule that determines if this update can be installe"& _ 
 		"d"
 		'
@@ -165,7 +165,7 @@ Partial Class RulesForm
 		Me.cboRuleType.Location = New System.Drawing.Point(79, 23)
 		Me.cboRuleType.Name = "cboRuleType"
 		Me.cboRuleType.Size = New System.Drawing.Size(200, 21)
-		Me.cboRuleType.TabIndex = 1
+		Me.cboRuleType.TabIndex = 0
 		AddHandler Me.cboRuleType.SelectedIndexChanged, AddressOf Me.cboRuleTypeSelectedIndexChanged
 		AddHandler Me.cboRuleType.Format, AddressOf Me.CboRuleTypeFormat
 		'
@@ -174,7 +174,7 @@ Partial Class RulesForm
 		Me.lblRuleType.Location = New System.Drawing.Point(13, 26)
 		Me.lblRuleType.Name = "lblRuleType"
 		Me.lblRuleType.Size = New System.Drawing.Size(60, 20)
-		Me.lblRuleType.TabIndex = 2
+		Me.lblRuleType.TabIndex = 0
 		Me.lblRuleType.Text = "Rule Type"
 		'
 		'lblProductType
@@ -194,7 +194,7 @@ Partial Class RulesForm
 		Me.cboProductType.Location = New System.Drawing.Point(120, 0)
 		Me.cboProductType.Name = "cboProductType"
 		Me.cboProductType.Size = New System.Drawing.Size(185, 21)
-		Me.cboProductType.TabIndex = 10
+		Me.cboProductType.TabIndex = 0
 		'
 		'txtSPMinorVersion
 		'
@@ -243,7 +243,7 @@ Partial Class RulesForm
 		Me.cboServicePack.Location = New System.Drawing.Point(120, 0)
 		Me.cboServicePack.Name = "cboServicePack"
 		Me.cboServicePack.Size = New System.Drawing.Size(185, 21)
-		Me.cboServicePack.TabIndex = 7
+		Me.cboServicePack.TabIndex = 0
 		AddHandler Me.cboServicePack.SelectedIndexChanged, AddressOf Me.GetServicePackCode
 		'
 		'lbl_OSVersion
@@ -263,7 +263,7 @@ Partial Class RulesForm
 		Me.cboOSVersion.Location = New System.Drawing.Point(120, 0)
 		Me.cboOSVersion.Name = "cboOSVersion"
 		Me.cboOSVersion.Size = New System.Drawing.Size(185, 21)
-		Me.cboOSVersion.TabIndex = 4
+		Me.cboOSVersion.TabIndex = 0
 		AddHandler Me.cboOSVersion.SelectedIndexChanged, AddressOf Me.GetOSVersionCodes
 		'
 		'lblComparison
@@ -283,7 +283,7 @@ Partial Class RulesForm
 		Me.cboComparison.Location = New System.Drawing.Point(120, 0)
 		Me.cboComparison.Name = "cboComparison"
 		Me.cboComparison.Size = New System.Drawing.Size(185, 21)
-		Me.cboComparison.TabIndex = 3
+		Me.cboComparison.TabIndex = 0
 		AddHandler Me.cboComparison.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblLanguage
@@ -303,7 +303,7 @@ Partial Class RulesForm
 		Me.cboLanguage.Location = New System.Drawing.Point(120, 0)
 		Me.cboLanguage.Name = "cboLanguage"
 		Me.cboLanguage.Size = New System.Drawing.Size(185, 21)
-		Me.cboLanguage.TabIndex = 11
+		Me.cboLanguage.TabIndex = 0
 		AddHandler Me.cboLanguage.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblProcessorType
@@ -323,7 +323,7 @@ Partial Class RulesForm
 		Me.cboProcessorType.Location = New System.Drawing.Point(120, 0)
 		Me.cboProcessorType.Name = "cboProcessorType"
 		Me.cboProcessorType.Size = New System.Drawing.Size(185, 21)
-		Me.cboProcessorType.TabIndex = 12
+		Me.cboProcessorType.TabIndex = 0
 		AddHandler Me.cboProcessorType.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'lblEnvironmentVariable
@@ -343,14 +343,14 @@ Partial Class RulesForm
 		Me.cboEnvironmentVariable.Location = New System.Drawing.Point(120, 0)
 		Me.cboEnvironmentVariable.Name = "cboEnvironmentVariable"
 		Me.cboEnvironmentVariable.Size = New System.Drawing.Size(185, 21)
-		Me.cboEnvironmentVariable.TabIndex = 18
+		Me.cboEnvironmentVariable.TabIndex = 0
 		'
 		'txtVersion
 		'
 		Me.txtVersion.Location = New System.Drawing.Point(120, 0)
 		Me.txtVersion.Name = "txtVersion"
 		Me.txtVersion.Size = New System.Drawing.Size(185, 20)
-		Me.txtVersion.TabIndex = 20
+		Me.txtVersion.TabIndex = 0
 		AddHandler Me.txtVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtVersion.Validating, AddressOf Me.ValidateVersion
 		'
@@ -368,7 +368,7 @@ Partial Class RulesForm
 		Me.txtRegistryValue.Location = New System.Drawing.Point(120, 0)
 		Me.txtRegistryValue.Name = "txtRegistryValue"
 		Me.txtRegistryValue.Size = New System.Drawing.Size(185, 20)
-		Me.txtRegistryValue.TabIndex = 15
+		Me.txtRegistryValue.TabIndex = 0
 		AddHandler Me.txtRegistryValue.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblRegistryValue
@@ -385,7 +385,7 @@ Partial Class RulesForm
 		Me.chkRegistry32Bit.Location = New System.Drawing.Point(0, 0)
 		Me.chkRegistry32Bit.Name = "chkRegistry32Bit"
 		Me.chkRegistry32Bit.Size = New System.Drawing.Size(104, 21)
-		Me.chkRegistry32Bit.TabIndex = 16
+		Me.chkRegistry32Bit.TabIndex = 0
 		Me.chkRegistry32Bit.Text = "32 Bit Registry"
 		Me.chkRegistry32Bit.UseVisualStyleBackColor = true
 		'
@@ -394,7 +394,7 @@ Partial Class RulesForm
 		Me.txtRegistrySubKey.Location = New System.Drawing.Point(270, 0)
 		Me.txtRegistrySubKey.Name = "txtRegistrySubKey"
 		Me.txtRegistrySubKey.Size = New System.Drawing.Size(260, 20)
-		Me.txtRegistrySubKey.TabIndex = 14
+		Me.txtRegistrySubKey.TabIndex = 1
 		AddHandler Me.txtRegistrySubKey.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblRegistryKey
@@ -414,7 +414,7 @@ Partial Class RulesForm
 		Me.cboRegistryKey.Location = New System.Drawing.Point(120, 0)
 		Me.cboRegistryKey.Name = "cboRegistryKey"
 		Me.cboRegistryKey.Size = New System.Drawing.Size(145, 21)
-		Me.cboRegistryKey.TabIndex = 13
+		Me.cboRegistryKey.TabIndex = 0
 		AddHandler Me.cboRegistryKey.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'txtFilePath
@@ -422,7 +422,7 @@ Partial Class RulesForm
 		Me.txtFilePath.Location = New System.Drawing.Point(120, 0)
 		Me.txtFilePath.Name = "txtFilePath"
 		Me.txtFilePath.Size = New System.Drawing.Size(410, 20)
-		Me.txtFilePath.TabIndex = 19
+		Me.txtFilePath.TabIndex = 0
 		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblFilePath
@@ -444,7 +444,7 @@ Partial Class RulesForm
 		Me.dtpDate.ShowCheckBox = true
 		Me.dtpDate.ShowUpDown = true
 		Me.dtpDate.Size = New System.Drawing.Size(185, 20)
-		Me.dtpDate.TabIndex = 22
+		Me.dtpDate.TabIndex = 0
 		AddHandler Me.dtpDate.ValueChanged, AddressOf Me.ValidateForm
 		'
 		'lblDate
@@ -462,7 +462,7 @@ Partial Class RulesForm
 		Me.lblDataInfo.Location = New System.Drawing.Point(310, 0)
 		Me.lblDataInfo.Name = "lblDataInfo"
 		Me.lblDataInfo.Size = New System.Drawing.Size(97, 21)
-		Me.lblDataInfo.TabIndex = 31
+		Me.lblDataInfo.TabIndex = 1
 		Me.lblDataInfo.Text = "in Bytes (ex. 1024)"
 		Me.lblDataInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
@@ -472,7 +472,7 @@ Partial Class RulesForm
 		Me.txtData.Location = New System.Drawing.Point(120, 0)
 		Me.txtData.Name = "txtData"
 		Me.txtData.Size = New System.Drawing.Size(185, 20)
-		Me.txtData.TabIndex = 21
+		Me.txtData.TabIndex = 0
 		AddHandler Me.txtData.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblData
@@ -495,7 +495,7 @@ Partial Class RulesForm
 		Me.txtQuery.Multiline = true
 		Me.txtQuery.Name = "txtQuery"
 		Me.txtQuery.Size = New System.Drawing.Size(410, 20)
-		Me.txtQuery.TabIndex = 23
+		Me.txtQuery.TabIndex = 0
 		AddHandler Me.txtQuery.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblQuery
@@ -512,7 +512,7 @@ Partial Class RulesForm
 		Me.chkNotRule.Location = New System.Drawing.Point(315, 23)
 		Me.chkNotRule.Name = "chkNotRule"
 		Me.chkNotRule.Size = New System.Drawing.Size(104, 24)
-		Me.chkNotRule.TabIndex = 2
+		Me.chkNotRule.TabIndex = 1
 		Me.chkNotRule.Text = "Negation Rule"
 		Me.chkNotRule.UseVisualStyleBackColor = true
 		'
@@ -521,10 +521,10 @@ Partial Class RulesForm
 		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnAdd.Enabled = false
-		Me.btnAdd.Location = New System.Drawing.Point(372, 440)
+		Me.btnAdd.Location = New System.Drawing.Point(372, 389)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(75, 24)
-		Me.btnAdd.TabIndex = 24
+		Me.btnAdd.TabIndex = 0
 		Me.btnAdd.Text = "Add Rule"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
@@ -533,10 +533,10 @@ Partial Class RulesForm
 		'
 		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(453, 440)
+		Me.btnCancel.Location = New System.Drawing.Point(453, 389)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.Size = New System.Drawing.Size(75, 24)
-		Me.btnCancel.TabIndex = 25
+		Me.btnCancel.TabIndex = 1
 		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
@@ -558,7 +558,7 @@ Partial Class RulesForm
 		Me.cboRegistryValueType.Location = New System.Drawing.Point(120, 0)
 		Me.cboRegistryValueType.Name = "cboRegistryValueType"
 		Me.cboRegistryValueType.Size = New System.Drawing.Size(185, 21)
-		Me.cboRegistryValueType.TabIndex = 17
+		Me.cboRegistryValueType.TabIndex = 0
 		AddHandler Me.cboRegistryValueType.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'splitContainer
@@ -601,7 +601,7 @@ Partial Class RulesForm
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlServicePack)
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlOSVersion)
 		Me.splitContainer.Panel2.Controls.Add(Me.pnlComparison)
-		Me.splitContainer.Size = New System.Drawing.Size(565, 469)
+		Me.splitContainer.Size = New System.Drawing.Size(565, 418)
 		Me.splitContainer.TabIndex = 45
 		Me.splitContainer.TabStop = false
 		'
@@ -625,7 +625,7 @@ Partial Class RulesForm
 		Me.gceComponentCollection.RequireAtLeastOne = true
 		Me.gceComponentCollection.RequireGuids = true
 		Me.gceComponentCollection.Size = New System.Drawing.Size(320, 101)
-		Me.gceComponentCollection.TabIndex = 16
+		Me.gceComponentCollection.TabIndex = 0
 		AddHandler Me.gceComponentCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkComponentCollection_requireAll
@@ -633,7 +633,7 @@ Partial Class RulesForm
 		Me.chkComponentCollection_requireAll.Location = New System.Drawing.Point(453, 3)
 		Me.chkComponentCollection_requireAll.Name = "chkComponentCollection_requireAll"
 		Me.chkComponentCollection_requireAll.Size = New System.Drawing.Size(99, 38)
-		Me.chkComponentCollection_requireAll.TabIndex = 15
+		Me.chkComponentCollection_requireAll.TabIndex = 1
 		Me.chkComponentCollection_requireAll.Text = "All Components Required"
 		Me.chkComponentCollection_requireAll.UseVisualStyleBackColor = true
 		'
@@ -666,7 +666,7 @@ Partial Class RulesForm
 		Me.gceFeatureCollection.RequireAtLeastOne = true
 		Me.gceFeatureCollection.RequireGuids = false
 		Me.gceFeatureCollection.Size = New System.Drawing.Size(320, 101)
-		Me.gceFeatureCollection.TabIndex = 16
+		Me.gceFeatureCollection.TabIndex = 0
 		AddHandler Me.gceFeatureCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkFeatureCollection_requireAll
@@ -674,7 +674,7 @@ Partial Class RulesForm
 		Me.chkFeatureCollection_requireAll.Location = New System.Drawing.Point(453, 3)
 		Me.chkFeatureCollection_requireAll.Name = "chkFeatureCollection_requireAll"
 		Me.chkFeatureCollection_requireAll.Size = New System.Drawing.Size(99, 38)
-		Me.chkFeatureCollection_requireAll.TabIndex = 15
+		Me.chkFeatureCollection_requireAll.TabIndex = 1
 		Me.chkFeatureCollection_requireAll.Text = "All Features Required"
 		Me.chkFeatureCollection_requireAll.UseVisualStyleBackColor = true
 		'
@@ -707,7 +707,7 @@ Partial Class RulesForm
 		Me.gceProductCollection.RequireAtLeastOne = true
 		Me.gceProductCollection.RequireGuids = true
 		Me.gceProductCollection.Size = New System.Drawing.Size(320, 101)
-		Me.gceProductCollection.TabIndex = 16
+		Me.gceProductCollection.TabIndex = 1
 		AddHandler Me.gceProductCollection.ValidInputChanged, AddressOf Me.ValidateForm
 		'
 		'chkProductCollection_requireAll
@@ -715,7 +715,7 @@ Partial Class RulesForm
 		Me.chkProductCollection_requireAll.Location = New System.Drawing.Point(453, 3)
 		Me.chkProductCollection_requireAll.Name = "chkProductCollection_requireAll"
 		Me.chkProductCollection_requireAll.Size = New System.Drawing.Size(99, 38)
-		Me.chkProductCollection_requireAll.TabIndex = 15
+		Me.chkProductCollection_requireAll.TabIndex = 2
 		Me.chkProductCollection_requireAll.Text = "All Products Required"
 		Me.chkProductCollection_requireAll.UseVisualStyleBackColor = true
 		'
@@ -743,7 +743,7 @@ Partial Class RulesForm
 		Me.txtMinVersion.Location = New System.Drawing.Point(120, 0)
 		Me.txtMinVersion.Name = "txtMinVersion"
 		Me.txtMinVersion.Size = New System.Drawing.Size(185, 20)
-		Me.txtMinVersion.TabIndex = 20
+		Me.txtMinVersion.TabIndex = 0
 		AddHandler Me.txtMinVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtMinVersion.Validating, AddressOf Me.ValidateVersion
 		'
@@ -771,7 +771,7 @@ Partial Class RulesForm
 		Me.txtMaxVersion.Location = New System.Drawing.Point(120, 0)
 		Me.txtMaxVersion.Name = "txtMaxVersion"
 		Me.txtMaxVersion.Size = New System.Drawing.Size(185, 20)
-		Me.txtMaxVersion.TabIndex = 20
+		Me.txtMaxVersion.TabIndex = 0
 		AddHandler Me.txtMaxVersion.TextChanged, AddressOf Me.ValidateForm
 		AddHandler Me.txtMaxVersion.Validating, AddressOf Me.ValidateVersion
 		'
@@ -802,7 +802,7 @@ Partial Class RulesForm
 		Me.txtPatchCode.Multiline = true
 		Me.txtPatchCode.Name = "txtPatchCode"
 		Me.txtPatchCode.Size = New System.Drawing.Size(234, 20)
-		Me.txtPatchCode.TabIndex = 23
+		Me.txtPatchCode.TabIndex = 0
 		AddHandler Me.txtPatchCode.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblPatchCode
@@ -832,7 +832,7 @@ Partial Class RulesForm
 		Me.txtProductCode.Multiline = true
 		Me.txtProductCode.Name = "txtProductCode"
 		Me.txtProductCode.Size = New System.Drawing.Size(234, 20)
-		Me.txtProductCode.TabIndex = 23
+		Me.txtProductCode.TabIndex = 0
 		AddHandler Me.txtProductCode.TextChanged, AddressOf Me.ValidateForm
 		'
 		'lblProductCode
@@ -1022,7 +1022,7 @@ Partial Class RulesForm
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(565, 469)
+		Me.ClientSize = New System.Drawing.Size(565, 418)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.splitContainer)

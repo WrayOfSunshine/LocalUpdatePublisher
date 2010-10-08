@@ -1,4 +1,5 @@
 Import - Demote classification.
 Cert - Demote to just Code Signing.
 Export Catalog - check for OriginalURI.
+Saved Rules - Cancel causes crash.
 Rules - Improve grouping logic.
