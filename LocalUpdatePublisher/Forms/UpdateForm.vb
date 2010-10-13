@@ -198,7 +198,7 @@ Public Partial Class UpdateForm
 		
 		Me.ValidateChildren
 	End Sub
-		
+	
 	'Depending on the current tab, enable or disable the metadata only check box.
 	Private Sub SetMetadataOnly
 		If TabsImportUpdate.SelectedTab.Name = "tabIntro" OrElse TabsImportUpdate.SelectedTab.Name = "tabPackageInfo" Then
@@ -234,7 +234,7 @@ Public Partial Class UpdateForm
 		If Me.DlgUpdateFile.ShowDialog = VbOK Then
 			Dim TmpFile As FileInfo = New FileInfo (DlgUpdateFile.FileName)
 			
-			Me.txtOriginalURL.Enabled = True
+			Me.txtOriginalURI.Enabled = True
 			Me.TxtUpdateFile.Text = TmpFile.Name
 			Me.TxtUpdateFile.Tag = TmpFile
 			
@@ -251,7 +251,7 @@ Public Partial Class UpdateForm
 			
 			
 		Else 'User Didn'T Select A File.
-			Me.txtOriginalURL.Enabled = False
+			Me.txtOriginalURI.Enabled = False
 			Me.TxtUpdateFile.Text = ""
 			Me.TxtUpdateFile.Tag = Nothing
 		End If
@@ -579,7 +579,7 @@ Public Partial Class UpdateForm
 						End Select
 						
 						'Add the original url if it is present
-						If Not String.IsNullOrEmpty( Me.txtOriginalURL.Text ) Then
+						If Not String.IsNullOrEmpty( Me.txtOriginalURI.Text ) Then
 							Dim fileInfo As FileInfo
 							Dim hashProvider As SHA1CryptoServiceProvider = New SHA1CryptoServiceProvider
 							Dim digest As String
@@ -594,7 +594,7 @@ Public Partial Class UpdateForm
 							
 							'Setup the FileForInstallable Item
 							fileItem.FileName = fileInfo.Name
-							fileItem.OriginUri = New Uri(Me.txtOriginalURL.Text)
+							fileItem.OriginUri = New Uri(Me.txtOriginalURI.Text)
 							fileItem.Digest = digest
 							fileItem.Modified = fileinfo.LastWriteTimeUtc
 							fileItem.Size = fileInfo.Length
@@ -943,30 +943,39 @@ Public Partial Class UpdateForm
 			Me.btnAddDir.Enabled = False
 			Me.dgvAdditionalFiles.Enabled = False
 			
-			If String.IsNullOrEmpty( Me.txtOriginalURL.Text ) Then
-				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"No URL Is Given")
+			'Add the filename to the OriginalURI textbox and set the error handdler.
+			If String.IsNullOrEmpty( Me.txtOriginalURI.Text ) Then
+				Me.txtOriginalURI.Text = DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name
+				'Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Is Given")
 			End If
 		Else
 			Me.btnAddFile.Enabled = True
 			Me.btnAddDir.Enabled = True
 			Me.dgvAdditionalFiles.Enabled = True
 			
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"")
+			'If the original URI field is empty then make it valid.
+			If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
+				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
+			End If
 		End If
 		
 		Me.ValidateChildren
 	End Sub
 	
 	'Validate that the source URL is valid and points to the selected file.
-	Sub TxtOriginalURLTextChanged(sender As Object, e As EventArgs)
-		If String.IsNullOrEmpty(Me.txtOriginalURL.Text) AndAlso Me.chkMetadataOnly.Checked Then
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"No URL Given.")
-		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURL.Text, UriKind.Absolute) Then
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"Not valid URI.")
-		ElseIf Not Me.txtOriginalURL.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"File name does not match.")
+	Sub txtOriginalURITextChanged(sender As Object, e As EventArgs)
+		If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
+			If Me.chkMetadataOnly.Checked Then
+				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Given.")
+			Else
+				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
+			End If
+		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURI.Text, UriKind.Absolute) Then
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Not valid URI.")
+		ElseIf Not Me.txtOriginalURI.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"File name does not match.")
 		Else
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURL,"")
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
 		End If
 		
 		Me.ValidateChildren
@@ -1031,7 +1040,7 @@ Public Partial Class UpdateForm
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboProduct)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboImpact)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboRebootBehavior))OrElse _
-						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtOriginalURL))
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtOriginalURI))
 						Invalid = True
 					End If
 					
@@ -1091,5 +1100,5 @@ Public Partial Class UpdateForm
 		'Now validate the combo.
 		ValidateCombo( sender, e )
 	End Sub
-
+	
 End Class

@@ -17,21 +17,26 @@ Public Partial Class SettingsForm
 	
 	'Load the appSetting into the form.
 	Sub SettingsLoad(sender As Object, e As EventArgs)
-		chkRememberTreeNode.Checked = appSettings.RememberTreePath
-		chkReportRollup.Checked = appSettings.RollupReporting
-		chkIncludeApproved.Checked = appSettings.ApprovedUpdatesOnly
+		Me.chkRememberTreeNode.Checked = appSettings.RememberTreePath
+		Me.chkReportRollup.Checked = appSettings.RollupReporting
+		Me.chkIncludeApproved.Checked = appSettings.ApprovedUpdatesOnly
+		Me.chkDemoteClassification.Checked = appSettings.DemoteClassification
 	End Sub
 	
 	Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs)
-		appSettings.RememberTreePath = chkRememberTreeNode.Checked
+		appSettings.RememberTreePath = Me.chkRememberTreeNode.Checked
 	End Sub
 	
 	
 	Sub ChkReportRollupCheckedChanged(sender As Object, e As EventArgs)
-		appSettings.RollupReporting = chkReportRollup.Checked
+		appSettings.RollupReporting = Me.chkReportRollup.Checked
 	End Sub
 	
 	Sub ChkIncludeApprovedCheckedChanged(sender As Object, e As EventArgs)
-		appSettings.ApprovedUpdatesOnly = chkIncludeApproved.Checked
+		appSettings.ApprovedUpdatesOnly = Me.chkIncludeApproved.Checked
+	End Sub
+	
+	Sub ChkDemoteClassificationCheckedChanged(sender As Object, e As EventArgs)
+		appSettings.DemoteClassification = Me.chkDemoteClassification.Checked
 	End Sub
 End Class

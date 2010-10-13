@@ -164,6 +164,7 @@ Imports System.Reflection
 		RollupReporting = False
 		ApprovedUpdatesOnly = True
 		InheritApprovals = True
+		DemoteClassification = True
 		TreePath = ""
 		TreeSplitter = 175
 		UpdateSplitter = 175
@@ -255,6 +256,19 @@ Imports System.Reflection
 		End Get
 		Set
 			_settingsHash("InheritApprovals") = value
+		End Set
+	End Property	
+		
+	' Property Inherit Approvals
+	<Browsable(True)> _
+		<Description("Demote critical and security updates to normal updates.")> _
+		<DefaultValue(True)> _
+		Public Property DemoteClassification() As Boolean
+		Get
+			Return DirectCast(_settingsHash("DemoteClassification"), Boolean)
+		End Get
+		Set
+			_settingsHash("DemoteClassification") = value
 		End Set
 	End Property
 	

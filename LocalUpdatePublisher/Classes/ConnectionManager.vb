@@ -19,6 +19,7 @@ Imports System.Security.Cryptography.RSACryptoServiceProvider
 Imports System.IO
 Imports System.IO.Packaging
 Imports System.Xml
+Imports System.Xml.Schema
 Imports System.Windows.Forms
 
 
@@ -166,6 +167,94 @@ Friend NotInheritable Class ConnectionManager
 		End Get
 	End Property
 	
+	
+	#End Region
+	
+	#Region "Software Definition Packages"
+	
+	'Return a file path to an SDP file of the given update id.
+	Public Shared Function ExportSDP (updateRevisionId As UpdateRevisionId) As String
+		Dim packageFile As String
+		If ConnectionManager.Connected Then
+			Try
+				'Export the SDP to a temporary file.
+				packageFile = Path.Combine(Path.GetTempPath, updateRevisionId.UpdateId.ToString & ".xml")
+				ConnectionManager.ParentServer.ExportPackageMetadata(updateRevisionId, packageFile)
+				Return packageFile
+				
+			Catch x As InvalidOperationException
+				Msgbox ("Could not export SDP:" & vbNewLine & "InvalidOperationException: " & x.Message)
+			Catch x As ArgumentNullException
+				Msgbox ("Could not export SDP:" & vbNewLine & "ArgumentNullException: " & x.Message)
+			Catch x As ArgumentOutOfRangeException
+				Msgbox ("Could not export SDP:" & vbNewLine & "ArgumentOutOfRangeException: " & x.Message)
+			Catch x As WsusObjectNotFoundException
+				Msgbox ("Could not export SDP:" & vbNewLine & "WsusObjectNotFoundException: " & x.Message)
+			Catch x As Exception
+				Msgbox ("Could not export SDP:" & vbNewline & x.Message)
+			End Try
+		End If
+		
+		Return Nothing
+	End Function
+	
+	'Return an SDP object from the given update id.
+	Public Shared Function GetSDP (updateRevisionId As UpdateRevisionId) As SoftwareDistributionPackage
+		Dim tmpSDP As SoftwareDistributionPackage
+		Dim packageFile As String
+		If ConnectionManager.Connected Then
+			Try
+				
+				'Export the SDP to a temporary file.
+				packageFile = ExportSDP (updateRevisionId)
+				tmpSDP = New SoftwareDistributionPackage(packageFile)
+				DeleteSDP (packageFile)
+				Return tmpSDP
+				
+			Catch x As FileNotFoundException
+				Msgbox ("Could not get SDP:" & vbNewLine & "FileNotFoundException: " & x.Message)
+			Catch x As XmlSchemaValidationException
+				Msgbox ("Could not get SDP:" & vbNewLine & "XmlSchemaValidationException: " & x.Message)
+			Catch x As Exception
+				Msgbox ("Could not get SDP:" & vbNewline & x.Message)
+			End Try
+		End If
+		
+		Return Nothing
+	End Function
+	
+	'Return an SDP object from the given SDP file.
+	Public Shared Function GetSDP ( packageFile As String ) As SoftwareDistributionPackage
+		Dim tmpSDP As SoftwareDistributionPackage
+		
+		If ConnectionManager.Connected Then
+			Try
+				
+				'Export the SDP to a temporary file.
+				tmpSDP = New SoftwareDistributionPackage(packageFile)
+				Return tmpSDP
+				
+			Catch x As FileNotFoundException
+				Msgbox ("Could not get SDP:" & vbNewLine & "FileNotFoundException: " & x.Message)
+			Catch x As XmlSchemaValidationException
+				Msgbox ("Could not get SDP:" & vbNewLine & "XmlSchemaValidationException: " & x.Message)
+			Catch x As Exception
+				Msgbox ("Could not get SDP:" & vbNewline & x.Message)
+			End Try
+		End If
+		
+		Return Nothing
+	End Function
+	
+	'Delete the SDP file and ignore any errors.
+	Public Shared Sub DeleteSDP ( packageFile As String )
+		
+		Try
+			My.Computer.FileSystem.DeleteFile( packageFile )
+		Catch
+		End Try
+		
+	End Sub
 	
 	#End Region
 	
@@ -337,7 +426,7 @@ Friend NotInheritable Class ConnectionManager
 					Dim tmpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.InstallableItems(0).OriginalSourceFile.FileName )
 					'Get download location.
 					tmpFileUri = sdp.InstallableItems(0).OriginalSourceFile.OriginUri
-
+					
 					'Set cursor and position of progress form.
 					My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
 					My.Forms.ProgressForm.Show("Downloading files for " & sdp.Title)
@@ -397,160 +486,73 @@ Friend NotInheritable Class ConnectionManager
 			'tmpPackage.GetParts(0).
 			
 			
-'			Dim MySigner As New Cryptography.DSACryptoServiceProvider
-'			
-'			Dim file As New FileStream(packageCab.FullName, FileMode.Open, FileAccess.Read)
-'			Dim reader As New BinaryReader(file)
-'			Dim data As Byte() = reader.ReadBytes(file.Length)
-'			
-'			Dim signature As byte() = MySigner.SignData(data)
-'			Dim publicKey As String = MySigner.ToXmlString(False)
-'			
-'			reader.Close()
-'			file.Close()
-'			
-'			Dim verifier As New Cryptography.DSACryptoServiceProvider()
-'			
-'			verifier.FromXmlString(publicKey)
-'			
-'			Dim file2 As New FileStream(packageCab.FullName, FileMode.Open, FileAccess.Read)
-'			Dim reader2 As New BinaryReader(file2)
-'			Dim data2 As byte() = reader2.ReadBytes(file2.Length)
-'			
-'			If verifier.VerifyData(data2, signature) Then
-'				Console.WriteLine("Signature")
-'			Else
-'				Console.WriteLine("Signature is not verified")
-'				reader2.Close()
-'				file2.Close()
-'			
-'			End If
-'			
-'			 Dim rsaCsp As New Cryptography.RSACryptoServiceProvider
-'			 rsaCsp.
-'
-'			Debug.WriteLine(vbnewline & "signature: " & Convert.ToBase64String(signature))
-'			Debug.WriteLine(vbnewline & "MySigner.GetHashCode: " & MySigner.GetHashCode)
-'			Debug.WriteLine(vbnewline & "MySigner.KeyExchangeAlgorithm: " & MySigner.KeyExchangeAlgorithm)
-'			Debug.WriteLine(vbnewline & "MySigner.SignatureAlgorithm: " & MySigner.SignatureAlgorithm)
-'			Debug.WriteLine(vbnewline & "publickey: " & publickey)
-'			Debug.WriteLine(vbnewline & "Cert.KeyAlgorithm: " & _currentServerCertificate.GetKeyAlgorithm)
-'			Debug.WriteLine(vbnewline & "Cert.Format: " & _currentServerCertificate.GetFormat)			
-'			Debug.WriteLine(vbnewline & "Cert.HashString: " & _currentServerCertificate.GetCertHashString)
-'			Debug.WriteLine(vbnewline & "Cert.HashCode: " & _currentServerCertificate.GetHashCode)
-'			Debug.WriteLine(vbnewline & "Cert.PublicKey: " & Convert.ToBase64String(_currentServerCertificate.GetPublicKey))
-'			Debug.WriteLine(vbnewline & "Cert.PublicKeyString: " & _currentServerCertificate.GetPublicKeyString)
-'			Debug.WriteLine(vbnewline & "Cert.RawCertDataString: " & _currentServerCertificate.GetRawCertDataString)
-'			Debug.WriteLine(vbnewline & "Cert.SerialNumberString: " & _currentServerCertificate.GetSerialNumberString)
-'			Debug.WriteLine(vbnewline & "Cert.Details: " & _currentServerCertificate.ToString(True))
-
-'			Return Nothing
+			'			Dim MySigner As New Cryptography.DSACryptoServiceProvider
+			'
+			'			Dim file As New FileStream(packageCab.FullName, FileMode.Open, FileAccess.Read)
+			'			Dim reader As New BinaryReader(file)
+			'			Dim data As Byte() = reader.ReadBytes(file.Length)
+			'
+			'			Dim signature As byte() = MySigner.SignData(data)
+			'			Dim publicKey As String = MySigner.ToXmlString(False)
+			'
+			'			reader.Close()
+			'			file.Close()
+			'
+			'			Dim verifier As New Cryptography.DSACryptoServiceProvider()
+			'
+			'			verifier.FromXmlString(publicKey)
+			'
+			'			Dim file2 As New FileStream(packageCab.FullName, FileMode.Open, FileAccess.Read)
+			'			Dim reader2 As New BinaryReader(file2)
+			'			Dim data2 As byte() = reader2.ReadBytes(file2.Length)
+			'
+			'			If verifier.VerifyData(data2, signature) Then
+			'				Console.WriteLine("Signature")
+			'			Else
+			'				Console.WriteLine("Signature is not verified")
+			'				reader2.Close()
+			'				file2.Close()
+			'
+			'			End If
+			'
+			'			 Dim rsaCsp As New Cryptography.RSACryptoServiceProvider
+			'			 rsaCsp.
+			'
+			'			Debug.WriteLine(vbnewline & "signature: " & Convert.ToBase64String(signature))
+			'			Debug.WriteLine(vbnewline & "MySigner.GetHashCode: " & MySigner.GetHashCode)
+			'			Debug.WriteLine(vbnewline & "MySigner.KeyExchangeAlgorithm: " & MySigner.KeyExchangeAlgorithm)
+			'			Debug.WriteLine(vbnewline & "MySigner.SignatureAlgorithm: " & MySigner.SignatureAlgorithm)
+			'			Debug.WriteLine(vbnewline & "publickey: " & publickey)
+			'			Debug.WriteLine(vbnewline & "Cert.KeyAlgorithm: " & _currentServerCertificate.GetKeyAlgorithm)
+			'			Debug.WriteLine(vbnewline & "Cert.Format: " & _currentServerCertificate.GetFormat)
+			'			Debug.WriteLine(vbnewline & "Cert.HashString: " & _currentServerCertificate.GetCertHashString)
+			'			Debug.WriteLine(vbnewline & "Cert.HashCode: " & _currentServerCertificate.GetHashCode)
+			'			Debug.WriteLine(vbnewline & "Cert.PublicKey: " & Convert.ToBase64String(_currentServerCertificate.GetPublicKey))
+			'			Debug.WriteLine(vbnewline & "Cert.PublicKeyString: " & _currentServerCertificate.GetPublicKeyString)
+			'			Debug.WriteLine(vbnewline & "Cert.RawCertDataString: " & _currentServerCertificate.GetRawCertDataString)
+			'			Debug.WriteLine(vbnewline & "Cert.SerialNumberString: " & _currentServerCertificate.GetSerialNumberString)
+			'			Debug.WriteLine(vbnewline & "Cert.Details: " & _currentServerCertificate.ToString(True))
 			
-				Try
-					'Use the SDP file to create a new publisher.
-					Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(sdpFile.FullName)
-					
-					'Add the event handler to the publisher to show progress.
-					AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
-					
-					'Show the progress form and publish the package.
-					My.Forms.ProgressForm.Show("Please wait while the update is published.")
-					publisher.PublishSignedPackage(packageCab.FullName, Nothing)
-					
-					My.Forms.ProgressForm.Dispose
-					RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
-					publisher = Nothing
-					My.Forms.ProgressForm.Dispose
-					extractPath.Delete(True) 'Remove the update directory from the temp folder.
-					Return True
-					
-				Catch x As PathTooLongException
-					Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
-				Catch x As SecurityException
-					Msgbox ("The package could not be published." & vbNewline & "Security Exception: " & vbNewLine & x.Message)
-				Catch x As UnauthorizedAccessException
-					Msgbox ("The package could not be published." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message)
-				Catch x As NotSupportedException
-					Msgbox ("The package could not be published." & vbNewline & "Not Supported Exception: " & vbNewLine & x.Message)
-				Catch x As ArgumentNullException
-					Msgbox ("The package could not be published." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message)
-				Catch x As FileNotFoundException
-					Msgbox ("The package could not be published." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message)
-				Catch x As InvalidDataException
-					Msgbox ("The package could not be published." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message)
-				Catch x As InvalidOperationException
-					Msgbox ("The package could not be published." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message)
-				Catch x As ArgumentException
-					Msgbox ("The package could not be published." & vbNewline & "Argument Exception: " & vbNewLine & x.Message)
-				Catch x As IOException
-					Msgbox ("The package could not be published." & vbNewline & "IO Exception: " & vbNewLine & x.Message)
-				Catch x As Win32Exception
-					Msgbox ("The package could not be published." & vbNewline & "Win32 Exception: " & vbNewLine & x.Message)
-				Finally
-					My.Forms.ProgressForm.Dispose
-				End Try
-				Return False
-			End If
-			
-		End Function
-		
-		'Publish package metadata without any files.
-		Public Shared Function PublishPackageMetaData(sdp As SoftwareDistributionPackage) As Boolean
-			Return PublishPackage (sdp, Nothing)
-		End Function
-		
-		'Publish package with list of files and directories.
-		Public Shared Function PublishPackage(sdp As SoftwareDistributionPackage, updateFiles As IList (Of Object)) As Boolean
-			
-			'Save the SDP.
-			Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.PackageId.ToString() & ".xml")
-			sdp.Save(sdpFilePath)
+			'			Return Nothing
 			
 			Try
 				'Use the SDP file to create a new publisher.
-				Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(SdpFilePath)
-				
-				'If no files were passed in then only publish the metadata.
-				If updateFiles Is Nothing Then publisher.MetadataOnly = True
+				Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(sdpFile.FullName)
 				
 				'Add the event handler to the publisher to show progress.
 				AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
 				
-				'Set cursor and position of progress form.
-				My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
-				
-				'Create temporary directory.
-				Dim updateDir As DirectoryInfo = New DirectoryInfo (Path.Combine(Environment.GetEnvironmentVariable("TEMP"),sdp.PackageId.ToString()))
-				If not updateDir.Exists then updateDir.Create 'Create directory if needed.
-				
-				'Copy files into the temporary directory if needed.
-				If Not publisher.MetadataOnly AndAlso _
-					Not updateFiles Is Nothing AndAlso _
-					updateFiles.Count > 0 Then
-					
-					'Add each file or directory to the target directory.
-					For Each tmpFileDir As Object In updateFiles
-						
-						'Copy these using the appropriate method based on their object type.
-						If TypeOf tmpFileDir Is FileInfo AndAlso DirectCast(tmpFileDir, FileInfo).Exists Then
-							DirectCast(tmpFileDir,FileInfo).CopyTo(Path.Combine(updateDir.FullName , DirectCast(tmpFileDir, FileInfo).Name), True)
-						Else If TypeOf tmpFileDir Is DirectoryInfo AndAlso DirectCast(tmpFileDir, DirectoryInfo).Exists Then
-							CopyDirectory(DirectCast(tmpFileDir, DirectoryInfo).FullName, Path.Combine(updateDir.FullName , DirectCast(tmpFileDir, DirectoryInfo).Name) )
-						End If
-					Next
-				End If
-				
 				'Show the progress form and publish the package.
 				My.Forms.ProgressForm.Show("Please wait while the update is published.")
-				publisher.PublishPackage(updateDir.FullName, Nothing)
+				publisher.PublishSignedPackage(packageCab.FullName, Nothing)
+				
 				My.Forms.ProgressForm.Dispose
 				RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
 				publisher = Nothing
 				My.Forms.ProgressForm.Dispose
-				File.Delete(SdpFilePath) 'Delete the SDP file.
-				updateDir.Delete(True) 'Remove the update directory from the temp folder.
-				
+				extractPath.Delete(True) 'Remove the update directory from the temp folder.
 				Return True
+				
 			Catch x As PathTooLongException
 				Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
 			Catch x As SecurityException
@@ -577,83 +579,170 @@ Friend NotInheritable Class ConnectionManager
 				My.Forms.ProgressForm.Dispose
 			End Try
 			Return False
-		End Function
+		End If
 		
-		'Copy a complete directory, recursively including any subdirectories.
-		Private Shared Sub CopyDirectory(sourceDirectoryName As String, targetDirectoryName As String)
-			
-			Try
-				
-				'Create directory if needed.
-				Directory.CreateDirectory(targetDirectoryName)
-				
-				'Copy the files.
-				For Each tmpFileName As String In Directory.GetFiles(sourceDirectoryName)
-					File.Copy(tmpFileName, Path.Combine(targetDirectoryName,Path.GetFileName(tmpFileName)),True)
-				Next
-				
-				'Copy the directories recursively.
-				For Each tmpSubDirectory As String In Directory.GetDirectories(sourceDirectoryName)
-					CopyDirectory(tmpSubDirectory, Path.Combine(targetDirectoryName, Path.GetFileName(tmpSubDirectory)))
-				Next
-				
-			Catch
-				Msgbox ("Unable to copy directory: " & vbNewline & sourceDirectoryName)
-			End Try
-			
-		End Sub
+	End Function
+	
+	'Publish package metadata without any files.
+	Public Shared Function PublishPackageMetaData(sdp As SoftwareDistributionPackage) As Boolean
+		Return PublishPackage (sdp, Nothing)
+	End Function
+	
+	'Publish package with list of files and directories.
+	Public Shared Function PublishPackage(sdp As SoftwareDistributionPackage, updateFiles As IList (Of Object)) As Boolean
 		
-		'Handle the progress of the publisher object by updating
-		' the progress form.
-		Private Shared Sub PublisherProgressHandler (sender As Object, e As Microsoft.UpdateServices.Administration.PublishingEventArgs)
-			With My.Forms.ProgressForm
-				.SetCurrentStep(e.ProgressStep.ToString)
-				.progressBar.Maximum = CInt(e.UpperProgressBound)
-				.progressBar.Value = CInt(e.CurrentProgress)
-				.progressBar.Refresh
-				.Refresh
-			End With
-			Application.DoEvents
-		End Sub
+		'Save the SDP.
+		Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.PackageId.ToString() & ".xml")
+		sdp.Save(sdpFilePath)
 		
-		'Modified from a posting: http://www.vbdotnetforums.com/remoting/82-webclient-download-progress.html
-		'Download file and update the Progress Bar.
-		Private Shared Sub DownloadChunks(ByVal sURL As Uri, ByVal pProgress As ProgressBar, ByVal Filename As String)
-			'Dim wRemote As System.Net.WebRequest
-			Dim URLReq As WebRequest
-			Dim URLRes As WebResponse
-			Dim FileStreamer As New FileStream(Filename, FileMode.Create)
-			Dim bBuffer(999) As Byte
-			Dim iBytesRead As Integer
+		Try
+			'Use the SDP file to create a new publisher.
+			Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(SdpFilePath)
 			
-			Try
-				'By using CreateDefault we can handle both http:// and file://
-				' URIs which allow us to both download from the internet and use
-				' local paths.
-				URLReq = WebRequest.CreateDefault(sURL)
-				URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
-				URLRes = URLReq.GetResponse
-				Dim sChunks As Stream = URLReq.GetResponse.GetResponseStream
-				pProgress.Maximum = CInt(URLRes.ContentLength)
+			'If no files were passed in then only publish the metadata.
+			If updateFiles Is Nothing Then publisher.MetadataOnly = True
+			
+			'Add the event handler to the publisher to show progress.
+			AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
+			
+			'Set cursor and position of progress form.
+			My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
+			
+			'Create temporary directory.
+			Dim updateDir As DirectoryInfo = New DirectoryInfo (Path.Combine(Environment.GetEnvironmentVariable("TEMP"),sdp.PackageId.ToString()))
+			If not updateDir.Exists then updateDir.Create 'Create directory if needed.
+			
+			'Copy files into the temporary directory if needed.
+			If Not publisher.MetadataOnly AndAlso _
+				Not updateFiles Is Nothing AndAlso _
+				updateFiles.Count > 0 Then
 				
-				Do
-					iBytesRead = sChunks.Read(bBuffer, 0, 1000)
-					FileStreamer.Write(bBuffer, 0, iBytesRead)
-					If pProgress.Value + iBytesRead <= pProgress.Maximum Then
-						pProgress.Value += iBytesRead
-					Else
-						pProgress.Value = pProgress.Maximum
+				'Add each file or directory to the target directory.
+				For Each tmpFileDir As Object In updateFiles
+					
+					'Copy these using the appropriate method based on their object type.
+					If TypeOf tmpFileDir Is FileInfo AndAlso DirectCast(tmpFileDir, FileInfo).Exists Then
+						DirectCast(tmpFileDir,FileInfo).CopyTo(Path.Combine(updateDir.FullName , DirectCast(tmpFileDir, FileInfo).Name), True)
+					Else If TypeOf tmpFileDir Is DirectoryInfo AndAlso DirectCast(tmpFileDir, DirectoryInfo).Exists Then
+						CopyDirectory(DirectCast(tmpFileDir, DirectoryInfo).FullName, Path.Combine(updateDir.FullName , DirectCast(tmpFileDir, DirectoryInfo).Name) )
 					End If
-					Application.DoEvents
-				Loop Until iBytesRead = 0
-				pProgress.Value = pProgress.Maximum
-				sChunks.Close()
-				FileStreamer.Close()
-				'Return sResponseData
-			Catch
-				MsgBox("Couldn't download the file." & vbNewLine & Err.Description)
-			End Try
-		End Sub
+				Next
+			End If
+			
+			'Show the progress form and publish the package.
+			My.Forms.ProgressForm.Show("Please wait while the update is published.")
+			publisher.PublishPackage(updateDir.FullName, Nothing)
+			My.Forms.ProgressForm.Dispose
+			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
+			publisher = Nothing
+			My.Forms.ProgressForm.Dispose
+			File.Delete(SdpFilePath) 'Delete the SDP file.
+			updateDir.Delete(True) 'Remove the update directory from the temp folder.
+			
+			Return True
+		Catch x As PathTooLongException
+			Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
+		Catch x As SecurityException
+			Msgbox ("The package could not be published." & vbNewline & "Security Exception: " & vbNewLine & x.Message)
+		Catch x As UnauthorizedAccessException
+			Msgbox ("The package could not be published." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message)
+		Catch x As NotSupportedException
+			Msgbox ("The package could not be published." & vbNewline & "Not Supported Exception: " & vbNewLine & x.Message)
+		Catch x As ArgumentNullException
+			Msgbox ("The package could not be published." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message)
+		Catch x As FileNotFoundException
+			Msgbox ("The package could not be published." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message)
+		Catch x As InvalidDataException
+			Msgbox ("The package could not be published." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message)
+		Catch x As InvalidOperationException
+			Msgbox ("The package could not be published." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message)
+		Catch x As ArgumentException
+			Msgbox ("The package could not be published." & vbNewline & "Argument Exception: " & vbNewLine & x.Message)
+		Catch x As IOException
+			Msgbox ("The package could not be published." & vbNewline & "IO Exception: " & vbNewLine & x.Message)
+		Catch x As Win32Exception
+			Msgbox ("The package could not be published." & vbNewline & "Win32 Exception: " & vbNewLine & x.Message)
+		Finally
+			My.Forms.ProgressForm.Dispose
+		End Try
+		Return False
+	End Function
+	
+	'Copy a complete directory, recursively including any subdirectories.
+	Private Shared Sub CopyDirectory(sourceDirectoryName As String, targetDirectoryName As String)
 		
-		#End Region
-	End Class
+		Try
+			
+			'Create directory if needed.
+			Directory.CreateDirectory(targetDirectoryName)
+			
+			'Copy the files.
+			For Each tmpFileName As String In Directory.GetFiles(sourceDirectoryName)
+				File.Copy(tmpFileName, Path.Combine(targetDirectoryName,Path.GetFileName(tmpFileName)),True)
+			Next
+			
+			'Copy the directories recursively.
+			For Each tmpSubDirectory As String In Directory.GetDirectories(sourceDirectoryName)
+				CopyDirectory(tmpSubDirectory, Path.Combine(targetDirectoryName, Path.GetFileName(tmpSubDirectory)))
+			Next
+			
+		Catch
+			Msgbox ("Unable to copy directory: " & vbNewline & sourceDirectoryName)
+		End Try
+		
+	End Sub
+	
+	'Handle the progress of the publisher object by updating
+	' the progress form.
+	Private Shared Sub PublisherProgressHandler (sender As Object, e As Microsoft.UpdateServices.Administration.PublishingEventArgs)
+		With My.Forms.ProgressForm
+			.SetCurrentStep(e.ProgressStep.ToString)
+			.progressBar.Maximum = CInt(e.UpperProgressBound)
+			.progressBar.Value = CInt(e.CurrentProgress)
+			.progressBar.Refresh
+			.Refresh
+		End With
+		Application.DoEvents
+	End Sub
+	
+	'Modified from a posting: http://www.vbdotnetforums.com/remoting/82-webclient-download-progress.html
+	'Download file and update the Progress Bar.
+	Private Shared Sub DownloadChunks(ByVal sURL As Uri, ByVal pProgress As ProgressBar, ByVal Filename As String)
+		'Dim wRemote As System.Net.WebRequest
+		Dim URLReq As WebRequest
+		Dim URLRes As WebResponse
+		Dim FileStreamer As New FileStream(Filename, FileMode.Create)
+		Dim bBuffer(999) As Byte
+		Dim iBytesRead As Integer
+		
+		Try
+			'By using CreateDefault we can handle both http:// and file://
+			' URIs which allow us to both download from the internet and use
+			' local paths.
+			URLReq = WebRequest.CreateDefault(sURL)
+			URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
+			URLRes = URLReq.GetResponse
+			Dim sChunks As Stream = URLReq.GetResponse.GetResponseStream
+			pProgress.Maximum = CInt(URLRes.ContentLength)
+			
+			Do
+				iBytesRead = sChunks.Read(bBuffer, 0, 1000)
+				FileStreamer.Write(bBuffer, 0, iBytesRead)
+				If pProgress.Value + iBytesRead <= pProgress.Maximum Then
+					pProgress.Value += iBytesRead
+				Else
+					pProgress.Value = pProgress.Maximum
+				End If
+				Application.DoEvents
+			Loop Until iBytesRead = 0
+			pProgress.Value = pProgress.Maximum
+			sChunks.Close()
+			FileStreamer.Close()
+			'Return sResponseData
+		Catch
+			MsgBox("Couldn't download the file." & vbNewLine & Err.Description)
+		End Try
+	End Sub
+	
+	#End Region
+End Class

@@ -3,7 +3,7 @@
 '
 ' Saved Rules Form
 ' This form is used in multiple ways depending on the SavedRulesFormUses enumeration.
-' 
+'
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 2/12/2010
@@ -27,6 +27,7 @@ Public Partial Class SavedRulesForm
 			Case SavedRulesFormUses.Load
 				Text = "Select Rules to Load"
 				btnAction.Text = "Load"
+				btnAction.DialogResult = DialogResult.OK
 				btnAction2.Text = "Clear Selection"
 				
 				'Load rules from the application settings.
@@ -34,20 +35,21 @@ Public Partial Class SavedRulesForm
 					Dim tmpRow As Integer = dgvRules.Rows.Add
 					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
-				
-				MyBase.ShowDialog
-				
-				'Create temporary Rule collection and return it.
+												
+				'Create temporary Rule collection.
 				Dim tmpRuleCollection As RuleCollection = New RuleCollection
 				
-				'Add selected rules to temporary collection.
-				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells("Include").Value, CheckBox).Checked Then
-						tmpRuleCollection.Add(appSettings.SavedRuleCollection(tmpRow.Index))
-					End If
-				Next
+				'Populate collection if the user hits Ok.
+				If MyBase.ShowDialog = DialogResult.OK Then
+					'Add selected rules to temporary collection.
+					For Each tmpRow As DataGridViewRow In dgvRules.Rows
+						If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
+							tmpRuleCollection.Add(appSettings.SavedRuleCollection(tmpRow.Index))
+						End If
+					Next
+				End If
 				
-				Return tmpRuleCollection
+				Return tmpRuleCollection				
 			Case SavedRulesFormUses.Manage
 				Text = "Select Rules to Manage"
 				btnAction.Text = "Rename"

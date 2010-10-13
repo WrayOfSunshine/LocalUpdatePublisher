@@ -1,8 +1,11 @@
 BETA Version 0.9
-- Add options for computer details to only use approved updates and to inherit approvals.
+- Added options for percentages to only use approved updates and to inherit approvals.
+- Added option to demote imported updates to prevent automatical approval rules.
 - Allow actions on multiple packages.
-- Add package type which determines what details the package contains.
+- Added package type which determines which details the package contains.
 - Improved return codes handling.
+- Added Originl URL field which allows meta-data only updates.
+- Export update catalogs.
 - General code cleanup (Strict:On Infer:Off).
 - Several GUI enhancements.
 - Several bugfixes.

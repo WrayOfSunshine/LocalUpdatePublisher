@@ -77,6 +77,10 @@ Partial Class MainForm
 		Me.pnlComputers = New System.Windows.Forms.Panel
 		Me.tabMainComputers = New System.Windows.Forms.TabControl
 		Me.tabComputerInfo = New System.Windows.Forms.TabPage
+		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
+		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
 		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
 		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
 		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
@@ -138,12 +142,8 @@ Partial Class MainForm
 		Me.statusStrip = New System.Windows.Forms.StatusStrip
 		Me.toolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
 		Me.toolStripStatusLabelLink = New System.Windows.Forms.ToolStripStatusLabel
-		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.importFileDialog = New System.Windows.Forms.OpenFileDialog
-		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
-		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
+		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.menuStrip.SuspendLayout
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
@@ -201,7 +201,6 @@ Partial Class MainForm
 		Me.exportCatalogToolStripMenuItem.Name = "exportCatalogToolStripMenuItem"
 		Me.exportCatalogToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
 		Me.exportCatalogToolStripMenuItem.Text = "Export Catalog"
-		Me.exportCatalogToolStripMenuItem.Visible = false
 		AddHandler Me.exportCatalogToolStripMenuItem.Click, AddressOf Me.ExportCatalogToolStripMenuItemClick
 		'
 		'toolStripSeparator3
@@ -581,6 +580,50 @@ Partial Class MainForm
 		Me.tabComputerInfo.TabIndex = 0
 		Me.tabComputerInfo.Text = "Info"
 		'
+		'txtUpdatesNeededNum
+		'
+		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
+		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
+		Me.txtUpdatesNeededNum.ReadOnly = true
+		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesNeededNum.TabIndex = 15
+		Me.txtUpdatesNeededNum.Text = "##"
+		'
+		'txtUpdatesInstalledorNANum
+		'
+		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
+		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
+		Me.txtUpdatesInstalledorNANum.ReadOnly = true
+		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesInstalledorNANum.TabIndex = 14
+		Me.txtUpdatesInstalledorNANum.Text = "##"
+		'
+		'txtUpdateNoStatusNum
+		'
+		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
+		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
+		Me.txtUpdateNoStatusNum.ReadOnly = true
+		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdateNoStatusNum.TabIndex = 13
+		Me.txtUpdateNoStatusNum.Text = "##"
+		'
+		'txtUpdatesWErrorsNum
+		'
+		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
+		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
+		Me.txtUpdatesWErrorsNum.ReadOnly = true
+		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesWErrorsNum.TabIndex = 12
+		Me.txtUpdatesWErrorsNum.Text = "##"
+		'
 		'lblUpdateNoStatus
 		'
 		Me.lblUpdateNoStatus.Location = New System.Drawing.Point(6, 75)
@@ -638,6 +681,7 @@ Partial Class MainForm
 		Me.dgvComputerGroupStatus.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.dgvComputerGroupStatus.Location = New System.Drawing.Point(3, 3)
 		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
+		Me.dgvComputerGroupStatus.ReadOnly = true
 		Me.dgvComputerGroupStatus.RowHeadersVisible = false
 		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
 		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1119,6 +1163,7 @@ Partial Class MainForm
 		Me.dgvUpdateStatus.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.dgvUpdateStatus.Location = New System.Drawing.Point(3, 3)
 		Me.dgvUpdateStatus.Name = "dgvUpdateStatus"
+		Me.dgvUpdateStatus.ReadOnly = true
 		Me.dgvUpdateStatus.RowHeadersVisible = false
 		Me.dgvUpdateStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
 		Me.dgvUpdateStatus.Size = New System.Drawing.Size(665, 446)
@@ -1250,50 +1295,6 @@ Partial Class MainForm
 		Me.exportFileDialog.DefaultExt = "tab"
 		Me.exportFileDialog.Filter = "Tab Delimited|*.tab"
 		'
-		'txtUpdatesWErrorsNum
-		'
-		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
-		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
-		Me.txtUpdatesWErrorsNum.ReadOnly = true
-		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesWErrorsNum.TabIndex = 12
-		Me.txtUpdatesWErrorsNum.Text = "##"
-		'
-		'txtUpdateNoStatusNum
-		'
-		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
-		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
-		Me.txtUpdateNoStatusNum.ReadOnly = true
-		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdateNoStatusNum.TabIndex = 13
-		Me.txtUpdateNoStatusNum.Text = "##"
-		'
-		'txtUpdatesInstalledorNANum
-		'
-		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
-		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
-		Me.txtUpdatesInstalledorNANum.ReadOnly = true
-		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesInstalledorNANum.TabIndex = 14
-		Me.txtUpdatesInstalledorNANum.Text = "##"
-		'
-		'txtUpdatesNeededNum
-		'
-		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
-		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
-		Me.txtUpdatesNeededNum.ReadOnly = true
-		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesNeededNum.TabIndex = 15
-		Me.txtUpdatesNeededNum.Text = "##"
-		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -1344,6 +1345,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private exportFileDialog As System.Windows.Forms.SaveFileDialog
 	Private txtUpdatesWErrorsNum As System.Windows.Forms.TextBox
 	Private txtUpdateNoStatusNum As System.Windows.Forms.TextBox
 	Private txtUpdatesInstalledorNANum As System.Windows.Forms.TextBox
@@ -1365,7 +1367,6 @@ Partial Class MainForm
 	Private exportReportToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private exportListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private btnComputerListRefresh As System.Windows.Forms.Button
-	Private exportFileDialog As System.Windows.Forms.SaveFileDialog
 	Private helpForumsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private lupHelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private createUpdateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

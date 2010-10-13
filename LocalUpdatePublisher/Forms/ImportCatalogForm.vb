@@ -108,7 +108,8 @@ Public Partial Class ImportCatalogForm
 	'When we close the form, clear any temporary directory created.
 	Sub ImportCatalogFormFormClosed(sender As Object, e As FormClosedEventArgs)
 		'If a temp directory was created, delete it.
-		If Not String.IsNullOrEmpty(_extractPath) AndAlso Directory.Exists(_extractPath) Then Directory.Delete(_extractPath,True)
-		
+		If Not String.IsNullOrEmpty(_extractPath) AndAlso Directory.Exists(_extractPath) Then 
+			Directory.Delete(_extractPath,True)
+		End If		
 	End Sub
 End Class

@@ -52,8 +52,8 @@ Partial Class UpdateForm
 		Me.txtUpdateFile = New System.Windows.Forms.TextBox
 		Me.lblUpdateFile = New System.Windows.Forms.Label
 		Me.tabPackageInfo = New System.Windows.Forms.TabPage
-		Me.txtOriginalURL = New System.Windows.Forms.TextBox
-		Me.lblOriginalURL = New System.Windows.Forms.Label
+		Me.txtOriginalURI = New System.Windows.Forms.TextBox
+		Me.lblOriginalURI = New System.Windows.Forms.Label
 		Me.cboPackageType = New System.Windows.Forms.ComboBox
 		Me.lblPackageType = New System.Windows.Forms.Label
 		Me.lblPrerequisites = New System.Windows.Forms.Label
@@ -299,8 +299,8 @@ Partial Class UpdateForm
 		'tabPackageInfo
 		'
 		Me.tabPackageInfo.BackColor = System.Drawing.SystemColors.Control
-		Me.tabPackageInfo.Controls.Add(Me.txtOriginalURL)
-		Me.tabPackageInfo.Controls.Add(Me.lblOriginalURL)
+		Me.tabPackageInfo.Controls.Add(Me.txtOriginalURI)
+		Me.tabPackageInfo.Controls.Add(Me.lblOriginalURI)
 		Me.tabPackageInfo.Controls.Add(Me.cboPackageType)
 		Me.tabPackageInfo.Controls.Add(Me.lblPackageType)
 		Me.tabPackageInfo.Controls.Add(Me.lblPrerequisites)
@@ -344,24 +344,24 @@ Partial Class UpdateForm
 		Me.tabPackageInfo.TabIndex = 1
 		Me.tabPackageInfo.Text = "Package Info"
 		'
-		'txtOriginalURL
+		'txtOriginalURI
 		'
-		Me.txtOriginalURL.Enabled = false
-		Me.txtOriginalURL.Location = New System.Drawing.Point(114, 318)
-		Me.txtOriginalURL.Name = "txtOriginalURL"
-		Me.txtOriginalURL.Size = New System.Drawing.Size(435, 20)
-		Me.txtOriginalURL.TabIndex = 69
-		AddHandler Me.txtOriginalURL.TextChanged, AddressOf Me.TxtOriginalURLTextChanged
+		Me.txtOriginalURI.Enabled = false
+		Me.txtOriginalURI.Location = New System.Drawing.Point(114, 318)
+		Me.txtOriginalURI.Name = "txtOriginalURI"
+		Me.txtOriginalURI.Size = New System.Drawing.Size(435, 20)
+		Me.txtOriginalURI.TabIndex = 69
+		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.TxtOriginalURITextChanged
 		'
-		'lblOriginalURL
+		'lblOriginalURI
 		'
-		Me.lblOriginalURL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblOriginalURL.Location = New System.Drawing.Point(26, 320)
-		Me.lblOriginalURL.Name = "lblOriginalURL"
-		Me.lblOriginalURL.Size = New System.Drawing.Size(84, 15)
-		Me.lblOriginalURL.TabIndex = 68
-		Me.lblOriginalURL.Text = "Original URL"
-		Me.lblOriginalURL.TextAlign = System.Drawing.ContentAlignment.TopRight
+		Me.lblOriginalURI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		Me.lblOriginalURI.Location = New System.Drawing.Point(26, 320)
+		Me.lblOriginalURI.Name = "lblOriginalURI"
+		Me.lblOriginalURI.Size = New System.Drawing.Size(84, 15)
+		Me.lblOriginalURI.TabIndex = 68
+		Me.lblOriginalURI.Text = "Original URL"
+		Me.lblOriginalURI.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'cboPackageType
 		'
@@ -1050,9 +1050,9 @@ Partial Class UpdateForm
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private txtOriginalURI As System.Windows.Forms.TextBox
+	Private lblOriginalURI As System.Windows.Forms.Label
 	Private chkMetadataOnly As System.Windows.Forms.CheckBox
-	Private lblOriginalURL As System.Windows.Forms.Label
-	Private txtOriginalURL As System.Windows.Forms.TextBox
 	Private lblPackageType As System.Windows.Forms.Label
 	Private cboPackageType As System.Windows.Forms.ComboBox
 	Private errorProviderUpdate As System.Windows.Forms.ErrorProvider

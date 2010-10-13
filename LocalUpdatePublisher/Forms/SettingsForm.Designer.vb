@@ -38,11 +38,12 @@ Partial Class SettingsForm
 		Me.btnClose = New System.Windows.Forms.Button
 		Me.chkReportRollup = New System.Windows.Forms.CheckBox
 		Me.chkIncludeApproved = New System.Windows.Forms.CheckBox
+		Me.chkDemoteClassification = New System.Windows.Forms.CheckBox
 		Me.SuspendLayout
 		'
 		'chkRememberTreeNode
 		'
-		Me.chkRememberTreeNode.Location = New System.Drawing.Point(12, 14)
+		Me.chkRememberTreeNode.Location = New System.Drawing.Point(12, 12)
 		Me.chkRememberTreeNode.Name = "chkRememberTreeNode"
 		Me.chkRememberTreeNode.Size = New System.Drawing.Size(250, 24)
 		Me.chkRememberTreeNode.TabIndex = 0
@@ -52,8 +53,9 @@ Partial Class SettingsForm
 		'
 		'btnClose
 		'
+		Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnClose.Location = New System.Drawing.Point(12, 90)
+		Me.btnClose.Location = New System.Drawing.Point(12, 150)
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.Size = New System.Drawing.Size(106, 27)
 		Me.btnClose.TabIndex = 16
@@ -62,7 +64,7 @@ Partial Class SettingsForm
 		'
 		'chkReportRollup
 		'
-		Me.chkReportRollup.Location = New System.Drawing.Point(12, 37)
+		Me.chkReportRollup.Location = New System.Drawing.Point(12, 42)
 		Me.chkReportRollup.Name = "chkReportRollup"
 		Me.chkReportRollup.Size = New System.Drawing.Size(250, 24)
 		Me.chkReportRollup.TabIndex = 17
@@ -72,7 +74,7 @@ Partial Class SettingsForm
 		'
 		'chkIncludeApproved
 		'
-		Me.chkIncludeApproved.Location = New System.Drawing.Point(12, 60)
+		Me.chkIncludeApproved.Location = New System.Drawing.Point(12, 72)
 		Me.chkIncludeApproved.Name = "chkIncludeApproved"
 		Me.chkIncludeApproved.Size = New System.Drawing.Size(250, 24)
 		Me.chkIncludeApproved.TabIndex = 18
@@ -80,11 +82,22 @@ Partial Class SettingsForm
 		Me.chkIncludeApproved.UseVisualStyleBackColor = true
 		AddHandler Me.chkIncludeApproved.CheckedChanged, AddressOf Me.ChkIncludeApprovedCheckedChanged
 		'
+		'chkDemoteClassification
+		'
+		Me.chkDemoteClassification.Location = New System.Drawing.Point(12, 102)
+		Me.chkDemoteClassification.Name = "chkDemoteClassification"
+		Me.chkDemoteClassification.Size = New System.Drawing.Size(250, 24)
+		Me.chkDemoteClassification.TabIndex = 19
+		Me.chkDemoteClassification.Text = "Demote Critical and Security Updates."
+		Me.chkDemoteClassification.UseVisualStyleBackColor = true
+		AddHandler Me.chkDemoteClassification.CheckedChanged, AddressOf Me.ChkDemoteClassificationCheckedChanged
+		'
 		'SettingsForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(263, 129)
+		Me.ClientSize = New System.Drawing.Size(263, 189)
+		Me.Controls.Add(Me.chkDemoteClassification)
 		Me.Controls.Add(Me.chkIncludeApproved)
 		Me.Controls.Add(Me.chkReportRollup)
 		Me.Controls.Add(Me.btnClose)
@@ -97,6 +110,7 @@ Partial Class SettingsForm
 		AddHandler Load, AddressOf Me.SettingsLoad
 		Me.ResumeLayout(false)
 	End Sub
+	Private chkDemoteClassification As System.Windows.Forms.CheckBox
 	Private chkIncludeApproved As System.Windows.Forms.CheckBox
 	Private chkReportRollup As System.Windows.Forms.CheckBox
 	Private btnClose As System.Windows.Forms.Button

@@ -503,12 +503,8 @@ Public Partial Class MainForm
 	'Export updates to a catalog.
 	Sub ExportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs)
 		ExportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+		My.Forms.ExportCatalogForm.ShowDialog
 		
-		'Select a file and open the export catalog dialog.
-		exportFileDialog.Filter = "CAB File|*.cab"
-		If Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
-			My.Forms.ExportCatalogForm.ShowDialog(exportFileDialog.FileName)
-		End If
 	End Sub
 	
 	'Exit the program.
@@ -723,8 +719,8 @@ Public Partial Class MainForm
 			'Make Sure the current row has an UpdateID.
 			If TypeOf Me._dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
 				'Export the SDP to a temporary file.
-				Dim packageFile As String = My.Computer.FileSystem.GetTempFileName
-				ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id, packageFile)
+				Dim packageFile As String = ConnectionManager.ExportSDP(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id)
+				'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id, packageFile)
 				
 				'Bring Up the approval dialog and dispose it when finished.
 				My.Forms.UpdateForm.Location =  new Point(Me.Location.X + 100, Me.Location.Y + 100)
@@ -901,8 +897,8 @@ Public Partial Class MainForm
 					'Make Sure the current row has an UpdateID.
 					If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
 						'Export the SDP to a temporary file.
-						packageFile = My.Computer.FileSystem.GetTempFileName
-						ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
+						packageFile = ConnectionManager.ExportSDP(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ))
+						'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
 						
 						'Create a publisher object with the SDP and resign the package.
 						Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(packageFile)
@@ -1583,81 +1579,87 @@ Public Partial Class MainForm
 			
 			'Set the datasource to list of computers.  If nothing then exit sub.
 			_dgvMain.DataSource = GetComputerList(DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup))
-			If _dgvMain.DataSource Is Nothing Then Exit Sub
-			
-			'Set header texts for main DGV.
-			Me._dgvMain.Columns("ComputerName").HeaderText = "Computer Name"
-			Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
-			Me._dgvMain.Columns("IPAddress").HeaderText = "IP Address"
-			Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
-			Me._dgvMain.Columns("OperatingSystem").HeaderText = "Operating Sytem"
-			Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
-			Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = "Installed/Not Applicable"
-			Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-			Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
-			Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-			Me._dgvMain.Columns("LastStatusReport").HeaderText = "Last Status Report"
-			Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
-			
-			
-			'Hide some columns.
-			Me._dgvMain.Columns("IComputerTarget").Visible = False
-			Me._dgvMain.Columns("TargetID").Visible = False
-			
-			'Update the count.
-			Me.lblSelectedTargetGroupCount.Text = Me._dgvMain.Rows.Count & " computers shown"
-			
-			'If computers are listed in the DGV.
-			If _dgvMain.Rows.Count > 0 Then
+			If _dgvMain.DataSource Is Nothing Then
+				'Update the count.
+				Me.lblSelectedTargetGroupCount.Text = "0 computers shown"
 				
-				Call LoadDgvState(_dgvMain)
+				Exit Sub
+			Else
 				
-				'If we are maintaining the row.
-				If maintainSelectedRow Then
-					'Select the original row.
-					For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
-						If originalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
-							_dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
-							Exit For
-						Else If tmpRow.Index = _dgvMain.Rows.Count - 1
-							_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("ComputerName")
-						End If
-					Next
-				Else
-					'Select the first row.
-					_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
-				End If
+				'Set header texts for main DGV.
+				Me._dgvMain.Columns("ComputerName").HeaderText = "Computer Name"
+				Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
+				Me._dgvMain.Columns("IPAddress").HeaderText = "IP Address"
+				Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
+				Me._dgvMain.Columns("OperatingSystem").HeaderText = "Operating Sytem"
+				Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
+				Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = "Installed/Not Applicable"
+				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+				Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
+				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+				Me._dgvMain.Columns("LastStatusReport").HeaderText = "Last Status Report"
+				Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
 				
-				btnComputerListRefresh.Enabled = True
-				exportListToolStripMenuItem.Enabled = True
 				
-				'Load the selected computer's info.
-				'Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
+				'Hide some columns.
+				Me._dgvMain.Columns("IComputerTarget").Visible = False
+				Me._dgvMain.Columns("TargetID").Visible = False
 				
-				'If the user is currently on the report tab then update it.
-				' Otherwise, clear the combo selections.
-				If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
+				'Update the count.
+				Me.lblSelectedTargetGroupCount.Text = Me._dgvMain.Rows.Count & " computers shown"
+				
+				'If computers are listed in the DGV.
+				If _dgvMain.Rows.Count > 0 Then
 					
-					Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
-					Call LoadDgvState(dgvComputerReport)
-				Else
-					Me.dgvComputerReport.DataSource = Nothing
+					Call LoadDgvState(_dgvMain)
+					
+					'If we are maintaining the row.
+					If maintainSelectedRow Then
+						'Select the original row.
+						For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+							If originalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
+								_dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
+								Exit For
+							Else If tmpRow.Index = _dgvMain.Rows.Count - 1
+								_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("ComputerName")
+							End If
+						Next
+					Else
+						'Select the first row.
+						_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
+					End If
+					
+					btnComputerListRefresh.Enabled = True
+					exportListToolStripMenuItem.Enabled = True
+					
+					'Load the selected computer's info.
+					'Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
+					
+					'If the user is currently on the report tab then update it.
+					' Otherwise, clear the combo selections.
+					If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
+						
+						Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
+						Call LoadDgvState(dgvComputerReport)
+					Else
+						Me.dgvComputerReport.DataSource = Nothing
+						Me.cboTargetGroup.SelectedIndex =  -1
+						Me.cboUpdateStatus.SelectedIndex = -1
+					End If
+				Else 'No computers listed in the DGV.
+					btnComputerListRefresh.Enabled = False
+					exportListToolStripMenuItem.Enabled = False
+					
+					'Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
+					Me.dgvUpdateReport.DataSource = Nothing
 					Me.cboTargetGroup.SelectedIndex =  -1
 					Me.cboUpdateStatus.SelectedIndex = -1
 				End If
-			Else 'No computers listed in the DGV.
-				btnComputerListRefresh.Enabled = False
-				exportListToolStripMenuItem.Enabled = False
-				
-				'Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
-				Me.dgvUpdateReport.DataSource = Nothing
-				Me.cboTargetGroup.SelectedIndex =  -1
-				Me.cboUpdateStatus.SelectedIndex = -1
 			End If
+			
+			_noEvents = False
+			toolStripStatusLabel.Text = ""
 		End If
-		
-		_noEvents = False
-		toolStripStatusLabel.Text = ""
 	End Sub
 	
 	'Call RefreshUpdateList with defauls.
@@ -1818,16 +1820,16 @@ Public Partial Class MainForm
 		
 		Call ClearUpdateInfo
 		
-'		'Exit if the index passed in is not withing range.
-'		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
+		'		'Exit if the index passed in is not withing range.
+		'		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
 		
 		
-								
+		
 		'Make sure that the rowIndex is within range, at least one row is selected, and the node selected
 		' is an update category.
 		If Me._dgvMain.Rows.Count > rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 AndAlso _
 			TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-									
+			
 			'Load the data
 			Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
 			If update.UpdateType = UpdateType.Software Then
