@@ -1021,6 +1021,7 @@ Partial Class UpdateForm
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(615, 585)
 		Me.Controls.Add(Me.chkMetadataOnly)
 		Me.Controls.Add(Me.chkExportSdp)
@@ -1030,7 +1031,10 @@ Partial Class UpdateForm
 		Me.Controls.Add(Me.tabsImportUpdate)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "UpdateForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Import Update from File"
 		Me.tabsImportUpdate.ResumeLayout(false)

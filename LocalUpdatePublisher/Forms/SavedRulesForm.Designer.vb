@@ -106,6 +106,7 @@ Partial Class SavedRulesForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(454, 295)
 		Me.Controls.Add(Me.btnAction2)
 		Me.Controls.Add(Me.btnCancel)
@@ -113,7 +114,9 @@ Partial Class SavedRulesForm
 		Me.Controls.Add(Me.dgvRules)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MinimizeBox = false
 		Me.Name = "SavedRulesForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Saved Rules Form"
 		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).EndInit

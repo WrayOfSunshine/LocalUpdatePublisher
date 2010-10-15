@@ -21,9 +21,10 @@ Public Partial Class ProgressForm
 	End Sub
 	
 	'If a string is passed then set it as the descriptive text.
-	Public Overloads Sub Show(value as String)
+	Public Overloads Sub ShowDialog(value as String, parentForm As Form)
 		Me.lblText.Text = value
 		Me.Refresh
+		Me.Owner = parentForm
 		MyBase.Show()
 	End Sub
 	

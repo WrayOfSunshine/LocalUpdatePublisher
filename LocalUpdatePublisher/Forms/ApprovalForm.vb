@@ -42,7 +42,6 @@ Public Partial Class ApprovalForm
 		End If
 		
 		'Set defaults for buttons
-		Me.btnOK.Text = "Approve"
 		Me.btnOK.DialogResult = Nothing
 		Me.btnCancel.Enabled = True
 		
@@ -101,28 +100,17 @@ Public Partial Class ApprovalForm
 	'Pressing this button will set the approvals for the update.
 	Private Sub btnOKClick(sender As Object, e As EventArgs)
 		
-		'First we approve the changes.
-		If Me.btnOK.Text = "Approve"
-			
-			Dim DialogReturn As MsgBoxResult = MsgBox ("Do you wish to update the approvals?", MsgBoxStyle.OkCancel)
-			
-			'If the user confirms the approval updates.
-			If DialogReturn = MsgBoxResult.Ok Then
-				
-				'Call the update progress form based on whether we are approving multiple updates.
-				If _multipleUpdates Then
-					My.Forms.ApprovalProgressForm.ShowDialog(Me.dgvApprovals.Rows, _selectedRows)
-				Else
-					My.Forms.ApprovalProgressForm.ShowDialog(Me.dgvApprovals.Rows, _selectedUpdate)
-				End If
-				
-				Me.DialogResult = DialogResult.OK
-				Me.Close
-				
-			Else 'If user did not want to update the approvals.
-				Exit Sub
-			End If
+		'Call the update progress form based on whether we are approving multiple updates.
+		If _multipleUpdates Then
+			My.Forms.ApprovalProgressForm.ShowDialog(Me.dgvApprovals.Rows, _selectedRows)
+		Else
+			My.Forms.ApprovalProgressForm.ShowDialog(Me.dgvApprovals.Rows, _selectedUpdate)
 		End If
+		
+		Me.DialogResult = DialogResult.OK
+		Me.Close
+		
+		
 	End Sub
 	
 	'Call LoadData with the base computer node.
@@ -133,7 +121,7 @@ Public Partial Class ApprovalForm
 	'Load the current update's approvals into the data grid view.
 	Sub LoadData( node as TreeNode )
 		Dim tmpApprovals As UpdateApprovalCollection
-		Dim tmpApproval As UpdateApprovalAction
+		Dim tmpApproval As IUpdateApproval
 		Dim tmpRow As Integer
 		
 		'If the main computer node has been passed.
@@ -150,7 +138,7 @@ Public Partial Class ApprovalForm
 			
 			'Load the existing approvals.
 			If  _multipleUpdates Then
-				tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
+				'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
 				tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, "No Approval"})
 				
 			Else If Not _selectedUpdate Is Nothing Then
@@ -158,11 +146,12 @@ Public Partial Class ApprovalForm
 				tmpApprovals =_selectedUpdate.GetUpdateApprovals(computerGroup)
 				
 				If tmpApprovals.Count > 0 Then
-					tmpApproval = tmpApprovals.Item(0).Action 'Save  approval.
-					tmpRow = Me.dgvApprovals.Rows.Add(New String() { computerGroup.Name, tmpApproval.ToDisplayString()})
-					Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval
+					tmpApproval = tmpApprovals.Item(0) 'Save  approval.
+					tmpRow = Me.dgvApprovals.Rows.Add(New String() { computerGroup.Name, tmpApproval.Action.ToDisplayString()})
+					Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
+					Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
 				Else
-					tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
+					'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
 					tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, "No Approval"})
 				End If
 			End If
@@ -201,9 +190,10 @@ Public Partial Class ApprovalForm
 						
 						'If there is an approval already then load it, do not over-ride with the parent's approval.
 						If tmpApprovals.Count > 0 Then
-							tmpApproval = tmpApprovals.Item(0).Action
-							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.ToDisplayString()})
-							Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval
+							tmpApproval = tmpApprovals.Item(0)
+							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.Action.ToDisplayString()})
+							Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
+							Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
 							
 							'Set padding depth.
 							Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
@@ -219,7 +209,8 @@ Public Partial Class ApprovalForm
 							
 							'If there is an approval already then load it, do not over-ride with the parent's approval.
 							If tmpApprovals.Count > 0 Then
-								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.ToDisplayString() & " (inherited)"})
+								tmpApproval = tmpApprovals.Item(0)
+								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.Action.ToDisplayString() & " (inherited)"})
 								
 								'Set padding depth.
 								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding

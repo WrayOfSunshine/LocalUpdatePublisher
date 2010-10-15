@@ -35,6 +35,10 @@ Partial Class ReturnCodesForm
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container
 		Me.dgvReturnCodes = New System.Windows.Forms.DataGridView
+		Me.Result = New System.Windows.Forms.DataGridViewComboBoxColumn
+		Me.ReturnCode = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.Reboot = New System.Windows.Forms.DataGridViewCheckBoxColumn
+		Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.btnDelete = New System.Windows.Forms.Button
@@ -42,10 +46,6 @@ Partial Class ReturnCodesForm
 		Me.failedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.succeededToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.cancelledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.Result = New System.Windows.Forms.DataGridViewComboBoxColumn
-		Me.ReturnCode = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.Reboot = New System.Windows.Forms.DataGridViewCheckBoxColumn
-		Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.contextMenuCodeType.SuspendLayout
 		Me.SuspendLayout
@@ -65,6 +65,34 @@ Partial Class ReturnCodesForm
 		Me.dgvReturnCodes.Size = New System.Drawing.Size(430, 245)
 		Me.dgvReturnCodes.TabIndex = 0
 		AddHandler Me.dgvReturnCodes.RowValidating, AddressOf Me.DgvReturnCodesRowValidating
+		'
+		'Result
+		'
+		Me.Result.FillWeight = 113.0288!
+		Me.Result.HeaderText = "Result"
+		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
+		Me.Result.Name = "Result"
+		'
+		'ReturnCode
+		'
+		Me.ReturnCode.FillWeight = 113.0288!
+		Me.ReturnCode.HeaderText = "Return Code"
+		Me.ReturnCode.Name = "ReturnCode"
+		'
+		'Reboot
+		'
+		Me.Reboot.FalseValue = false
+		Me.Reboot.FillWeight = 60.9137!
+		Me.Reboot.HeaderText = "Reboot"
+		Me.Reboot.IndeterminateValue = ""
+		Me.Reboot.Name = "Reboot"
+		Me.Reboot.TrueValue = true
+		'
+		'Description
+		'
+		Me.Description.FillWeight = 113.0288!
+		Me.Description.HeaderText = "Description"
+		Me.Description.Name = "Description"
 		'
 		'btnCancel
 		'
@@ -122,46 +150,22 @@ Partial Class ReturnCodesForm
 		Me.cancelledToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
 		Me.cancelledToolStripMenuItem.Text = "Cancelled"
 		'
-		'Result
-		'
-		Me.Result.FillWeight = 113.0288!
-		Me.Result.HeaderText = "Result"
-		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
-		Me.Result.Name = "Result"
-		'
-		'ReturnCode
-		'
-		Me.ReturnCode.FillWeight = 113.0288!
-		Me.ReturnCode.HeaderText = "Return Code"
-		Me.ReturnCode.Name = "ReturnCode"
-		'
-		'Reboot
-		'
-		Me.Reboot.FalseValue = False
-		Me.Reboot.FillWeight = 60.9137!
-		Me.Reboot.HeaderText = "Reboot"
-		Me.Reboot.IndeterminateValue = ""
-		Me.Reboot.Name = "Reboot"
-		Me.Reboot.TrueValue = True
-		'
-		'Description
-		'
-		Me.Description.FillWeight = 113.0288!
-		Me.Description.HeaderText = "Description"
-		Me.Description.Name = "Description"
-		'
 		'ReturnCodesForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(454, 295)
 		Me.Controls.Add(Me.btnDelete)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnOk)
 		Me.Controls.Add(Me.dgvReturnCodes)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "ReturnCodesForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Return Codes"
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).EndInit

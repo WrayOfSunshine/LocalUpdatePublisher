@@ -23,6 +23,8 @@ Public Partial Class MainForm
 	Private _rootNode As TreeNode
 	Private _originalValue As String
 	Private _noEvents As Boolean
+	private _windowState As PersistWindowState
+	
 	
 	#Region "Properties"
 	Private _computerNode As TreeNode
@@ -67,7 +69,11 @@ Public Partial Class MainForm
 		_serverNode = New TreeNode
 		_computerNode = New TreeNode
 		_noEvents = False
-		
+
+		'Set the persist window object.
+		_windowState = New PersistWindowState()
+		_windowState.Parent = Me
+				
 		'Sort Treeview
 		treeView.Sorted = True
 		
@@ -116,10 +122,7 @@ Public Partial Class MainForm
 			Not treeView.SelectedNode.Tag Is Nothing Then
 			Call SaveDgvState (treeView.SelectedNode)
 		End If
-		
-		'Save the current position
-		appSettings.WindowLocation = Me.Location
-		
+				
 		'Save the currently selected node's path
 		If Not treeView.SelectedNode Is Nothing Then
 			appSettings.TreePath = treeView.SelectedNode.FullPath
@@ -150,11 +153,6 @@ Public Partial Class MainForm
 		appSettings.TreeSplitter = splitContainerVert.SplitterDistance
 	End Sub
 	
-	'When the form is resized save it's state.
-	Private Sub MainFormResize(sender As Object, e As EventArgs)
-		'Save the window statu to the settings object
-		appSettings.WindowState = Me.WindowState
-	End Sub
 	
 	Sub ChkApprovedOnlyCheckedChanged(sender As Object, e As EventArgs)
 		'Save the change.
@@ -317,8 +315,6 @@ Public Partial Class MainForm
 	#Region "Form Methods"
 	Sub LoadMainForm
 		Me.Cursor = Cursors.WaitCursor 'Set wait cursor.
-		Me.Location = appSettings.WindowLocation
-		Me.WindowState = DirectCast(appSettings.WindowState, FormWindowState)
 		splitContainerVert.SplitterDistance = appSettings.TreeSplitter
 		
 		Call ClearForm
@@ -596,7 +592,7 @@ Public Partial Class MainForm
 			Not importFileDialog.ShowDialog = DialogResult.Cancel Then
 			
 			'Publish the CAB
-			If ConnectionManager.PublishPackageFromCAB(New FileInfo(importFileDialog.FileName)) Then
+			If ConnectionManager.PublishPackageFromCAB(New FileInfo(importFileDialog.FileName), Me) Then
 				Msgbox ("Update was successfully imported.")
 				Call LoadUpdateNodes()
 				Call RefreshUpdateList()

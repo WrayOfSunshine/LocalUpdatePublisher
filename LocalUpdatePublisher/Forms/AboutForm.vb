@@ -20,4 +20,10 @@ Public Partial Class AboutForm
 		System.Diagnostics.Process.Start("http://www.localupdatepublisher.com")
 		Me.Close
 	End Sub
+	
+	Sub AboutFormKeyDown(sender As Object, e As KeyEventArgs)
+		If e.KeyCode = Keys.Escape Then
+			Me.Close
+		End If
+	End Sub
 End Class

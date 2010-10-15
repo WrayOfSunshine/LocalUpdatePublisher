@@ -124,6 +124,7 @@ Partial Class ApprovalProgressForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnClose
 		Me.ClientSize = New System.Drawing.Size(585, 315)
 		Me.Controls.Add(Me.lblProgress)
 		Me.Controls.Add(Me.btnClose)
@@ -131,7 +132,9 @@ Partial Class ApprovalProgressForm
 		Me.Controls.Add(Me.btnPause)
 		Me.Controls.Add(Me.pbUpdateApprovals)
 		Me.Controls.Add(Me.dgvProgress)
+		Me.MinimizeBox = false
 		Me.Name = "ApprovalProgressForm"
+		Me.ShowInTaskbar = false
 		Me.Text = "Approval Progress"
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)

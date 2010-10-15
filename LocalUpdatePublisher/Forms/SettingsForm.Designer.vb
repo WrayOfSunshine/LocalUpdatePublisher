@@ -96,6 +96,7 @@ Partial Class SettingsForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnClose
 		Me.ClientSize = New System.Drawing.Size(263, 189)
 		Me.Controls.Add(Me.chkDemoteClassification)
 		Me.Controls.Add(Me.chkIncludeApproved)
@@ -104,7 +105,10 @@ Partial Class SettingsForm
 		Me.Controls.Add(Me.chkRememberTreeNode)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "SettingsForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Settings"
 		AddHandler Load, AddressOf Me.SettingsLoad

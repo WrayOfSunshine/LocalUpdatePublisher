@@ -104,12 +104,16 @@ Partial Class SupersededUpdatesForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnClose
 		Me.ClientSize = New System.Drawing.Size(454, 294)
 		Me.Controls.Add(Me.btnRemove)
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "SupersededUpdatesForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Superseded Updates"
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit

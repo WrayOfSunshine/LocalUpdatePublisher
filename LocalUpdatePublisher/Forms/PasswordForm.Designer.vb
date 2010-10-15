@@ -38,6 +38,7 @@ Partial Class PasswordForm
 		Me.lblPassword = New System.Windows.Forms.Label
 		Me.btnOK = New System.Windows.Forms.Button
 		Me.stbPassword = New LocalUpdatePublisher.SecureTextBox
+		Me.btnCancel = New System.Windows.Forms.Button
 		Me.SuspendLayout
 		'
 		'lblPassword
@@ -51,7 +52,7 @@ Partial Class PasswordForm
 		'btnOK
 		'
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOK.Location = New System.Drawing.Point(276, 29)
+		Me.btnOK.Location = New System.Drawing.Point(179, 56)
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.Size = New System.Drawing.Size(48, 19)
 		Me.btnOK.TabIndex = 2
@@ -65,25 +66,41 @@ Partial Class PasswordForm
 		Me.stbPassword.Name = "stbPassword"
 		Me.stbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
 		Me.stbPassword.SecureText = secureString1
-		Me.stbPassword.Size = New System.Drawing.Size(229, 20)
+		Me.stbPassword.Size = New System.Drawing.Size(269, 20)
 		Me.stbPassword.TabIndex = 3
+		'
+		'btnCancel
+		'
+		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Location = New System.Drawing.Point(233, 56)
+		Me.btnCancel.Name = "btnCancel"
+		Me.btnCancel.Size = New System.Drawing.Size(48, 19)
+		Me.btnCancel.TabIndex = 4
+		Me.btnCancel.Text = "Cancel"
+		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'PasswordForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(333, 62)
+		Me.CancelButton = Me.btnCancel
+		Me.ClientSize = New System.Drawing.Size(290, 81)
+		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.stbPassword)
 		Me.Controls.Add(Me.btnOK)
 		Me.Controls.Add(Me.lblPassword)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "PasswordForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Enter Certificate Password"
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private btnCancel As System.Windows.Forms.Button
 	Private stbPassword As LocalUpdatePublisher.SecureTextBox
 	Private btnOK As System.Windows.Forms.Button
 	Private lblPassword As System.Windows.Forms.Label

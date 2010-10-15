@@ -329,15 +329,66 @@ Imports System.Reflection
 	<Browsable(True)> _
 		<Description("Main window location")> _
 		<DefaultValue(0)> _
-		Public Property WindowLocation() As Point
+		Public Property WindowLeft() As Integer
 		Get
-			Return CType(_settingsHash("WindowLocation"), Point)
+			Return CType(_settingsHash("WindowLeft"), Integer)
 		End Get
 		Set
-			_settingsHash("WindowLocation") = value
+			_settingsHash("WindowLeft") = value
 		End Set
 	End Property
-	
+		
+	' Property for the main form's window state
+	<Browsable(True)> _
+		<Description("Main window location")> _
+		<DefaultValue(0)> _
+		Public Property WindowTop() As Integer
+		Get
+			Return CType(_settingsHash("WindowTop"), Integer)
+		End Get
+		Set
+			_settingsHash("WindowTop") = value
+		End Set
+	End Property
+		
+	' Property for the main form's window state
+	<Browsable(True)> _
+		<Description("Main window location")> _
+		<DefaultValue(0)> _
+		Public Property WindowWidth() As Integer
+		Get
+			Return CType(_settingsHash("WindowWidth"), Integer)
+		End Get
+		Set
+			_settingsHash("WindowWidth") = value
+		End Set
+	End Property
+			
+	' Property for the main form's window state
+	<Browsable(True)> _
+		<Description("Main window location")> _
+		<DefaultValue(0)> _
+		Public Property WindowHeight() As Integer
+		Get
+			Return CType(_settingsHash("WindowHeight"), Integer)
+		End Get
+		Set
+			_settingsHash("WindowHeight") = value
+		End Set
+	End Property
+				
+	' Property for the main form's window state
+	<Browsable(True)> _
+		<Description("Main window location")> _
+		<DefaultValue(0)> _
+		Public Property WindowData() As Integer
+		Get
+			Return CType(_settingsHash("WindowData"), Integer)
+		End Get
+		Set
+			_settingsHash("WindowData") = value
+		End Set
+	End Property
 	
 	' Property for the saved rule collection.
 	<Browsable(True)> _

@@ -37,18 +37,19 @@ Partial Class ApprovalForm
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ApprovalForm))
 		Me.lblInfo = New System.Windows.Forms.Label
 		Me.dgvApprovals = New System.Windows.Forms.DataGridView
+		Me.ComputerGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.Approval = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.cntxtMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.approveForInstallToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.approveForRemovalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.notApprovedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+		Me.CreationDate = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.ApprovalAction = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.TargetGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOK = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.lblUninstallable = New System.Windows.Forms.Label
 		Me.btnReload = New System.Windows.Forms.Button
-		Me.ComputerGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.Approval = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.ApprovalAction = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.TargetGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.cntxtMenuStrip.SuspendLayout
 		Me.SuspendLayout
@@ -67,8 +68,9 @@ Partial Class ApprovalForm
 		Me.dgvApprovals.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
 						Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		Me.dgvApprovals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvApprovals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.Approval, Me.ApprovalAction, Me.TargetGroup})
+		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.Approval, Me.CreationDate, Me.ApprovalAction, Me.TargetGroup})
 		Me.dgvApprovals.Location = New System.Drawing.Point(5, 41)
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.ReadOnly = true
@@ -76,6 +78,23 @@ Partial Class ApprovalForm
 		Me.dgvApprovals.Size = New System.Drawing.Size(530, 236)
 		Me.dgvApprovals.TabIndex = 1
 		AddHandler Me.dgvApprovals.CellMouseDown, AddressOf Me.DtaGridViewCellMouseDown
+		'
+		'ComputerGroup
+		'
+		Me.ComputerGroup.FillWeight = 142.2902!
+		Me.ComputerGroup.HeaderText = "Computer Group"
+		Me.ComputerGroup.Name = "ComputerGroup"
+		Me.ComputerGroup.ReadOnly = true
+		'
+		'Approval
+		'
+		Me.Approval.ContextMenuStrip = Me.cntxtMenuStrip
+		Me.Approval.FillWeight = 96.79607!
+		Me.Approval.HeaderText = "Approval"
+		Me.Approval.Name = "Approval"
+		Me.Approval.ReadOnly = true
+		Me.Approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.Approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
 		'
 		'cntxtMenuStrip
 		'
@@ -104,6 +123,27 @@ Partial Class ApprovalForm
 		Me.notApprovedToolStripMenuItem.Text = "Not Approved"
 		AddHandler Me.notApprovedToolStripMenuItem.Click, AddressOf Me.NotApprovedToolStripMenuItemClick
 		'
+		'CreationDate
+		'
+		Me.CreationDate.FillWeight = 60.9137!
+		Me.CreationDate.HeaderText = "Date"
+		Me.CreationDate.Name = "CreationDate"
+		Me.CreationDate.ReadOnly = true
+		'
+		'ApprovalAction
+		'
+		Me.ApprovalAction.HeaderText = "Approval Action"
+		Me.ApprovalAction.Name = "ApprovalAction"
+		Me.ApprovalAction.ReadOnly = true
+		Me.ApprovalAction.Visible = false
+		'
+		'TargetGroup
+		'
+		Me.TargetGroup.HeaderText = "Target Group"
+		Me.TargetGroup.Name = "TargetGroup"
+		Me.TargetGroup.ReadOnly = true
+		Me.TargetGroup.Visible = false
+		'
 		'btnOK
 		'
 		Me.btnOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -113,9 +153,9 @@ Partial Class ApprovalForm
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.Size = New System.Drawing.Size(99, 28)
 		Me.btnOK.TabIndex = 2
-		Me.btnOK.Text = "Approve"
+		Me.btnOK.Text = "Ok"
 		Me.btnOK.UseVisualStyleBackColor = true
-		AddHandler Me.btnOK.Click, AddressOf Me.BtnOKClick
+		AddHandler Me.btnOK.Click, AddressOf Me.btnOKClick
 		'
 		'btnCancel
 		'
@@ -150,41 +190,11 @@ Partial Class ApprovalForm
 		Me.btnReload.UseVisualStyleBackColor = true
 		AddHandler Me.btnReload.Click, AddressOf Me.BtnReloadClick
 		'
-		'ComputerGroup
-		'
-		Me.ComputerGroup.HeaderText = "Computer Group"
-		Me.ComputerGroup.Name = "ComputerGroup"
-		Me.ComputerGroup.ReadOnly = true
-		Me.ComputerGroup.Width = 270
-		'
-		'Approval
-		'
-		Me.Approval.ContextMenuStrip = Me.cntxtMenuStrip
-		Me.Approval.HeaderText = "Approval"
-		Me.Approval.Name = "Approval"
-		Me.Approval.ReadOnly = true
-		Me.Approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.Approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-		Me.Approval.Width = 257
-		'
-		'ApprovalAction
-		'
-		Me.ApprovalAction.HeaderText = "Approval Action"
-		Me.ApprovalAction.Name = "ApprovalAction"
-		Me.ApprovalAction.ReadOnly = true
-		Me.ApprovalAction.Visible = false
-		'
-		'TargetGroup
-		'
-		Me.TargetGroup.HeaderText = "Target Group"
-		Me.TargetGroup.Name = "TargetGroup"
-		Me.TargetGroup.ReadOnly = true
-		Me.TargetGroup.Visible = false
-		'
 		'ApprovalForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(542, 334)
 		Me.Controls.Add(Me.btnReload)
 		Me.Controls.Add(Me.btnCancel)
@@ -194,7 +204,6 @@ Partial Class ApprovalForm
 		Me.Controls.Add(Me.dgvApprovals)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
-		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false
@@ -207,6 +216,7 @@ Partial Class ApprovalForm
 		Me.cntxtMenuStrip.ResumeLayout(false)
 		Me.ResumeLayout(false)
 	End Sub
+	Private CreationDate As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btnOK As System.Windows.Forms.Button
 	Private btnReload As System.Windows.Forms.Button
 	Private dgvApprovals As System.Windows.Forms.DataGridView

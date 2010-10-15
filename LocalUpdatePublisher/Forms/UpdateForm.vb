@@ -310,104 +310,6 @@ Public Partial Class UpdateForm
 		
 	End Sub
 	
-	
-	'Validate The Form And Return A Boolean Indicating
-	' If The Info Is Valid Or Not.
-	'	Function ValidateForm As Boolean
-	'		Dim Invalid As Boolean = False
-	'
-	'		Select Case TabsImportUpdate.SelectedTab.Name
-	'				'Verify A File Has Been Given.
-	'			Case "TabIntro"
-	'				If TxtUpdateFile.Tag Is Nothing Then
-	'					BtnNext.Enabled = False
-	'					Return False
-	'				End If
-	'
-	'				'Verify That A Vendor And Product Name Have Been Given.
-	'			Case "TabPackageInfo"
-	'
-	'				'				'Verify Title.
-	'				'				If String.IsNullOrEmpty(Me.TxtPackageTitle.Text) Then
-	'				'					Me.PicTitle.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicTitle.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Verify Description.
-	'				'				If String.IsNullOrEmpty(Me.TxtDescription.Text) Then
-	'				'					Me.PicDescription.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicDescription.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Verify Classification.
-	'				'				If Me.CboClassification.SelectedIndex = -1 Then
-	'				'					Me.PicClassification.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicClassification.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Enable Severity Combo If Bulletin Id Is Entered.
-	'				'				If String.IsNullOrEmpty(Me.TxtBulletinID.Text) Then
-	'				'					Me.CboSeverity.Enabled = False
-	'				'				Else
-	'				'					Me.CboSeverity.Enabled = True
-	'				'				End If
-	'				'
-	'				'				'Verify Vendor.
-	'				'				If String.IsNullOrEmpty(Me.CboVendor.Text) OrElse UCase(CboVendor.Text) = "MICROSOFT" Then
-	'				'					If UCase(CboVendor.Text) = "MICROSOFT" Then Msgbox ("Vendor Cannot Be Microsoft")
-	'				'					Me.PicVendor.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicVendor.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Verify Product.
-	'				'				If String.IsNullOrEmpty(Me.CboProduct.Text) Then
-	'				'					Me.PicProduct.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicProduct.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Verify Impact.
-	'				'				If Me.CboImpact.SelectedIndex = -1 Then
-	'				'					Me.PicImpact.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicImpact.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'				'
-	'				'				'Verify Reboot Behavior.
-	'				'				If Me.CboRebootBehavior.SelectedIndex = -1 Then
-	'				'					Me.PicReboot.Image = My.Resources.Attention.ToBitmap
-	'				'					Invalid = True
-	'				'				Else
-	'				'					Me.PicReboot.Image = My.Resources.Check.ToBitmap
-	'				'				End If
-	'
-	'				'If A Problem Was Found Then Exit The Routine And Do Not Advance.
-	'				If Invalid Then
-	'					Me.BtnNext.Enabled = False
-	'					Return False
-	'				End If
-	'			Case "TabIsInstalled"
-	'			Case "TabIsInstallable"
-	'			Case "TabIsSuperceded"
-	'			Case "TabMetaData"
-	'			Case "TabSummary"
-	'		End Select 'ValidateForm
-	'
-	'		'Enable The User To Continue And Move Forward.
-	'		Me.BtnNext.Enabled = True
-	'		Return True
-	'	End Function
-	
 	'Perform Action According To The Currently Selected Tab.
 	' Return A Boolean Depending Upon The Success Of The Action.
 	Function PerformAction As Boolean
@@ -721,7 +623,7 @@ Public Partial Class UpdateForm
 				If _Revision Then 'This Is A Revision.
 					Me.Cursor = Cursors.WaitCursor
 					
-					If ConnectionManager.RevisePackage(_Sdp) Then
+					If ConnectionManager.RevisePackage(_Sdp, Me) Then
 						Msgbox ("Package Successfully Revised")
 					Else
 						Msgbox ("Package Was Not Revised")
@@ -747,9 +649,9 @@ Public Partial Class UpdateForm
 					'Publish Package According The Meta Data Only Checkbox.
 					Dim Result As Boolean = False
 					If chkMetadataOnly.Checked Then
-						Result = ConnectionManager.PublishPackageMetaData(_Sdp)
+						Result = ConnectionManager.PublishPackageMetaData(_Sdp, Me)
 					Else
-						Result = ConnectionManager.PublishPackage(_Sdp,FileList)
+						Result = ConnectionManager.PublishPackage(_Sdp,FileList, Me)
 					End If
 					
 					Me.Cursor = Cursors.Arrow
@@ -779,14 +681,14 @@ Public Partial Class UpdateForm
 			
 			'Load The Basic Info Into The Form.
 			Me.cboPackageType.SelectedIndex = DirectCast(_Sdp.PackageType, Integer)
-			Me.TxtPackageTitle.Text = _Sdp.Title
-			Me.TxtDescription.Text = _Sdp.Description
+			If Not String.IsNullOrEmpty(_Sdp.Title) Then Me.TxtPackageTitle.Text = _Sdp.Title
+			If Not String.IsNullOrEmpty(_Sdp.Description) Then Me.TxtDescription.Text = _Sdp.Description
 			Me.CboClassification.SelectedIndex = _Sdp.PackageUpdateClassification
-			Me.TxtBulletinID.Text = _Sdp.SecurityBulletinId
+			If Not String.IsNullOrEmpty(_Sdp.SecurityBulletinId) Then Me.TxtBulletinID.Text = _Sdp.SecurityBulletinId
 			Me.CboSeverity.SelectedIndex = _Sdp.SecurityRating
-			Me.CboVendor.Text = _Sdp.VendorName
+			If Not String.IsNullOrEmpty(_Sdp.VendorName) Then Me.CboVendor.Text = _Sdp.VendorName
 			If _Sdp.ProductNames.Count > 0 Then Me.CboProduct.Text = _Sdp.ProductNames(0)
-			Me.TxtArticleID.Text = _Sdp.KnowledgebaseArticleId
+			If Not String.IsNullOrEmpty(_Sdp.KnowledgebaseArticleId) Then Me.TxtArticleID.Text = _Sdp.KnowledgebaseArticleId
 			If _Sdp.CommonVulnerabilitiesIds.Count > 0 Then Me.TxtCVEID.Text = _Sdp.CommonVulnerabilitiesIds.Item(0)
 			If Not _Sdp.SupportUrl Is Nothing Then Me.TxtSupportURL.Text = _Sdp.SupportUrl.ToString
 			If _Sdp.AdditionalInformationUrls.Count > 0 Then Me.TxtMoreInfoURL.Text = _Sdp.AdditionalInformationUrls.Item(0).ToString

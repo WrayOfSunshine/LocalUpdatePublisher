@@ -1310,7 +1310,6 @@ Partial Class MainForm
 		AddHandler Load, AddressOf Me.MainFormLoad
 		AddHandler Activated, AddressOf Me.MainFormActivated
 		AddHandler FormClosing, AddressOf Me.MainFormFormClosing
-		AddHandler Resize, AddressOf Me.MainFormResize
 		Me.menuStrip.ResumeLayout(false)
 		Me.menuStrip.PerformLayout
 		Me.splitContainerVert.Panel1.ResumeLayout(false)

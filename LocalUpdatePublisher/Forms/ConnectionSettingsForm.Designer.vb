@@ -157,6 +157,7 @@ Partial Class ConnectionSettingsForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(503, 171)
 		Me.Controls.Add(Me.btnDelete)
 		Me.Controls.Add(Me.cboServers)

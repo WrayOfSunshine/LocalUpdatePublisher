@@ -36,13 +36,13 @@ Public Module Data_Routines
 			computers.IncludedInstallationStates = UpdateInstallationStates.Failed or UpdateInstallationStates.NotInstalled
 		Else If status = "Installed/Not Applicable or No Status" Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Installed or _
-				UpdateInstallationStates.NotApplicable or UpdateInstallationStates.Unknown
+				UpdateInstallationStates.NotApplicable or UpdateInstallationStates.Unknown or UpdateInstallationStates.InstalledPendingReboot
 		Else If status = "Failed" Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Failed
 		Else If status = "Needed" Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.NotInstalled
 		Else If status = "Installed/Not Applicable" Then
-			computers.IncludedInstallationStates = UpdateInstallationStates.Installed or UpdateInstallationStates.NotApplicable
+			computers.IncludedInstallationStates = UpdateInstallationStates.Installed or UpdateInstallationStates.NotApplicable or UpdateInstallationStates.InstalledPendingReboot
 		Else If status = "No Status" Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Unknown
 		End If

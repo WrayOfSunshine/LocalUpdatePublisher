@@ -337,7 +337,7 @@ Friend NotInheritable Class ConnectionManager
 	#Region "Publish Packages"
 	
 	'Revise package.
-	Public Shared Function RevisePackage(sdp As SoftwareDistributionPackage) As Boolean
+	Public Shared Function RevisePackage(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean
 		Dim i_Compress As CabLib.Compress = New CabLib.Compress
 		
 		Try
@@ -357,7 +357,7 @@ Friend NotInheritable Class ConnectionManager
 			My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
 			
 			'Show the progress form and publish the revision.
-			My.Forms.ProgressForm.Show("Please wait while the update is revised.")
+			My.Forms.ProgressForm.ShowDialog("Please wait while the update is revised.", parentForm)
 			publisher.RevisePackage
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
@@ -395,12 +395,12 @@ Friend NotInheritable Class ConnectionManager
 	End Function
 	
 	'Call with no temporary path.
-	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage) As Boolean'
-		Return PublishPackageFromCatalog(sdp, Nothing)
+	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean'
+		Return PublishPackageFromCatalog(sdp, parentForm)
 	End Function
 	
 	'Publish package, downloading any files necessary from the installable item.
-	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, tmpPath As String) As Boolean
+	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, tmpPath As String, parentForm As Form) As Boolean
 		Dim fileDownloader As New WebClient()
 		Dim fileList As IList(Of Object) = New List(Of Object)
 		Dim tmpFileUri As Uri = Nothing
@@ -421,7 +421,7 @@ Friend NotInheritable Class ConnectionManager
 						fileList.Add(New FileInfo(tmpFilePath)) 'Add it to the list.
 					Next
 					
-					result = PublishPackage(Sdp, fileList) 'Publish it.
+					result = PublishPackage(Sdp, fileList, parentForm) 'Publish it.
 				Else
 					Dim tmpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.InstallableItems(0).OriginalSourceFile.FileName )
 					'Get download location.
@@ -429,12 +429,12 @@ Friend NotInheritable Class ConnectionManager
 					
 					'Set cursor and position of progress form.
 					My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
-					My.Forms.ProgressForm.Show("Downloading files for " & sdp.Title)
+					My.Forms.ProgressForm.ShowDialog("Downloading files for " & sdp.Title, parentForm)
 					My.Forms.ProgressForm.SetCurrentStep(tmpFileUri.ToString)
 					DownloadChunks(tmpFileUri, My.Forms.ProgressForm.progressBar, tmpFilePath)
 					fileList.Add(New FileInfo(tmpFilePath)) 'Add it to the list.
 					
-					result = PublishPackage(Sdp, fileList) 'Publish it.
+					result = PublishPackage(Sdp, fileList, parentForm) 'Publish it.
 					System.IO.File.Delete(tmpFilePath) 'Delete the temp file.
 				End If
 				
@@ -451,7 +451,7 @@ Friend NotInheritable Class ConnectionManager
 		Return False
 	End Function
 	
-	Public Shared Function PublishPackageFromCAB( cabFile As FileInfo) As Boolean
+	Public Shared Function PublishPackageFromCAB( cabFile As FileInfo, parentForm As Form) As Boolean
 		Dim sdpFile As FileInfo = Nothing
 		Dim packageCab As FileInfo = Nothing
 		
@@ -543,7 +543,7 @@ Friend NotInheritable Class ConnectionManager
 				AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
 				
 				'Show the progress form and publish the package.
-				My.Forms.ProgressForm.Show("Please wait while the update is published.")
+				My.Forms.ProgressForm.ShowDialog("Please wait while the update is published.", parentForm)
 				publisher.PublishSignedPackage(packageCab.FullName, Nothing)
 				
 				My.Forms.ProgressForm.Dispose
@@ -584,12 +584,12 @@ Friend NotInheritable Class ConnectionManager
 	End Function
 	
 	'Publish package metadata without any files.
-	Public Shared Function PublishPackageMetaData(sdp As SoftwareDistributionPackage) As Boolean
-		Return PublishPackage (sdp, Nothing)
+	Public Shared Function PublishPackageMetaData(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean
+		Return PublishPackage (sdp, Nothing, parentForm)
 	End Function
 	
 	'Publish package with list of files and directories.
-	Public Shared Function PublishPackage(sdp As SoftwareDistributionPackage, updateFiles As IList (Of Object)) As Boolean
+	Public Shared Function PublishPackage(sdp As SoftwareDistributionPackage, updateFiles As IList (Of Object), parentForm As Form) As Boolean
 		
 		'Save the SDP.
 		Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.PackageId.ToString() & ".xml")
@@ -630,8 +630,8 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 			'Show the progress form and publish the package.
-			My.Forms.ProgressForm.Show("Please wait while the update is published.")
-			publisher.PublishPackage(updateDir.FullName, Nothing)
+			My.Forms.ProgressForm.ShowDialog("Please wait while the update is published.", parentForm)
+			publisher.PublishPackage(updateDir.FullName, Nothing, Nothing)
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
 			publisher = Nothing

@@ -209,6 +209,7 @@ Partial Class CertificateInfoForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnOK
 		Me.ClientSize = New System.Drawing.Size(452, 237)
 		Me.Controls.Add(Me.btnExportImportCert)
 		Me.Controls.Add(Me.btnCreateCert)

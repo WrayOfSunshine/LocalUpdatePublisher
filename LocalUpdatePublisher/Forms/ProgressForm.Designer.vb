@@ -77,6 +77,7 @@ Partial Class ProgressForm
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ProgressForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Progress"
 		Me.ResumeLayout(false)

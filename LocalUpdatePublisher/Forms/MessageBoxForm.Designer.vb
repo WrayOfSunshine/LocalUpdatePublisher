@@ -82,6 +82,7 @@ Partial Class MessageBoxForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnThree
 		Me.ClientSize = New System.Drawing.Size(467, 85)
 		Me.Controls.Add(Me.btnThree)
 		Me.Controls.Add(Me.btnTwo)
@@ -89,7 +90,10 @@ Partial Class MessageBoxForm
 		Me.Controls.Add(Me.lblText)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "MessageBoxForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "MessageBoxForm"
 		Me.ResumeLayout(false)

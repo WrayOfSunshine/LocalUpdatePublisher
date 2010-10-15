@@ -42,7 +42,7 @@ Partial Class AboutForm
 		'
 		'lblAbout
 		'
-		Me.lblAbout.Location = New System.Drawing.Point(0, 0)
+		Me.lblAbout.Location = New System.Drawing.Point(-4, 1)
 		Me.lblAbout.Margin = New System.Windows.Forms.Padding(50)
 		Me.lblAbout.Name = "lblAbout"
 		Me.lblAbout.Padding = New System.Windows.Forms.Padding(5)
@@ -69,11 +69,20 @@ Partial Class AboutForm
 		Me.Controls.Add(Me.lblAbout)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.KeyPreview = true
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "AboutForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "About"
+		AddHandler KeyDown, AddressOf Me.AboutFormKeyDown
 		Me.ResumeLayout(false)
 	End Sub
 	Private linkLabel As System.Windows.Forms.LinkLabel
 	Private lblAbout As System.Windows.Forms.Label
+	
+	Sub AboutFormKeyUp(sender As Object, e As KeyEventArgs)
+		Msgbox ( e.KeyValue )
+	End Sub
 End Class

@@ -101,11 +101,14 @@ Partial Class ImportCatalogForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(452, 297)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnImport)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.MinimizeBox = false
 		Me.Name = "ImportCatalogForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Select Updates to Import"
 		AddHandler FormClosed, AddressOf Me.ImportCatalogFormFormClosed

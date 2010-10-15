@@ -104,13 +104,17 @@ Partial Class UpdateSelectionForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(453, 306)
 		Me.Controls.Add(Me.cboVendor)
 		Me.Controls.Add(Me.lblVendor)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnSelect)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.MaximizeBox = false
+		Me.MinimizeBox = false
 		Me.Name = "UpdateSelectionForm"
+		Me.ShowInTaskbar = false
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "Select Update"
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
