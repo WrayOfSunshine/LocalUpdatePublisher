@@ -349,7 +349,7 @@ Partial Class UpdateForm
 		Me.txtOriginalURI.Enabled = false
 		Me.txtOriginalURI.Location = New System.Drawing.Point(114, 318)
 		Me.txtOriginalURI.Name = "txtOriginalURI"
-		Me.txtOriginalURI.Size = New System.Drawing.Size(435, 20)
+		Me.txtOriginalURI.Size = New System.Drawing.Size(434, 20)
 		Me.txtOriginalURI.TabIndex = 69
 		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.TxtOriginalURITextChanged
 		'
@@ -499,8 +499,9 @@ Partial Class UpdateForm
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.txtMoreInfoURL.Location = New System.Drawing.Point(114, 370)
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
-		Me.txtMoreInfoURL.Size = New System.Drawing.Size(457, 20)
+		Me.txtMoreInfoURL.Size = New System.Drawing.Size(434, 20)
 		Me.txtMoreInfoURL.TabIndex = 23
+		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'txtSupportURL
 		'
@@ -508,8 +509,9 @@ Partial Class UpdateForm
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.txtSupportURL.Location = New System.Drawing.Point(114, 344)
 		Me.txtSupportURL.Name = "txtSupportURL"
-		Me.txtSupportURL.Size = New System.Drawing.Size(457, 20)
+		Me.txtSupportURL.Size = New System.Drawing.Size(434, 20)
 		Me.txtSupportURL.TabIndex = 22
+		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'cboSeverity
 		'

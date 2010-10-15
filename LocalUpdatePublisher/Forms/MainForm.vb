@@ -60,6 +60,10 @@ Public Partial Class MainForm
 	#End Region
 	
 	Public Sub New()
+				'Set the persist window object.
+		_windowState = New PersistWindowState()
+		_windowState.Parent = Me
+		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 		
@@ -69,11 +73,7 @@ Public Partial Class MainForm
 		_serverNode = New TreeNode
 		_computerNode = New TreeNode
 		_noEvents = False
-
-		'Set the persist window object.
-		_windowState = New PersistWindowState()
-		_windowState.Parent = Me
-				
+			
 		'Sort Treeview
 		treeView.Sorted = True
 		
@@ -122,7 +122,7 @@ Public Partial Class MainForm
 			Not treeView.SelectedNode.Tag Is Nothing Then
 			Call SaveDgvState (treeView.SelectedNode)
 		End If
-				
+		
 		'Save the currently selected node's path
 		If Not treeView.SelectedNode Is Nothing Then
 			appSettings.TreePath = treeView.SelectedNode.FullPath
@@ -135,7 +135,8 @@ Public Partial Class MainForm
 	'When the splitter moved save its position.
 	Private Sub SplitContainerSplitterMoved(sender As Object, e As SplitterEventArgs)
 		'Save the settings to the settings object depending on the selected node type.
-		If Not treeView.SelectedNode Is Nothing AndAlso _
+		If Not _noEvents AndAlso _
+			Not treeView.SelectedNode Is Nothing AndAlso _
 			Not treeView.SelectedNode.Tag Is Nothing Then
 			
 			If TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then 'Computer Note
@@ -1157,7 +1158,6 @@ Public Partial Class MainForm
 		'Setup the panels.
 		scHeader.Panel1Collapsed = True
 		pnlComputers.Visible = False
-		splitContainerHorz.SplitterDistance = appSettings.UpdateSplitter
 		pnlUpdates.Visible = True
 		Refresh
 		
@@ -1166,6 +1166,7 @@ Public Partial Class MainForm
 		tabMainComputers.SelectedIndex = 0
 		
 		_noEvents = True
+		splitContainerHorz.SplitterDistance = appSettings.UpdateSplitter
 		dgvUpdateReport.DataSource = Nothing 'Clear report.
 		_noEvents = False
 		

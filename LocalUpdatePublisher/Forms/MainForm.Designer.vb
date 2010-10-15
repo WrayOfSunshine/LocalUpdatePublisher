@@ -116,9 +116,7 @@ Partial Class MainForm
 		Me.txtRebootBehavior = New System.Windows.Forms.TextBox
 		Me.txtServerity = New System.Windows.Forms.TextBox
 		Me.txtArticleID = New System.Windows.Forms.TextBox
-		Me.txtSupportURL = New System.Windows.Forms.TextBox
 		Me.txtBulletinID = New System.Windows.Forms.TextBox
-		Me.lblSupportURL = New System.Windows.Forms.Label
 		Me.lblMoreInfoURL = New System.Windows.Forms.Label
 		Me.txtCVEID = New System.Windows.Forms.TextBox
 		Me.lblArticleID = New System.Windows.Forms.Label
@@ -401,8 +399,8 @@ Partial Class MainForm
 		'
 		'splitContainerHorz.Panel2
 		'
-		Me.splitContainerHorz.Panel2.Controls.Add(Me.pnlComputers)
 		Me.splitContainerHorz.Panel2.Controls.Add(Me.pnlUpdates)
+		Me.splitContainerHorz.Panel2.Controls.Add(Me.pnlComputers)
 		Me.splitContainerHorz.Size = New System.Drawing.Size(679, 629)
 		Me.splitContainerHorz.SplitterDistance = 147
 		Me.splitContainerHorz.TabIndex = 1
@@ -790,9 +788,7 @@ Partial Class MainForm
 		Me.tabUpdateInfo.Controls.Add(Me.txtRebootBehavior)
 		Me.tabUpdateInfo.Controls.Add(Me.txtServerity)
 		Me.tabUpdateInfo.Controls.Add(Me.txtArticleID)
-		Me.tabUpdateInfo.Controls.Add(Me.txtSupportURL)
 		Me.tabUpdateInfo.Controls.Add(Me.txtBulletinID)
-		Me.tabUpdateInfo.Controls.Add(Me.lblSupportURL)
 		Me.tabUpdateInfo.Controls.Add(Me.lblMoreInfoURL)
 		Me.tabUpdateInfo.Controls.Add(Me.txtCVEID)
 		Me.tabUpdateInfo.Controls.Add(Me.lblArticleID)
@@ -834,7 +830,7 @@ Partial Class MainForm
 		Me.lblPrerequisites.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.lblPrerequisites.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblPrerequisites.Location = New System.Drawing.Point(482, 364)
+		Me.lblPrerequisites.Location = New System.Drawing.Point(482, 337)
 		Me.lblPrerequisites.Name = "lblPrerequisites"
 		Me.lblPrerequisites.Size = New System.Drawing.Size(113, 17)
 		Me.lblPrerequisites.TabIndex = 64
@@ -847,7 +843,7 @@ Partial Class MainForm
 		Me.lblSupersedes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.lblSupersedes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblSupersedes.Location = New System.Drawing.Point(482, 390)
+		Me.lblSupersedes.Location = New System.Drawing.Point(482, 363)
 		Me.lblSupersedes.Name = "lblSupersedes"
 		Me.lblSupersedes.Size = New System.Drawing.Size(113, 17)
 		Me.lblSupersedes.TabIndex = 63
@@ -860,7 +856,7 @@ Partial Class MainForm
 		Me.lblReturnCodes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.lblReturnCodes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblReturnCodes.Location = New System.Drawing.Point(482, 416)
+		Me.lblReturnCodes.Location = New System.Drawing.Point(482, 389)
 		Me.lblReturnCodes.Name = "lblReturnCodes"
 		Me.lblReturnCodes.Size = New System.Drawing.Size(113, 17)
 		Me.lblReturnCodes.TabIndex = 62
@@ -869,7 +865,7 @@ Partial Class MainForm
 		'
 		'lblUninstall
 		'
-		Me.lblUninstall.Location = New System.Drawing.Point(43, 393)
+		Me.lblUninstall.Location = New System.Drawing.Point(43, 366)
 		Me.lblUninstall.Name = "lblUninstall"
 		Me.lblUninstall.Size = New System.Drawing.Size(80, 17)
 		Me.lblUninstall.TabIndex = 60
@@ -879,7 +875,7 @@ Partial Class MainForm
 		'
 		Me.txtUninstall.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtUninstall.Location = New System.Drawing.Point(129, 390)
+		Me.txtUninstall.Location = New System.Drawing.Point(129, 363)
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
 		Me.txtUninstall.Size = New System.Drawing.Size(296, 20)
@@ -889,7 +885,7 @@ Partial Class MainForm
 		'
 		Me.txtImpact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtImpact.Location = New System.Drawing.Point(129, 364)
+		Me.txtImpact.Location = New System.Drawing.Point(129, 337)
 		Me.txtImpact.Name = "txtImpact"
 		Me.txtImpact.ReadOnly = true
 		Me.txtImpact.Size = New System.Drawing.Size(296, 20)
@@ -936,7 +932,7 @@ Partial Class MainForm
 		'
 		'lblImpact
 		'
-		Me.lblImpact.Location = New System.Drawing.Point(43, 366)
+		Me.lblImpact.Location = New System.Drawing.Point(43, 339)
 		Me.lblImpact.Name = "lblImpact"
 		Me.lblImpact.Size = New System.Drawing.Size(80, 17)
 		Me.lblImpact.TabIndex = 37
@@ -972,7 +968,7 @@ Partial Class MainForm
 		'
 		'lblRebootBehavior
 		'
-		Me.lblRebootBehavior.Location = New System.Drawing.Point(30, 419)
+		Me.lblRebootBehavior.Location = New System.Drawing.Point(30, 392)
 		Me.lblRebootBehavior.Name = "lblRebootBehavior"
 		Me.lblRebootBehavior.Size = New System.Drawing.Size(93, 17)
 		Me.lblRebootBehavior.TabIndex = 38
@@ -1000,7 +996,7 @@ Partial Class MainForm
 		'
 		Me.txtRebootBehavior.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtRebootBehavior.Location = New System.Drawing.Point(129, 416)
+		Me.txtRebootBehavior.Location = New System.Drawing.Point(129, 389)
 		Me.txtRebootBehavior.Name = "txtRebootBehavior"
 		Me.txtRebootBehavior.ReadOnly = true
 		Me.txtRebootBehavior.Size = New System.Drawing.Size(296, 20)
@@ -1026,16 +1022,6 @@ Partial Class MainForm
 		Me.txtArticleID.Size = New System.Drawing.Size(296, 20)
 		Me.txtArticleID.TabIndex = 45
 		'
-		'txtSupportURL
-		'
-		Me.txtSupportURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtSupportURL.Location = New System.Drawing.Point(129, 312)
-		Me.txtSupportURL.Name = "txtSupportURL"
-		Me.txtSupportURL.ReadOnly = true
-		Me.txtSupportURL.Size = New System.Drawing.Size(522, 20)
-		Me.txtSupportURL.TabIndex = 48
-		'
 		'txtBulletinID
 		'
 		Me.txtBulletinID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
@@ -1046,17 +1032,9 @@ Partial Class MainForm
 		Me.txtBulletinID.Size = New System.Drawing.Size(296, 20)
 		Me.txtBulletinID.TabIndex = 41
 		'
-		'lblSupportURL
-		'
-		Me.lblSupportURL.Location = New System.Drawing.Point(42, 314)
-		Me.lblSupportURL.Name = "lblSupportURL"
-		Me.lblSupportURL.Size = New System.Drawing.Size(80, 17)
-		Me.lblSupportURL.TabIndex = 35
-		Me.lblSupportURL.Text = "Support URL"
-		'
 		'lblMoreInfoURL
 		'
-		Me.lblMoreInfoURL.Location = New System.Drawing.Point(42, 341)
+		Me.lblMoreInfoURL.Location = New System.Drawing.Point(42, 314)
 		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
 		Me.lblMoreInfoURL.Size = New System.Drawing.Size(80, 17)
 		Me.lblMoreInfoURL.TabIndex = 36
@@ -1084,7 +1062,7 @@ Partial Class MainForm
 		'
 		Me.txtMoreInfoURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtMoreInfoURL.Location = New System.Drawing.Point(129, 338)
+		Me.txtMoreInfoURL.Location = New System.Drawing.Point(129, 311)
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
 		Me.txtMoreInfoURL.ReadOnly = true
 		Me.txtMoreInfoURL.Size = New System.Drawing.Size(522, 20)
@@ -1427,7 +1405,6 @@ Partial Class MainForm
 	Private lblArticleID As System.Windows.Forms.Label
 	Private lblCVEID As System.Windows.Forms.Label
 	Private lblSeverity As System.Windows.Forms.Label
-	Private lblSupportURL As System.Windows.Forms.Label
 	Private lblMoreInfoURL As System.Windows.Forms.Label
 	Private lblImpact As System.Windows.Forms.Label
 	Private lblRebootBehavior As System.Windows.Forms.Label
@@ -1436,7 +1413,6 @@ Partial Class MainForm
 	Private txtBulletinID As System.Windows.Forms.TextBox
 	Private txtArticleID As System.Windows.Forms.TextBox
 	Private txtCVEID As System.Windows.Forms.TextBox
-	Private txtSupportURL As System.Windows.Forms.TextBox
 	Private txtMoreInfoURL As System.Windows.Forms.TextBox
 	Private lblID As System.Windows.Forms.Label
 	Private txtPackage As System.Windows.Forms.TextBox

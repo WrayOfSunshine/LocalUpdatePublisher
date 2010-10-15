@@ -443,9 +443,9 @@ Public Partial Class UpdateForm
 					If Not String.IsNullOrEmpty(Me.TxtSupportURL.Text) Then _Sdp.SupportUrl = New Uri( Me.TxtSupportURL.Text)
 					
 					'If An Additional Info URL Exists Then Change It.  Otherwise Add A New One To The List.
-					If _Sdp.AdditionalInformationUrls.Count > 0 And Not String.IsNullOrEmpty(Me.TxtSupportURL.Text) Then
+					If _Sdp.AdditionalInformationUrls.Count > 0 And Not String.IsNullOrEmpty(Me.TxtMoreInfoURL.Text) Then
 						_Sdp.AdditionalInformationUrls.Item(0) = New Uri(Me.TxtMoreInfoURL.Text)
-					Else If Not String.IsNullOrEmpty(Me.TxtSupportURL.Text)
+					Else If Not String.IsNullOrEmpty(Me.TxtMoreInfoURL.Text)
 						_Sdp.AdditionalInformationUrls.Add(New Uri(Me.TxtMoreInfoURL.Text))
 					End If
 					
@@ -883,6 +883,21 @@ Public Partial Class UpdateForm
 		Me.ValidateChildren
 	End Sub
 	
+	'Validate that a URI is valid.
+	Sub txtURITextChanged(sender As Object, e As EventArgs)
+		Dim tmpTextBox As TextBox
+		If TypeOf Sender Is TextBox Then
+			tmpTextBox = DirectCast(sender, TextBox)
+			If Not String.IsNullOrEmpty(tmpTextBox.Text) AndAlso Not Uri.IsWellFormedUriString(tmpTextBox.Text, UriKind.Absolute) Then
+				Me.ErrorProviderUpdate.SetError(tmpTextBox,"Invalid URI.")
+			Else
+				Me.ErrorProviderUpdate.SetError(tmpTextBox,"")
+			End If
+		End If
+		
+		Me.ValidateChildren
+	End Sub
+	
 	'Enable and Disable the appropriate details based on the package type.
 	Sub CboPackageTypeSelectedIndexChanged(sender As Object, e As EventArgs)
 		If DirectCast(Me.cboPackageType.SelectedIndex, PackageType) = PackageType.Application Then
@@ -942,7 +957,9 @@ Public Partial Class UpdateForm
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboProduct)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboImpact)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboRebootBehavior))OrElse _
-						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtOriginalURI))
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtOriginalURI))OrElse _
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtSupportURL))OrElse _
+						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtMoreInfoURL))
 						Invalid = True
 					End If
 					
