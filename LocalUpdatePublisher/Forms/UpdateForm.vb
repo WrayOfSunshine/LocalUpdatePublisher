@@ -48,7 +48,7 @@ Public Partial Class UpdateForm
 	
 	#REGION "Form Methods"
 	'If No SDP Is Passed Then Create A New, Blank One.
-	Public Overloads Function ShowDialog() As DialogResult
+	Public Overloads Function ShowDialog() As SoftwareDistributionPackage
 		'Clear The Supporting Forms.
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
@@ -72,11 +72,17 @@ Public Partial Class UpdateForm
 		Next
 		
 		Me.DialogResult = DialogResult.Cancel
-		Return MyBase.ShowDialog() 'Return The Dialog Result.
+		
+		'Return the SDP file.
+		If MyBase.ShowDialog() = DialogResult.OK Then
+			Return Me._Sdp
+		Else
+			Return Nothing
+		End If
 	End Function
 	
 	'If No SDP Is Passed Then Create A New, Blank One.
-	Public Overloads Function ShowDialog(PackageFile As String ) As DialogResult
+	Public Overloads Function ShowDialog(PackageFile As String ) As SoftwareDistributionPackage
 		'Clear The Supporting Forms.
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
@@ -99,6 +105,9 @@ Public Partial Class UpdateForm
 			_UpdateType = Nothing
 		End If
 		
+		'Disable the MetaData only flag.
+		Me.chkMetadataOnly.Enabled = False
+		
 		Call LoadSdpData
 		
 		
@@ -118,7 +127,13 @@ Public Partial Class UpdateForm
 		Me.ValidateChildren
 		
 		Me.DialogResult = DialogResult.Cancel
-		Return MyBase.ShowDialog() 'Return The Dialog Result.
+		
+		'Return the SDP file.
+		If MyBase.ShowDialog() = DialogResult.OK Then
+			Return Me._Sdp
+		Else
+			Return Nothing
+		End If
 	End Function
 	
 	'Allow The User To Edit The Metadata.
@@ -201,7 +216,7 @@ Public Partial Class UpdateForm
 	
 	'Depending on the current tab, enable or disable the metadata only check box.
 	Private Sub SetMetadataOnly
-		If TabsImportUpdate.SelectedTab.Name = "tabIntro" OrElse TabsImportUpdate.SelectedTab.Name = "tabPackageInfo" Then
+		If Not Me._Revision AndAlso ( TabsImportUpdate.SelectedTab.Name = "tabIntro" OrElse TabsImportUpdate.SelectedTab.Name = "tabPackageInfo" ) Then
 			Me.chkMetadataOnly.Enabled = True
 		Else
 			Me.chkMetadataOnly.Enabled = False
@@ -384,6 +399,9 @@ Public Partial Class UpdateForm
 								End If
 							End If
 						Next
+						
+						'Verify the URI to confirm the additional files logic.
+						Call VerifyOriginalURI()
 						
 						'Catch Any Exception Related To The Creation Of The SDP.
 					Catch X As InvalidOperationException
@@ -864,14 +882,21 @@ Public Partial Class UpdateForm
 		Me.ValidateChildren
 	End Sub
 	
-	'Validate that the source URL is valid and points to the selected file.
+	'Call the verify original URI routine.
 	Sub txtOriginalURITextChanged(sender As Object, e As EventArgs)
+		Call VerifyOriginalURI
+	End Sub
+	
+	'Validate that the source URL is valid and points to the selected file.
+	Sub VerifyOriginalURI()
 		If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
 			If Me.chkMetadataOnly.Checked Then
 				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Given.")
 			Else
 				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
 			End If
+		ElseIf Me.dgvAdditionalFiles.Rows.Count > 0 Then
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Cannot publish URI when additional files are included.")
 		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURI.Text, UriKind.Absolute) Then
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Not valid URI.")
 		ElseIf Not Me.txtOriginalURI.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)

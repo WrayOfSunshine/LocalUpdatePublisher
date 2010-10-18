@@ -155,7 +155,7 @@ Public Module Data_Routines
 			For Each tmpSummary as IUpdateSummary In ConnectionManager.CurrentServer.GetSummariesPerUpdate(tmpUpdateScope,computers)
 				Dim tmpRow As DataRow = dt.NewRow()
 				tmpRow("Title") = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpSummary.UpdateId)).Title
-				tmpRow("InstalledCount") = tmpSummary.InstalledCount
+				tmpRow("InstalledCount") = tmpSummary.InstalledCount + tmpSummary.InstalledPendingRebootCount
 				tmpRow("NotInstalledCount") = tmpSummary.NotInstalledCount
 				tmpRow("NotApplicableCount") = tmpSummary.NotApplicableCount
 				tmpRow("FailedCount") = tmpSummary.FailedCount
@@ -316,7 +316,7 @@ Public Module Data_Routines
 			For Each tmpSummary as IUpdateSummary In update.GetSummaryPerComputerTargetGroup
 				Dim tmpRow As DataRow = dt.NewRow()
 				tmpRow("GroupName") = ConnectionManager.CurrentServer.GetComputerTargetGroup(tmpSummary.ComputerTargetGroupId).Name
-				tmpRow("InstalledCount") = tmpSummary.InstalledCount
+				tmpRow("InstalledCount") = tmpSummary.InstalledCount + tmpSummary.InstalledPendingRebootCount
 				tmpRow("NotInstalledCount") = tmpSummary.NotInstalledCount
 				tmpRow("NotApplicableCount") = tmpSummary.NotApplicableCount
 				tmpRow("FailedCount") = tmpSummary.FailedCount

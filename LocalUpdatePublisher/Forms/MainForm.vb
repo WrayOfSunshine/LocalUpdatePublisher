@@ -60,7 +60,7 @@ Public Partial Class MainForm
 	#End Region
 	
 	Public Sub New()
-				'Set the persist window object.
+		'Set the persist window object.
 		_windowState = New PersistWindowState()
 		_windowState.Parent = Me
 		
@@ -73,7 +73,7 @@ Public Partial Class MainForm
 		_serverNode = New TreeNode
 		_computerNode = New TreeNode
 		_noEvents = False
-			
+		
 		'Sort Treeview
 		treeView.Sorted = True
 		
@@ -525,15 +525,28 @@ Public Partial Class MainForm
 	
 	'Create an update.
 	Private Sub createUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+		Dim tmpSDP As SoftwareDistributionPackage
+		Dim tmpRevisionId As UpdateRevisionId
 		
 		'Show the Import Update dialog and dispose of it.
 		My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
 		
 		'If the user didn't cancel then reload the tree.
-		If My.Forms.UpdateForm.ShowDialog = DialogResult.OK Then
+		tmpSDP = My.Forms.UpdateForm.ShowDialog
+		If Not tmpSDP Is Nothing Then
 			Call LoadUpdateNodes()
-			Call RefreshUpdateList()
+			'Call RefreshUpdateList()
+			
+			Call SelectNode(Me._updateNode, Path.Combine( tmpSDP.VendorName, tmpSDP.ProductNames(0)) )
+			
+			tmpRevisionID = New UpdateRevisionId(tmpSDP.PackageId)
+			For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+				If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionID.UpdateId) Then
+					Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
+				End If
+			Next
 		End If
+		
 		My.Forms.UpdateForm.Dispose
 	End Sub
 	
@@ -706,6 +719,8 @@ Public Partial Class MainForm
 	
 	'Open the update form and pass it the currently selected update's SDP file.
 	Private Sub ReviseUpdate_Click(sender As Object, e As EventArgs)
+		Dim tmpSDP As SoftwareDistributionPackage
+		Dim tmpRevisionID As UpdateRevisionId
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.CurrentRow Is Nothing
@@ -718,12 +733,20 @@ Public Partial Class MainForm
 				'Export the SDP to a temporary file.
 				Dim packageFile As String = ConnectionManager.ExportSDP(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id)
 				'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id, packageFile)
-				
 				'Bring Up the approval dialog and dispose it when finished.
-				My.Forms.UpdateForm.Location =  new Point(Me.Location.X + 100, Me.Location.Y + 100)
-				If My.Forms.UpdateForm.ShowDialog(packageFile) = DialogResult.OK Then
+				My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+				tmpSDP = My.Forms.UpdateForm.ShowDialog(packageFile)
+				
+				If Not tmpSDP Is Nothing Then
 					'Refresh the DGV.
 					Call RefreshUpdateList(True)
+					tmpRevisionID = New UpdateRevisionId(tmpSDP.PackageId)
+					
+					For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+						If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionID.UpdateId) Then
+							Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
+						End If
+					Next
 				End If
 				
 				My.Forms.UpdateForm.Dispose
@@ -769,7 +792,7 @@ Public Partial Class MainForm
 	'Remove the update.
 	Private Sub RemoveUpdate_Click(sender As Object, e As EventArgs)
 		Dim response As MsgBoxResult
-		Dim update As IUpdate
+		Dim tmpUpdate As IUpdate = Nothing
 		
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
@@ -788,16 +811,16 @@ Public Partial Class MainForm
 				
 				If Not tmpRow.Cells("IUpdate").Value Is Nothing Then
 					'Get update.
-					update = DirectCast( tmpRow.Cells("IUpdate").Value, IUpdate)
+					tmpUpdate = DirectCast( tmpRow.Cells("IUpdate").Value, IUpdate)
 					
 					'Remove the approvals
-					For Each approval As IUpdateApproval In update.GetUpdateApprovals
+					For Each approval As IUpdateApproval In tmpUpdate.GetUpdateApprovals
 						approval.Delete
 					Next
 					
 					Try
 						'Remove the package.
-						ConnectionManager.ParentServer.DeleteUpdate( update.Id.UpdateId )
+						ConnectionManager.ParentServer.DeleteUpdate( tmpUpdate.Id.UpdateId )
 					Catch x As WsusObjectNotFoundException
 						Msgbox ("WsusObjectNotFoundException: " & x.Message)
 					Catch x As InvalidOperationException
@@ -811,19 +834,28 @@ Public Partial Class MainForm
 					'Currently we check to see if the folder exists because earlier version of LUP
 					' published the packages to a single location in error.  At some point
 					' this code should be removed and an error thrown if the content isn't found.
-					Dim tmpDirectory As String = "\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & update.Id.UpdateId.ToString
+					Dim tmpDirectory As String = "\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpUpdate.Id.UpdateId.ToString
 					Try
 						If Directory.Exists(tmpDirectory) Then
 							Directory.Delete(tmpDirectory, True)
 						End If
 					Catch
-						Msgbox("There was a problem deleting the package content from the UpdateServicesPackages.  Use this UpdateID to do so manually: " & vbNewline & update.Id.UpdateId.ToString)
+						Msgbox("There was a problem deleting the package content from the UpdateServicesPackages.  Use this UpdateID to do so manually: " & vbNewline & tmpUpdate.Id.UpdateId.ToString)
 					End Try
 				End IF
 			Next
 			
 			Call LoadUpdateNodes
-			Call RefreshUpdateList
+			
+			'If at some point the tmpUpdate object was instantiated then try to reload it's vendor and product.
+			If Not tmpUpdate Is Nothing Then
+				Call SelectNode(Me._updateNode, Path.Combine ( tmpUpdate.CompanyTitles(0) , tmpUpdate.ProductTitles(0)))
+				
+				'If the vendor or product wasn't found, refresh the list to clear the DGV.
+				If Me.treeView.SelectedNode.Equals(Me._updateNode) Then
+					Call RefreshUpdateList
+				End If
+			End If
 			
 			Me.Cursor = Cursors.Arrow
 		End If
