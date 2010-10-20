@@ -52,6 +52,7 @@ Public Partial Class UpdateForm
 		'Clear The Supporting Forms.
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
+		ReturnCodesForm = Nothing
 		
 		'Set Default Values.
 		Me._Sdp = New SoftwareDistributionPackage()
@@ -525,23 +526,28 @@ Public Partial Class UpdateForm
 						
 					End If 'There Is At Least One InstallableItme Object.
 					
-					'Create Temporary Prerequisite Group And Add Updates To It.
-					Dim TmpPrerequisiteGroup As PrerequisiteGroup = New PrerequisiteGroup
-					For Each TmpRow As DataGridViewRow In PrerequisiteUpdatesForm.GetUpdates
-						TmpPrerequisiteGroup.Ids.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
-					Next
-					
-					'If The Temporary Group Has Anything, Add It To The SDP.
-					_Sdp.Prerequisites.Clear
-					If TmpPrerequisiteGroup.Ids.Count > 0 Then
-						_Sdp.Prerequisites.Add(TmpPrerequisiteGroup)
+					'Add the prerequisite updates if the user edited them and the form was populated
+					If PrerequisiteUpdatesForm.GetUpdateCount > 0 Then
+						'Create Temporary Prerequisite Group And Add Updates To It.
+						Dim TmpPrerequisiteGroup As PrerequisiteGroup = New PrerequisiteGroup
+						For Each TmpRow As DataGridViewRow In PrerequisiteUpdatesForm.GetUpdates
+							TmpPrerequisiteGroup.Ids.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
+						Next
+						
+						'If The Temporary Group Has Anything, Add It To The SDP.
+						_Sdp.Prerequisites.Clear
+						If TmpPrerequisiteGroup.Ids.Count > 0 Then
+							_Sdp.Prerequisites.Add(TmpPrerequisiteGroup)
+						End If
 					End If
 					
-					'Add The Superceded Updates.
-					_Sdp.SupersededPackages.Clear
-					For Each TmpRow As DataGridViewRow In SupersededUpdatesForm.GetUpdates
-						_Sdp.SupersededPackages.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
-					Next
+					'Add the superceded updates if the user edited them and the form was populated.
+					If SupersededUpdatesForm.GetUpdateCount > 0 Then
+						_Sdp.SupersededPackages.Clear
+						For Each TmpRow As DataGridViewRow In SupersededUpdatesForm.GetUpdates
+							_Sdp.SupersededPackages.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
+						Next
+					End If
 					
 				Catch X As UriFormatException
 					Msgbox("UriFormatException:Could Not Save The Update Information." & VbNewline & X.Message)
@@ -743,7 +749,7 @@ Public Partial Class UpdateForm
 			'Note: In Previous Versions Of LUP We Didn'T Check To See If The IsInstalled Or
 			' IsInstallable Members Were Empty And The SDP Was Set With These Members Instantiated
 			' To An Empty String.  If We Detect These When Loading Then Set The Member To Nothing.
-			
+								
 			'Load The Package'S IsInstalled Rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstalled) Then
 				IsInstalledRules.Rule = _Sdp.IsInstalled

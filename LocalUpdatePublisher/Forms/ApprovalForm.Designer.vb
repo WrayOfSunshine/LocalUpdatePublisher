@@ -75,7 +75,7 @@ Partial Class ApprovalForm
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.ReadOnly = true
 		Me.dgvApprovals.RowHeadersVisible = false
-		Me.dgvApprovals.Size = New System.Drawing.Size(530, 236)
+		Me.dgvApprovals.Size = New System.Drawing.Size(568, 299)
 		Me.dgvApprovals.TabIndex = 1
 		AddHandler Me.dgvApprovals.CellMouseDown, AddressOf Me.DtaGridViewCellMouseDown
 		'
@@ -149,7 +149,7 @@ Partial Class ApprovalForm
 		Me.btnOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnOK.Enabled = false
-		Me.btnOK.Location = New System.Drawing.Point(325, 301)
+		Me.btnOK.Location = New System.Drawing.Point(363, 364)
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.Size = New System.Drawing.Size(99, 28)
 		Me.btnOK.TabIndex = 2
@@ -161,7 +161,7 @@ Partial Class ApprovalForm
 		'
 		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(430, 301)
+		Me.btnCancel.Location = New System.Drawing.Point(468, 364)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.Size = New System.Drawing.Size(99, 28)
 		Me.btnCancel.TabIndex = 3
@@ -172,7 +172,7 @@ Partial Class ApprovalForm
 		'
 		Me.lblUninstallable.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.lblUninstallable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblUninstallable.Location = New System.Drawing.Point(44, 285)
+		Me.lblUninstallable.Location = New System.Drawing.Point(7, 348)
 		Me.lblUninstallable.Name = "lblUninstallable"
 		Me.lblUninstallable.Size = New System.Drawing.Size(429, 14)
 		Me.lblUninstallable.TabIndex = 5
@@ -182,7 +182,7 @@ Partial Class ApprovalForm
 		'btnReload
 		'
 		Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.btnReload.Location = New System.Drawing.Point(23, 301)
+		Me.btnReload.Location = New System.Drawing.Point(24, 364)
 		Me.btnReload.Name = "btnReload"
 		Me.btnReload.Size = New System.Drawing.Size(99, 28)
 		Me.btnReload.TabIndex = 6
@@ -195,21 +195,18 @@ Partial Class ApprovalForm
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(542, 334)
-		Me.Controls.Add(Me.btnReload)
+		Me.ClientSize = New System.Drawing.Size(580, 397)
 		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.lblUninstallable)
+		Me.Controls.Add(Me.btnReload)
 		Me.Controls.Add(Me.btnOK)
+		Me.Controls.Add(Me.lblUninstallable)
 		Me.Controls.Add(Me.lblInfo)
 		Me.Controls.Add(Me.dgvApprovals)
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
-		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false
-		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Approve Update"
 		AddHandler FormClosed, AddressOf Me.UpdateApprovalFormFormClosed
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).EndInit

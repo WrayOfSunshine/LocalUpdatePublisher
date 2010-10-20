@@ -23,7 +23,6 @@ Public Partial Class ApprovalForm
 		
 		'Prevent the form from being sized too small.
 		Me.MinimumSize = Me.Size
-		Me.MaximumSize = Me.Size
 	End Sub
 	
 	'Call ShowDialog

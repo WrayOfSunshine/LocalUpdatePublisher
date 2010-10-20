@@ -712,8 +712,6 @@ Public Partial Class MainForm
 				'Refresh the DGV.
 				Call RefreshUpdateList(True)
 			End If
-			
-			
 		End If
 	End Sub
 	

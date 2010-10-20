@@ -18,6 +18,12 @@ Public Partial Class SupersededUpdatesForm
 		End Get
 	End Property
 	
+	'Get the number of updates.
+	Public ReadOnly Property GetUpdateCount() As Integer
+		Get
+			Return dgvUpdates.Rows.Count
+		End Get
+	End Property
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -60,7 +66,7 @@ Public Partial Class SupersededUpdatesForm
 		'Show the Remove/Add buttons.
 		btnRemove.Visible = True
 		btnAdd.Visible = True
-				
+		
 		dgvUpdates.Rows.Clear
 		
 		'Load the superceded updates here.

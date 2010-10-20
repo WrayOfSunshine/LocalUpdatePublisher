@@ -14,10 +14,17 @@ Public Partial Class ReturnCodesForm
 	
 	Private Dim _codeList As IList(Of ReturnCode)
 	
-	'Get the collection of updates.
+	'Get the collection of codes.
 	Public ReadOnly Property GetReturnCodes() As IList( Of ReturnCode )
 		Get
 			Return _codeList
+		End Get
+	End Property
+	
+	'Get the number of codes.
+	Public ReadOnly Property GetCodeCount() As Integer
+		Get
+			Return _codeList.Count
 		End Get
 	End Property
 	
@@ -71,7 +78,7 @@ Public Partial Class ReturnCodesForm
 				tmpReturnCode.Language = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName
 				tmpReturnCode.InstallationResult = DirectCast([Enum].Parse(GetType(InstallationResult),tmpRow.Cells("Result").Value.ToString), InstallationResult)
 				tmpReturnCode.ReturnCodeValue = CInt(tmpRow.Cells("ReturnCode").Value)
-				If Not tmpRow.Cells("Reboot").Value Is Nothing Then tmpReturnCode.IsRebootRequired = DirectCast(tmpRow.Cells("Reboot").Value, Boolean)				
+				If Not tmpRow.Cells("Reboot").Value Is Nothing Then tmpReturnCode.IsRebootRequired = DirectCast(tmpRow.Cells("Reboot").Value, Boolean)
 				If Not tmpRow.Cells("Description").Value Is Nothing Then tmpReturnCode.Description = tmpRow.Cells("Description").Value.ToString
 				_codeList.Add(tmpReturnCode)
 				
@@ -120,5 +127,5 @@ Public Partial Class ReturnCodesForm
 		'Set the OK button based on the DGV validation.
 		Me.btnOk.Enabled = ValidateDGVReturnCodes
 	End Sub
-
+	
 End Class

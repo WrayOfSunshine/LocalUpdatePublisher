@@ -110,6 +110,7 @@ Partial Class PrerequisiteUpdatesForm
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "PrerequisiteUpdatesForm"

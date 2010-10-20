@@ -278,14 +278,14 @@ Public Module Data_Routines
 				tmpRow("Title") = tmpUpdate.Title
 				tmpRow("CreationDate") = tmpUpdate.CreationDate.ToLocalTime
 				
-				If tmpUpdate.IsSuperseded Then
-					tmpRow("Status") = "Superseded"
-				Else If tmpUpdate.IsDeclined
+				If tmpUpdate.IsDeclined
 					tmpRow("Status") = "Declined"
+				Else If tmpUpdate.IsSuperseded Then
+					tmpRow("Status") = "Superseded"
 				Else If tmpUpdate.IsApproved
-					tmpRow("Status") = "Approved"
+					tmpRow("Status") = "Approved"					
 				End If
-				
+							
 				dt.Rows.Add(tmpRow)
 				
 			Next

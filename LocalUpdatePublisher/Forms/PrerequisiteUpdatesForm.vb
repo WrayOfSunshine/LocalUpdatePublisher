@@ -11,13 +11,19 @@ Imports Microsoft.UpdateServices.Administration
 
 Public Partial Class PrerequisiteUpdatesForm
 	
-	'Get the collection of updates.
+	'Get the collection of prerequisites.
 	Public ReadOnly Property GetUpdates() As DataGridViewRowCollection
 		Get
 			Return dgvUpdates.Rows
 		End Get
 	End Property
 	
+	'Get the number of prerequisites.
+	Public ReadOnly Property GetUpdateCount() As Integer
+		Get
+			Return dgvUpdates.Rows.Count
+		End Get
+	End Property
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
