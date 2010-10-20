@@ -137,7 +137,7 @@ Public Partial Class ExportCatalogForm
 		If Not tmpUpdateRevisionId Is Nothing Then
 			
 			If AddSDPtoDGV ( ConnectionManager.ExportSDP(tmpUpdateRevisionId) ) = False Then
-				Msgbox ("This update cannot be exported because the Original URL was not entered when the package was created.")
+				Msgbox ("This update cannot be exported because an Original URL has not be entered.")
 			End If
 			
 		End If
@@ -158,7 +158,7 @@ Public Partial Class ExportCatalogForm
 		
 		'If any of the packages cannot be added, warn the user.
 		If errorBool Then
-			Msgbox ("Some packages could not be added because an Original URL was not entered when the package was created.")
+			Msgbox ("Some packages could not be added because an Original URL was not entered.")
 		End If
 	End Sub
 	

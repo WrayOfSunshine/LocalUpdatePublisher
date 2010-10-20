@@ -203,6 +203,7 @@ Partial Class ApprovalForm
 		Me.Controls.Add(Me.lblInfo)
 		Me.Controls.Add(Me.dgvApprovals)
 		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false

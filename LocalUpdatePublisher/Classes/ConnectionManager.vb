@@ -707,11 +707,12 @@ Friend NotInheritable Class ConnectionManager
 	
 	'Modified from a posting: http://www.vbdotnetforums.com/remoting/82-webclient-download-progress.html
 	'Download file and update the Progress Bar.
-	Private Shared Sub DownloadChunks(ByVal sURL As Uri, ByVal pProgress As ProgressBar, ByVal Filename As String)
+	Public Shared Sub DownloadChunks(ByVal sURL As Uri, ByVal pProgress As ProgressBar, ByVal Filename As String)
 		'Dim wRemote As System.Net.WebRequest
 		Dim URLReq As WebRequest
 		Dim URLRes As WebResponse
 		Dim FileStreamer As New FileStream(Filename, FileMode.Create)
+		Dim sChunks As Stream = Nothing
 		Dim bBuffer(999) As Byte
 		Dim iBytesRead As Integer
 		
@@ -722,7 +723,7 @@ Friend NotInheritable Class ConnectionManager
 			URLReq = WebRequest.CreateDefault(sURL)
 			URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
 			URLRes = URLReq.GetResponse
-			Dim sChunks As Stream = URLReq.GetResponse.GetResponseStream
+			sChunks = URLReq.GetResponse.GetResponseStream
 			pProgress.Maximum = CInt(URLRes.ContentLength)
 			
 			Do
@@ -740,6 +741,8 @@ Friend NotInheritable Class ConnectionManager
 			FileStreamer.Close()
 			'Return sResponseData
 		Catch
+			If Not sChunks Is Nothing Then sChunks.Close()
+			If Not FileStreamer Is Nothing Then FileStreamer.Close()
 			MsgBox("Couldn't download the file." & vbNewLine & Err.Description)
 		End Try
 	End Sub

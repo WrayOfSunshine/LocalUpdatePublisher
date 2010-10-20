@@ -31,6 +31,8 @@ Public Partial Class UpdateForm
 	Private _TabsHidden As New List(Of TabPage)
 	Private _UpdateType As Integer
 	Private _Revision As Boolean
+	Private _OriginalURIChanged As Boolean
+	Private _OriginalFileInfo As FileInfo
 	Private _Publisher As IPublisher
 	Private _SdpFilePath As String
 	
@@ -57,6 +59,7 @@ Public Partial Class UpdateForm
 		'Set Default Values.
 		Me._Sdp = New SoftwareDistributionPackage()
 		Me._Revision = False
+		Me._OriginalURIChanged = False
 		Me.TxtMSIPath.Enabled = False
 		Me.ErrorProviderUpdate.SetError(Me.TxtUpdateFile, "Please Select A File.")
 		
@@ -93,6 +96,7 @@ Public Partial Class UpdateForm
 		' And Set The Filename.
 		Me._Sdp = New SoftwareDistributionPackage(PackageFile)
 		Me._Revision = True
+		Me._OriginalURIChanged = False
 		
 		'Set The Update Type Based On The Type Of The Installable Item.
 		If TypeOf _Sdp.InstallableItems.Item(0) Is CommandLineItem Then
@@ -250,7 +254,6 @@ Public Partial Class UpdateForm
 		If Me.DlgUpdateFile.ShowDialog = VbOK Then
 			Dim TmpFile As FileInfo = New FileInfo (DlgUpdateFile.FileName)
 			
-			Me.txtOriginalURI.Enabled = True
 			Me.TxtUpdateFile.Text = TmpFile.Name
 			Me.TxtUpdateFile.Tag = TmpFile
 			
@@ -267,7 +270,6 @@ Public Partial Class UpdateForm
 			
 			
 		Else 'User Didn'T Select A File.
-			Me.txtOriginalURI.Enabled = False
 			Me.TxtUpdateFile.Text = ""
 			Me.TxtUpdateFile.Tag = Nothing
 		End If
@@ -499,29 +501,65 @@ Public Partial Class UpdateForm
 								End If
 						End Select
 						
-						'Add the original url if it is present
-						If Not String.IsNullOrEmpty( Me.txtOriginalURI.Text ) Then
-							Dim fileInfo As FileInfo
+						'Add the original URI if it is present and this is a new update or we are revising an update and the
+						' original URI was changed.
+						If Not String.IsNullOrEmpty( Me.txtOriginalURI.Text ) AndAlso _
+							(Not Me._Revision OrElse _
+							Me._OriginalURIChanged AndAlso _OriginalFileInfo Is Nothing ) Then
 							Dim hashProvider As SHA1CryptoServiceProvider = New SHA1CryptoServiceProvider
 							Dim digest As String
 							Dim inStream As FileStream
 							Dim fileItem As FileForInstallableItem = New FileForInstallableItem
 							
+							'If we are revising the update then download the file.
+							If Me._Revision Then
+								Dim tmpFilePath As String
+								tmpFilePath = Path.Combine( Path.GetTempPath , Path.GetFileName(Me.txtOriginalURI.Text))
+								
+								'Set cursor and position of progress form.
+								My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
+								My.Forms.ProgressForm.ShowDialog("Downloading files for " & _Sdp.Title, parentForm)
+								My.Forms.ProgressForm.SetCurrentStep(Me.txtOriginalURI.Text)
+								ConnectionManager.DownloadChunks(New Uri(Me.txtOriginalURI.Text), My.Forms.ProgressForm.progressBar, tmpFilePath)
+								My.Forms.ProgressForm.Dispose
+																															
+								_OriginalFileInfo = New FileInfo(tmpFilePath)
+								
+								'If file was not downloaded then delete the file and exit the function.
+								If _OriginalFileInfo.Length = 0 Then									
+									_OriginalFileInfo.Delete
+									_OriginalFileInfo = Nothing								
+									Return False
+								End If
+							Else
+								_OriginalFileInfo = DirectCast(Me.txtUpdateFile.Tag,FileInfo)
+							End If
+							
 							'Get the SHA1 hash of the file.
-							fileInfo = DirectCast(Me.txtUpdateFile.Tag,FileInfo)
-							inStream = fileInfo.OpenRead()
+							inStream = _OriginalFileInfo.OpenRead()
 							digest = Convert.ToBase64String(hashProvider.ComputeHash(inStream))
 							instream.Close
 							
 							'Setup the FileForInstallable Item
-							fileItem.FileName = fileInfo.Name
+							fileItem.FileName = _OriginalFileInfo.Name
 							fileItem.OriginUri = New Uri(Me.txtOriginalURI.Text)
 							fileItem.Digest = digest
-							fileItem.Modified = fileinfo.LastWriteTimeUtc
-							fileItem.Size = fileInfo.Length
+							fileItem.Modified = _OriginalFileInfo.LastWriteTimeUtc
+							fileItem.Size = _OriginalFileInfo.Length
 							
 							'Assign it to the SDP.
 							_Sdp.InstallableItems(0).OriginalSourceFile = fileItem
+							
+							'If we are revising an update delete the temporary file.
+							If Me._Revision Then
+								Me._OriginalURIChanged = False
+								Try
+									_OriginalFileInfo.Delete
+								Catch
+								End Try
+							End If
+						Else If String.IsNullOrEmpty( Me.txtOriginalURI.Text )
+							_Sdp.InstallableItems(0).OriginalSourceFile = Nothing
 						End If
 						
 					End If 'There Is At Least One InstallableItme Object.
@@ -550,9 +588,11 @@ Public Partial Class UpdateForm
 					End If
 					
 				Catch X As UriFormatException
+					My.Forms.ProgressForm.Dispose
 					Msgbox("UriFormatException:Could Not Save The Update Information." & VbNewline & X.Message)
 					Return False
 				Catch X As Exception
+					My.Forms.ProgressForm.Dispose
 					Msgbox("Exception:Could Not Save The Update Information." & VbNewline & X.Message)
 					Return False
 				End Try
@@ -744,12 +784,19 @@ Public Partial Class UpdateForm
 				Me.IsInstallableRules.ApplicibilityRule = _Sdp.InstallableItems(0).IsInstallableApplicabilityRule
 				Me.TxtIsSuperceded_InstallableItem.Text = _Sdp.InstallableItems(0).IsSupersededApplicabilityRule
 				Me.TxtInstallableItemMetaData.Text = _Sdp.InstallableItems(0).ApplicabilityMetadata
+				
+				'Load the Original URI
+				If Not _Sdp.InstallableItems(0).OriginalSourceFile Is Nothing AndAlso _
+					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then
+					Me.txtOriginalURI.Text = _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri.ToString
+				End If
+				
 			End If 'There Is A Installable Item.
 			
 			'Note: In Previous Versions Of LUP We Didn'T Check To See If The IsInstalled Or
 			' IsInstallable Members Were Empty And The SDP Was Set With These Members Instantiated
 			' To An Empty String.  If We Detect These When Loading Then Set The Member To Nothing.
-								
+			
 			'Load The Package'S IsInstalled Rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstalled) Then
 				IsInstalledRules.Rule = _Sdp.IsInstalled
@@ -893,6 +940,37 @@ Public Partial Class UpdateForm
 		Call VerifyOriginalURI
 	End Sub
 	
+	'Handle non-alphanumeric keypresses.
+	Sub TxtOriginalURIKeyDown(sender As Object, e As KeyEventArgs)
+		If Me._Revision AndAlso Not Me._OriginalURIChanged AndAlso e.KeyCode = Keys.Delete Then
+			e.Handled = TxtOriginalURIVerifyKey
+		End If
+	End Sub
+	
+	'Handle alpha-numeric keypresses
+	Sub TxtOriginalURIKeyPress(sender As Object, e As KeyPressEventArgs)
+		'If we're revising the update then any chnage to the URI will result in downloading it for verification.
+		If e.KeyChar = ChrW(1) Then
+			Me.txtOriginalURI.SelectAll
+		Else If Me._Revision AndAlso Not Me._OriginalURIChanged AndAlso Not e.KeyChar = ChrW(3)  Then
+			e.Handled = TxtOriginalURIVerifyKey
+		Else
+			e.Handled = False
+		End If
+		
+	End Sub
+	
+	Function TxtOriginalURIVerifyKey() As Boolean
+		If MsgBox("If you modify the Original URL, it must be downloaded for verification.  Do you wish to proceed?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+			Me._OriginalURIChanged = True
+			Me._OriginalFileInfo = Nothing
+			Return False
+		Else
+			Return True
+		End If
+	End Function
+	
+	
 	'Validate that the source URL is valid and points to the selected file.
 	Sub VerifyOriginalURI()
 		If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
@@ -901,11 +979,11 @@ Public Partial Class UpdateForm
 			Else
 				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
 			End If
-		ElseIf Me.dgvAdditionalFiles.Rows.Count > 0 Then
+		ElseIf Not Me._Revision AndAlso Me.dgvAdditionalFiles.Rows.Count > 0 Then
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Cannot publish URI when additional files are included.")
 		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURI.Text, UriKind.Absolute) Then
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Not valid URI.")
-		ElseIf Not Me.txtOriginalURI.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
+		ElseIf Not me._Revision AndAlso Not Me.txtOriginalURI.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"File name does not match.")
 		Else
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
@@ -927,6 +1005,20 @@ Public Partial Class UpdateForm
 		End If
 		
 		Me.ValidateChildren
+	End Sub
+	
+	'Populate the Product combo box.
+	Sub CboVendorSelectedIndexChanged(sender As Object, e As EventArgs)
+		Me.cboProduct.Items.Clear
+		'Load the products combo with the selected vendor.
+		If My.Forms.MainForm.VendorCollection.Contains(Me.cboVendor.Text) Then
+			For Each tmpProduct As String In My.Forms.MainForm.VendorCollection(Me.cboVendor.Text).Products
+				Me.cboProduct.Items.Add(tmpProduct)
+			Next
+		End If
+		
+		'Now validate the combo.
+		ValidateCombo( sender, e )
 	End Sub
 	
 	'Enable and Disable the appropriate details based on the package type.
@@ -1035,20 +1127,4 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#End Region
-	
-	
-	'Populate the Product combo box.
-	Sub CboVendorSelectedIndexChanged(sender As Object, e As EventArgs)
-		Me.cboProduct.Items.Clear
-		'Load the products combo with the selected vendor.
-		If My.Forms.MainForm.VendorCollection.Contains(Me.cboVendor.Text) Then
-			For Each tmpProduct As String In My.Forms.MainForm.VendorCollection(Me.cboVendor.Text).Products
-				Me.cboProduct.Items.Add(tmpProduct)
-			Next
-		End If
-		
-		'Now validate the combo.
-		ValidateCombo( sender, e )
-	End Sub
-	
 End Class

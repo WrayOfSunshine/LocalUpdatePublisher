@@ -346,12 +346,13 @@ Partial Class UpdateForm
 		'
 		'txtOriginalURI
 		'
-		Me.txtOriginalURI.Enabled = false
 		Me.txtOriginalURI.Location = New System.Drawing.Point(114, 318)
 		Me.txtOriginalURI.Name = "txtOriginalURI"
 		Me.txtOriginalURI.Size = New System.Drawing.Size(434, 20)
 		Me.txtOriginalURI.TabIndex = 69
-		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.TxtOriginalURITextChanged
+		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
+		AddHandler Me.txtOriginalURI.KeyDown, AddressOf Me.TxtOriginalURIKeyDown
+		AddHandler Me.txtOriginalURI.KeyPress, AddressOf Me.TxtOriginalURIKeyPress
 		'
 		'lblOriginalURI
 		'
