@@ -252,6 +252,8 @@ Public Partial Class UpdateForm
 		
 		'Show File Dialog And If User Has Chosen A File Continue.
 		If Me.DlgUpdateFile.ShowDialog = VbOK Then
+			Me.chkMetadataOnly.Enabled = True
+			
 			Dim TmpFile As FileInfo = New FileInfo (DlgUpdateFile.FileName)
 			
 			Me.TxtUpdateFile.Text = TmpFile.Name
@@ -270,6 +272,7 @@ Public Partial Class UpdateForm
 			
 			
 		Else 'User Didn'T Select A File.
+			Me.chkMetadataOnly.Enabled = False
 			Me.TxtUpdateFile.Text = ""
 			Me.TxtUpdateFile.Tag = Nothing
 		End If
@@ -286,46 +289,13 @@ Public Partial Class UpdateForm
 	'Manage The List Of Updates That This Update Supersedes.
 	Sub LblSupersedesClick(Sender As Object, E As EventArgs)
 		SupersededUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		
-		If _Revision Then
-			
-			If _Sdp.SupersededPackages.Count = 0 OrElse _
-				SupersededUpdatesForm.GetUpdates.Count > 0 Then
-				SupersededUpdatesForm.ShowDialog
-			Else
-				SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages)
-				
-				'If The User Has Removed All The Superseded Updates Then Clear The SDP Object.
-				If SupersededUpdatesForm.GetUpdates.Count = 0 Then
-					_Sdp.SupersededPackages.Clear
-				End If
-			End If
-		Else
-			SupersededUpdatesForm.ShowDialog
-		End If
+		SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages)
 	End Sub
 	
 	'Manage The List Of Updates That This Update Requires Before Installing.
-	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)
-		
+	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)		
 		PrerequisiteUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		
-		If _Revision Then
-			If _Sdp.Prerequisites.Count = 0 OrElse _
-				PrerequisiteUpdatesForm.GetUpdates.Count > 0 Then
-				PrerequisiteUpdatesForm.ShowDialog
-			Else
-				PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites)
-				
-				'If The User Has Removed All The Superseded Updates Then Clear The SDP Object.
-				If PrerequisiteUpdatesForm.GetUpdates.Count = 0 Then
-					_Sdp.Prerequisites.Clear
-				End If
-			End If
-		Else
-			PrerequisiteUpdatesForm.ShowDialog
-		End If
-		
+		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites)		
 	End Sub
 	
 	'Perform Action According To The Currently Selected Tab.
@@ -562,30 +532,7 @@ Public Partial Class UpdateForm
 							_Sdp.InstallableItems(0).OriginalSourceFile = Nothing
 						End If
 						
-					End If 'There Is At Least One InstallableItme Object.
-					
-					'Add the prerequisite updates if the user edited them and the form was populated
-					If PrerequisiteUpdatesForm.GetUpdateCount > 0 Then
-						'Create Temporary Prerequisite Group And Add Updates To It.
-						Dim TmpPrerequisiteGroup As PrerequisiteGroup = New PrerequisiteGroup
-						For Each TmpRow As DataGridViewRow In PrerequisiteUpdatesForm.GetUpdates
-							TmpPrerequisiteGroup.Ids.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
-						Next
-						
-						'If The Temporary Group Has Anything, Add It To The SDP.
-						_Sdp.Prerequisites.Clear
-						If TmpPrerequisiteGroup.Ids.Count > 0 Then
-							_Sdp.Prerequisites.Add(TmpPrerequisiteGroup)
-						End If
-					End If
-					
-					'Add the superceded updates if the user edited them and the form was populated.
-					If SupersededUpdatesForm.GetUpdateCount > 0 Then
-						_Sdp.SupersededPackages.Clear
-						For Each TmpRow As DataGridViewRow In SupersededUpdatesForm.GetUpdates
-							_Sdp.SupersededPackages.Add(DirectCast(TmpRow.Cells("Id").Value, Guid))
-						Next
-					End If
+					End If 'There Is At Least One InstallableItme Object.															
 					
 				Catch X As UriFormatException
 					My.Forms.ProgressForm.Dispose

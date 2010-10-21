@@ -14,32 +14,11 @@ Public Partial Class ReturnCodesForm
 	
 	Private Dim _codeList As IList(Of ReturnCode)
 	
-	'Get the collection of codes.
-	Public ReadOnly Property GetReturnCodes() As IList( Of ReturnCode )
-		Get
-			Return _codeList
-		End Get
-	End Property
-	
-	'Get the number of codes.
-	Public ReadOnly Property GetCodeCount() As Integer
-		Get
-			Return _codeList.Count
-		End Get
-	End Property
-	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 	End Sub
-	
-	'Call default ShowDialog and initiate blank codeList.
-	Public Overloads Function ShowDialog() As DialogResult
-		_codeList = New List(Of ReturnCode)
 		
-		Return MyBase.ShowDialog()
-	End Function
-	
 	'Call ShowDialog with IList of ReturnCode passed in.
 	Public Overloads Function ShowDialog(ByRef codeList As IList(Of ReturnCode)) As DialogResult
 		Dim tmpRow As Integer

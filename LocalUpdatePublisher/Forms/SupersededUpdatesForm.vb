@@ -1,4 +1,4 @@
-﻿'
+﻿' SupersededUpdatesForm allows the user to view and manage the list of packages superseded by the current package.
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 3/25/2010
@@ -10,41 +10,19 @@
 Imports Microsoft.UpdateServices.Administration
 
 Public Partial Class SupersededUpdatesForm
-	
-	'Get the collection of updates.
-	Public ReadOnly Property GetUpdates() As DataGridViewRowCollection
-		Get
-			Return dgvUpdates.Rows
-		End Get
-	End Property
-	
-	'Get the number of updates.
-	Public ReadOnly Property GetUpdateCount() As Integer
-		Get
-			Return dgvUpdates.Rows.Count
-		End Get
-	End Property
+	Private _updateGuids As IList(Of Guid)
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
 	End Sub
-	
-	'Show dialog without any updates.
-	Public Overloads Function ShowDialog() As DialogResult
-		'Show the Remove/Add buttons.
-		btnRemove.Visible = True
-		btnAdd.Visible = True
-		
-		Return MyBase.ShowDialog()
-	End Function
 	
 	'Show dialog with superseded updates based on the passed in update.
 	Public Overloads Function ShowDialog(update As IUpdate ) As DialogResult
 		'Hide the Remove/Add buttons.
 		btnRemove.Visible = False
 		btnAdd.Visible = False
+		btnOk.Enabled = False
 		
 		If update.HasSupersededUpdates Then
 			dgvUpdates.Rows.Clear
@@ -62,33 +40,56 @@ Public Partial Class SupersededUpdatesForm
 	End Function
 	
 	'Show dialog with superseded updates based on the passed in list of update Guids.
-	Public Overloads Function ShowDialog(updateGuids As IList( Of Guid) ) As Windows.Forms.DialogResult
+	Public Overloads Function ShowDialog(ByRef updateGuids As IList( Of Guid) ) As Windows.Forms.DialogResult
+		Dim tmpTitle As String
+		_updateGuids = updateGuids
+		
 		'Show the Remove/Add buttons.
 		btnRemove.Visible = True
 		btnAdd.Visible = True
+		btnOk.Enabled = True
 		
 		dgvUpdates.Rows.Clear
 		
 		'Load the superceded updates here.
-		For Each tmpUpdateGuid As Guid In updateGuids
+		For Each tmpUpdateGuid As Guid In _updateGuids
 			Dim tmpRow As Integer = dgvUpdates.Rows.Add
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateGuid
-			dgvUpdates.Rows(tmpRow).Cells("Title").Value = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
+			
+			Try
+				tmpTitle = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
+			Catch
+				tmpTitle = "Unknown"
+			End Try
+			
+			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
 		Next
 		
-		Return MyBase.ShowDialog()
-		
+		Return MyBase.ShowDialog()		
 	End Function
 	
+	'Prompt the user to add an update to the list.
 	Sub BtnAddClick(sender As Object, e As EventArgs)
 		UpdateSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
 		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog
+		Dim tmpTitle As String
 		
 		If Not tmpUpdateRevisionId Is Nothing Then
-			Dim tmpRow As Integer = dgvUpdates.Rows.Add
+			Try
+				tmpTitle = ConnectionManager.CurrentServer.GetUpdate(tmpUpdateRevisionId).Title
+			Catch x As WsusInvalidDataException
+				Msgbox ("Could not add or find GUID:" & vbNewline & _
+					"WsusInvalidDataException: " & x.Message)
+				Exit Sub
+			Catch x As WsusObjectNotFoundException
+				Msgbox ("Could not add or find GUID:" & vbNewline & _
+					"WsusObjectNotFoundException: " & x.Message)
+				Exit Sub
+			End Try
 			
+			Dim tmpRow As Integer = dgvUpdates.Rows.Add
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateRevisionId.UpdateId
-			dgvUpdates.Rows(tmpRow).Cells("Title").Value = ConnectionManager.CurrentServer.GetUpdate(tmpUpdateRevisionId).Title
+			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
 			dgvUpdates.Refresh
 		End If
 	End Sub
@@ -99,4 +100,15 @@ Public Partial Class SupersededUpdatesForm
 			dgvUpdates.Rows.Remove(dgvUpdates.CurrentRow)
 		End If
 	End Sub
+	
+	Sub BtnOkClick(sender As Object, e As EventArgs)
+		'Clear the list.
+		_updateGuids.Clear
+		
+		'Add the superceded updates.
+		For Each tmpRow As DataGridViewRow In Me.dgvUpdates.Rows
+			_updateGuids.Add(DirectCast(tmpRow.Cells("Id").Value, Guid))
+		Next		
+	End Sub
+	
 End Class

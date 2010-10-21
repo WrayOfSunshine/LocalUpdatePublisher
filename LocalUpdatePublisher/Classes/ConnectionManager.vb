@@ -721,7 +721,12 @@ Friend NotInheritable Class ConnectionManager
 			' URIs which allow us to both download from the internet and use
 			' local paths.
 			URLReq = WebRequest.CreateDefault(sURL)
-			URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
+
+			'If this is a file url then we do not need credentials.
+			If Not sURL.IsFile Then				
+				URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
+			End If
+			
 			URLRes = URLReq.GetResponse
 			sChunks = URLReq.GetResponse.GetResponseStream
 			pProgress.Maximum = CInt(URLRes.ContentLength)

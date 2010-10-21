@@ -1006,6 +1006,7 @@ Partial Class UpdateForm
 		'
 		Me.chkMetadataOnly.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.chkMetadataOnly.CausesValidation = false
+		Me.chkMetadataOnly.Enabled = false
 		Me.chkMetadataOnly.Location = New System.Drawing.Point(4, 545)
 		Me.chkMetadataOnly.Name = "chkMetadataOnly"
 		Me.chkMetadataOnly.Size = New System.Drawing.Size(216, 19)

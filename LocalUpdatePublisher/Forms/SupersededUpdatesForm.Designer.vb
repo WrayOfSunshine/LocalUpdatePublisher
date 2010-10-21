@@ -34,11 +34,12 @@ Partial Class SupersededUpdatesForm
 	''' </summary>
 	Private Sub InitializeComponent()
 		Me.btnRemove = New System.Windows.Forms.Button
-		Me.btnClose = New System.Windows.Forms.Button
+		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.btnOk = New System.Windows.Forms.Button
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
@@ -52,19 +53,19 @@ Partial Class SupersededUpdatesForm
 		Me.btnRemove.UseVisualStyleBackColor = true
 		AddHandler Me.btnRemove.Click, AddressOf Me.BtnRemoveClick
 		'
-		'btnClose
+		'btnCancel
 		'
-		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnClose.Location = New System.Drawing.Point(367, 263)
-		Me.btnClose.Name = "btnClose"
-		Me.btnClose.Size = New System.Drawing.Size(75, 23)
-		Me.btnClose.TabIndex = 8
-		Me.btnClose.Text = "Close"
-		Me.btnClose.UseVisualStyleBackColor = true
+		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
+		Me.btnCancel.Name = "btnCancel"
+		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+		Me.btnCancel.TabIndex = 8
+		Me.btnCancel.Text = "Cancel"
+		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnAdd
 		'
-		Me.btnAdd.Location = New System.Drawing.Point(286, 263)
+		Me.btnAdd.Location = New System.Drawing.Point(93, 263)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(75, 23)
 		Me.btnAdd.TabIndex = 7
@@ -100,14 +101,26 @@ Partial Class SupersededUpdatesForm
 		Me.Title.HeaderText = "Title"
 		Me.Title.Name = "Title"
 		'
+		'btnOk
+		'
+		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOk.Location = New System.Drawing.Point(286, 263)
+		Me.btnOk.Name = "btnOk"
+		Me.btnOk.Size = New System.Drawing.Size(75, 23)
+		Me.btnOk.TabIndex = 10
+		Me.btnOk.Text = "Ok"
+		Me.btnOk.UseVisualStyleBackColor = true
+		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
+		'
 		'SupersededUpdatesForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.CancelButton = Me.btnClose
+		Me.CancelButton = Me.btnCancel
 		Me.ClientSize = New System.Drawing.Size(454, 294)
+		Me.Controls.Add(Me.btnOk)
 		Me.Controls.Add(Me.btnRemove)
-		Me.Controls.Add(Me.btnClose)
+		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.dgvUpdates)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -120,10 +133,11 @@ Partial Class SupersededUpdatesForm
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private btnOk As System.Windows.Forms.Button
+	Private btnCancel As System.Windows.Forms.Button
 	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private dgvUpdates As System.Windows.Forms.DataGridView
 	Private btnAdd As System.Windows.Forms.Button
-	Private btnClose As System.Windows.Forms.Button
 	Private btnRemove As System.Windows.Forms.Button
 End Class
