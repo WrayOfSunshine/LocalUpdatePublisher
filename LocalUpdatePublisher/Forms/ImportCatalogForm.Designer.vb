@@ -44,6 +44,7 @@ Partial Class ImportCatalogForm
 		'
 		'btnCancel
 		'
+		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
 		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
 		Me.btnCancel.Name = "btnCancel"
@@ -54,6 +55,7 @@ Partial Class ImportCatalogForm
 		'
 		'btnImport
 		'
+		Me.btnImport.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnImport.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnImport.Location = New System.Drawing.Point(286, 263)
 		Me.btnImport.Name = "btnImport"
@@ -69,6 +71,9 @@ Partial Class ImportCatalogForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
+		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+						Or System.Windows.Forms.AnchorStyles.Left)  _
+						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.Metadata, Me.Title})

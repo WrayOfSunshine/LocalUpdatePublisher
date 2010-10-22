@@ -116,6 +116,7 @@ Partial Class ExportCatalogForm
 		'
 		'btnAdd
 		'
+		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnAdd.Location = New System.Drawing.Point(93, 262)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(75, 23)
@@ -126,6 +127,7 @@ Partial Class ExportCatalogForm
 		'
 		'btnAddAll
 		'
+		Me.btnAddAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnAddAll.Location = New System.Drawing.Point(12, 262)
 		Me.btnAddAll.Name = "btnAddAll"
 		Me.btnAddAll.Size = New System.Drawing.Size(75, 23)

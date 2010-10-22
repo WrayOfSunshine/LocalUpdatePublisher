@@ -393,18 +393,18 @@ Friend NotInheritable Class ConnectionManager
 		End Try
 		Return False
 	End Function
-	
-	'Call with no temporary path.
-	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean'
-		Return PublishPackageFromCatalog(sdp, parentForm)
-	End Function
+'	
+'	'Call with no temporary path.
+'	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean'
+'		Return PublishPackageFromCatalog(sdp, parentForm)
+'	End Function
 	
 	'Publish package, downloading any files necessary from the installable item.
 	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, tmpPath As String, parentForm As Form) As Boolean
 		Dim fileDownloader As New WebClient()
 		Dim fileList As IList(Of Object) = New List(Of Object)
 		Dim tmpFileUri As Uri = Nothing
-		Dim result As Boolean = False
+		Dim result As Boolean = False		
 		
 		Try
 			'If an installable item exists

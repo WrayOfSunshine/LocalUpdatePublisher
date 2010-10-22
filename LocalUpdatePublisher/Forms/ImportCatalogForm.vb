@@ -72,7 +72,7 @@ Public Partial Class ImportCatalogForm
 			
 			'Loop through each SDP node and load it.
 			For Each tmpNode As XmlNode In doc.SelectNodes("smc:SystemsManagementCatalog/smc:SoftwareDistributionPackage",nsmgr)
-							
+				
 				'We are using the deprecated constructor because the new one gives a validation error for no good reason.
 				Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(tmpNode.CreateNavigator)
 				'Add the new row and set the first column's tag as the SDP object.
@@ -81,13 +81,13 @@ Public Partial Class ImportCatalogForm
 			Next
 			
 		End If
-				
+		
 		Return MyBase.ShowDialog
 	End Function
 	
 	'Publish the selected SDPs to the server.
 	Sub BtnImportClick(sender As Object, e As EventArgs)
-		
+		Dim tmpSDP As SoftwareDistributionPackage
 		'Loop through each row.
 		For Each tmpRow As DataGridViewRow In dgvUpdates.Rows
 			
@@ -95,11 +95,19 @@ Public Partial Class ImportCatalogForm
 			If DirectCast(tmpRow.Cells("Include").Value, Boolean) AndAlso _
 				Not tmpRow.Cells("Include").Tag Is Nothing Then
 				
+				tmpSDP = DirectCast(tmpRow.Cells("Include").Tag, SoftwareDistributionPackage)
+				
+				If appSettings.DemoteClassification AndAlso _
+					(tmpSDP.PackageUpdateClassification = PackageUpdateClassification.CriticalUpdates OrElse _
+					tmpSDP.PackageUpdateClassification = PackageUpdateClassification.SecurityUpdates ) Then
+					tmpSDP.PackageUpdateClassification = PackageUpdateClassification.Updates
+				End If
+				
 				'Import the SDP file based on the metadata flag.
 				If DirectCast(tmpRow.Cells("Metadata").Value, Boolean) Then
-					ConnectionManager.PublishPackageMetaData(DirectCast(tmpRow.Cells("Include").Tag, SoftwareDistributionPackage), Me)
-				Else	
-					ConnectionManager.PublishPackageFromCatalog(DirectCast(tmpRow.Cells("Include").Tag, SoftwareDistributionPackage), _extractPath, Me)
+					ConnectionManager.PublishPackageMetaData(tmpSDP, Me)
+				Else
+					ConnectionManager.PublishPackageFromCatalog(tmpSDP, _extractPath, Me)
 				End If
 			End If
 		Next
@@ -108,8 +116,8 @@ Public Partial Class ImportCatalogForm
 	'When we close the form, clear any temporary directory created.
 	Sub ImportCatalogFormFormClosed(sender As Object, e As FormClosedEventArgs)
 		'If a temp directory was created, delete it.
-		If Not String.IsNullOrEmpty(_extractPath) AndAlso Directory.Exists(_extractPath) Then 
+		If Not String.IsNullOrEmpty(_extractPath) AndAlso Directory.Exists(_extractPath) Then
 			Directory.Delete(_extractPath,True)
-		End If		
+		End If
 	End Sub
 End Class

@@ -1,10 +1,10 @@
 BETA Version 0.9
 - Added options for percentages to only use approved updates and to inherit approvals.
-- Added option to demote imported updates to prevent automatical approval rules.
+- Added option to demote imported updates to prevent automatically approval rules.
 - Allow actions on multiple packages.
 - Added package type which determines which details the package contains.
 - Improved return codes handling.
-- Added Originl URL field which allows meta-data only updates.
+- Added Origin URL field which allows meta-data only updates.
 - Export update catalogs.
 - General code cleanup (Strict:On Infer:Off).
 - Several GUI enhancements.
