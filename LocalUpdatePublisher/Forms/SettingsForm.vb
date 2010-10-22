@@ -19,7 +19,6 @@ Public Partial Class SettingsForm
 	Sub SettingsLoad(sender As Object, e As EventArgs)
 		Me.chkRememberTreeNode.Checked = appSettings.RememberTreePath
 		Me.chkReportRollup.Checked = appSettings.RollupReporting
-		Me.chkIncludeApproved.Checked = appSettings.ApprovedUpdatesOnly
 		Me.chkDemoteClassification.Checked = appSettings.DemoteClassification
 	End Sub
 	
@@ -30,10 +29,6 @@ Public Partial Class SettingsForm
 	
 	Sub ChkReportRollupCheckedChanged(sender As Object, e As EventArgs)
 		appSettings.RollupReporting = Me.chkReportRollup.Checked
-	End Sub
-	
-	Sub ChkIncludeApprovedCheckedChanged(sender As Object, e As EventArgs)
-		appSettings.ApprovedUpdatesOnly = Me.chkIncludeApproved.Checked
 	End Sub
 	
 	Sub ChkDemoteClassificationCheckedChanged(sender As Object, e As EventArgs)
