@@ -29,10 +29,12 @@ Public Partial Class SavedRulesForm
 				btnAction.Text = "Load"
 				btnAction.DialogResult = DialogResult.OK
 				btnAction2.Text = "Clear Selection"
+				btnCancel.Text = "Cancel"
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
+					dgvRules.Rows(tmpRow).Cells("Include").Value = False
 					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 												
@@ -49,15 +51,17 @@ Public Partial Class SavedRulesForm
 					Next
 				End If
 				
-				Return tmpRuleCollection				
+				Return tmpRuleCollection
 			Case SavedRulesFormUses.Manage
 				Text = "Select Rules to Manage"
 				btnAction.Text = "Rename"
 				btnAction2.Text = "Delete"
+				btnCancel.Text = "Close"
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
+					dgvRules.Rows(tmpRow).Cells("Include").Value = False
 					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
@@ -66,7 +70,8 @@ Public Partial Class SavedRulesForm
 			Case SavedRulesFormUses.Import
 				Text = "Select Rules to Import"
 				btnAction.Text = "Import"
-				btnAction2.Text = "Clear Selection"
+				btnAction2.Text = "Clear Selection"				
+				btnCancel.Text = "Cancel"
 				
 				_ruleCollection = RuleCollection.ImportRules
 				
@@ -80,6 +85,7 @@ Public Partial Class SavedRulesForm
 				'Load rules from the imported collection.
 				For Each tmpRule As Rule In _ruleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
+					dgvRules.Rows(tmpRow).Cells("Include").Value = False
 					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
@@ -89,10 +95,12 @@ Public Partial Class SavedRulesForm
 				Text = "Select Rules to Export"
 				btnAction.Text = "Export"
 				btnAction2.Text = "Clear Selection"
+				btnCancel.Text = "Cancel"
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
 					Dim tmpRow As Integer = dgvRules.Rows.Add
+					dgvRules.Rows(tmpRow).Cells("Include").Value = False
 					dgvRules.Rows(tmpRow).Cells("RuleName").Value = tmpRule.Name
 				Next
 				
@@ -114,7 +122,7 @@ Public Partial Class SavedRulesForm
 				
 				'Add selected rules to temp collection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+					If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
 						tmpBool = True
 					End If
 				Next
@@ -125,16 +133,17 @@ Public Partial Class SavedRulesForm
 				Else
 					Msgbox ("You have not selected any rules to export.")
 				End If
-			Case SavedRulesFormUses.Manage
+			Case SavedRulesFormUses.Manage				
 				'Loop through and rename.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+				
+					If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
 						Dim tmpString As String = Nothing
 						
 						'Loop until we get a unique rule name or the user skips/cancels.
 						While True
 							If tmpString = Nothing Then
-								tmpString = InputBox("Change " & DirectCast(tmpRow.Cells(1).Value, String) & " to:","Rename Rule", DirectCast(tmpRow.Cells(1).Value, String)).Trim
+								tmpString = InputBox("Change " & DirectCast(tmpRow.Cells("RuleName").Value, String) & " to:","Rename Rule", DirectCast(tmpRow.Cells("RuleName").Value, String)).Trim
 								
 								'If user cancelled then move on.
 								If tmpString = Nothing Then Continue For
@@ -158,7 +167,7 @@ Public Partial Class SavedRulesForm
 								End If
 							Else
 								appSettings.SavedRuleCollection(tmpRow.Index).Name = tmpString
-								tmpRow.Cells(1).Value = tmpString
+								tmpRow.Cells("RuleName").Value = tmpString
 								Exit While
 							End If
 						End While 'While there is an existing rule with the same name.
@@ -169,7 +178,7 @@ Public Partial Class SavedRulesForm
 				
 				'Add selected rules to application settings.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+					If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
 						
 						'If the rule has the name of an existing record then loop until the
 						' user provides a unique name, skips the rule, or cancels.
@@ -188,7 +197,7 @@ Public Partial Class SavedRulesForm
 									'Do nothing
 								Else
 									_ruleCollection(tmpRow.Index).Name = tmpString
-									tmpRow.Cells(1).Value = tmpString
+									tmpRow.Cells("RuleName").Value = tmpString
 								End If
 							Else If result = 2 Then 'Skip
 								Continue For
@@ -209,7 +218,7 @@ Public Partial Class SavedRulesForm
 				
 				'Add selected rules to temporary collection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+					If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
 						tmpRuleCollection.Add(appSettings.SavedRuleCollection(tmpRow.Index))
 					End If
 				Next
@@ -231,14 +240,14 @@ Public Partial Class SavedRulesForm
 			Case SavedRulesFormUses.Load
 				'Clear rule selection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					tmpRow.Cells(0).Value = False
+					tmpRow.Cells("Include").Value = False
 				Next
 			Case SavedRulesFormUses.Manage
 				Dim selectedCount As Integer = 0
 				
 				'Count the number of rows selected.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					If DirectCast(tmpRow.Cells(0).Value, Boolean) Then
+					If DirectCast(tmpRow.Cells("Include").Value, Boolean) Then
 						selectedCount += 1
 					End If
 				Next
@@ -251,7 +260,7 @@ Public Partial Class SavedRulesForm
 						
 						'Loop backwards to avoid changing indices.
 						For i As Integer = dgvRules.Rows.Count - 1 To 0 Step -1
-							If DirectCast(dgvRules.Rows(i).Cells(0).Value, Boolean) Then
+							If DirectCast(dgvRules.Rows(i).Cells("Include").Value, Boolean) Then
 								appSettings.SavedRuleCollection.RemoveAt(i)
 								dgvRules.Rows.RemoveAt(i)
 							End If
@@ -262,12 +271,12 @@ Public Partial Class SavedRulesForm
 			Case SavedRulesFormUses.Import
 				'Clear rule selection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					tmpRow.Cells(0).Value = False
+					tmpRow.Cells("Include").Value = False
 				Next
 			Case SavedRulesFormUses.Export
 				'Clear rule selection.
 				For Each tmpRow As DataGridViewRow In dgvRules.Rows
-					tmpRow.Cells(0).Value = False
+					tmpRow.Cells("Include").Value = False
 				Next
 		End Select
 	End Sub

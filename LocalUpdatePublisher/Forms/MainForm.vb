@@ -1954,8 +1954,8 @@ Public Partial Class MainForm
 			
 			Dim tmpUpdateSummary As IUpdateSummary = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IComputerTarget").Value, IComputerTarget).GetUpdateInstallationSummary(tmpUpdateScope)
 			Me.txtUpdatesWErrorsNum.Text = CStr(tmpUpdateSummary.FailedCount)
-			Me.txtUpdatesNeededNum.Text = CStr(tmpUpdateSummary.NotInstalledCount)
-			Me.txtUpdatesInstalledorNANum.Text = CStr(tmpUpdateSummary.NotApplicableCount + tmpUpdateSummary.InstalledCount)
+			Me.txtUpdatesNeededNum.Text = CStr(tmpUpdateSummary.NotInstalledCount + tmpUpdateSummary.DownloadedCount)
+			Me.txtUpdatesInstalledorNANum.Text = CStr(tmpUpdateSummary.NotApplicableCount + tmpUpdateSummary.InstalledCount + tmpUpdateSummary.InstalledPendingRebootCount)
 			Me.txtUpdateNoStatusNum.Text = CStr(tmpUpdateSummary.UnknownCount)
 		End If
 		

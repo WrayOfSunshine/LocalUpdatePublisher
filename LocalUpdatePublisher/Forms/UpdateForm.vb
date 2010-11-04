@@ -29,7 +29,7 @@ Public Partial Class UpdateForm
 	
 	Private _Sdp As SoftwareDistributionPackage
 	Private _TabsHidden As New List(Of TabPage)
-	Private _UpdateType As Integer
+	Private _UpdateType As LocalUpdateTypes
 	Private _Revision As Boolean
 	Private _OriginalURIChanged As Boolean
 	Private _OriginalFileInfo As FileInfo
@@ -106,8 +106,6 @@ Public Partial Class UpdateForm
 			_UpdateType = LocalUpdateTypes.MSI
 		Else If TypeOf _Sdp.InstallableItems.Item(0) Is WindowsInstallerPatchItem Then
 			_UpdateType = LocalUpdateTypes.MSP
-		Else
-			_UpdateType = Nothing
 		End If
 		
 		'Disable the MetaData only flag.

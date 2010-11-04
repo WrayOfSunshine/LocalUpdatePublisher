@@ -1406,8 +1406,6 @@ Public Partial Class RulesForm
 	'Return a product type based on the number.
 	Shared Function GetProductTypeText (productTypeCode As Integer) As String
 		Select Case productTypeCode
-			Case 0
-				Return "None"
 			Case 1
 				Return "Workstation"
 			Case 2
@@ -1849,7 +1847,7 @@ Public Partial Class RulesForm
 				Me.txtSPMajorVersion.Text = xmlReader.GetAttribute("ServicePackMajor")
 				Me.txtSPMinorVersion.Text = xmlReader.GetAttribute("ServicePackMinor")
 				Me.cboServicePack.Text = GetServicePackText
-				Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
+				If Not xmlReader.GetAttribute("ProductType") Is Nothing Then Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
 				
 			Case "WindowsLanguage"
 				'Select the rule type.

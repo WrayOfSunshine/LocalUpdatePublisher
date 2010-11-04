@@ -636,7 +636,7 @@ Partial Class MainForm
 		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
 		Me.lblUpdatesInstalledorNA.Size = New System.Drawing.Size(179, 18)
 		Me.lblUpdatesInstalledorNA.TabIndex = 2
-		Me.lblUpdatesInstalledorNA.Text = "Updates installed/not available:"
+		Me.lblUpdatesInstalledorNA.Text = "Updates installed/not applicable:"
 		'
 		'lblUpdatesNeeded
 		'
@@ -819,7 +819,7 @@ Partial Class MainForm
 		'
 		'lblPackageType
 		'
-		Me.lblPackageType.Location = New System.Drawing.Point(41, 7)
+		Me.lblPackageType.Location = New System.Drawing.Point(39, 7)
 		Me.lblPackageType.Name = "lblPackageType"
 		Me.lblPackageType.Size = New System.Drawing.Size(80, 17)
 		Me.lblPackageType.TabIndex = 65
@@ -865,7 +865,7 @@ Partial Class MainForm
 		'
 		'lblUninstall
 		'
-		Me.lblUninstall.Location = New System.Drawing.Point(43, 366)
+		Me.lblUninstall.Location = New System.Drawing.Point(39, 366)
 		Me.lblUninstall.Name = "lblUninstall"
 		Me.lblUninstall.Size = New System.Drawing.Size(80, 17)
 		Me.lblUninstall.TabIndex = 60
@@ -903,7 +903,7 @@ Partial Class MainForm
 		'
 		'lblID
 		'
-		Me.lblID.Location = New System.Drawing.Point(41, 33)
+		Me.lblID.Location = New System.Drawing.Point(39, 33)
 		Me.lblID.Name = "lblID"
 		Me.lblID.Size = New System.Drawing.Size(80, 17)
 		Me.lblID.TabIndex = 52
@@ -932,7 +932,7 @@ Partial Class MainForm
 		'
 		'lblImpact
 		'
-		Me.lblImpact.Location = New System.Drawing.Point(43, 339)
+		Me.lblImpact.Location = New System.Drawing.Point(39, 339)
 		Me.lblImpact.Name = "lblImpact"
 		Me.lblImpact.Size = New System.Drawing.Size(80, 17)
 		Me.lblImpact.TabIndex = 37
@@ -960,7 +960,7 @@ Partial Class MainForm
 		'
 		'lblDescription
 		'
-		Me.lblDescription.Location = New System.Drawing.Point(41, 86)
+		Me.lblDescription.Location = New System.Drawing.Point(39, 86)
 		Me.lblDescription.Name = "lblDescription"
 		Me.lblDescription.Size = New System.Drawing.Size(80, 17)
 		Me.lblDescription.TabIndex = 27
@@ -968,15 +968,15 @@ Partial Class MainForm
 		'
 		'lblRebootBehavior
 		'
-		Me.lblRebootBehavior.Location = New System.Drawing.Point(30, 392)
+		Me.lblRebootBehavior.Location = New System.Drawing.Point(39, 392)
 		Me.lblRebootBehavior.Name = "lblRebootBehavior"
-		Me.lblRebootBehavior.Size = New System.Drawing.Size(93, 17)
+		Me.lblRebootBehavior.Size = New System.Drawing.Size(89, 17)
 		Me.lblRebootBehavior.TabIndex = 38
 		Me.lblRebootBehavior.Text = "Reboot Behavior"
 		'
 		'lblPackageTitle
 		'
-		Me.lblPackageTitle.Location = New System.Drawing.Point(41, 59)
+		Me.lblPackageTitle.Location = New System.Drawing.Point(39, 59)
 		Me.lblPackageTitle.Name = "lblPackageTitle"
 		Me.lblPackageTitle.Size = New System.Drawing.Size(80, 17)
 		Me.lblPackageTitle.TabIndex = 26
@@ -1034,7 +1034,7 @@ Partial Class MainForm
 		'
 		'lblMoreInfoURL
 		'
-		Me.lblMoreInfoURL.Location = New System.Drawing.Point(42, 314)
+		Me.lblMoreInfoURL.Location = New System.Drawing.Point(39, 314)
 		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
 		Me.lblMoreInfoURL.Size = New System.Drawing.Size(80, 17)
 		Me.lblMoreInfoURL.TabIndex = 36
@@ -1052,7 +1052,7 @@ Partial Class MainForm
 		'
 		'lblArticleID
 		'
-		Me.lblArticleID.Location = New System.Drawing.Point(41, 235)
+		Me.lblArticleID.Location = New System.Drawing.Point(39, 235)
 		Me.lblArticleID.Name = "lblArticleID"
 		Me.lblArticleID.Size = New System.Drawing.Size(80, 17)
 		Me.lblArticleID.TabIndex = 32
@@ -1070,7 +1070,7 @@ Partial Class MainForm
 		'
 		'lblProduct
 		'
-		Me.lblProduct.Location = New System.Drawing.Point(41, 209)
+		Me.lblProduct.Location = New System.Drawing.Point(39, 209)
 		Me.lblProduct.Name = "lblProduct"
 		Me.lblProduct.Size = New System.Drawing.Size(80, 17)
 		Me.lblProduct.TabIndex = 31
@@ -1078,7 +1078,7 @@ Partial Class MainForm
 		'
 		'lblCVEID
 		'
-		Me.lblCVEID.Location = New System.Drawing.Point(42, 263)
+		Me.lblCVEID.Location = New System.Drawing.Point(39, 263)
 		Me.lblCVEID.Name = "lblCVEID"
 		Me.lblCVEID.Size = New System.Drawing.Size(80, 17)
 		Me.lblCVEID.TabIndex = 33
@@ -1086,7 +1086,7 @@ Partial Class MainForm
 		'
 		'lblVendor
 		'
-		Me.lblVendor.Location = New System.Drawing.Point(41, 185)
+		Me.lblVendor.Location = New System.Drawing.Point(39, 185)
 		Me.lblVendor.Name = "lblVendor"
 		Me.lblVendor.Size = New System.Drawing.Size(80, 17)
 		Me.lblVendor.TabIndex = 30
@@ -1094,7 +1094,7 @@ Partial Class MainForm
 		'
 		'lblSeverity
 		'
-		Me.lblSeverity.Location = New System.Drawing.Point(42, 288)
+		Me.lblSeverity.Location = New System.Drawing.Point(39, 288)
 		Me.lblSeverity.Name = "lblSeverity"
 		Me.lblSeverity.Size = New System.Drawing.Size(80, 17)
 		Me.lblSeverity.TabIndex = 34
@@ -1102,7 +1102,7 @@ Partial Class MainForm
 		'
 		'lblBullitinID
 		'
-		Me.lblBullitinID.Location = New System.Drawing.Point(41, 158)
+		Me.lblBullitinID.Location = New System.Drawing.Point(39, 158)
 		Me.lblBullitinID.Name = "lblBullitinID"
 		Me.lblBullitinID.Size = New System.Drawing.Size(80, 17)
 		Me.lblBullitinID.TabIndex = 29
@@ -1110,7 +1110,7 @@ Partial Class MainForm
 		'
 		'lblClassification
 		'
-		Me.lblClassification.Location = New System.Drawing.Point(41, 133)
+		Me.lblClassification.Location = New System.Drawing.Point(39, 133)
 		Me.lblClassification.Name = "lblClassification"
 		Me.lblClassification.Size = New System.Drawing.Size(80, 17)
 		Me.lblClassification.TabIndex = 28
