@@ -41,6 +41,10 @@ Public Partial Class RulesForm
 	#END Region
 	
 	Public Sub New()
+		Call Me.New("Create Rule")
+	End Sub
+	
+	Public Sub New(title As String )				
 		'Set the ReadOnly string arrays for the comboboxes.
 		' Currently we use the first item to test if the array is already
 		' loaded into the combobox.
@@ -50,6 +54,7 @@ Public Partial Class RulesForm
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		Me.Text = title
 		
 		'Load the Rule Types into the combo box based on the Enum.
 		For Each tmpRuleType As String In [Enum].GetNames(GetType(RuleTypes))
@@ -130,7 +135,8 @@ Public Partial Class RulesForm
 								
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+									'Me.cboComparison.SelectedIndex = -1
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If								
@@ -245,12 +251,11 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
-								
-								
+																
 								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
@@ -286,7 +291,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"								
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -317,7 +322,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -362,7 +367,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -393,7 +398,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -437,7 +442,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -472,7 +477,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -511,7 +516,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -586,7 +591,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -625,7 +630,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_stringComparisons(0))
+								If Not Me.cboComparison.Items.Count = _stringComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_stringComparisons)
 								End If
@@ -664,7 +669,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_stringComparisons(0))
+								If Not Me.cboComparison.Items.Count = _stringComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_stringComparisons)
 								End If
@@ -699,7 +704,7 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Contains(_numericComparisons(0))
+								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_numericComparisons)
 								End If
@@ -747,12 +752,12 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant
 								controlObject.Show()
 								Exit Select
-							Case "pnlMaxVersion"
+							Case "pnlMinVersion"
 								controlObject.TabIndex = 2
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Show()
 								Exit Select
-							Case "pnlMinVersion"
+							Case "pnlMaxVersion"
 								controlObject.TabIndex = 3
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 								controlObject.Show()
@@ -780,12 +785,12 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Show()
 								Exit Select
-							Case "pnlMaxVersion"
+							Case "pnlMinVersion"
 								controlObject.TabIndex = 3
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 								controlObject.Show()
 								Exit Select
-							Case "pnlMinVersion"
+							Case "pnlMaxVersion"
 								controlObject.TabIndex = 4
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 								controlObject.Show()
@@ -892,68 +897,15 @@ Public Partial Class RulesForm
 				Me.cboServicePack.Items.Add("SP 1")
 				Me.cboServicePack.Items.Add("SP 2")
 			Case "Windows 7"
-				Me.txtOSMajorVersion.Text = "7"
-				Me.txtOSMinorVersion.Text = "0"
+				Me.txtOSMajorVersion.Text = "6"
+				Me.txtOSMinorVersion.Text = "1"
 				Me.cboServicePack.Items.Add("SP 1")
 			Case Else
 				Me.txtOSMajorVersion.Text = "0"
 				Me.txtOSMinorVersion.Text = "0"
 		End Select
 	End Sub
-	
-	'Call  GetOSVersionText with defaults
-	Function GetOSVersionText() As String
-		Return GetOSVersionText(Cint(Me.txtOSMajorVersion.Text), Cint(Me.txtOSMinorVersion.Text))
-	End Function
-	
-	'Return the text based on the os version textboxes.
-	Function GetOSVersionText(osMajor As Integer, osMinor As Integer) As String
-		'Clear the service pack combobox.
-		Me.cboServicePack.SelectedIndex = -1
-		Me.cboServicePack.Items.Clear
-		Me.cboServicePack.Items.Add("")
 		
-		Select Case osMajor
-			Case 5
-				Select Case osMinor
-					Case 0
-						Me.cboServicePack.Items.Add("SP 1")
-						Me.cboServicePack.Items.Add("SP 2")
-						Me.cboServicePack.Items.Add("SP 3")
-						Me.cboServicePack.Items.Add("SP 4")
-						Return "Windows 2000"
-					Case 1
-						Me.cboServicePack.Items.Add("SP 1")
-						Me.cboServicePack.Items.Add("SP 2")
-						Me.cboServicePack.Items.Add("SP 3")
-						Return "Windows XP"
-					Case 2
-						Me.cboServicePack.Items.Add("SP 1")
-						Me.cboServicePack.Items.Add("SP 2")
-						Return "Windows Server 2003"
-					Case Else
-						Return Nothing
-				End Select
-			Case 6
-				Select Case osMinor
-					Case 0
-						Me.cboServicePack.Items.Add("SP 1")
-						Me.cboServicePack.Items.Add("SP 2")
-						Return "Windows Vista"
-					Case 1
-						Me.cboServicePack.Items.Add("SP 1")
-						Me.cboServicePack.Items.Add("SP 2")
-						Return "Windows Server 2008"
-					Case Else
-						Return Nothing
-				End Select
-			Case 7
-				Return "Windows 7"
-			Case Else
-				Return Nothing
-		End Select
-	End Function
-	
 	'Set the corresonding codes to the service pack.
 	Private Sub GetServicePackCode(sender As Object, e As EventArgs)
 		Select Case Me.cboServicePack.Text
@@ -974,15 +926,6 @@ Public Partial Class RulesForm
 				Me.txtSPMinorVersion.Text = "0"
 		End Select
 	End Sub
-	
-	'Call GetServicePackText with defaults.
-	Function GetServicePackText() As String
-		If Me.txtSPMajorVersion.Text = Nothing Then
-			Return Nothing
-		Else
-			Return GetServicePackText(Me.txtSPMajorVersion.Text)
-		End If
-	End Function
 	
 	#End Region
 	
@@ -1433,8 +1376,8 @@ Public Partial Class RulesForm
 			Case RuleTypes.WindowsVersion
 				'Set the readable rule.
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & " " & _
-					"   Version:" & Me.cboOSVersion.Text & " "
-				If Not String.IsNullOrEmpty(Me.cboServicePack.Text) Then Me._readableRule += "   ServicePack:" & Me.cboServicePack.Text
+					"   Version:" & Me.txtOSMajorVersion.Text & "." & Me.txtOSMinorVersion.Text & " "
+				If Not String.IsNullOrEmpty(Me.txtSPMajorVersion.Text) Then Me._readableRule += "   ServicePack:" & Me.txtSPMajorVersion.Text & "." & Me.txtSPMinorVersion.Text
 				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "   BuildNumber:" & Me.txtData.Text
 				If Not String.IsNullOrEmpty(Me.cboProductType.Text) Then Me._readableRule += "   Product Type:" & Me.cboProductType.Text
 				
@@ -1842,11 +1785,9 @@ Public Partial Class RulesForm
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 				Me.txtOSMajorVersion.Text = xmlReader.GetAttribute("MajorVersion")
 				Me.txtOSMinorVersion.Text = xmlReader.GetAttribute("MinorVersion")
-				Me.cboOSVersion.Text = GetOSVersionText
 				Me.txtData.Text = xmlReader.GetAttribute("BuildNumber")
 				Me.txtSPMajorVersion.Text = xmlReader.GetAttribute("ServicePackMajor")
 				Me.txtSPMinorVersion.Text = xmlReader.GetAttribute("ServicePackMinor")
-				Me.cboServicePack.Text = GetServicePackText
 				If Not xmlReader.GetAttribute("ProductType") Is Nothing Then Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
 				
 			Case "WindowsLanguage"
@@ -1891,7 +1832,9 @@ Public Partial Class RulesForm
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Created")
+				Me.dtpDate.Checked = True
+				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
+				
 				
 			Case "FileCreatedPrependRegSz"
 				'Select the rule.
@@ -1904,7 +1847,8 @@ Public Partial Class RulesForm
 				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Created")
+				Me.dtpDate.Checked = True
+				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
 			Case "FileModified"
 				'Select the Rule.
 				Me.cboRuleType.SelectedIndex = RuleTypes.FileModified
@@ -1913,7 +1857,8 @@ Public Partial Class RulesForm
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Modified")
+				Me.dtpDate.Checked = True
+				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
 				
 			Case "FileModifiedPrependRegSz"
 				'Select the rule.
@@ -1926,7 +1871,8 @@ Public Partial Class RulesForm
 				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Text = xmlReader.GetAttribute("Modified")
+				Me.dtpDate.Checked = True
+				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
 				
 			Case "FileSize"
 				'Select the rule.

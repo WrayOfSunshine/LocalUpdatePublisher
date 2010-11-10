@@ -765,6 +765,7 @@ Partial Class UpdateForm
 		Me.isInstalledRules.Location = New System.Drawing.Point(3, 3)
 		Me.isInstalledRules.Name = "isInstalledRules"
 		Me.isInstalledRules.Rule = ""
+		Me.isInstalledRules.RuleEditorTitle = "Create Installed Rule"
 		Me.isInstalledRules.Size = New System.Drawing.Size(599, 511)
 		Me.isInstalledRules.TabIndex = 39
 		Me.isInstalledRules.Title = "Package Level - Installed Rules"
@@ -790,6 +791,7 @@ Partial Class UpdateForm
 		Me.isInstallableRules.Location = New System.Drawing.Point(3, 3)
 		Me.isInstallableRules.Name = "isInstallableRules"
 		Me.isInstallableRules.Rule = ""
+		Me.isInstallableRules.RuleEditorTitle = "Create Is Installed Rule"
 		Me.isInstallableRules.Size = New System.Drawing.Size(599, 511)
 		Me.isInstallableRules.TabIndex = 40
 		Me.isInstallableRules.Title = "Package Level - Installable Rules"

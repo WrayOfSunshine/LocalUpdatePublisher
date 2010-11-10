@@ -118,9 +118,9 @@ Public Partial Class GuidCollectionEditor
 		End If
 		
 		If countOK AndAlso guidsValid Then
-			Me.errorProviderGUID.SetError(Me.dgv, "Invalid input.")
+			Me.errorProviderGUID.SetError(Me.dgv, "")
         Else
-            Me.errorProviderGUID.SetError(Me.dgv, "")
+            Me.errorProviderGUID.SetError(Me.dgv, "Invalid input.")
 		End If
 		
 		RaiseEvent ValidInputChanged(Me, New EventArgs())

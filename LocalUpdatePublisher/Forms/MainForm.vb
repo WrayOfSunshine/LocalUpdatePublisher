@@ -1609,7 +1609,8 @@ Public Partial Class MainForm
 			If _dgvMain.DataSource Is Nothing Then
 				'Update the count.
 				Me.lblSelectedTargetGroupCount.Text = "0 computers shown"
-				
+				_noEvents = False
+				Me.toolStripStatusLabel.Text = ""
 				Exit Sub
 			Else
 				
@@ -1715,8 +1716,13 @@ Public Partial Class MainForm
 			'Clear the udpate data by calling the loads with an index equal to the number of rows.
 			Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
 			Call LoadUpdateStatus( Me._dgvMain.Rows.Count)
+			
+			_noEvents = False
+			toolStripStatusLabel.Text = ""
 			Exit Sub
 		Else If Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
+			_noEvents = False
+			toolStripStatusLabel.Text = ""
 			Exit Sub
 		Else
 			If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
