@@ -21,8 +21,8 @@ Imports System.ComponentModel
 Public Partial Class RulesForm
 	Private Const _startingYConstant As Integer = 10
 	Private Const _spacingConstant As Integer = 25
-	Private ReadOnly _numericComparisons As String ()
-	Private ReadOnly _stringComparisons As String ()
+	Private ReadOnly _scalarComparison As String ()
+	Private ReadOnly _stringComparison As String ()
 	
 	#REGION "Properties"
 	Private _readableRule As String
@@ -48,8 +48,8 @@ Public Partial Class RulesForm
 		'Set the ReadOnly string arrays for the comboboxes.
 		' Currently we use the first item to test if the array is already
 		' loaded into the combobox.
-		_numericComparisons =  New String() {"Equal To", "Less Than", "Less Than or Equal To", "Greater Than", "Greater Than or Equal To"}
-		_stringComparisons =  New String() {"Begins With", "Ends With", "Contains", "Equal To"}
+		_scalarComparison =  New String() {"Equal To", "Less Than", "Less Than or Equal To", "Greater Than", "Greater Than or Equal To"}
+		_stringComparison =  New String() {"Begins With", "Ends With", "Contains", "Equal To"}
 		
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -135,10 +135,10 @@ Public Partial Class RulesForm
 								
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									'Me.cboComparison.SelectedIndex = -1
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If								
 								
 								controlObject.TabIndex = 1
@@ -251,9 +251,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 																
 								controlObject.TabIndex = 3
@@ -291,9 +291,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"								
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 5
@@ -322,9 +322,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 3
@@ -367,9 +367,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 6
@@ -398,9 +398,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 3
@@ -442,9 +442,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 5
@@ -477,9 +477,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 3
@@ -516,9 +516,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 5
@@ -591,9 +591,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 4
@@ -630,9 +630,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _stringComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _stringComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_stringComparisons)
+									Me.cboComparison.Items.AddRange(_stringComparison)
 								End If
 								
 								controlObject.TabIndex = 4
@@ -669,9 +669,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _stringComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_stringComparisons)
+									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
 								
 								controlObject.TabIndex = 4
@@ -704,9 +704,9 @@ Public Partial Class RulesForm
 							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
-								If Not Me.cboComparison.Items.Count = _numericComparisons.Length Then
+								If Not Me.cboComparison.Items.Count = _stringComparison.Length Then
 									Me.cboComparison.Items.Clear
-									Me.cboComparison.Items.AddRange(_numericComparisons)
+									Me.cboComparison.Items.AddRange(_stringComparison)
 								End If
 								
 								controlObject.TabIndex = 4

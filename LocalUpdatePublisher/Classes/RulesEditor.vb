@@ -219,7 +219,7 @@ Public Partial Class RulesEditor
 						Exit Select
 					Case Else
 						dgv_rules.Rows(tmpRow).Cells(1).Value = xmlReader.ReadOuterXml()
-						Dim f As New RulesForm(Me.RuleEditorTitle)
+						Dim f As New RulesForm()
 						dgv_rules.Rows(tmpRow).Cells(0).Value = f.GenerateReadableRuleFromXml(dgv_rules.Rows(tmpRow).Cells(1).Value.ToString())
 						f.Dispose()
 						needRead = False
@@ -247,7 +247,7 @@ Public Partial Class RulesEditor
 	'Add rule.
 	Private Sub btn_add_Click(sender As Object, e As EventArgs)
 		'Prompt user to create rule.
-		Dim tmpRulesForm As New RulesForm(Me.RuleEditorTitle)
+		Dim tmpRulesForm As New RulesForm("Create " & Me.RuleEditorTitle)
 		tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 		
 		If DialogResult.OK = tmpRulesForm.ShowDialog(Me) Then
@@ -274,7 +274,7 @@ Public Partial Class RulesEditor
 	Private Sub btn_edit_Click(sender As Object, e As EventArgs)
 		'Make sure a row is selected.
 		If dgv_rules.SelectedRows.Count = 1 Then
-			Dim tmpRulesForm As New RulesForm(Me.RuleEditorTitle)
+			Dim tmpRulesForm As New RulesForm("Edit " & Me.RuleEditorTitle)
 			tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 			
 			If DialogResult.OK = tmpRulesForm.ShowDialog(Me, dgv_rules.CurrentRow.Cells(1).Value.ToString()) Then
