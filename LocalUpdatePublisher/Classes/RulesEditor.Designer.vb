@@ -31,8 +31,8 @@ Partial Class RulesEditor
 		Me.btn_edit = New System.Windows.Forms.Button
 		Me.btn_remove = New System.Windows.Forms.Button
 		Me.dgv_rules = New System.Windows.Forms.DataGridView
-		Me.dataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.dataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.col_Rule = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.col_XML = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btn_add = New System.Windows.Forms.Button
 		Me.lbl_title = New System.Windows.Forms.Label
 		Me.lbl_xml = New System.Windows.Forms.Label
@@ -96,7 +96,7 @@ Partial Class RulesEditor
 		Me.dgv_rules.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
 		Me.dgv_rules.CausesValidation = false
 		Me.dgv_rules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dataGridViewTextBoxColumn3, Me.dataGridViewTextBoxColumn4})
+		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Rule, Me.col_XML})
 		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
 		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
 		dataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -113,22 +113,23 @@ Partial Class RulesEditor
 		Me.dgv_rules.Size = New System.Drawing.Size(580, 224)
 		Me.dgv_rules.TabIndex = 43
 		AddHandler Me.dgv_rules.RowsAdded, AddressOf Me.Dgv_rulesRowsAddRemoved
+		AddHandler Me.dgv_rules.CellMouseDoubleClick, AddressOf Me.Dgv_rulesCellMouseDoubleClick
 		AddHandler Me.dgv_rules.RowsRemoved, AddressOf Me.Dgv_rulesRowsAddRemoved
 		AddHandler Me.dgv_rules.SelectionChanged, AddressOf Me.dgv_rules_SelectionChanged
 		'
 		'dataGridViewTextBoxColumn3
 		'
-		Me.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		Me.dataGridViewTextBoxColumn3.HeaderText = "Rule"
-		Me.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3"
-		Me.dataGridViewTextBoxColumn3.ReadOnly = true
+		Me.col_Rule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		Me.col_Rule.HeaderText = "Rule"
+		Me.col_Rule.Name = "Rule"
+		Me.col_Rule.ReadOnly = true
 		'
 		'dataGridViewTextBoxColumn4
 		'
-		Me.dataGridViewTextBoxColumn4.HeaderText = "XML"
-		Me.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4"
-		Me.dataGridViewTextBoxColumn4.ReadOnly = true
-		Me.dataGridViewTextBoxColumn4.Visible = false
+		Me.col_XML.HeaderText = "XML"
+		Me.col_XML.Name = "XML"
+		Me.col_XML.ReadOnly = true
+		Me.col_XML.Visible = false
 		'
 		'btn_add
 		'
@@ -241,8 +242,8 @@ Partial Class RulesEditor
 	Private btn_edit As System.Windows.Forms.Button
 	Private btn_remove As System.Windows.Forms.Button
 	Private dgv_rules As System.Windows.Forms.DataGridView
-	Private dataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private dataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+	Private col_Rule As System.Windows.Forms.DataGridViewTextBoxColumn
+	Private col_XML As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btn_add As System.Windows.Forms.Button
 	Private lbl_title As System.Windows.Forms.Label
 	Private lbl_xml As System.Windows.Forms.Label

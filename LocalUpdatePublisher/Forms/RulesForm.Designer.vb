@@ -329,7 +329,6 @@ Partial Class RulesForm
 		'
 		Me.cboEnvironmentVariable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboEnvironmentVariable.FormattingEnabled = true
-		Me.cboEnvironmentVariable.Items.AddRange(New Object() {"None", "System", "Program Files", "Program Files Common", "Windows", "Common Admin Tools", "Common Alt Startup", "Common App Data", "Common Desktop Directory", "Common Documents", "Common Favorites", "Common Music", "Common Pictures", "Common Programs", "Common Startup", "Common Start Menu", "Common Templates", "Common Video", "Controls", "Drives", "Printers", "Profiles"})
 		Me.cboEnvironmentVariable.Location = New System.Drawing.Point(120, 0)
 		Me.cboEnvironmentVariable.Name = "cboEnvironmentVariable"
 		Me.cboEnvironmentVariable.Size = New System.Drawing.Size(185, 21)

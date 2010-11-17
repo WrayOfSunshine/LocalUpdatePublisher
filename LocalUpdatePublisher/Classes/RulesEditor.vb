@@ -119,7 +119,7 @@ Public Partial Class RulesEditor
 		End Get
 		Set
 			_ruleEditorTitle = value
-		End Set		
+		End Set
 	End Property
 	
 	
@@ -246,13 +246,15 @@ Public Partial Class RulesEditor
 	
 	'Add rule.
 	Private Sub btn_add_Click(sender As Object, e As EventArgs)
+		Dim tmpRow As Integer
+		
 		'Prompt user to create rule.
 		Dim tmpRulesForm As New RulesForm("Create " & Me.RuleEditorTitle)
 		tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 		
 		If DialogResult.OK = tmpRulesForm.ShowDialog(Me) Then
-			
-			Me.dgv_rules.Rows.Add(New String() {tmpRulesForm.ReadableRule, tmpRulesForm.XmlRule})
+			tmpRow = Me.dgv_rules.Rows.Add(New String() {tmpRulesForm.ReadableRule, tmpRulesForm.XmlRule})
+			Me.dgv_rules.CurrentCell = Me.dgv_rules.Rows(tmpRow).Cells("Rule")
 		End If
 		tmpRulesForm.Dispose()
 	End Sub
@@ -282,6 +284,13 @@ Public Partial Class RulesEditor
 				dgv_rules.CurrentRow.Cells(1).Value = tmpRulesForm.XmlRule
 			End If
 			tmpRulesForm.Dispose()
+		End If
+	End Sub
+	
+	'If the user double clicks on a row, then edit it.
+	Sub Dgv_rulesCellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs)
+		If e.RowIndex > -1 Then
+			btn_edit_Click(sender, e)
 		End If
 	End Sub
 	

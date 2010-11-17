@@ -44,7 +44,7 @@ Public Partial Class RulesForm
 		Call Me.New("Create Rule")
 	End Sub
 	
-	Public Sub New(title As String )				
+	Public Sub New(title As String )
 		'Set the ReadOnly string arrays for the comboboxes.
 		' Currently we use the first item to test if the array is already
 		' loaded into the combobox.
@@ -55,6 +55,10 @@ Public Partial Class RulesForm
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 		Me.Text = title
+		
+		'Set the Environment variable data source.
+		Me.cboEnvironmentVariable.DataSource = GetSortedEnum(GetType(CSIDL))
+		Me.cboEnvironmentVariable.SelectedIndex = -1
 		
 		'Load the Rule Types into the combo box based on the Enum.
 		For Each tmpRuleType As String In [Enum].GetNames(GetType(RuleTypes))
@@ -73,7 +77,9 @@ Public Partial Class RulesForm
 			Me.btnAdd.Text = "Add Rule"
 		Else
 			Me.btnAdd.Text = "Save Rule"
-			LoadRule(ruleXml)
+			If Not LoadRule(ruleXml) Then
+				Return DialogResult.Abort
+			End If
 		End If
 		If owner Is Nothing Then
 			Return MyBase.ShowDialog()
@@ -139,7 +145,7 @@ Public Partial Class RulesForm
 									'Me.cboComparison.SelectedIndex = -1
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_scalarComparison)
-								End If								
+								End If
 								
 								controlObject.TabIndex = 1
 								controlObject.Show
@@ -153,10 +159,15 @@ Public Partial Class RulesForm
 								controlObject.Show
 								controlObject.Top = _startingYConstant + ( 2 * _spacingConstant )
 							Case "pnlData"
+								
 								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
-								Me.txtData.Text = ""
-								Me.lblData.Text = "Build Number"
+								
+								If Not Me.lblData.Text = "Build Number" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "Build Number"
+								End If
+								
 								Me.lblDataInfo.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
@@ -255,7 +266,7 @@ Public Partial Class RulesForm
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_scalarComparison)
 								End If
-																
+								
 								controlObject.TabIndex = 3
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
@@ -288,7 +299,7 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 4
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
-							Case "pnlComparison"								
+							Case "pnlComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
 								If Not Me.cboComparison.Items.Count = _scalarComparison.Length Then
@@ -409,8 +420,12 @@ Public Partial Class RulesForm
 							Case "pnlData"
 								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
-								Me.txtData.Text = ""
-								Me.lblData.Text = "Size:"
+								
+								If Not Me.lblData.Text = "Size:" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "Size:"
+								End If
+								
 								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
 								Me.lblDataInfo.Show
 								controlObject.Show
@@ -453,8 +468,12 @@ Public Partial Class RulesForm
 							Case "pnlData"
 								controlObject.TabIndex = 6
 								Me.txtData.Width = Me.txtVersion.Width
-								Me.txtData.Text = ""
-								Me.lblData.Text = "Size:"
+								
+								If Not Me.lblData.Text = "Size:" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "Size:"
+								End If
+								
 								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
 								Me.lblDataInfo.Show
 								controlObject.Show
@@ -601,10 +620,14 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
 								controlObject.TabIndex = 5
-								Me.lblData.Text = "DWORD Value:"
+								
+								If Not Me.lblData.Text = "DWORD Value:" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "DWORD Value:"
+								End If
+								
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
-								Me.txtData.Text = ""
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -640,10 +663,12 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
 								controlObject.TabIndex = 5
-								Me.lblData.Text = "String:"
+								If Not Me.lblData.Text = "String:" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "String:"
+								End If
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
-								Me.txtData.Text = ""
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -715,8 +740,12 @@ Public Partial Class RulesForm
 							Case "pnlData"
 								controlObject.TabIndex = 5
 								Me.txtData.Width = Me.txtFilePath.Width
-								Me.txtData.Text = ""
-								Me.lblData.Text = "String:"
+								
+								If Not Me.lblData.Text = "String:" Then
+									Me.txtData.Text = ""
+									Me.lblData.Text = "String:"
+								End If
+								
 								Me.lblDataInfo.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
@@ -905,7 +934,7 @@ Public Partial Class RulesForm
 				Me.txtOSMinorVersion.Text = "0"
 		End Select
 	End Sub
-		
+	
 	'Set the corresonding codes to the service pack.
 	Private Sub GetServicePackCode(sender As Object, e As EventArgs)
 		Select Case Me.cboServicePack.Text
@@ -936,105 +965,105 @@ Public Partial Class RulesForm
 		Return "SP " & spMajor
 	End Function
 	
-	'Return the CSID number for the selected directory.
-	Shared Private Function GetCSIDCode(directory As String) As String
-		Select Case directory
-			Case "System"
-				Return "37"
-			Case "Program Files"
-				Return "38"
-			Case "Program Files Common"
-				Return "43"
-			Case "Windows"
-				Return "36"
-			Case "Common Admin Tools"
-				Return "47"
-			Case "Common Alt Startup"
-				Return "30"
-			Case "Common App Data"
-				Return "35"
-			Case "Common Desktop Directory"
-				Return "25"
-			Case "Common Documents"
-				Return "46"
-			Case "Common Favorites"
-				Return "31"
-			Case "Common Music"
-				Return "53"
-			Case "Common Pictures"
-				Return "54"
-			Case "Common Programs"
-				Return "23"
-			Case "Common Startup"
-				Return "24"
-			Case "Common Start Menu"
-				Return "22"
-			Case "Common Templates"
-				Return "45"
-			Case "Common Video"
-				Return "55"
-			Case "Controls"
-				Return "3"
-			Case "Drives"
-				Return "17"
-			Case "Printers"
-				Return "4"
-			Case "Profiles"
-				Return "62"
-			Case Else
-				Return Nothing
-		End Select
-	End Function
-	
-	'Return the CSID text for the selected directory.
-	Shared  Function GetCsidCodeText(code As String) As String
-		Select Case code
-			Case "37"
-				Return "System"
-			Case "38"
-				Return "Program Files"
-			Case "43"
-				Return "Program Files Common"
-			Case "36"
-				Return "Windows"
-			Case "47"
-				Return "Common Admin Tools"
-			Case "30"
-				Return "Common Alt Startup"
-			Case "35"
-				Return "Common App Data"
-			Case "25"
-				Return "Common Desktop Directory"
-			Case "46"
-				Return "Common Documents"
-			Case "31"
-				Return "Common Favorites"
-			Case "53"
-				Return "Common Music"
-			Case "54"
-				Return "Common Pictures"
-			Case "23"
-				Return "Common Programs"
-			Case "24"
-				Return "Common Startup"
-			Case "22"
-				Return "Common Start Menu"
-			Case "45"
-				Return "Common Templates"
-			Case "55"
-				Return "Common Video"
-			Case "3"
-				Return "Controls"
-			Case "17"
-				Return "Drives"
-			Case "4"
-				Return "Printers"
-			Case "62"
-				Return "Profiles"
-			Case Else
-				Return Nothing
-		End Select
-	End Function
+	'	'Return the CSID number for the selected directory.
+	'	Shared Private Function GetCSIDCode(directory As String) As String
+	'		Select Case directory
+	'			Case "System"
+	'				Return "37"
+	'			Case "Program Files"
+	'				Return "38"
+	'			Case "Program Files Common"
+	'				Return "43"
+	'			Case "Windows"
+	'				Return "36"
+	'			Case "Common Admin Tools"
+	'				Return "47"
+	'			Case "Common Alt Startup"
+	'				Return "30"
+	'			Case "Common App Data"
+	'				Return "35"
+	'			Case "Common Desktop Directory"
+	'				Return "25"
+	'			Case "Common Documents"
+	'				Return "46"
+	'			Case "Common Favorites"
+	'				Return "31"
+	'			Case "Common Music"
+	'				Return "53"
+	'			Case "Common Pictures"
+	'				Return "54"
+	'			Case "Common Programs"
+	'				Return "23"
+	'			Case "Common Startup"
+	'				Return "24"
+	'			Case "Common Start Menu"
+	'				Return "22"
+	'			Case "Common Templates"
+	'				Return "45"
+	'			Case "Common Video"
+	'				Return "55"
+	'			Case "Controls"
+	'				Return "3"
+	'			Case "Drives"
+	'				Return "17"
+	'			Case "Printers"
+	'				Return "4"
+	'			Case "Profiles"
+	'				Return "62"
+	'			Case Else
+	'				Return Nothing
+	'		End Select
+	'	End Function
+	'
+	'	'Return the CSID text for the selected directory.
+	'	Shared  Function GetCsidCodeText(code As String) As String
+	'		Select Case code
+	'			Case "37"
+	'				Return "System"
+	'			Case "38"
+	'				Return "Program Files"
+	'			Case "43"
+	'				Return "Program Files Common"
+	'			Case "36"
+	'				Return "Windows"
+	'			Case "47"
+	'				Return "Common Admin Tools"
+	'			Case "30"
+	'				Return "Common Alt Startup"
+	'			Case "35"
+	'				Return "Common App Data"
+	'			Case "25"
+	'				Return "Common Desktop Directory"
+	'			Case "46"
+	'				Return "Common Documents"
+	'			Case "31"
+	'				Return "Common Favorites"
+	'			Case "53"
+	'				Return "Common Music"
+	'			Case "54"
+	'				Return "Common Pictures"
+	'			Case "23"
+	'				Return "Common Programs"
+	'			Case "24"
+	'				Return "Common Startup"
+	'			Case "22"
+	'				Return "Common Start Menu"
+	'			Case "45"
+	'				Return "Common Templates"
+	'			Case "55"
+	'				Return "Common Video"
+	'			Case "3"
+	'				Return "Controls"
+	'			Case "17"
+	'				Return "Drives"
+	'			Case "4"
+	'				Return "Printers"
+	'			Case "62"
+	'				Return "Profiles"
+	'			Case Else
+	'				Return Nothing
+	'		End Select
+	'	End Function
 	
 	'Return the XML compatable comparison string based on the human readable string.
 	Shared Function GetComparisonCode(comparison As String) As String
@@ -1382,12 +1411,12 @@ Public Partial Class RulesForm
 				If Not String.IsNullOrEmpty(Me.cboProductType.Text) Then Me._readableRule += "   Product Type:" & Me.cboProductType.Text
 				
 				'Set the xmlrule.
-				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"MajorVersion=""" & Me.txtOSMajorVersion.Text & """ " & _
-					"MinorVersion=""" & Me.txtOSMinorVersion.Text & """ "
-				If Not String.IsNullOrEmpty(Me.txtData.Text) Then _xmlRule += "BuildNumber=""" & Me.txtData.Text & """ "
-				_xmlRule += "ServicePackMajor="""  & If (String.IsNullOrEmpty(Me.txtSPMajorVersion.Text) , "0" , Me.txtSPMajorVersion.Text ) & """ "
-				_xmlRule += "ServicePackMinor="""  & If (String.IsNullOrEmpty(Me.txtSPMinorVersion.Text) , "0" , Me.txtSPMinorVersion.Text ) & """ "
+				_xmlRule += "Comparison=""" & StringToXML(GetComparisonCode(Me.cboComparison.Text)) & """ " & _
+					"MajorVersion=""" & StringToXML(Me.txtOSMajorVersion.Text) & """ " & _
+					"MinorVersion=""" & StringToXML(Me.txtOSMinorVersion.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.txtData.Text) Then _xmlRule += "BuildNumber=""" & StringToXML(Me.txtData.Text) & """ "
+				_xmlRule += "ServicePackMajor="""  & If (String.IsNullOrEmpty(Me.txtSPMajorVersion.Text) , "0" , StringToXML(Me.txtSPMajorVersion.Text) ) & """ "
+				_xmlRule += "ServicePackMinor="""  & If (String.IsNullOrEmpty(Me.txtSPMinorVersion.Text) , "0" , StringToXML(Me.txtSPMinorVersion.Text) ) & """ "
 				
 				If Not String.IsNullOrEmpty(Me.cboProductType.Text) Then _xmlRule += "ProductType=""" & Me.cboProductType.SelectedIndex & """ "
 				_xmlRule += " />"
@@ -1406,13 +1435,15 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileExists
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   Version: " & Me.txtVersion.Text
 				
 				'Set the xmlrule.
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text ) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & Me.txtVersion.Text & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text ) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text ) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer) & """ "
+				
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileExistsWithRegistry
 				'Set the readable rule.
@@ -1423,22 +1454,23 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & Me.txtVersion.Text & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileCreation
 				'Set the readble rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
 					"   Created:" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
 					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
@@ -1452,23 +1484,24 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
 					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileModified
 				'Set the readble rule
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
 					"   Created:" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer).ToString & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
 					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
@@ -1482,25 +1515,26 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
 					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileSize
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
 					"   Size: " & Me.txtData.Text
 				
 				'Set the xmlrule.
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer).ToString & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Size=""" & Me.txtData.Text & """ "
+					"Size=""" & StringToXML(Me.txtData.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileSizeWithRegistry
 				'Set the readable rule.
@@ -1512,25 +1546,26 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Size=""" & Me.txtData.Text & """ "
+					"Size=""" & StringToXML(Me.txtData.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileVersion
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   Version: " & Me.txtVersion.Text
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   Version: " & Me.txtVersion.Text
 				
 				'Set the xmlrule.
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
+				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer).ToString & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ "
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & Me.txtVersion.Text & """ "
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileVersionWithRegistry
 				'Set the readable rule.
@@ -1542,12 +1577,12 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Path=""" & Me.txtFilePath.Text.Trim("\"c) & """ " & _
+				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ " & _
 					"Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Version=""" & Me.txtVersion.Text & """ "
+					"Version=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.RegistryKeyExists
 				'Set the readable rule.
@@ -1557,7 +1592,7 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += " />"
 			Case RuleTypes.RegistryValueExists
@@ -1569,10 +1604,10 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ "
-				If Not String.IsNullOrEmpty(Me.txtRegistryValue.Text) Then _xmlRule += "Value=""" & Me.txtRegistryValue.Text & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ "
+				If Not String.IsNullOrEmpty(Me.txtRegistryValue.Text) Then _xmlRule += "Value=""" & StringToXML(Me.txtRegistryValue.Text) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
-				_xmlRule += "Type=""" & Me.cboRegistryValueType.Text & """ "
+				_xmlRule += "Type=""" & StringToXML(Me.cboRegistryValueType.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.RegistryDWORDValue
 				'Set the readable rule.
@@ -1583,11 +1618,11 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Data=""" & Me.txtData.Text & """ "
+					"Data=""" & StringToXML(Me.txtData.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.RegistryExpandSzValue
 				'Set the readable rule.
@@ -1598,11 +1633,11 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Data=""" & Me.txtData.Text & """ "
+					"Data=""" & StringToXML(Me.txtData.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.RegistryVersionInSz
 				'Set the readable rule.
@@ -1613,11 +1648,11 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Data=""" & Me.txtVersion.Text & """ "
+					"Data=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.RegistrySzValue
 				'Set the readable rule.
@@ -1628,20 +1663,20 @@ Public Partial Class RulesForm
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
-					"Subkey=""" & Me.txtRegistrySubKey.Text.Trim("\"c) & """ " & _
-					"Value=""" & Me.txtRegistryValue.Text.Trim("\"c) & """ "
+					"Subkey=""" & StringToXML(Me.txtRegistrySubKey.Text.Trim("\"c)) & """ " & _
+					"Value=""" & StringToXML(Me.txtRegistryValue.Text.Trim("\"c)) & """ "
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Data=""" & Me.txtData.Text & """ "
+					"Data=""" & StringToXML(Me.txtData.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.WMIQuery
 				'Set the readable rule.
-				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "   NameSpace:" & Me.txtData.Text
-				Me._readableRule += Me.txtQuery.Text
+				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "NameSpace:" & Me.txtData.Text & " " 
+				Me._readableRule += "Query: " & Me.txtQuery.Text
 				
 				'Set the xmlrule.
-				If Not String.IsNullOrEmpty(Me.txtData.Text) Then _xmlRule += "Namespace=""" & Me.txtData.Text & """ "
-				_xmlRule += "WqlQuery=""" & Me.txtQuery.Text & """ "
+				If Not String.IsNullOrEmpty(Me.txtData.Text) Then _xmlRule += "Namespace=""" & StringToXML(Me.txtData.Text) & """ "
+				_xmlRule += "WqlQuery=""" & StringToXML(Me.txtQuery.Text) & """ "
 				_xmlRule += " />"
 				
 			Case RuleTypes.MsiProductInstalled
@@ -1652,8 +1687,8 @@ Public Partial Class RulesForm
 				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += "  Language = " & cboLanguage.Text
 				
 				_xmlRule += "ProductCode=""" & (New Guid(txtProductCode.Text).ToString("B")) & """"
-				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & txtMaxVersion.Text & """"
-				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _xmlRule += " VersionMin=""" & txtMinVersion.Text & """"
+				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & StringToXML(txtMaxVersion.Text) & """"
+				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _xmlRule += " VersionMin=""" & StringToXML(txtMinVersion.Text) & """"
 				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _xmlRule += " Language=""" & GetMsiLanguageCode(GetLanguageCode(cboLanguage.Text)) & """"
 				_xmlRule+= " />"
 			Case RuleTypes.MsiPatchInstalled
@@ -1664,8 +1699,8 @@ Public Partial Class RulesForm
 				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += " Language = " & cboLanguage.Text
 				
 				_xmlRule += "PatchCode=""" & (New Guid(txtPatchCode.Text).ToString("B")) & """" & " ProductCode=""" & (New Guid(txtProductCode.Text).ToString("B")) & """"
-				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & txtMaxVersion.Text & """"
-				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _xmlRule += " VersionMin=""" & txtMinVersion.Text & """"
+				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & StringToXML(txtMaxVersion.Text) & """"
+				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _xmlRule += " VersionMin=""" & StringToXML(txtMinVersion.Text) & """"
 				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _xmlRule += " Language=""" & GetMsiLanguageCode(GetLanguageCode(cboLanguage.Text)) & """"
 				_xmlRule += " />"
 			Case RuleTypes.MsiComponentInstalled
@@ -1743,13 +1778,16 @@ Public Partial Class RulesForm
 	
 	'This function returns the readable string based on the passed xml string.
 	Public Function GenerateReadableRuleFromXml(ruleXml As String) As String
-		LoadRule(ruleXml)
-		Call GenerateRule
-		Return Me._readableRule
+		If LoadRule(ruleXml) Then
+			Call GenerateRule
+			Return Me._readableRule
+		Else
+			Return Nothing
+		End If
 	End Function
 	
 	'Loads the rule based on the XML string.
-	Sub LoadRule(ruleXml As String)
+	Private Function LoadRule(ruleXml As String) As Boolean
 		
 		'Create the namespace and add the lar and bar namespaces.
 		Dim nsmgr as XmlNamespaceManager = new XmlNamespaceManager(new NameTable())
@@ -1760,361 +1798,374 @@ Public Partial Class RulesForm
 		'Create the XmlParserContext.
 		Dim context as XmlParserContext = new XmlParserContext(nothing, nsmgr, nothing, XmlSpace.Default)
 		
-		'Create the XmlTextReader and set whitespace handling to none.
-		Dim xmlReader As XmlTextReader = New XmlTextReader(ruleXml, XmlNodeType.Element, context)
-		xmlReader.WhitespaceHandling = WhitespaceHandling.None
-		
-		'Read the first element.
-		xmlReader.Read
-		
-		'See if the first element is a Not element.  If so then change the xml reader to
-		' use the InnerXML so that the surrounding Not elements are ignored.  Also
-		' set the Not checkbox accordingly.
-		If xmlReader.LocalName = "Not" Then
-			Me.chkNotRule.Checked = True
-			xmlReader = New XmlTextReader(xmlReader.ReadInnerXml, XmlNodeType.Element, context)
+		Try
+			'Create the XmlTextReader and set whitespace handling to none.
+			Dim xmlReader As XmlTextReader = New XmlTextReader(ruleXml, XmlNodeType.Element, context)
+			xmlReader.WhitespaceHandling = WhitespaceHandling.None
+			
+			'Read the first element.
 			xmlReader.Read
-		End If
-		
-		Select Case xmlReader.LocalName 'Now create the rules based on the xml element's name
-			Case "WindowsVersion"
-				'Select the rule type.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsVersion
-				
-				'Load the data.
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtOSMajorVersion.Text = xmlReader.GetAttribute("MajorVersion")
-				Me.txtOSMinorVersion.Text = xmlReader.GetAttribute("MinorVersion")
-				Me.txtData.Text = xmlReader.GetAttribute("BuildNumber")
-				Me.txtSPMajorVersion.Text = xmlReader.GetAttribute("ServicePackMajor")
-				Me.txtSPMinorVersion.Text = xmlReader.GetAttribute("ServicePackMinor")
-				If Not xmlReader.GetAttribute("ProductType") Is Nothing Then Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
-				
-			Case "WindowsLanguage"
-				'Select the rule type.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage
-				
-				'Load the data.
-				Me.cboLanguage.Text = GetLanguageText(xmlReader.GetAttribute("Language"))
-				
-			Case "Processor"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.ProcessorArchitecture
-				
-				'Load the data.
-				Me.cboProcessorType.Text = GetProcessorTypeText(xmlReader.GetAttribute("Architecture"))
-				
-			Case "FileExists"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileExists
-				
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
-				
-			Case "FileExistsPrependRegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileExistsWithRegistry
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
-			Case "FileCreated"
-				'Select the Rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileCreation
-				
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Checked = True
-				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
-				
-				
-			Case "FileCreatedPrependRegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileCreationWithRegistry
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Checked = True
-				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
-			Case "FileModified"
-				'Select the Rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileModified
-				
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Checked = True
-				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
-				
-			Case "FileModifiedPrependRegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileModifiedWithRegistry
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.dtpDate.Checked = True
-				Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
-				
-			Case "FileSize"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileSize
-				
-				'Load the data.
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Size")
-				
-			Case "FileSizePrependRegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileSizeWithRegistry
-				
-				'Load the data
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Size")
-				
-			Case "FileVersion"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersion
-				
-				'Load the data
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
-				
-			Case "FileVersionPrependRegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.FileVersionWithRegistry
-				
-				'Load the data
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtVersion.Text = xmlReader.GetAttribute("Version")
-				
-			Case "RegKeyExists"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryKeyExists
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				
-			Case "RegValueExists"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryValueExists
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboRegistryValueType.Text = xmlReader.GetAttribute("Type")
-				
-			Case "RegDword"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryDWORDValue
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Data")
-				
-			Case "RegExpandSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryExpandSzValue
-				
-				'Load the data.
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Data")
-				
-			Case "RegSzToVersion"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistryVersionInSz
-				
-				'Load the data
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Data")
-				
-			Case "RegSz"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.RegistrySzValue
-				
-				'Load the data
-				Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
-				Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
-				Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
-				If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
-				Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-				Me.txtData.Text = xmlReader.GetAttribute("Data")
-				
-			Case "WmiQuery"
-				'Select the rule.
-				Me.cboRuleType.SelectedIndex = RuleTypes.WMIQuery
-				
-				'Load the Data.
-				Me.txtData.Text = xmlReader.GetAttribute("Namespace")
-				Me.txtQuery.Text = xmlReader.GetAttribute("WqlQuery")
-				
-			Case "MsiPatchInstalledForProduct"
-				'Select the rule.
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiPatchInstalled				
-				
-				'Load the Data.
-				Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
-				Me.txtPatchCode.Text = xmlReader.GetAttribute("PatchCode")
-				Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
-				Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
-				Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
-				
-			Case "MsiProductInstalled"
-				'Select the rule.
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiProductInstalled
-				
-				'Load the Data.
-				Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
-				Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
-				Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
-				Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
-				
-			Case "MsiComponentInstalledForProduct"
-				'Select the rule.
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiComponentInstalled
-				
-				'Load the Data.
-				Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
-				Dim acr As String = xmlReader.GetAttribute("AllComponentsRequired")
-				chkProductCollection_requireAll.Checked = (If(apr, String.Empty)).ToLowerInvariant() = "true"
-				chkComponentCollection_requireAll.Checked = (If(acr, String.Empty)).ToLowerInvariant() = "true"
-				
-				Dim products As New List(Of String)()
-				Dim components As New List(Of String)()
-				
-				xmlReader.Read()
-				Do
-					If xmlReader.NodeType = XmlNodeType.Element Then
-						Dim n As XmlNodeType = xmlReader.MoveToContent()
-						If n = XmlNodeType.Element Then
-							Try
-								Dim x As String = xmlReader.ReadString()
-								If x.Length = 34 Then
-									x = x.Substring(1, 32)
-								End If
-								Dim g As New Guid(x)
-								If xmlReader.LocalName = "Component" Then
-									components.Add(g.ToString("D"))
-								ElseIf xmlReader.LocalName = "Product" Then
-									products.Add(g.ToString("D"))
-								End If
-							Catch
-							End Try
-						End If
-					End If
+			
+			'See if the first element is a Not element.  If so then change the xml reader to
+			' use the InnerXML so that the surrounding Not elements are ignored.  Also
+			' set the Not checkbox accordingly.
+			If xmlReader.LocalName = "Not" Then
+				Me.chkNotRule.Checked = True
+				xmlReader = New XmlTextReader(xmlReader.ReadInnerXml, XmlNodeType.Element, context)
+				xmlReader.Read
+			End If
+			
+			Select Case xmlReader.LocalName 'Now create the rules based on the xml element's name
+				Case "WindowsVersion"
+					'Select the rule type.
+					Me.cboRuleType.SelectedIndex = RuleTypes.WindowsVersion
+					
+					'Load the data.
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtOSMajorVersion.Text = xmlReader.GetAttribute("MajorVersion")
+					Me.txtOSMinorVersion.Text = xmlReader.GetAttribute("MinorVersion")
+					Me.txtData.Text = xmlReader.GetAttribute("BuildNumber")
+					Me.txtSPMajorVersion.Text = xmlReader.GetAttribute("ServicePackMajor")
+					Me.txtSPMinorVersion.Text = xmlReader.GetAttribute("ServicePackMinor")
+					If Not xmlReader.GetAttribute("ProductType") Is Nothing Then Me.cboProductType.Text = GetProductTypeText(CInt(xmlReader.GetAttribute("ProductType")))
+					
+				Case "WindowsLanguage"
+					'Select the rule type.
+					Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage
+					
+					'Load the data.
+					Me.cboLanguage.Text = GetLanguageText(xmlReader.GetAttribute("Language"))
+					
+				Case "Processor"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.ProcessorArchitecture
+					
+					'Load the data.
+					Me.cboProcessorType.Text = GetProcessorTypeText(xmlReader.GetAttribute("Architecture"))
+					
+				Case "FileExists"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileExists
+					
+					'Load the data.
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					'Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
+					Me.txtVersion.Text = xmlReader.GetAttribute("Version")
+					
+				Case "FileExistsPrependRegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileExistsWithRegistry
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					Me.txtVersion.Text = xmlReader.GetAttribute("Version")
+				Case "FileCreated"
+					'Select the Rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileCreation
+					
+					'Load the data.
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					'Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.dtpDate.Checked = True
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
+					
+					
+				Case "FileCreatedPrependRegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileCreationWithRegistry
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.dtpDate.Checked = True
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
+				Case "FileModified"
+					'Select the Rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileModified
+					
+					'Load the data.
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					'Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.dtpDate.Checked = True
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
+					
+				Case "FileModifiedPrependRegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileModifiedWithRegistry
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.dtpDate.Checked = True
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
+					
+				Case "FileSize"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileSize
+					
+					'Load the data.
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					'Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Size")
+					
+				Case "FileSizePrependRegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileSizeWithRegistry
+					
+					'Load the data
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Size")
+					
+				Case "FileVersion"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileVersion
+					
+					'Load the data
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					'Me.cboEnvironmentVariable.Text = GetCsidCodeText(xmlReader.GetAttribute("Csidl"))
+					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtVersion.Text = xmlReader.GetAttribute("Version")
+					
+				Case "FileVersionPrependRegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.FileVersionWithRegistry
+					
+					'Load the data
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtVersion.Text = xmlReader.GetAttribute("Version")
+					
+				Case "RegKeyExists"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistryKeyExists
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					
+				Case "RegValueExists"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistryValueExists
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.cboRegistryValueType.Text = xmlReader.GetAttribute("Type")
+					
+				Case "RegDword"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistryDWORDValue
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Data")
+					
+				Case "RegExpandSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistryExpandSzValue
+					
+					'Load the data.
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Data")
+					
+				Case "RegSzToVersion"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistryVersionInSz
+					
+					'Load the data
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Data")
+					
+				Case "RegSz"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.RegistrySzValue
+					
+					'Load the data
+					Me.cboRegistryKey.Text = xmlReader.GetAttribute("Key")
+					Me.txtRegistrySubKey.Text = xmlReader.GetAttribute("Subkey")
+					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
+					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
+					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
+					Me.txtData.Text = xmlReader.GetAttribute("Data")
+					
+				Case "WmiQuery"
+					'Select the rule.
+					Me.cboRuleType.SelectedIndex = RuleTypes.WMIQuery
+					
+					'Load the Data.
+					Me.txtData.Text = xmlReader.GetAttribute("Namespace")
+					Me.txtQuery.Text = xmlReader.GetAttribute("WqlQuery")
+					
+				Case "MsiPatchInstalledForProduct"
+					'Select the rule.
+					Me.cboRuleType.SelectedItem = RuleTypes.MsiPatchInstalled
+					
+					'Load the Data.
+					Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
+					Me.txtPatchCode.Text = xmlReader.GetAttribute("PatchCode")
+					Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
+					Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
+					Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
+					
+				Case "MsiProductInstalled"
+					'Select the rule.
+					Me.cboRuleType.SelectedItem = RuleTypes.MsiProductInstalled
+					
+					'Load the Data.
+					Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
+					Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
+					Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
+					Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
+					
+				Case "MsiComponentInstalledForProduct"
+					'Select the rule.
+					Me.cboRuleType.SelectedItem = RuleTypes.MsiComponentInstalled
+					
+					'Load the Data.
+					Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
+					Dim acr As String = xmlReader.GetAttribute("AllComponentsRequired")
+					chkProductCollection_requireAll.Checked = (If(apr, String.Empty)).ToLowerInvariant() = "true"
+					chkComponentCollection_requireAll.Checked = (If(acr, String.Empty)).ToLowerInvariant() = "true"
+					
+					Dim products As New List(Of String)()
+					Dim components As New List(Of String)()
 					
 					xmlReader.Read()
-					
-					If xmlReader.EOF Then
-						Exit Do
-					End If
-				Loop While ((xmlReader.LocalName <> "MsiComponentInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
-				
-				gceProductCollection.Items = products
-				gceComponentCollection.Items = components
-				
-				
-			Case "MsiFeatureInstalledForProduct"
-				'Select the rule.
-				Me.cboRuleType.SelectedItem = RuleTypes.MsiFeatureInstalled
-				
-				'Load the Data.
-				
-				Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
-				Dim afr As String = xmlReader.GetAttribute("AllFeaturesRequired")
-				chkProductCollection_requireAll.Checked = String.IsNullOrEmpty(apr)
-				chkFeatureCollection_requireAll.Checked = String.IsNullOrEmpty(afr)
-				
-				Dim products As New List(Of String)()
-				Dim features As New List(Of String)()
-				
-				xmlReader.Read()
-				Do
-					If xmlReader.NodeType = XmlNodeType.Element Then
-						Dim n As XmlNodeType = xmlReader.MoveToContent()
-						If n = XmlNodeType.Element Then
-							Try
-								Dim x As String = xmlReader.ReadString()
-								
-								If xmlReader.LocalName = "Feature" Then
-									features.Add(x)
-								ElseIf xmlReader.LocalName = "Product" Then
+					Do
+						If xmlReader.NodeType = XmlNodeType.Element Then
+							Dim n As XmlNodeType = xmlReader.MoveToContent()
+							If n = XmlNodeType.Element Then
+								Try
+									Dim x As String = xmlReader.ReadString()
 									If x.Length = 34 Then
 										x = x.Substring(1, 32)
 									End If
 									Dim g As New Guid(x)
-									products.Add(g.ToString("D"))
-								End If
-							Catch
-							End Try
+									If xmlReader.LocalName = "Component" Then
+										components.Add(g.ToString("D"))
+									ElseIf xmlReader.LocalName = "Product" Then
+										products.Add(g.ToString("D"))
+									End If
+								Catch
+								End Try
+							End If
 						End If
-					End If
+						
+						xmlReader.Read()
+						
+						If xmlReader.EOF Then
+							Exit Do
+						End If
+					Loop While ((xmlReader.LocalName <> "MsiComponentInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
+					
+					gceProductCollection.Items = products
+					gceComponentCollection.Items = components
+					
+					
+				Case "MsiFeatureInstalledForProduct"
+					'Select the rule.
+					Me.cboRuleType.SelectedItem = RuleTypes.MsiFeatureInstalled
+					
+					'Load the Data.
+					
+					Dim apr As String = xmlReader.GetAttribute("AllProductsRequired")
+					Dim afr As String = xmlReader.GetAttribute("AllFeaturesRequired")
+					chkProductCollection_requireAll.Checked = String.IsNullOrEmpty(apr)
+					chkFeatureCollection_requireAll.Checked = String.IsNullOrEmpty(afr)
+					
+					Dim products As New List(Of String)()
+					Dim features As New List(Of String)()
 					
 					xmlReader.Read()
+					Do
+						If xmlReader.NodeType = XmlNodeType.Element Then
+							Dim n As XmlNodeType = xmlReader.MoveToContent()
+							If n = XmlNodeType.Element Then
+								Try
+									Dim x As String = xmlReader.ReadString()
+									
+									If xmlReader.LocalName = "Feature" Then
+										features.Add(x)
+									ElseIf xmlReader.LocalName = "Product" Then
+										If x.Length = 34 Then
+											x = x.Substring(1, 32)
+										End If
+										Dim g As New Guid(x)
+										products.Add(g.ToString("D"))
+									End If
+								Catch
+								End Try
+							End If
+						End If
+						
+						xmlReader.Read()
+						
+						If xmlReader.EOF Then
+							Exit Do
+						End If
+					Loop While ((xmlReader.LocalName <> "MsiFeatureInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
 					
-					If xmlReader.EOF Then
-						Exit Do
-					End If
-				Loop While ((xmlReader.LocalName <> "MsiFeatureInstalledForProduct") AndAlso (xmlReader.NodeType <> XmlNodeType.EndElement))
-				
-				gceProductCollection.Items = products
-				gceFeatureCollection.Items = features
-				
-				
-				
-			Case Else
-				Msgbox ("This rule is not recognized: " & xmlreader.LocalName.Replace("bar:",""))
-		End Select
-		xmlReader.Close
-	End Sub
+					gceProductCollection.Items = products
+					gceFeatureCollection.Items = features
+					
+				Case Else
+					Msgbox ("This rule is not recognized: " & xmlreader.LocalName.Replace("bar:",""))
+			End Select
+			xmlReader.Close
+			
+			Return True
+		Catch x As XmlException
+			Msgbox("LoadRule - XMLException: The ruled could not be loaded." & vbNewLine & x.Message )
+			Return False
+		Catch x As Exception
+			Msgbox("LoadRule - Exception: The ruled could not be loaded." & vbNewLine & x.Message )
+			Return False
+		End Try
+	End Function
 	
 	'Show human readable strings in the combo box.
 	Sub CboRuleTypeFormat(sender As Object, e As ListControlConvertEventArgs)
@@ -2347,21 +2398,32 @@ Public Partial Class RulesForm
 		End If 'Combobox has selection.
 	End Sub
 	
-	
-	'	' AND's the Tag fields of all passed controls
-	'	' Receives controls who's Tag's indicate true = valid, false = invalid
-	'	' Returns true if all controls have a boolean tag that is true
-	'	Private Function FieldsValid(controls As Control()) As Boolean
-	'		Dim total As Boolean = True
-	'		For Each tmpControl As Control In controls
-	'			If TypeOf Me.errorProviderRules.GetErrortmpControl.Tag Is Boolean Then
-	'				total = total AndAlso CBool(tmpControl.Tag)
-	'			Else
-	'				Return False
-	'			End If
-	'		Next
-	'		Return total
-	'	End Function
+	'Strip out reserved XML characters and deal with characters not in the 7-bit ASCII set.
+	'Written by Tony Proctor
+	'Found here: http://www.codenewsgroups.net/vb/t5072-xml-escape-sequence-routine.aspx
+	Public Function StringToXML(ByVal sText As String) As String
+		Dim i As Integer
+		Dim sCh As String
+		Dim tmpString As String
+		Const SKIP As Integer = 6   'Character count to skip over character entity (i.e. at least '&#nnn;')
+
+		' Do entity references first
+		tmpString = Replace(Replace(Replace(Replace(Replace( sText, "&", "&amp;"), "<", "&lt;"), ">", "&gt;"), """", "&quot;"), "'", "&apos;")
+		
+		' Now do character entities for anything that's not 7-bit ASCII
+		i = 1
+		Do While i <= Len(tmpString)
+			sCh = Mid$(tmpString, i, 1)
+			If AscW(sCh) > 127 Then
+				tmpString = Microsoft.VisualBasic.Left$( tmpString, i - 1) & "&#" & CStr(AscW(sCh)) & ";" & Microsoft.VisualBasic.Mid$(tmpString, i + 1)
+				i = i + SKIP
+			Else
+				i = i + 1
+			End If
+		Loop
+		
+	Return tmpString	
+	End Function
 	#END Region
 	
 End Class

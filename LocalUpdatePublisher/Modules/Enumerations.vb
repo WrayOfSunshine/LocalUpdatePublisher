@@ -57,6 +57,37 @@ Import
 Export
 End Enum
 
+Public Enum CSIDL
+NONE = -1
+COMMON_ADMINTOOLS = &H2F
+COMMON_ALTSTARTUP = &H1E
+COMMON_APPDATA = &H23
+COMMON_DESKTOPDIRECTORY = &H19
+COMMON_DOCUMENTS = &H2E
+COMMON_FAVORITES = &H1F
+COMMON_MUSIC = &H35
+COMMON_OEM_LINKS = &H3A
+COMMON_PICTURES = &H36
+COMMON_PROGRAMS = &H17
+COMMON_STARTMENU = &H16
+COMMON_STARTUP = &H18
+COMMON_TEMPLATES = &H2D
+COMMON_VIDEO = &H37
+CONTROLS = &H3
+DRIVES = &H11
+FONTS = &H14
+PRINTERS = &H4
+PROFILES = &H3E
+PROGRAM_FILES = &H26
+PROGRAM_FILES_COMMON = &H2B
+PROGRAM_FILES_COMMONX86 = &H2C
+PROGRAM_FILESX86 = &H2A
+PROGRAMS = &H2
+SYSTEM = &H25
+SYSTEMX86 = &H29
+WINDOWS = &H24
+End Enum
+
 
 Public Module EnumExtensions
 	
@@ -252,5 +283,33 @@ Public Module EnumExtensions
 				Return Nothing
 		End Select
 	End Function
+	
+	
+	' Take an enumerator and resort it based on its names rather then
+	' its binary data.
+	Public Function GetSortedEnum(ByVal enumType As Type) As ArrayList
+		Dim tmpArray As ArrayList = New ArrayList
+			
+		'Make sure it's an enumerator.
+		If enumType.BaseType.FullName = "System.Enum" Then
+			
+			'Get and sor the enumerator's strings
+			Dim strEnum() As Object = [Enum].GetNames(enumType)
+			Array.Sort(strEnum)
+			
+			
+			'Loop through the sorted array and add the matching
+			' enumerator items to the temporary array
+			For Each tmpString As String In strEnum
+				tmpArray.Add([Enum].Parse(enumType, tmpString))
+			Next
+			
+			Return tmpArray
+		Else
+			Throw New ArgumentException("Must be an enum", "t")
+			Return Nothing
+		End If
+	End Function
+	
 End Module
 
