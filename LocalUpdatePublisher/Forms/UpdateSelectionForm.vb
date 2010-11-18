@@ -8,17 +8,16 @@
 '
 Imports Microsoft.UpdateServices.Administration
 
-
-
 Public Partial Class UpdateSelectionForm
 	Private CUSTOMGUID As String = "Custom GUID"
+	Private _currentUpdate As Guid
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 		
 		'Add the custom GUID option to the combo box.
-		cboVendor.Items.Add(CUSTOMGUID)		
+		cboVendor.Items.Add(CUSTOMGUID)
 		
 		'If the update node is instantiated, load the vendor dropdown.
 		'cboVendor.Items.Clear
@@ -29,16 +28,22 @@ Public Partial Class UpdateSelectionForm
 		End If
 	End Sub
 	
+	
+	'Show the dialog and hide the current update.
+	Public Overloads Function ShowDialog(currentUpdate As Guid) As UpdateRevisionId
+		_currentUpdate = currentUpdate
+		Return Me.ShowDialog
+	End Function
+	
+	
 	'Overloaded show dialog function that returns the update revision id.
 	Public Overloads Function ShowDialog() As UpdateRevisionId
 		cboVendor.SelectedIndex = -1
 		dgvUpdates.DataSource = Nothing
 		
-		MyBase.ShowDialog()
-		
 		'If no row is currently selected return nothing.  Otherwise
 		' return the selected update revision Id.
-		If dgvUpdates.CurrentRow Is Nothing Then
+		If MyBase.ShowDialog() = DialogResult.Cancel OrElse dgvUpdates.CurrentRow Is Nothing Then
 			Return Nothing
 		Else
 			Return DirectCast(dgvUpdates.CurrentRow.Cells("Id").Value, UpdateRevisionID)
@@ -62,7 +67,7 @@ Public Partial Class UpdateSelectionForm
 				If String.IsNullOrEmpty(tmpGuid) Then Exit While
 			End While
 			
-			'If the GUID string is empty then exit the dialog, otherwise 
+			'If the GUID string is empty then exit the dialog, otherwise
 			'add the GUID to the dgv so it can be returned.
 			If String.IsNullOrEmpty(tmpGuid) Then
 				Me.DialogResult = DialogResult.Cancel
@@ -80,8 +85,8 @@ Public Partial Class UpdateSelectionForm
 				Me.DialogResult = DialogResult.OK
 			End If
 		Else If Not cboVendor.SelectedIndex = -1
-			'Load the list of udpates for this vendor.			
-			dgvUpdates.DataSource = GetUpdateList( DirectCast(cboVendor.SelectedItem, ComboVendors).Value )
+			'Load the list of udpates for this vendor.
+			dgvUpdates.DataSource = GetUpdateList( DirectCast(cboVendor.SelectedItem, ComboVendors).Value, _currentUpdate )
 			
 			'Now hide the rows we don't want.
 			For Each tmpColumn As DataGridViewColumn In dgvUpdates.Columns
@@ -111,4 +116,8 @@ Public Partial Class UpdateSelectionForm
 		End Try
 	End Function
 	
+	Sub DgvUpdatesCellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs)
+		Me.DialogResult = DialogResult.OK
+		Me.Close
+	End Sub
 End Class

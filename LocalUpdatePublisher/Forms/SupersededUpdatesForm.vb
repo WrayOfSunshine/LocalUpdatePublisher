@@ -11,10 +11,14 @@ Imports Microsoft.UpdateServices.Administration
 
 Public Partial Class SupersededUpdatesForm
 	Private _updateGuids As IList(Of Guid)
+	Private _currentUpdate As Guid
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		'Initialize the current update.
+		_currentUpdate = New Guid
 	End Sub
 	
 	'Show dialog with superseded updates based on the passed in update.
@@ -23,6 +27,9 @@ Public Partial Class SupersededUpdatesForm
 		btnRemove.Visible = False
 		btnAdd.Visible = False
 		btnOk.Enabled = False
+		
+		'Set the current update id we are working on.
+		_currentUpdate = update.Id.UpdateId
 		
 		If update.HasSupersededUpdates Then
 			dgvUpdates.Rows.Clear
@@ -40,7 +47,7 @@ Public Partial Class SupersededUpdatesForm
 	End Function
 	
 	'Show dialog with superseded updates based on the passed in list of update Guids.
-	Public Overloads Function ShowDialog(ByRef updateGuids As IList( Of Guid) ) As Windows.Forms.DialogResult
+	Public Overloads Function ShowDialog(ByRef updateGuids As IList( Of Guid), currentUpdate As Guid ) As Windows.Forms.DialogResult
 		Dim tmpTitle As String
 		_updateGuids = updateGuids
 		
@@ -48,6 +55,9 @@ Public Partial Class SupersededUpdatesForm
 		btnRemove.Visible = True
 		btnAdd.Visible = True
 		btnOk.Enabled = True
+		
+		'Set the current update id we are working on.
+		_currentUpdate = currentUpdate
 		
 		dgvUpdates.Rows.Clear
 		
@@ -65,13 +75,13 @@ Public Partial Class SupersededUpdatesForm
 			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
 		Next
 		
-		Return MyBase.ShowDialog()		
+		Return MyBase.ShowDialog()
 	End Function
 	
 	'Prompt the user to add an update to the list.
 	Sub BtnAddClick(sender As Object, e As EventArgs)
 		UpdateSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog
+		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog(_currentUpdate)
 		Dim tmpTitle As String
 		
 		If Not tmpUpdateRevisionId Is Nothing Then
@@ -91,7 +101,12 @@ Public Partial Class SupersededUpdatesForm
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateRevisionId.UpdateId
 			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
 			dgvUpdates.Refresh
+			
+			'Select the added cell.
+			dgvUpdates.CurrentCell = dgvUpdates.Rows(tmpRow).Cells("Title")
 		End If
+		
+		
 	End Sub
 	
 	'If there is a current row, delete it.
@@ -108,7 +123,7 @@ Public Partial Class SupersededUpdatesForm
 		'Add the superceded updates.
 		For Each tmpRow As DataGridViewRow In Me.dgvUpdates.Rows
 			_updateGuids.Add(DirectCast(tmpRow.Cells("Id").Value, Guid))
-		Next		
+		Next
 	End Sub
 	
 End Class

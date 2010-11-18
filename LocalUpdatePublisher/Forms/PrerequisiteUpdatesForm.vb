@@ -11,10 +11,14 @@ Imports Microsoft.UpdateServices.Administration
 
 Public Partial Class PrerequisiteUpdatesForm
 	Private _prerequisiteGroups As IList(Of PrerequisiteGroup)
+	Private _currentUpdate As Guid
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		'Initialize the current update.
+		_currentUpdate = New Guid
 	End Sub
 	
 	'Show form with prerequisites based on the passed in update.
@@ -24,9 +28,11 @@ Public Partial Class PrerequisiteUpdatesForm
 		btnAdd.Visible = False
 		btnOk.Enabled = False
 		
+		'Set the current update id we are working on.
+		_currentUpdate = update.Id.UpdateId
+						
+		'Load the prerequisite updates here.
 		dgvUpdates.Rows.Clear
-		
-		'Load the superceded updates here.
 		For Each tmpUpdate As IUpdate In update.GetRelatedUpdates( UpdateRelationship.UpdatesRequiredByThisUpdate)
 			Dim tmpRow As Integer = dgvUpdates.Rows.Add
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdate.Id.UpdateId
@@ -37,7 +43,7 @@ Public Partial Class PrerequisiteUpdatesForm
 	End Function
 	
 	'Show form with prerequisites based on the passed in prerequisite group.
-	Public Overloads Function ShowDialog(ByRef prerequisiteGroups As IList(Of PrerequisiteGroup) ) As DialogResult
+	Public Overloads Function ShowDialog(ByRef prerequisiteGroups As IList(Of PrerequisiteGroup), currentUpdate As Guid  ) As DialogResult
 		_prerequisiteGroups = prerequisiteGroups
 		
 		'Show the Remove/Add buttons.
@@ -45,9 +51,11 @@ Public Partial Class PrerequisiteUpdatesForm
 		btnAdd.Visible = True
 		btnOK.Enabled = True
 		
-		'Load the prerequisite updates here.
-		dgvUpdates.Rows.Clear
+		'Set the current update id we are working on.
+		_currentUpdate = currentUpdate
 		
+		'Load the prerequisite updates here.
+		dgvUpdates.Rows.Clear		
 		For Each tmpPrerequisiteGroup As PrerequisiteGroup In _prerequisiteGroups
 			For Each tmpUpdateGuid As Guid In tmpPrerequisiteGroup.Ids
 				Dim tmpRow As Integer = dgvUpdates.Rows.Add
@@ -62,7 +70,7 @@ Public Partial Class PrerequisiteUpdatesForm
 	'Prompt the user to add an update to the list.
 	Sub BtnAddClick(sender As Object, e As EventArgs)
 		UpdateSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog
+		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog(_currentUpdate)
 		Dim tmpString As String = ""
 		
 		If Not tmpUpdateRevisionId Is Nothing Then
@@ -82,6 +90,9 @@ Public Partial Class PrerequisiteUpdatesForm
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateRevisionId.UpdateId
 			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpString
 			dgvUpdates.Refresh
+			
+			'Select the added cell.
+			dgvUpdates.CurrentCell = dgvUpdates.Rows(tmpRow).Cells("Title")
 		End If
 	End Sub
 	

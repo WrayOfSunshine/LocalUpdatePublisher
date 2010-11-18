@@ -245,7 +245,13 @@ Public Module Data_Routines
 		End Try
 	End Function
 	
+	'Call the function without hiding an update.
 	Function GetUpdateList (updateCategory As IUpdateCategory) As DataTable
+		Return GetUpdateList( updateCategory, New Guid)
+	End Function
+	
+	'Return a datatable containing updates in the category except for the hidden Update.
+	Function GetUpdateList (updateCategory As IUpdateCategory, hiddenUpdate As Guid ) As DataTable
 		'Setup the category filter.
 		Dim categoryCollecion As UpdateCategoryCollection = New UpdateCategoryCollection()
 		categoryCollecion.Add( updateCategory )
@@ -271,27 +277,27 @@ Public Module Data_Routines
 			
 			'Add a row for each update.
 			For Each tmpUpdate As IUpdate In tmpUpdateCollection
-				
-				Dim tmpRow As DataRow = dt.NewRow()
-				tmpRow("IUpdate") = tmpUpdate
-				tmpRow("Id") = tmpUpdate.Id
-				tmpRow("Title") = tmpUpdate.Title
-				tmpRow("CreationDate") = tmpUpdate.CreationDate.ToLocalTime
-				
-				If tmpUpdate.IsDeclined Then
-					If tmpUpdate.PublicationState = PublicationState.Expired
-						tmpRow("Status") = "Declined (Expired)"
-					Else
-						tmpRow("Status") = "Declined"
+				If Not tmpUpdate.Id.UpdateId.Equals(hiddenUpdate)
+					Dim tmpRow As DataRow = dt.NewRow()
+					tmpRow("IUpdate") = tmpUpdate
+					tmpRow("Id") = tmpUpdate.Id
+					tmpRow("Title") = tmpUpdate.Title
+					tmpRow("CreationDate") = tmpUpdate.CreationDate.ToLocalTime
+					
+					If tmpUpdate.IsDeclined Then
+						If tmpUpdate.PublicationState = PublicationState.Expired
+							tmpRow("Status") = "Declined (Expired)"
+						Else
+							tmpRow("Status") = "Declined"
+						End If
+					Else If tmpUpdate.IsSuperseded
+						tmpRow("Status") = "Superseded"
+					Else If tmpUpdate.IsApproved
+						tmpRow("Status") = "Approved"
 					End If
-				Else If tmpUpdate.IsSuperseded
-					tmpRow("Status") = "Superseded"
-				Else If tmpUpdate.IsApproved
-					tmpRow("Status") = "Approved"
+					
+					dt.Rows.Add(tmpRow)
 				End If
-				
-				dt.Rows.Add(tmpRow)
-				
 			Next
 			Return dt
 		Else

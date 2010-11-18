@@ -43,6 +43,7 @@ Partial Class UpdateSelectionForm
 		'
 		'btnCancel
 		'
+		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
 		Me.btnCancel.Location = New System.Drawing.Point(367, 278)
 		Me.btnCancel.Name = "btnCancel"
@@ -53,6 +54,7 @@ Partial Class UpdateSelectionForm
 		'
 		'btnSelect
 		'
+		Me.btnSelect.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnSelect.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnSelect.Enabled = false
 		Me.btnSelect.Location = New System.Drawing.Point(286, 278)
@@ -68,17 +70,22 @@ Partial Class UpdateSelectionForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
+		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+						Or System.Windows.Forms.AnchorStyles.Left)  _
+						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
-		Me.dgvUpdates.Location = New System.Drawing.Point(12, 27)
+		Me.dgvUpdates.Location = New System.Drawing.Point(11, 27)
 		Me.dgvUpdates.MultiSelect = false
 		Me.dgvUpdates.Name = "dgvUpdates"
+		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
 		Me.dgvUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
 		Me.dgvUpdates.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
 		Me.dgvUpdates.Size = New System.Drawing.Size(430, 245)
 		Me.dgvUpdates.TabIndex = 6
+		AddHandler Me.dgvUpdates.CellMouseDoubleClick, AddressOf Me.DgvUpdatesCellMouseDoubleClick
 		'
 		'cboVendor
 		'

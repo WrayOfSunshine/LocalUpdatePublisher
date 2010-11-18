@@ -728,26 +728,35 @@ Public Partial Class MainForm
 		Else
 			'Make Sure the current row has an UpdateID.
 			If TypeOf Me._dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
+				tmpRevisionID = DirectCast(Me._dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId)
+				
+				'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
+				' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
+				Dim tmpDirectory As String = "\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString
+				Try
+					If Not Directory.Exists(tmpDirectory) Then
+						Msgbox("This appears to be a metadata only update.  Currently, these cannot be revised.")
+						Exit Sub
+					End If
+				Catch
+					Msgbox("There was a problem checking for the package content from the UpdateServicesPackages.  This update cannot be revised.")
+					Exit Sub
+				End Try
+				
+				
 				'Export the SDP to a temporary file.
-				Dim packageFile As String = ConnectionManager.ExportSDP(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id)
-				'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).Id, packageFile)
+				Dim packageFile As String = ConnectionManager.ExportSDP(tmpRevisionID)
+				
 				'Bring Up the approval dialog and dispose it when finished.
 				My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
 				tmpSDP = My.Forms.UpdateForm.ShowDialog(packageFile)
+				My.Forms.UpdateForm.Dispose
 				
+				'If the user completed the revision then refresh the list.
 				If Not tmpSDP Is Nothing Then
 					'Refresh the DGV.
 					Call RefreshUpdateList(True)
-					tmpRevisionID = New UpdateRevisionId(tmpSDP.PackageId)
-					
-					For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
-						If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionID.UpdateId) Then
-							Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
-						End If
-					Next
 				End If
-				
-				My.Forms.UpdateForm.Dispose
 			Else
 				MsgBox("This row did not return a valid UpdateID")
 			End If
@@ -864,6 +873,8 @@ Public Partial Class MainForm
 	'Expire the update.
 	Private Sub ExpireUpdate_Click(sender As Object, e As EventArgs)
 		Dim response As MsgBoxResult
+		Dim tmpRevisionID As UpdateRevisionId
+		Dim allExpired As Boolean = True
 		
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
@@ -879,17 +890,37 @@ Public Partial Class MainForm
 			Me.Cursor = Cursors.WaitCursor
 			'Loop through selected rows.
 			For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
-				'Make sure we have something selected
-				If Not tmpRow.Cells.Item("Id").Value Is Nothing Then
-					ConnectionManager.ParentServer.ExpirePackage( DirectCast(tmpRow.Cells.Item("Id").Value,UpdateRevisionId) )
-				End If
 				
+				'Make Sure the current row has an UpdateID.
+				If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
+					tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
+					
+					'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
+					' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
+					If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
+						Msgbox(DirectCast(tmpRow.Cells.Item("Title").Value, String) & " appears to be a metadata only update.  Currently, these cannot be expired.")
+						allExpired = False
+					Else
+						'Make sure we have something selected
+						If Not tmpRow.Cells.Item("Id").Value Is Nothing Then
+							ConnectionManager.ParentServer.ExpirePackage( DirectCast(tmpRow.Cells.Item("Id").Value,UpdateRevisionId) )
+						End If
+					End If
+				Else
+					MsgBox("This row did not return a valid UpdateID")
+				End If
 			Next
 			
 			'Refresh the datagrid view
 			Call RefreshUpdateList
 			
 			Me.Cursor = Cursors.Arrow
+			
+			If allExpired Then
+				Msgbox ("Packages successfully expired.")
+			Else
+				Msgbox ("Not all the packages were successfully expired.")
+			End If
 		End If
 		
 	End Sub
@@ -898,6 +929,8 @@ Public Partial Class MainForm
 	' since the update was initially created.
 	Private Sub ResignUpdate_Click(sender As Object, e As EventArgs)
 		Dim packageFile As String
+		Dim tmpRevisionID As UpdateRevisionId
+		Dim allResigned As Boolean = True
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.SelectedRows.Count < 1 Then
@@ -923,37 +956,50 @@ Public Partial Class MainForm
 					
 					'Make Sure the current row has an UpdateID.
 					If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
-						'Export the SDP to a temporary file.
-						packageFile = ConnectionManager.ExportSDP(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ))
-						'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
+						tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
 						
-						'Create a publisher object with the SDP and resign the package.
-						Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(packageFile)
-						Try
-							publisher.ResignPackage()
-							My.Computer.FileSystem.DeleteFile(packageFile)
-							
-						Catch x As UnauthorizedAccessException
-							Msgbox ("The package could not be re-signed." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						Catch x As ArgumentNullException
-							Msgbox ("The package could not be re-signed." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						Catch x As FileNotFoundException
-							Msgbox ("The package could not be re-signed." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						Catch x As InvalidDataException
-							Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						Catch x As InvalidOperationException
-							Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						Catch x As Exception
-							Msgbox ("The package could not be re-signed." & vbNewline & "Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-						End Try
+						'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
+						' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
+						If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
+							Msgbox(DirectCast(tmpRow.Cells.Item("Title").Value, String) & " appears to be a metadata only update.  Currently, these cannot be re-signed.")
+							allResigned = False
+						Else
+							Try
+								
+								'Export the SDP to a temporary file.
+								packageFile = ConnectionManager.ExportSDP(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ))
+								'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
+								
+								'Create a publisher object with the SDP and resign the package.
+								Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(packageFile)
+								publisher.ResignPackage()
+								My.Computer.FileSystem.DeleteFile(packageFile)
+								
+							Catch x As UnauthorizedAccessException
+								Msgbox ("The package could not be re-signed." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							Catch x As ArgumentNullException
+								Msgbox ("The package could not be re-signed." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							Catch x As FileNotFoundException
+								Msgbox ("The package could not be re-signed." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							Catch x As InvalidDataException
+								Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							Catch x As InvalidOperationException
+								Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							Catch x As Exception
+								Msgbox ("The package could not be re-signed." & vbNewline & "Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+							End Try
+						End If
 					Else
 						MsgBox("This row did not return a valid UpdateID")
 					End If
-					
 				Next
 				
 				Me.Cursor = Cursors.Arrow
-				Msgbox ("Packages successfully re-signed.")
+				If allResigned Then
+					Msgbox ("Packages successfully re-signed.")
+				Else
+					Msgbox ("Not all the packages were successfully re-signed.")
+				End If
 				
 			End If
 		End If
@@ -1661,7 +1707,7 @@ Public Partial Class MainForm
 					exportListToolStripMenuItem.Enabled = True
 					
 					'Load the selected computer's info.
-					'Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
+					Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
 					
 					'If the user is currently on the report tab then update it.
 					' Otherwise, clear the combo selections.
@@ -1701,7 +1747,7 @@ Public Partial Class MainForm
 	' allows us to maintain the current selection when the data grid view is refreshed
 	' and the currently selected update might no longer exist or has a different index value.
 	Sub RefreshUpdateList(maintainSelectedRow As Boolean)
-		Dim originalValue As String
+		Dim originalValue As Guid
 		
 		_noEvents = True
 		toolStripStatusLabel.Text = "Refreshing Update List"
@@ -1729,10 +1775,10 @@ Public Partial Class MainForm
 				
 				'If we are maintaining the status then save the status.
 				If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
-					originalValue = _dgvMain.CurrentRow.Cells.Item("Id").Value.ToString
+					originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId).UpdateId
 				Else
 					maintainSelectedRow = False
-					originalValue = ""
+					originalValue = Nothing
 				End If
 				
 				
@@ -1740,7 +1786,7 @@ Public Partial Class MainForm
 				_dgvMain.DataSource = GetUpdateList( DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory) )
 				If _dgvMain.DataSource Is Nothing Then Exit Sub
 				
-				'Hide column.
+				'Hide columns.
 				Me._dgvMain.Columns("IUpdate").Visible = False
 				Me._dgvMain.Columns("Id").Visible = False
 				
@@ -1756,7 +1802,7 @@ Public Partial Class MainForm
 					If maintainSelectedRow Then
 						'Select the original row.
 						For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
-							If originalValue = tmpRow.Cells("Id").Value.ToString Then
+							If originalValue.Equals(DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId) Then
 								_dgvMain.CurrentCell = tmpRow.Cells("Title")
 								Exit For
 							Else If tmpRow.Index = _dgvMain.Rows.Count - 1

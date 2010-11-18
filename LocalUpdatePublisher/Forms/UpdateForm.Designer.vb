@@ -172,7 +172,7 @@ Partial Class UpdateForm
 		Me.btnAddDir.Location = New System.Drawing.Point(534, 110)
 		Me.btnAddDir.Name = "btnAddDir"
 		Me.btnAddDir.Size = New System.Drawing.Size(53, 19)
-		Me.btnAddDir.TabIndex = 11
+		Me.btnAddDir.TabIndex = 3
 		Me.btnAddDir.Text = "Add Dir"
 		Me.btnAddDir.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddDir.Click, AddressOf Me.BtnAddDirClick
@@ -192,7 +192,7 @@ Partial Class UpdateForm
 		Me.txtMSIPath.Location = New System.Drawing.Point(94, 88)
 		Me.txtMSIPath.Name = "txtMSIPath"
 		Me.txtMSIPath.Size = New System.Drawing.Size(435, 20)
-		Me.txtMSIPath.TabIndex = 9
+		Me.txtMSIPath.TabIndex = 2
 		'
 		'lblMSIPath
 		'
@@ -209,7 +209,7 @@ Partial Class UpdateForm
 		Me.btnAddFile.Location = New System.Drawing.Point(534, 131)
 		Me.btnAddFile.Name = "btnAddFile"
 		Me.btnAddFile.Size = New System.Drawing.Size(53, 19)
-		Me.btnAddFile.TabIndex = 7
+		Me.btnAddFile.TabIndex = 4
 		Me.btnAddFile.Text = "Add File"
 		Me.btnAddFile.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddFile.Click, AddressOf Me.BtnAddFileClick
@@ -227,6 +227,7 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
 		Me.dgvAdditionalFiles.Size = New System.Drawing.Size(435, 397)
 		Me.dgvAdditionalFiles.TabIndex = 6
+		Me.dgvAdditionalFiles.TabStop = false
 		AddHandler Me.dgvAdditionalFiles.CellContentClick, AddressOf Me.DgvAdditionalFilesCellContentClick
 		'
 		'FileName
@@ -271,7 +272,7 @@ Partial Class UpdateForm
 		Me.btnUpdateFile.Location = New System.Drawing.Point(535, 63)
 		Me.btnUpdateFile.Name = "btnUpdateFile"
 		Me.btnUpdateFile.Size = New System.Drawing.Size(53, 19)
-		Me.btnUpdateFile.TabIndex = 4
+		Me.btnUpdateFile.TabIndex = 1
 		Me.btnUpdateFile.Text = "Browse"
 		Me.btnUpdateFile.UseVisualStyleBackColor = true
 		AddHandler Me.btnUpdateFile.Click, AddressOf Me.BtnUpdateFileClick
@@ -282,7 +283,8 @@ Partial Class UpdateForm
 		Me.txtUpdateFile.Name = "txtUpdateFile"
 		Me.txtUpdateFile.ReadOnly = true
 		Me.txtUpdateFile.Size = New System.Drawing.Size(412, 20)
-		Me.txtUpdateFile.TabIndex = 3
+		Me.txtUpdateFile.TabIndex = 0
+		Me.txtUpdateFile.TabStop = false
 		AddHandler Me.txtUpdateFile.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtUpdateFile.Validating, AddressOf Me.ControlValidating
 		'
@@ -349,7 +351,7 @@ Partial Class UpdateForm
 		Me.txtOriginalURI.Location = New System.Drawing.Point(114, 318)
 		Me.txtOriginalURI.Name = "txtOriginalURI"
 		Me.txtOriginalURI.Size = New System.Drawing.Size(434, 20)
-		Me.txtOriginalURI.TabIndex = 69
+		Me.txtOriginalURI.TabIndex = 10
 		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
 		AddHandler Me.txtOriginalURI.KeyDown, AddressOf Me.TxtOriginalURIKeyDown
 		AddHandler Me.txtOriginalURI.KeyPress, AddressOf Me.TxtOriginalURIKeyPress
@@ -372,7 +374,7 @@ Partial Class UpdateForm
 		Me.cboPackageType.Location = New System.Drawing.Point(114, 34)
 		Me.cboPackageType.Name = "cboPackageType"
 		Me.cboPackageType.Size = New System.Drawing.Size(233, 21)
-		Me.cboPackageType.TabIndex = 67
+		Me.cboPackageType.TabIndex = 0
 		AddHandler Me.cboPackageType.SelectedIndexChanged, AddressOf Me.CboPackageTypeSelectedIndexChanged
 		'
 		'lblPackageType
@@ -393,7 +395,7 @@ Partial Class UpdateForm
 		Me.lblPrerequisites.Location = New System.Drawing.Point(95, 498)
 		Me.lblPrerequisites.Name = "lblPrerequisites"
 		Me.lblPrerequisites.Size = New System.Drawing.Size(113, 17)
-		Me.lblPrerequisites.TabIndex = 65
+		Me.lblPrerequisites.TabIndex = 17
 		Me.lblPrerequisites.Text = "Prerequisites"
 		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
 		'
@@ -405,7 +407,7 @@ Partial Class UpdateForm
 		Me.lblSupersedes.Location = New System.Drawing.Point(259, 498)
 		Me.lblSupersedes.Name = "lblSupersedes"
 		Me.lblSupersedes.Size = New System.Drawing.Size(113, 17)
-		Me.lblSupersedes.TabIndex = 64
+		Me.lblSupersedes.TabIndex = 18
 		Me.lblSupersedes.Text = "Supersedes"
 		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
 		'
@@ -416,7 +418,7 @@ Partial Class UpdateForm
 		Me.lblReturnCodes.Location = New System.Drawing.Point(423, 498)
 		Me.lblReturnCodes.Name = "lblReturnCodes"
 		Me.lblReturnCodes.Size = New System.Drawing.Size(113, 17)
-		Me.lblReturnCodes.TabIndex = 40
+		Me.lblReturnCodes.TabIndex = 19
 		Me.lblReturnCodes.Text = "Return Codes"
 		Me.lblReturnCodes.Visible = false
 		AddHandler Me.lblReturnCodes.Click, AddressOf Me.LblReturnCodesClick
@@ -427,7 +429,7 @@ Partial Class UpdateForm
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
 		Me.txtUninstall.Size = New System.Drawing.Size(233, 20)
-		Me.txtUninstall.TabIndex = 39
+		Me.txtUninstall.TabIndex = 14
 		'
 		'lblUninstall
 		'
@@ -456,7 +458,7 @@ Partial Class UpdateForm
 		Me.txtCommandLine.Location = New System.Drawing.Point(114, 475)
 		Me.txtCommandLine.Name = "txtCommandLine"
 		Me.txtCommandLine.Size = New System.Drawing.Size(457, 20)
-		Me.txtCommandLine.TabIndex = 27
+		Me.txtCommandLine.TabIndex = 16
 		'
 		'lblCommandLine
 		'
@@ -476,7 +478,7 @@ Partial Class UpdateForm
 		Me.cboRebootBehavior.Location = New System.Drawing.Point(114, 449)
 		Me.cboRebootBehavior.Name = "cboRebootBehavior"
 		Me.cboRebootBehavior.Size = New System.Drawing.Size(233, 21)
-		Me.cboRebootBehavior.TabIndex = 25
+		Me.cboRebootBehavior.TabIndex = 15
 		AddHandler Me.cboRebootBehavior.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboRebootBehavior.Validated, AddressOf Me.ControlValidated
@@ -489,7 +491,7 @@ Partial Class UpdateForm
 		Me.cboImpact.Location = New System.Drawing.Point(114, 396)
 		Me.cboImpact.Name = "cboImpact"
 		Me.cboImpact.Size = New System.Drawing.Size(233, 21)
-		Me.cboImpact.TabIndex = 24
+		Me.cboImpact.TabIndex = 13
 		AddHandler Me.cboImpact.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboImpact.SelectedValueChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboImpact.Validated, AddressOf Me.ControlValidated
@@ -501,7 +503,7 @@ Partial Class UpdateForm
 		Me.txtMoreInfoURL.Location = New System.Drawing.Point(114, 370)
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
 		Me.txtMoreInfoURL.Size = New System.Drawing.Size(434, 20)
-		Me.txtMoreInfoURL.TabIndex = 23
+		Me.txtMoreInfoURL.TabIndex = 12
 		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'txtSupportURL
@@ -511,7 +513,7 @@ Partial Class UpdateForm
 		Me.txtSupportURL.Location = New System.Drawing.Point(114, 344)
 		Me.txtSupportURL.Name = "txtSupportURL"
 		Me.txtSupportURL.Size = New System.Drawing.Size(434, 20)
-		Me.txtSupportURL.TabIndex = 22
+		Me.txtSupportURL.TabIndex = 11
 		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'cboSeverity
@@ -523,7 +525,7 @@ Partial Class UpdateForm
 		Me.cboSeverity.Location = New System.Drawing.Point(114, 185)
 		Me.cboSeverity.Name = "cboSeverity"
 		Me.cboSeverity.Size = New System.Drawing.Size(233, 21)
-		Me.cboSeverity.TabIndex = 21
+		Me.cboSeverity.TabIndex = 5
 		AddHandler Me.cboSeverity.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboSeverity.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboSeverity.Validated, AddressOf Me.ControlValidated
@@ -533,14 +535,14 @@ Partial Class UpdateForm
 		Me.txtCVEID.Location = New System.Drawing.Point(114, 292)
 		Me.txtCVEID.Name = "txtCVEID"
 		Me.txtCVEID.Size = New System.Drawing.Size(233, 20)
-		Me.txtCVEID.TabIndex = 20
+		Me.txtCVEID.TabIndex = 9
 		'
 		'txtArticleID
 		'
 		Me.txtArticleID.Location = New System.Drawing.Point(114, 266)
 		Me.txtArticleID.Name = "txtArticleID"
 		Me.txtArticleID.Size = New System.Drawing.Size(233, 20)
-		Me.txtArticleID.TabIndex = 19
+		Me.txtArticleID.TabIndex = 8
 		'
 		'cboProduct
 		'
@@ -550,7 +552,7 @@ Partial Class UpdateForm
 		Me.cboProduct.Location = New System.Drawing.Point(114, 239)
 		Me.cboProduct.Name = "cboProduct"
 		Me.cboProduct.Size = New System.Drawing.Size(457, 21)
-		Me.cboProduct.TabIndex = 18
+		Me.cboProduct.TabIndex = 7
 		AddHandler Me.cboProduct.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboProduct.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboProduct.Validated, AddressOf Me.ControlValidated
@@ -564,7 +566,7 @@ Partial Class UpdateForm
 		Me.cboVendor.Location = New System.Drawing.Point(114, 212)
 		Me.cboVendor.Name = "cboVendor"
 		Me.cboVendor.Size = New System.Drawing.Size(457, 21)
-		Me.cboVendor.TabIndex = 17
+		Me.cboVendor.TabIndex = 6
 		AddHandler Me.cboVendor.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
 		AddHandler Me.cboVendor.Validated, AddressOf Me.ControlValidated
@@ -578,7 +580,7 @@ Partial Class UpdateForm
 		Me.cboClassification.Location = New System.Drawing.Point(114, 132)
 		Me.cboClassification.Name = "cboClassification"
 		Me.cboClassification.Size = New System.Drawing.Size(233, 21)
-		Me.cboClassification.TabIndex = 16
+		Me.cboClassification.TabIndex = 3
 		AddHandler Me.cboClassification.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboClassification.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboClassification.Validated, AddressOf Me.ControlValidated
@@ -588,7 +590,7 @@ Partial Class UpdateForm
 		Me.txtBulletinID.Location = New System.Drawing.Point(114, 159)
 		Me.txtBulletinID.Name = "txtBulletinID"
 		Me.txtBulletinID.Size = New System.Drawing.Size(233, 20)
-		Me.txtBulletinID.TabIndex = 15
+		Me.txtBulletinID.TabIndex = 4
 		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
 		'
 		'txtDescription
@@ -599,7 +601,7 @@ Partial Class UpdateForm
 		Me.txtDescription.Multiline = true
 		Me.txtDescription.Name = "txtDescription"
 		Me.txtDescription.Size = New System.Drawing.Size(457, 39)
-		Me.txtDescription.TabIndex = 14
+		Me.txtDescription.TabIndex = 2
 		AddHandler Me.txtDescription.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtDescription.Validating, AddressOf Me.ControlValidating
 		'
@@ -610,7 +612,7 @@ Partial Class UpdateForm
 		Me.txtPackageTitle.Location = New System.Drawing.Point(114, 61)
 		Me.txtPackageTitle.Name = "txtPackageTitle"
 		Me.txtPackageTitle.Size = New System.Drawing.Size(457, 20)
-		Me.txtPackageTitle.TabIndex = 13
+		Me.txtPackageTitle.TabIndex = 1
 		AddHandler Me.txtPackageTitle.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtPackageTitle.Validating, AddressOf Me.ControlValidating
 		'
@@ -953,7 +955,7 @@ Partial Class UpdateForm
 		Me.btnPrevious.Location = New System.Drawing.Point(354, 553)
 		Me.btnPrevious.Name = "btnPrevious"
 		Me.btnPrevious.Size = New System.Drawing.Size(78, 24)
-		Me.btnPrevious.TabIndex = 1
+		Me.btnPrevious.TabIndex = 2
 		Me.btnPrevious.Text = "Previous"
 		Me.btnPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		Me.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -969,7 +971,7 @@ Partial Class UpdateForm
 		Me.btnNext.Location = New System.Drawing.Point(433, 553)
 		Me.btnNext.Name = "btnNext"
 		Me.btnNext.Size = New System.Drawing.Size(78, 24)
-		Me.btnNext.TabIndex = 2
+		Me.btnNext.TabIndex = 3
 		Me.btnNext.Text = "Next"
 		Me.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -984,7 +986,7 @@ Partial Class UpdateForm
 		Me.btnCancel.Location = New System.Drawing.Point(546, 553)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.Size = New System.Drawing.Size(66, 24)
-		Me.btnCancel.TabIndex = 3
+		Me.btnCancel.TabIndex = 4
 		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		AddHandler Me.btnCancel.Click, AddressOf Me.BtnCancelClick
@@ -1000,7 +1002,7 @@ Partial Class UpdateForm
 		Me.chkExportSdp.Location = New System.Drawing.Point(4, 562)
 		Me.chkExportSdp.Name = "chkExportSdp"
 		Me.chkExportSdp.Size = New System.Drawing.Size(216, 19)
-		Me.chkExportSdp.TabIndex = 4
+		Me.chkExportSdp.TabIndex = 1
 		Me.chkExportSdp.Text = "Save Software Definition Package"
 		Me.chkExportSdp.UseVisualStyleBackColor = true
 		'
@@ -1012,7 +1014,7 @@ Partial Class UpdateForm
 		Me.chkMetadataOnly.Location = New System.Drawing.Point(4, 545)
 		Me.chkMetadataOnly.Name = "chkMetadataOnly"
 		Me.chkMetadataOnly.Size = New System.Drawing.Size(216, 19)
-		Me.chkMetadataOnly.TabIndex = 5
+		Me.chkMetadataOnly.TabIndex = 0
 		Me.chkMetadataOnly.Text = "Publish Metadata Only"
 		Me.chkMetadataOnly.UseVisualStyleBackColor = true
 		AddHandler Me.chkMetadataOnly.CheckedChanged, AddressOf Me.CboMetadataOnlyCheckedChanged

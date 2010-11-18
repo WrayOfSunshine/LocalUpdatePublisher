@@ -287,13 +287,13 @@ Public Partial Class UpdateForm
 	'Manage The List Of Updates That This Update Supersedes.
 	Sub LblSupersedesClick(Sender As Object, E As EventArgs)
 		SupersededUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages)
+		SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages, _Sdp.PackageId)
 	End Sub
 	
 	'Manage The List Of Updates That This Update Requires Before Installing.
 	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)		
 		PrerequisiteUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites)		
+		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites, _Sdp.PackageId)		
 	End Sub
 	
 	'Perform Action According To The Currently Selected Tab.

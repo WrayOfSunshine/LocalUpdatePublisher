@@ -45,6 +45,7 @@ Partial Class SupersededUpdatesForm
 		'
 		'btnRemove
 		'
+		Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnRemove.Location = New System.Drawing.Point(12, 263)
 		Me.btnRemove.Name = "btnRemove"
 		Me.btnRemove.Size = New System.Drawing.Size(75, 23)
@@ -55,6 +56,7 @@ Partial Class SupersededUpdatesForm
 		'
 		'btnCancel
 		'
+		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
 		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
 		Me.btnCancel.Name = "btnCancel"
@@ -65,6 +67,7 @@ Partial Class SupersededUpdatesForm
 		'
 		'btnAdd
 		'
+		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnAdd.Location = New System.Drawing.Point(93, 263)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.Size = New System.Drawing.Size(75, 23)
@@ -79,12 +82,16 @@ Partial Class SupersededUpdatesForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
+		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+						Or System.Windows.Forms.AnchorStyles.Left)  _
+						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Title})
 		Me.dgvUpdates.Location = New System.Drawing.Point(12, 12)
 		Me.dgvUpdates.Name = "dgvUpdates"
+		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
 		Me.dgvUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
 		Me.dgvUpdates.Size = New System.Drawing.Size(430, 245)
@@ -94,15 +101,18 @@ Partial Class SupersededUpdatesForm
 		'
 		Me.Id.HeaderText = "Id"
 		Me.Id.Name = "Id"
+		Me.Id.ReadOnly = true
 		Me.Id.Visible = false
 		'
 		'Title
 		'
 		Me.Title.HeaderText = "Title"
 		Me.Title.Name = "Title"
+		Me.Title.ReadOnly = true
 		'
 		'btnOk
 		'
+		Me.btnOk.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
 		Me.btnOk.Location = New System.Drawing.Point(286, 263)
 		Me.btnOk.Name = "btnOk"
