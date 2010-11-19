@@ -42,7 +42,7 @@ Partial Class UpdateForm
 		Me.lblInfo = New System.Windows.Forms.Label
 		Me.txtMSIPath = New System.Windows.Forms.TextBox
 		Me.lblMSIPath = New System.Windows.Forms.Label
-		Me.btnAddFile = New System.Windows.Forms.Button
+		Me.btnAddFiles = New System.Windows.Forms.Button
 		Me.dgvAdditionalFiles = New System.Windows.Forms.DataGridView
 		Me.FileName = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.RemoveFile = New System.Windows.Forms.DataGridViewButtonColumn
@@ -153,7 +153,7 @@ Partial Class UpdateForm
 		Me.tabIntro.Controls.Add(Me.lblInfo)
 		Me.tabIntro.Controls.Add(Me.txtMSIPath)
 		Me.tabIntro.Controls.Add(Me.lblMSIPath)
-		Me.tabIntro.Controls.Add(Me.btnAddFile)
+		Me.tabIntro.Controls.Add(Me.btnAddFiles)
 		Me.tabIntro.Controls.Add(Me.dgvAdditionalFiles)
 		Me.tabIntro.Controls.Add(Me.lblAdditionalFiles)
 		Me.tabIntro.Controls.Add(Me.btnUpdateFile)
@@ -171,7 +171,7 @@ Partial Class UpdateForm
 		'
 		Me.btnAddDir.Location = New System.Drawing.Point(534, 110)
 		Me.btnAddDir.Name = "btnAddDir"
-		Me.btnAddDir.Size = New System.Drawing.Size(53, 19)
+		Me.btnAddDir.Size = New System.Drawing.Size(65, 19)
 		Me.btnAddDir.TabIndex = 3
 		Me.btnAddDir.Text = "Add Dir"
 		Me.btnAddDir.UseVisualStyleBackColor = true
@@ -204,15 +204,15 @@ Partial Class UpdateForm
 		Me.lblMSIPath.Text = "MSI Path"
 		Me.lblMSIPath.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
-		'btnAddFile
+		'btnAddFiles
 		'
-		Me.btnAddFile.Location = New System.Drawing.Point(534, 131)
-		Me.btnAddFile.Name = "btnAddFile"
-		Me.btnAddFile.Size = New System.Drawing.Size(53, 19)
-		Me.btnAddFile.TabIndex = 4
-		Me.btnAddFile.Text = "Add File"
-		Me.btnAddFile.UseVisualStyleBackColor = true
-		AddHandler Me.btnAddFile.Click, AddressOf Me.BtnAddFileClick
+		Me.btnAddFiles.Location = New System.Drawing.Point(534, 131)
+		Me.btnAddFiles.Name = "btnAddFiles"
+		Me.btnAddFiles.Size = New System.Drawing.Size(65, 19)
+		Me.btnAddFiles.TabIndex = 4
+		Me.btnAddFiles.Text = "Add Files"
+		Me.btnAddFiles.UseVisualStyleBackColor = true
+		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFileClick
 		'
 		'dgvAdditionalFiles
 		'
@@ -1062,6 +1062,7 @@ Partial Class UpdateForm
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private btnAddFiles As System.Windows.Forms.Button
 	Private txtOriginalURI As System.Windows.Forms.TextBox
 	Private lblOriginalURI As System.Windows.Forms.Label
 	Private chkMetadataOnly As System.Windows.Forms.CheckBox
@@ -1106,7 +1107,6 @@ Partial Class UpdateForm
 	Private RemoveFile As System.Windows.Forms.DataGridViewButtonColumn
 	Private FileName As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private dgvAdditionalFiles As System.Windows.Forms.DataGridView
-	Private btnAddFile As System.Windows.Forms.Button
 	Private txtInstallableItemMetaData As System.Windows.Forms.TextBox
 	Private txtSummary As System.Windows.Forms.TextBox
 	Private dlgUpdateFile As System.Windows.Forms.OpenFileDialog

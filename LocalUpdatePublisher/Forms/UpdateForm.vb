@@ -291,9 +291,9 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	'Manage The List Of Updates That This Update Requires Before Installing.
-	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)		
+	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)
 		PrerequisiteUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites, _Sdp.PackageId)		
+		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites, _Sdp.PackageId)
 	End Sub
 	
 	'Perform Action According To The Currently Selected Tab.
@@ -490,13 +490,13 @@ Public Partial Class UpdateForm
 								My.Forms.ProgressForm.SetCurrentStep(Me.txtOriginalURI.Text)
 								ConnectionManager.DownloadChunks(New Uri(Me.txtOriginalURI.Text), My.Forms.ProgressForm.progressBar, tmpFilePath)
 								My.Forms.ProgressForm.Dispose
-																															
+								
 								_OriginalFileInfo = New FileInfo(tmpFilePath)
 								
 								'If file was not downloaded then delete the file and exit the function.
-								If _OriginalFileInfo.Length = 0 Then									
+								If _OriginalFileInfo.Length = 0 Then
 									_OriginalFileInfo.Delete
-									_OriginalFileInfo = Nothing								
+									_OriginalFileInfo = Nothing
 									Return False
 								End If
 							Else
@@ -530,7 +530,7 @@ Public Partial Class UpdateForm
 							_Sdp.InstallableItems(0).OriginalSourceFile = Nothing
 						End If
 						
-					End If 'There Is At Least One InstallableItme Object.															
+					End If 'There Is At Least One InstallableItme Object.
 					
 				Catch X As UriFormatException
 					My.Forms.ProgressForm.Dispose
@@ -812,17 +812,24 @@ Public Partial Class UpdateForm
 		Return String.Empty 'If We Got Here There Was An Exception.
 	End Function
 	
-	'Prompt The User For A File And Add It To The Collection.
-	Private Sub BtnAddFileClick(Sender As Object, E As EventArgs)
+	'Prompt the user for files and add them to the collection.
+	Private Sub BtnAddFilesClick(Sender As Object, E As EventArgs)
+		Dim tmpFile As FileInfo
+		Dim tmpRow As Integer
 		
-		'Set File Filter.
-		DlgUpdateFile.Filter = ""
+		'Set dialog values.
+		Me.dlgUpdateFile.Filter = ""
+		Me.dlgUpdateFile.Multiselect = True
 		
 		'Show Dialog And Load The File Into The DGV If The User Chose A File.
 		If Me.DlgUpdateFile.ShowDialog(Me) = VbOK Then
-			Dim TmpFile As FileInfo = New FileInfo(DlgUpdateFile.FileName)
-			Dim TmpRow As Integer= DgvAdditionalFiles.Rows.Add(New String() {TmpFile.Name })
-			DgvAdditionalFiles.Rows.Item(TmpRow).Cells("FileObject").Value = TmpFile
+			
+			'Loop through the selected files and add them.
+			For Each tmpString As String In Me.dlgUpdateFile.FileNames
+				tmpFile = New FileInfo(tmpString)
+				tmpRow = DgvAdditionalFiles.Rows.Add(New String() {TmpFile.Name })
+				Me.dgvAdditionalFiles.Rows.Item(TmpRow).Cells("FileObject").Value = TmpFile
+			Next
 		End If
 	End Sub
 	
@@ -857,7 +864,7 @@ Public Partial Class UpdateForm
 				Exit Sub
 			End If
 			
-			Me.btnAddFile.Enabled = False
+			Me.btnAddFiles.Enabled = False
 			Me.btnAddDir.Enabled = False
 			Me.dgvAdditionalFiles.Enabled = False
 			
@@ -867,7 +874,7 @@ Public Partial Class UpdateForm
 				'Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Is Given")
 			End If
 		Else
-			Me.btnAddFile.Enabled = True
+			Me.btnAddFiles.Enabled = True
 			Me.btnAddDir.Enabled = True
 			Me.dgvAdditionalFiles.Enabled = True
 			
