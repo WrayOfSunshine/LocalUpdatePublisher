@@ -212,7 +212,7 @@ Partial Class UpdateForm
 		Me.btnAddFiles.TabIndex = 4
 		Me.btnAddFiles.Text = "Add Files"
 		Me.btnAddFiles.UseVisualStyleBackColor = true
-		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFileClick
+		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFilesClick
 		'
 		'dgvAdditionalFiles
 		'
