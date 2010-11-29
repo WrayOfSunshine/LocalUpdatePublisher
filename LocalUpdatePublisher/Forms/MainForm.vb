@@ -1499,13 +1499,13 @@ Public Partial Class MainForm
 		Else If e.RowIndex <> -1 AndAlso Not Me._dgvMain.CurrentRow Is Nothing Then
 			_originalValue = Nothing
 			
-			'If the column is the status column and this update has failed then display the error history.
+			'If the column is the status column then display the history.
 			If dgvComputerReport.Columns(e.ColumnIndex).Name = "UpdateInstallationState"  Then
 				Dim tmpMessage As String = ""
 				Me.Cursor = Cursors.WaitCursor
 				For Each tmpEvent As IUpdateEvent In DirectCast( Me.dgvComputerReport.Rows(e.RowIndex).Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
 					If DirectCast(_dgvMain.CurrentRow.Cells("TargetID").Value, String) = tmpEvent.ComputerId
-						tmpMessage += "Date: " & tmpEvent.CreationDate & vbTab & "  " & tmpEvent.Message & vbNewline
+						tmpMessage += "Date: " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
 					End If
 				Next
 				Me.Cursor = Cursors.Arrow
@@ -1516,8 +1516,7 @@ Public Partial Class MainForm
 		Else
 			_originalValue = Nothing
 		End If
-		
-		
+				
 	End Sub
 	
 	'This routine captures the current row's value before a sort.
@@ -1529,18 +1528,18 @@ Public Partial Class MainForm
 		Else If e.RowIndex <> -1
 			_originalValue = Nothing
 			
-			'If the column is the status column and this update has failed then display the error history.
+			'If the column is the status column then display the error history.
 			If dgvUpdateReport.Columns(e.ColumnIndex).Name = "UpdateInstallationState" AndAlso Not Me._dgvMain.CurrentRow Is Nothing
 				Dim tmpMessage As String = ""
 				Me.Cursor = Cursors.WaitCursor
 				For Each tmpEvent As IUpdateEvent In DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
 					If DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerID").Value, String) = tmpEvent.ComputerId Then
-						tmpMessage += "Date: " & tmpEvent.CreationDate & vbTab & "  " & tmpEvent.Message & vbNewline
+						tmpMessage += "Date: " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
 					End If
 				Next
 				Me.Cursor = Cursors.Arrow
 				If Not String.IsNullOrEmpty ( tmpMessage ) Then
-					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, "Error History for " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
+					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, "History for " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
 				End If
 			End If
 		Else
