@@ -52,6 +52,8 @@ Partial Class UpdateForm
 		Me.txtUpdateFile = New System.Windows.Forms.TextBox
 		Me.lblUpdateFile = New System.Windows.Forms.Label
 		Me.tabPackageInfo = New System.Windows.Forms.TabPage
+		Me.txtNetwork = New System.Windows.Forms.TextBox
+		Me.lblNetwork = New System.Windows.Forms.Label
 		Me.txtOriginalURI = New System.Windows.Forms.TextBox
 		Me.lblOriginalURI = New System.Windows.Forms.Label
 		Me.cboPackageType = New System.Windows.Forms.ComboBox
@@ -301,6 +303,8 @@ Partial Class UpdateForm
 		'tabPackageInfo
 		'
 		Me.tabPackageInfo.BackColor = System.Drawing.SystemColors.Control
+		Me.tabPackageInfo.Controls.Add(Me.txtNetwork)
+		Me.tabPackageInfo.Controls.Add(Me.lblNetwork)
 		Me.tabPackageInfo.Controls.Add(Me.txtOriginalURI)
 		Me.tabPackageInfo.Controls.Add(Me.lblOriginalURI)
 		Me.tabPackageInfo.Controls.Add(Me.cboPackageType)
@@ -345,6 +349,24 @@ Partial Class UpdateForm
 		Me.tabPackageInfo.Size = New System.Drawing.Size(605, 517)
 		Me.tabPackageInfo.TabIndex = 1
 		Me.tabPackageInfo.Text = "Package Info"
+		'
+		'txtNetwork
+		'
+		Me.txtNetwork.Location = New System.Drawing.Point(351, 423)
+		Me.txtNetwork.Name = "txtNetwork"
+		Me.txtNetwork.ReadOnly = true
+		Me.txtNetwork.Size = New System.Drawing.Size(103, 20)
+		Me.txtNetwork.TabIndex = 69
+		'
+		'lblNetwork
+		'
+		Me.lblNetwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		Me.lblNetwork.Location = New System.Drawing.Point(232, 426)
+		Me.lblNetwork.Name = "lblNetwork"
+		Me.lblNetwork.Size = New System.Drawing.Size(112, 17)
+		Me.lblNetwork.TabIndex = 70
+		Me.lblNetwork.Text = "Network Required"
+		Me.lblNetwork.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'txtOriginalURI
 		'
@@ -428,7 +450,7 @@ Partial Class UpdateForm
 		Me.txtUninstall.Location = New System.Drawing.Point(114, 423)
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
-		Me.txtUninstall.Size = New System.Drawing.Size(233, 20)
+		Me.txtUninstall.Size = New System.Drawing.Size(103, 20)
 		Me.txtUninstall.TabIndex = 14
 		'
 		'lblUninstall
@@ -1062,6 +1084,8 @@ Partial Class UpdateForm
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
+	Private lblNetwork As System.Windows.Forms.Label
+	Private txtNetwork As System.Windows.Forms.TextBox
 	Private btnAddFiles As System.Windows.Forms.Button
 	Private txtOriginalURI As System.Windows.Forms.TextBox
 	Private lblOriginalURI As System.Windows.Forms.Label

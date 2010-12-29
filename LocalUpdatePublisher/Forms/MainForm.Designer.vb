@@ -74,26 +74,11 @@ Partial Class MainForm
 		Me.btnComputerListRefresh = New System.Windows.Forms.Button
 		Me.cboComputerStatus = New System.Windows.Forms.ComboBox
 		Me._dgvMain = New System.Windows.Forms.DataGridView
-		Me.pnlComputers = New System.Windows.Forms.Panel
-		Me.tabMainComputers = New System.Windows.Forms.TabControl
-		Me.tabComputerInfo = New System.Windows.Forms.TabPage
-		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
-		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
-		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
-		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
-		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
-		Me.lblUpdatesWErrors = New System.Windows.Forms.Label
-		Me.tabComputerStatus = New System.Windows.Forms.TabPage
-		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
-		Me.tabComputerReport = New System.Windows.Forms.TabPage
-		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
-		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
-		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
 		Me.pnlUpdates = New System.Windows.Forms.Panel
 		Me.tabMainUpdates = New System.Windows.Forms.TabControl
 		Me.tabUpdateInfo = New System.Windows.Forms.TabPage
+		Me.lblNetwork = New System.Windows.Forms.Label
+		Me.txtNetwork = New System.Windows.Forms.TextBox
 		Me.txtPackageType = New System.Windows.Forms.TextBox
 		Me.lblPackageType = New System.Windows.Forms.Label
 		Me.lblPrerequisites = New System.Windows.Forms.Label
@@ -136,6 +121,23 @@ Partial Class MainForm
 		Me.lblComputerGroup = New System.Windows.Forms.Label
 		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
 		Me.cboTargetGroup = New System.Windows.Forms.ComboBox
+		Me.pnlComputers = New System.Windows.Forms.Panel
+		Me.tabMainComputers = New System.Windows.Forms.TabControl
+		Me.tabComputerInfo = New System.Windows.Forms.TabPage
+		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
+		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
+		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
+		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
+		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
+		Me.lblUpdatesWErrors = New System.Windows.Forms.Label
+		Me.tabComputerStatus = New System.Windows.Forms.TabPage
+		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
+		Me.tabComputerReport = New System.Windows.Forms.TabPage
+		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
+		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
+		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
 		Me.cmDgvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.statusStrip = New System.Windows.Forms.StatusStrip
 		Me.toolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
@@ -154,13 +156,6 @@ Partial Class MainForm
 		Me.scHeader.SuspendLayout
 		Me.pnlHeaderTop.SuspendLayout
 		CType(Me._dgvMain,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.pnlComputers.SuspendLayout
-		Me.tabMainComputers.SuspendLayout
-		Me.tabComputerInfo.SuspendLayout
-		Me.tabComputerStatus.SuspendLayout
-		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tabComputerReport.SuspendLayout
-		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlUpdates.SuspendLayout
 		Me.tabMainUpdates.SuspendLayout
 		Me.tabUpdateInfo.SuspendLayout
@@ -168,6 +163,13 @@ Partial Class MainForm
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabUpdateReport.SuspendLayout
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.pnlComputers.SuspendLayout
+		Me.tabMainComputers.SuspendLayout
+		Me.tabComputerInfo.SuspendLayout
+		Me.tabComputerStatus.SuspendLayout
+		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tabComputerReport.SuspendLayout
+		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.statusStrip.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -538,210 +540,6 @@ Partial Class MainForm
 		AddHandler Me._dgvMain.Leave, AddressOf Me.dgvMainLeave
 		AddHandler Me._dgvMain.KeyUp, AddressOf Me.dgvMainKeyUp
 		'
-		'pnlComputers
-		'
-		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
-		Me.pnlComputers.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.pnlComputers.Location = New System.Drawing.Point(0, 0)
-		Me.pnlComputers.Name = "pnlComputers"
-		Me.pnlComputers.Size = New System.Drawing.Size(679, 478)
-		Me.pnlComputers.TabIndex = 60
-		Me.pnlComputers.Visible = false
-		'
-		'tabMainComputers
-		'
-		Me.tabMainComputers.Controls.Add(Me.tabComputerInfo)
-		Me.tabMainComputers.Controls.Add(Me.tabComputerStatus)
-		Me.tabMainComputers.Controls.Add(Me.tabComputerReport)
-		Me.tabMainComputers.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.tabMainComputers.Location = New System.Drawing.Point(0, 0)
-		Me.tabMainComputers.Name = "tabMainComputers"
-		Me.tabMainComputers.SelectedIndex = 0
-		Me.tabMainComputers.Size = New System.Drawing.Size(679, 478)
-		Me.tabMainComputers.TabIndex = 0
-		'
-		'tabComputerInfo
-		'
-		Me.tabComputerInfo.BackColor = System.Drawing.Color.Transparent
-		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesNeededNum)
-		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesInstalledorNANum)
-		Me.tabComputerInfo.Controls.Add(Me.txtUpdateNoStatusNum)
-		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesWErrorsNum)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdateNoStatus)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesNeeded)
-		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesWErrors)
-		Me.tabComputerInfo.Location = New System.Drawing.Point(4, 22)
-		Me.tabComputerInfo.Name = "tabComputerInfo"
-		Me.tabComputerInfo.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerInfo.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerInfo.TabIndex = 0
-		Me.tabComputerInfo.Text = "Info"
-		'
-		'txtUpdatesNeededNum
-		'
-		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
-		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
-		Me.txtUpdatesNeededNum.ReadOnly = true
-		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesNeededNum.TabIndex = 15
-		Me.txtUpdatesNeededNum.Text = "##"
-		'
-		'txtUpdatesInstalledorNANum
-		'
-		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
-		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
-		Me.txtUpdatesInstalledorNANum.ReadOnly = true
-		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesInstalledorNANum.TabIndex = 14
-		Me.txtUpdatesInstalledorNANum.Text = "##"
-		'
-		'txtUpdateNoStatusNum
-		'
-		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
-		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
-		Me.txtUpdateNoStatusNum.ReadOnly = true
-		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdateNoStatusNum.TabIndex = 13
-		Me.txtUpdateNoStatusNum.Text = "##"
-		'
-		'txtUpdatesWErrorsNum
-		'
-		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
-		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
-		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
-		Me.txtUpdatesWErrorsNum.ReadOnly = true
-		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesWErrorsNum.TabIndex = 12
-		Me.txtUpdatesWErrorsNum.Text = "##"
-		'
-		'lblUpdateNoStatus
-		'
-		Me.lblUpdateNoStatus.Location = New System.Drawing.Point(6, 75)
-		Me.lblUpdateNoStatus.Name = "lblUpdateNoStatus"
-		Me.lblUpdateNoStatus.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdateNoStatus.TabIndex = 3
-		Me.lblUpdateNoStatus.Text = "Updates with no status:"
-		'
-		'lblUpdatesInstalledorNA
-		'
-		Me.lblUpdatesInstalledorNA.Location = New System.Drawing.Point(6, 54)
-		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
-		Me.lblUpdatesInstalledorNA.Size = New System.Drawing.Size(179, 18)
-		Me.lblUpdatesInstalledorNA.TabIndex = 2
-		Me.lblUpdatesInstalledorNA.Text = "Updates installed/not applicable:"
-		'
-		'lblUpdatesNeeded
-		'
-		Me.lblUpdatesNeeded.Location = New System.Drawing.Point(6, 33)
-		Me.lblUpdatesNeeded.Name = "lblUpdatesNeeded"
-		Me.lblUpdatesNeeded.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdatesNeeded.TabIndex = 1
-		Me.lblUpdatesNeeded.Text = "Updates Needed:"
-		'
-		'lblUpdatesWErrors
-		'
-		Me.lblUpdatesWErrors.Location = New System.Drawing.Point(6, 12)
-		Me.lblUpdatesWErrors.Name = "lblUpdatesWErrors"
-		Me.lblUpdatesWErrors.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdatesWErrors.TabIndex = 0
-		Me.lblUpdatesWErrors.Text = "Updates with Errors:"
-		'
-		'tabComputerStatus
-		'
-		Me.tabComputerStatus.Controls.Add(Me.dgvComputerGroupStatus)
-		Me.tabComputerStatus.Location = New System.Drawing.Point(4, 22)
-		Me.tabComputerStatus.Name = "tabComputerStatus"
-		Me.tabComputerStatus.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerStatus.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerStatus.TabIndex = 2
-		Me.tabComputerStatus.Text = "Group Status"
-		Me.tabComputerStatus.UseVisualStyleBackColor = true
-		'
-		'dgvComputerGroupStatus
-		'
-		Me.dgvComputerGroupStatus.AllowUserToAddRows = false
-		Me.dgvComputerGroupStatus.AllowUserToDeleteRows = false
-		Me.dgvComputerGroupStatus.AllowUserToOrderColumns = true
-		Me.dgvComputerGroupStatus.AllowUserToResizeRows = false
-		Me.dgvComputerGroupStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvComputerGroupStatus.BackgroundColor = System.Drawing.SystemColors.Window
-		Me.dgvComputerGroupStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.dgvComputerGroupStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-		Me.dgvComputerGroupStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvComputerGroupStatus.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.dgvComputerGroupStatus.Location = New System.Drawing.Point(3, 3)
-		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
-		Me.dgvComputerGroupStatus.ReadOnly = true
-		Me.dgvComputerGroupStatus.RowHeadersVisible = false
-		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvComputerGroupStatus.Size = New System.Drawing.Size(665, 446)
-		Me.dgvComputerGroupStatus.TabIndex = 1
-		'
-		'tabComputerReport
-		'
-		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
-		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
-		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
-		Me.tabComputerReport.Location = New System.Drawing.Point(4, 22)
-		Me.tabComputerReport.Name = "tabComputerReport"
-		Me.tabComputerReport.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerReport.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerReport.TabIndex = 1
-		Me.tabComputerReport.Text = "Report"
-		Me.tabComputerReport.UseVisualStyleBackColor = true
-		'
-		'btnComputerRefreshReport
-		'
-		Me.btnComputerRefreshReport.Enabled = false
-		Me.btnComputerRefreshReport.Location = New System.Drawing.Point(299, 34)
-		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
-		Me.btnComputerRefreshReport.Size = New System.Drawing.Size(75, 23)
-		Me.btnComputerRefreshReport.TabIndex = 6
-		Me.btnComputerRefreshReport.Text = "Refresh"
-		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
-		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
-		'
-		'dgvComputerReport
-		'
-		Me.dgvComputerReport.AllowUserToAddRows = false
-		Me.dgvComputerReport.AllowUserToDeleteRows = false
-		Me.dgvComputerReport.AllowUserToOrderColumns = true
-		Me.dgvComputerReport.AllowUserToResizeRows = false
-		Me.dgvComputerReport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.dgvComputerReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvComputerReport.BackgroundColor = System.Drawing.SystemColors.Window
-		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvComputerReport.Location = New System.Drawing.Point(7, 63)
-		Me.dgvComputerReport.Name = "dgvComputerReport"
-		Me.dgvComputerReport.ReadOnly = true
-		Me.dgvComputerReport.RowHeadersVisible = false
-		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvComputerReport.Size = New System.Drawing.Size(657, 384)
-		Me.dgvComputerReport.TabIndex = 5
-		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
-		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
-		'
-		'lblComputerUpdateStatus
-		'
-		Me.lblComputerUpdateStatus.Location = New System.Drawing.Point(50, 17)
-		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
-		Me.lblComputerUpdateStatus.Size = New System.Drawing.Size(100, 15)
-		Me.lblComputerUpdateStatus.TabIndex = 4
-		Me.lblComputerUpdateStatus.Text = "Update Status"
-		'
 		'pnlUpdates
 		'
 		Me.pnlUpdates.Controls.Add(Me.tabMainUpdates)
@@ -766,6 +564,8 @@ Partial Class MainForm
 		'
 		'tabUpdateInfo
 		'
+		Me.tabUpdateInfo.Controls.Add(Me.lblNetwork)
+		Me.tabUpdateInfo.Controls.Add(Me.txtNetwork)
 		Me.tabUpdateInfo.Controls.Add(Me.txtPackageType)
 		Me.tabUpdateInfo.Controls.Add(Me.lblPackageType)
 		Me.tabUpdateInfo.Controls.Add(Me.lblPrerequisites)
@@ -806,6 +606,22 @@ Partial Class MainForm
 		Me.tabUpdateInfo.TabIndex = 0
 		Me.tabUpdateInfo.Text = "Info"
 		Me.tabUpdateInfo.UseVisualStyleBackColor = true
+		'
+		'lblNetwork
+		'
+		Me.lblNetwork.Location = New System.Drawing.Point(232, 366)
+		Me.lblNetwork.Name = "lblNetwork"
+		Me.lblNetwork.Size = New System.Drawing.Size(95, 17)
+		Me.lblNetwork.TabIndex = 67
+		Me.lblNetwork.Text = "Requires Network"
+		'
+		'txtNetwork
+		'
+		Me.txtNetwork.Location = New System.Drawing.Point(337, 363)
+		Me.txtNetwork.Name = "txtNetwork"
+		Me.txtNetwork.ReadOnly = true
+		Me.txtNetwork.Size = New System.Drawing.Size(88, 20)
+		Me.txtNetwork.TabIndex = 68
 		'
 		'txtPackageType
 		'
@@ -873,12 +689,10 @@ Partial Class MainForm
 		'
 		'txtUninstall
 		'
-		Me.txtUninstall.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 		Me.txtUninstall.Location = New System.Drawing.Point(129, 363)
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
-		Me.txtUninstall.Size = New System.Drawing.Size(296, 20)
+		Me.txtUninstall.Size = New System.Drawing.Size(88, 20)
 		Me.txtUninstall.TabIndex = 61
 		'
 		'txtImpact
@@ -1236,6 +1050,210 @@ Partial Class MainForm
 		Me.cboTargetGroup.TabIndex = 0
 		AddHandler Me.cboTargetGroup.SelectedIndexChanged, AddressOf Me.CboTargetGroupSelectedIndexChanged
 		'
+		'pnlComputers
+		'
+		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
+		Me.pnlComputers.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.pnlComputers.Location = New System.Drawing.Point(0, 0)
+		Me.pnlComputers.Name = "pnlComputers"
+		Me.pnlComputers.Size = New System.Drawing.Size(679, 478)
+		Me.pnlComputers.TabIndex = 60
+		Me.pnlComputers.Visible = false
+		'
+		'tabMainComputers
+		'
+		Me.tabMainComputers.Controls.Add(Me.tabComputerInfo)
+		Me.tabMainComputers.Controls.Add(Me.tabComputerStatus)
+		Me.tabMainComputers.Controls.Add(Me.tabComputerReport)
+		Me.tabMainComputers.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.tabMainComputers.Location = New System.Drawing.Point(0, 0)
+		Me.tabMainComputers.Name = "tabMainComputers"
+		Me.tabMainComputers.SelectedIndex = 0
+		Me.tabMainComputers.Size = New System.Drawing.Size(679, 478)
+		Me.tabMainComputers.TabIndex = 0
+		'
+		'tabComputerInfo
+		'
+		Me.tabComputerInfo.BackColor = System.Drawing.Color.Transparent
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesNeededNum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesInstalledorNANum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdateNoStatusNum)
+		Me.tabComputerInfo.Controls.Add(Me.txtUpdatesWErrorsNum)
+		Me.tabComputerInfo.Controls.Add(Me.lblUpdateNoStatus)
+		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA)
+		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesNeeded)
+		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesWErrors)
+		Me.tabComputerInfo.Location = New System.Drawing.Point(4, 22)
+		Me.tabComputerInfo.Name = "tabComputerInfo"
+		Me.tabComputerInfo.Padding = New System.Windows.Forms.Padding(3)
+		Me.tabComputerInfo.Size = New System.Drawing.Size(671, 452)
+		Me.tabComputerInfo.TabIndex = 0
+		Me.tabComputerInfo.Text = "Info"
+		'
+		'txtUpdatesNeededNum
+		'
+		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
+		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
+		Me.txtUpdatesNeededNum.ReadOnly = true
+		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesNeededNum.TabIndex = 15
+		Me.txtUpdatesNeededNum.Text = "##"
+		'
+		'txtUpdatesInstalledorNANum
+		'
+		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
+		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
+		Me.txtUpdatesInstalledorNANum.ReadOnly = true
+		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesInstalledorNANum.TabIndex = 14
+		Me.txtUpdatesInstalledorNANum.Text = "##"
+		'
+		'txtUpdateNoStatusNum
+		'
+		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
+		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
+		Me.txtUpdateNoStatusNum.ReadOnly = true
+		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdateNoStatusNum.TabIndex = 13
+		Me.txtUpdateNoStatusNum.Text = "##"
+		'
+		'txtUpdatesWErrorsNum
+		'
+		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
+		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
+		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
+		Me.txtUpdatesWErrorsNum.ReadOnly = true
+		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
+		Me.txtUpdatesWErrorsNum.TabIndex = 12
+		Me.txtUpdatesWErrorsNum.Text = "##"
+		'
+		'lblUpdateNoStatus
+		'
+		Me.lblUpdateNoStatus.Location = New System.Drawing.Point(6, 75)
+		Me.lblUpdateNoStatus.Name = "lblUpdateNoStatus"
+		Me.lblUpdateNoStatus.Size = New System.Drawing.Size(138, 18)
+		Me.lblUpdateNoStatus.TabIndex = 3
+		Me.lblUpdateNoStatus.Text = "Updates with no status:"
+		'
+		'lblUpdatesInstalledorNA
+		'
+		Me.lblUpdatesInstalledorNA.Location = New System.Drawing.Point(6, 54)
+		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
+		Me.lblUpdatesInstalledorNA.Size = New System.Drawing.Size(179, 18)
+		Me.lblUpdatesInstalledorNA.TabIndex = 2
+		Me.lblUpdatesInstalledorNA.Text = "Updates installed/not applicable:"
+		'
+		'lblUpdatesNeeded
+		'
+		Me.lblUpdatesNeeded.Location = New System.Drawing.Point(6, 33)
+		Me.lblUpdatesNeeded.Name = "lblUpdatesNeeded"
+		Me.lblUpdatesNeeded.Size = New System.Drawing.Size(138, 18)
+		Me.lblUpdatesNeeded.TabIndex = 1
+		Me.lblUpdatesNeeded.Text = "Updates Needed:"
+		'
+		'lblUpdatesWErrors
+		'
+		Me.lblUpdatesWErrors.Location = New System.Drawing.Point(6, 12)
+		Me.lblUpdatesWErrors.Name = "lblUpdatesWErrors"
+		Me.lblUpdatesWErrors.Size = New System.Drawing.Size(138, 18)
+		Me.lblUpdatesWErrors.TabIndex = 0
+		Me.lblUpdatesWErrors.Text = "Updates with Errors:"
+		'
+		'tabComputerStatus
+		'
+		Me.tabComputerStatus.Controls.Add(Me.dgvComputerGroupStatus)
+		Me.tabComputerStatus.Location = New System.Drawing.Point(4, 22)
+		Me.tabComputerStatus.Name = "tabComputerStatus"
+		Me.tabComputerStatus.Padding = New System.Windows.Forms.Padding(3)
+		Me.tabComputerStatus.Size = New System.Drawing.Size(671, 452)
+		Me.tabComputerStatus.TabIndex = 2
+		Me.tabComputerStatus.Text = "Group Status"
+		Me.tabComputerStatus.UseVisualStyleBackColor = true
+		'
+		'dgvComputerGroupStatus
+		'
+		Me.dgvComputerGroupStatus.AllowUserToAddRows = false
+		Me.dgvComputerGroupStatus.AllowUserToDeleteRows = false
+		Me.dgvComputerGroupStatus.AllowUserToOrderColumns = true
+		Me.dgvComputerGroupStatus.AllowUserToResizeRows = false
+		Me.dgvComputerGroupStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvComputerGroupStatus.BackgroundColor = System.Drawing.SystemColors.Window
+		Me.dgvComputerGroupStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.dgvComputerGroupStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+		Me.dgvComputerGroupStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvComputerGroupStatus.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.dgvComputerGroupStatus.Location = New System.Drawing.Point(3, 3)
+		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
+		Me.dgvComputerGroupStatus.ReadOnly = true
+		Me.dgvComputerGroupStatus.RowHeadersVisible = false
+		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		Me.dgvComputerGroupStatus.Size = New System.Drawing.Size(665, 446)
+		Me.dgvComputerGroupStatus.TabIndex = 1
+		'
+		'tabComputerReport
+		'
+		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
+		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
+		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
+		Me.tabComputerReport.Location = New System.Drawing.Point(4, 22)
+		Me.tabComputerReport.Name = "tabComputerReport"
+		Me.tabComputerReport.Padding = New System.Windows.Forms.Padding(3)
+		Me.tabComputerReport.Size = New System.Drawing.Size(671, 452)
+		Me.tabComputerReport.TabIndex = 1
+		Me.tabComputerReport.Text = "Report"
+		Me.tabComputerReport.UseVisualStyleBackColor = true
+		'
+		'btnComputerRefreshReport
+		'
+		Me.btnComputerRefreshReport.Enabled = false
+		Me.btnComputerRefreshReport.Location = New System.Drawing.Point(299, 34)
+		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
+		Me.btnComputerRefreshReport.Size = New System.Drawing.Size(75, 23)
+		Me.btnComputerRefreshReport.TabIndex = 6
+		Me.btnComputerRefreshReport.Text = "Refresh"
+		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
+		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
+		'
+		'dgvComputerReport
+		'
+		Me.dgvComputerReport.AllowUserToAddRows = false
+		Me.dgvComputerReport.AllowUserToDeleteRows = false
+		Me.dgvComputerReport.AllowUserToOrderColumns = true
+		Me.dgvComputerReport.AllowUserToResizeRows = false
+		Me.dgvComputerReport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+						Or System.Windows.Forms.AnchorStyles.Left)  _
+						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		Me.dgvComputerReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvComputerReport.BackgroundColor = System.Drawing.SystemColors.Window
+		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvComputerReport.Location = New System.Drawing.Point(7, 63)
+		Me.dgvComputerReport.Name = "dgvComputerReport"
+		Me.dgvComputerReport.ReadOnly = true
+		Me.dgvComputerReport.RowHeadersVisible = false
+		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		Me.dgvComputerReport.Size = New System.Drawing.Size(657, 384)
+		Me.dgvComputerReport.TabIndex = 5
+		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
+		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
+		'
+		'lblComputerUpdateStatus
+		'
+		Me.lblComputerUpdateStatus.Location = New System.Drawing.Point(50, 17)
+		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
+		Me.lblComputerUpdateStatus.Size = New System.Drawing.Size(100, 15)
+		Me.lblComputerUpdateStatus.TabIndex = 4
+		Me.lblComputerUpdateStatus.Text = "Update Status"
+		'
 		'cmDgvMain
 		'
 		Me.cmDgvMain.Name = "Data Grid Context Menu"
@@ -1301,14 +1319,6 @@ Partial Class MainForm
 		Me.scHeader.ResumeLayout(false)
 		Me.pnlHeaderTop.ResumeLayout(false)
 		CType(Me._dgvMain,System.ComponentModel.ISupportInitialize).EndInit
-		Me.pnlComputers.ResumeLayout(false)
-		Me.tabMainComputers.ResumeLayout(false)
-		Me.tabComputerInfo.ResumeLayout(false)
-		Me.tabComputerInfo.PerformLayout
-		Me.tabComputerStatus.ResumeLayout(false)
-		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tabComputerReport.ResumeLayout(false)
-		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlUpdates.ResumeLayout(false)
 		Me.tabMainUpdates.ResumeLayout(false)
 		Me.tabUpdateInfo.ResumeLayout(false)
@@ -1317,11 +1327,21 @@ Partial Class MainForm
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabUpdateReport.ResumeLayout(false)
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).EndInit
+		Me.pnlComputers.ResumeLayout(false)
+		Me.tabMainComputers.ResumeLayout(false)
+		Me.tabComputerInfo.ResumeLayout(false)
+		Me.tabComputerInfo.PerformLayout
+		Me.tabComputerStatus.ResumeLayout(false)
+		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tabComputerReport.ResumeLayout(false)
+		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.statusStrip.ResumeLayout(false)
 		Me.statusStrip.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private lblNetwork As System.Windows.Forms.Label
+	Private txtNetwork As System.Windows.Forms.TextBox
 	Private exportFileDialog As System.Windows.Forms.SaveFileDialog
 	Private txtUpdatesWErrorsNum As System.Windows.Forms.TextBox
 	Private txtUpdateNoStatusNum As System.Windows.Forms.TextBox

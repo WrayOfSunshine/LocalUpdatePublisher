@@ -702,17 +702,22 @@ Public Partial Class UpdateForm
 			If Not _Sdp.SupportUrl Is Nothing Then Me.TxtSupportURL.Text = _Sdp.SupportUrl.ToString
 			If _Sdp.AdditionalInformationUrls.Count > 0 Then Me.TxtMoreInfoURL.Text = _Sdp.AdditionalInformationUrls.Item(0).ToString
 			
-			If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
-				Me.TxtUninstall.Text = "False"
-			Else
-				Me.TxtUninstall.Text = "True"
-			End If
+			
 			
 			'Load The Installable Item Info
 			If _Sdp.InstallableItems.Count > 0 Then 'There'S An Installable Item.
 				
+				If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
+					Me.TxtUninstall.Text = "False"
+				Else
+					Me.TxtUninstall.Text = "True"
+				End If
+				
+				
+				
 				Me.CboImpact.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.Impact
 				Me.CboRebootBehavior.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior
+				Me.txtNetwork.Text = _Sdp.InstallableItems.Item(0).InstallBehavior.RequiresNetworkConnectivity.ToString
 				
 				'Set The Command Line Based On The Update Type.
 				Select Case _UpdateType
@@ -976,10 +981,12 @@ Public Partial Class UpdateForm
 	'Enable and Disable the appropriate details based on the package type.
 	Sub CboPackageTypeSelectedIndexChanged(sender As Object, e As EventArgs)
 		If DirectCast(Me.cboPackageType.SelectedIndex, PackageType) = PackageType.Application Then
+			Me.cboClassification.Enabled = False
 			Me.txtBulletinID.Enabled = False
 			Me.txtArticleID.Enabled = False
 			Me.txtCVEID.Enabled = False
 		Else
+			Me.cboClassification.Enabled = True
 			Me.txtBulletinID.Enabled = True
 			Me.txtArticleID.Enabled = True
 			Me.txtCVEID.Enabled = True

@@ -1933,6 +1933,7 @@ Public Partial Class MainForm
 			Me.txtImpact.Text = update.InstallationBehavior.Impact.ToString
 			Me.txtRebootBehavior.Text = update.InstallationBehavior.RebootBehavior.ToString
 			Me.txtUninstall.Text = update.UninstallationBehavior.IsSupported.ToString
+			Me.txtNetwork.Text = update.InstallationBehavior.RequiresNetworkConnectivity.ToString
 			
 			'Set the prerequisite objects.
 			If update.GetRelatedUpdates( UpdateRelationship.UpdatesRequiredByThisUpdate).Count > 0 Then
@@ -2477,5 +2478,6 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	#End Region
+	
 End Class
 				
