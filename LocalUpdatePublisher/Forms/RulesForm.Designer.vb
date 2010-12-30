@@ -554,6 +554,7 @@ Partial Class RulesForm
 		'
 		Me.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.splitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+		Me.splitContainer.IsSplitterFixed = true
 		Me.splitContainer.Location = New System.Drawing.Point(0, 0)
 		Me.splitContainer.Name = "splitContainer"
 		Me.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal
