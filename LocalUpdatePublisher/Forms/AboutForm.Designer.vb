@@ -48,7 +48,9 @@ Partial Class AboutForm
 		Me.lblAbout.Padding = New System.Windows.Forms.Padding(5)
 		Me.lblAbout.Size = New System.Drawing.Size(465, 92)
 		Me.lblAbout.TabIndex = 0
-		Me.lblAbout.Text = resources.GetString("lblAbout.Text")
+		Me.lblAbout.Text = "Local Update Publisher Version: 1.0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Local Update Publisher uses the WSUS API t"& _ 
+		"o extend your WSUS implementation to include installs and updates from third par"& _ 
+		"ties."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"For support and updates go to"
 		'
 		'linkLabel
 		'
