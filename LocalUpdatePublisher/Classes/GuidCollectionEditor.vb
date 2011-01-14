@@ -42,7 +42,7 @@ Public Partial Class GuidCollectionEditor
 	End Property
 	Private m_RequireGuids As Boolean
 	
-	'True if you requre 1 or more items.
+	'True if you require one or more items.
 	Public Property RequireAtLeastOne() As Boolean
 		Get
 			Return m_RequireAtLeastOne

@@ -2,8 +2,8 @@
 ' Released under the MIT license as found in LICENSE.txt
 '
 ' ComboVendors
-' Creates an object that holds a update category
-' as well as a string for it's name.  This allows us
+' Creates an object that holds an update category
+' as well as a string for its name.  This allows us
 ' to add the object to comboboxes and have the name displayed
 ' and the target group accessible.
 '

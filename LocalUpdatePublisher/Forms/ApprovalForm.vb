@@ -236,7 +236,7 @@ Public Partial Class ApprovalForm
 	
 	'Get approvals recursively.
 	Private Function GetParentApprovals ( computerGroup As IComputerTargetGroup ) As UpdateApprovalCollection
-		'Get the group's approvals for the selected udpate.
+		'Get the group's approvals for the selected update.
 		Dim tmpUpdateApprovalCollection As UpdateApprovalCollection = New UpdateApprovalCollection
 		tmpUpdateApprovalCollection = _selectedUpdate.GetUpdateApprovals(computerGroup)
 		

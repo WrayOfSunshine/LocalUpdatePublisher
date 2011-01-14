@@ -2,7 +2,7 @@
 ' Released under the MIT license as found in LICENSE.txt
 '
 'DataGridViewState
-' This custom object saves thes tage of a given DGV.
+' This custom object saves the state of a given DGV.
 ' We use this to save and load the state from the
 ' settings file.
 '

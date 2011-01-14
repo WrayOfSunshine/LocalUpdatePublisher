@@ -252,7 +252,7 @@ Public Module EnumExtensions
 	End Function
 	
 	
-	' Retreives a friendly name for the given approval action
+	' Retrieves a friendly name for the given approval action
 	<System.Runtime.CompilerServices.Extension> _
 		Public Function ToDisplayString(a As UpdateApprovalAction) As String
 		Select Case a
@@ -269,7 +269,7 @@ Public Module EnumExtensions
 		End Select
 	End Function
 	
-	' Retreives the appropriate icon for a given approval action
+	' Retrieves the appropriate icon for a given approval action
 	<System.Runtime.CompilerServices.Extension> _
 		Public Function GetIcon(a As UpdateApprovalAction) As Bitmap
 		Select Case a

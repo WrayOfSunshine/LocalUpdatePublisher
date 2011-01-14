@@ -80,7 +80,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\DataGridViewState.vb">
-      <DependentUpon>CustomTabControl.vb</DependentUpon>
     </Compile>
     <Compile Include="Classes\GuidCollectionEditor.Designer.vb">
       <DependentUpon>GuidCollectionEditor.vb</DependentUpon>

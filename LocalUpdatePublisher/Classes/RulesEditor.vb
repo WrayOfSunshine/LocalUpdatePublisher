@@ -67,8 +67,8 @@ Public Partial Class RulesEditor
 		End Get
 	End Property
 	
-	'The item applicibility rule.
-	Public Property ApplicibilityRule() As String
+	'The item applicability rule.
+	Public Property ApplicabilityRule() As String
 		Get
 			Return tb_xml.Text
 		End Get
@@ -78,8 +78,8 @@ Public Partial Class RulesEditor
 		End Set
 	End Property
 	
-	'If the item applicibility rule was edited manually.
-	Public ReadOnly Property ApplicibilityRuleEdited() As Boolean
+	'If the item applicability rule was edited manually.
+	Public ReadOnly Property ApplicabilityRuleEdited() As Boolean
 		Get
 			If tb_xml.ReadOnly Then
 				Return False
@@ -384,7 +384,7 @@ Public Partial Class RulesEditor
 		End If
 	End Sub
 	
-	'When the user select a records enable and disable buttonds depending
+	'When the user select a records enable and disable buttons depending
 	' on what they selected.
 	Private Sub dgv_rules_SelectionChanged(sender As Object, e As EventArgs)
 		Dim tmpDgv As DataGridView = DirectCast(sender, DataGridView)
@@ -431,7 +431,7 @@ Public Partial Class RulesEditor
 			Next
 			
 			
-			'Make sure the difference between the higest and lowest indexes match the
+			'Make sure the difference between the highest and lowest indexes match the
 			' number of rows selected.  If they do not, then the user has not selected
 			' a continuous collection of rows.
 			If (tmpHighestIndex - tmpLowestIndex) + 1 <> tmpDgv.SelectedRows.Count Then

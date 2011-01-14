@@ -34,7 +34,7 @@ Public Partial Class SupersededUpdatesForm
 		If update.HasSupersededUpdates Then
 			dgvUpdates.Rows.Clear
 			
-			'Load the superceded updates here.
+			'Load the superseded updates here.
 			For Each tmpUpdate As IUpdate In update.GetRelatedUpdates( UpdateRelationship.UpdatesSupersededByThisUpdate)
 				Dim tmpRow As Integer = dgvUpdates.Rows.Add
 				dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpUpdate.Title
@@ -61,7 +61,7 @@ Public Partial Class SupersededUpdatesForm
 		
 		dgvUpdates.Rows.Clear
 		
-		'Load the superceded updates here.
+		'Load the superseded updates here.
 		For Each tmpUpdateGuid As Guid In _updateGuids
 			Dim tmpRow As Integer = dgvUpdates.Rows.Add
 			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateGuid
@@ -120,7 +120,7 @@ Public Partial Class SupersededUpdatesForm
 		'Clear the list.
 		_updateGuids.Clear
 		
-		'Add the superceded updates.
+		'Add the superseded updates.
 		For Each tmpRow As DataGridViewRow In Me.dgvUpdates.Rows
 			_updateGuids.Add(DirectCast(tmpRow.Cells("Id").Value, Guid))
 		Next

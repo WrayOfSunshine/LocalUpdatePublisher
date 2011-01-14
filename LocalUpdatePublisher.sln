@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-# SharpDevelop 3.2.0.5777
+# SharpDevelop 3.2.1.6466
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LocalUpdatePublisher", "LocalUpdatePublisher\LocalUpdatePublisher.vbproj", "{89801E8D-4598-4939-9F47-E648EFA762FE}"
 EndProject
 Global

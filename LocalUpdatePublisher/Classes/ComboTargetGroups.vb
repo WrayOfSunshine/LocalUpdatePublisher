@@ -3,7 +3,7 @@
 '
 ' ComboTargetGroup
 ' Creates an object that holds a Computer Target Group
-' as well as a string for it's name.  This allows us
+' as well as a string for its name.  This allows us
 ' to add the object to comboboxes and have the name displayed
 ' and the target group accessible.
 '

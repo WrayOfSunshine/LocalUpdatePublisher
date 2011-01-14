@@ -27,7 +27,7 @@ Imports System.Reflection
 	
 	#Region "Constructors"
 	''' <summary>
-	''' Static constructor to retreive the productName
+	''' Static constructor to retrieve the productName
 	''' from the assembly
 	''' </summary>
 	Shared Sub New()

@@ -782,7 +782,7 @@ Partial Class UpdateForm
 		'
 		'isInstalledRules
 		'
-		Me.isInstalledRules.ApplicibilityRule = ""
+		Me.isInstalledRules.ApplicabilityRule = ""
 		Me.isInstalledRules.CausesValidation = false
 		Me.isInstalledRules.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.isInstalledRules.Instructions = resources.GetString("isInstalledRules.Instructions")
@@ -808,7 +808,7 @@ Partial Class UpdateForm
 		'
 		'isInstallableRules
 		'
-		Me.isInstallableRules.ApplicibilityRule = ""
+		Me.isInstallableRules.ApplicabilityRule = ""
 		Me.isInstallableRules.CausesValidation = false
 		Me.isInstallableRules.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.isInstallableRules.Instructions = resources.GetString("isInstallableRules.Instructions")

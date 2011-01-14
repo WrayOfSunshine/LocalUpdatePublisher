@@ -128,8 +128,8 @@ Public Partial Class RulesForm
 	' of controls rather than individual ones.  We loop through the controls
 	' looking for the ones we need shown and then hide the rest.
 	Private Sub cboRuleTypeSelectedIndexChanged(sender As Object, e As EventArgs)
-		'Loop through each groupicox item on the second panel.  Hide anything we don't
-		' need and position what we do need.
+		'Loop through each panel on the lower split-panel.  Hide the panels we don't
+		' need and position the items that we do need.
 		If Me.cboRuleType.SelectedIndex >= 0 Then 'The combobox must be populated.
 			
 			'Setup the panel based on the selection from the combobox.
@@ -935,7 +935,7 @@ Public Partial Class RulesForm
 		End Select
 	End Sub
 	
-	'Set the corresonding codes to the service pack.
+	'Set the corresponding codes to the service pack.
 	Private Sub GetServicePackCode(sender As Object, e As EventArgs)
 		Select Case Me.cboServicePack.Text
 			Case "SP 1"
@@ -960,7 +960,7 @@ Public Partial Class RulesForm
 	
 	#REGION "Shared Methods"
 	
-	'Set the corresonding text fields to the service pack.
+	'Set the corresponding text fields to the service pack.
 	Shared Function GetServicePackText(spMajor As String) As String
 		Return "SP " & spMajor
 	End Function
@@ -1065,7 +1065,7 @@ Public Partial Class RulesForm
 	'		End Select
 	'	End Function
 	
-	'Return the XML compatable comparison string based on the human readable string.
+	'Return the XML compatible comparison string based on the human readable string.
 	Shared Function GetComparisonCode(comparison As String) As String
 		Select Case comparison
 			Case "Equal To"
@@ -1089,7 +1089,7 @@ Public Partial Class RulesForm
 		End Select
 	End Function
 	
-	'Return the human readable string based on the XML compatable comparison string.
+	'Return the human readable string based on the XML compatible comparison string.
 	Shared Function GetComparisonText(comparisonCode As String) As String
 		Select Case comparisonCode
 			Case "EqualTo"
@@ -1461,7 +1461,7 @@ Public Partial Class RulesForm
 				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then _xmlRule += "Version=""" & StringToXML(Me.txtVersion.Text) & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileCreation
-				'Set the readble rule.
+				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
 				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
@@ -1475,7 +1475,7 @@ Public Partial Class RulesForm
 					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileCreationWithRegistry
-				'Set the readble rule.
+				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
 				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
 				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
@@ -1492,7 +1492,7 @@ Public Partial Class RulesForm
 					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileModified
-				'Set the readble rule
+				'Set the readable rule
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
 				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
 				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
@@ -1506,7 +1506,7 @@ Public Partial Class RulesForm
 					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileModifiedWithRegistry
-				'Set the readble rule.
+				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
 				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
 				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
@@ -2180,12 +2180,12 @@ Public Partial Class RulesForm
 	#Region "Validation"
 	
 	'The version rule demands a version in the form #.#.#.# so
-	' this routine makes sure that the text is formated that way.
+	' this routine makes sure that the text is formatted that way.
 	Private Sub ValidateVersion(sender As Object, e As EventArgs)
 		'If this is a textbox then format it as a version string
 		If TypeOf Sender Is TextBox Then
 			
-			'If there's a string, and it's less than 4 digits then pad with zeros
+			'If there's a string and it's less than 4 digits then pad with zeros
 			If Not String.IsNullOrEmpty( DirectCast(Sender,TextBox).Text ) Then
 				Dim strArray as String() = DirectCast(Sender,TextBox).Text.Split("."c)
 				
@@ -2218,7 +2218,7 @@ Public Partial Class RulesForm
 		ValidateForm()
 	End Sub
 	
-	'Verify the form and set the icons accordinly.
+	'Verify the form and set the icons accordingly.
 	Sub ValidateForm
 		Call ValidateFields
 		Call ValidateRule

@@ -2,14 +2,14 @@
 ' Released Under The MIT License As Found In LICENSE.Txt
 '
 ' UpdateForm
-' This Form Is Used To Create And Revise Software Distribution Packages
-' For The WSUS Server.  If The Form Is Called With A String To A SDP File
-' Then Load The Form With That Data.  Otherwise, Walk The User Through Creating
-' A New Package.
-' This Form Is Intened To Work Like A Typical Wizard.  This Is Accomplished By Using
-' A Customized TabControl Object That Allows Us To Hide The Tab Names.  In This Manner
-' We Can Create Pages Of The Wizard Easily In Design Mode But Hide The Tab
-' Navigation At Run Time.
+' This form is used to create and revise Software Distribution Packages
+' for the WSUS server.  If the form is called with a string to a SDP file
+' then it loads the form with that data.  Otherwise, it walks the user through creating
+' a new package.
+' This form is intended to work like a typical wizard.  This is accomplished by using
+' a customized TabControl object that allows us to hide the tab names.  In this manner
+' we can create pages of the wizard easily in design mode but hide the tab
+' navigation at run time.
 '
 ' Created By SharpDevelop.
 ' User: Bryan
@@ -37,7 +37,7 @@ Public Partial Class UpdateForm
 	Private _SdpFilePath As String
 	
 	Public Sub New()
-		' The Me.InitializeComponent Call Is Required For Windows Forms Designer Support.
+		' The Me.InitializeComponent call is required for windows forms designer support.
 		Me.InitializeComponent()
 		Me.BtnPrevious.Hide
 		
@@ -49,21 +49,21 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#REGION "Form Methods"
-	'If No SDP Is Passed Then Create A New, Blank One.
+	'Create a new SDP.
 	Public Overloads Function ShowDialog() As SoftwareDistributionPackage
 		'Clear The Supporting Forms.
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
 		ReturnCodesForm = Nothing
 		
-		'Set Default Values.
+		'Set default values.
 		Me._Sdp = New SoftwareDistributionPackage()
 		Me._Revision = False
 		Me._OriginalURIChanged = False
 		Me.TxtMSIPath.Enabled = False
 		Me.ErrorProviderUpdate.SetError(Me.TxtUpdateFile, "Please Select A File.")
 		
-		'If There'S A Hidden Tab In The Temp Tab Control, Load It.
+		'If there is a hidden tab in the temp tab control then load it.
 		If _TabsHidden.Count > 0 Then
 			Me.TabsImportUpdate.TabPages.Insert(0, Me._TabsHidden(0))
 			_TabsHidden.RemoveAt(0)
@@ -85,20 +85,19 @@ Public Partial Class UpdateForm
 		End If
 	End Function
 	
-	'If No SDP Is Passed Then Create A New, Blank One.
+	'Revise and existing SDP.
 	Public Overloads Function ShowDialog(PackageFile As String ) As SoftwareDistributionPackage
-		'Clear The Supporting Forms.
+		'Clear the supporting forms.
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
 		ReturnCodesForm = Nothing
 		
-		'Load SDP From Passed File, Set Revision Boolean, And Load SDP Data,
-		' And Set The Filename.
+		'Load SDP from passed file, set revision boolean, load SDP data, and set the filename.
 		Me._Sdp = New SoftwareDistributionPackage(PackageFile)
 		Me._Revision = True
 		Me._OriginalURIChanged = False
 		
-		'Set The Update Type Based On The Type Of The Installable Item.
+		'Set the update type based on the type of installable item.
 		If TypeOf _Sdp.InstallableItems.Item(0) Is CommandLineItem Then
 			_UpdateType = LocalUpdateTypes.EXE
 			Me.lblReturnCodes.Visible = True
@@ -114,8 +113,7 @@ Public Partial Class UpdateForm
 		Call LoadSdpData
 		
 		
-		'We Do Not Need To Prompt The User For Files So Hide
-		' The Initial Tab.
+		'We do not need to prompt the user for files so skip the initial tab.
 		If _TabsHidden.Count = 0 Then
 			Me._TabsHidden.Add(Me.TabsImportUpdate.TabPages("TabIntro"))
 			Me.TabsImportUpdate.TabPages.RemoveAt(Me.TabIntro.TabIndex)
@@ -139,7 +137,7 @@ Public Partial Class UpdateForm
 		End If
 	End Function
 	
-	'Allow The User To Edit The Metadata.
+	'Allow the user to edit the metadata.
 	Sub BtnMetaDataEditClick(Sender As Object, E As EventArgs)
 		Msgbox ("Edit This XML At Your Own Risk.")
 		TxtInstallableItemMetaData.ScrollBars = ScrollBars.Vertical
@@ -147,6 +145,7 @@ Public Partial Class UpdateForm
 		BtnMetaDataEdit.Visible = False
 	End Sub
 	
+	'Alow the user to edit the superseded metadata.
 	Sub BtnIsSupersededEditClick(Sender As Object, E As EventArgs)
 		Msgbox ("Edit This XML At Your Own Risk.")
 		TxtIsSuperceded_InstallableItem.ScrollBars = ScrollBars.Vertical
@@ -154,20 +153,20 @@ Public Partial Class UpdateForm
 		BtnIsSupersededEdit.Visible = False
 	End Sub
 	
-	'This Routine Goes To The Previous Tab And Hides Buttons Accordingly.
+	'This routine goes to the previous tab and hides buttons accordingly.
 	Private Sub BtnPreviousClick(Sender As Object, E As EventArgs)
 		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex - 1
 		
 		Call SetMetadataOnly
 		
-		'Show And Hide The Previous Button As Needed.
+		'Show and hide the previous button as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
 			Me.BtnPrevious.Show
 		Else
 			Me.BtnPrevious.Hide
 		End If
 		
-		'Change The Next Button'S Text As Needed.
+		'Change the next button's text as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount ) Then
 			Me.BtnNext.Show
 			Me.BtnNext.Text = "Next"
@@ -180,31 +179,31 @@ Public Partial Class UpdateForm
 		Me.ValidateChildren
 	End Sub
 	
-	'This Routine Goes To The Next Tab And Hides Buttons Accordingly.
+	'This routine goes to the next tab and hides buttons accordingly.
 	Private Sub BtnNextClick(Sender As Object, E As EventArgs)
-		'Perform Action Depending On Current Tab.
-		' If The Action Could Not Be Performed Do Not Continue Forward.
+		'Perform action depending on current tab.
+		' If the action could not be performed do not continue.
 		If Not PerformAction Then
 			Exit Sub
-			'User Has Selected The Finish Button So Close The Form.
+			'User has selected the finish button so close the form.
 		Else If Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.TabCount - 1 Then
 			Me.Close
 			Exit Sub
 		End If
 		
-		'Move To The Next Tab.
+		'Move to the next tab.
 		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex + 1
 		
 		Call SetMetadataOnly
 		
-		'Show And Hide The Previous Button As Needed.
+		'Show and hide the previous button as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
 			Me.BtnPrevious.Show
 		Else
 			Me.BtnPrevious.Hide
 		End If
 		
-		'Change The Next Button'S Text As Needed.
+		'Change the next button's text as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount - 1 ) Then
 			Me.BtnNext.Show
 			Me.BtnNext.Text = "Next"
@@ -226,13 +225,13 @@ Public Partial Class UpdateForm
 		End If
 	End Sub
 	
-	'If The User Cancels, Close The Form.
+	'If the user cancels, close the form.
 	Private Sub BtnCancelClick(Sender As Object, E As EventArgs)
 		
-		'Delete The Temporary SDP File And Ignore Any Errors.
+		'Delete the temporary SDP file and ignore any errors.
 		If Not String.IsNullOrEmpty(_SdpFilePath) Then
 			Try
-				System.IO.File.Delete(_SdpFilePath) 'Delete The SDP File.
+				System.IO.File.Delete(_SdpFilePath) 'Delete the SDP file.
 			Catch
 			End Try
 		End If
@@ -240,15 +239,15 @@ Public Partial Class UpdateForm
 		Me.Close
 	End Sub
 	
-	'Prompt The User To Select A File, Set The Textbox And Next Button Accordingly.
+	'Prompt the user to select a file, set the textbox and next button accordingly.
 	Private Sub BtnUpdateFileClick(Sender As Object, E As EventArgs)
-		'Set File Filter.
+		'Set the file filter.
 		Me.DlgUpdateFile.Filter ="MSI Files|*.MSI|MSP Files|*.MSP|EXE Files|*.EXE"
 		
-		'Disable The MSI Path.
+		'Disable the MSI path.
 		Me.TxtMSIPath.Enabled = False
 		
-		'Show File Dialog And If User Has Chosen A File Continue.
+		'Show file dialog and continue if the user chose a file.
 		If Me.DlgUpdateFile.ShowDialog = VbOK Then
 			Me.chkMetadataOnly.Enabled = True
 			
@@ -257,8 +256,7 @@ Public Partial Class UpdateForm
 			Me.TxtUpdateFile.Text = TmpFile.Name
 			Me.TxtUpdateFile.Tag = TmpFile
 			
-			'Set The Type Of Update And Enable The Next Button
-			' Once A File Is Chosen.
+			'Set the type of update and enable the next button once a file is chosen.
 			If TmpFile.Extension.ToLower.Equals(".exe") Then
 				Me._UpdateType = LocalUpdateTypes.EXE
 			ElseIf TmpFile.Extension.ToLower.Equals(".msi") Then
@@ -269,7 +267,7 @@ Public Partial Class UpdateForm
 			End If
 			
 			
-		Else 'User Didn'T Select A File.
+		Else 'User didn't select a file.
 			Me.chkMetadataOnly.Enabled = False
 			Me.TxtUpdateFile.Text = ""
 			Me.TxtUpdateFile.Tag = Nothing
@@ -278,44 +276,44 @@ Public Partial Class UpdateForm
 		Me.ValidateChildren
 	End Sub
 	
-	'Show The Return Codes Dialog.
+	'Show the return codes dialog.
 	Sub LblReturnCodesClick(Sender As Object, E As EventArgs)
 		ReturnCodesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
 		ReturnCodesForm.ShowDialog(CType(_Sdp.InstallableItems.Item(0), CommandLineItem).ReturnCodes)
 	End Sub
 	
-	'Manage The List Of Updates That This Update Supersedes.
+	'Manage the list of updates that this update supersedes.
 	Sub LblSupersedesClick(Sender As Object, E As EventArgs)
 		SupersededUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
 		SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages, _Sdp.PackageId)
 	End Sub
 	
-	'Manage The List Of Updates That This Update Requires Before Installing.
+	'ManagetThe list of updates that this update requires before installing.
 	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)
 		PrerequisiteUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
 		PrerequisiteUpdatesForm.ShowDialog(_Sdp.Prerequisites, _Sdp.PackageId)
 	End Sub
 	
-	'Perform Action According To The Currently Selected Tab.
-	' Return A Boolean Depending Upon The Success Of The Action.
+	'Perform action according to the currently selected tab.
+	' Return a boolean depending upon the success of the action.
 	Function PerformAction As Boolean
 		
-		'Import The File And Set The Appropriate Fields If This Isn't A Revision.
+		'Import the file and set the appropriate fields if this isn't a revision.
 		Select Case TabsImportUpdate.SelectedTab.Name
 			Case "tabIntro"
-				'Don't Do Anything If This Is A Revision.
+				'Don't do anything if this is a revision.
 				If Not Me._Revision Then
-					'Create New Software Distribution Package.
+					'Create new Software Distribution Package.
 					_Sdp = New SoftwareDistributionPackage
 					
-					'Populate SDP From Installation File Based On Its Type.
+					'Populate SDP from installation file based on its type.
 					Try
 						Select Case _UpdateType
 							Case LocalUpdateTypes.MSI
 								
 								_Sdp.PopulatePackageFromWindowsInstaller(DirectCast(Me.TxtUpdateFile.Tag, FileInfo).FullName)
 								
-								'Create The Default IsInstallable And IsInstalled Rules For MSI Packages.
+								'Create the default IsInstallable and IsInstalled rules for MSI packages.
 								If _Sdp.InstallableItems.Count > 0
 									Dim TmpGuid As String = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerItem).WindowsInstallerProductCode.ToString
 									IsInstalledRules.Clear
@@ -333,12 +331,12 @@ Public Partial Class UpdateForm
 								'Set the package type to update.
 								_Sdp.PackageType  = PackageType.Update
 							Case LocalUpdateTypes.EXE
-								'Use A Wrapped MSI File If A Relative MSI Path Was Given.
+								'Use a Wrapped MSI file if a relative MSI path was given.
 								If String.IsNullOrEmpty(Me.TxtMSIPath.Text) Then
 									_Sdp.PopulatePackageFromExe(DirectCast(Me.TxtUpdateFile.Tag,FileInfo).FullName)
 									
-									'Clear The Default Installable Item Rules Created By The API.
-									'This Puts The User In Complete Control Of The EXE Logic.
+									'Clear the default Installable Item rules created by the API.
+									'This puts the user in complete control of the EXE logic.
 									If _Sdp.InstallableItems.Count > 0 Then
 										_Sdp.InstallableItems.Item(0).IsInstallableApplicabilityRule = Nothing
 										_Sdp.InstallableItems.Item(0).IsInstalledApplicabilityRule = Nothing
@@ -354,9 +352,9 @@ Public Partial Class UpdateForm
 								LblReturnCodes.Visible = True
 						End Select
 						
-						Call LoadSdpData 'Load The SDP Data Into The Form.
+						Call LoadSdpData 'Load the SDP data into the form.
 						
-						'If Any Of The Additional Files Are MST Files Then Setup The Transform Command Line Automatically.
+						'If any of the additional files are MST files then setup the transform in the command line automatically.
 						For Each TmpRow As DataGridViewRow In DgvAdditionalFiles.Rows
 							If TypeOf TmpRow.Cells("FileObject").Value Is FileInfo Then
 								
@@ -374,7 +372,7 @@ Public Partial Class UpdateForm
 						'Verify the URI to confirm the additional files logic.
 						Call VerifyOriginalURI()
 						
-						'Catch Any Exception Related To The Creation Of The SDP.
+						'Catch any exception related to the creation of the SDP.
 					Catch X As InvalidOperationException
 						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
 							"InvalidOperationException: " & X.Message)
@@ -394,18 +392,18 @@ Public Partial Class UpdateForm
 						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
 							"Win32Exception: " & X.Message)
 					End Try
-				End If 'If This Is A Revision.
+				End If 'If this is a revision.
 				
 			Case "tabPackageInfo"
 				Try
-					'Save The Info From The Form Into The SDP Object.
+					'Save the info from the form into the SDP object.
 					_Sdp.PackageType = DirectCast(Me.cboPackageType.SelectedIndex, PackageType)
 					_Sdp.Title = Me.TxtPackageTitle.Text
 					_Sdp.Description = Me.TxtDescription.Text
 					_Sdp.PackageUpdateClassification = DirectCast(Me.CboClassification.SelectedIndex, PackageUpdateClassification)
 					_Sdp.SecurityBulletinId = Me.TxtBulletinID.Text
 					
-					'Set The Security Rating Only If A Bulletin ID Has Been Entered.
+					'Set the security rating only if a Bulletin ID has been entered.
 					If Not String.IsNullOrEmpty(Me.TxtBulletinID.Text) Then
 						_Sdp.SecurityRating = DirectCast(Me.CboSeverity.SelectedIndex, SecurityRating)
 					Else
@@ -414,7 +412,7 @@ Public Partial Class UpdateForm
 					
 					_Sdp.VendorName = Me.CboVendor.Text
 					
-					'If A Product Name Exists Then Change It.  Otherwise Add A New One To The List.
+					'If a product name exists then change it.  Otherwise add a new one to the list.
 					If _Sdp.ProductNames.Count > 0 Then
 						_Sdp.ProductNames(0) = Me.CboProduct.Text
 					Else
@@ -431,23 +429,23 @@ Public Partial Class UpdateForm
 					
 					If Not String.IsNullOrEmpty(Me.TxtSupportURL.Text) Then _Sdp.SupportUrl = New Uri( Me.TxtSupportURL.Text)
 					
-					'If An Additional Info URL Exists Then Change It.  Otherwise Add A New One To The List.
+					'If an Additional Info URL exists then change it.  Otherwise add a new one to the list.
 					If _Sdp.AdditionalInformationUrls.Count > 0 And Not String.IsNullOrEmpty(Me.TxtMoreInfoURL.Text) Then
 						_Sdp.AdditionalInformationUrls.Item(0) = New Uri(Me.TxtMoreInfoURL.Text)
 					Else If Not String.IsNullOrEmpty(Me.TxtMoreInfoURL.Text)
 						_Sdp.AdditionalInformationUrls.Add(New Uri(Me.TxtMoreInfoURL.Text))
 					End If
 					
-					'If There Is An Installable Item, Save It'S Values As Well.
+					'If there is an Installable Item, save its values as well.
 					If _Sdp.InstallableItems.Count > 0 Then
 						
 						_Sdp.InstallableItems.Item(0).InstallBehavior.Impact = DirectCast(Me.CboImpact.SelectedIndex, InstallationImpact)
 						_Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior = DirectCast(Me.CboRebootBehavior.SelectedIndex, RebootBehavior)
 						
-						'If There Is A Command Line String Then Set It Based On The Update Type Otherwise Set It To Null.
-						'The Type Of The InstallableItems Objects Depends On The Type Of File We Populated
-						' The SDP With.  Therefore, We Need To Cast The InstallableItem Accordingly
-						' So That We Can Add The Command Line String Using The Right Property Name.
+						'If there is a command line string then set it based on the update type otherwise set it to null.
+						' The type of the Installable Items objects depends on the type of file we populated
+						' the SDP with.  Therefore, we need to cast the Installable Item accordingly
+						' so that we can add the command line string using the right property name.
 						Select Case _UpdateType
 							Case LocalUpdateTypes.EXE
 								If String.IsNullOrEmpty(Me.TxtCommandLine.Text) Then
@@ -530,7 +528,7 @@ Public Partial Class UpdateForm
 							_Sdp.InstallableItems(0).OriginalSourceFile = Nothing
 						End If
 						
-					End If 'There Is At Least One InstallableItme Object.
+					End If 'There is at least one Installable Item object.
 					
 				Catch X As UriFormatException
 					My.Forms.ProgressForm.Dispose
@@ -542,39 +540,39 @@ Public Partial Class UpdateForm
 					Return False
 				End Try
 			Case "tabIsInstalled"
-				'If There Are Rules Then Add Them To The IsInstallable Property.
+				'If there are rules then add them to the IsInstallable property.
 				If Not String.IsNullOrEmpty(IsInstalledRules.Rule) Then
 					_Sdp.IsInstalled = IsInstalledRules.Rule
 				Else
 					_Sdp.IsInstalled = Nothing
 				End If
 				
-				'If The User Had Edited The Installable Item Level XML Then Save Their Changes.
-				If IsInstalledRules.ApplicibilityRuleEdited Then
-					If Not String.IsNullOrEmpty(IsInstalledRules.ApplicibilityRule) Then
-						_Sdp.InstallableItems(0).IsInstalledApplicabilityRule = IsInstalledRules.ApplicibilityRule
+				'If the user has edited the Installable Item level XML then save their changes.
+				If IsInstalledRules.ApplicabilityRuleEdited Then
+					If Not String.IsNullOrEmpty(IsInstalledRules.ApplicabilityRule) Then
+						_Sdp.InstallableItems(0).IsInstalledApplicabilityRule = IsInstalledRules.ApplicabilityRule
 					Else
 						_Sdp.InstallableItems(0).IsInstalledApplicabilityRule = Nothing
 					End If
 				End If
 			Case "tabIsInstallable"
-				'If There Are Rules Then Add Them To The IsInstallable Property.
+				'If there are rules then add them to the IsInstallable property.
 				If Not String.IsNullOrEmpty(IsInstallableRules.Rule) Then
 					_Sdp.IsInstallable = IsInstallableRules.Rule
 				Else
 					_Sdp.IsInstallable = Nothing
 				End If
 				
-				'If The User Had Edited The Installable Item Level XML Then Save Their Changes.
-				If IsInstallableRules.ApplicibilityRuleEdited Then
-					If Not String.IsNullOrEmpty(IsInstallableRules.ApplicibilityRule) Then
-						_Sdp.InstallableItems(0).IsInstallableApplicabilityRule = IsInstallableRules.ApplicibilityRule
+				'If the user has edited the Installable Item level XML then save their changes.
+				If IsInstallableRules.ApplicabilityRuleEdited Then
+					If Not String.IsNullOrEmpty(IsInstallableRules.ApplicabilityRule) Then
+						_Sdp.InstallableItems(0).IsInstallableApplicabilityRule = IsInstallableRules.ApplicabilityRule
 					Else
 						_Sdp.InstallableItems(0).IsInstallableApplicabilityRule = Nothing
 					End If
 				End If
 			Case "tabIsSuperseded"
-				'If The User Had Edited The Installable Item Level XML Then Save Their Changes.
+				'If the user has edited the Installable Item level XML then save their changes.
 				If Not TxtIsSuperceded_InstallableItem.ReadOnly Then
 					If Not String.IsNullOrEmpty(TxtIsSuperceded_InstallableItem.Text) Then
 						_Sdp.InstallableItems(0).IsSupersededApplicabilityRule = TxtIsSuperceded_InstallableItem.Text
@@ -583,7 +581,7 @@ Public Partial Class UpdateForm
 					End If
 				End If
 			Case "tabMetaData"
-				'If The User Had Edited The Metadata Then Save Their Changes.
+				'If the user has edited the metadata then save their changes.
 				If Not TxtInstallableItemMetaData.ReadOnly Then
 					If Not String.IsNullOrEmpty(TxtInstallableItemMetaData.Text) Then
 						_Sdp.InstallableItems(0).ApplicabilityMetadata = TxtInstallableItemMetaData.Text
@@ -592,7 +590,7 @@ Public Partial Class UpdateForm
 					End If
 				End If
 				
-				'Save The SdpFile And Then Load It Into The Summary Field.
+				'Save the SDP file and then load it into the summary field.
 				Try
 					_SdpFilePath = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), _Sdp.PackageId.ToString() & ".Xml")
 					_Sdp.Save(_SdpFilePath)
@@ -610,26 +608,25 @@ Public Partial Class UpdateForm
 				End Try
 				
 				
-			Case "tabSummary" 'Publish The Package.
-				'Try Publishing The Update And Catch Any Errors.
+			Case "tabSummary" 'Publish the package and catch any errors.
 				
 				
-				'If The User Wants To Export The SDP Then Prompt For A Filename.
+				'If the user wants to export the SDP then prompt for a filename.
 				If ChkExportSdp.Checked Then
-					'Set Default Extention.
+					'Set default extension.
 					DlgExportSdp.Filter = "XML Files|*.XML"
 					DlgExportSdp.DefaultExt = ".XML"
 					DlgExportSdp.AddExtension = True
 					DlgExportSdp.FileName = _Sdp.Title & ".Xml"
 					
-					'Show Dialog And Copy The File.
+					'Show dialog and copy the file.
 					If DlgExportSdp.ShowDialog = VbOK Then
 						Msgbox ( _SdpFilePath )
 						My.Computer.FileSystem.CopyFile( _SdpFilePath, DlgExportSdp.FileName, True)
 					End If
 				End If
 				
-				If _Revision Then 'This Is A Revision.
+				If _Revision Then 'This is a revision.
 					Me.Cursor = Cursors.WaitCursor
 					
 					If ConnectionManager.RevisePackage(_Sdp, Me) Then
@@ -642,20 +639,20 @@ Public Partial Class UpdateForm
 					
 					Return True
 					
-				Else 'This Is A New Update.
+				Else 'This is a new update.
 					
-					'Add The Files To A New IList.
+					'Add the files to a new iList.
 					Dim FileList As IList(Of Object) = New List(Of Object)
-					FileList.Add(TxtUpdateFile.Tag) ' Add Main Update File.
+					FileList.Add(TxtUpdateFile.Tag) ' Add main update file.
 					
-					'Add Additional Files And Directories.
+					'Add additional files and directories.
 					For Each TmpRow As DataGridViewRow In DgvAdditionalFiles.Rows
 						FileList.Add(TmpRow.Cells("FileObject").Value)
 					Next
 					
 					Me.Cursor = Cursors.WaitCursor
 					
-					'Publish Package According The Meta Data Only Checkbox.
+					'Publish package according to the metadata only checkbox.
 					Dim Result As Boolean = False
 					If chkMetadataOnly.Checked Then
 						Result = ConnectionManager.PublishPackageMetaData(_Sdp, Me)
@@ -674,21 +671,21 @@ Public Partial Class UpdateForm
 					Me.DialogResult = DialogResult.OK
 					Return True
 				End If
-				Return False 'If We Got This Far We Failed.
+				Return False 'If we got this far we failed.
 		End Select
 		
-		Return True 'If We Got This Far We Succeeded.
+		Return True 'If we got this far we succeeded.
 	End Function 'PerformAction
 	
 	
-	'This Rouding Loads The SDP Passed Into The Form And
-	' Loads The Form With The Appropriate Data.  This Is The First
-	' Step In Revising And Existing Update.
+	'This routine loads the SDP passed into the form and
+	' loads the form with the appropriate data.  This is the first
+	' step in revising an existing update.
 	Sub LoadSdpData
 		
-		If Not _Sdp Is Nothing Then 'Make Sure The Sdp Object Is Instantiated.
+		If Not _Sdp Is Nothing Then 'Make sure the SDP object is instantiated.
 			
-			'Load The Basic Info Into The Form.
+			'Load the basic info into the form.
 			Me.cboPackageType.SelectedIndex = DirectCast(_Sdp.PackageType, Integer)
 			If Not String.IsNullOrEmpty(_Sdp.Title) Then Me.TxtPackageTitle.Text = _Sdp.Title
 			If Not String.IsNullOrEmpty(_Sdp.Description) Then Me.TxtDescription.Text = _Sdp.Description
@@ -701,11 +698,9 @@ Public Partial Class UpdateForm
 			If _Sdp.CommonVulnerabilitiesIds.Count > 0 Then Me.TxtCVEID.Text = _Sdp.CommonVulnerabilitiesIds.Item(0)
 			If Not _Sdp.SupportUrl Is Nothing Then Me.TxtSupportURL.Text = _Sdp.SupportUrl.ToString
 			If _Sdp.AdditionalInformationUrls.Count > 0 Then Me.TxtMoreInfoURL.Text = _Sdp.AdditionalInformationUrls.Item(0).ToString
-			
-			
-			
-			'Load The Installable Item Info
-			If _Sdp.InstallableItems.Count > 0 Then 'There'S An Installable Item.
+									
+			'Load the Installable Item info
+			If _Sdp.InstallableItems.Count > 0 Then 'There is an Installable Item.
 				
 				If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
 					Me.TxtUninstall.Text = "False"
@@ -719,7 +714,7 @@ Public Partial Class UpdateForm
 				Me.CboRebootBehavior.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior
 				Me.txtNetwork.Text = _Sdp.InstallableItems.Item(0).InstallBehavior.RequiresNetworkConnectivity.ToString
 				
-				'Set The Command Line Based On The Update Type.
+				'Set the command line based on the update type.
 				Select Case _UpdateType
 					Case LocalUpdateTypes.EXE
 						Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), CommandLineItem).Arguments
@@ -729,9 +724,9 @@ Public Partial Class UpdateForm
 						Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerPatchItem).InstallCommandLine
 				End Select
 				
-				'Load The Installable Item Level Applicability Rules.
-				Me.IsInstalledRules.ApplicibilityRule = _Sdp.InstallableItems(0).IsInstalledApplicabilityRule
-				Me.IsInstallableRules.ApplicibilityRule = _Sdp.InstallableItems(0).IsInstallableApplicabilityRule
+				'Load the Installable Item level applicability rules.
+				Me.IsInstalledRules.ApplicabilityRule = _Sdp.InstallableItems(0).IsInstalledApplicabilityRule
+				Me.IsInstallableRules.ApplicabilityRule = _Sdp.InstallableItems(0).IsInstallableApplicabilityRule
 				Me.TxtIsSuperceded_InstallableItem.Text = _Sdp.InstallableItems(0).IsSupersededApplicabilityRule
 				Me.TxtInstallableItemMetaData.Text = _Sdp.InstallableItems(0).ApplicabilityMetadata
 				
@@ -741,62 +736,62 @@ Public Partial Class UpdateForm
 					Me.txtOriginalURI.Text = _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri.ToString
 				End If
 				
-			End If 'There Is A Installable Item.
+			End If 'There is a Installable Item.
 			
-			'Note: In Previous Versions Of LUP We Didn'T Check To See If The IsInstalled Or
-			' IsInstallable Members Were Empty And The SDP Was Set With These Members Instantiated
-			' To An Empty String.  If We Detect These When Loading Then Set The Member To Nothing.
+			'Note: In previous versions of LUP we didn't check to see if the IsInstalled or
+			' IsInstallable members were empty and the SDP was set with these members instantiated
+			' to an empty string.  If we detect these when loading then set the member to nothing.
 			
-			'Load The Package'S IsInstalled Rules.
+			'Load the package's IsInstalled rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstalled) Then
 				IsInstalledRules.Rule = _Sdp.IsInstalled
 			Else
 				_Sdp.IsInstalled = Nothing
 			End If
 			
-			'Load The Package'S IsInstallable Rules.
+			'Load the package's IsInstallable rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstallable) Then
 				IsInstallableRules.Rule = _Sdp.IsInstallable
 			Else
 				_Sdp.IsInstallable = Nothing
 			End If
 			
-		End If 'SDP Is Not Instantiated.
+		End If 'SDP is not instantiated.
 	End Sub 'LoadSDPData.
 	
-	'This Function Formats The SDP'S XML Into Something More
-	' Readable By Indenting The Lines Appropriately.
-	' It Is Directly Based Off Les Smith'S Example Found Here:
-	' Http://Www.Knowdotnet.Com/Articles/Indentxml.Html
+	'This function formats the SDP XML into something more
+	' readable by indenting the lines appropriately.
+	' It's directly based off of Les Smith's example found here:
+	' http://www.knowdotnet.com/articles/indentxml.html
 	<System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions")> _
 		Shared Function IndentXmlString(Xml As String) As String
 		
 		Dim Ms As MemoryStream = New MemoryStream()
-		' Create A XMLTextWriter That Will Send Its Output To A Memory Stream (File).
+		' Create a XML text writer that will send its output to a memory stream (file).
 		Dim Xtw As XmlTextWriter = New XmlTextWriter(Ms, Encoding.Unicode)
 		Dim Doc As XmlDocument = New XmlDocument()
 		
 		Try
 			
-			' Load The Unformatted XML Text String Into An Instance
-			' Of The XML Document Object Model (DOM).
+			' Load the unformatted XML text string into an instance
+			' of the XML document object model (DOM).
 			Doc.LoadXml(Xml)
 			
-			' Set The Formatting Property Of The XML Text Writer To Indented
-			' The Text Writer Is Where The Indenting Will Be Performed.
+			' Set the formatting property of the XML text writer to indented.
+			' The text writer is where the indenting will be performed.
 			Xtw.Formatting = Formatting.Indented
 			
-			' Write Dom Xml To The Xmltextwriter.
+			' Write DOM XML to the XML text writer.
 			Doc.WriteContentTo(Xtw)
-			' Flush The Contents Of The Text Writer
-			' To The Memory Stream, Which Is Simply A Memory File.
+			
+			' Flush the contents of the text writer to the memory stream (file).
 			Xtw.Flush()
 			
-			' Set To Start Of The Memory Stream (File).
+			' Set to start of the memory stream (file).
 			Ms.Seek(0, SeekOrigin.Begin)
-			' Create A Reader To Read The Content Of The Memory Stream (File).
+			' Create a reader to read the content of the memory stream (file).
 			Dim Sr  As StreamReader = New StreamReader(Ms)
-			' Return The Formatted String To Caller.
+			' Return the sormatted string to caller.
 			Return Sr.ReadToEnd()
 			
 		Catch X As OutOfMemoryException
@@ -814,7 +809,7 @@ Public Partial Class UpdateForm
 		Catch X As XMLException
 			MessageBox.Show("XML Exception: " & VbNewline & X.Message)
 		End Try
-		Return String.Empty 'If We Got Here There Was An Exception.
+		Return String.Empty 'If we got here there was an exception.
 	End Function
 	
 	'Prompt the user for files and add them to the collection.
@@ -826,7 +821,7 @@ Public Partial Class UpdateForm
 		Me.dlgUpdateFile.Filter = ""
 		Me.dlgUpdateFile.Multiselect = True
 		
-		'Show Dialog And Load The File Into The DGV If The User Chose A File.
+		'Show dialog and load the file into the DGV if the user chose a file.
 		If Me.DlgUpdateFile.ShowDialog(Me) = VbOK Then
 			
 			'Loop through the selected files and add them.
@@ -847,7 +842,7 @@ Public Partial Class UpdateForm
 		End If
 	End Sub
 	
-	'Remove The File From The Files DGV.
+	'Remove the file from the files DGV.
 	Private Sub DgvAdditionalFilesCellContentClick(Sender As Object, E As DataGridViewCellEventArgs)
 		If Me.DgvAdditionalFiles.Columns(E.ColumnIndex).Name = "RemoveFile" Then
 			Me.DgvAdditionalFiles.Rows.RemoveAt(E.RowIndex)
@@ -873,7 +868,7 @@ Public Partial Class UpdateForm
 			Me.btnAddDir.Enabled = False
 			Me.dgvAdditionalFiles.Enabled = False
 			
-			'Add the filename to the OriginalURI textbox and set the error handdler.
+			'Add the filename to the OriginalURI textbox and set the error handler.
 			If String.IsNullOrEmpty( Me.txtOriginalURI.Text ) Then
 				Me.txtOriginalURI.Text = DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name
 				'Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Is Given")
@@ -906,7 +901,7 @@ Public Partial Class UpdateForm
 	
 	'Handle alpha-numeric keypresses
 	Sub TxtOriginalURIKeyPress(sender As Object, e As KeyPressEventArgs)
-		'If we're revising the update then any chnage to the URI will result in downloading it for verification.
+		'If we're revising the update then any change to the URI will result in downloading it for verification.
 		If e.KeyChar = ChrW(1) Then
 			Me.txtOriginalURI.SelectAll
 		Else If Me._Revision AndAlso Not Me._OriginalURIChanged AndAlso Not e.KeyChar = ChrW(3)  Then
@@ -993,12 +988,12 @@ Public Partial Class UpdateForm
 		End If
 	End Sub
 	
-	'A Generic Validated Routine That Sets The Sender Control's As Validated
+	'A generic validated routine that clears the validation errors.
 	Sub ControlValidated(Sender As Object, E As EventArgs)
 		Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control),"")
 	End Sub
 	
-	'A Generic Validating Routine That Verify The Sender Control's Have Something Entered.
+	'A generic validating routine that verifies the sender control isn't empty.
 	Sub ControlValidating(Sender As Object, E As CancelEventArgs)
 		Try
 			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox
@@ -1009,29 +1004,29 @@ Public Partial Class UpdateForm
 				End If
 			End If
 			
-			Call ValidateTabControl() 'Validate The Current Tab.
+			Call ValidateTabControl() 'Validate the current tab.
 		Catch Ex As Exception
 			MsgBox(Ex.Message)
 		End Try
 	End Sub
 	
-	'Validate The Current Tab And Enable Or Disable The Next Buttons Accordingly.
+	'Validate the current tab and enable or disable the next buttons accordingly.
 	Sub ValidateTabControl()
 		Try
 			
 			Dim Invalid As Boolean = False
 			
 			Select Case tabsImportUpdate.SelectedTab.Name
-					'Verify A File Has Been Given.
+					'Verify a file has been selected.
 				Case "tabIntro"
 					If Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtUpdateFile)) Then
 						Invalid = True
 					End If
 					
-					'Verify That A Vendor And Product Name Have Been Given.
+					'Verify that a vendor and product name have been given.
 				Case "tabPackageInfo"
 					
-					'Verify That No Errors Are Shown.
+					'Verify that no errors are shown.
 					If Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.TxtPackageTitle)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.TxtDescription)) OrElse _
 						Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.CboClassification)) OrElse _
@@ -1052,7 +1047,7 @@ Public Partial Class UpdateForm
 				Case "tabSummary"
 			End Select
 			
-			'If A Problem Was Found Then Exit Then Disable The Next Button.
+			'If a problem was found then exit and disable the next button.
 			If Invalid Then
 				Me.BtnNext.Enabled = False
 			Else
@@ -1064,7 +1059,7 @@ Public Partial Class UpdateForm
 		End Try
 	End Sub
 	
-	'Enable And Validate The Severity Combo Only If Something Is Entered For The Bulletin Field.
+	'Enable and validate the severity combo only if something is entered for the bulletin ID.
 	Sub TxtBulletinIDValidating(Sender As Object, E As CancelEventArgs)
 		If TxtBulletinID.Text.Length = 0 Then
 			Me.CboSeverity.Enabled = False
@@ -1074,7 +1069,7 @@ Public Partial Class UpdateForm
 		End If
 	End Sub
 	
-	'Validate The Form Based On Combobox Actions.
+	'Validate the form based on combobox actions.
 	Sub ValidateCombo(Sender As Object, E As EventArgs)
 		Try
 			If TypeOf Sender Is ComboBox Then

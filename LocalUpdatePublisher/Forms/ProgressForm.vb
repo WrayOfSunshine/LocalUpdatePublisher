@@ -3,7 +3,7 @@
 '
 'ProgressForm
 'This is as simple form used to show the progress of
-' a given task.  The Show method is overidden to take
+' a given task.  The Show method is overridden to take
 ' a string and set that to the descriptive text.  The
 ' progress bar is a public control so that the caller
 ' can have direct access to updating it.

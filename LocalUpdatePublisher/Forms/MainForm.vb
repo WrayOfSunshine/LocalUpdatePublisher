@@ -320,7 +320,7 @@ Public Partial Class MainForm
 		
 		Call ClearForm
 		
-		'Add the the base nodes.
+		'Add to the base nodes.
 		_rootNode = Me.treeView.Nodes.Add("root", "Update Services")
 		
 		'Load tree with server nodes.
@@ -854,7 +854,7 @@ Public Partial Class MainForm
 			
 			Call LoadUpdateNodes
 			
-			'If at some point the tmpUpdate object was instantiated then try to reload it's vendor and product.
+			'If at some point the tmpUpdate object was instantiated then try to reload its vendor and product.
 			If Not tmpUpdate Is Nothing Then
 				Call SelectNode(Me._updateNode, Path.Combine ( tmpUpdate.CompanyTitles(0) , tmpUpdate.ProductTitles(0)))
 				
@@ -1102,8 +1102,8 @@ Public Partial Class MainForm
 	End Sub
 	
 	'This method responds to a node being selected.  We base our action off of the node type.
-	' First, if the tag isn't intantiatiated then do nothing.  If the tag is instantiated
-	' then find it's type and act accordingly.
+	' First, if the tag isn't instantiated then do nothing.  If the tag is instantiated
+	' then find its type and act accordingly.
 	Private Sub TreeViewAfterSelect(sender As Object, e As TreeViewEventArgs)
 		Cursor = Cursors.WaitCursor
 		
@@ -1145,7 +1145,7 @@ Public Partial Class MainForm
 		
 		Call ClearForm(False)
 		
-		'If this is a a parent node then clear
+		'If this is a parent node then clear
 		' everything but the current server node.
 		If Not DirectCast(e.Node.Tag, UpdateServer).ChildServer Then
 			For Each node As TreeNode In _rootNode.Nodes
@@ -1180,7 +1180,7 @@ Public Partial Class MainForm
 				'If the category is the locally published category.
 				If category.Title = "Local Publisher" Then
 					
-					'Add the updateNode and set it's tag.
+					'Add the updateNode and set its tag.
 					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, "Updates")
 				End If
 				
@@ -1316,7 +1316,7 @@ Public Partial Class MainForm
 			'Add the computer group to the combo.
 			Me.cboTargetGroup.Items.Add(New ComboTargetGroups(DirectCast(node.Tag, IComputerTargetGroup) ,node.Level - ComputerNode.Level - 2))
 			
-			'Add it's child groups
+			'Add its child groups.
 			For Each childNode As TreeNode In Node.Nodes
 				LoadComputerCombo ( childNode )
 			Next
@@ -1342,7 +1342,7 @@ Public Partial Class MainForm
 					If category.Title <> "Local Publisher" And _
 						category.Title <> "Microsoft" Then
 						
-						'Add the node and add it's category.
+						'Add the node and add its category.
 						Dim tmpNode As TreeNode = _updateNode.Nodes.Add( category.Title )
 						tmpNode.Tag = category
 						
@@ -1359,7 +1359,7 @@ Public Partial Class MainForm
 								
 								'Note: this code works to hide empty categories but it is resource
 								' intensive to load the updates for every category before adding it.
-								'If the category is empty hide it, and it's parent.
+								'If the category is empty hide it, and its parent.
 								'If subCategory.GetUpdates().Count > 0 Then
 								
 								'Add the node.
@@ -1381,7 +1381,7 @@ Public Partial Class MainForm
 							'Add the products to the vendor object.
 							tmpVendor.Products = tmpProductCollection
 							
-							'Add the vendor the the vendor collection.
+							'Add the vendor to the vendor collection.
 							Me._vendorCollection.Add(tmpVendor)
 							
 						End If
@@ -1444,7 +1444,7 @@ Public Partial Class MainForm
 		Savedgvstate ( treeView.SelectedNode)
 	End Sub
 	
-	'If the user uses the upd or down keys then load the new row.
+	'If the user uses the up or down keys then load the new row.
 	Sub dgvMainKeyUp(sender As Object, e As KeyEventArgs)
 		If Not _noEvents AndAlso Not _dgvMain.CurrentRow Is Nothing AndAlso _dgvMain.CurrentRow.Index >= 0 AndAlso _
 			(e.KeyCode = 40 OrElse _
@@ -1735,7 +1735,7 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-	'Call RefreshUpdateList with defauls.
+	'Call RefreshUpdateList with defaults.
 	Sub RefreshUpdateList()
 		Call RefreshUpdateList(False)
 	End Sub
@@ -1758,7 +1758,7 @@ Public Partial Class MainForm
 		If Me.treeView.SelectedNode Is Nothing OrElse _
 			Me.treeView.SelectedNode.Tag Is Nothing Then
 			_dgvMain.DataSource = Nothing 'Clear the main DGV.
-			'Clear the udpate data by calling the loads with an index equal to the number of rows.
+			'Clear the update data by calling the loads with an index equal to the number of rows.
 			Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
 			Call LoadUpdateStatus( Me._dgvMain.Rows.Count)
 			
@@ -1812,7 +1812,7 @@ Public Partial Class MainForm
 						_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("Title")
 					End If
 					
-					'Load the currently selected udpate's data.
+					'Load the currently selected update's data.
 					If Not Me._dgvMain.CurrentRow Is Nothing Then
 						Call LoadUpdateInfo( Me._dgvMain.CurrentRow.Index)
 						Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
@@ -1874,7 +1874,7 @@ Public Partial Class MainForm
 			'Update node.
 		ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
 			
-			'Load the currently selected udpate's data.
+			'Load the currently selected update's data.
 			Call LoadUpdateInfo( rowIndex )
 			Call LoadUpdateStatus( rowIndex )
 			
@@ -1898,7 +1898,7 @@ Public Partial Class MainForm
 		
 		Call ClearUpdateInfo
 		
-		'		'Exit if the index passed in is not withing range.
+		'		'Exit if the index passed in is not within range.
 		'		If Me._dgvMain.Rows.Count <= rowIndex Then Exit Sub
 		
 		
@@ -2112,7 +2112,7 @@ Public Partial Class MainForm
 				exportReportToolStripMenuItem.Enabled = False
 			End If 'Rows returned.
 			
-		End If 'Nothing selected in cboUdpateStatus.
+		End If 'Nothing selected in cboUpdateStatus.
 		
 		_noEvents = False
 		Me.Cursor = Cursors.Arrow 'Set arrow cursor

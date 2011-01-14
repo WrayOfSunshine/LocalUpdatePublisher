@@ -3,7 +3,7 @@
 '
 ' Program
 ' This module is the beginning of the program.  It loads the settings
-' from the settings file.  It prompt the user for connection info if
+' from the settings file.  It prompts the user for connection info if
 ' none was found.  Lastly, it loads the main form.
 '
 ' Created by SharpDevelop.
@@ -20,7 +20,7 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.UpdateServices.Administration
 
 Namespace My
-	' This file controls the behaviour of the application.
+	' This file controls the behavior of the application.
 	Partial Class MyApplication
 		
 		Public Sub New()
@@ -85,7 +85,7 @@ Namespace My
 								End If
 							Next
 							
-							'If we've found a child server then exit the parent server loop as well.
+							'If a child server was found then exit the parent server loop as well.
 							If foundServer Then Exit For
 						Next
 					End If 'Not connected.
@@ -114,7 +114,7 @@ Namespace My
 									status = My.Application.CommandLineArgs(4)
 								End If
 								
-								'Find the group based on it's name.
+								'Find the group based on its name.
 								Dim foundGroup As IComputerTargetGroup = Nothing
 								Dim tmpGroupCollection As ComputerTargetGroupCollection = ConnectionManager.ParentServer.GetComputerTargetGroups
 								For Each tmpGroup As IComputerTargetGroup In tmpGroupCollection
@@ -150,7 +150,7 @@ Namespace My
 										status = My.Application.CommandLineArgs(4)
 									End If
 									
-									'Find the computer based on it's name.
+									'Find the computer based on its name.
 									Dim foundComputer As String = Nothing
 									Dim tmpComputerCollection As ComputerTargetCollection = ConnectionManager.ParentServer.SearchComputerTargets(computerName)
 									For Each tmpComputer As IComputerTarget In tmpComputerCollection
@@ -159,7 +159,7 @@ Namespace My
 										End If
 									Next
 									
-									'If the computer wasn't found, error out.
+									'If the computer wasn't found then error out.
 									If foundComputer Is Nothing Then
 										LogError("Could not find " & computerName & " computer target.")
 									Else 'computer was found.
@@ -172,7 +172,7 @@ Namespace My
 										End If
 									End If
 								Else
-									'Not the right number of arguments
+									'Not the right number of arguments.
 								End If
 							Case "-ur"
 								'We need at least 4 arguments for this report.
@@ -183,7 +183,7 @@ Namespace My
 									Dim groupName As String = ""
 									Dim status As String = ""
 									
-									'If a group name was passed, set it here.
+									'If a group name was passed then set it here.
 									'Otherwise, default to the All Computers group.
 									If My.Application.CommandLineArgs.Count >= 5 AndAlso _
 										Not String.IsNullOrEmpty(My.Application.CommandLineArgs(4)) Then
@@ -192,7 +192,7 @@ Namespace My
 										groupName = "All Computers"
 									End If
 									
-									'If a status was passed, set it here.
+									'If a status was passedthen set it here.
 									If My.Application.CommandLineArgs.Count >= 6 Then
 										status = My.Application.CommandLineArgs(5)
 									End If
@@ -215,12 +215,12 @@ Namespace My
 										End If
 									Next
 									
-									'If the computer wasn't found, error out.
+									'If the computer wasn't found then error out.
 									If foundUpdate Is Nothing Then
 										LogError("Could not find " & updateName & " update.")
 									Else If foundGroup Is Nothing Then
 										LogError("Could not find " & groupName & " group.")
-									Else 'computer and group were found.
+									Else 'Computer and group were found.
 										
 										'Export the data, using the status if one was passed in.
 										If status Is Nothing Then
@@ -230,7 +230,7 @@ Namespace My
 										End If
 									End If
 								Else
-									'Not the right number of arguments
+									'Not the right number of arguments.
 								End If
 							Case else
 								Msgbox ("Unknown Command")
@@ -258,7 +258,7 @@ Namespace My
 				'Ignore errors
 			End Try
 			
-			'If it's not found try to created it, otherwise use it.
+			'Use it if found or try to create it.
 			If Not sourceFound Then
 				
 				'Try to create the source.  If this fails, use the generic source.

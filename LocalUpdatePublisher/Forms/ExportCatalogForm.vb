@@ -81,7 +81,7 @@ Public Partial Class ExportCatalogForm
 		For Each tmpRow As DataGridViewRow In dgvUpdates.Rows
 			packageFile = DirectCast(tmpRow.Cells("File").Value, String)
 			
-			'If the row is selected and there is an SDP object for it's tag.
+			'If the row is selected and there is an SDP object for its tag.
 			If DirectCast(tmpRow.Cells("Include").Value, Boolean) AndAlso _
 				Not packageFile Is Nothing AndAlso _
 				My.Computer.FileSystem.FileExists(packageFile) Then
@@ -143,7 +143,7 @@ Public Partial Class ExportCatalogForm
 		End If
 	End Sub
 	
-	'Add all of the udpates
+	'Add all of the updates
 	Sub BtnAddAllClick(sender As Object, e As EventArgs)
 		Dim  errorBool As Boolean = False
 		

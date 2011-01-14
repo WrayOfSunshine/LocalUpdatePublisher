@@ -1,7 +1,7 @@
 ﻿' Copyright (c) <2010> <Bryan R. Dam>
 ' Released under the MIT license as found in LICENSE.txt
 '
-' Rule Collection Clas
+' Rule Collection Class
 ' A simple collection class to hold a collection of rule objects.
 '
 ' Created by SharpDevelop.

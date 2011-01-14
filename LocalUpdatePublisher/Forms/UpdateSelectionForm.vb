@@ -55,7 +55,7 @@ Public Partial Class UpdateSelectionForm
 	'Update the DGV to list the correct updates.
 	Sub CboVendorSelectedIndexChanged(sender As Object, e As EventArgs)
 		
-		'If the user choses a custom GUID then prompt for that GUID
+		'If the user chooses a custom GUID then prompt for that GUID
 		' and loop until they enter one or cancel.  If the custom
 		' GUID is taken exit the dialog when finished.
 		If cboVendor.Text = CUSTOMGUID Then
@@ -85,7 +85,7 @@ Public Partial Class UpdateSelectionForm
 				Me.DialogResult = DialogResult.OK
 			End If
 		Else If Not cboVendor.SelectedIndex = -1
-			'Load the list of udpates for this vendor.
+			'Load the list of updates for this vendor.
 			dgvUpdates.DataSource = GetUpdateList( DirectCast(cboVendor.SelectedItem, ComboVendors).Value, _currentUpdate )
 			
 			'Now hide the rows we don't want.

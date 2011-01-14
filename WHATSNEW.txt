@@ -1,3 +1,6 @@
+Version 1.0
+-Several bugfixes.
+
 BETA Version 0.9
 - Added options for percentages to only use approved updates and to inherit approvals.
 - Added option to demote imported updates to prevent automatically approval rules.

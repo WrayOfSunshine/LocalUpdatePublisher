@@ -63,7 +63,7 @@ Imports System.Runtime.InteropServices
 		
 		''' <summary>
 		''' Allows the consumer to retrieve this string instance as a character array. NOte that this is still
-		''' visible plainly in memory and should be 'consumed' as wuickly as possible, then the contents
+		''' visible plainly in memory and should be 'consumed' as quickly as possible, then the contents
 		''' 'zero-ed' so that they cannot be viewed.
 		''' </summary>
 		<System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", _
@@ -153,7 +153,7 @@ Imports System.Runtime.InteropServices
 								Next
 							End If
 							_displayChar = False
-							' If we dont do this, we get a 'double' BACK keystroke effect
+							' If we don't do this, we get a 'double' BACK keystroke effect
 							Exit Select
 					End Select
 				End If

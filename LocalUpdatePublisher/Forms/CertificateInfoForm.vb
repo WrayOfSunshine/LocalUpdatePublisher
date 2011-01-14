@@ -24,7 +24,7 @@ Public Partial Class CertificateInfoForm
 		Call LoadCertInfo
 	End Sub
 	
-	'Create a certificate if on doesn't exist.
+	'Create a certificate if one doesn't exist.
 	Private Sub BtnCreateCertClick(sender As Object, e As EventArgs)
 		If ConnectionManager.CurrentServerCertificate Is Nothing Then
 			ConnectionManager.CreateCert(Nothing, Nothing)
@@ -68,7 +68,7 @@ Public Partial Class CertificateInfoForm
 	End Sub
 	
 	'Load WSUS certificate info into the form.  Show and hide the
-	' create and export buttons depending upon the existance of a certificate.
+	' create and export buttons depending upon the existence of a certificate.
 	Sub LoadCertInfo()
 		If ConnectionManager.CurrentServerCertificate Is Nothing Then
 			Me.btnCreateCert.Show

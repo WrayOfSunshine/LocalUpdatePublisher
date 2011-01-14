@@ -4,7 +4,7 @@
 'UpdateServerCollection
 ' This class is used to create a collection
 ' of UpdateServer objects.  We use this to then
-' serealize the list of WSUS servers to the settings file.
+' serialize the list of WSUS servers to the settings file.
 '
 ' Created by SharpDevelop.
 ' User: Bryan Dam

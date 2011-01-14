@@ -171,7 +171,7 @@ Public Module Data_Routines
 		End If
 	End Function
 	
-	'Get coputer report with defaults.
+	'Get computer report with defaults.
 	Function GetComputerReport (computerID As String) As DataTable
 		Return GetComputerReport (computerID, Nothing)
 	End Function
@@ -189,7 +189,7 @@ Public Module Data_Routines
 		dt.Columns.Add("UpdateInstallationState", System.Type.GetType("System.String"))
 		dt.Columns.Add("UpdateApprovalAction", System.Type.GetType("System.String"))
 		
-		'Create row for each update instalation info and add it to the data table.
+		'Create row for each update installation info and add it to the data table.
 		For Each tmpUpdate As IUpdateInstallationInfo  In ConnectionManager.CurrentServer.GetComputerTarget( _
 			computerID).GetUpdateInstallationInfoPerUpdate(localUpdatesScope)
 			
@@ -368,7 +368,7 @@ Public Module Data_Routines
 		dt.Columns.Add("UpdateInstallationState", System.Type.GetType("System.String"))
 		dt.Columns.Add("UpdateApprovalAction", System.Type.GetType("System.String"))
 		
-		'Create row for each update instalation info and add it to the data table.
+		'Create row for each update installation info and add it to the data table.
 		For Each tmpUpdate As IUpdateInstallationInfo In update.GetUpdateInstallationInfoPerComputerTarget(computers)
 			
 			'We filter the report by skipping rows based on the update status

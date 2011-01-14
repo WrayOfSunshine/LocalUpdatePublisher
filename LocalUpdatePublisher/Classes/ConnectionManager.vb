@@ -112,7 +112,7 @@ Friend NotInheritable Class ConnectionManager
 			My.Forms.MainForm.Update
 			
 			
-			'Try to retreive cert info from server.
+			'Try to retrieve cert info from server.
 			'If there is no cert info, prompt the user to create it.
 			If Not ConnectionManager.LoadCert Then
 				If server.ChildServer AndAlso Not currentserverconfiguration.IsReplicaServer
@@ -293,7 +293,7 @@ Friend NotInheritable Class ConnectionManager
 				End If
 			Catch x As WsusInvalidDataException
 				
-				'Handle the Objectious exceptions that could occur.
+				'Handle the exceptions that could occur.
 				MessageBox.Show("WsusInvalidDataException: There was an error saving the certificate to the WSUS server." & Environment.NewLine & x.Message)
 			Catch x As InvalidOperationException
 				MessageBox.Show("InvalidOperationException: There was an error saving the certificate to the WSUS server." & Environment.NewLine & x.Message)
@@ -462,7 +462,7 @@ Friend NotInheritable Class ConnectionManager
 			Dim extractPath As New DirectoryInfo(Path.Combine(Path.GetTempPath, Path.GetRandomFileName))
 			tmpExtract.ExtractFile(cabFile.FullName, extractPath.ToString)
 			
-			'Loop through the temp folderand find the XML and CAB files.
+			'Loop through the temp folder and find the XML and CAB files.
 			For Each tmpFile As FileInfo In extractPath.GetFiles
 				If tmpFile.Extension = ".xml" Then
 					sdpFile = tmpFile

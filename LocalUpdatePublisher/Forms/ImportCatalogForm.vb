@@ -44,7 +44,7 @@ Public Partial Class ImportCatalogForm
 				tmpExtract.ExtractFile(importFile, _extractPath)
 				importFile = Nothing 'Clear the import file
 				
-				'Loop through the temp folderand find the XML file.
+				'Loop through the temp folder and find the XML file.
 				For Each tmpFile As String In Directory.GetFiles(_extractPath)
 					If Strings.Right(tmpFile, 3).ToLower = "xml" Then
 						importFile = tmpFile
@@ -91,7 +91,7 @@ Public Partial Class ImportCatalogForm
 		'Loop through each row.
 		For Each tmpRow As DataGridViewRow In dgvUpdates.Rows
 			
-			'If the row is selected and there is an SDP object for it's tag.
+			'If the row is selected and there is an SDP object for its tag.
 			If DirectCast(tmpRow.Cells("Include").Value, Boolean) AndAlso _
 				Not tmpRow.Cells("Include").Tag Is Nothing Then
 				
