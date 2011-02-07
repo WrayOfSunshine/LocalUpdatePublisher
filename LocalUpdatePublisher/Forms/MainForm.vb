@@ -105,7 +105,7 @@ Public Partial Class MainForm
 	
 	'When we load the frame, import the base nodes.
 	Private Sub MainFormLoad(sender As Object, e As EventArgs)
-		toolStripStatusLabel.Text = "Loading form"
+		toolStripStatusLabel.Text = globalRM.GetString("status_loading_form")
 		Me.Update
 		_noEvents = True
 		Call LoadMainForm
@@ -192,7 +192,7 @@ Public Partial Class MainForm
 	Sub CboTargetGroupSelectedIndexChanged(sender As Object, e As EventArgs)
 		If _noEvents = False Then
 			_noEvents = True
-			toolStripStatusLabel.Text = "Loading update report"
+			toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
 			Me.Update
 			If Not Me._dgvMain.CurrentRow Is Nothing Then
 				Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
@@ -224,13 +224,13 @@ Public Partial Class MainForm
 				Not Me._dgvMain.CurrentRow is Nothing Then
 				'If type is a ComputerTargetGroup load the computers in the DGV.
 				If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-					toolStripStatusLabel.Text = "Loading computer report"
+					toolStripStatusLabel.Text = globalRM.GetString("status_loading_computer_report")
 					Me.Update
 					Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
 					
 					'If type is an update node.
 				Else If TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-					toolStripStatusLabel.Text = "Loading update report"
+					toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
 					Me.Update
 					Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
 				End If
@@ -248,7 +248,7 @@ Public Partial Class MainForm
 		SaveDGVState(dgvComputerReport)
 		
 		_noEvents = True
-		toolStripStatusLabel.Text = "Loading computer report"
+		toolStripStatusLabel.Text = globalRM.GetString("status_loading_computer_report")
 		Me.Update
 		If Not Me._dgvMain.CurrentRow Is Nothing Then
 			Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
@@ -267,7 +267,7 @@ Public Partial Class MainForm
 		SaveDGVState(dgvUpdateReport)
 		
 		_noEvents = True
-		toolStripStatusLabel.Text = "Loading update report"
+		toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
 		Me.Update
 		
 		If Not Me.DgvMain.CurrentRow Is Nothing Then
@@ -321,7 +321,7 @@ Public Partial Class MainForm
 		Call ClearForm
 		
 		'Add to the base nodes.
-		_rootNode = Me.treeView.Nodes.Add("root", "Update Services")
+		_rootNode = Me.treeView.Nodes.Add("root", globalRM.GetString("update_services"))
 		
 		'Load tree with server nodes.
 		For Each server As UpdateServer In ConnectionManager.ServerCollection
@@ -489,7 +489,7 @@ Public Partial Class MainForm
 		ImportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
 		
 		'Select a file and open the import catalog dialog.
-		importFileDialog.Filter = "CAB File|*.cab|XML File|*.xml"
+		importFileDialog.Filter = globalRM.GetString("file_filter_cab") & "|" & globalRM.GetString("file_filter_xml")
 		If Not importFileDialog.ShowDialog = DialogResult.Cancel Then
 			My.Forms.ImportCatalogForm.ShowDialog(importFileDialog.FileName)
 			Call LoadUpdateNodes()
@@ -557,7 +557,7 @@ Public Partial Class MainForm
 			Dim update As IUpdate = DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate)
 			
 			exportFileDialog.Reset
-			exportFileDialog.Filter = "CAB Files|*.cab"
+			exportFileDialog.Filter = globalRM.GetString("file_filter_cab")
 			
 			If Not update Is Nothing AndAlso _
 				Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
@@ -585,7 +585,7 @@ Public Partial Class MainForm
 						Dim cabCompressed As CabLib.Compress = New CabLib.Compress
 						cabCompressed.CompressFolder(tmpFolder.ToString, exportFileDialog.FileName, "", True, True, 0)
 					Else
-						Msgbox("The package content does not exist in the UpdateServicesPackages folder.")
+						Msgbox(globalRM.GetString("error_export_update_data"))
 					End If
 					
 					'Delete the temporary folder.
@@ -607,11 +607,11 @@ Public Partial Class MainForm
 			
 			'Publish the CAB
 			If ConnectionManager.PublishPackageFromCAB(New FileInfo(importFileDialog.FileName), Me) Then
-				Msgbox ("Update was successfully imported.")
+				Msgbox ("success_update_imported")
 				Call LoadUpdateNodes()
 				Call RefreshUpdateList()
 			Else
-				Msgbox ("Update was not imported.")
+				Msgbox (globalRM.GetString("error_update_imported"))
 			End If
 			
 			
@@ -702,7 +702,7 @@ Public Partial Class MainForm
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.SelectedRows.Count < 1 Then
-			Msgbox("No row selected.")
+			msgbox(globalRM.GetString("warning_no_row_selected"))
 		Else
 			'Display the approval dialog.
 			My.Forms.ApprovalForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
@@ -722,9 +722,9 @@ Public Partial Class MainForm
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.CurrentRow Is Nothing
-			msgbox("No row selected")
+			msgbox(globalRM.GetString("warning_no_row_selected"))
 		Else If Me._dgvMain.SelectedRows.Count > 1 Then
-			MsgBox ("You cannot revise multiple updates at the same time.")
+			MsgBox (globalRM.GetString("warning_revise_packages"))
 		Else
 			'Make Sure the current row has an UpdateID.
 			If TypeOf Me._dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
@@ -735,11 +735,11 @@ Public Partial Class MainForm
 				Dim tmpDirectory As String = "\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString
 				Try
 					If Not Directory.Exists(tmpDirectory) Then
-						Msgbox("This appears to be a metadata only update.  Currently, these cannot be revised.")
+						Msgbox(String.Format(globalRM.GetString("warning_revise_metadata"),DirectCast(Me._dgvMain.CurrentRow.Cells.Item("Title").Value, String)))
 						Exit Sub
 					End If
 				Catch
-					Msgbox("There was a problem checking for the package content from the UpdateServicesPackages.  This update cannot be revised.")
+					Msgbox(globalRM.GetString("warning_revised_package_data"))
 					Exit Sub
 				End Try
 				
@@ -758,7 +758,7 @@ Public Partial Class MainForm
 					Call RefreshUpdateList(True)
 				End If
 			Else
-				MsgBox("This row did not return a valid UpdateID")
+				MsgBox(globalRM.GetString("error_row_invalid_update_id"))
 			End If
 		End If
 	End Sub
@@ -770,10 +770,9 @@ Public Partial Class MainForm
 		
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
-			response = Msgbox("Do you wish to decline these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
+			response = Msgbox(String.Format(globalRM.GetString("prompt_decline_packages"), Me._dgvMain.SelectedRows.Count) , vbYesNo)
 		Else If Not Me._dgvMain.CurrentRow Is Nothing
-			response = Msgbox("Do you wish to decline " & _
-				DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) , _
+			response = Msgbox(String.Format(globalRM.GetString("prompt_decline_package"),DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)) , _
 				vbYesNo)
 		End If
 		
@@ -803,10 +802,9 @@ Public Partial Class MainForm
 		
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
-			response = Msgbox("Do you wish to remove these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
+			response = Msgbox(String.Format(globalRM.GetString("prompt_remove_packages"), Me._dgvMain.SelectedRows.Count) , vbYesNo)
 		Else If Not Me._dgvMain.CurrentRow Is Nothing
-			response = Msgbox("Do you wish to remove " & _
-				DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) , _
+			response = Msgbox(String.Format(globalRM.GetString("prompt_remove_package"),DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)) , _
 				vbYesNo)
 		End If
 		
@@ -829,11 +827,11 @@ Public Partial Class MainForm
 						'Remove the package.
 						ConnectionManager.ParentServer.DeleteUpdate( tmpUpdate.Id.UpdateId )
 					Catch x As WsusObjectNotFoundException
-						Msgbox ("WsusObjectNotFoundException: " & x.Message)
+						Msgbox (globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
 					Catch x As InvalidOperationException
-						Msgbox ("InvalidOperationException: " & x.Message)
+						Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & x.Message)
 					Catch x As Exception
-						Msgbox ("Exception: " & x.Message)
+						Msgbox (globalRM.GetString("exception") & ": " & x.Message)
 					End Try
 					
 					'Delete the package's folder from the ~\WSUS\UpdateServicesPackages folder.
@@ -847,7 +845,7 @@ Public Partial Class MainForm
 							Directory.Delete(tmpDirectory, True)
 						End If
 					Catch
-						Msgbox("There was a problem deleting the package content from the UpdateServicesPackages.  Use this UpdateID to do so manually: " & vbNewline & tmpUpdate.Id.UpdateId.ToString)
+						Msgbox(globalRM.GetString("warning_remove_package_data") & ": " & vbNewline & tmpUpdate.Id.UpdateId.ToString)
 					End Try
 				End IF
 			Next
@@ -878,10 +876,9 @@ Public Partial Class MainForm
 		
 		'Prompt user for confirmation.
 		If Me._dgvMain.SelectedRows.Count > 1 Then
-			response = Msgbox("Do you wish to expire these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
-		Else
-			response = Msgbox("Do you wish to expire " & _
-				DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) , _
+			response = Msgbox(String.Format(globalRM.GetString("prompt_expire_packages"), Me._dgvMain.SelectedRows.Count) , vbYesNo)
+		Else If Not Me._dgvMain.CurrentRow Is Nothing
+			response = Msgbox(String.Format(globalRM.GetString("prompt_expire_package"),DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)) , _
 				vbYesNo)
 		End If
 		
@@ -898,7 +895,7 @@ Public Partial Class MainForm
 					'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
 					' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
 					If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
-						Msgbox(DirectCast(tmpRow.Cells.Item("Title").Value, String) & " appears to be a metadata only update.  Currently, these cannot be expired.")
+						Msgbox(String.Format(globalRM.GetString("warning_expire_metadata"),DirectCast(tmpRow.Cells.Item("Title").Value, String)))
 						allExpired = False
 					Else
 						'Make sure we have something selected
@@ -907,7 +904,7 @@ Public Partial Class MainForm
 						End If
 					End If
 				Else
-					MsgBox("This row did not return a valid UpdateID")
+					MsgBox(globalRM.GetString("error_row_invalid_update_id"))
 				End If
 			Next
 			
@@ -917,9 +914,9 @@ Public Partial Class MainForm
 			Me.Cursor = Cursors.Arrow
 			
 			If allExpired Then
-				Msgbox ("Packages successfully expired.")
+				Msgbox (globalRM.GetString("success_packages_expired"))
 			Else
-				Msgbox ("Not all the packages were successfully expired.")
+				Msgbox (globalRM.GetString("error_packages_expired"))
 			End If
 		End If
 		
@@ -934,16 +931,15 @@ Public Partial Class MainForm
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.SelectedRows.Count < 1 Then
-			msgbox("No row selected")
+			msgbox(globalRM.GetString("warning_no_row_selected"))
 		Else
 			Dim response As MsgBoxResult
 			
 			'Prompt user for confirmation.
 			If Me._dgvMain.SelectedRows.Count > 1 Then
-				response = Msgbox("Do you wish to re-sign these " & Me._dgvMain.SelectedRows.Count & " updates?" , vbYesNo)
+				response = Msgbox(String.Format(globalRM.GetString("prompt_resign_packages"), Me._dgvMain.SelectedRows.Count) , vbYesNo)
 			Else If Not Me._dgvMain.CurrentRow Is Nothing
-				response = Msgbox("Do you wish to re-sign " & _
-					DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String) & "?" , _
+				response = Msgbox(String.Format(globalRM.GetString("prompt_resign_package"),DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)) , _
 					vbYesNo)
 			End If
 			
@@ -961,7 +957,7 @@ Public Partial Class MainForm
 						'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
 						' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
 						If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
-							Msgbox(DirectCast(tmpRow.Cells.Item("Title").Value, String) & " appears to be a metadata only update.  Currently, these cannot be re-signed.")
+							Msgbox(String.Format(globalRM.GetString("warning_resign_metadata"),DirectCast(tmpRow.Cells.Item("Title").Value, String)))
 							allResigned = False
 						Else
 							Try
@@ -976,29 +972,29 @@ Public Partial Class MainForm
 								My.Computer.FileSystem.DeleteFile(packageFile)
 								
 							Catch x As UnauthorizedAccessException
-								Msgbox ("The package could not be re-signed." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							Catch x As ArgumentNullException
-								Msgbox ("The package could not be re-signed." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							Catch x As FileNotFoundException
-								Msgbox ("The package could not be re-signed." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_file_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							Catch x As InvalidDataException
-								Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_data") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							Catch x As InvalidOperationException
-								Msgbox ("The package could not be re-signed." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							Catch x As Exception
-								Msgbox ("The package could not be re-signed." & vbNewline & "Exception: " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
 							End Try
 						End If
 					Else
-						MsgBox("This row did not return a valid UpdateID")
+						MsgBox(globalRM.GetString("error_row_invalid_update_id"))
 					End If
 				Next
 				
 				Me.Cursor = Cursors.Arrow
 				If allResigned Then
-					Msgbox ("Packages successfully re-signed.")
+					Msgbox (globalRM.GetString("success_packages_resigned"))
 				Else
-					Msgbox ("Not all the packages were successfully re-signed.")
+					Msgbox (globalRM.GetString("error_packages_resigned"))
 				End If
 				
 			End If
@@ -1172,7 +1168,7 @@ Public Partial Class MainForm
 				tmpNode.Tag = New UpdateServer(downstreamServer.FullDomainName, ConnectionManager.CurrentServer.PortNumber, ConnectionManager.CurrentServer.IsConnectionSecureForApiRemoting, True, downstreamServer.IsReplica)
 			Next
 			
-			_computerNode = _serverNode.Nodes.Add("computers", "Computers")
+			_computerNode = _serverNode.Nodes.Add("computers", globalRM.GetString("computers"))
 			
 			'Add the Locally published packages category as the updates base node.
 			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
@@ -1181,7 +1177,7 @@ Public Partial Class MainForm
 				If category.Title = "Local Publisher" Then
 					
 					'Add the updateNode and set its tag.
-					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, "Updates")
+					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, globalRM.GetString("updates"))
 				End If
 				
 			Next
@@ -1505,18 +1501,18 @@ Public Partial Class MainForm
 				Me.Cursor = Cursors.WaitCursor
 				For Each tmpEvent As IUpdateEvent In DirectCast( Me.dgvComputerReport.Rows(e.RowIndex).Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
 					If DirectCast(_dgvMain.CurrentRow.Cells("TargetID").Value, String) = tmpEvent.ComputerId
-						tmpMessage += "Date: " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
+						tmpMessage += globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
 					End If
 				Next
 				Me.Cursor = Cursors.Arrow
 				If Not String.IsNullOrEmpty ( tmpMessage ) Then
-					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, "History for " & DirectCast(dgvComputerReport.Rows(e.RowIndex).Cells("UpdateTitle").Value, String))
+					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, globalRM.GetString("History for") & " " & DirectCast(dgvComputerReport.Rows(e.RowIndex).Cells("UpdateTitle").Value, String))
 				End If
 			End If
 		Else
 			_originalValue = Nothing
 		End If
-				
+		
 	End Sub
 	
 	'This routine captures the current row's value before a sort.
@@ -1534,12 +1530,12 @@ Public Partial Class MainForm
 				Me.Cursor = Cursors.WaitCursor
 				For Each tmpEvent As IUpdateEvent In DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
 					If DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerID").Value, String) = tmpEvent.ComputerId Then
-						tmpMessage += "Date: " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
+						tmpMessage += globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewline
 					End If
 				Next
 				Me.Cursor = Cursors.Arrow
 				If Not String.IsNullOrEmpty ( tmpMessage ) Then
-					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, "History for " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
+					Msgbox (tmpMessage,MsgBoxStyle.OkOnly, globalRM.GetString("History for") & " " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
 				End If
 			End If
 		Else
@@ -1630,7 +1626,7 @@ Public Partial Class MainForm
 		Dim originalValue As String
 		
 		_noEvents = True
-		toolStripStatusLabel.Text = "Refreshing computer list"
+		toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
 		Me.Update
 		
 		'Make sure a computer tree node it selected
@@ -1653,24 +1649,24 @@ Public Partial Class MainForm
 			_dgvMain.DataSource = GetComputerList(DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup))
 			If _dgvMain.DataSource Is Nothing Then
 				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = "0 computers shown"
+				Me.lblSelectedTargetGroupCount.Text = "0 " & globalRM.GetString("computers_shown")
 				_noEvents = False
 				Me.toolStripStatusLabel.Text = ""
 				Exit Sub
 			Else
 				
 				'Set header texts for main DGV.
-				Me._dgvMain.Columns("ComputerName").HeaderText = "Computer Name"
+				Me._dgvMain.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
 				Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("IPAddress").HeaderText = "IP Address"
+				Me._dgvMain.Columns("IPAddress").HeaderText = globalRM.GetString("ip_address")
 				Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("OperatingSystem").HeaderText = "Operating Sytem"
+				Me._dgvMain.Columns("OperatingSystem").HeaderText = globalRM.GetString("operating_system")
 				Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = "Installed/Not Applicable"
+				Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = globalRM.GetString("installed_not_applicable")
 				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
 				Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
 				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("LastStatusReport").HeaderText = "Last Status Report"
+				Me._dgvMain.Columns("LastStatusReport").HeaderText = globalRM.GetString("last_status_report")
 				Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
 				
 				
@@ -1679,7 +1675,7 @@ Public Partial Class MainForm
 				Me._dgvMain.Columns("TargetID").Visible = False
 				
 				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = Me._dgvMain.Rows.Count & " computers shown"
+				Me.lblSelectedTargetGroupCount.Text = Me._dgvMain.Rows.Count & " " & globalRM.GetString("computers_shown")
 				
 				'If computers are listed in the DGV.
 				If _dgvMain.Rows.Count > 0 Then
@@ -1749,7 +1745,7 @@ Public Partial Class MainForm
 		Dim originalValue As Guid
 		
 		_noEvents = True
-		toolStripStatusLabel.Text = "Refreshing Update List"
+		toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
 		Me.Update
 		
 		'Set current row to negative one.
@@ -1790,7 +1786,7 @@ Public Partial Class MainForm
 				Me._dgvMain.Columns("Id").Visible = False
 				
 				'Change header text.
-				Me._dgvMain.Columns("CreationDate").HeaderText = "Creation Date"
+				Me._dgvMain.Columns("CreationDate").HeaderText = globalRM.GetString("creation_date")
 				
 				
 				'If updates are loaded in the DGV.
@@ -1911,11 +1907,11 @@ Public Partial Class MainForm
 			'Load the data
 			Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
 			If update.UpdateType = UpdateType.Software Then
-				Me.txtPackageType.Text = "Update"
+				Me.txtPackageType.Text = globalRM.GetString("update")
 			Else If update.UpdateType = UpdateType.SoftwareApplication
-				Me.txtPackageType.Text = "Application"
+				Me.txtPackageType.Text = globalRM.GetString("application")
 			Else If update.UpdateType = UpdateType.Driver
-				Me.txtPackageType.Text = "Driver"
+				Me.txtPackageType.Text = globalRM.GetString("driver")
 			Else
 				Me.txtPackageType.Text = String.Empty
 			End If
@@ -1972,14 +1968,14 @@ Public Partial Class MainForm
 			Me.dgvUpdateStatus.DataSource = GetUpdateStatus( DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate) )
 			
 			'Set header texts for status DGV.
-			Me.dgvUpdateStatus.Columns("GroupName").HeaderText = "Group Name"
-			Me.dgvUpdateStatus.Columns("InstalledCount").HeaderText = "Installed"
-			Me.dgvUpdateStatus.Columns("NotInstalledCount").HeaderText = "Not Installed"
-			Me.dgvUpdateStatus.Columns("NotApplicableCount").HeaderText = "Not Applicable"
-			Me.dgvUpdateStatus.Columns("FailedCount").HeaderText = "Failed"
-			Me.dgvUpdateStatus.Columns("DownloadedCount").HeaderText = "Downloaded"
-			Me.dgvUpdateStatus.Columns("UnknownCount").HeaderText = "Unknown"
-			Me.dgvUpdateStatus.Columns("LastUpdated").HeaderText = "Last Updated"
+			Me.dgvUpdateStatus.Columns("GroupName").HeaderText = globalRM.GetString("group_name")
+			Me.dgvUpdateStatus.Columns("InstalledCount").HeaderText = globalRM.GetString("installed")
+			Me.dgvUpdateStatus.Columns("NotInstalledCount").HeaderText = globalRM.GetString("not_installed")
+			Me.dgvUpdateStatus.Columns("NotApplicableCount").HeaderText = globalRM.GetString("not_applicable")
+			Me.dgvUpdateStatus.Columns("FailedCount").HeaderText = globalRM.GetString("failed")
+			Me.dgvUpdateStatus.Columns("DownloadedCount").HeaderText = globalRM.GetString("downloaded")
+			Me.dgvUpdateStatus.Columns("UnknownCount").HeaderText = globalRM.GetString("unknown")
+			Me.dgvUpdateStatus.Columns("LastUpdated").HeaderText = globalRM.GetString("last_updated")
 			
 			If dgvUpdateStatus.Rows.Count > 0 Then
 				Call LoadDgvState( dgvUpdateStatus )
@@ -2027,14 +2023,14 @@ Public Partial Class MainForm
 			Me.dgvComputerGroupStatus.DataSource = GetComputerGroupStatus(DirectCast(Me.treeView.SelectedNode.Tag, IComputerTargetGroup))
 			
 			'Set header texts for status DGV.
-			dgvComputerGroupStatus.Columns("Title").HeaderText = "Title"
-			dgvComputerGroupStatus.Columns("InstalledCount").HeaderText = "Installed"
-			dgvComputerGroupStatus.Columns("NotInstalledCount").HeaderText = "Not Installed"
-			dgvComputerGroupStatus.Columns("NotApplicableCount").HeaderText = "Not Applicable"
-			dgvComputerGroupStatus.Columns("FailedCount").HeaderText = "Failed"
-			dgvComputerGroupStatus.Columns("DownloadedCount").HeaderText = "Downloaded"
-			dgvComputerGroupStatus.Columns("UnknownCount").HeaderText = "Unknown"
-			dgvComputerGroupStatus.Columns("LastUpdated").HeaderText = "Last Updated"
+			dgvComputerGroupStatus.Columns("Title").HeaderText = globalRM.GetString("title")
+			dgvComputerGroupStatus.Columns("InstalledCount").HeaderText = globalRM.GetString("installed")
+			dgvComputerGroupStatus.Columns("NotInstalledCount").HeaderText = globalRM.GetString("not_installed")
+			dgvComputerGroupStatus.Columns("NotApplicableCount").HeaderText = globalRM.GetString("not_applicable")
+			dgvComputerGroupStatus.Columns("FailedCount").HeaderText = globalRM.GetString("failed")
+			dgvComputerGroupStatus.Columns("DownloadedCount").HeaderText = globalRM.GetString("downloaded")
+			dgvComputerGroupStatus.Columns("UnknownCount").HeaderText = globalRM.GetString("unknown")
+			dgvComputerGroupStatus.Columns("LastUpdated").HeaderText = globalRM.GetString("last_updated")
 			
 			If dgvComputerGroupStatus.Rows.Count > 0 Then
 				Call LoadDgvState(dgvComputerGroupStatus)
@@ -2078,9 +2074,9 @@ Public Partial Class MainForm
 			dgvComputerReport.Columns("UpdateID").Visible = False
 			
 			'Rename some columns.
-			dgvComputerReport.Columns("UpdateTitle").HeaderText = "Update Title"
-			dgvComputerReport.Columns("UpdateInstallationState").HeaderText = "Status"
-			dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = "Approval"
+			dgvComputerReport.Columns("UpdateTitle").HeaderText = globalRM.GetString("update_title")
+			dgvComputerReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
+			dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
 			
 			'Make the status column's text blue
 			dgvComputerReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue
@@ -2136,7 +2132,7 @@ Public Partial Class MainForm
 		Else
 			
 			'If the user hasn't selected an update status then choose any status.
-			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.Text = "Any"
+			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.SelectedIndex = 5
 			
 			'If we are maintaining the status then save the status.
 			If maintainSelectedRow AndAlso Not dgvUpdateReport.CurrentRow Is Nothing Then

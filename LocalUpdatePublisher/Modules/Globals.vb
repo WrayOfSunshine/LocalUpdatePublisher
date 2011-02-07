@@ -8,9 +8,11 @@
 ' Time: 3:43 PM
 
 Imports Microsoft.UpdateServices.Administration
+Imports System.Resources
 
 Module Globals
 	Public appSettings As Settings
 	Public localUpdatesScope As UpdateScope
 	Public defaultPaddingSize as Integer = 10
+	Public globalRM As ResourceManager
 End Module

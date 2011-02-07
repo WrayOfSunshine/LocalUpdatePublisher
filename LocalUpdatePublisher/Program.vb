@@ -18,6 +18,10 @@ Imports System.Net
 Imports System.Diagnostics
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.UpdateServices.Administration
+Imports System.Resources
+Imports System.Reflection
+Imports System.Threading
+Imports System.Globalization
 
 Namespace My
 	' This file controls the behavior of the application.
@@ -41,6 +45,11 @@ Namespace My
 			'Initialize and load the settings.
 			appSettings = New Settings()
 			appSettings = Settings.LoadSettingsFromFile
+			
+			'Initialize the global resource handler
+			'Thread.CurrentThread.CurrentCulture = New CultureInfo("fr-CA")
+			'Thread.CurrentThread.CurrentUICulture = New CultureInfo("fr-CA")
+			globalRM = New ResourceManager("LocalUpdatePublisher.GlobalStrings", Assembly.GetExecutingAssembly())
 			
 			'Load server connections.
 			ConnectionManager.LoadServerList

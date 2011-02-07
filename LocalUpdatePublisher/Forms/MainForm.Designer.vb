@@ -176,193 +176,160 @@ Partial Class MainForm
 		'menuStrip
 		'
 		Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.fileToolStripMenuItem, Me.toolsToolStripMenuItem, Me.updateToolStripMenuItem, Me.helpToolStripMenuItem})
-		Me.menuStrip.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.menuStrip, "menuStrip")
 		Me.menuStrip.Name = "menuStrip"
-		Me.menuStrip.Size = New System.Drawing.Size(858, 24)
-		Me.menuStrip.TabIndex = 0
-		Me.menuStrip.Text = "menuStrip"
 		'
 		'fileToolStripMenuItem
 		'
 		Me.fileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.importCatalogToolStripMenuItem, Me.exportCatalogToolStripMenuItem, Me.toolStripSeparator3, Me.exportListToolStripMenuItem, Me.exportReportToolStripMenuItem, Me.toolStripSeparator2, Me.exitToolStripMenuItem})
 		Me.fileToolStripMenuItem.Name = "fileToolStripMenuItem"
-		Me.fileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
-		Me.fileToolStripMenuItem.Text = "File"
+		resources.ApplyResources(Me.fileToolStripMenuItem, "fileToolStripMenuItem")
 		'
 		'importCatalogToolStripMenuItem
 		'
 		Me.importCatalogToolStripMenuItem.Name = "importCatalogToolStripMenuItem"
-		Me.importCatalogToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-		Me.importCatalogToolStripMenuItem.Text = "Import Catalog"
+		resources.ApplyResources(Me.importCatalogToolStripMenuItem, "importCatalogToolStripMenuItem")
 		AddHandler Me.importCatalogToolStripMenuItem.Click, AddressOf Me.ImportCatalogToolStripMenuItemClick
 		'
 		'exportCatalogToolStripMenuItem
 		'
 		Me.exportCatalogToolStripMenuItem.Name = "exportCatalogToolStripMenuItem"
-		Me.exportCatalogToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-		Me.exportCatalogToolStripMenuItem.Text = "Export Catalog"
+		resources.ApplyResources(Me.exportCatalogToolStripMenuItem, "exportCatalogToolStripMenuItem")
 		AddHandler Me.exportCatalogToolStripMenuItem.Click, AddressOf Me.ExportCatalogToolStripMenuItemClick
 		'
 		'toolStripSeparator3
 		'
 		Me.toolStripSeparator3.Name = "toolStripSeparator3"
-		Me.toolStripSeparator3.Size = New System.Drawing.Size(154, 6)
+		resources.ApplyResources(Me.toolStripSeparator3, "toolStripSeparator3")
 		'
 		'exportListToolStripMenuItem
 		'
-		Me.exportListToolStripMenuItem.Enabled = false
+		resources.ApplyResources(Me.exportListToolStripMenuItem, "exportListToolStripMenuItem")
 		Me.exportListToolStripMenuItem.Name = "exportListToolStripMenuItem"
-		Me.exportListToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-		Me.exportListToolStripMenuItem.Text = "Export List"
-		Me.exportListToolStripMenuItem.Visible = false
 		AddHandler Me.exportListToolStripMenuItem.Click, AddressOf Me.ExportListToolStripMenuItemClick
 		'
 		'exportReportToolStripMenuItem
 		'
-		Me.exportReportToolStripMenuItem.Enabled = false
+		resources.ApplyResources(Me.exportReportToolStripMenuItem, "exportReportToolStripMenuItem")
 		Me.exportReportToolStripMenuItem.Name = "exportReportToolStripMenuItem"
-		Me.exportReportToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-		Me.exportReportToolStripMenuItem.Text = "Export Report"
-		Me.exportReportToolStripMenuItem.Visible = false
 		AddHandler Me.exportReportToolStripMenuItem.Click, AddressOf Me.ExportReportToolStripMenuItemClick
 		'
 		'toolStripSeparator2
 		'
 		Me.toolStripSeparator2.Name = "toolStripSeparator2"
-		Me.toolStripSeparator2.Size = New System.Drawing.Size(154, 6)
+		resources.ApplyResources(Me.toolStripSeparator2, "toolStripSeparator2")
 		'
 		'exitToolStripMenuItem
 		'
 		Me.exitToolStripMenuItem.Name = "exitToolStripMenuItem"
-		Me.exitToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-		Me.exitToolStripMenuItem.Text = "Exit"
+		resources.ApplyResources(Me.exitToolStripMenuItem, "exitToolStripMenuItem")
 		AddHandler Me.exitToolStripMenuItem.Click, AddressOf Me.ExitToolStripMenuItemClick
 		'
 		'toolsToolStripMenuItem
 		'
 		Me.toolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.createUpdateToolStripMenuItem, Me.importUpdateToolStripMenuItem, Me.exportUpdateToolStripMenuItem, Me.toolStripSeparator1, Me.savedRulesToolStripMenuItem, Me.certificateInfoToolStripMenuItem, Me.connectionSettingsToolStripMenuItem, Me.optionsToolStripMenuItem})
 		Me.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem"
-		Me.toolsToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-		Me.toolsToolStripMenuItem.Text = "Tools"
+		resources.ApplyResources(Me.toolsToolStripMenuItem, "toolsToolStripMenuItem")
 		'
 		'createUpdateToolStripMenuItem
 		'
 		Me.createUpdateToolStripMenuItem.Name = "createUpdateToolStripMenuItem"
-		Me.createUpdateToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.createUpdateToolStripMenuItem.Text = "Create Update"
+		resources.ApplyResources(Me.createUpdateToolStripMenuItem, "createUpdateToolStripMenuItem")
 		AddHandler Me.createUpdateToolStripMenuItem.Click, AddressOf Me.CreateUpdateToolStripMenuItemClick
 		'
 		'importUpdateToolStripMenuItem
 		'
 		Me.importUpdateToolStripMenuItem.Name = "importUpdateToolStripMenuItem"
-		Me.importUpdateToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.importUpdateToolStripMenuItem.Text = "Import Update"
+		resources.ApplyResources(Me.importUpdateToolStripMenuItem, "importUpdateToolStripMenuItem")
 		AddHandler Me.importUpdateToolStripMenuItem.Click, AddressOf Me.ImportUpdateToolStripMenuItemClick
 		'
 		'exportUpdateToolStripMenuItem
 		'
 		Me.exportUpdateToolStripMenuItem.Name = "exportUpdateToolStripMenuItem"
-		Me.exportUpdateToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.exportUpdateToolStripMenuItem.Text = "Export Update"
+		resources.ApplyResources(Me.exportUpdateToolStripMenuItem, "exportUpdateToolStripMenuItem")
 		AddHandler Me.exportUpdateToolStripMenuItem.Click, AddressOf Me.ExportUpdateToolStripMenuItemClick
 		'
 		'toolStripSeparator1
 		'
 		Me.toolStripSeparator1.Name = "toolStripSeparator1"
-		Me.toolStripSeparator1.Size = New System.Drawing.Size(178, 6)
+		resources.ApplyResources(Me.toolStripSeparator1, "toolStripSeparator1")
 		'
 		'savedRulesToolStripMenuItem
 		'
 		Me.savedRulesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.manageRulesToolStripMenuItem, Me.importRulesToolStripMenuItem, Me.exportRulesToolStripMenuItem})
 		Me.savedRulesToolStripMenuItem.Name = "savedRulesToolStripMenuItem"
-		Me.savedRulesToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.savedRulesToolStripMenuItem.Text = "Saved Rules"
+		resources.ApplyResources(Me.savedRulesToolStripMenuItem, "savedRulesToolStripMenuItem")
 		'
 		'manageRulesToolStripMenuItem
 		'
 		Me.manageRulesToolStripMenuItem.Name = "manageRulesToolStripMenuItem"
-		Me.manageRulesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-		Me.manageRulesToolStripMenuItem.Text = "Manage Rules"
+		resources.ApplyResources(Me.manageRulesToolStripMenuItem, "manageRulesToolStripMenuItem")
 		AddHandler Me.manageRulesToolStripMenuItem.Click, AddressOf Me.ManageRulesToolStripMenuItemClick
 		'
 		'importRulesToolStripMenuItem
 		'
 		Me.importRulesToolStripMenuItem.Name = "importRulesToolStripMenuItem"
-		Me.importRulesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-		Me.importRulesToolStripMenuItem.Text = "Import Rules"
+		resources.ApplyResources(Me.importRulesToolStripMenuItem, "importRulesToolStripMenuItem")
 		AddHandler Me.importRulesToolStripMenuItem.Click, AddressOf Me.ImportRulesToolStripMenuItemClick
 		'
 		'exportRulesToolStripMenuItem
 		'
 		Me.exportRulesToolStripMenuItem.Name = "exportRulesToolStripMenuItem"
-		Me.exportRulesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-		Me.exportRulesToolStripMenuItem.Text = "Export Rules"
+		resources.ApplyResources(Me.exportRulesToolStripMenuItem, "exportRulesToolStripMenuItem")
 		AddHandler Me.exportRulesToolStripMenuItem.Click, AddressOf Me.ExportRulesToolStripMenuItemClick
 		'
 		'certificateInfoToolStripMenuItem
 		'
 		Me.certificateInfoToolStripMenuItem.Name = "certificateInfoToolStripMenuItem"
-		Me.certificateInfoToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.certificateInfoToolStripMenuItem.Text = "Certificate Info"
+		resources.ApplyResources(Me.certificateInfoToolStripMenuItem, "certificateInfoToolStripMenuItem")
 		AddHandler Me.certificateInfoToolStripMenuItem.Click, AddressOf Me.CertificateInfoToolStripMenuItemClick
 		'
 		'connectionSettingsToolStripMenuItem
 		'
 		Me.connectionSettingsToolStripMenuItem.Name = "connectionSettingsToolStripMenuItem"
-		Me.connectionSettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.connectionSettingsToolStripMenuItem.Text = "Connection Settings"
+		resources.ApplyResources(Me.connectionSettingsToolStripMenuItem, "connectionSettingsToolStripMenuItem")
 		AddHandler Me.connectionSettingsToolStripMenuItem.Click, AddressOf Me.ConnectionSettingsToolStripMenuItemClick
 		'
 		'optionsToolStripMenuItem
 		'
 		Me.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem"
-		Me.optionsToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-		Me.optionsToolStripMenuItem.Text = "Options"
+		resources.ApplyResources(Me.optionsToolStripMenuItem, "optionsToolStripMenuItem")
 		AddHandler Me.optionsToolStripMenuItem.Click, AddressOf Me.OptionsToolStripMenuItemClick
 		'
 		'updateToolStripMenuItem
 		'
 		Me.updateToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Replace
 		Me.updateToolStripMenuItem.Name = "updateToolStripMenuItem"
-		Me.updateToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-		Me.updateToolStripMenuItem.Text = "Update"
-		Me.updateToolStripMenuItem.Visible = false
+		resources.ApplyResources(Me.updateToolStripMenuItem, "updateToolStripMenuItem")
 		'
 		'helpToolStripMenuItem
 		'
 		Me.helpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.aboutToolStripMenuItem, Me.helpForumsToolStripMenuItem, Me.lupHelpToolStripMenuItem})
 		Me.helpToolStripMenuItem.Name = "helpToolStripMenuItem"
-		Me.helpToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
-		Me.helpToolStripMenuItem.Text = "Help"
+		resources.ApplyResources(Me.helpToolStripMenuItem, "helpToolStripMenuItem")
 		'
 		'aboutToolStripMenuItem
 		'
 		Me.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem"
-		Me.aboutToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-		Me.aboutToolStripMenuItem.Text = "About"
+		resources.ApplyResources(Me.aboutToolStripMenuItem, "aboutToolStripMenuItem")
 		AddHandler Me.aboutToolStripMenuItem.Click, AddressOf Me.AboutToolStripMenuItemClick
 		'
 		'helpForumsToolStripMenuItem
 		'
 		Me.helpForumsToolStripMenuItem.Name = "helpForumsToolStripMenuItem"
-		Me.helpForumsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-		Me.helpForumsToolStripMenuItem.Text = "Help Forum"
+		resources.ApplyResources(Me.helpForumsToolStripMenuItem, "helpForumsToolStripMenuItem")
 		AddHandler Me.helpForumsToolStripMenuItem.Click, AddressOf Me.HelpForumsToolStripMenuItemClick
 		'
 		'lupHelpToolStripMenuItem
 		'
 		Me.lupHelpToolStripMenuItem.Name = "lupHelpToolStripMenuItem"
-		Me.lupHelpToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-		Me.lupHelpToolStripMenuItem.Text = "Support Wiki"
+		resources.ApplyResources(Me.lupHelpToolStripMenuItem, "lupHelpToolStripMenuItem")
 		AddHandler Me.lupHelpToolStripMenuItem.Click, AddressOf Me.LupHelpToolStripMenuItemClick
 		'
 		'splitContainerVert
 		'
-		Me.splitContainerVert.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.splitContainerVert, "splitContainerVert")
 		Me.splitContainerVert.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-		Me.splitContainerVert.Location = New System.Drawing.Point(0, 27)
 		Me.splitContainerVert.Name = "splitContainerVert"
 		'
 		'splitContainerVert.Panel1
@@ -372,28 +339,20 @@ Partial Class MainForm
 		'splitContainerVert.Panel2
 		'
 		Me.splitContainerVert.Panel2.Controls.Add(Me.splitContainerHorz)
-		Me.splitContainerVert.Size = New System.Drawing.Size(858, 629)
-		Me.splitContainerVert.SplitterDistance = 175
-		Me.splitContainerVert.TabIndex = 1
 		AddHandler Me.splitContainerVert.SplitterMoved, AddressOf Me.SplitContainerVertSplitterMoved
 		'
 		'treeView
 		'
-		Me.treeView.Dock = System.Windows.Forms.DockStyle.Fill
+		resources.ApplyResources(Me.treeView, "treeView")
 		Me.treeView.HideSelection = false
-		Me.treeView.Location = New System.Drawing.Point(0, 0)
 		Me.treeView.Name = "treeView"
-		Me.treeView.Size = New System.Drawing.Size(175, 629)
-		Me.treeView.TabIndex = 0
 		AddHandler Me.treeView.AfterSelect, AddressOf Me.TreeViewAfterSelect
 		AddHandler Me.treeView.BeforeSelect, AddressOf Me.TreeViewBeforeSelect
 		'
 		'splitContainerHorz
 		'
-		Me.splitContainerHorz.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.splitContainerHorz.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.splitContainerHorz, "splitContainerHorz")
 		Me.splitContainerHorz.Name = "splitContainerHorz"
-		Me.splitContainerHorz.Orientation = System.Windows.Forms.Orientation.Horizontal
 		'
 		'splitContainerHorz.Panel1
 		'
@@ -403,19 +362,13 @@ Partial Class MainForm
 		'
 		Me.splitContainerHorz.Panel2.Controls.Add(Me.pnlUpdates)
 		Me.splitContainerHorz.Panel2.Controls.Add(Me.pnlComputers)
-		Me.splitContainerHorz.Size = New System.Drawing.Size(679, 629)
-		Me.splitContainerHorz.SplitterDistance = 147
-		Me.splitContainerHorz.TabIndex = 1
 		AddHandler Me.splitContainerHorz.SplitterMoved, AddressOf Me.SplitContainerSplitterMoved
 		'
 		'scHeader
 		'
-		Me.scHeader.Dock = System.Windows.Forms.DockStyle.Fill
+		resources.ApplyResources(Me.scHeader, "scHeader")
 		Me.scHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-		Me.scHeader.IsSplitterFixed = true
-		Me.scHeader.Location = New System.Drawing.Point(0, 0)
 		Me.scHeader.Name = "scHeader"
-		Me.scHeader.Orientation = System.Windows.Forms.Orientation.Horizontal
 		'
 		'scHeader.Panel1
 		'
@@ -429,26 +382,18 @@ Partial Class MainForm
 		'scHeader.Panel2
 		'
 		Me.scHeader.Panel2.Controls.Add(Me._dgvMain)
-		Me.scHeader.Size = New System.Drawing.Size(679, 147)
-		Me.scHeader.TabIndex = 1
 		'
 		'chkInheritApprovals
 		'
-		Me.chkInheritApprovals.Location = New System.Drawing.Point(530, 25)
+		resources.ApplyResources(Me.chkInheritApprovals, "chkInheritApprovals")
 		Me.chkInheritApprovals.Name = "chkInheritApprovals"
-		Me.chkInheritApprovals.Size = New System.Drawing.Size(134, 24)
-		Me.chkInheritApprovals.TabIndex = 11
-		Me.chkInheritApprovals.Text = "Inherit Approvals"
 		Me.chkInheritApprovals.UseVisualStyleBackColor = true
 		AddHandler Me.chkInheritApprovals.CheckedChanged, AddressOf Me.ChkInheritApprovalsCheckedChanged
 		'
 		'chkApprovedOnly
 		'
-		Me.chkApprovedOnly.Location = New System.Drawing.Point(380, 27)
+		resources.ApplyResources(Me.chkApprovedOnly, "chkApprovedOnly")
 		Me.chkApprovedOnly.Name = "chkApprovedOnly"
-		Me.chkApprovedOnly.Size = New System.Drawing.Size(145, 21)
-		Me.chkApprovedOnly.TabIndex = 10
-		Me.chkApprovedOnly.Text = "Approved Updates Only"
 		Me.chkApprovedOnly.UseVisualStyleBackColor = true
 		AddHandler Me.chkApprovedOnly.CheckedChanged, AddressOf Me.ChkApprovedOnlyCheckedChanged
 		'
@@ -457,50 +402,30 @@ Partial Class MainForm
 		Me.pnlHeaderTop.BackColor = System.Drawing.SystemColors.ControlDark
 		Me.pnlHeaderTop.Controls.Add(Me.lblSelectedTargetGroupCount)
 		Me.pnlHeaderTop.Controls.Add(Me.lblSelectedTargetGroup)
-		Me.pnlHeaderTop.Dock = System.Windows.Forms.DockStyle.Top
-		Me.pnlHeaderTop.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.pnlHeaderTop, "pnlHeaderTop")
 		Me.pnlHeaderTop.Name = "pnlHeaderTop"
-		Me.pnlHeaderTop.Size = New System.Drawing.Size(679, 25)
-		Me.pnlHeaderTop.TabIndex = 9
 		'
 		'lblSelectedTargetGroupCount
 		'
-		Me.lblSelectedTargetGroupCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblSelectedTargetGroupCount, "lblSelectedTargetGroupCount")
 		Me.lblSelectedTargetGroupCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.lblSelectedTargetGroupCount.Location = New System.Drawing.Point(241, 0)
 		Me.lblSelectedTargetGroupCount.Name = "lblSelectedTargetGroupCount"
-		Me.lblSelectedTargetGroupCount.Size = New System.Drawing.Size(197, 24)
-		Me.lblSelectedTargetGroupCount.TabIndex = 10
-		Me.lblSelectedTargetGroupCount.Text = "(# of computers shown)"
-		Me.lblSelectedTargetGroupCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'lblSelectedTargetGroup
 		'
-		Me.lblSelectedTargetGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblSelectedTargetGroup, "lblSelectedTargetGroup")
 		Me.lblSelectedTargetGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.lblSelectedTargetGroup.Location = New System.Drawing.Point(0, 1)
 		Me.lblSelectedTargetGroup.Name = "lblSelectedTargetGroup"
-		Me.lblSelectedTargetGroup.Size = New System.Drawing.Size(197, 24)
-		Me.lblSelectedTargetGroup.TabIndex = 9
-		Me.lblSelectedTargetGroup.Text = "Selected Target Group"
-		Me.lblSelectedTargetGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'lblComputerStatus
 		'
-		Me.lblComputerStatus.Location = New System.Drawing.Point(4, 31)
+		resources.ApplyResources(Me.lblComputerStatus, "lblComputerStatus")
 		Me.lblComputerStatus.Name = "lblComputerStatus"
-		Me.lblComputerStatus.Size = New System.Drawing.Size(37, 15)
-		Me.lblComputerStatus.TabIndex = 8
-		Me.lblComputerStatus.Text = "Status"
 		'
 		'btnComputerListRefresh
 		'
-		Me.btnComputerListRefresh.Enabled = false
-		Me.btnComputerListRefresh.Location = New System.Drawing.Point(291, 25)
+		resources.ApplyResources(Me.btnComputerListRefresh, "btnComputerListRefresh")
 		Me.btnComputerListRefresh.Name = "btnComputerListRefresh"
-		Me.btnComputerListRefresh.Size = New System.Drawing.Size(75, 23)
-		Me.btnComputerListRefresh.TabIndex = 7
-		Me.btnComputerListRefresh.Text = "Refresh"
 		Me.btnComputerListRefresh.UseVisualStyleBackColor = true
 		AddHandler Me.btnComputerListRefresh.Click, AddressOf Me.BtnComputerListRefreshClick
 		'
@@ -508,11 +433,9 @@ Partial Class MainForm
 		'
 		Me.cboComputerStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboComputerStatus.FormattingEnabled = true
-		Me.cboComputerStatus.Items.AddRange(New Object() {"Failed or Needed", "Installed/Not Applicable or No Status", "Failed", "Needed", "Installed/Not Applicable", "No Status", "Any"})
-		Me.cboComputerStatus.Location = New System.Drawing.Point(47, 27)
+		Me.cboComputerStatus.Items.AddRange(New Object() {resources.GetString("cboComputerStatus.Items"), resources.GetString("cboComputerStatus.Items1"), resources.GetString("cboComputerStatus.Items2"), resources.GetString("cboComputerStatus.Items3"), resources.GetString("cboComputerStatus.Items4"), resources.GetString("cboComputerStatus.Items5"), resources.GetString("cboComputerStatus.Items6")})
+		resources.ApplyResources(Me.cboComputerStatus, "cboComputerStatus")
 		Me.cboComputerStatus.Name = "cboComputerStatus"
-		Me.cboComputerStatus.Size = New System.Drawing.Size(233, 21)
-		Me.cboComputerStatus.TabIndex = 6
 		AddHandler Me.cboComputerStatus.SelectedIndexChanged, AddressOf Me.CboComputerStatusSelectedIndexChanged
 		'
 		'_dgvMain
@@ -526,14 +449,11 @@ Partial Class MainForm
 		Me._dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me._dgvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me._dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me._dgvMain.Dock = System.Windows.Forms.DockStyle.Fill
-		Me._dgvMain.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me._dgvMain, "_dgvMain")
 		Me._dgvMain.Name = "_dgvMain"
 		Me._dgvMain.ReadOnly = true
 		Me._dgvMain.RowHeadersVisible = false
 		Me._dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me._dgvMain.Size = New System.Drawing.Size(679, 93)
-		Me._dgvMain.TabIndex = 0
 		AddHandler Me._dgvMain.Sorted, AddressOf Me.DgvMainSorted
 		AddHandler Me._dgvMain.RowEnter, AddressOf Me.dgvMainRowEnter
 		AddHandler Me._dgvMain.CellMouseDown, AddressOf Me.dgvMainCellMouseDown
@@ -543,24 +463,17 @@ Partial Class MainForm
 		'pnlUpdates
 		'
 		Me.pnlUpdates.Controls.Add(Me.tabMainUpdates)
-		Me.pnlUpdates.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.pnlUpdates.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.pnlUpdates, "pnlUpdates")
 		Me.pnlUpdates.Name = "pnlUpdates"
-		Me.pnlUpdates.Size = New System.Drawing.Size(679, 478)
-		Me.pnlUpdates.TabIndex = 0
-		Me.pnlUpdates.Visible = false
 		'
 		'tabMainUpdates
 		'
 		Me.tabMainUpdates.Controls.Add(Me.tabUpdateInfo)
 		Me.tabMainUpdates.Controls.Add(Me.tabUpdateStatus)
 		Me.tabMainUpdates.Controls.Add(Me.tabUpdateReport)
-		Me.tabMainUpdates.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.tabMainUpdates.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.tabMainUpdates, "tabMainUpdates")
 		Me.tabMainUpdates.Name = "tabMainUpdates"
 		Me.tabMainUpdates.SelectedIndex = 0
-		Me.tabMainUpdates.Size = New System.Drawing.Size(679, 478)
-		Me.tabMainUpdates.TabIndex = 61
 		'
 		'tabUpdateInfo
 		'
@@ -599,346 +512,211 @@ Partial Class MainForm
 		Me.tabUpdateInfo.Controls.Add(Me.lblSeverity)
 		Me.tabUpdateInfo.Controls.Add(Me.lblBullitinID)
 		Me.tabUpdateInfo.Controls.Add(Me.lblClassification)
-		Me.tabUpdateInfo.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabUpdateInfo, "tabUpdateInfo")
 		Me.tabUpdateInfo.Name = "tabUpdateInfo"
-		Me.tabUpdateInfo.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabUpdateInfo.Size = New System.Drawing.Size(671, 452)
-		Me.tabUpdateInfo.TabIndex = 0
-		Me.tabUpdateInfo.Text = "Info"
 		Me.tabUpdateInfo.UseVisualStyleBackColor = true
 		'
 		'lblNetwork
 		'
-		Me.lblNetwork.Location = New System.Drawing.Point(232, 366)
+		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
 		Me.lblNetwork.Name = "lblNetwork"
-		Me.lblNetwork.Size = New System.Drawing.Size(95, 17)
-		Me.lblNetwork.TabIndex = 67
-		Me.lblNetwork.Text = "Requires Network"
 		'
 		'txtNetwork
 		'
-		Me.txtNetwork.Location = New System.Drawing.Point(337, 363)
+		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
 		Me.txtNetwork.Name = "txtNetwork"
 		Me.txtNetwork.ReadOnly = true
-		Me.txtNetwork.Size = New System.Drawing.Size(88, 20)
-		Me.txtNetwork.TabIndex = 68
 		'
 		'txtPackageType
 		'
-		Me.txtPackageType.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtPackageType.Location = New System.Drawing.Point(129, 7)
+		resources.ApplyResources(Me.txtPackageType, "txtPackageType")
 		Me.txtPackageType.Name = "txtPackageType"
 		Me.txtPackageType.ReadOnly = true
-		Me.txtPackageType.Size = New System.Drawing.Size(522, 20)
-		Me.txtPackageType.TabIndex = 66
 		'
 		'lblPackageType
 		'
-		Me.lblPackageType.Location = New System.Drawing.Point(39, 7)
+		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
 		Me.lblPackageType.Name = "lblPackageType"
-		Me.lblPackageType.Size = New System.Drawing.Size(80, 17)
-		Me.lblPackageType.TabIndex = 65
-		Me.lblPackageType.Text = "Package Type"
 		'
 		'lblPrerequisites
 		'
-		Me.lblPrerequisites.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.lblPrerequisites.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblPrerequisites, "lblPrerequisites")
 		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblPrerequisites.Location = New System.Drawing.Point(482, 337)
 		Me.lblPrerequisites.Name = "lblPrerequisites"
-		Me.lblPrerequisites.Size = New System.Drawing.Size(113, 17)
-		Me.lblPrerequisites.TabIndex = 64
-		Me.lblPrerequisites.Text = "Prerequisites"
-		Me.lblPrerequisites.Visible = false
 		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
 		'
 		'lblSupersedes
 		'
-		Me.lblSupersedes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.lblSupersedes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
 		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblSupersedes.Location = New System.Drawing.Point(482, 363)
 		Me.lblSupersedes.Name = "lblSupersedes"
-		Me.lblSupersedes.Size = New System.Drawing.Size(113, 17)
-		Me.lblSupersedes.TabIndex = 63
-		Me.lblSupersedes.Text = "Supersedes"
-		Me.lblSupersedes.Visible = false
 		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
 		'
 		'lblReturnCodes
 		'
-		Me.lblReturnCodes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.lblReturnCodes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblReturnCodes, "lblReturnCodes")
 		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblReturnCodes.Location = New System.Drawing.Point(482, 389)
 		Me.lblReturnCodes.Name = "lblReturnCodes"
-		Me.lblReturnCodes.Size = New System.Drawing.Size(113, 17)
-		Me.lblReturnCodes.TabIndex = 62
-		Me.lblReturnCodes.Text = "Return Codes"
-		Me.lblReturnCodes.Visible = false
 		'
 		'lblUninstall
 		'
-		Me.lblUninstall.Location = New System.Drawing.Point(39, 366)
+		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
 		Me.lblUninstall.Name = "lblUninstall"
-		Me.lblUninstall.Size = New System.Drawing.Size(80, 17)
-		Me.lblUninstall.TabIndex = 60
-		Me.lblUninstall.Text = "Uninstall"
 		'
 		'txtUninstall
 		'
-		Me.txtUninstall.Location = New System.Drawing.Point(129, 363)
+		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
-		Me.txtUninstall.Size = New System.Drawing.Size(88, 20)
-		Me.txtUninstall.TabIndex = 61
 		'
 		'txtImpact
 		'
-		Me.txtImpact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtImpact.Location = New System.Drawing.Point(129, 337)
+		resources.ApplyResources(Me.txtImpact, "txtImpact")
 		Me.txtImpact.Name = "txtImpact"
 		Me.txtImpact.ReadOnly = true
-		Me.txtImpact.Size = New System.Drawing.Size(296, 20)
-		Me.txtImpact.TabIndex = 55
 		'
 		'txtPackage
 		'
-		Me.txtPackage.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtPackage.Location = New System.Drawing.Point(129, 33)
+		resources.ApplyResources(Me.txtPackage, "txtPackage")
 		Me.txtPackage.Name = "txtPackage"
 		Me.txtPackage.ReadOnly = true
-		Me.txtPackage.Size = New System.Drawing.Size(522, 20)
-		Me.txtPackage.TabIndex = 53
 		'
 		'lblID
 		'
-		Me.lblID.Location = New System.Drawing.Point(39, 33)
+		resources.ApplyResources(Me.lblID, "lblID")
 		Me.lblID.Name = "lblID"
-		Me.lblID.Size = New System.Drawing.Size(80, 17)
-		Me.lblID.TabIndex = 52
-		Me.lblID.Text = "Package ID"
 		'
 		'txtProduct
 		'
-		Me.txtProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtProduct.Location = New System.Drawing.Point(129, 208)
+		resources.ApplyResources(Me.txtProduct, "txtProduct")
 		Me.txtProduct.Name = "txtProduct"
 		Me.txtProduct.ReadOnly = true
-		Me.txtProduct.Size = New System.Drawing.Size(522, 20)
-		Me.txtProduct.TabIndex = 59
 		'
 		'txtDescription
 		'
-		Me.txtDescription.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtDescription.Location = New System.Drawing.Point(129, 85)
-		Me.txtDescription.Multiline = true
+		resources.ApplyResources(Me.txtDescription, "txtDescription")
 		Me.txtDescription.Name = "txtDescription"
 		Me.txtDescription.ReadOnly = true
-		Me.txtDescription.Size = New System.Drawing.Size(522, 39)
-		Me.txtDescription.TabIndex = 40
 		'
 		'lblImpact
 		'
-		Me.lblImpact.Location = New System.Drawing.Point(39, 339)
+		resources.ApplyResources(Me.lblImpact, "lblImpact")
 		Me.lblImpact.Name = "lblImpact"
-		Me.lblImpact.Size = New System.Drawing.Size(80, 17)
-		Me.lblImpact.TabIndex = 37
-		Me.lblImpact.Text = "Impact"
 		'
 		'txtPackageTitle
 		'
-		Me.txtPackageTitle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtPackageTitle.Location = New System.Drawing.Point(129, 59)
+		resources.ApplyResources(Me.txtPackageTitle, "txtPackageTitle")
 		Me.txtPackageTitle.Name = "txtPackageTitle"
 		Me.txtPackageTitle.ReadOnly = true
-		Me.txtPackageTitle.Size = New System.Drawing.Size(522, 20)
-		Me.txtPackageTitle.TabIndex = 39
 		'
 		'txtVendor
 		'
-		Me.txtVendor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtVendor.Location = New System.Drawing.Point(129, 182)
+		resources.ApplyResources(Me.txtVendor, "txtVendor")
 		Me.txtVendor.Name = "txtVendor"
 		Me.txtVendor.ReadOnly = true
-		Me.txtVendor.Size = New System.Drawing.Size(522, 20)
-		Me.txtVendor.TabIndex = 58
 		'
 		'lblDescription
 		'
-		Me.lblDescription.Location = New System.Drawing.Point(39, 86)
+		resources.ApplyResources(Me.lblDescription, "lblDescription")
 		Me.lblDescription.Name = "lblDescription"
-		Me.lblDescription.Size = New System.Drawing.Size(80, 17)
-		Me.lblDescription.TabIndex = 27
-		Me.lblDescription.Text = "Description"
 		'
 		'lblRebootBehavior
 		'
-		Me.lblRebootBehavior.Location = New System.Drawing.Point(39, 392)
+		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
 		Me.lblRebootBehavior.Name = "lblRebootBehavior"
-		Me.lblRebootBehavior.Size = New System.Drawing.Size(89, 17)
-		Me.lblRebootBehavior.TabIndex = 38
-		Me.lblRebootBehavior.Text = "Reboot Behavior"
 		'
 		'lblPackageTitle
 		'
-		Me.lblPackageTitle.Location = New System.Drawing.Point(39, 59)
+		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
 		Me.lblPackageTitle.Name = "lblPackageTitle"
-		Me.lblPackageTitle.Size = New System.Drawing.Size(80, 17)
-		Me.lblPackageTitle.TabIndex = 26
-		Me.lblPackageTitle.Text = "Package Title"
 		'
 		'txtClassification
 		'
-		Me.txtClassification.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtClassification.Location = New System.Drawing.Point(129, 130)
+		resources.ApplyResources(Me.txtClassification, "txtClassification")
 		Me.txtClassification.Name = "txtClassification"
 		Me.txtClassification.ReadOnly = true
-		Me.txtClassification.Size = New System.Drawing.Size(296, 20)
-		Me.txtClassification.TabIndex = 57
 		'
 		'txtRebootBehavior
 		'
-		Me.txtRebootBehavior.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtRebootBehavior.Location = New System.Drawing.Point(129, 389)
+		resources.ApplyResources(Me.txtRebootBehavior, "txtRebootBehavior")
 		Me.txtRebootBehavior.Name = "txtRebootBehavior"
 		Me.txtRebootBehavior.ReadOnly = true
-		Me.txtRebootBehavior.Size = New System.Drawing.Size(296, 20)
-		Me.txtRebootBehavior.TabIndex = 54
 		'
 		'txtServerity
 		'
-		Me.txtServerity.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtServerity.Location = New System.Drawing.Point(129, 286)
+		resources.ApplyResources(Me.txtServerity, "txtServerity")
 		Me.txtServerity.Name = "txtServerity"
 		Me.txtServerity.ReadOnly = true
-		Me.txtServerity.Size = New System.Drawing.Size(296, 20)
-		Me.txtServerity.TabIndex = 56
 		'
 		'txtArticleID
 		'
-		Me.txtArticleID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtArticleID.Location = New System.Drawing.Point(129, 234)
+		resources.ApplyResources(Me.txtArticleID, "txtArticleID")
 		Me.txtArticleID.Name = "txtArticleID"
 		Me.txtArticleID.ReadOnly = true
-		Me.txtArticleID.Size = New System.Drawing.Size(296, 20)
-		Me.txtArticleID.TabIndex = 45
 		'
 		'txtBulletinID
 		'
-		Me.txtBulletinID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtBulletinID.Location = New System.Drawing.Point(129, 156)
+		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
 		Me.txtBulletinID.Name = "txtBulletinID"
 		Me.txtBulletinID.ReadOnly = true
-		Me.txtBulletinID.Size = New System.Drawing.Size(296, 20)
-		Me.txtBulletinID.TabIndex = 41
 		'
 		'lblMoreInfoURL
 		'
-		Me.lblMoreInfoURL.Location = New System.Drawing.Point(39, 314)
+		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
 		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
-		Me.lblMoreInfoURL.Size = New System.Drawing.Size(80, 17)
-		Me.lblMoreInfoURL.TabIndex = 36
-		Me.lblMoreInfoURL.Text = "More Info URL"
 		'
 		'txtCVEID
 		'
-		Me.txtCVEID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtCVEID.Location = New System.Drawing.Point(129, 260)
+		resources.ApplyResources(Me.txtCVEID, "txtCVEID")
 		Me.txtCVEID.Name = "txtCVEID"
 		Me.txtCVEID.ReadOnly = true
-		Me.txtCVEID.Size = New System.Drawing.Size(296, 20)
-		Me.txtCVEID.TabIndex = 46
 		'
 		'lblArticleID
 		'
-		Me.lblArticleID.Location = New System.Drawing.Point(39, 235)
+		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
 		Me.lblArticleID.Name = "lblArticleID"
-		Me.lblArticleID.Size = New System.Drawing.Size(80, 17)
-		Me.lblArticleID.TabIndex = 32
-		Me.lblArticleID.Text = "Article ID"
 		'
 		'txtMoreInfoURL
 		'
-		Me.txtMoreInfoURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtMoreInfoURL.Location = New System.Drawing.Point(129, 311)
+		resources.ApplyResources(Me.txtMoreInfoURL, "txtMoreInfoURL")
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
 		Me.txtMoreInfoURL.ReadOnly = true
-		Me.txtMoreInfoURL.Size = New System.Drawing.Size(522, 20)
-		Me.txtMoreInfoURL.TabIndex = 49
 		'
 		'lblProduct
 		'
-		Me.lblProduct.Location = New System.Drawing.Point(39, 209)
+		resources.ApplyResources(Me.lblProduct, "lblProduct")
 		Me.lblProduct.Name = "lblProduct"
-		Me.lblProduct.Size = New System.Drawing.Size(80, 17)
-		Me.lblProduct.TabIndex = 31
-		Me.lblProduct.Text = "Product"
 		'
 		'lblCVEID
 		'
-		Me.lblCVEID.Location = New System.Drawing.Point(39, 263)
+		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
 		Me.lblCVEID.Name = "lblCVEID"
-		Me.lblCVEID.Size = New System.Drawing.Size(80, 17)
-		Me.lblCVEID.TabIndex = 33
-		Me.lblCVEID.Text = "CVE ID"
 		'
 		'lblVendor
 		'
-		Me.lblVendor.Location = New System.Drawing.Point(39, 185)
+		resources.ApplyResources(Me.lblVendor, "lblVendor")
 		Me.lblVendor.Name = "lblVendor"
-		Me.lblVendor.Size = New System.Drawing.Size(80, 17)
-		Me.lblVendor.TabIndex = 30
-		Me.lblVendor.Text = "Vendor"
 		'
 		'lblSeverity
 		'
-		Me.lblSeverity.Location = New System.Drawing.Point(39, 288)
+		resources.ApplyResources(Me.lblSeverity, "lblSeverity")
 		Me.lblSeverity.Name = "lblSeverity"
-		Me.lblSeverity.Size = New System.Drawing.Size(80, 17)
-		Me.lblSeverity.TabIndex = 34
-		Me.lblSeverity.Text = "Severity"
 		'
 		'lblBullitinID
 		'
-		Me.lblBullitinID.Location = New System.Drawing.Point(39, 158)
+		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
 		Me.lblBullitinID.Name = "lblBullitinID"
-		Me.lblBullitinID.Size = New System.Drawing.Size(80, 17)
-		Me.lblBullitinID.TabIndex = 29
-		Me.lblBullitinID.Text = "Bulletin ID"
 		'
 		'lblClassification
 		'
-		Me.lblClassification.Location = New System.Drawing.Point(39, 133)
+		resources.ApplyResources(Me.lblClassification, "lblClassification")
 		Me.lblClassification.Name = "lblClassification"
-		Me.lblClassification.Size = New System.Drawing.Size(80, 17)
-		Me.lblClassification.TabIndex = 28
-		Me.lblClassification.Text = "Classification"
 		'
 		'tabUpdateStatus
 		'
 		Me.tabUpdateStatus.Controls.Add(Me.dgvUpdateStatus)
-		Me.tabUpdateStatus.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabUpdateStatus, "tabUpdateStatus")
 		Me.tabUpdateStatus.Name = "tabUpdateStatus"
-		Me.tabUpdateStatus.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabUpdateStatus.Size = New System.Drawing.Size(671, 452)
-		Me.tabUpdateStatus.TabIndex = 1
-		Me.tabUpdateStatus.Text = "Status"
 		Me.tabUpdateStatus.UseVisualStyleBackColor = true
 		'
 		'dgvUpdateStatus
@@ -952,14 +730,11 @@ Partial Class MainForm
 		Me.dgvUpdateStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.dgvUpdateStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.dgvUpdateStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvUpdateStatus.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.dgvUpdateStatus.Location = New System.Drawing.Point(3, 3)
+		resources.ApplyResources(Me.dgvUpdateStatus, "dgvUpdateStatus")
 		Me.dgvUpdateStatus.Name = "dgvUpdateStatus"
 		Me.dgvUpdateStatus.ReadOnly = true
 		Me.dgvUpdateStatus.RowHeadersVisible = false
 		Me.dgvUpdateStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvUpdateStatus.Size = New System.Drawing.Size(665, 446)
-		Me.dgvUpdateStatus.TabIndex = 0
 		'
 		'tabUpdateReport
 		'
@@ -969,22 +744,14 @@ Partial Class MainForm
 		Me.tabUpdateReport.Controls.Add(Me.lblComputerGroup)
 		Me.tabUpdateReport.Controls.Add(Me.cboUpdateStatus)
 		Me.tabUpdateReport.Controls.Add(Me.cboTargetGroup)
-		Me.tabUpdateReport.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabUpdateReport, "tabUpdateReport")
 		Me.tabUpdateReport.Name = "tabUpdateReport"
-		Me.tabUpdateReport.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabUpdateReport.Size = New System.Drawing.Size(671, 452)
-		Me.tabUpdateReport.TabIndex = 2
-		Me.tabUpdateReport.Text = "Report"
 		Me.tabUpdateReport.UseVisualStyleBackColor = true
 		'
 		'btnUpdateRefreshReport
 		'
-		Me.btnUpdateRefreshReport.Enabled = false
-		Me.btnUpdateRefreshReport.Location = New System.Drawing.Point(563, 33)
+		resources.ApplyResources(Me.btnUpdateRefreshReport, "btnUpdateRefreshReport")
 		Me.btnUpdateRefreshReport.Name = "btnUpdateRefreshReport"
-		Me.btnUpdateRefreshReport.Size = New System.Drawing.Size(75, 23)
-		Me.btnUpdateRefreshReport.TabIndex = 5
-		Me.btnUpdateRefreshReport.Text = "Refresh"
 		Me.btnUpdateRefreshReport.UseVisualStyleBackColor = true
 		AddHandler Me.btnUpdateRefreshReport.Click, AddressOf Me.BtnUpdateRefreshReportClick
 		'
@@ -994,49 +761,35 @@ Partial Class MainForm
 		Me.dgvUpdateReport.AllowUserToDeleteRows = false
 		Me.dgvUpdateReport.AllowUserToOrderColumns = true
 		Me.dgvUpdateReport.AllowUserToResizeRows = false
-		Me.dgvUpdateReport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvUpdateReport, "dgvUpdateReport")
 		Me.dgvUpdateReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdateReport.BackgroundColor = System.Drawing.SystemColors.Window
 		Me.dgvUpdateReport.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.dgvUpdateReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.dgvUpdateReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvUpdateReport.Location = New System.Drawing.Point(7, 60)
 		Me.dgvUpdateReport.Name = "dgvUpdateReport"
 		Me.dgvUpdateReport.ReadOnly = true
 		Me.dgvUpdateReport.RowHeadersVisible = false
 		Me.dgvUpdateReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvUpdateReport.Size = New System.Drawing.Size(657, 384)
-		Me.dgvUpdateReport.TabIndex = 4
 		AddHandler Me.dgvUpdateReport.Sorted, AddressOf Me.DgvUpdateReportSorted
 		AddHandler Me.dgvUpdateReport.CellMouseDown, AddressOf Me.DgvUpdateReportCellMouseDown
 		'
 		'lblUpdateStatus
 		'
-		Me.lblUpdateStatus.Location = New System.Drawing.Point(307, 17)
+		resources.ApplyResources(Me.lblUpdateStatus, "lblUpdateStatus")
 		Me.lblUpdateStatus.Name = "lblUpdateStatus"
-		Me.lblUpdateStatus.Size = New System.Drawing.Size(100, 15)
-		Me.lblUpdateStatus.TabIndex = 3
-		Me.lblUpdateStatus.Text = "Update Status"
 		'
 		'lblComputerGroup
 		'
-		Me.lblComputerGroup.Location = New System.Drawing.Point(50, 17)
+		resources.ApplyResources(Me.lblComputerGroup, "lblComputerGroup")
 		Me.lblComputerGroup.Name = "lblComputerGroup"
-		Me.lblComputerGroup.Size = New System.Drawing.Size(100, 15)
-		Me.lblComputerGroup.TabIndex = 2
-		Me.lblComputerGroup.Text = "Computer Group"
 		'
 		'cboUpdateStatus
 		'
 		Me.cboUpdateStatus.FormattingEnabled = true
-		Me.cboUpdateStatus.Items.AddRange(New Object() {"Failed or Needed", "Installed/Not Applicable or No Status", "Failed", "Needed", "Installed/Not Applicable", "No Status", "Any"})
-		Me.cboUpdateStatus.Location = New System.Drawing.Point(307, 35)
+		Me.cboUpdateStatus.Items.AddRange(New Object() {resources.GetString("cboUpdateStatus.Items"), resources.GetString("cboUpdateStatus.Items1"), resources.GetString("cboUpdateStatus.Items2"), resources.GetString("cboUpdateStatus.Items3"), resources.GetString("cboUpdateStatus.Items4"), resources.GetString("cboUpdateStatus.Items5"), resources.GetString("cboUpdateStatus.Items6")})
+		resources.ApplyResources(Me.cboUpdateStatus, "cboUpdateStatus")
 		Me.cboUpdateStatus.Name = "cboUpdateStatus"
-		Me.cboUpdateStatus.Size = New System.Drawing.Size(233, 21)
-		Me.cboUpdateStatus.TabIndex = 1
-		Me.cboUpdateStatus.Text = "Any"
 		AddHandler Me.cboUpdateStatus.SelectedIndexChanged, AddressOf Me.cboUpdateStatusSelectedIndexChanged
 		'
 		'cboTargetGroup
@@ -1044,33 +797,24 @@ Partial Class MainForm
 		Me.cboTargetGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
 		Me.cboTargetGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
 		Me.cboTargetGroup.FormattingEnabled = true
-		Me.cboTargetGroup.Location = New System.Drawing.Point(50, 35)
+		resources.ApplyResources(Me.cboTargetGroup, "cboTargetGroup")
 		Me.cboTargetGroup.Name = "cboTargetGroup"
-		Me.cboTargetGroup.Size = New System.Drawing.Size(233, 21)
-		Me.cboTargetGroup.TabIndex = 0
 		AddHandler Me.cboTargetGroup.SelectedIndexChanged, AddressOf Me.CboTargetGroupSelectedIndexChanged
 		'
 		'pnlComputers
 		'
 		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
-		Me.pnlComputers.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.pnlComputers.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.pnlComputers, "pnlComputers")
 		Me.pnlComputers.Name = "pnlComputers"
-		Me.pnlComputers.Size = New System.Drawing.Size(679, 478)
-		Me.pnlComputers.TabIndex = 60
-		Me.pnlComputers.Visible = false
 		'
 		'tabMainComputers
 		'
 		Me.tabMainComputers.Controls.Add(Me.tabComputerInfo)
 		Me.tabMainComputers.Controls.Add(Me.tabComputerStatus)
 		Me.tabMainComputers.Controls.Add(Me.tabComputerReport)
-		Me.tabMainComputers.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.tabMainComputers.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.tabMainComputers, "tabMainComputers")
 		Me.tabMainComputers.Name = "tabMainComputers"
 		Me.tabMainComputers.SelectedIndex = 0
-		Me.tabMainComputers.Size = New System.Drawing.Size(679, 478)
-		Me.tabMainComputers.TabIndex = 0
 		'
 		'tabComputerInfo
 		'
@@ -1083,98 +827,66 @@ Partial Class MainForm
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA)
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesNeeded)
 		Me.tabComputerInfo.Controls.Add(Me.lblUpdatesWErrors)
-		Me.tabComputerInfo.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabComputerInfo, "tabComputerInfo")
 		Me.tabComputerInfo.Name = "tabComputerInfo"
-		Me.tabComputerInfo.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerInfo.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerInfo.TabIndex = 0
-		Me.tabComputerInfo.Text = "Info"
 		'
 		'txtUpdatesNeededNum
 		'
 		Me.txtUpdatesNeededNum.BackColor = System.Drawing.SystemColors.Control
 		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesNeededNum.Location = New System.Drawing.Point(176, 30)
+		resources.ApplyResources(Me.txtUpdatesNeededNum, "txtUpdatesNeededNum")
 		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
 		Me.txtUpdatesNeededNum.ReadOnly = true
-		Me.txtUpdatesNeededNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesNeededNum.TabIndex = 15
-		Me.txtUpdatesNeededNum.Text = "##"
 		'
 		'txtUpdatesInstalledorNANum
 		'
 		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.SystemColors.Control
 		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesInstalledorNANum.Location = New System.Drawing.Point(176, 51)
+		resources.ApplyResources(Me.txtUpdatesInstalledorNANum, "txtUpdatesInstalledorNANum")
 		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
 		Me.txtUpdatesInstalledorNANum.ReadOnly = true
-		Me.txtUpdatesInstalledorNANum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesInstalledorNANum.TabIndex = 14
-		Me.txtUpdatesInstalledorNANum.Text = "##"
 		'
 		'txtUpdateNoStatusNum
 		'
 		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.SystemColors.Control
 		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdateNoStatusNum.Location = New System.Drawing.Point(176, 72)
+		resources.ApplyResources(Me.txtUpdateNoStatusNum, "txtUpdateNoStatusNum")
 		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
 		Me.txtUpdateNoStatusNum.ReadOnly = true
-		Me.txtUpdateNoStatusNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdateNoStatusNum.TabIndex = 13
-		Me.txtUpdateNoStatusNum.Text = "##"
 		'
 		'txtUpdatesWErrorsNum
 		'
 		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.SystemColors.Control
 		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.txtUpdatesWErrorsNum.Location = New System.Drawing.Point(176, 9)
+		resources.ApplyResources(Me.txtUpdatesWErrorsNum, "txtUpdatesWErrorsNum")
 		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
 		Me.txtUpdatesWErrorsNum.ReadOnly = true
-		Me.txtUpdatesWErrorsNum.Size = New System.Drawing.Size(100, 13)
-		Me.txtUpdatesWErrorsNum.TabIndex = 12
-		Me.txtUpdatesWErrorsNum.Text = "##"
 		'
 		'lblUpdateNoStatus
 		'
-		Me.lblUpdateNoStatus.Location = New System.Drawing.Point(6, 75)
+		resources.ApplyResources(Me.lblUpdateNoStatus, "lblUpdateNoStatus")
 		Me.lblUpdateNoStatus.Name = "lblUpdateNoStatus"
-		Me.lblUpdateNoStatus.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdateNoStatus.TabIndex = 3
-		Me.lblUpdateNoStatus.Text = "Updates with no status:"
 		'
 		'lblUpdatesInstalledorNA
 		'
-		Me.lblUpdatesInstalledorNA.Location = New System.Drawing.Point(6, 54)
+		resources.ApplyResources(Me.lblUpdatesInstalledorNA, "lblUpdatesInstalledorNA")
 		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
-		Me.lblUpdatesInstalledorNA.Size = New System.Drawing.Size(179, 18)
-		Me.lblUpdatesInstalledorNA.TabIndex = 2
-		Me.lblUpdatesInstalledorNA.Text = "Updates installed/not applicable:"
 		'
 		'lblUpdatesNeeded
 		'
-		Me.lblUpdatesNeeded.Location = New System.Drawing.Point(6, 33)
+		resources.ApplyResources(Me.lblUpdatesNeeded, "lblUpdatesNeeded")
 		Me.lblUpdatesNeeded.Name = "lblUpdatesNeeded"
-		Me.lblUpdatesNeeded.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdatesNeeded.TabIndex = 1
-		Me.lblUpdatesNeeded.Text = "Updates Needed:"
 		'
 		'lblUpdatesWErrors
 		'
-		Me.lblUpdatesWErrors.Location = New System.Drawing.Point(6, 12)
+		resources.ApplyResources(Me.lblUpdatesWErrors, "lblUpdatesWErrors")
 		Me.lblUpdatesWErrors.Name = "lblUpdatesWErrors"
-		Me.lblUpdatesWErrors.Size = New System.Drawing.Size(138, 18)
-		Me.lblUpdatesWErrors.TabIndex = 0
-		Me.lblUpdatesWErrors.Text = "Updates with Errors:"
 		'
 		'tabComputerStatus
 		'
 		Me.tabComputerStatus.Controls.Add(Me.dgvComputerGroupStatus)
-		Me.tabComputerStatus.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabComputerStatus, "tabComputerStatus")
 		Me.tabComputerStatus.Name = "tabComputerStatus"
-		Me.tabComputerStatus.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerStatus.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerStatus.TabIndex = 2
-		Me.tabComputerStatus.Text = "Group Status"
 		Me.tabComputerStatus.UseVisualStyleBackColor = true
 		'
 		'dgvComputerGroupStatus
@@ -1188,37 +900,26 @@ Partial Class MainForm
 		Me.dgvComputerGroupStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.dgvComputerGroupStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.dgvComputerGroupStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvComputerGroupStatus.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.dgvComputerGroupStatus.Location = New System.Drawing.Point(3, 3)
+		resources.ApplyResources(Me.dgvComputerGroupStatus, "dgvComputerGroupStatus")
 		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
 		Me.dgvComputerGroupStatus.ReadOnly = true
 		Me.dgvComputerGroupStatus.RowHeadersVisible = false
 		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
 		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvComputerGroupStatus.Size = New System.Drawing.Size(665, 446)
-		Me.dgvComputerGroupStatus.TabIndex = 1
 		'
 		'tabComputerReport
 		'
 		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
 		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
 		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
-		Me.tabComputerReport.Location = New System.Drawing.Point(4, 22)
+		resources.ApplyResources(Me.tabComputerReport, "tabComputerReport")
 		Me.tabComputerReport.Name = "tabComputerReport"
-		Me.tabComputerReport.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabComputerReport.Size = New System.Drawing.Size(671, 452)
-		Me.tabComputerReport.TabIndex = 1
-		Me.tabComputerReport.Text = "Report"
 		Me.tabComputerReport.UseVisualStyleBackColor = true
 		'
 		'btnComputerRefreshReport
 		'
-		Me.btnComputerRefreshReport.Enabled = false
-		Me.btnComputerRefreshReport.Location = New System.Drawing.Point(299, 34)
+		resources.ApplyResources(Me.btnComputerRefreshReport, "btnComputerRefreshReport")
 		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
-		Me.btnComputerRefreshReport.Size = New System.Drawing.Size(75, 23)
-		Me.btnComputerRefreshReport.TabIndex = 6
-		Me.btnComputerRefreshReport.Text = "Refresh"
 		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
 		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
 		'
@@ -1228,81 +929,63 @@ Partial Class MainForm
 		Me.dgvComputerReport.AllowUserToDeleteRows = false
 		Me.dgvComputerReport.AllowUserToOrderColumns = true
 		Me.dgvComputerReport.AllowUserToResizeRows = false
-		Me.dgvComputerReport.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvComputerReport, "dgvComputerReport")
 		Me.dgvComputerReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvComputerReport.BackgroundColor = System.Drawing.SystemColors.Window
 		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvComputerReport.Location = New System.Drawing.Point(7, 63)
 		Me.dgvComputerReport.Name = "dgvComputerReport"
 		Me.dgvComputerReport.ReadOnly = true
 		Me.dgvComputerReport.RowHeadersVisible = false
 		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvComputerReport.Size = New System.Drawing.Size(657, 384)
-		Me.dgvComputerReport.TabIndex = 5
 		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
 		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
 		'
 		'lblComputerUpdateStatus
 		'
-		Me.lblComputerUpdateStatus.Location = New System.Drawing.Point(50, 17)
+		resources.ApplyResources(Me.lblComputerUpdateStatus, "lblComputerUpdateStatus")
 		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
-		Me.lblComputerUpdateStatus.Size = New System.Drawing.Size(100, 15)
-		Me.lblComputerUpdateStatus.TabIndex = 4
-		Me.lblComputerUpdateStatus.Text = "Update Status"
 		'
 		'cmDgvMain
 		'
 		Me.cmDgvMain.Name = "Data Grid Context Menu"
-		Me.cmDgvMain.Size = New System.Drawing.Size(61, 4)
+		resources.ApplyResources(Me.cmDgvMain, "cmDgvMain")
 		'
 		'statusStrip
 		'
 		Me.statusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel, Me.toolStripStatusLabelLink})
-		Me.statusStrip.Location = New System.Drawing.Point(0, 659)
+		resources.ApplyResources(Me.statusStrip, "statusStrip")
 		Me.statusStrip.Name = "statusStrip"
-		Me.statusStrip.Size = New System.Drawing.Size(858, 22)
-		Me.statusStrip.TabIndex = 2
-		Me.statusStrip.Text = "statusStrip1"
 		'
 		'toolStripStatusLabel
 		'
 		Me.toolStripStatusLabel.Name = "toolStripStatusLabel"
-		Me.toolStripStatusLabel.Size = New System.Drawing.Size(421, 17)
+		resources.ApplyResources(Me.toolStripStatusLabel, "toolStripStatusLabel")
 		Me.toolStripStatusLabel.Spring = true
-		Me.toolStripStatusLabel.Text = "toolStripStatusLabel"
-		Me.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'toolStripStatusLabelLink
 		'
 		Me.toolStripStatusLabelLink.IsLink = true
 		Me.toolStripStatusLabelLink.Name = "toolStripStatusLabelLink"
-		Me.toolStripStatusLabelLink.Size = New System.Drawing.Size(421, 17)
+		resources.ApplyResources(Me.toolStripStatusLabelLink, "toolStripStatusLabelLink")
 		Me.toolStripStatusLabelLink.Spring = true
-		Me.toolStripStatusLabelLink.Text = "http://www.localupdatepublisher.com"
-		Me.toolStripStatusLabelLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		AddHandler Me.toolStripStatusLabelLink.Click, AddressOf Me.ToolStripStatusLabelLinkClick
 		'
 		'exportFileDialog
 		'
 		Me.exportFileDialog.DefaultExt = "tab"
-		Me.exportFileDialog.Filter = "Tab Delimited|*.tab"
+		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
 		'
 		'MainForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(858, 681)
 		Me.Controls.Add(Me.statusStrip)
 		Me.Controls.Add(Me.menuStrip)
 		Me.Controls.Add(Me.splitContainerVert)
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MainMenuStrip = Me.menuStrip
 		Me.Name = "MainForm"
-		Me.Text = "Local Update Publisher"
 		AddHandler Load, AddressOf Me.MainFormLoad
 		AddHandler Activated, AddressOf Me.MainFormActivated
 		AddHandler FormClosing, AddressOf Me.MainFormFormClosing

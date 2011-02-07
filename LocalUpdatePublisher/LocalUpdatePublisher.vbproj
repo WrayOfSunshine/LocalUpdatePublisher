@@ -278,6 +278,7 @@
     <EmbeddedResource Include="Forms\UpdateSelectionForm.resx">
       <DependentUpon>UpdateSelectionForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -291,6 +292,7 @@
     <None Include="Resources\previous.ico" />
     <None Include="Resources\reload.ico" />
     <Folder Include="Modules" />
+    <Folder Include="Properties\Global Strings" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forward.ico" />

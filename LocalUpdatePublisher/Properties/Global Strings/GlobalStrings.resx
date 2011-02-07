@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="approval" xml:space="preserve">
+    <value>Approval</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="update_title" xml:space="preserve">
+    <value>Update Title</value>
+  </data>
+  <data name="last_updated" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="downloaded" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
+  <data name="failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="not_applicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="not_installed" xml:space="preserve">
+    <value>Not Installed</value>
+  </data>
+  <data name="installed" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="group_name" xml:space="preserve">
+    <value>Group Name</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="creation_date" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="refreshing_update_list" xml:space="preserve">
+    <value>Refreshing Update List</value>
+  </data>
+  <data name="computers_shown" xml:space="preserve">
+    <value>computers shown</value>
+  </data>
+  <data name="last_status_report" xml:space="preserve">
+    <value>Last Status Report</value>
+  </data>
+  <data name="installed_not_applicable" xml:space="preserve">
+    <value>Installed/Not Applicable</value>
+  </data>
+  <data name="operating_system" xml:space="preserve">
+    <value>Operating System</value>
+  </data>
+  <data name="ip_address" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="computer_name" xml:space="preserve">
+    <value>Computer Name</value>
+  </data>
+  <data name="refreshing_computer_list" xml:space="preserve">
+    <value>Refreshing computer list</value>
+  </data>
+  <data name="history_for" xml:space="preserve">
+    <value>History for</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="updates" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="computers" xml:space="preserve">
+    <value>Computers</value>
+  </data>
+  <data name="error_packages_resigned" xml:space="preserve">
+    <value>Not all the packages were successfully re-signed.</value>
+  </data>
+  <data name="success_packages_resigned" xml:space="preserve">
+    <value>Packages successfully re-signed.</value>
+  </data>
+  <data name="error_row_invalid_update_id" xml:space="preserve">
+    <value>This row did not return a valid UpdateID</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>Exception</value>
+  </data>
+  <data name="exception_invalid_operation" xml:space="preserve">
+    <value>Invalid Operation Exception</value>
+  </data>
+  <data name="exception_invalid_data" xml:space="preserve">
+    <value>Invalid Data Exception</value>
+  </data>
+  <data name="exception_file_not_found" xml:space="preserve">
+    <value>File Not Found Exception</value>
+  </data>
+  <data name="exception_argument_null" xml:space="preserve">
+    <value>Argument Null Exception</value>
+  </data>
+  <data name="exception_unauthorized_access" xml:space="preserve">
+    <value>Unauthorized Access Exception</value>
+  </data>
+  <data name="error_package_resigned" xml:space="preserve">
+    <value>The package could not be re-signed.</value>
+  </data>
+  <data name="warning_resign_metadata" xml:space="preserve">
+    <value>"{0} appears to be a metadata only update.  Currently, these cannot be re-signed."</value>
+  </data>
+  <data name="prompt_resign_package" xml:space="preserve">
+    <value>Do you wish to re-sign {0}?</value>
+  </data>
+  <data name="prompt_resign_packages" xml:space="preserve">
+    <value>Do you wish to re-sign these {0} updates?</value>
+  </data>
+  <data name="warning_no_row_selected" xml:space="preserve">
+    <value>No row selected</value>
+  </data>
+  <data name="error_packages_expired" xml:space="preserve">
+    <value>Not all the packages were successfully expired.</value>
+  </data>
+  <data name="success_packages_expired" xml:space="preserve">
+    <value>Packages successfully expired.</value>
+  </data>
+  <data name="warning_expire_metadata" xml:space="preserve">
+    <value>"{0} appears to be a metadata only update.  Currently, these cannot be expired."</value>
+  </data>
+  <data name="prompt_expire_packages" xml:space="preserve">
+    <value>Do you wish to expire these {0} updates?</value>
+  </data>
+  <data name="prompt_expire_package" xml:space="preserve">
+    <value>Do you wish to expire {0}?</value>
+  </data>
+  <data name="warning_remove_package_data" xml:space="preserve">
+    <value>There was a problem deleting the package content from the UpdateServicesPackages.  Use this UpdateID to do so manually</value>
+  </data>
+  <data name="exception_wsus_object_not_found" xml:space="preserve">
+    <value>WsusObjectNotFoundException</value>
+  </data>
+  <data name="prompt_remove_packages" xml:space="preserve">
+    <value>Do you wish to remove these {0} updates?</value>
+  </data>
+  <data name="prompt_remove_package" xml:space="preserve">
+    <value>Do you wish to remove {0}?</value>
+  </data>
+  <data name="prompt_decline_packages" xml:space="preserve">
+    <value>Do you wish to decline these {0} updates?</value>
+  </data>
+  <data name="prompt_decline_package" xml:space="preserve">
+    <value>Do you wish to decline {0}?</value>
+  </data>
+  <data name="warning_revised_package_data" xml:space="preserve">
+    <value>There was a problem checking for the package content from the UpdateServicesPackages.  This update cannot be revised.</value>
+  </data>
+  <data name="warning_revise_metadata" xml:space="preserve">
+    <value>"{0} appears to be a metadata only update.  Currently, these cannot be revised."</value>
+  </data>
+  <data name="warning_revise_packages" xml:space="preserve">
+    <value>You cannot revise multiple updates at the same time.</value>
+  </data>
+  <data name="error_update_imported" xml:space="preserve">
+    <value>Update was not imported.</value>
+  </data>
+  <data name="success_update_imported" xml:space="preserve">
+    <value>Update was successfully imported.</value>
+  </data>
+  <data name="error_export_update_data" xml:space="preserve">
+    <value>The package content does not exist in the UpdateServicesPackages folder.  It cannot be exported.</value>
+  </data>
+  <data name="file_filter_cab" xml:space="preserve">
+    <value>CAB Files|*.cab</value>
+  </data>
+  <data name="file_filter_xml" xml:space="preserve">
+    <value>XML Files|*.xml</value>
+  </data>
+  <data name="update_services" xml:space="preserve">
+    <value>Update Services</value>
+  </data>
+  <data name="status_loading_update_report" xml:space="preserve">
+    <value>Loading update report</value>
+  </data>
+  <data name="status_loading_computer_report" xml:space="preserve">
+    <value>Loading computer report</value>
+  </data>
+  <data name="status_loading_form" xml:space="preserve">
+    <value>Loading form</value>
+  </data>
+</root>
