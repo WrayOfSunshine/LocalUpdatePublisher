@@ -9,15 +9,14 @@
 Imports Microsoft.UpdateServices.Administration
 
 Public Partial Class UpdateSelectionForm
-	Private CUSTOMGUID As String = "Custom GUID"
 	Private _currentUpdate As Guid
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
-		Me.InitializeComponent()
+		Me.InitializeComponent()		
 		
 		'Add the custom GUID option to the combo box.
-		cboVendor.Items.Add(CUSTOMGUID)
+		cboVendor.Items.Add(globalRM.GetString("custom_GUID"))
 		
 		'If the update node is instantiated, load the vendor dropdown.
 		'cboVendor.Items.Clear
@@ -58,12 +57,12 @@ Public Partial Class UpdateSelectionForm
 		'If the user chooses a custom GUID then prompt for that GUID
 		' and loop until they enter one or cancel.  If the custom
 		' GUID is taken exit the dialog when finished.
-		If cboVendor.Text = CUSTOMGUID Then
+		If cboVendor.Text = globalRM.GetString("custom_GUID") Then
 			
 			'Loop until user provides a valid GUID or exits.
 			Dim tmpGuid As String = ""
 			While Not ValidateGuid(tmpGuid)
-				tmpGuid = InputBox("Enter the GUID you would like to use:", "Custom GUID Entry",tmpGuid)
+				tmpGuid = InputBox(globalRM.GetString("prompt_update_selection_GUID") & ":", globalRM.GetString("prompt_update_selection_GUID_title"),tmpGuid)
 				If String.IsNullOrEmpty(tmpGuid) Then Exit While
 			End While
 			

@@ -34,6 +34,7 @@ Partial Class ReturnCodesForm
 	''' </summary>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnCodesForm))
 		Me.dgvReturnCodes = New System.Windows.Forms.DataGridView
 		Me.Result = New System.Windows.Forms.DataGridViewComboBoxColumn
 		Me.ReturnCode = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -58,32 +59,29 @@ Partial Class ReturnCodesForm
 		Me.dgvReturnCodes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvReturnCodes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvReturnCodes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Result, Me.ReturnCode, Me.Reboot, Me.Description})
-		Me.dgvReturnCodes.Location = New System.Drawing.Point(12, 12)
+		resources.ApplyResources(Me.dgvReturnCodes, "dgvReturnCodes")
 		Me.dgvReturnCodes.MultiSelect = false
 		Me.dgvReturnCodes.Name = "dgvReturnCodes"
-		Me.dgvReturnCodes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-		Me.dgvReturnCodes.Size = New System.Drawing.Size(430, 245)
-		Me.dgvReturnCodes.TabIndex = 0
 		AddHandler Me.dgvReturnCodes.RowValidating, AddressOf Me.DgvReturnCodesRowValidating
 		'
 		'Result
 		'
 		Me.Result.FillWeight = 113.0288!
-		Me.Result.HeaderText = "Result"
+		resources.ApplyResources(Me.Result, "Result")
 		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
 		Me.Result.Name = "Result"
 		'
 		'ReturnCode
 		'
 		Me.ReturnCode.FillWeight = 113.0288!
-		Me.ReturnCode.HeaderText = "Return Code"
+		resources.ApplyResources(Me.ReturnCode, "ReturnCode")
 		Me.ReturnCode.Name = "ReturnCode"
 		'
 		'Reboot
 		'
 		Me.Reboot.FalseValue = false
 		Me.Reboot.FillWeight = 60.9137!
-		Me.Reboot.HeaderText = "Reboot"
+		resources.ApplyResources(Me.Reboot, "Reboot")
 		Me.Reboot.IndeterminateValue = ""
 		Me.Reboot.Name = "Reboot"
 		Me.Reboot.TrueValue = true
@@ -91,38 +89,28 @@ Partial Class ReturnCodesForm
 		'Description
 		'
 		Me.Description.FillWeight = 113.0288!
-		Me.Description.HeaderText = "Description"
+		resources.ApplyResources(Me.Description, "Description")
 		Me.Description.Name = "Description"
 		'
 		'btnCancel
 		'
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-		Me.btnCancel.TabIndex = 4
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnOk
 		'
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOk.Enabled = false
-		Me.btnOk.Location = New System.Drawing.Point(286, 263)
+		resources.ApplyResources(Me.btnOk, "btnOk")
 		Me.btnOk.Name = "btnOk"
-		Me.btnOk.Size = New System.Drawing.Size(75, 23)
-		Me.btnOk.TabIndex = 3
-		Me.btnOk.Text = "Ok"
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
 		'
 		'btnDelete
 		'
-		Me.btnDelete.Location = New System.Drawing.Point(12, 263)
+		resources.ApplyResources(Me.btnDelete, "btnDelete")
 		Me.btnDelete.Name = "btnDelete"
-		Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-		Me.btnDelete.TabIndex = 5
-		Me.btnDelete.Text = "Delete"
 		Me.btnDelete.UseVisualStyleBackColor = true
 		AddHandler Me.btnDelete.Click, AddressOf Me.BtnDeleteClick
 		'
@@ -130,33 +118,29 @@ Partial Class ReturnCodesForm
 		'
 		Me.contextMenuCodeType.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.failedToolStripMenuItem, Me.succeededToolStripMenuItem, Me.cancelledToolStripMenuItem})
 		Me.contextMenuCodeType.Name = "contextMenuStrip1"
-		Me.contextMenuCodeType.Size = New System.Drawing.Size(138, 70)
+		resources.ApplyResources(Me.contextMenuCodeType, "contextMenuCodeType")
 		'
 		'failedToolStripMenuItem
 		'
 		Me.failedToolStripMenuItem.Name = "failedToolStripMenuItem"
-		Me.failedToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
-		Me.failedToolStripMenuItem.Text = "Failed"
+		resources.ApplyResources(Me.failedToolStripMenuItem, "failedToolStripMenuItem")
 		'
 		'succeededToolStripMenuItem
 		'
 		Me.succeededToolStripMenuItem.Name = "succeededToolStripMenuItem"
-		Me.succeededToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
-		Me.succeededToolStripMenuItem.Text = "Succeeded"
+		resources.ApplyResources(Me.succeededToolStripMenuItem, "succeededToolStripMenuItem")
 		'
 		'cancelledToolStripMenuItem
 		'
 		Me.cancelledToolStripMenuItem.Name = "cancelledToolStripMenuItem"
-		Me.cancelledToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
-		Me.cancelledToolStripMenuItem.Text = "Cancelled"
+		resources.ApplyResources(Me.cancelledToolStripMenuItem, "cancelledToolStripMenuItem")
 		'
 		'ReturnCodesForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(454, 295)
 		Me.Controls.Add(Me.btnDelete)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnOk)
@@ -166,8 +150,6 @@ Partial Class ReturnCodesForm
 		Me.MinimizeBox = false
 		Me.Name = "ReturnCodesForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Return Codes"
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).EndInit
 		Me.contextMenuCodeType.ResumeLayout(false)
 		Me.ResumeLayout(false)

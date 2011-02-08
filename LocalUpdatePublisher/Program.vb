@@ -134,7 +134,7 @@ Namespace My
 								
 								'If the group wasn't found, error out.
 								If foundGroup Is Nothing Then
-									LogError("Could not find " & groupName & " group.")
+									LogError(String.Format(globalRM.GetString("error_command_find_group"), groupName))
 								Else 'Group was found.
 									
 									'Export the data, using the status if one was passed in.
@@ -170,7 +170,7 @@ Namespace My
 									
 									'If the computer wasn't found then error out.
 									If foundComputer Is Nothing Then
-										LogError("Could not find " & computerName & " computer target.")
+										LogError(String.Format(globalRM.GetString("error_command_find_computer"), computerName))
 									Else 'computer was found.
 										
 										'Export the data, using the status if one was passed in.
@@ -226,9 +226,9 @@ Namespace My
 									
 									'If the computer wasn't found then error out.
 									If foundUpdate Is Nothing Then
-										LogError("Could not find " & updateName & " update.")
+										LogError(String.Format(globalRM.GetString("error_command_find_update"), updateName))
 									Else If foundGroup Is Nothing Then
-										LogError("Could not find " & groupName & " group.")
+										LogError(String.Format(globalRM.GetString("error_command_find_group"), groupName))
 									Else 'Computer and group were found.
 										
 										'Export the data, using the status if one was passed in.
@@ -241,14 +241,14 @@ Namespace My
 								Else
 									'Not the right number of arguments.
 								End If
-							Case else
-								Msgbox ("Unknown Command")
+							Case Else
+								Msgbox (globalRM.GetString("error_command_unknown"))
 						End Select
 					Else 'Not connected to server.
-						LogError("Could not connect to " & serverName)
+						LogError(String.Format(globalRM.GetString("error_command_connect"), serverName))
 					End If
 				Else 'Too few arguments.
-					LogError("Not enough argument to generate report")
+					LogError(globalRM.GetString("error_command_arguments"))
 				End If
 				
 				End 'Exit the program.

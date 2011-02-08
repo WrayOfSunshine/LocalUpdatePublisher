@@ -25,11 +25,11 @@ Public Partial Class SavedRulesForm
 		
 		Select Case _formUse
 			Case SavedRulesFormUses.Load
-				Text = "Select Rules to Load"
-				btnAction.Text = "Load"
+				Text = globalRM.GetString("select_rules_to_load")
+				btnAction.Text = globalRM.GetString("load")
 				btnAction.DialogResult = DialogResult.OK
-				btnAction2.Text = "Clear Selection"
-				btnCancel.Text = "Cancel"
+				btnAction2.Text = globalRM.GetString("clear_selection")
+				btnCancel.Text = globalRM.GetString("cancel")
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
@@ -53,10 +53,10 @@ Public Partial Class SavedRulesForm
 				
 				Return tmpRuleCollection
 			Case SavedRulesFormUses.Manage
-				Text = "Select Rules to Manage"
-				btnAction.Text = "Rename"
-				btnAction2.Text = "Delete"
-				btnCancel.Text = "Close"
+				Text = globalRM.GetString("select_rules_to_manage")
+				btnAction.Text = globalRM.GetString("rename")
+				btnAction2.Text = globalRM.GetString("delete")
+				btnCancel.Text = globalRM.GetString("close")
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
@@ -68,17 +68,17 @@ Public Partial Class SavedRulesForm
 				MyBase.ShowDialog
 				Return Nothing
 			Case SavedRulesFormUses.Import
-				Text = "Select Rules to Import"
-				btnAction.Text = "Import"
-				btnAction2.Text = "Clear Selection"				
-				btnCancel.Text = "Cancel"
+				Text = globalRM.GetString("select_rules_to_import")
+				btnAction.Text = globalRM.GetString("import")
+				btnAction2.Text = globalRM.GetString("clear_selection")			
+				btnCancel.Text = globalRM.GetString("cancel")
 				
 				_ruleCollection = RuleCollection.ImportRules
 				
 				If _ruleCollection Is Nothing Then
 					Return Nothing
 				Else If _ruleCollection.Count = 0 Then
-					Msgbox ("There are no rules in the import file.")
+					Msgbox (globalRM.GetString("There are no rules in the import file."))
 					Return Nothing
 				End If
 				
@@ -92,10 +92,10 @@ Public Partial Class SavedRulesForm
 				MyBase.ShowDialog
 				Return Nothing
 			Case SavedRulesFormUses.Export
-				Text = "Select Rules to Export"
-				btnAction.Text = "Export"
-				btnAction2.Text = "Clear Selection"
-				btnCancel.Text = "Cancel"
+				Text = globalRM.GetString("select_rules_to_export")
+				btnAction.Text = globalRM.GetString("export")
+				btnAction2.Text = globalRM.GetString("clear_selection")
+				btnCancel.Text = globalRM.GetString("cancel")
 				
 				'Load rules from the application settings.
 				For Each tmpRule As Rule In appSettings.SavedRuleCollection
@@ -131,7 +131,7 @@ Public Partial Class SavedRulesForm
 				If tmpBool Then
 					Me.Close 'Close the form.
 				Else
-					Msgbox ("You have not selected any rules to export.")
+					Msgbox (globalRM.GetString("warning_saved_rules_export"))
 				End If
 			Case SavedRulesFormUses.Manage				
 				'Loop through and rename.
@@ -143,7 +143,8 @@ Public Partial Class SavedRulesForm
 						'Loop until we get a unique rule name or the user skips/cancels.
 						While True
 							If tmpString = Nothing Then
-								tmpString = InputBox("Change " & DirectCast(tmpRow.Cells("RuleName").Value, String) & " to:","Rename Rule", DirectCast(tmpRow.Cells("RuleName").Value, String)).Trim
+								tmpString = InputBox(String.Format(globalRM.GetString("prompt_saved_rules_rename"),DirectCast(tmpRow.Cells("RuleName").Value, String)) & ":", globalRM.GetString("rename_rule"), _
+								globalRM.GetString("rename_rule")).Trim
 								
 								'If user cancelled then move on.
 								If tmpString = Nothing Then Continue For
@@ -151,12 +152,11 @@ Public Partial Class SavedRulesForm
 								
 								My.Forms.MessageBoxForm.Location = New Point ( Me.Location.X + 100, Me.Location.Y + 100)
 								
-								Dim result As Integer = My.Forms.MessageBoxForm.ShowDialog("There is already a rule called " & _
-									tmpString & vbNewLine & "What would you like to do?", _
-									"Rename", "Skip" , "Cancel")
+								Dim result As Integer = My.Forms.MessageBoxForm.ShowDialog(String.Format(globalRM.GetString("prompt_saved_rules_rule_exists"),tmpString), _
+									globalRM.GetString("rename"), globalRM.GetString("skip") , globalRM.GetString("cancel"))
 								
 								If result = 1 Then 'Rename
-									tmpString = InputBox("Change " & tmpString & " to:","Rename Rule", tmpString).Trim
+									tmpString = InputBox(String.Format(globalRM.GetString("prompt_saved_rules_rename"),tmpString) & ":",globalRM.GetString("rename_rule"), tmpString).Trim
 									
 									'If user cancelled then move on.
 									If tmpString = Nothing Then Continue For
@@ -185,12 +185,11 @@ Public Partial Class SavedRulesForm
 						While (appSettings.SavedRuleCollection.Contains(_ruleCollection(tmpRow.Index).Name))
 							My.Forms.MessageBoxForm.Location = New Point ( Me.Location.X + 100, Me.Location.Y + 100)
 							
-							Dim result As Integer = My.Forms.MessageBoxForm.ShowDialog("There is already a rule called " & _
-								_ruleCollection(tmpRow.Index).Name & vbNewLine & "What would you like to do?", _
-								"Rename", "Skip" , "Cancel")
+							Dim result As Integer = My.Forms.MessageBoxForm.ShowDialog(String.Format(globalRM.GetString("prompt_saved_rules_rule_exists"),_ruleCollection(tmpRow.Index).Name), _
+								globalRM.GetString("rename"), globalRM.GetString("skip") , globalRM.GetString("cancel"))
 							
 							If result = 1 Then 'Rename
-								Dim tmpString As String = InputBox("Rename the rule","Rename Rule")
+								Dim tmpString As String = InputBox(globalRM.GetString("rename_rule"),globalRM.GetString("rename_rule"))
 								
 								'If we got a new name then change the rule to use it.
 								If tmpString = Nothing Then
@@ -225,7 +224,7 @@ Public Partial Class SavedRulesForm
 				
 				'Make sure user has selected updates.
 				If tmpRuleCollection.Count = 0 Then
-					Msgbox ("You have not selected any rules to export.")
+					Msgbox ("error_saved_rules_export")
 				Else
 					'Save the temporary collection to a file.
 					RuleCollection.ExportRules(tmpRuleCollection)
@@ -253,10 +252,10 @@ Public Partial Class SavedRulesForm
 				Next
 				
 				If selectedCount = 0 Then
-					Msgbox ("You must select records for deletion.")
+					Msgbox (globalRM.GetString("warning_saved_rules_delete"))
 				Else
 					'Prompt the user to confirm deletion
-					If Msgbox("Are you sure you want to delete the selected rules?", MsgBoxStyle.YesNo) = DialogResult.Yes Then
+					If Msgbox(globalRM.GetString("prompt_saves_rules_delete"), MsgBoxStyle.YesNo) = DialogResult.Yes Then
 						
 						'Loop backwards to avoid changing indices.
 						For i As Integer = dgvRules.Rows.Count - 1 To 0 Step -1

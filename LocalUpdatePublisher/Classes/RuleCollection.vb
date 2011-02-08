@@ -24,7 +24,7 @@ Imports System.IO
 	
 	'Prompt for file name and import rules.
 	Public Shared Function ImportRules() As RuleCollection
-		openFileDialog.Filter = "XML Files|*.xml"
+		openFileDialog.Filter = globalRM.GetString("file_filter_xml")
 		saveFileDialog.FilterIndex = 1
 		If openFileDialog.ShowDialog = DialogResult.OK Then
 			Return ImportRules(openFileDialog.FileName)
@@ -47,20 +47,20 @@ Imports System.IO
 			Try
 				fs = File.Open(filePath, FileMode.Open, FileAccess.Read)
 			Catch
-				Msgbox ("Could not import rule file.")
+				Msgbox (globalRM.GetString("error_rulecollection_file_open"))
 			End Try
 			
 			'Try to cast the import file to a rule collection.
 			Try
 				ruleCollection = DirectCast(xs.Deserialize(fs), RuleCollection)
 			Catch
-				Msgbox ("Could not cast import rule file to rule collection.")
+				Msgbox (globalRM.GetString("error_rulecollection_cast"))
 				ruleCollection = Nothing
 			Finally
 				fs.Close()
 			End Try
 		Else
-			Msgbox ("The import file does not exist.")
+			Msgbox (globalRM.GetString("error_rulecollection_import_file_exist"))
 		End If
 		
 		Return ruleCollection
@@ -68,7 +68,7 @@ Imports System.IO
 	
 	'Prompt for export file name and export rules.
 	Public Shared Sub ExportRules(ruleCollection As RuleCollection)
-		saveFileDialog.Filter = "XML Files|*.xml"
+		saveFileDialog.Filter = globalRM.GetString("file_filter_xml")
 		saveFileDialog.FilterIndex = 1
 		saveFileDialog.DefaultExt = ".xml"
 		If saveFileDialog.ShowDialog = DialogResult.OK Then

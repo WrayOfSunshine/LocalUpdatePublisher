@@ -51,114 +51,75 @@ Partial Class ConnectionSettingsForm
 		'
 		'chkSsl
 		'
-		Me.chkSsl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.chkSsl.Location = New System.Drawing.Point(135, 91)
+		resources.ApplyResources(Me.chkSsl, "chkSsl")
 		Me.chkSsl.Name = "chkSsl"
-		Me.chkSsl.Size = New System.Drawing.Size(94, 16)
-		Me.chkSsl.TabIndex = 14
-		Me.chkSsl.Text = "Use SSL"
 		Me.chkSsl.UseVisualStyleBackColor = true
 		AddHandler Me.chkSsl.CheckedChanged, AddressOf Me.ChkSSLCheckedChanged
 		'
 		'lblLocalServer
 		'
-		Me.lblLocalServer.Location = New System.Drawing.Point(315, 65)
+		resources.ApplyResources(Me.lblLocalServer, "lblLocalServer")
 		Me.lblLocalServer.Name = "lblLocalServer"
-		Me.lblLocalServer.Size = New System.Drawing.Size(169, 19)
-		Me.lblLocalServer.TabIndex = 13
-		Me.lblLocalServer.Text = "(Leave blank to use local server)"
 		'
 		'txtPort
 		'
-		Me.txtPort.Location = New System.Drawing.Point(73, 88)
+		resources.ApplyResources(Me.txtPort, "txtPort")
 		Me.txtPort.Name = "txtPort"
-		Me.txtPort.Size = New System.Drawing.Size(35, 20)
-		Me.txtPort.TabIndex = 12
 		'
 		'lblPort
 		'
-		Me.lblPort.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblPort.Location = New System.Drawing.Point(27, 88)
+		resources.ApplyResources(Me.lblPort, "lblPort")
 		Me.lblPort.Name = "lblPort"
-		Me.lblPort.Size = New System.Drawing.Size(38, 19)
-		Me.lblPort.TabIndex = 11
-		Me.lblPort.Text = "Port"
-		Me.lblPort.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'txtName
 		'
-		Me.txtName.Location = New System.Drawing.Point(73, 62)
+		resources.ApplyResources(Me.txtName, "txtName")
 		Me.txtName.Name = "txtName"
-		Me.txtName.Size = New System.Drawing.Size(236, 20)
-		Me.txtName.TabIndex = 10
 		'
 		'lblName
 		'
-		Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblName.Location = New System.Drawing.Point(13, 62)
+		resources.ApplyResources(Me.lblName, "lblName")
 		Me.lblName.Name = "lblName"
-		Me.lblName.Size = New System.Drawing.Size(52, 19)
-		Me.lblName.TabIndex = 9
-		Me.lblName.Text = "Name"
-		Me.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'btnConnect
 		'
 		Me.btnConnect.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnConnect.Location = New System.Drawing.Point(29, 125)
+		resources.ApplyResources(Me.btnConnect, "btnConnect")
 		Me.btnConnect.Name = "btnConnect"
-		Me.btnConnect.Size = New System.Drawing.Size(106, 27)
-		Me.btnConnect.TabIndex = 15
-		Me.btnConnect.Text = "Connect"
 		Me.btnConnect.UseVisualStyleBackColor = true
 		AddHandler Me.btnConnect.Click, AddressOf Me.BtnConnectClick
 		'
 		'btnCancel
 		'
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(241, 125)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(106, 27)
-		Me.btnCancel.TabIndex = 16
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'cboServers
 		'
 		Me.cboServers.FormattingEnabled = true
-		Me.cboServers.Location = New System.Drawing.Point(73, 27)
+		resources.ApplyResources(Me.cboServers, "cboServers")
 		Me.cboServers.Name = "cboServers"
-		Me.cboServers.Size = New System.Drawing.Size(383, 21)
-		Me.cboServers.TabIndex = 17
 		AddHandler Me.cboServers.SelectedIndexChanged, AddressOf Me.CboServersSelectedIndexChanged
 		'
 		'lblServers
 		'
-		Me.lblServers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblServers.Location = New System.Drawing.Point(13, 29)
+		resources.ApplyResources(Me.lblServers, "lblServers")
 		Me.lblServers.Name = "lblServers"
-		Me.lblServers.Size = New System.Drawing.Size(52, 19)
-		Me.lblServers.TabIndex = 18
-		Me.lblServers.Text = "Servers"
-		Me.lblServers.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'btnDelete
 		'
-		Me.btnDelete.Enabled = false
-		Me.btnDelete.Location = New System.Drawing.Point(135, 125)
+		resources.ApplyResources(Me.btnDelete, "btnDelete")
 		Me.btnDelete.Name = "btnDelete"
-		Me.btnDelete.Size = New System.Drawing.Size(106, 27)
-		Me.btnDelete.TabIndex = 19
-		Me.btnDelete.Text = "Delete"
 		Me.btnDelete.UseVisualStyleBackColor = true
 		AddHandler Me.btnDelete.Click, AddressOf Me.BtnDeleteClick
 		'
 		'ConnectionSettingsForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(503, 171)
 		Me.Controls.Add(Me.btnDelete)
 		Me.Controls.Add(Me.cboServers)
 		Me.Controls.Add(Me.lblServers)
@@ -171,15 +132,12 @@ Partial Class ConnectionSettingsForm
 		Me.Controls.Add(Me.txtName)
 		Me.Controls.Add(Me.lblName)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ConnectionSettingsForm"
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Connect to WSUS Server"
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub

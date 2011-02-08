@@ -110,19 +110,19 @@ Imports System.Reflection
 		Try
 			Directory.CreateDirectory(SettingsDirectory)
 		Catch x As UnauthorizedAccessException
-			Msgbox ("Unauthorized Access Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message)
 		Catch x As ArgumentNullException
-			Msgbox ("Argument Null Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message)
 		Catch x As ArgumentException
-			Msgbox ("Argument Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument") & ": " & vbNewLine & x.Message)
 		Catch x As PathTooLongException
-			Msgbox ("Path Too Long Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_path_too_long") & ": " & vbNewLine & x.Message)
 		Catch x As DirectoryNotFoundException
-			Msgbox ("Directory Not Found Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_directory_not_found") & ": " & vbNewLine & x.Message)
 		Catch x As IOException
-			Msgbox ("IO Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_IO") & ": " & vbNewLine & x.Message)
 		Catch x As NotSupportedException
-			Msgbox ("Not Supported Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_not_supported") & ": " & vbNewLine & x.Message)
 		End Try
 		
 		userfile = SettingsDirectory & "\config.xml"

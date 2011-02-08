@@ -28,7 +28,7 @@ Public Partial Class ConnectionSettingsForm
 			cboServers.Items.Add(server.Name)
 			End If
 		Next
-		cboServers.Items.Add("Add New Server")
+		cboServers.Items.Add(globalRM.GetString("add_new_server"))
 		
 		Call ClearForm
 		

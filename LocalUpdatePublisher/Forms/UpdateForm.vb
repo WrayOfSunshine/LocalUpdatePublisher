@@ -139,7 +139,7 @@ Public Partial Class UpdateForm
 	
 	'Allow the user to edit the metadata.
 	Sub BtnMetaDataEditClick(Sender As Object, E As EventArgs)
-		Msgbox ("Edit This XML At Your Own Risk.")
+		Msgbox (globalRM.GetString("warning_update_manual_edit"))
 		TxtInstallableItemMetaData.ScrollBars = ScrollBars.Vertical
 		TxtInstallableItemMetaData.ReadOnly = False
 		BtnMetaDataEdit.Visible = False
@@ -147,7 +147,7 @@ Public Partial Class UpdateForm
 	
 	'Alow the user to edit the superseded metadata.
 	Sub BtnIsSupersededEditClick(Sender As Object, E As EventArgs)
-		Msgbox ("Edit This XML At Your Own Risk.")
+		Msgbox (globalRM.GetString("warning_update_manual_edit"))
 		TxtIsSuperceded_InstallableItem.ScrollBars = ScrollBars.Vertical
 		TxtIsSuperceded_InstallableItem.ReadOnly = False
 		BtnIsSupersededEdit.Visible = False
@@ -169,7 +169,7 @@ Public Partial Class UpdateForm
 		'Change the next button's text as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount ) Then
 			Me.BtnNext.Show
-			Me.BtnNext.Text = "Next"
+			Me.BtnNext.Text = globalRM.GetString("next")
 			Me.BtnNext.Image = My.Resources.Forward.ToBitmap
 			Me.BtnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		Else
@@ -206,9 +206,9 @@ Public Partial Class UpdateForm
 		'Change the next button's text as needed.
 		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount - 1 ) Then
 			Me.BtnNext.Show
-			Me.BtnNext.Text = "Next"
+			Me.BtnNext.Text = globalRM.GetString("next")
 		Else
-			Me.BtnNext.Text = "Finish"
+			Me.BtnNext.Text = globalRM.GetString("finish")
 			Me.BtnNext.Image = Nothing
 			Me.BtnNext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		End If
@@ -242,7 +242,7 @@ Public Partial Class UpdateForm
 	'Prompt the user to select a file, set the textbox and next button accordingly.
 	Private Sub BtnUpdateFileClick(Sender As Object, E As EventArgs)
 		'Set the file filter.
-		Me.DlgUpdateFile.Filter ="MSI Files|*.MSI|MSP Files|*.MSP|EXE Files|*.EXE"
+		Me.DlgUpdateFile.Filter = globalRM.GetString("file_filter_update_binary")
 		
 		'Disable the MSI path.
 		Me.TxtMSIPath.Enabled = False
@@ -374,23 +374,17 @@ Public Partial Class UpdateForm
 						
 						'Catch any exception related to the creation of the SDP.
 					Catch X As InvalidOperationException
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"InvalidOperationException: " & X.Message)
+						Msgbox (globalRM.GetString("exception_invalid_operation") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					Catch X As ArgumentNullException
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"ArgumentNullException: " & X.Message)
+						Msgbox (globalRM.GetString("exception_argument_null") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					Catch X As ArgumentException
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"ArgumentException: " & X.Message)
+						Msgbox (globalRM.GetString("exception_argument") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					Catch X As FileNotFoundException
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"FileNotFoundException: " & X.Message)
+						Msgbox (globalRM.GetString("exception_file_not_found") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					Catch X As InvalidDataException
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"InvalidDataException: " & X.Message)
+						Msgbox (globalRM.GetString("exception_invalid_data") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					Catch X As Win32Exception
-						Msgbox ("Could Not Create Software Distribution Package:" & VbNewline & _
-							"Win32Exception: " & X.Message)
+						Msgbox (globalRM.GetString("exception_win32") & ":" & globalRM.GetString("error_update_create_SDP") & VbNewline & X.Message)
 					End Try
 				End If 'If this is a revision.
 				
@@ -532,11 +526,11 @@ Public Partial Class UpdateForm
 					
 				Catch X As UriFormatException
 					My.Forms.ProgressForm.Dispose
-					Msgbox("UriFormatException:Could Not Save The Update Information." & VbNewline & X.Message)
+					Msgbox(globalRM.GetString("exception_URI_format") & ":" & globalRM.GetString("error_update_save") & VbNewline & X.Message)
 					Return False
 				Catch X As Exception
 					My.Forms.ProgressForm.Dispose
-					Msgbox("Exception:Could Not Save The Update Information." & VbNewline & X.Message)
+					Msgbox(globalRM.GetString("exception") & ":" & globalRM.GetString("error_update_save") & VbNewline & X.Message)
 					Return False
 				End Try
 			Case "tabIsInstalled"
@@ -600,10 +594,10 @@ Public Partial Class UpdateForm
 					Me.TxtSummary.Text = IndentXMLString(Me.TxtSummary.Text)
 					Me.TxtSummary.DeselectAll
 				Catch X As XmlException
-					Msgbox("XmlException: The XML For The SDP Is Invalid." & VbNewLine & X.Message)
+					Msgbox(globalRM.GetString("exception_XML") & ": " & globalRM.GetString("error_update_invalid_XML") & VbNewLine & X.Message)
 					Return False
 				Catch X As XmlSchemaException
-					Msgbox("XmlSchemaException: The XML For The SDP Is Invalid." & VbNewLine & X.Message)
+					Msgbox(globalRM.GetString("exception_XML_schema") & ": " & globalRM.GetString("error_update_invalid_XML") & VbNewLine & X.Message)
 					Return False
 				End Try
 				
@@ -614,7 +608,7 @@ Public Partial Class UpdateForm
 				'If the user wants to export the SDP then prompt for a filename.
 				If ChkExportSdp.Checked Then
 					'Set default extension.
-					DlgExportSdp.Filter = "XML Files|*.XML"
+					DlgExportSdp.Filter = globalRM.GetString("file_filter_xml")
 					DlgExportSdp.DefaultExt = ".XML"
 					DlgExportSdp.AddExtension = True
 					DlgExportSdp.FileName = _Sdp.Title & ".Xml"
@@ -630,9 +624,9 @@ Public Partial Class UpdateForm
 					Me.Cursor = Cursors.WaitCursor
 					
 					If ConnectionManager.RevisePackage(_Sdp, Me) Then
-						Msgbox ("Package Successfully Revised")
+						Msgbox (globalRM.GetString("warning_update_revise_success"))
 					Else
-						Msgbox ("Package Was Not Revised")
+						Msgbox (globalRM.GetString("warning_update_revised_failed"))
 					End If
 					Me.Cursor = Cursors.Arrow
 					Me.DialogResult = DialogResult.OK
@@ -663,9 +657,9 @@ Public Partial Class UpdateForm
 					Me.Cursor = Cursors.Arrow
 					
 					If Result Then
-						Msgbox ("Package Successfully Published")
+						Msgbox (globalRM.GetString("warning_update_publish_success"))
 					Else
-						Msgbox ("Package Was Not Published")
+						Msgbox (globalRM.GetString("warning_update_publish_failed"))
 					End If
 					
 					Me.DialogResult = DialogResult.OK
@@ -703,9 +697,9 @@ Public Partial Class UpdateForm
 			If _Sdp.InstallableItems.Count > 0 Then 'There is an Installable Item.
 				
 				If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
-					Me.TxtUninstall.Text = "False"
+					Me.TxtUninstall.Text = globalRM.GetString("false")
 				Else
-					Me.TxtUninstall.Text = "True"
+					Me.TxtUninstall.Text = globalRM.GetString("true")
 				End If
 				
 				
@@ -795,19 +789,19 @@ Public Partial Class UpdateForm
 			Return Sr.ReadToEnd()
 			
 		Catch X As OutOfMemoryException
-			MessageBox.Show("Out Of Memory Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_out_of_memory") & ": " & VbNewline & X.Message)
 		Catch X As IOException
-			MessageBox.Show("IO Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_IO") & ": " & VbNewline & X.Message)
 		Catch X As ArgumentOutOfRangeException
-			MessageBox.Show("Argument Out Of Range Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_argument_out_of_range") & ": " & VbNewline & X.Message)
 		Catch X As ArgumentNullException
-			MessageBox.Show("Argument Null Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_argument_null") & ": " & VbNewline & X.Message)
 		Catch X As ArgumentException
-			MessageBox.Show("Argument Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_argument") & ": " & VbNewline & X.Message)
 		Catch X As ObjectDisposedException
-			MessageBox.Show("Object Disposed Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_object_disposed") & ": " & VbNewline & X.Message)
 		Catch X As XMLException
-			MessageBox.Show("XML Exception: " & VbNewline & X.Message)
+			MessageBox.Show(globalRM.GetString("exception_XML") & ": " & VbNewline & X.Message)
 		End Try
 		Return String.Empty 'If we got here there was an exception.
 	End Function
@@ -859,7 +853,7 @@ Public Partial Class UpdateForm
 			
 			'Prevent user from selecting metadata only if they have additional files.
 			If Me.dgvAdditionalFiles.Rows.Count > 0 Then
-				Msgbox ("You cannot publish a metadata only update with additional files.")
+				Msgbox (globalRM.GetString("warning_update_metadata_additional_files"))
 				chkMetaDataOnly.Checked = False
 				Exit Sub
 			End If
@@ -913,7 +907,7 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	Function TxtOriginalURIVerifyKey() As Boolean
-		If MsgBox("If you modify the Original URL, it must be downloaded for verification.  Do you wish to proceed?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+		If MsgBox(globalRM.GetString("prompt_update_redownload"), MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
 			Me._OriginalURIChanged = True
 			Me._OriginalFileInfo = Nothing
 			Return False
@@ -927,16 +921,16 @@ Public Partial Class UpdateForm
 	Sub VerifyOriginalURI()
 		If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
 			If Me.chkMetadataOnly.Checked Then
-				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Given.")
+				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,globalRM.GetString("warning_update_no_uri"))
 			Else
 				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
 			End If
 		ElseIf Not Me._Revision AndAlso Me.dgvAdditionalFiles.Rows.Count > 0 Then
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Cannot publish URI when additional files are included.")
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,globalRM.GetString("warning_update_additional_files_uri"))
 		ElseIf Not Uri.IsWellFormedUriString(Me.txtOriginalURI.Text, UriKind.Absolute) Then
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"Not valid URI.")
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,globalRM.GetString("warning_update_invalid_URI"))
 		ElseIf Not me._Revision AndAlso Not Me.txtOriginalURI.Text.Contains(DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name)
-			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"File name does not match.")
+			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,globalRM.GetString("warning_update_file_mismatch"))
 		Else
 			Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
 		End If
@@ -950,7 +944,7 @@ Public Partial Class UpdateForm
 		If TypeOf Sender Is TextBox Then
 			tmpTextBox = DirectCast(sender, TextBox)
 			If Not String.IsNullOrEmpty(tmpTextBox.Text) AndAlso Not Uri.IsWellFormedUriString(tmpTextBox.Text, UriKind.Absolute) Then
-				Me.ErrorProviderUpdate.SetError(tmpTextBox,"Invalid URI.")
+				Me.ErrorProviderUpdate.SetError(tmpTextBox, globalRM.GetString("warning_update_invalid_URI."))
 			Else
 				Me.ErrorProviderUpdate.SetError(tmpTextBox,"")
 			End If
@@ -999,7 +993,7 @@ Public Partial Class UpdateForm
 			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox
 				
 				If DirectCast(Sender, Control).Text.Length = 0 Then
-					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), "Please Enter A Value.")
+					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), globalRM.GetString("warning_no_value"))
 					E.Cancel = True
 				End If
 			End If

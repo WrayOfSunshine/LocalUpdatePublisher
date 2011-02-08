@@ -36,11 +36,11 @@ Public Partial Class ExportCatalogForm
 		
 		
 		'Select a file and open the export catalog dialog.
-		exportFileDialog.Filter = "CAB File|*.cab"
+		exportFileDialog.Filter = globalRM.GetString("file_filter_cab")
 		If exportFileDialog.ShowDialog = DialogResult.Cancel Then
 			Exit Sub
 		Else If Not Strings.Right(exportFileDialog.FileName, 3).ToLower = "cab" Then
-			Msgbox ( "You must export to a cab file.")
+			Msgbox ( globalRM.GetString("error_export_catalog_not_cab"))
 			Exit Sub
 		End If
 		
@@ -137,7 +137,7 @@ Public Partial Class ExportCatalogForm
 		If Not tmpUpdateRevisionId Is Nothing Then
 			
 			If AddSDPtoDGV ( ConnectionManager.ExportSDP(tmpUpdateRevisionId) ) = False Then
-				Msgbox ("This update cannot be exported because an Original URL has not be entered.")
+				Msgbox (globalRM.GetString("error_export_catalog_no_url"))
 			End If
 			
 		End If
@@ -158,7 +158,7 @@ Public Partial Class ExportCatalogForm
 		
 		'If any of the packages cannot be added, warn the user.
 		If errorBool Then
-			Msgbox ("Some packages could not be added because an Original URL was not entered.")
+			Msgbox (globalRM.GetString("error_export_catalog_no_url_multiple"))
 		End If
 	End Sub
 	

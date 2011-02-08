@@ -91,7 +91,7 @@ Friend NotInheritable Class ConnectionManager
 		_currentServerConfiguration = Nothing
 		ConnectionManager.ClearCert
 		
-		My.Forms.MainForm.Status = "Connecting to " & server.Name
+		My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connecting"), server.Name)
 		My.Forms.MainForm.Update
 		
 		Try
@@ -108,7 +108,7 @@ Friend NotInheritable Class ConnectionManager
 			
 			'Get update server configuration.
 			_currentServerConfiguration = _currentServer.GetConfiguration
-			My.Forms.MainForm.Status = "Connected to " & _currentServer.Name
+			My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connected") , _currentServer.Name)
 			My.Forms.MainForm.Update
 			
 			
@@ -116,17 +116,14 @@ Friend NotInheritable Class ConnectionManager
 			'If there is no cert info, prompt the user to create it.
 			If Not ConnectionManager.LoadCert Then
 				If server.ChildServer AndAlso Not currentserverconfiguration.IsReplicaServer
-					MsgBox ( "There is no certificate on " & server.Name &".  " & _
-						"Until you create or import a certificate you will not be able to publish updates.")
+					MsgBox (String.Format(globalRM.GetString("error_connection_no_cert"), server.Name))
 				Else
 					If (MsgBox ( _
-						"There is no certificate on " & server.Name &".  " & _
-						"Until you create or import a certificate you will not be able to publish updates.  " & _
-						"Would you like to do so now?", _
+						String.Format(globalRM.GetString("error_connection_no_cert"), server.Name) & vbNewLine & globalRM.GetString("prompt_connection_cert"), _
 						MsgBoxStyle.YesNo, _
-						"No WSUS Certificate found") _
+						globalRM.GetString("warning_connection_no_cert")) _
 						) = vbYes Then
-						My.Forms.MainForm.Status = "Certificate not found"
+						My.Forms.MainForm.Status = globalRM.GetString("warning_connection_no_cert")
 						My.Forms.MainForm.Update
 						
 						'Show Cert Info form.
@@ -141,17 +138,17 @@ Friend NotInheritable Class ConnectionManager
 			
 			'Handle the various exceptions that could occur.
 		Catch x As WebException
-			msgbox("WebException: could not connect to WSUS server." & vbNewline & x.Message)
+			msgbox(globalRM.GetString("exception_web") & ": " & globalRM.GetString("error_connection_connect") & vbNewline & x.Message)
 		Catch x As WsusInvalidServerException
-			msgbox("WsusInvalidServerException: could not connect to WSUS server." & vbNewline & x.Message)
+			msgbox(globalRM.GetString("exception_wsus_invalid_server") & ": " & globalRM.GetString("error_connection_connect") & vbNewline & x.Message)
 		Catch x As SecurityException
-			msgbox("SecurityException: you are not permitted to connect to the WSUS server." & vbNewline & x.Message)
+			msgbox(globalRM.GetString("exception_security") & ": " & globalRM.GetString("error_connection_connect_security") & vbNewline & x.Message)
 		Catch x As UriFormatException
-			msgbox("UriFormatException: your servername is not properly formatted." & vbNewline & x.Message)
+			msgbox(globalRM.GetString("exception_URI_format") & ": " & globalRM.GetString("error_connection_connect_URI") & vbNewline & x.Message)
 		End Try
 		
 		'If we got this far then we failed to connect.
-		My.Forms.MainForm.Status = "Failed to connect to server"
+		My.Forms.MainForm.Status = globalRM.GetString("error_connection_connect")
 		My.Forms.MainForm.Update
 		Return False
 	End Function 'Connect
@@ -183,15 +180,15 @@ Friend NotInheritable Class ConnectionManager
 				Return packageFile
 				
 			Catch x As InvalidOperationException
-				Msgbox ("Could not export SDP:" & vbNewLine & "InvalidOperationException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
 			Catch x As ArgumentNullException
-				Msgbox ("Could not export SDP:" & vbNewLine & "ArgumentNullException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_argument_null") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
 			Catch x As ArgumentOutOfRangeException
-				Msgbox ("Could not export SDP:" & vbNewLine & "ArgumentOutOfRangeException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_argument_out_of_range") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
 			Catch x As WsusObjectNotFoundException
-				Msgbox ("Could not export SDP:" & vbNewLine & "WsusObjectNotFoundException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_wsus_object_not_found") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
 			Catch x As Exception
-				Msgbox ("Could not export SDP:" & vbNewline & x.Message)
+				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewline & x.Message)
 			End Try
 		End If
 		
@@ -212,11 +209,11 @@ Friend NotInheritable Class ConnectionManager
 				Return tmpSDP
 				
 			Catch x As FileNotFoundException
-				Msgbox ("Could not get SDP:" & vbNewLine & "FileNotFoundException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
 			Catch x As XmlSchemaValidationException
-				Msgbox ("Could not get SDP:" & vbNewLine & "XmlSchemaValidationException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_XML_schema") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
 			Catch x As Exception
-				Msgbox ("Could not get SDP:" & vbNewline & x.Message)
+				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewline & x.Message)
 			End Try
 		End If
 		
@@ -235,11 +232,11 @@ Friend NotInheritable Class ConnectionManager
 				Return tmpSDP
 				
 			Catch x As FileNotFoundException
-				Msgbox ("Could not get SDP:" & vbNewLine & "FileNotFoundException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
 			Catch x As XmlSchemaValidationException
-				Msgbox ("Could not get SDP:" & vbNewLine & "XmlSchemaValidationException: " & x.Message)
+				Msgbox (globalRM.GetString("exception_XML_schema") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
 			Catch x As Exception
-				Msgbox ("Could not get SDP:" & vbNewline & x.Message)
+				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewline & x.Message)
 			End Try
 		End If
 		
@@ -275,32 +272,31 @@ Friend NotInheritable Class ConnectionManager
 	' has provided one but not the other, error out.
 	Public Shared Sub CreateCert(pfxFile As String, password As SecureString)
 		If CertExists Then
-			MessageBox.Show("A certificate already exists.")
+			MessageBox.Show(globalRM.GetString("warning_connection_cert_exists"))
 		Else
 			Try
 				If (pfxFile IsNot Nothing) AndAlso (password IsNot Nothing) Then
 					_currentServerConfiguration.SetSigningCertificate(pfxFile, password)
 					_currentServerConfiguration.Save()
-					MessageBox.Show("Your certificate was imported successfully.  " & "This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.")
+					MessageBox.Show(globalRM.GetString("success_connection_cert_import"))
 					LoadCert()
 				ElseIf pfxFile Is Nothing AndAlso password Is Nothing Then
 					_currentServerConfiguration.SetSigningCertificate()
 					_currentServerConfiguration.Save()
-					MessageBox.Show("A self-signed certificate has been created.  " & "This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.")
+					MessageBox.Show(globalRM.GetString("success_connection_cert_created"))
 					LoadCert()
 				Else
-					MessageBox.Show("The certificate could not be imported.  " & "You must supply both a certificate file and a password to use an existing certificate.")
+					MessageBox.Show(globalRM.GetString("warning_connection_cert_import"))
 				End If
-			Catch x As WsusInvalidDataException
-				
 				'Handle the exceptions that could occur.
-				MessageBox.Show("WsusInvalidDataException: There was an error saving the certificate to the WSUS server." & Environment.NewLine & x.Message)
+			Catch x As WsusInvalidDataException
+				MessageBox.Show(globalRM.GetString("exception_wsus_invalid_data") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
 			Catch x As InvalidOperationException
-				MessageBox.Show("InvalidOperationException: There was an error saving the certificate to the WSUS server." & Environment.NewLine & x.Message)
+				MessageBox.Show(globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
 			Catch x As FileNotFoundException
-				MessageBox.Show("FileNotFoundException: There was an error saving the certificate to the WSUS server." & Environment.NewLine & x.Message)
+				MessageBox.Show(globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
 			Catch x As Win32Exception
-				MessageBox.Show("Win32Exception: There was an error creating the certificate." & Environment.NewLine & x.Message)
+				MessageBox.Show(globalRM.GetString("exception_win32") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
 			End Try
 		End If
 	End Sub
@@ -357,7 +353,7 @@ Friend NotInheritable Class ConnectionManager
 			My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
 			
 			'Show the progress form and publish the revision.
-			My.Forms.ProgressForm.ShowDialog("Please wait while the update is revised.", parentForm)
+			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait_revise"), parentForm)
 			publisher.RevisePackage
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
@@ -367,44 +363,44 @@ Friend NotInheritable Class ConnectionManager
 			
 			Return True
 		Catch x As PathTooLongException
-			Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_path_too_long") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As SecurityException
-			Msgbox ("The package could not be published." & vbNewline & "Security Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_security") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As UnauthorizedAccessException
-			Msgbox ("The package could not be published." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_unauthorized_access") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As NotSupportedException
-			Msgbox ("The package could not be published." & vbNewline & "Not Supported Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_not_supported") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As ArgumentNullException
-			Msgbox ("The package could not be published." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument_null") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As FileNotFoundException
-			Msgbox ("The package could not be published." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As InvalidDataException
-			Msgbox ("The package could not be published." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_invalid_data") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As InvalidOperationException
-			Msgbox ("The package could not be published." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As ArgumentException
-			Msgbox ("The package could not be published." & vbNewline & "Argument Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As IOException
-			Msgbox ("The package could not be published." & vbNewline & "IO Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_IO") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As Win32Exception
-			Msgbox ("The package could not be published." & vbNewline & "Win32 Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_win32") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Finally
 			My.Forms.ProgressForm.Dispose
 		End Try
 		Return False
 	End Function
-'	
-'	'Call with no temporary path.
-'	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean'
-'		Return PublishPackageFromCatalog(sdp, parentForm)
-'	End Function
+	'
+	'	'Call with no temporary path.
+	'	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean'
+	'		Return PublishPackageFromCatalog(sdp, parentForm)
+	'	End Function
 	
 	'Publish package, downloading any files necessary from the installable item.
 	Public Shared Function PublishPackageFromCatalog(sdp As SoftwareDistributionPackage, tmpPath As String, parentForm As Form) As Boolean
 		Dim fileDownloader As New WebClient()
 		Dim fileList As IList(Of Object) = New List(Of Object)
 		Dim tmpFileUri As Uri = Nothing
-		Dim result As Boolean = False		
+		Dim result As Boolean = False
 		
 		Try
 			'If an installable item exists
@@ -429,7 +425,7 @@ Friend NotInheritable Class ConnectionManager
 					
 					'Set cursor and position of progress form.
 					My.Forms.ProgressForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, My.Forms.MainForm.Location.Y + 100)
-					My.Forms.ProgressForm.ShowDialog("Downloading files for " & sdp.Title, parentForm)
+					My.Forms.ProgressForm.ShowDialog(String.Format(globalRM.GetString("status_connection_downloading") , sdp.Title), parentForm)
 					My.Forms.ProgressForm.SetCurrentStep(tmpFileUri.ToString)
 					DownloadChunks(tmpFileUri, My.Forms.ProgressForm.progressBar, tmpFilePath)
 					fileList.Add(New FileInfo(tmpFilePath)) 'Add it to the list.
@@ -444,9 +440,9 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 		Catch ex As HttpListenerException
-			Console.WriteLine("HttpListenerException:" & vbNewLine & "Could not download " & tmpFileUri.ToString & vbNewLine & ex.Message)
+			Console.WriteLine(globalRM.GetString("exception_HTTP_listener") & ": " & vbNewLine & String.Format( globalRM.GetString("error_connection_download") , tmpFileUri.ToString) & vbNewLine & ex.Message)
 		Catch ex As Exception
-			Console.WriteLine("Exception:" & vbNewLine & "Could not download " & tmpFileUri.ToString & vbNewLine & ex.Message)
+			Console.WriteLine(globalRM.GetString("exception") & ": " & vbNewLine & String.Format( globalRM.GetString("error_connection_download") , tmpFileUri.ToString) & vbNewLine & ex.Message)
 		End Try
 		Return False
 	End Function
@@ -473,10 +469,10 @@ Friend NotInheritable Class ConnectionManager
 			
 			'Make sure an SDP and CAB file were found.
 			If sdpFile Is Nothing Then
-				Msgbox ("This file does not contain an XML file.")
+				Msgbox (globalRM.GetString("error_connection_no_XML"))
 				Return False
 			Else If packageCab Is Nothing Then
-				Msgbox ("This file does not contain a CAB file.")
+				Msgbox (globalRM.GetString("error_connection_no_cab"))
 				Return False
 			End If
 			
@@ -543,7 +539,7 @@ Friend NotInheritable Class ConnectionManager
 				AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
 				
 				'Show the progress form and publish the package.
-				My.Forms.ProgressForm.ShowDialog("Please wait while the update is published.", parentForm)
+				My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)
 				publisher.PublishSignedPackage(packageCab.FullName, Nothing)
 				
 				My.Forms.ProgressForm.Dispose
@@ -554,27 +550,27 @@ Friend NotInheritable Class ConnectionManager
 				Return True
 				
 			Catch x As PathTooLongException
-				Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_path_too_long") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As SecurityException
-				Msgbox ("The package could not be published." & vbNewline & "Security Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_security") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As UnauthorizedAccessException
-				Msgbox ("The package could not be published." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_unauthorized_access") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As NotSupportedException
-				Msgbox ("The package could not be published." & vbNewline & "Not Supported Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_not_supported") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As ArgumentNullException
-				Msgbox ("The package could not be published." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_argument_null") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As FileNotFoundException
-				Msgbox ("The package could not be published." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As InvalidDataException
-				Msgbox ("The package could not be published." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_invalid_data") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As InvalidOperationException
-				Msgbox ("The package could not be published." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As ArgumentException
-				Msgbox ("The package could not be published." & vbNewline & "Argument Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_argument") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As IOException
-				Msgbox ("The package could not be published." & vbNewline & "IO Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_IO") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Catch x As Win32Exception
-				Msgbox ("The package could not be published." & vbNewline & "Win32 Exception: " & vbNewLine & x.Message)
+				Msgbox (globalRM.GetString("exception_win32") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 			Finally
 				My.Forms.ProgressForm.Dispose
 			End Try
@@ -630,7 +626,7 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 			'Show the progress form and publish the package.
-			My.Forms.ProgressForm.ShowDialog("Please wait while the update is published.", parentForm)
+			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)
 			publisher.PublishPackage(updateDir.FullName, Nothing, Nothing)
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler
@@ -641,27 +637,27 @@ Friend NotInheritable Class ConnectionManager
 			
 			Return True
 		Catch x As PathTooLongException
-			Msgbox ("The package could not be published." & vbNewline & "Path Too Long Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_path_too_long") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As SecurityException
-			Msgbox ("The package could not be published." & vbNewline & "Security Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_security") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As UnauthorizedAccessException
-			Msgbox ("The package could not be published." & vbNewline & "Unauthorized Access Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_unauthorized_access") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As NotSupportedException
-			Msgbox ("The package could not be published." & vbNewline & "Not Supported Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_not_supported") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As ArgumentNullException
-			Msgbox ("The package could not be published." & vbNewline & "Argument Null Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument_null") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As FileNotFoundException
-			Msgbox ("The package could not be published." & vbNewline & "File Not Found Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As InvalidDataException
-			Msgbox ("The package could not be published." & vbNewline & "Invalid Data Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_invalid_data") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As InvalidOperationException
-			Msgbox ("The package could not be published." & vbNewline & "Invalid Operation Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As ArgumentException
-			Msgbox ("The package could not be published." & vbNewline & "Argument Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_argument") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As IOException
-			Msgbox ("The package could not be published." & vbNewline & "IO Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_IO") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Catch x As Win32Exception
-			Msgbox ("The package could not be published." & vbNewline & "Win32 Exception: " & vbNewLine & x.Message)
+			Msgbox (globalRM.GetString("exception_win32") & ": " & globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
 		Finally
 			My.Forms.ProgressForm.Dispose
 		End Try
@@ -687,7 +683,7 @@ Friend NotInheritable Class ConnectionManager
 			Next
 			
 		Catch
-			Msgbox ("Unable to copy directory: " & vbNewline & sourceDirectoryName)
+			Msgbox (globalRM.GetString("error_connection_copy_directory") & ": " & vbNewline & sourceDirectoryName)
 		End Try
 		
 	End Sub
@@ -721,9 +717,9 @@ Friend NotInheritable Class ConnectionManager
 			' URIs which allow us to both download from the internet and use
 			' local paths.
 			URLReq = WebRequest.CreateDefault(sURL)
-
+			
 			'If this is a file url then we do not need credentials.
-			If Not sURL.IsFile Then				
+			If Not sURL.IsFile Then
 				URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
 			End If
 			
@@ -748,7 +744,7 @@ Friend NotInheritable Class ConnectionManager
 		Catch
 			If Not sChunks Is Nothing Then sChunks.Close()
 			If Not FileStreamer Is Nothing Then FileStreamer.Close()
-			MsgBox("Couldn't download the file." & vbNewLine & Err.Description)
+			MsgBox(String.Format(globalRM.GetString("error_connection_download") , sURL.AbsolutePath) & vbNewLine & Err.Description)
 		End Try
 	End Sub
 	

@@ -54,7 +54,7 @@ Public Partial Class ImportCatalogForm
 				
 				'Make sure that an XML file was found in the CAB file.
 				If String.IsNullOrEmpty(importFile) Then
-					Msgbox("No XML file was found in this Cabinet file")
+					Msgbox(globalRM.GetString("error_import_catalog_no_xml"))
 					Return Nothing
 				End If
 				

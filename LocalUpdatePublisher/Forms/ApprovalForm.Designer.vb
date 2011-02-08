@@ -56,33 +56,26 @@ Partial Class ApprovalForm
 		'
 		'lblInfo
 		'
-		Me.lblInfo.Location = New System.Drawing.Point(12, 17)
+		resources.ApplyResources(Me.lblInfo, "lblInfo")
 		Me.lblInfo.Name = "lblInfo"
-		Me.lblInfo.Size = New System.Drawing.Size(506, 21)
-		Me.lblInfo.TabIndex = 0
 		'
 		'dgvApprovals
 		'
 		Me.dgvApprovals.AllowUserToAddRows = false
 		Me.dgvApprovals.AllowUserToDeleteRows = false
-		Me.dgvApprovals.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvApprovals, "dgvApprovals")
 		Me.dgvApprovals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvApprovals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.Approval, Me.CreationDate, Me.ApprovalAction, Me.TargetGroup})
-		Me.dgvApprovals.Location = New System.Drawing.Point(5, 41)
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.ReadOnly = true
 		Me.dgvApprovals.RowHeadersVisible = false
-		Me.dgvApprovals.Size = New System.Drawing.Size(568, 299)
-		Me.dgvApprovals.TabIndex = 1
 		AddHandler Me.dgvApprovals.CellMouseDown, AddressOf Me.DtaGridViewCellMouseDown
 		'
 		'ComputerGroup
 		'
 		Me.ComputerGroup.FillWeight = 142.2902!
-		Me.ComputerGroup.HeaderText = "Computer Group"
+		resources.ApplyResources(Me.ComputerGroup, "ComputerGroup")
 		Me.ComputerGroup.Name = "ComputerGroup"
 		Me.ComputerGroup.ReadOnly = true
 		'
@@ -90,7 +83,7 @@ Partial Class ApprovalForm
 		'
 		Me.Approval.ContextMenuStrip = Me.cntxtMenuStrip
 		Me.Approval.FillWeight = 96.79607!
-		Me.Approval.HeaderText = "Approval"
+		resources.ApplyResources(Me.Approval, "Approval")
 		Me.Approval.Name = "Approval"
 		Me.Approval.ReadOnly = true
 		Me.Approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -100,115 +93,87 @@ Partial Class ApprovalForm
 		'
 		Me.cntxtMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.approveForInstallToolStripMenuItem, Me.approveForRemovalToolStripMenuItem, Me.notApprovedToolStripMenuItem})
 		Me.cntxtMenuStrip.Name = "contextMenuStrip"
-		Me.cntxtMenuStrip.Size = New System.Drawing.Size(188, 70)
+		resources.ApplyResources(Me.cntxtMenuStrip, "cntxtMenuStrip")
 		'
 		'approveForInstallToolStripMenuItem
 		'
 		Me.approveForInstallToolStripMenuItem.Name = "approveForInstallToolStripMenuItem"
-		Me.approveForInstallToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-		Me.approveForInstallToolStripMenuItem.Text = "Approve for Install"
+		resources.ApplyResources(Me.approveForInstallToolStripMenuItem, "approveForInstallToolStripMenuItem")
 		AddHandler Me.approveForInstallToolStripMenuItem.Click, AddressOf Me.ApproveForInstallToolStripMenuItemClick
 		'
 		'approveForRemovalToolStripMenuItem
 		'
 		Me.approveForRemovalToolStripMenuItem.Name = "approveForRemovalToolStripMenuItem"
-		Me.approveForRemovalToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-		Me.approveForRemovalToolStripMenuItem.Text = "Approve for Removal"
+		resources.ApplyResources(Me.approveForRemovalToolStripMenuItem, "approveForRemovalToolStripMenuItem")
 		AddHandler Me.approveForRemovalToolStripMenuItem.Click, AddressOf Me.ApproveForRemovalToolStripMenuItemClick
 		'
 		'notApprovedToolStripMenuItem
 		'
 		Me.notApprovedToolStripMenuItem.Name = "notApprovedToolStripMenuItem"
-		Me.notApprovedToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-		Me.notApprovedToolStripMenuItem.Text = "Not Approved"
+		resources.ApplyResources(Me.notApprovedToolStripMenuItem, "notApprovedToolStripMenuItem")
 		AddHandler Me.notApprovedToolStripMenuItem.Click, AddressOf Me.NotApprovedToolStripMenuItemClick
 		'
 		'CreationDate
 		'
 		Me.CreationDate.FillWeight = 60.9137!
-		Me.CreationDate.HeaderText = "Date"
+		resources.ApplyResources(Me.CreationDate, "CreationDate")
 		Me.CreationDate.Name = "CreationDate"
 		Me.CreationDate.ReadOnly = true
 		'
 		'ApprovalAction
 		'
-		Me.ApprovalAction.HeaderText = "Approval Action"
+		resources.ApplyResources(Me.ApprovalAction, "ApprovalAction")
 		Me.ApprovalAction.Name = "ApprovalAction"
 		Me.ApprovalAction.ReadOnly = true
-		Me.ApprovalAction.Visible = false
 		'
 		'TargetGroup
 		'
-		Me.TargetGroup.HeaderText = "Target Group"
+		resources.ApplyResources(Me.TargetGroup, "TargetGroup")
 		Me.TargetGroup.Name = "TargetGroup"
 		Me.TargetGroup.ReadOnly = true
-		Me.TargetGroup.Visible = false
 		'
 		'btnOK
 		'
-		Me.btnOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnOK, "btnOK")
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOK.Enabled = false
-		Me.btnOK.Location = New System.Drawing.Point(363, 364)
 		Me.btnOK.Name = "btnOK"
-		Me.btnOK.Size = New System.Drawing.Size(99, 28)
-		Me.btnOK.TabIndex = 2
-		Me.btnOK.Text = "Ok"
 		Me.btnOK.UseVisualStyleBackColor = true
 		AddHandler Me.btnOK.Click, AddressOf Me.btnOKClick
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(468, 364)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(99, 28)
-		Me.btnCancel.TabIndex = 3
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'lblUninstallable
 		'
-		Me.lblUninstallable.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.lblUninstallable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblUninstallable.Location = New System.Drawing.Point(7, 348)
+		resources.ApplyResources(Me.lblUninstallable, "lblUninstallable")
 		Me.lblUninstallable.Name = "lblUninstallable"
-		Me.lblUninstallable.Size = New System.Drawing.Size(429, 14)
-		Me.lblUninstallable.TabIndex = 5
-		Me.lblUninstallable.Text = "This update cannot be uninstalled."
-		Me.lblUninstallable.Visible = false
 		'
 		'btnReload
 		'
-		Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.btnReload.Location = New System.Drawing.Point(24, 364)
+		resources.ApplyResources(Me.btnReload, "btnReload")
 		Me.btnReload.Name = "btnReload"
-		Me.btnReload.Size = New System.Drawing.Size(99, 28)
-		Me.btnReload.TabIndex = 6
-		Me.btnReload.Text = "Reload"
 		Me.btnReload.UseVisualStyleBackColor = true
 		AddHandler Me.btnReload.Click, AddressOf Me.BtnReloadClick
 		'
 		'ApprovalForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(580, 397)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnReload)
 		Me.Controls.Add(Me.btnOK)
 		Me.Controls.Add(Me.lblUninstallable)
 		Me.Controls.Add(Me.lblInfo)
 		Me.Controls.Add(Me.dgvApprovals)
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Approve Update"
 		AddHandler FormClosed, AddressOf Me.UpdateApprovalFormFormClosed
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).EndInit
 		Me.cntxtMenuStrip.ResumeLayout(false)

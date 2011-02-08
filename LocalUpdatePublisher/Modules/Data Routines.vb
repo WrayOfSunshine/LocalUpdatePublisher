@@ -286,14 +286,14 @@ Public Module Data_Routines
 					
 					If tmpUpdate.IsDeclined Then
 						If tmpUpdate.PublicationState = PublicationState.Expired
-							tmpRow("Status") = "Declined (Expired)"
+							tmpRow("Status") = globalRM.GetString("declined_expired")
 						Else
-							tmpRow("Status") = "Declined"
+							tmpRow("Status") = globalRM.GetString("declined")
 						End If
 					Else If tmpUpdate.IsSuperseded
-						tmpRow("Status") = "Superseded"
+						tmpRow("Status") = globalRM.GetString("superseded")
 					Else If tmpUpdate.IsApproved
-						tmpRow("Status") = "Approved"
+						tmpRow("Status") = globalRM.GetString("approved")
 					End If
 					
 					dt.Rows.Add(tmpRow)

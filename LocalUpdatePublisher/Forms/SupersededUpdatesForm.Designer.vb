@@ -33,6 +33,7 @@ Partial Class SupersededUpdatesForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SupersededUpdatesForm))
 		Me.btnRemove = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button
@@ -45,34 +46,22 @@ Partial Class SupersededUpdatesForm
 		'
 		'btnRemove
 		'
-		Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.btnRemove.Location = New System.Drawing.Point(12, 263)
+		resources.ApplyResources(Me.btnRemove, "btnRemove")
 		Me.btnRemove.Name = "btnRemove"
-		Me.btnRemove.Size = New System.Drawing.Size(75, 23)
-		Me.btnRemove.TabIndex = 9
-		Me.btnRemove.Text = "Remove"
 		Me.btnRemove.UseVisualStyleBackColor = true
 		AddHandler Me.btnRemove.Click, AddressOf Me.BtnRemoveClick
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-		Me.btnCancel.TabIndex = 8
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnAdd
 		'
-		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.btnAdd.Location = New System.Drawing.Point(93, 263)
+		resources.ApplyResources(Me.btnAdd, "btnAdd")
 		Me.btnAdd.Name = "btnAdd"
-		Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-		Me.btnAdd.TabIndex = 7
-		Me.btnAdd.Text = "Add"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
 		'
@@ -82,52 +71,40 @@ Partial Class SupersededUpdatesForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Title})
-		Me.dgvUpdates.Location = New System.Drawing.Point(12, 12)
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
-		Me.dgvUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-		Me.dgvUpdates.Size = New System.Drawing.Size(430, 245)
-		Me.dgvUpdates.TabIndex = 6
 		'
 		'Id
 		'
-		Me.Id.HeaderText = "Id"
+		resources.ApplyResources(Me.Id, "Id")
 		Me.Id.Name = "Id"
 		Me.Id.ReadOnly = true
-		Me.Id.Visible = false
 		'
 		'Title
 		'
-		Me.Title.HeaderText = "Title"
+		resources.ApplyResources(Me.Title, "Title")
 		Me.Title.Name = "Title"
 		Me.Title.ReadOnly = true
 		'
 		'btnOk
 		'
-		Me.btnOk.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnOk, "btnOk")
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOk.Location = New System.Drawing.Point(286, 263)
 		Me.btnOk.Name = "btnOk"
-		Me.btnOk.Size = New System.Drawing.Size(75, 23)
-		Me.btnOk.TabIndex = 10
-		Me.btnOk.Text = "Ok"
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
 		'
 		'SupersededUpdatesForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(454, 294)
 		Me.Controls.Add(Me.btnOk)
 		Me.Controls.Add(Me.btnRemove)
 		Me.Controls.Add(Me.btnCancel)
@@ -138,8 +115,6 @@ Partial Class SupersededUpdatesForm
 		Me.MinimizeBox = false
 		Me.Name = "SupersededUpdatesForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Superseded Updates"
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub

@@ -16,16 +16,24 @@ Imports System.Xml
 
 Public Partial Class RulesEditor
 	Inherits UserControl
-	Private Const _beginAnd As String = "Begin And"
-	Private Const _endAnd As String = "End And"
-	Private Const _beginOr As String = "Begin Or"
-	Private Const _endOr As String = "End Or"
-	Private Const _addGroup As String = "Group"
-	Private Const _removeAnd As String = "Remove And"
-	Private Const _removeOr As String = "Remove Or"
+	Private _beginAnd As String
+	Private _endAnd As String
+	Private _beginOr As String
+	Private _endOr As String
+	Private _addGroup As String
+	Private _removeAnd As String
+	Private _removeOr As String
 	
 	Public Sub New()
 		InitializeComponent()
+		
+		_beginAnd = globalRM.GetString("group_begin_and")
+		_endAnd = globalRM.GetString("group_end_and")
+		_beginOr = globalRM.GetString("group_begin_or")
+		_endOr = globalRM.GetString("group_end_or")
+		_addGroup = globalRM.GetString("group")
+		_removeAnd = globalRM.GetString("group_remove_and")
+		_removeOr = globalRM.GetString("group_remove_or")
 	End Sub
 	
 	#Region "Properties and Accessors"
@@ -264,7 +272,7 @@ Public Partial Class RulesEditor
 		'Make sure a Row is selected.
 		If dgv_rules.SelectedRows.Count > 0 Then
 			'Prompt the user and remove the row
-			If DialogResult.Yes = MessageBox.Show(Me, "Are you sure you want to delete this rule?", "Delete rule?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+			If DialogResult.Yes = MessageBox.Show(Me, globalRM.GetString("prompt_ruled_editor_confirm_delete"), globalRM.GetString("prompt_ruled_editor_delete"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
 				For Each tempRow As DataGridViewRow In dgv_rules.SelectedRows
 					dgv_rules.Rows.RemoveAt(tempRow.Index)
 				Next
@@ -276,7 +284,7 @@ Public Partial Class RulesEditor
 	Private Sub btn_edit_Click(sender As Object, e As EventArgs)
 		'Make sure a row is selected.
 		If dgv_rules.SelectedRows.Count = 1 Then
-			Dim tmpRulesForm As New RulesForm("Edit " & Me.RuleEditorTitle)
+			Dim tmpRulesForm As New RulesForm(globalRM.GetString("edit") & " " & Me.RuleEditorTitle)
 			tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 			
 			If DialogResult.OK = tmpRulesForm.ShowDialog(Me, dgv_rules.CurrentRow.Cells(1).Value.ToString()) Then
@@ -378,7 +386,7 @@ Public Partial Class RulesEditor
 					Next
 				End If
 			Catch x As ArgumentOutOfRangeException
-				MessageBox.Show("Could not add/remove group." & Environment.NewLine & "Argument Out Of Range Exception:" & Environment.NewLine & x.Message)
+				MessageBox.Show(globalRM.GetString("exception_argument_out_of_range") & ":" & globalRM.GetString("error_rules_editor_add_remove_group") & Environment.NewLine & x.Message)
 				'More than one row selected.
 			End Try
 		End If
@@ -501,12 +509,12 @@ Public Partial Class RulesEditor
 	
 	'Save the current set of rules.
 	Sub BtnSaveRulesClick(sender As Object, e As EventArgs)
-		Dim strInput As String = InputBox("Name the new Rule","Name Rule")
+		Dim strInput As String = InputBox(globalRM.GetString("prompt_rules_editor_name_new_rule"),globalRM.GetString("prompt_rules_editor_name_rule"))
 		If Not strInput = Nothing Then
 			
 			'If the rule doesn't already exist then add it.
 			If appSettings.SavedRuleCollection.Contains(strInput) Then
-				Msgbox ("This rule already exists")
+				Msgbox (globalRM.GetString("warning_rules_editor_exists"))
 			Else
 				appSettings.SavedRuleCollection.Add(New Rule(strInput, Rule))
 			End If

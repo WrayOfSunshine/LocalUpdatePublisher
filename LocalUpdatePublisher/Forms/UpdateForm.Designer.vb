@@ -132,9 +132,7 @@ Partial Class UpdateForm
 		'
 		'tabsImportUpdate
 		'
-		Me.tabsImportUpdate.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.tabsImportUpdate, "tabsImportUpdate")
 		Me.tabsImportUpdate.Controls.Add(Me.tabIntro)
 		Me.tabsImportUpdate.Controls.Add(Me.tabPackageInfo)
 		Me.tabsImportUpdate.Controls.Add(Me.tabIsInstalled)
@@ -142,11 +140,8 @@ Partial Class UpdateForm
 		Me.tabsImportUpdate.Controls.Add(Me.tabIsSuperseded)
 		Me.tabsImportUpdate.Controls.Add(Me.tabMetaData)
 		Me.tabsImportUpdate.Controls.Add(Me.tabSummary)
-		Me.tabsImportUpdate.Location = New System.Drawing.Point(-1, 3)
 		Me.tabsImportUpdate.Name = "tabsImportUpdate"
 		Me.tabsImportUpdate.SelectedIndex = 0
-		Me.tabsImportUpdate.Size = New System.Drawing.Size(613, 544)
-		Me.tabsImportUpdate.TabIndex = 0
 		'
 		'tabIntro
 		'
@@ -162,57 +157,35 @@ Partial Class UpdateForm
 		Me.tabIntro.Controls.Add(Me.txtUpdateFile)
 		Me.tabIntro.Controls.Add(Me.lblUpdateFile)
 		Me.tabIntro.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.tabIntro.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabIntro, "tabIntro")
 		Me.tabIntro.Name = "tabIntro"
-		Me.tabIntro.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabIntro.Size = New System.Drawing.Size(605, 517)
-		Me.tabIntro.TabIndex = 0
-		Me.tabIntro.Text = "Intro"
 		'
 		'btnAddDir
 		'
-		Me.btnAddDir.Location = New System.Drawing.Point(534, 110)
+		resources.ApplyResources(Me.btnAddDir, "btnAddDir")
 		Me.btnAddDir.Name = "btnAddDir"
-		Me.btnAddDir.Size = New System.Drawing.Size(65, 19)
-		Me.btnAddDir.TabIndex = 3
-		Me.btnAddDir.Text = "Add Dir"
 		Me.btnAddDir.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddDir.Click, AddressOf Me.BtnAddDirClick
 		'
 		'lblInfo
 		'
-		Me.lblInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblInfo.Location = New System.Drawing.Point(0, 3)
+		resources.ApplyResources(Me.lblInfo, "lblInfo")
 		Me.lblInfo.Name = "lblInfo"
-		Me.lblInfo.Size = New System.Drawing.Size(582, 53)
-		Me.lblInfo.TabIndex = 10
-		Me.lblInfo.Text = resources.GetString("lblInfo.Text")
 		'
 		'txtMSIPath
 		'
-		Me.txtMSIPath.Enabled = false
-		Me.txtMSIPath.Location = New System.Drawing.Point(94, 88)
+		resources.ApplyResources(Me.txtMSIPath, "txtMSIPath")
 		Me.txtMSIPath.Name = "txtMSIPath"
-		Me.txtMSIPath.Size = New System.Drawing.Size(435, 20)
-		Me.txtMSIPath.TabIndex = 2
 		'
 		'lblMSIPath
 		'
-		Me.lblMSIPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblMSIPath.Location = New System.Drawing.Point(6, 90)
+		resources.ApplyResources(Me.lblMSIPath, "lblMSIPath")
 		Me.lblMSIPath.Name = "lblMSIPath"
-		Me.lblMSIPath.Size = New System.Drawing.Size(84, 15)
-		Me.lblMSIPath.TabIndex = 8
-		Me.lblMSIPath.Text = "MSI Path"
-		Me.lblMSIPath.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'btnAddFiles
 		'
-		Me.btnAddFiles.Location = New System.Drawing.Point(534, 131)
+		resources.ApplyResources(Me.btnAddFiles, "btnAddFiles")
 		Me.btnAddFiles.Name = "btnAddFiles"
-		Me.btnAddFiles.Size = New System.Drawing.Size(65, 19)
-		Me.btnAddFiles.TabIndex = 4
-		Me.btnAddFiles.Text = "Add Files"
 		Me.btnAddFiles.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFilesClick
 		'
@@ -223,82 +196,61 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvAdditionalFiles.ColumnHeadersVisible = false
 		Me.dgvAdditionalFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FileName, Me.RemoveFile, Me.FileObject})
-		Me.dgvAdditionalFiles.Location = New System.Drawing.Point(94, 114)
+		resources.ApplyResources(Me.dgvAdditionalFiles, "dgvAdditionalFiles")
 		Me.dgvAdditionalFiles.Name = "dgvAdditionalFiles"
 		Me.dgvAdditionalFiles.ReadOnly = true
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
-		Me.dgvAdditionalFiles.Size = New System.Drawing.Size(435, 397)
-		Me.dgvAdditionalFiles.TabIndex = 6
 		Me.dgvAdditionalFiles.TabStop = false
 		AddHandler Me.dgvAdditionalFiles.CellContentClick, AddressOf Me.DgvAdditionalFilesCellContentClick
 		'
 		'FileName
 		'
 		Me.FileName.Frozen = true
-		Me.FileName.HeaderText = "File Name"
+		resources.ApplyResources(Me.FileName, "FileName")
 		Me.FileName.Name = "FileName"
 		Me.FileName.ReadOnly = true
-		Me.FileName.Width = 270
 		'
 		'RemoveFile
 		'
 		Me.RemoveFile.Frozen = true
-		Me.RemoveFile.HeaderText = ""
+		resources.ApplyResources(Me.RemoveFile, "RemoveFile")
 		Me.RemoveFile.Name = "RemoveFile"
 		Me.RemoveFile.ReadOnly = true
 		Me.RemoveFile.Text = "Remove"
 		Me.RemoveFile.UseColumnTextForButtonValue = true
-		Me.RemoveFile.Width = 50
 		'
 		'FileObject
 		'
 		Me.FileObject.Frozen = true
-		Me.FileObject.HeaderText = "File Object"
+		resources.ApplyResources(Me.FileObject, "FileObject")
 		Me.FileObject.Name = "FileObject"
 		Me.FileObject.ReadOnly = true
-		Me.FileObject.Visible = false
 		'
 		'lblAdditionalFiles
 		'
-		Me.lblAdditionalFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblAdditionalFiles.Location = New System.Drawing.Point(4, 114)
+		resources.ApplyResources(Me.lblAdditionalFiles, "lblAdditionalFiles")
 		Me.lblAdditionalFiles.Name = "lblAdditionalFiles"
-		Me.lblAdditionalFiles.Size = New System.Drawing.Size(84, 15)
-		Me.lblAdditionalFiles.TabIndex = 5
-		Me.lblAdditionalFiles.Text = "Additional Files"
-		Me.lblAdditionalFiles.TextAlign = System.Drawing.ContentAlignment.TopRight
-		Me.lblAdditionalFiles.Visible = false
 		'
 		'btnUpdateFile
 		'
-		Me.btnUpdateFile.Location = New System.Drawing.Point(535, 63)
+		resources.ApplyResources(Me.btnUpdateFile, "btnUpdateFile")
 		Me.btnUpdateFile.Name = "btnUpdateFile"
-		Me.btnUpdateFile.Size = New System.Drawing.Size(53, 19)
-		Me.btnUpdateFile.TabIndex = 1
-		Me.btnUpdateFile.Text = "Browse"
 		Me.btnUpdateFile.UseVisualStyleBackColor = true
 		AddHandler Me.btnUpdateFile.Click, AddressOf Me.BtnUpdateFileClick
 		'
 		'txtUpdateFile
 		'
-		Me.txtUpdateFile.Location = New System.Drawing.Point(94, 62)
+		resources.ApplyResources(Me.txtUpdateFile, "txtUpdateFile")
 		Me.txtUpdateFile.Name = "txtUpdateFile"
 		Me.txtUpdateFile.ReadOnly = true
-		Me.txtUpdateFile.Size = New System.Drawing.Size(412, 20)
-		Me.txtUpdateFile.TabIndex = 0
 		Me.txtUpdateFile.TabStop = false
 		AddHandler Me.txtUpdateFile.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtUpdateFile.Validating, AddressOf Me.ControlValidating
 		'
 		'lblUpdateFile
 		'
-		Me.lblUpdateFile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblUpdateFile.Location = New System.Drawing.Point(5, 64)
+		resources.ApplyResources(Me.lblUpdateFile, "lblUpdateFile")
 		Me.lblUpdateFile.Name = "lblUpdateFile"
-		Me.lblUpdateFile.Size = New System.Drawing.Size(84, 15)
-		Me.lblUpdateFile.TabIndex = 2
-		Me.lblUpdateFile.Text = "Update File"
-		Me.lblUpdateFile.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'tabPackageInfo
 		'
@@ -343,164 +295,101 @@ Partial Class UpdateForm
 		Me.tabPackageInfo.Controls.Add(Me.lblClassification)
 		Me.tabPackageInfo.Controls.Add(Me.lblDescription)
 		Me.tabPackageInfo.Controls.Add(Me.lblPackageTitle)
-		Me.tabPackageInfo.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabPackageInfo, "tabPackageInfo")
 		Me.tabPackageInfo.Name = "tabPackageInfo"
-		Me.tabPackageInfo.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabPackageInfo.Size = New System.Drawing.Size(605, 517)
-		Me.tabPackageInfo.TabIndex = 1
-		Me.tabPackageInfo.Text = "Package Info"
 		'
 		'txtNetwork
 		'
-		Me.txtNetwork.Location = New System.Drawing.Point(351, 423)
+		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
 		Me.txtNetwork.Name = "txtNetwork"
 		Me.txtNetwork.ReadOnly = true
-		Me.txtNetwork.Size = New System.Drawing.Size(103, 20)
-		Me.txtNetwork.TabIndex = 69
 		'
 		'lblNetwork
 		'
-		Me.lblNetwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblNetwork.Location = New System.Drawing.Point(232, 426)
+		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
 		Me.lblNetwork.Name = "lblNetwork"
-		Me.lblNetwork.Size = New System.Drawing.Size(112, 17)
-		Me.lblNetwork.TabIndex = 70
-		Me.lblNetwork.Text = "Network Required"
-		Me.lblNetwork.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'txtOriginalURI
 		'
-		Me.txtOriginalURI.Location = New System.Drawing.Point(114, 318)
+		resources.ApplyResources(Me.txtOriginalURI, "txtOriginalURI")
 		Me.txtOriginalURI.Name = "txtOriginalURI"
-		Me.txtOriginalURI.Size = New System.Drawing.Size(434, 20)
-		Me.txtOriginalURI.TabIndex = 10
 		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
 		AddHandler Me.txtOriginalURI.KeyDown, AddressOf Me.TxtOriginalURIKeyDown
 		AddHandler Me.txtOriginalURI.KeyPress, AddressOf Me.TxtOriginalURIKeyPress
 		'
 		'lblOriginalURI
 		'
-		Me.lblOriginalURI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblOriginalURI.Location = New System.Drawing.Point(26, 320)
+		resources.ApplyResources(Me.lblOriginalURI, "lblOriginalURI")
 		Me.lblOriginalURI.Name = "lblOriginalURI"
-		Me.lblOriginalURI.Size = New System.Drawing.Size(84, 15)
-		Me.lblOriginalURI.TabIndex = 68
-		Me.lblOriginalURI.Text = "Original URL"
-		Me.lblOriginalURI.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'cboPackageType
 		'
 		Me.cboPackageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboPackageType.FormattingEnabled = true
-		Me.cboPackageType.Items.AddRange(New Object() {"Application", "Update"})
-		Me.cboPackageType.Location = New System.Drawing.Point(114, 34)
+		Me.cboPackageType.Items.AddRange(New Object() {resources.GetString("cboPackageType.Items"), resources.GetString("cboPackageType.Items1")})
+		resources.ApplyResources(Me.cboPackageType, "cboPackageType")
 		Me.cboPackageType.Name = "cboPackageType"
-		Me.cboPackageType.Size = New System.Drawing.Size(233, 21)
-		Me.cboPackageType.TabIndex = 0
 		AddHandler Me.cboPackageType.SelectedIndexChanged, AddressOf Me.CboPackageTypeSelectedIndexChanged
 		'
 		'lblPackageType
 		'
-		Me.lblPackageType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblPackageType.Location = New System.Drawing.Point(8, 38)
+		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
 		Me.lblPackageType.Name = "lblPackageType"
-		Me.lblPackageType.Size = New System.Drawing.Size(99, 17)
-		Me.lblPackageType.TabIndex = 66
-		Me.lblPackageType.Text = "Package Type"
-		Me.lblPackageType.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblPrerequisites
 		'
-		Me.lblPrerequisites.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.lblPrerequisites.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblPrerequisites, "lblPrerequisites")
 		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblPrerequisites.Location = New System.Drawing.Point(95, 498)
 		Me.lblPrerequisites.Name = "lblPrerequisites"
-		Me.lblPrerequisites.Size = New System.Drawing.Size(113, 17)
-		Me.lblPrerequisites.TabIndex = 17
-		Me.lblPrerequisites.Text = "Prerequisites"
 		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
 		'
 		'lblSupersedes
 		'
-		Me.lblSupersedes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.lblSupersedes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
 		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblSupersedes.Location = New System.Drawing.Point(259, 498)
 		Me.lblSupersedes.Name = "lblSupersedes"
-		Me.lblSupersedes.Size = New System.Drawing.Size(113, 17)
-		Me.lblSupersedes.TabIndex = 18
-		Me.lblSupersedes.Text = "Supersedes"
 		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
 		'
 		'lblReturnCodes
 		'
-		Me.lblReturnCodes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		resources.ApplyResources(Me.lblReturnCodes, "lblReturnCodes")
 		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblReturnCodes.Location = New System.Drawing.Point(423, 498)
 		Me.lblReturnCodes.Name = "lblReturnCodes"
-		Me.lblReturnCodes.Size = New System.Drawing.Size(113, 17)
-		Me.lblReturnCodes.TabIndex = 19
-		Me.lblReturnCodes.Text = "Return Codes"
-		Me.lblReturnCodes.Visible = false
 		AddHandler Me.lblReturnCodes.Click, AddressOf Me.LblReturnCodesClick
 		'
 		'txtUninstall
 		'
-		Me.txtUninstall.Location = New System.Drawing.Point(114, 423)
+		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
 		Me.txtUninstall.Name = "txtUninstall"
 		Me.txtUninstall.ReadOnly = true
-		Me.txtUninstall.Size = New System.Drawing.Size(103, 20)
-		Me.txtUninstall.TabIndex = 14
 		'
 		'lblUninstall
 		'
-		Me.lblUninstall.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblUninstall.Location = New System.Drawing.Point(21, 426)
+		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
 		Me.lblUninstall.Name = "lblUninstall"
-		Me.lblUninstall.Size = New System.Drawing.Size(86, 17)
-		Me.lblUninstall.TabIndex = 38
-		Me.lblUninstall.Text = "Uninstall"
-		Me.lblUninstall.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblPackageInfo
 		'
-		Me.lblPackageInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblPackageInfo.Location = New System.Drawing.Point(0, 3)
+		resources.ApplyResources(Me.lblPackageInfo, "lblPackageInfo")
 		Me.lblPackageInfo.Name = "lblPackageInfo"
-		Me.lblPackageInfo.Size = New System.Drawing.Size(598, 34)
-		Me.lblPackageInfo.TabIndex = 37
-		Me.lblPackageInfo.Text = "Enter the relavant details about the software package here.  Refer to the documen"& _ 
-		"tation for questions regarding individual fields."
 		'
 		'txtCommandLine
 		'
-		Me.txtCommandLine.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtCommandLine.Location = New System.Drawing.Point(114, 475)
+		resources.ApplyResources(Me.txtCommandLine, "txtCommandLine")
 		Me.txtCommandLine.Name = "txtCommandLine"
-		Me.txtCommandLine.Size = New System.Drawing.Size(457, 20)
-		Me.txtCommandLine.TabIndex = 16
 		'
 		'lblCommandLine
 		'
-		Me.lblCommandLine.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblCommandLine.Location = New System.Drawing.Point(21, 476)
+		resources.ApplyResources(Me.lblCommandLine, "lblCommandLine")
 		Me.lblCommandLine.Name = "lblCommandLine"
-		Me.lblCommandLine.Size = New System.Drawing.Size(86, 17)
-		Me.lblCommandLine.TabIndex = 26
-		Me.lblCommandLine.Text = "Command Line"
-		Me.lblCommandLine.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'cboRebootBehavior
 		'
 		Me.cboRebootBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboRebootBehavior.FormattingEnabled = true
-		Me.cboRebootBehavior.Items.AddRange(New Object() {"Never Reboots", "Always Requires Reboot", "Can Request Reboot"})
-		Me.cboRebootBehavior.Location = New System.Drawing.Point(114, 449)
+		Me.cboRebootBehavior.Items.AddRange(New Object() {resources.GetString("cboRebootBehavior.Items"), resources.GetString("cboRebootBehavior.Items1"), resources.GetString("cboRebootBehavior.Items2")})
+		resources.ApplyResources(Me.cboRebootBehavior, "cboRebootBehavior")
 		Me.cboRebootBehavior.Name = "cboRebootBehavior"
-		Me.cboRebootBehavior.Size = New System.Drawing.Size(233, 21)
-		Me.cboRebootBehavior.TabIndex = 15
 		AddHandler Me.cboRebootBehavior.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboRebootBehavior.Validated, AddressOf Me.ControlValidated
@@ -509,72 +398,51 @@ Partial Class UpdateForm
 		'
 		Me.cboImpact.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboImpact.FormattingEnabled = true
-		Me.cboImpact.Items.AddRange(New Object() {"Normal", "Minor", "Requires Exclusive Handling"})
-		Me.cboImpact.Location = New System.Drawing.Point(114, 396)
+		Me.cboImpact.Items.AddRange(New Object() {resources.GetString("cboImpact.Items"), resources.GetString("cboImpact.Items1"), resources.GetString("cboImpact.Items2")})
+		resources.ApplyResources(Me.cboImpact, "cboImpact")
 		Me.cboImpact.Name = "cboImpact"
-		Me.cboImpact.Size = New System.Drawing.Size(233, 21)
-		Me.cboImpact.TabIndex = 13
 		AddHandler Me.cboImpact.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboImpact.SelectedValueChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboImpact.Validated, AddressOf Me.ControlValidated
 		'
 		'txtMoreInfoURL
 		'
-		Me.txtMoreInfoURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtMoreInfoURL.Location = New System.Drawing.Point(114, 370)
+		resources.ApplyResources(Me.txtMoreInfoURL, "txtMoreInfoURL")
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
-		Me.txtMoreInfoURL.Size = New System.Drawing.Size(434, 20)
-		Me.txtMoreInfoURL.TabIndex = 12
 		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'txtSupportURL
 		'
-		Me.txtSupportURL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtSupportURL.Location = New System.Drawing.Point(114, 344)
+		resources.ApplyResources(Me.txtSupportURL, "txtSupportURL")
 		Me.txtSupportURL.Name = "txtSupportURL"
-		Me.txtSupportURL.Size = New System.Drawing.Size(434, 20)
-		Me.txtSupportURL.TabIndex = 11
 		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
 		'
 		'cboSeverity
 		'
 		Me.cboSeverity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboSeverity.Enabled = false
+		resources.ApplyResources(Me.cboSeverity, "cboSeverity")
 		Me.cboSeverity.FormattingEnabled = true
-		Me.cboSeverity.Items.AddRange(New Object() {"Unspecified", "Critical", "Important", "Moderate", "Low"})
-		Me.cboSeverity.Location = New System.Drawing.Point(114, 185)
+		Me.cboSeverity.Items.AddRange(New Object() {resources.GetString("cboSeverity.Items"), resources.GetString("cboSeverity.Items1"), resources.GetString("cboSeverity.Items2"), resources.GetString("cboSeverity.Items3"), resources.GetString("cboSeverity.Items4")})
 		Me.cboSeverity.Name = "cboSeverity"
-		Me.cboSeverity.Size = New System.Drawing.Size(233, 21)
-		Me.cboSeverity.TabIndex = 5
 		AddHandler Me.cboSeverity.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboSeverity.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboSeverity.Validated, AddressOf Me.ControlValidated
 		'
 		'txtCVEID
 		'
-		Me.txtCVEID.Location = New System.Drawing.Point(114, 292)
+		resources.ApplyResources(Me.txtCVEID, "txtCVEID")
 		Me.txtCVEID.Name = "txtCVEID"
-		Me.txtCVEID.Size = New System.Drawing.Size(233, 20)
-		Me.txtCVEID.TabIndex = 9
 		'
 		'txtArticleID
 		'
-		Me.txtArticleID.Location = New System.Drawing.Point(114, 266)
+		resources.ApplyResources(Me.txtArticleID, "txtArticleID")
 		Me.txtArticleID.Name = "txtArticleID"
-		Me.txtArticleID.Size = New System.Drawing.Size(233, 20)
-		Me.txtArticleID.TabIndex = 8
 		'
 		'cboProduct
 		'
-		Me.cboProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.cboProduct, "cboProduct")
 		Me.cboProduct.FormattingEnabled = true
-		Me.cboProduct.Location = New System.Drawing.Point(114, 239)
 		Me.cboProduct.Name = "cboProduct"
-		Me.cboProduct.Size = New System.Drawing.Size(457, 21)
-		Me.cboProduct.TabIndex = 7
 		AddHandler Me.cboProduct.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboProduct.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboProduct.Validated, AddressOf Me.ControlValidated
@@ -582,13 +450,9 @@ Partial Class UpdateForm
 		'
 		'cboVendor
 		'
-		Me.cboVendor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.cboVendor, "cboVendor")
 		Me.cboVendor.FormattingEnabled = true
-		Me.cboVendor.Location = New System.Drawing.Point(114, 212)
 		Me.cboVendor.Name = "cboVendor"
-		Me.cboVendor.Size = New System.Drawing.Size(457, 21)
-		Me.cboVendor.TabIndex = 6
 		AddHandler Me.cboVendor.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
 		AddHandler Me.cboVendor.Validated, AddressOf Me.ControlValidated
@@ -598,200 +462,115 @@ Partial Class UpdateForm
 		'
 		Me.cboClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboClassification.FormattingEnabled = true
-		Me.cboClassification.Items.AddRange(New Object() {"", "Updates", "Critical Updates", "Security Updates", "Feature Packs", "Update Rollups", "Service Packs", "Tools", "Hotfixes", "Drivers"})
-		Me.cboClassification.Location = New System.Drawing.Point(114, 132)
+		Me.cboClassification.Items.AddRange(New Object() {resources.GetString("cboClassification.Items"), resources.GetString("cboClassification.Items1"), resources.GetString("cboClassification.Items2"), resources.GetString("cboClassification.Items3"), resources.GetString("cboClassification.Items4"), resources.GetString("cboClassification.Items5"), resources.GetString("cboClassification.Items6"), resources.GetString("cboClassification.Items7"), resources.GetString("cboClassification.Items8"), resources.GetString("cboClassification.Items9")})
+		resources.ApplyResources(Me.cboClassification, "cboClassification")
 		Me.cboClassification.Name = "cboClassification"
-		Me.cboClassification.Size = New System.Drawing.Size(233, 21)
-		Me.cboClassification.TabIndex = 3
 		AddHandler Me.cboClassification.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboClassification.SelectedIndexChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboClassification.Validated, AddressOf Me.ControlValidated
 		'
 		'txtBulletinID
 		'
-		Me.txtBulletinID.Location = New System.Drawing.Point(114, 159)
+		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
 		Me.txtBulletinID.Name = "txtBulletinID"
-		Me.txtBulletinID.Size = New System.Drawing.Size(233, 20)
-		Me.txtBulletinID.TabIndex = 4
 		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
 		'
 		'txtDescription
 		'
-		Me.txtDescription.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtDescription.Location = New System.Drawing.Point(114, 87)
-		Me.txtDescription.Multiline = true
+		resources.ApplyResources(Me.txtDescription, "txtDescription")
 		Me.txtDescription.Name = "txtDescription"
-		Me.txtDescription.Size = New System.Drawing.Size(457, 39)
-		Me.txtDescription.TabIndex = 2
 		AddHandler Me.txtDescription.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtDescription.Validating, AddressOf Me.ControlValidating
 		'
 		'txtPackageTitle
 		'
-		Me.txtPackageTitle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtPackageTitle.Location = New System.Drawing.Point(114, 61)
+		resources.ApplyResources(Me.txtPackageTitle, "txtPackageTitle")
 		Me.txtPackageTitle.Name = "txtPackageTitle"
-		Me.txtPackageTitle.Size = New System.Drawing.Size(457, 20)
-		Me.txtPackageTitle.TabIndex = 1
 		AddHandler Me.txtPackageTitle.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtPackageTitle.Validating, AddressOf Me.ControlValidating
 		'
 		'lblRebootBehavior
 		'
-		Me.lblRebootBehavior.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblRebootBehavior.Location = New System.Drawing.Point(21, 451)
+		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
 		Me.lblRebootBehavior.Name = "lblRebootBehavior"
-		Me.lblRebootBehavior.Size = New System.Drawing.Size(86, 17)
-		Me.lblRebootBehavior.TabIndex = 12
-		Me.lblRebootBehavior.Text = "Reboot Behavior"
-		Me.lblRebootBehavior.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblImpact
 		'
-		Me.lblImpact.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblImpact.Location = New System.Drawing.Point(21, 398)
+		resources.ApplyResources(Me.lblImpact, "lblImpact")
 		Me.lblImpact.Name = "lblImpact"
-		Me.lblImpact.Size = New System.Drawing.Size(86, 17)
-		Me.lblImpact.TabIndex = 11
-		Me.lblImpact.Text = "Impact"
-		Me.lblImpact.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblMoreInfoURL
 		'
-		Me.lblMoreInfoURL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblMoreInfoURL.Location = New System.Drawing.Point(21, 373)
+		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
 		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
-		Me.lblMoreInfoURL.Size = New System.Drawing.Size(86, 17)
-		Me.lblMoreInfoURL.TabIndex = 10
-		Me.lblMoreInfoURL.Text = "More Info URL"
-		Me.lblMoreInfoURL.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblSupportURL
 		'
-		Me.lblSupportURL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblSupportURL.Location = New System.Drawing.Point(21, 346)
+		resources.ApplyResources(Me.lblSupportURL, "lblSupportURL")
 		Me.lblSupportURL.Name = "lblSupportURL"
-		Me.lblSupportURL.Size = New System.Drawing.Size(86, 17)
-		Me.lblSupportURL.TabIndex = 9
-		Me.lblSupportURL.Text = "Support URL"
-		Me.lblSupportURL.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblSeverity
 		'
-		Me.lblSeverity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblSeverity.Location = New System.Drawing.Point(21, 189)
+		resources.ApplyResources(Me.lblSeverity, "lblSeverity")
 		Me.lblSeverity.Name = "lblSeverity"
-		Me.lblSeverity.Size = New System.Drawing.Size(86, 17)
-		Me.lblSeverity.TabIndex = 8
-		Me.lblSeverity.Text = "Severity"
-		Me.lblSeverity.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblCVEID
 		'
-		Me.lblCVEID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblCVEID.Location = New System.Drawing.Point(21, 296)
+		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
 		Me.lblCVEID.Name = "lblCVEID"
-		Me.lblCVEID.Size = New System.Drawing.Size(86, 17)
-		Me.lblCVEID.TabIndex = 7
-		Me.lblCVEID.Text = "CVE ID"
-		Me.lblCVEID.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblArticleID
 		'
-		Me.lblArticleID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblArticleID.Location = New System.Drawing.Point(21, 269)
+		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
 		Me.lblArticleID.Name = "lblArticleID"
-		Me.lblArticleID.Size = New System.Drawing.Size(86, 17)
-		Me.lblArticleID.TabIndex = 6
-		Me.lblArticleID.Text = "Article ID"
-		Me.lblArticleID.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblProduct
 		'
-		Me.lblProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblProduct.Location = New System.Drawing.Point(21, 243)
+		resources.ApplyResources(Me.lblProduct, "lblProduct")
 		Me.lblProduct.Name = "lblProduct"
-		Me.lblProduct.Size = New System.Drawing.Size(86, 17)
-		Me.lblProduct.TabIndex = 5
-		Me.lblProduct.Text = "Product"
-		Me.lblProduct.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblVendor
 		'
-		Me.lblVendor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblVendor.Location = New System.Drawing.Point(21, 216)
+		resources.ApplyResources(Me.lblVendor, "lblVendor")
 		Me.lblVendor.Name = "lblVendor"
-		Me.lblVendor.Size = New System.Drawing.Size(86, 17)
-		Me.lblVendor.TabIndex = 4
-		Me.lblVendor.Text = "Vendor"
-		Me.lblVendor.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblBullitinID
 		'
-		Me.lblBullitinID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblBullitinID.Location = New System.Drawing.Point(21, 163)
+		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
 		Me.lblBullitinID.Name = "lblBullitinID"
-		Me.lblBullitinID.Size = New System.Drawing.Size(86, 17)
-		Me.lblBullitinID.TabIndex = 3
-		Me.lblBullitinID.Text = "Bulletin ID"
-		Me.lblBullitinID.TextAlign = System.Drawing.ContentAlignment.TopRight
 		AddHandler Me.lblBullitinID.Validating, AddressOf Me.ControlValidating
 		'
 		'lblClassification
 		'
-		Me.lblClassification.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblClassification.Location = New System.Drawing.Point(21, 136)
+		resources.ApplyResources(Me.lblClassification, "lblClassification")
 		Me.lblClassification.Name = "lblClassification"
-		Me.lblClassification.Size = New System.Drawing.Size(86, 17)
-		Me.lblClassification.TabIndex = 2
-		Me.lblClassification.Text = "Classification"
-		Me.lblClassification.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblDescription
 		'
-		Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblDescription.Location = New System.Drawing.Point(21, 88)
+		resources.ApplyResources(Me.lblDescription, "lblDescription")
 		Me.lblDescription.Name = "lblDescription"
-		Me.lblDescription.Size = New System.Drawing.Size(86, 17)
-		Me.lblDescription.TabIndex = 1
-		Me.lblDescription.Text = "Description"
-		Me.lblDescription.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'lblPackageTitle
 		'
-		Me.lblPackageTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblPackageTitle.Location = New System.Drawing.Point(21, 61)
+		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
 		Me.lblPackageTitle.Name = "lblPackageTitle"
-		Me.lblPackageTitle.Size = New System.Drawing.Size(86, 17)
-		Me.lblPackageTitle.TabIndex = 0
-		Me.lblPackageTitle.Text = "Package Title"
-		Me.lblPackageTitle.TextAlign = System.Drawing.ContentAlignment.TopRight
 		'
 		'tabIsInstalled
 		'
 		Me.tabIsInstalled.BackColor = System.Drawing.SystemColors.Control
 		Me.tabIsInstalled.Controls.Add(Me.isInstalledRules)
-		Me.tabIsInstalled.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabIsInstalled, "tabIsInstalled")
 		Me.tabIsInstalled.Name = "tabIsInstalled"
-		Me.tabIsInstalled.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabIsInstalled.Size = New System.Drawing.Size(605, 517)
-		Me.tabIsInstalled.TabIndex = 2
-		Me.tabIsInstalled.Text = "IsInstalled"
 		'
 		'isInstalledRules
 		'
 		Me.isInstalledRules.ApplicabilityRule = ""
 		Me.isInstalledRules.CausesValidation = false
-		Me.isInstalledRules.Dock = System.Windows.Forms.DockStyle.Fill
+		resources.ApplyResources(Me.isInstalledRules, "isInstalledRules")
 		Me.isInstalledRules.Instructions = resources.GetString("isInstalledRules.Instructions")
-		Me.isInstalledRules.Location = New System.Drawing.Point(3, 3)
 		Me.isInstalledRules.Name = "isInstalledRules"
 		Me.isInstalledRules.Rule = ""
 		Me.isInstalledRules.RuleEditorTitle = "Installed Rule"
-		Me.isInstalledRules.Size = New System.Drawing.Size(599, 511)
-		Me.isInstalledRules.TabIndex = 39
 		Me.isInstalledRules.Title = "Package Level - Installed Rules"
 		Me.isInstalledRules.TitleItemLevel = "Installation Item Level"
 		'
@@ -799,25 +578,18 @@ Partial Class UpdateForm
 		'
 		Me.tabIsInstallable.BackColor = System.Drawing.SystemColors.Control
 		Me.tabIsInstallable.Controls.Add(Me.isInstallableRules)
-		Me.tabIsInstallable.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabIsInstallable, "tabIsInstallable")
 		Me.tabIsInstallable.Name = "tabIsInstallable"
-		Me.tabIsInstallable.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabIsInstallable.Size = New System.Drawing.Size(605, 517)
-		Me.tabIsInstallable.TabIndex = 3
-		Me.tabIsInstallable.Text = "IsInstallable"
 		'
 		'isInstallableRules
 		'
 		Me.isInstallableRules.ApplicabilityRule = ""
 		Me.isInstallableRules.CausesValidation = false
-		Me.isInstallableRules.Dock = System.Windows.Forms.DockStyle.Fill
+		resources.ApplyResources(Me.isInstallableRules, "isInstallableRules")
 		Me.isInstallableRules.Instructions = resources.GetString("isInstallableRules.Instructions")
-		Me.isInstallableRules.Location = New System.Drawing.Point(3, 3)
 		Me.isInstallableRules.Name = "isInstallableRules"
 		Me.isInstallableRules.Rule = ""
 		Me.isInstallableRules.RuleEditorTitle = "Installable Rule"
-		Me.isInstallableRules.Size = New System.Drawing.Size(599, 511)
-		Me.isInstallableRules.TabIndex = 40
 		Me.isInstallableRules.Title = "Package Level - Installable Rules"
 		Me.isInstallableRules.TitleItemLevel = "Installation Item Level"
 		'
@@ -828,52 +600,31 @@ Partial Class UpdateForm
 		Me.tabIsSuperseded.Controls.Add(Me.lblIsSuperseded)
 		Me.tabIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem)
 		Me.tabIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem)
-		Me.tabIsSuperseded.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabIsSuperseded, "tabIsSuperseded")
 		Me.tabIsSuperseded.Name = "tabIsSuperseded"
-		Me.tabIsSuperseded.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabIsSuperseded.Size = New System.Drawing.Size(605, 517)
-		Me.tabIsSuperseded.TabIndex = 5
-		Me.tabIsSuperseded.Text = "IsSuperseded"
 		'
 		'btnIsSupersededEdit
 		'
-		Me.btnIsSupersededEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.btnIsSupersededEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.btnIsSupersededEdit.Location = New System.Drawing.Point(558, 42)
-		Me.btnIsSupersededEdit.Margin = New System.Windows.Forms.Padding(0)
+		resources.ApplyResources(Me.btnIsSupersededEdit, "btnIsSupersededEdit")
 		Me.btnIsSupersededEdit.Name = "btnIsSupersededEdit"
-		Me.btnIsSupersededEdit.Size = New System.Drawing.Size(40, 20)
-		Me.btnIsSupersededEdit.TabIndex = 43
-		Me.btnIsSupersededEdit.Text = "Edit"
 		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
 		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
 		'
 		'lblIsSuperseded
 		'
-		Me.lblIsSuperseded.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblIsSuperseded.Location = New System.Drawing.Point(0, 3)
+		resources.ApplyResources(Me.lblIsSuperseded, "lblIsSuperseded")
 		Me.lblIsSuperseded.Name = "lblIsSuperseded"
-		Me.lblIsSuperseded.Size = New System.Drawing.Size(598, 44)
-		Me.lblIsSuperseded.TabIndex = 40
-		Me.lblIsSuperseded.Text = resources.GetString("lblIsSuperseded.Text")
 		'
 		'lblIsSuperceded_InstallableItem
 		'
-		Me.lblIsSuperceded_InstallableItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblIsSuperceded_InstallableItem.Location = New System.Drawing.Point(58, 45)
+		resources.ApplyResources(Me.lblIsSuperceded_InstallableItem, "lblIsSuperceded_InstallableItem")
 		Me.lblIsSuperceded_InstallableItem.Name = "lblIsSuperceded_InstallableItem"
-		Me.lblIsSuperceded_InstallableItem.Size = New System.Drawing.Size(262, 17)
-		Me.lblIsSuperceded_InstallableItem.TabIndex = 3
-		Me.lblIsSuperceded_InstallableItem.Text = "Installation Item Level - Superseded Rules"
 		'
 		'txtIsSuperceded_InstallableItem
 		'
-		Me.txtIsSuperceded_InstallableItem.Location = New System.Drawing.Point(5, 65)
-		Me.txtIsSuperceded_InstallableItem.Multiline = true
+		resources.ApplyResources(Me.txtIsSuperceded_InstallableItem, "txtIsSuperceded_InstallableItem")
 		Me.txtIsSuperceded_InstallableItem.Name = "txtIsSuperceded_InstallableItem"
 		Me.txtIsSuperceded_InstallableItem.ReadOnly = true
-		Me.txtIsSuperceded_InstallableItem.Size = New System.Drawing.Size(595, 397)
-		Me.txtIsSuperceded_InstallableItem.TabIndex = 2
 		'
 		'tabMetaData
 		'
@@ -882,162 +633,93 @@ Partial Class UpdateForm
 		Me.tabMetaData.Controls.Add(Me.lblMetaData_InstallableItem)
 		Me.tabMetaData.Controls.Add(Me.lblMetaData)
 		Me.tabMetaData.Controls.Add(Me.txtInstallableItemMetaData)
-		Me.tabMetaData.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabMetaData, "tabMetaData")
 		Me.tabMetaData.Name = "tabMetaData"
-		Me.tabMetaData.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabMetaData.Size = New System.Drawing.Size(605, 517)
-		Me.tabMetaData.TabIndex = 6
-		Me.tabMetaData.Text = "MetaData"
 		'
 		'btnMetaDataEdit
 		'
-		Me.btnMetaDataEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.btnMetaDataEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.btnMetaDataEdit.Location = New System.Drawing.Point(558, 42)
-		Me.btnMetaDataEdit.Margin = New System.Windows.Forms.Padding(0)
+		resources.ApplyResources(Me.btnMetaDataEdit, "btnMetaDataEdit")
 		Me.btnMetaDataEdit.Name = "btnMetaDataEdit"
-		Me.btnMetaDataEdit.Size = New System.Drawing.Size(40, 20)
-		Me.btnMetaDataEdit.TabIndex = 42
-		Me.btnMetaDataEdit.Text = "Edit"
 		Me.btnMetaDataEdit.UseVisualStyleBackColor = true
 		AddHandler Me.btnMetaDataEdit.Click, AddressOf Me.BtnMetaDataEditClick
 		'
 		'lblMetaData_InstallableItem
 		'
-		Me.lblMetaData_InstallableItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblMetaData_InstallableItem.Location = New System.Drawing.Point(58, 45)
+		resources.ApplyResources(Me.lblMetaData_InstallableItem, "lblMetaData_InstallableItem")
 		Me.lblMetaData_InstallableItem.Name = "lblMetaData_InstallableItem"
-		Me.lblMetaData_InstallableItem.Size = New System.Drawing.Size(239, 17)
-		Me.lblMetaData_InstallableItem.TabIndex = 41
-		Me.lblMetaData_InstallableItem.Text = "Installation Item Level - Rule Metadata"
 		'
 		'lblMetaData
 		'
-		Me.lblMetaData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.lblMetaData.Location = New System.Drawing.Point(0, 3)
+		resources.ApplyResources(Me.lblMetaData, "lblMetaData")
 		Me.lblMetaData.Name = "lblMetaData"
-		Me.lblMetaData.Size = New System.Drawing.Size(598, 41)
-		Me.lblMetaData.TabIndex = 40
-		Me.lblMetaData.Text = "Use this form to review the metadata used by the previous is installable, is inst"& _ 
-		"alled, or is superseded rules."
 		'
 		'txtInstallableItemMetaData
 		'
-		Me.txtInstallableItemMetaData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtInstallableItemMetaData.Location = New System.Drawing.Point(5, 65)
-		Me.txtInstallableItemMetaData.Multiline = true
+		resources.ApplyResources(Me.txtInstallableItemMetaData, "txtInstallableItemMetaData")
 		Me.txtInstallableItemMetaData.Name = "txtInstallableItemMetaData"
 		Me.txtInstallableItemMetaData.ReadOnly = true
-		Me.txtInstallableItemMetaData.Size = New System.Drawing.Size(595, 446)
-		Me.txtInstallableItemMetaData.TabIndex = 2
 		'
 		'tabSummary
 		'
 		Me.tabSummary.BackColor = System.Drawing.SystemColors.Control
 		Me.tabSummary.Controls.Add(Me.label4)
 		Me.tabSummary.Controls.Add(Me.txtSummary)
-		Me.tabSummary.Location = New System.Drawing.Point(4, 23)
+		resources.ApplyResources(Me.tabSummary, "tabSummary")
 		Me.tabSummary.Name = "tabSummary"
-		Me.tabSummary.Padding = New System.Windows.Forms.Padding(3)
-		Me.tabSummary.Size = New System.Drawing.Size(605, 517)
-		Me.tabSummary.TabIndex = 4
-		Me.tabSummary.Text = "Summary"
 		'
 		'label4
 		'
-		Me.label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		Me.label4.Location = New System.Drawing.Point(0, 3)
+		resources.ApplyResources(Me.label4, "label4")
 		Me.label4.Name = "label4"
-		Me.label4.Size = New System.Drawing.Size(598, 36)
-		Me.label4.TabIndex = 41
-		Me.label4.Text = "Use this form to review the XML data that will be used to describe the software p"& _ 
-		"ackage.  Select Finish to publish this package to the WSUS server."
 		'
 		'txtSummary
 		'
-		Me.txtSummary.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.txtSummary.Location = New System.Drawing.Point(6, 42)
-		Me.txtSummary.Multiline = true
+		resources.ApplyResources(Me.txtSummary, "txtSummary")
 		Me.txtSummary.Name = "txtSummary"
 		Me.txtSummary.ReadOnly = true
-		Me.txtSummary.ScrollBars = System.Windows.Forms.ScrollBars.Both
-		Me.txtSummary.Size = New System.Drawing.Size(593, 420)
-		Me.txtSummary.TabIndex = 2
 		Me.txtSummary.TabStop = false
-		Me.txtSummary.WordWrap = false
 		'
 		'btnPrevious
 		'
-		Me.btnPrevious.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnPrevious, "btnPrevious")
 		Me.btnPrevious.CausesValidation = false
-		Me.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.btnPrevious.Location = New System.Drawing.Point(354, 553)
 		Me.btnPrevious.Name = "btnPrevious"
-		Me.btnPrevious.Size = New System.Drawing.Size(78, 24)
-		Me.btnPrevious.TabIndex = 2
-		Me.btnPrevious.Text = "Previous"
-		Me.btnPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
 		Me.btnPrevious.UseVisualStyleBackColor = true
 		AddHandler Me.btnPrevious.Click, AddressOf Me.BtnPreviousClick
 		'
 		'btnNext
 		'
-		Me.btnNext.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnNext, "btnNext")
 		Me.btnNext.CausesValidation = false
-		Me.btnNext.Enabled = false
-		Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.btnNext.Location = New System.Drawing.Point(433, 553)
 		Me.btnNext.Name = "btnNext"
-		Me.btnNext.Size = New System.Drawing.Size(78, 24)
-		Me.btnNext.TabIndex = 3
-		Me.btnNext.Text = "Next"
-		Me.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
 		Me.btnNext.UseVisualStyleBackColor = true
 		AddHandler Me.btnNext.Click, AddressOf Me.BtnNextClick
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.CausesValidation = false
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(546, 553)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(66, 24)
-		Me.btnCancel.TabIndex = 4
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		AddHandler Me.btnCancel.Click, AddressOf Me.BtnCancelClick
 		'
 		'dlgUpdateFile
 		'
-		Me.dlgUpdateFile.Title = "Select Update File"
+		resources.ApplyResources(Me.dlgUpdateFile, "dlgUpdateFile")
 		'
 		'chkExportSdp
 		'
-		Me.chkExportSdp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.chkExportSdp, "chkExportSdp")
 		Me.chkExportSdp.CausesValidation = false
-		Me.chkExportSdp.Location = New System.Drawing.Point(4, 562)
 		Me.chkExportSdp.Name = "chkExportSdp"
-		Me.chkExportSdp.Size = New System.Drawing.Size(216, 19)
-		Me.chkExportSdp.TabIndex = 1
-		Me.chkExportSdp.Text = "Save Software Definition Package"
 		Me.chkExportSdp.UseVisualStyleBackColor = true
 		'
 		'chkMetadataOnly
 		'
-		Me.chkMetadataOnly.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.chkMetadataOnly, "chkMetadataOnly")
 		Me.chkMetadataOnly.CausesValidation = false
-		Me.chkMetadataOnly.Enabled = false
-		Me.chkMetadataOnly.Location = New System.Drawing.Point(4, 545)
 		Me.chkMetadataOnly.Name = "chkMetadataOnly"
-		Me.chkMetadataOnly.Size = New System.Drawing.Size(216, 19)
-		Me.chkMetadataOnly.TabIndex = 0
-		Me.chkMetadataOnly.Text = "Publish Metadata Only"
 		Me.chkMetadataOnly.UseVisualStyleBackColor = true
 		AddHandler Me.chkMetadataOnly.CheckedChanged, AddressOf Me.CboMetadataOnlyCheckedChanged
 		'
@@ -1048,11 +730,10 @@ Partial Class UpdateForm
 		'
 		'UpdateForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(615, 585)
 		Me.Controls.Add(Me.chkMetadataOnly)
 		Me.Controls.Add(Me.chkExportSdp)
 		Me.Controls.Add(Me.btnCancel)
@@ -1060,13 +741,10 @@ Partial Class UpdateForm
 		Me.Controls.Add(Me.btnPrevious)
 		Me.Controls.Add(Me.tabsImportUpdate)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "UpdateForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Import Update from File"
 		Me.tabsImportUpdate.ResumeLayout(false)
 		Me.tabIntro.ResumeLayout(false)
 		Me.tabIntro.PerformLayout

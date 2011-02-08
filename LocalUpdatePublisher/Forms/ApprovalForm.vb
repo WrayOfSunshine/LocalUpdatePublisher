@@ -33,11 +33,11 @@ Public Partial Class ApprovalForm
 		If selectedRows.Count > 1 Then
 			Me._multipleUpdates = True
 			Me._selectedRows = selectedRows
-			Me.lblInfo.Text = "Select the approvals for " & selectedRows.Count & " updates."
+			Me.lblInfo.Text = String.Format(globalRM.GetString("label_approval_form_multiple"), selectedRows.Count)
 		Else
 			Me._multipleUpdates = False
 			Me._selectedUpdate = DirectCast(selectedRows(0).Cells("IUpdate").Value, IUpdate) 'Get IUpdate object from first and only row.
-			Me.lblInfo.Text = "Select the approvals for " & _selectedUpdate.Title
+			Me.lblInfo.Text = String.Format(globalRM.GetString("label_approval_form"), _selectedUpdate.Title)
 		End If
 		
 		'Set defaults for buttons
@@ -64,11 +64,11 @@ Public Partial Class ApprovalForm
 	Private Sub ApproveForRemovalToolStripMenuItemClick(sender As Object, e As EventArgs)
 		'Make sure this is a single update that can be uninstalled
 		If _multipleUpdates Then
-			Msgbox ("You cannot uninstall multiple updates.")
+			Msgbox (globalRM.GetString("error_cannot_uninstall_multiple"))
 		Else If Not _selectedUpdate Is Nothing AndAlso _selectedUpdate.UninstallationBehavior.IsSupported Then
 			Call SetApprovals(UpdateApprovalAction.Uninstall)
 		Else
-			Msgbox ("This update cannot be uninstalled.")
+			Msgbox (globalRM.GetString("error_cannot_uninstall"))
 		End If
 		
 	End Sub
@@ -77,7 +77,7 @@ Public Partial Class ApprovalForm
 	Private Sub NotApprovedToolStripMenuItemClick(sender As Object, e As EventArgs)
 		'The All Computers group cannot be set to not approved.
 		If dgvApprovals.CurrentRow.Index = 0 Then
-			Msgbox ("You cannot prevent installation for the All Computers group")
+			Msgbox (globalRM.GetString("warning_not_approved_all"))
 		Else
 			Call SetApprovals(UpdateApprovalAction.NotApproved)
 		End If
@@ -138,7 +138,7 @@ Public Partial Class ApprovalForm
 			'Load the existing approvals.
 			If  _multipleUpdates Then
 				'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
-				tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, "No Approval"})
+				tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, globalRM.GetString("no_approval")})
 				
 			Else If Not _selectedUpdate Is Nothing Then
 				'Get the approvals
@@ -151,7 +151,7 @@ Public Partial Class ApprovalForm
 					Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
 				Else
 					'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
-					tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, "No Approval"})
+					tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, globalRM.GetString("no_approval")})
 				End If
 			End If
 			
@@ -173,7 +173,7 @@ Public Partial Class ApprovalForm
 				For Each tmpNode As TreeNode In node.Nodes
 					
 					If  _multipleUpdates Then
-						tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, "No Approval"})
+						tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, globalRM.GetString("no_approval")})
 						
 						'Set padding depth.
 						Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
@@ -209,7 +209,7 @@ Public Partial Class ApprovalForm
 							'If there is an approval already then load it, do not over-ride with the parent's approval.
 							If tmpApprovals.Count > 0 Then
 								tmpApproval = tmpApprovals.Item(0)
-								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.Action.ToDisplayString() & " (inherited)"})
+								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.Action.ToDisplayString() & " (" & globalRM.GetString("inherited") & ")"})
 								
 								'Set padding depth.
 								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
@@ -218,7 +218,7 @@ Public Partial Class ApprovalForm
 								
 								'If there is no approval then inherit the parent's approval.
 							Else
-								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, "No Approval"})
+								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, globalRM.GetString("no_approval")})
 								
 								'Set padding depth.
 								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding

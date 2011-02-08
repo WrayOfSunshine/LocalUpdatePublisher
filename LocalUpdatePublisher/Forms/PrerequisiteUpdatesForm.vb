@@ -30,7 +30,7 @@ Public Partial Class PrerequisiteUpdatesForm
 		
 		'Set the current update id we are working on.
 		_currentUpdate = update.Id.UpdateId
-						
+		
 		'Load the prerequisite updates here.
 		dgvUpdates.Rows.Clear
 		For Each tmpUpdate As IUpdate In update.GetRelatedUpdates( UpdateRelationship.UpdatesRequiredByThisUpdate)
@@ -39,11 +39,12 @@ Public Partial Class PrerequisiteUpdatesForm
 			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpUpdate.Title
 		Next
 		
-		Return MyBase.ShowDialog()		
+		Return MyBase.ShowDialog()
 	End Function
 	
 	'Show form with prerequisites based on the passed in prerequisite group.
 	Public Overloads Function ShowDialog(ByRef prerequisiteGroups As IList(Of PrerequisiteGroup), currentUpdate As Guid  ) As DialogResult
+		Dim tmpTitle As String
 		_prerequisiteGroups = prerequisiteGroups
 		
 		'Show the Remove/Add buttons.
@@ -55,16 +56,23 @@ Public Partial Class PrerequisiteUpdatesForm
 		_currentUpdate = currentUpdate
 		
 		'Load the prerequisite updates here.
-		dgvUpdates.Rows.Clear		
+		dgvUpdates.Rows.Clear
 		For Each tmpPrerequisiteGroup As PrerequisiteGroup In _prerequisiteGroups
 			For Each tmpUpdateGuid As Guid In tmpPrerequisiteGroup.Ids
 				Dim tmpRow As Integer = dgvUpdates.Rows.Add
 				dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateGuid
-				dgvUpdates.Rows(tmpRow).Cells("Title").Value = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
+				
+				Try
+					tmpTitle = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
+				Catch
+					tmpTitle = globalRM.GetString("unknown")
+				End Try
+				
+				dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
 			Next
 		Next
 		
-		Return MyBase.ShowDialog()		
+		Return MyBase.ShowDialog()
 	End Function
 	
 	'Prompt the user to add an update to the list.
@@ -77,12 +85,12 @@ Public Partial Class PrerequisiteUpdatesForm
 			Try
 				tmpString = ConnectionManager.CurrentServer.GetUpdate(tmpUpdateRevisionId).Title
 			Catch x As WsusInvalidDataException
-				Msgbox ("Could not add or find GUID:" & vbNewline & _
-					"WsusInvalidDataException: " & x.Message)
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_invalid_data") & ": " & x.Message)
 				Exit Sub
 			Catch x As WsusObjectNotFoundException
-				Msgbox ("Could not add or find GUID:" & vbNewline & _
-					"WsusObjectNotFoundException: " & x.Message)
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
 				Exit Sub
 			End Try
 			

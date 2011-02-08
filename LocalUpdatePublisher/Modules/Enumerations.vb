@@ -95,76 +95,76 @@ Public Module EnumExtensions
 		Public Function ToDisplayString(r As RuleTypes) As String
 		Select Case r
 			Case RuleTypes.WindowsVersion
-				Return "Windows Version"
+				Return globalRM.GetString("rule_windows_version")
 				
 			Case RuleTypes.WindowsLanguage
-				Return "Windows Language"
+				Return globalRM.GetString("rule_windows_language")
 				
 			Case RuleTypes.ProcessorArchitecture
-				Return "Processor Architecture"
+				Return globalRM.GetString("rule_processor_architecture")
 				
 			Case RuleTypes.FileExists
-				Return "File Exists"
+				Return globalRM.GetString("rule_file_exists")
 				
 			Case RuleTypes.FileExistsWithRegistry
-				Return "File Exists With Registry"
+				Return globalRM.GetString("rule_file_exists_with_registry")
 				
 			Case RuleTypes.FileVersion
-				Return "File Version"
+				Return globalRM.GetString("rule_file_version")
 				
 			Case RuleTypes.FileVersionWithRegistry
-				Return "File Version With Registry"
+				Return globalRM.GetString("rule_file_version_with_registry")
 				
 			Case RuleTypes.FileCreation
-				Return "File Creation"
+				Return globalRM.GetString("rule_file_creation")
 				
 			Case RuleTypes.FileCreationWithRegistry
-				Return "File Creation With Registry"
+				Return globalRM.GetString("rule_file_creation_with_registry")
 				
 			Case RuleTypes.FileModified
-				Return "File Modified"
+				Return globalRM.GetString("rule_file_modified")
 				
 			Case RuleTypes.FileModifiedWithRegistry
-				Return "File Modified With Registry"
+				Return globalRM.GetString("rule_file_modified_with_registry")
 				
 			Case RuleTypes.FileSize
-				Return "File Size"
+				Return globalRM.GetString("rule_file_size")
 				
 			Case RuleTypes.FileSizeWithRegistry
-				Return "File Size With Registry"
+				Return globalRM.GetString("rule_file_size_with_registry")
 				
 			Case RuleTypes.RegistryKeyExists
-				Return "Registry Key Exists"
+				Return globalRM.GetString("rule_registry_key_exists")
 				
 			Case RuleTypes.RegistryValueExists
-				Return "Registry Value Exists"
+				Return globalRM.GetString("rule_registry_value_exists")
 				
 			Case RuleTypes.RegistryDWORDValue
-				Return "Registry DWORD Value"
+				Return globalRM.GetString("rule_registry_DWORD_value")
 				
 			Case RuleTypes.RegistryExpandSzValue
-				Return "Registry Expand SZ Value"
+				Return globalRM.GetString("rule_registry_expand_SZ_value")
 				
 			Case RuleTypes.RegistrySzValue
-				Return "Registry SZ Value"
+				Return globalRM.GetString("rule_registry_SZ_value")
 				
 			Case RuleTypes.RegistryVersionInSz
-				Return "Registry Version in SZ"
+				Return globalRM.GetString("rule_registry_version_in_SZ")
 				
 			Case RuleTypes.WMIQuery
-				Return "WMI Query"
+				Return globalRM.GetString("rule_WMI_query")
 				
 			Case RuleTypes.MsiProductInstalled
-				Return "MSI Product Installed"
+				Return globalRM.GetString("rule_MSI_product")
 				
 			Case RuleTypes.MsiPatchInstalled
-				Return "MSI Patch Installed for Product"
+				Return globalRM.GetString("rule_MSI_patch")
 				
 			Case RuleTypes.MsiComponentInstalled
-				Return "MSI Component Installed for Product"
+				Return globalRM.GetString("rule_MSI_component")
 				
 			Case RuleTypes.MsiFeatureInstalled
-				Return "MSI Feature Installed for Product"
+				Return globalRM.GetString("rule_MSI_feature")
 			Case Else
 				
 				Return ""
@@ -257,13 +257,13 @@ Public Module EnumExtensions
 		Public Function ToDisplayString(a As UpdateApprovalAction) As String
 		Select Case a
 			Case UpdateApprovalAction.All
-				Return "All"
+				Return globalRM.GetString("all")
 			Case UpdateApprovalAction.Install
-				Return "Approved for Install"
+				Return globalRM.GetString("approved_for_install")
 			Case UpdateApprovalAction.NotApproved
-				Return "Not Approved"
+				Return globalRM.GetString("not_approved")
 			Case UpdateApprovalAction.Uninstall
-				Return "Uninstall"
+				Return globalRM.GetString("uninstall")
 			Case Else
 				Return ""
 		End Select
@@ -306,7 +306,7 @@ Public Module EnumExtensions
 			
 			Return tmpArray
 		Else
-			Throw New ArgumentException("Must be an enum", "t")
+			Throw New ArgumentException(globalRM.GetString("error_sort_enumerator"), "t")
 			Return Nothing
 		End If
 	End Function

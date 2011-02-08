@@ -69,7 +69,7 @@ Public Partial Class SupersededUpdatesForm
 			Try
 				tmpTitle = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
 			Catch
-				tmpTitle = "Unknown"
+				tmpTitle = globalRM.GetString("unknown")
 			End Try
 			
 			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle
@@ -88,12 +88,12 @@ Public Partial Class SupersededUpdatesForm
 			Try
 				tmpTitle = ConnectionManager.CurrentServer.GetUpdate(tmpUpdateRevisionId).Title
 			Catch x As WsusInvalidDataException
-				Msgbox ("Could not add or find GUID:" & vbNewline & _
-					"WsusInvalidDataException: " & x.Message)
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_invalid_data") & ": " & x.Message)
 				Exit Sub
 			Catch x As WsusObjectNotFoundException
-				Msgbox ("Could not add or find GUID:" & vbNewline & _
-					"WsusObjectNotFoundException: " & x.Message)
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
 				Exit Sub
 			End Try
 			

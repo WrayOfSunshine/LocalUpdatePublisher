@@ -33,6 +33,7 @@ Partial Class ApprovalProgressForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ApprovalProgressForm))
 		Me.dgvProgress = New System.Windows.Forms.DataGridView
 		Me.Action = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Result = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -46,86 +47,62 @@ Partial Class ApprovalProgressForm
 		'
 		'dgvProgress
 		'
-		Me.dgvProgress.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvProgress, "dgvProgress")
 		Me.dgvProgress.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvProgress.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Action, Me.Result})
-		Me.dgvProgress.Location = New System.Drawing.Point(12, 72)
 		Me.dgvProgress.Name = "dgvProgress"
 		Me.dgvProgress.RowHeadersVisible = false
-		Me.dgvProgress.Size = New System.Drawing.Size(561, 211)
-		Me.dgvProgress.TabIndex = 0
 		'
 		'Action
 		'
 		Me.Action.FillWeight = 149.2386!
-		Me.Action.HeaderText = "Action"
+		resources.ApplyResources(Me.Action, "Action")
 		Me.Action.Name = "Action"
 		'
 		'Result
 		'
 		Me.Result.FillWeight = 50.76142!
-		Me.Result.HeaderText = "Result"
+		resources.ApplyResources(Me.Result, "Result")
 		Me.Result.Name = "Result"
 		'
 		'pbUpdateApprovals
 		'
 		Me.pbUpdateApprovals.ForeColor = System.Drawing.Color.SeaGreen
-		Me.pbUpdateApprovals.Location = New System.Drawing.Point(12, 51)
+		resources.ApplyResources(Me.pbUpdateApprovals, "pbUpdateApprovals")
 		Me.pbUpdateApprovals.Name = "pbUpdateApprovals"
-		Me.pbUpdateApprovals.Size = New System.Drawing.Size(561, 14)
-		Me.pbUpdateApprovals.TabIndex = 1
 		'
 		'btnClose
 		'
-		Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnClose, "btnClose")
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnClose.Location = New System.Drawing.Point(498, 289)
 		Me.btnClose.Name = "btnClose"
-		Me.btnClose.Size = New System.Drawing.Size(75, 23)
-		Me.btnClose.TabIndex = 6
-		Me.btnClose.Text = "Close"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(417, 289)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-		Me.btnCancel.TabIndex = 5
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnPause
 		'
-		Me.btnPause.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		Me.btnPause.Location = New System.Drawing.Point(336, 289)
+		resources.ApplyResources(Me.btnPause, "btnPause")
 		Me.btnPause.Name = "btnPause"
-		Me.btnPause.Size = New System.Drawing.Size(75, 23)
-		Me.btnPause.TabIndex = 4
-		Me.btnPause.Text = "Pause"
 		Me.btnPause.UseVisualStyleBackColor = true
 		AddHandler Me.btnPause.Click, AddressOf Me.BtnPauseClick
 		'
 		'lblProgress
 		'
-		Me.lblProgress.Location = New System.Drawing.Point(12, 9)
+		resources.ApplyResources(Me.lblProgress, "lblProgress")
 		Me.lblProgress.Name = "lblProgress"
-		Me.lblProgress.Size = New System.Drawing.Size(561, 32)
-		Me.lblProgress.TabIndex = 7
-		Me.lblProgress.Text = "lblProgress"
-		Me.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'ApprovalProgressForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnClose
-		Me.ClientSize = New System.Drawing.Size(585, 315)
 		Me.Controls.Add(Me.lblProgress)
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.btnCancel)
@@ -135,7 +112,6 @@ Partial Class ApprovalProgressForm
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalProgressForm"
 		Me.ShowInTaskbar = false
-		Me.Text = "Approval Progress"
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub

@@ -41,45 +41,31 @@ Partial Class ProgressForm
 		'
 		'progressBar
 		'
-		Me.progressBar.Location = New System.Drawing.Point(30, 60)
+		resources.ApplyResources(Me.progressBar, "progressBar")
 		Me.progressBar.Name = "progressBar"
-		Me.progressBar.Size = New System.Drawing.Size(379, 23)
-		Me.progressBar.TabIndex = 0
 		'
 		'lblText
 		'
-		Me.lblText.Location = New System.Drawing.Point(12, 9)
+		resources.ApplyResources(Me.lblText, "lblText")
 		Me.lblText.Name = "lblText"
-		Me.lblText.Size = New System.Drawing.Size(409, 48)
-		Me.lblText.TabIndex = 1
-		Me.lblText.Text = "Place Text Here"
 		'
 		'lblCurrentStep
 		'
-		Me.lblCurrentStep.Location = New System.Drawing.Point(30, 86)
+		resources.ApplyResources(Me.lblCurrentStep, "lblCurrentStep")
 		Me.lblCurrentStep.Name = "lblCurrentStep"
-		Me.lblCurrentStep.Size = New System.Drawing.Size(379, 23)
-		Me.lblCurrentStep.TabIndex = 2
-		Me.lblCurrentStep.Text = "Current Step"
 		'
 		'ProgressForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.AutoSize = true
-		Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-		Me.ClientSize = New System.Drawing.Size(433, 113)
 		Me.Controls.Add(Me.lblCurrentStep)
 		Me.Controls.Add(Me.lblText)
 		Me.Controls.Add(Me.progressBar)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ProgressForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Progress"
 		Me.ResumeLayout(false)
 	End Sub
 	Private lblCurrentStep As System.Windows.Forms.Label

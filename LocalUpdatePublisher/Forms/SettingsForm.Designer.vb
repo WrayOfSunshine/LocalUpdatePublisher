@@ -42,63 +42,46 @@ Partial Class SettingsForm
 		'
 		'chkRememberTreeNode
 		'
-		Me.chkRememberTreeNode.Location = New System.Drawing.Point(12, 12)
+		resources.ApplyResources(Me.chkRememberTreeNode, "chkRememberTreeNode")
 		Me.chkRememberTreeNode.Name = "chkRememberTreeNode"
-		Me.chkRememberTreeNode.Size = New System.Drawing.Size(250, 24)
-		Me.chkRememberTreeNode.TabIndex = 0
-		Me.chkRememberTreeNode.Text = "Remember last selection."
 		Me.chkRememberTreeNode.UseVisualStyleBackColor = true
 		AddHandler Me.chkRememberTreeNode.CheckedChanged, AddressOf Me.ChkRememberTreeNodeCheckedChanged
 		'
 		'btnClose
 		'
-		Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnClose, "btnClose")
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnClose.Location = New System.Drawing.Point(12, 103)
 		Me.btnClose.Name = "btnClose"
-		Me.btnClose.Size = New System.Drawing.Size(106, 27)
-		Me.btnClose.TabIndex = 16
-		Me.btnClose.Text = "Close"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'
 		'chkReportRollup
 		'
-		Me.chkReportRollup.Location = New System.Drawing.Point(12, 42)
+		resources.ApplyResources(Me.chkReportRollup, "chkReportRollup")
 		Me.chkReportRollup.Name = "chkReportRollup"
-		Me.chkReportRollup.Size = New System.Drawing.Size(250, 24)
-		Me.chkReportRollup.TabIndex = 17
-		Me.chkReportRollup.Text = "Rollup dowstream clients."
 		Me.chkReportRollup.UseVisualStyleBackColor = true
 		AddHandler Me.chkReportRollup.CheckedChanged, AddressOf Me.ChkReportRollupCheckedChanged
 		'
 		'chkDemoteClassification
 		'
-		Me.chkDemoteClassification.Location = New System.Drawing.Point(12, 72)
+		resources.ApplyResources(Me.chkDemoteClassification, "chkDemoteClassification")
 		Me.chkDemoteClassification.Name = "chkDemoteClassification"
-		Me.chkDemoteClassification.Size = New System.Drawing.Size(250, 24)
-		Me.chkDemoteClassification.TabIndex = 19
-		Me.chkDemoteClassification.Text = "Demote Critical and Security Updates."
 		Me.chkDemoteClassification.UseVisualStyleBackColor = true
 		AddHandler Me.chkDemoteClassification.CheckedChanged, AddressOf Me.ChkDemoteClassificationCheckedChanged
 		'
 		'SettingsForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnClose
-		Me.ClientSize = New System.Drawing.Size(263, 142)
 		Me.Controls.Add(Me.chkDemoteClassification)
 		Me.Controls.Add(Me.chkReportRollup)
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.chkRememberTreeNode)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "SettingsForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Settings"
 		AddHandler Load, AddressOf Me.SettingsLoad
 		Me.ResumeLayout(false)
 	End Sub

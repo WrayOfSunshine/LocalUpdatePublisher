@@ -42,42 +42,28 @@ Partial Class AboutForm
 		'
 		'lblAbout
 		'
-		Me.lblAbout.Location = New System.Drawing.Point(-4, 1)
-		Me.lblAbout.Margin = New System.Windows.Forms.Padding(50)
+		resources.ApplyResources(Me.lblAbout, "lblAbout")
 		Me.lblAbout.Name = "lblAbout"
-		Me.lblAbout.Padding = New System.Windows.Forms.Padding(5)
-		Me.lblAbout.Size = New System.Drawing.Size(465, 92)
-		Me.lblAbout.TabIndex = 0
-		Me.lblAbout.Text = "Local Update Publisher Version: 1.0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Local Update Publisher uses the WSUS API t"& _ 
-		"o extend your WSUS implementation to include installs and updates from third par"& _ 
-		"ties."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"For support and updates go to"
 		'
 		'linkLabel
 		'
-		Me.linkLabel.Location = New System.Drawing.Point(152, 70)
+		resources.ApplyResources(Me.linkLabel, "linkLabel")
 		Me.linkLabel.Name = "linkLabel"
-		Me.linkLabel.Size = New System.Drawing.Size(192, 23)
-		Me.linkLabel.TabIndex = 1
 		Me.linkLabel.TabStop = true
-		Me.linkLabel.Text = "http://www.localupdatepublisher.com"
 		AddHandler Me.linkLabel.LinkClicked, AddressOf Me.LinkLabelLinkClicked
 		'
 		'AboutForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(464, 109)
 		Me.Controls.Add(Me.linkLabel)
 		Me.Controls.Add(Me.lblAbout)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.KeyPreview = true
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "AboutForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "About"
 		AddHandler KeyDown, AddressOf Me.AboutFormKeyDown
 		Me.ResumeLayout(false)
 	End Sub

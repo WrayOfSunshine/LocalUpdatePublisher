@@ -47,52 +47,39 @@ Partial Class GuidCollectionEditor
 		Me.dgv.BackgroundColor = System.Drawing.SystemColors.Control
 		Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvItems})
-		Me.dgv.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.dgv.Location = New System.Drawing.Point(0, 0)
+		resources.ApplyResources(Me.dgv, "dgv")
 		Me.dgv.MultiSelect = false
 		Me.dgv.Name = "dgv"
 		Me.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
 		Me.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgv.Size = New System.Drawing.Size(290, 127)
-		Me.dgv.TabIndex = 0
 		Me.dgv.TabStop = false
 		AddHandler Me.dgv.CellEndEdit, AddressOf Me.dgv_CellEndEdit
 		AddHandler Me.dgv.SelectionChanged, AddressOf Me.dgv_SelectionChanged
 		'
 		'dgvItems
 		'
-		Me.dgvItems.HeaderText = "Header Text"
+		resources.ApplyResources(Me.dgvItems, "dgvItems")
 		Me.dgvItems.MaxInputLength = 40
 		Me.dgvItems.Name = "dgvItems"
-		Me.dgvItems.Width = 225
 		'
 		'panel1
 		'
 		Me.panel1.Controls.Add(Me.btnRemove)
 		Me.panel1.Controls.Add(Me.btnAdd)
-		Me.panel1.Dock = System.Windows.Forms.DockStyle.Right
-		Me.panel1.Location = New System.Drawing.Point(290, 0)
+		resources.ApplyResources(Me.panel1, "panel1")
 		Me.panel1.Name = "panel1"
-		Me.panel1.Size = New System.Drawing.Size(30, 127)
-		Me.panel1.TabIndex = 1
 		'
 		'btnRemove
 		'
-		Me.btnRemove.Image = CType(resources.GetObject("btnRemove.Image"),System.Drawing.Image)
-		Me.btnRemove.Location = New System.Drawing.Point(3, 34)
+		resources.ApplyResources(Me.btnRemove, "btnRemove")
 		Me.btnRemove.Name = "btnRemove"
-		Me.btnRemove.Size = New System.Drawing.Size(25, 25)
-		Me.btnRemove.TabIndex = 1
 		Me.btnRemove.UseVisualStyleBackColor = true
 		AddHandler Me.btnRemove.Click, AddressOf Me.btnRemove_Click
 		'
 		'btnAdd
 		'
-		Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"),System.Drawing.Image)
-		Me.btnAdd.Location = New System.Drawing.Point(3, 3)
+		resources.ApplyResources(Me.btnAdd, "btnAdd")
 		Me.btnAdd.Name = "btnAdd"
-		Me.btnAdd.Size = New System.Drawing.Size(25, 25)
-		Me.btnAdd.TabIndex = 0
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.btnAdd_Click
 		'
@@ -103,12 +90,11 @@ Partial Class GuidCollectionEditor
 		'
 		'GuidCollectionEditor
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.Controls.Add(Me.dgv)
 		Me.Controls.Add(Me.panel1)
 		Me.Name = "GuidCollectionEditor"
-		Me.Size = New System.Drawing.Size(320, 127)
 		AddHandler Load, AddressOf Me.GuidCollectionEditor_Load
 		CType(Me.dgv,System.ComponentModel.ISupportInitialize).EndInit
 		Me.panel1.ResumeLayout(false)

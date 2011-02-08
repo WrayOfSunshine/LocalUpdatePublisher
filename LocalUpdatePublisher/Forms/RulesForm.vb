@@ -41,15 +41,15 @@ Public Partial Class RulesForm
 	#END Region
 	
 	Public Sub New()
-		Call Me.New("Create Rule")
+		Call Me.New(globalRM.GetString("create_rule"))
 	End Sub
 	
 	Public Sub New(title As String )
 		'Set the ReadOnly string arrays for the comboboxes.
 		' Currently we use the first item to test if the array is already
 		' loaded into the combobox.
-		_scalarComparison =  New String() {"Equal To", "Less Than", "Less Than or Equal To", "Greater Than", "Greater Than or Equal To"}
-		_stringComparison =  New String() {"Begins With", "Ends With", "Contains", "Equal To"}
+		_scalarComparison =  New String() {globalRM.GetString("equal_to"), globalRM.GetString("less_than"), globalRM.GetString("less_than_or_equal_to"), globalRM.GetString("greater_than"), globalRM.GetString("greater_than_or_equal_to")}
+		_stringComparison =  New String() {globalRM.GetString("begins_with"), globalRM.GetString("ends_with"), globalRM.GetString("contains"), globalRM.GetString("equal_to")}
 		
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -74,9 +74,9 @@ Public Partial Class RulesForm
 	Public Overloads Function ShowDialog(owner As IWin32Window, ruleXml As String) As DialogResult
 		ClearForm()
 		If String.IsNullOrEmpty(ruleXml) Then
-			Me.btnAdd.Text = "Add Rule"
+			Me.btnAdd.Text = globalRM.GetString("add_rule")
 		Else
-			Me.btnAdd.Text = "Save Rule"
+			Me.btnAdd.Text = globalRM.GetString("save_rule")
 			If Not LoadRule(ruleXml) Then
 				Return DialogResult.Abort
 			End If
@@ -163,9 +163,9 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
 								
-								If Not Me.lblData.Text = "Build Number" Then
+								If Not Me.lblData.Text = globalRM.GetString("build_number") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "Build Number"
+									Me.lblData.Text = globalRM.GetString("build_number") & ":"
 								End If
 								
 								Me.lblDataInfo.Hide
@@ -272,7 +272,7 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlDate"
 								controlObject.TabIndex = 4
-								Me.lblDate.Text = "Created Date:"
+								Me.lblDate.Text = globalRM.GetString("creation_date") & ":"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -312,7 +312,7 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlDate"
 								controlObject.TabIndex = 6
-								Me.lblDate.Text = "Created Date:"
+								Me.lblDate.Text = globalRM.GetString("creation_date") & ":"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -343,7 +343,7 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlDate"
 								controlObject.TabIndex = 4
-								Me.lblDate.Text = "Modified Date:"
+								Me.lblDate.Text = globalRM.GetString("modified_date") & ":"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
@@ -388,7 +388,7 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "pnlDate"
 								controlObject.TabIndex = 7
-								Me.lblDate.Text = "Modified Date:"
+								Me.lblDate.Text = globalRM.GetString("modified_date") & ":"
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
@@ -421,12 +421,12 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
 								
-								If Not Me.lblData.Text = "Size:" Then
+								If Not Me.lblData.Text = globalRM.GetString("size") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "Size:"
+									Me.lblData.Text = globalRM.GetString("size") & ":"
 								End If
 								
-								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
+								Me.lblDataInfo.Text = globalRM.GetString("in_bytes_example")
 								Me.lblDataInfo.Show
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
@@ -474,7 +474,7 @@ Public Partial Class RulesForm
 									Me.lblData.Text = "Size:"
 								End If
 								
-								Me.lblDataInfo.Text = "in bytes (ex. 1024)"
+								Me.lblDataInfo.Text = globalRM.GetString("in_bytes_example")
 								Me.lblDataInfo.Show
 								controlObject.Show
 								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
@@ -621,9 +621,9 @@ Public Partial Class RulesForm
 							Case "pnlData"
 								controlObject.TabIndex = 5
 								
-								If Not Me.lblData.Text = "DWORD Value:" Then
+								If Not Me.lblData.Text = globalRM.GetString("DWORD_value") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "DWORD Value:"
+									Me.lblData.Text = globalRM.GetString("DWORD_value") & ":"
 								End If
 								
 								Me.lblDataInfo.Hide
@@ -663,9 +663,9 @@ Public Partial Class RulesForm
 								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "pnlData"
 								controlObject.TabIndex = 5
-								If Not Me.lblData.Text = "String:" Then
+								If Not Me.lblData.Text = globalRM.GetString("string") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "String:"
+									Me.lblData.Text = globalRM.GetString("string") & ":"
 								End If
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
@@ -741,9 +741,9 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 5
 								Me.txtData.Width = Me.txtFilePath.Width
 								
-								If Not Me.lblData.Text = "String:" Then
+								If Not Me.lblData.Text = globalRM.GetString("string") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "String:"
+									Me.lblData.Text = globalRM.GetString("string") & ":"
 								End If
 								
 								Me.lblDataInfo.Hide
@@ -760,7 +760,7 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 1
 								Me.txtData.Width = Me.txtFilePath.Width
 								Me.txtData.Text = ""
-								Me.lblData.Text = "WMI Namespace:"
+								Me.lblData.Text = globalRM.GetString("label_rules_WMI_namespace") & ":"
 								Me.lblDataInfo.Hide
 								controlObject.Show
 								controlObject.Top = _startingYConstant
@@ -871,7 +871,7 @@ Public Partial Class RulesForm
 						End Select
 					Next
 				Case Else
-					Msgbox("This Rule Type Isn't Supported Yet")
+					Msgbox(globalRM.GetString("error_rules_unsupported_type"))
 					For Each controlObject As Control In Me.splitContainer.Panel2.Controls
 						If TypeOf controlObject Is Panel Then
 							controlObject.Hide
@@ -1068,21 +1068,21 @@ Public Partial Class RulesForm
 	'Return the XML compatible comparison string based on the human readable string.
 	Shared Function GetComparisonCode(comparison As String) As String
 		Select Case comparison
-			Case "Equal To"
+			Case globalRM.GetString("equal_to")
 				Return "EqualTo"
-			Case "Less Than"
+			Case globalRM.GetString("less_than")
 				Return "LessThan"
-			Case "Less Than or Equal To"
+			Case globalRM.GetString("less_than_or_equal_to")
 				Return "LessThanOrEqualTo"
-			Case "Greater Than"
+			Case globalRM.GetString("greater_than")
 				Return "GreaterThan"
-			Case "Greater Than or Equal To"
+			Case globalRM.GetString("greater_than_or_equal_to")
 				Return "GreaterThanOrEqualTo"
-			Case "Begins With"
+			Case globalRM.GetString("begins_with")
 				Return "BeginsWith"
-			Case "Ends With"
+			Case globalRM.GetString("ends_with")
 				Return "EndsWith"
-			Case "Contains"
+			Case globalRM.GetString("contains")
 				Return "Contains"
 			Case Else
 				Return Nothing
@@ -1093,21 +1093,21 @@ Public Partial Class RulesForm
 	Shared Function GetComparisonText(comparisonCode As String) As String
 		Select Case comparisonCode
 			Case "EqualTo"
-				Return "Equal To"
+				Return globalRM.GetString("equal_to")
 			Case "LessThan"
-				Return "Less Than"
+				Return globalRM.GetString("less_than")
 			Case "LessThanOrEqualTo"
-				Return "Less Than Or Equal To"
+				Return globalRM.GetString("less_than_or_equal_to")
 			Case "GreaterThan"
-				Return "Greater Than"
+				Return globalRM.GetString("greater_than")
 			Case "GreaterThanOrEqualTo"
-				Return "Greater Than Or Equal To"
+				Return globalRM.GetString("greater_than_or_equal_to")
 			Case "BeginsWith"
-				Return "Begins With"
+				Return globalRM.GetString("begins_with")
 			Case "EndsWith"
-				Return "Ends With"
+				Return globalRM.GetString("ends_with")
 			Case "Contains"
-				Return "Contains"
+				Return globalRM.GetString("contains")
 			Case Else
 				Return Nothing
 		End Select
@@ -1116,55 +1116,55 @@ Public Partial Class RulesForm
 	'Return the language code based on the human readable string.
 	Shared Function GetLanguageCode(language As String) As String
 		Select Case language
-			Case "Arabic"
+			Case globalRM.GetString("language_arabic")
 				Return "ar"
-			Case "Chinese (Hong Kong SAR)"
+			Case globalRM.GetString("language_chinese_HK_SAR")
 				Return "zh-HK"
-			Case "Chinese (Simplified)"
+			Case globalRM.GetString("language_chinese_simplified")
 				Return "zh-CHS"
-			Case "Chinese (Traditional)"
+			Case globalRM.GetString("language_chinese_traditional")
 				Return "zh-CHT"
-			Case "Czech"
+			Case globalRM.GetString("language_czech")
 				Return "cs"
-			Case "Danish"
+			Case globalRM.GetString("language_danish")
 				Return "da"
-			Case "Dutch"
+			Case globalRM.GetString("language_dutch")
 				Return "nl"
-			Case "English"
+			Case globalRM.GetString("language_english")
 				Return "en"
-			Case "Finnish"
+			Case globalRM.GetString("language_finnish")
 				Return "fi"
-			Case "French"
+			Case globalRM.GetString("language_french")
 				Return "fr"
-			Case "German"
+			Case globalRM.GetString("language_german")
 				Return "de"
-			Case "Greek"
+			Case globalRM.GetString("language_greek")
 				Return "el"
-			Case "Hebrew"
+			Case globalRM.GetString("language_hebrew")
 				Return "he"
-			Case "Hungarian"
+			Case globalRM.GetString("language_hungarian")
 				Return "hu"
-			Case "Italian"
+			Case globalRM.GetString("language_italian")
 				Return "it"
-			Case "Japanese"
+			Case globalRM.GetString("language_japanese")
 				Return "ja"
-			Case "Korean"
+			Case globalRM.GetString("language_korean")
 				Return "ko"
-			Case "Norwegian"
+			Case globalRM.GetString("language_norwegian")
 				Return "no"
-			Case "Polish"
+			Case globalRM.GetString("language_polish")
 				Return "pl"
-			Case "Portuguese"
+			Case globalRM.GetString("language_portuguese")
 				Return "pt"
-			Case "Portuguese (Brazil)"
+			Case globalRM.GetString("language_portuguese_brazil")
 				Return "pt-BR"
-			Case "Russian"
+			Case globalRM.GetString("language_russian")
 				Return "ru"
-			Case "Spanish"
+			Case globalRM.GetString("language_spanish")
 				Return "es"
-			Case "Swedish"
+			Case globalRM.GetString("language_swedish")
 				Return "sv"
-			Case "Turkish"
+			Case globalRM.GetString("language_turkish")
 				Return "tr"
 			Case Else
 				Return Nothing
@@ -1293,55 +1293,55 @@ Public Partial Class RulesForm
 	Shared Function GetLanguageText(languageCode As String) As String
 		Select Case languageCode
 			Case "ar"
-				Return "Arabic"
+				Return globalRM.GetString("language_arabic")
 			Case "zh-HK"
-				Return "Chinese (Hong Kong SAR)"
+				Return globalRM.GetString("language_chinese_HK_SAR")
 			Case "zh-CHS"
-				Return "Chinese (Simplified)"
+				Return globalRM.GetString("language_chinese_simplified")
 			Case "zh-CHT"
-				Return "Chinese (Traditional)"
+				Return globalRM.GetString("language_chinese_traditional")
 			Case "cs"
-				Return "Czech"
+				Return globalRM.GetString("language_czech")
 			Case "da"
-				Return "Danish"
+				Return globalRM.GetString("language_danish")
 			Case "nl"
-				Return "Dutch"
+				Return globalRM.GetString("language_dutch")
 			Case "en"
-				Return "English"
+				Return globalRM.GetString("language_english")
 			Case "fi"
-				Return "Finnish"
+				Return globalRM.GetString("language_finnish")
 			Case "fr"
-				Return "French"
+				Return globalRM.GetString("language_french")
 			Case "de"
-				Return "German"
+				Return globalRM.GetString("language_german")
 			Case "el"
-				Return "Greek"
+				Return globalRM.GetString("language_greek")
 			Case "he"
-				Return "Hebrew"
+				Return globalRM.GetString("language_hebrew")
 			Case "hu"
-				Return "Hungarian"
+				Return globalRM.GetString("language_hungarian")
 			Case "it"
-				Return "Italian"
+				Return globalRM.GetString("language_italian")
 			Case "ja"
-				Return "Japanese"
+				Return globalRM.GetString("language_japanese")
 			Case "ko"
-				Return "Korean"
+				Return globalRM.GetString("language_korean")
 			Case "no"
-				Return "Norwegian"
+				Return globalRM.GetString("language_norwegian")
 			Case "pl"
-				Return "Polish"
+				Return globalRM.GetString("language_polish")
 			Case "pt"
-				Return "Portuguese"
+				Return globalRM.GetString("language_portuguese")
 			Case "pt-BR"
-				Return "Portuguese (Brazil)"
+				Return globalRM.GetString("language_portuguese_brazil")
 			Case "ru"
-				Return "Russian"
+				Return globalRM.GetString("language_russian")
 			Case "es"
-				Return "Spanish"
+				Return globalRM.GetString("language_spanish")
 			Case "sv"
-				Return "Swedish"
+				Return globalRM.GetString("language_swedish")
 			Case "tr"
-				Return "Turkish"
+				Return globalRM.GetString("language_turkish")
 			Case Else
 				Return Nothing
 		End Select
@@ -1404,11 +1404,11 @@ Public Partial Class RulesForm
 		Select Case Me.cboRuleType.SelectedIndex 'Generate rule based on combobox selection.
 			Case RuleTypes.WindowsVersion
 				'Set the readable rule.
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & " " & _
-					"   Version:" & Me.txtOSMajorVersion.Text & "." & Me.txtOSMinorVersion.Text & " "
-				If Not String.IsNullOrEmpty(Me.txtSPMajorVersion.Text) Then Me._readableRule += "   ServicePack:" & Me.txtSPMajorVersion.Text & "." & Me.txtSPMinorVersion.Text
-				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "   BuildNumber:" & Me.txtData.Text
-				If Not String.IsNullOrEmpty(Me.cboProductType.Text) Then Me._readableRule += "   Product Type:" & Me.cboProductType.Text
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & " " & _
+					"   " & globalRM.GetString("version") & ":" & Me.txtOSMajorVersion.Text & "." & Me.txtOSMinorVersion.Text & " "
+				If Not String.IsNullOrEmpty(Me.txtSPMajorVersion.Text) Then Me._readableRule += "   " & globalRM.GetString("service_pack") & ":" & Me.txtSPMajorVersion.Text & "." & Me.txtSPMinorVersion.Text
+				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "   " & globalRM.GetString("build_number") & ":" & Me.txtData.Text
+				If Not String.IsNullOrEmpty(Me.cboProductType.Text) Then Me._readableRule += "   " & globalRM.GetString("product_type") & ":" & Me.cboProductType.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Comparison=""" & StringToXML(GetComparisonCode(Me.cboComparison.Text)) & """ " & _
@@ -1435,8 +1435,8 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileExists
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   Version: " & Me.txtVersion.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("CSID") & ": " & Me.cboEnvironmentVariable.Text
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   " & globalRM.GetString("version") & ": " & Me.txtVersion.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
@@ -1448,9 +1448,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileExistsWithRegistry
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
-				If Me.chkRegistry32bit.Checked Then Me._readableRule += "   Reg32:True"
-				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   Version: " & Me.txtVersion.Text
+				If Me.chkRegistry32bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
+				Me._readableRule += "   " & globalRM.GetString("path") & ":" & Me.txtFilePath.Text.Trim("\"c)
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) Then Me._readableRule += "   " & globalRM.GetString("version") & ": " & Me.txtVersion.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1463,9 +1463,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileCreation
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Created:" & Me.dtpDate.Value.ToLongDateString
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("CSID") & ": " & Me.cboEnvironmentVariable.Text
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("created") & ":" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
@@ -1477,10 +1477,10 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileCreationWithRegistry
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
-				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Created:" & Me.dtpDate.Value.ToLongDateString
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
+				Me._readableRule += "   " & globalRM.GetString("path") & ":" & Me.txtFilePath.Text.Trim("\"c)
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("created") & ":" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1494,9 +1494,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileModified
 				'Set the readable rule
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Created:" & Me.dtpDate.Value.ToLongDateString
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("CSID") & ": " & Me.cboEnvironmentVariable.Text
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("modified") & ":" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
@@ -1508,10 +1508,10 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileModifiedWithRegistry
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
-				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Modified:" & Me.dtpDate.Value.ToLongDateString
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
+				Me._readableRule += "   " & globalRM.GetString("path") & ":" & Me.txtFilePath.Text.Trim("\"c)
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("modified") & ":" & Me.dtpDate.Value.ToLongDateString
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1525,9 +1525,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileSize
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Size: " & Me.txtData.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("CSID") & ": " & Me.cboEnvironmentVariable.Text
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("size") & ": " & Me.txtData.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
@@ -1539,10 +1539,10 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileSizeWithRegistry
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c)
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
-				Me._readableRule += "   Path:" & Me.txtFilePath.Text.Trim("\"c)
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text & _
-					"   Size: " & Me.txtData.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
+				Me._readableRule += "   " & globalRM.GetString("path") & ":" & Me.txtFilePath.Text.Trim("\"c)
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("size") & ": " & Me.txtData.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1556,9 +1556,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileVersion
 				'Set the readable rule.
 				Me._readableRule += Me.txtFilePath.Text.Trim("\"c)
-				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   CSID: " & Me.cboEnvironmentVariable.Text
-				Me._readableRule += "   Comparison:" & Me.cboComparison.Text
-				If Not String.IsNullOrEmpty(Me.txtVersion.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   Version: " & Me.txtVersion.Text
+				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("CSID") & ": " & Me.cboEnvironmentVariable.Text
+				Me._readableRule += "   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text
+				If Not String.IsNullOrEmpty(Me.txtVersion.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then Me._readableRule += "   " & globalRM.GetString("version") & ": " & Me.txtVersion.Text
 				
 				'Set the xmlrule.
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
@@ -1570,10 +1570,10 @@ Public Partial Class RulesForm
 			Case RuleTypes.FileVersionWithRegistry
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c) & _
-					"   Path:" & Me.txtFilePath.Text.Trim("\"c) & _
-					"   Comparison:" & Me.cboComparison.Text & _
-					"   Version:" & Me.txtVersion.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("path") & ":" & Me.txtFilePath.Text.Trim("\"c) & _
+					"   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("version") & ":" & Me.txtVersion.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1588,7 +1588,7 @@ Public Partial Class RulesForm
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & _
 					Me.txtRegistrySubKey.Text.Trim("\"c)
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1598,9 +1598,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.RegistryValueExists
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & _
-					"   Value:" & Me.txtRegistryValue.Text & _
-					"   ValueType:" & Me.cboRegistryValueType.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("value") & ":" & Me.txtRegistryValue.Text & _
+					"   " & globalRM.GetString("value_type") & ":" & Me.cboRegistryValueType.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1612,9 +1612,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.RegistryDWORDValue
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c) & _
-					"   Comparison:" & Me.cboComparison.Text & _
-					"   Data:" & Me.txtData.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("data") & ":" & Me.txtData.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1627,9 +1627,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.RegistryExpandSzValue
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c) & _
-					"   Comparison:" & Me.cboComparison.Text & _
-					"   String:" & Me.txtData.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("string") & ":" & Me.txtData.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1642,9 +1642,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.RegistryVersionInSz
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c) & _
-					"   Comparison:" & Me.cboComparison.Text & _
-					"   String:" & Me.txtVersion.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("string") & ":" & Me.txtVersion.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1657,9 +1657,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.RegistrySzValue
 				'Set the readable rule.
 				Me._readableRule += Me.cboRegistryKey.Text & "\" & Me.txtRegistrySubKey.Text.Trim("\"c) & "\" & Me.txtRegistryValue.Text.Trim("\"c) & _
-					"   Comparison:" & Me.cboComparison.Text & _
-					"   String:" & Me.txtData.Text
-				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:True"
+					"   " & globalRM.GetString("comparison") & ":" & Me.cboComparison.Text & _
+					"   " & globalRM.GetString("string") & ":" & Me.txtData.Text
+				If Me.chkRegistry32Bit.Checked Then Me._readableRule += "   Reg32:" & globalRM.GetString("true")
 				
 				'Set the xmlrule.
 				_xmlRule += "Key=""" & Me.cboRegistryKey.Text & """ " & _
@@ -1672,7 +1672,7 @@ Public Partial Class RulesForm
 			Case RuleTypes.WMIQuery
 				'Set the readable rule.
 				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "NameSpace:" & Me.txtData.Text & " " 
-				Me._readableRule += "Query: " & Me.txtQuery.Text
+				Me._readableRule += globalRM.GetString("query") & ": " & Me.txtQuery.Text
 				
 				'Set the xmlrule.
 				If Not String.IsNullOrEmpty(Me.txtData.Text) Then _xmlRule += "Namespace=""" & StringToXML(Me.txtData.Text) & """ "
@@ -1682,9 +1682,9 @@ Public Partial Class RulesForm
 			Case RuleTypes.MsiProductInstalled
 				
 				_readableRule += New Guid(txtProductCode.Text).ToString("B") & "  "
-				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _readableRule += "  VersionMax = " & txtMaxVersion.Text
-				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _readableRule += "  VersionMin = " & txtMinVersion.Text
-				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += "  Language = " & cboLanguage.Text
+				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _readableRule += " " & globalRM.GetString("version_maximum") & " = " & txtMaxVersion.Text
+				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _readableRule += " " & globalRM.GetString("version_minimum") & " = " & txtMinVersion.Text
+				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += " " & globalRM.GetString("language") & " = " & cboLanguage.Text
 				
 				_xmlRule += "ProductCode=""" & (New Guid(txtProductCode.Text).ToString("B")) & """"
 				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & StringToXML(txtMaxVersion.Text) & """"
@@ -1693,10 +1693,10 @@ Public Partial Class RulesForm
 				_xmlRule+= " />"
 			Case RuleTypes.MsiPatchInstalled
 				
-				_readableRule += " PatchCode = " & (New Guid(txtPatchCode.Text).ToString("B")) & "  " & " for ProductCode = " & (New Guid(txtProductCode.Text).ToString("B")) & "  "
-				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _readableRule += " VersionMax = " & txtMaxVersion.Text
-				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _readableRule += " VersionMin = " & txtMinVersion.Text
-				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += " Language = " & cboLanguage.Text
+				_readableRule += " " & globalRM.GetString("patch_code") & " = " & (New Guid(txtPatchCode.Text).ToString("B")) & "  " & " for " & globalRM.GetString("product_code") & " = " & (New Guid(txtProductCode.Text).ToString("B")) & "  "
+				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _readableRule += " " & globalRM.GetString("version_maximum") & " = " & txtMaxVersion.Text
+				If Not String.IsNullOrEmpty(txtMinVersion.Text) Then _readableRule += " " & globalRM.GetString("version_minimum") & " = " & txtMinVersion.Text
+				If Not String.IsNullOrEmpty(GetLanguageCode(cboLanguage.Text)) Then _readableRule += " " & globalRM.GetString("language") & " = " & cboLanguage.Text
 				
 				_xmlRule += "PatchCode=""" & (New Guid(txtPatchCode.Text).ToString("B")) & """" & " ProductCode=""" & (New Guid(txtProductCode.Text).ToString("B")) & """"
 				If Not String.IsNullOrEmpty(txtMaxVersion.Text) Then _xmlRule += " VersionMax=""" & StringToXML(txtMaxVersion.Text) & """"
@@ -1714,8 +1714,8 @@ Public Partial Class RulesForm
 				End If
 				_xmlRule += ">"
 				
-				_readableRule += "Components: "
-				If chkComponentCollection_requireAll.Checked Then _readableRule += " (all required)" & "  "
+				_readableRule += globalRM.GetString("components") & ": "
+				If chkComponentCollection_requireAll.Checked Then _readableRule += " (" & globalRM.GetString("all_required") & ")" & "  "
 				
 				'Add the component Guids.
 				For Each tmpGuid As Guid In gceComponentCollection.ItemGuids
@@ -1723,8 +1723,8 @@ Public Partial Class RulesForm
 					_xmlRule += "<msiar:Component>" & tmpGuid.ToString("B") & "</msiar:Component>"
 				Next
 				
-				_readableRule += "Products: "
-				If chkProductCollection_requireAll.Checked Then _readableRule += " (all required)" & "  "
+				_readableRule += globalRM.GetString("products") & ": "
+				If chkProductCollection_requireAll.Checked Then _readableRule += " (" & globalRM.GetString("all_required") & ")" & "  "
 				
 				'Add the product Guids.
 				For Each tmpGuid As Guid In gceProductCollection.ItemGuids
@@ -1744,8 +1744,8 @@ Public Partial Class RulesForm
 				End If
 				_xmlRule += ">"
 				
-				_readableRule += "Features: "
-				If chkFeatureCollection_requireAll.Checked Then _readableRule += " (all required)" & "  "
+				_readableRule += globalRM.GetString("features") & ": "
+				If chkFeatureCollection_requireAll.Checked Then _readableRule += " (" & globalRM.GetString("all_required") & ")" & "  "
 				
 				'Add the feature names.
 				For Each tmpFeature As String In gceFeatureCollection.Items
@@ -1753,8 +1753,8 @@ Public Partial Class RulesForm
 					_xmlRule += "<msiar:Feature>" & tmpFeature & "</msiar:Feature>"
 				Next
 				
-				_readableRule += "Products: "
-				If chkProductCollection_requireAll.Checked Then _readableRule += " (all required)" & "  "
+				_readableRule += globalRM.GetString("products") & ": "
+				If chkProductCollection_requireAll.Checked Then _readableRule += " (" & globalRM.GetString("all_required") & ")" & "  "
 				
 				'Add the product Guids.
 				For Each tmpGuid As Guid In gceProductCollection.ItemGuids
@@ -1764,7 +1764,7 @@ Public Partial Class RulesForm
 				
 				_xmlRule += "</" & RuleTypes.MsiFeatureInstalled.ToXmlTag() & ">"
 			Case Else
-				Msgbox("This Rule Type Isn't Supported Yet")
+				Msgbox(globalRM.GetString("error_rules_unsupported_type"))
 				Me._readableRule = ""
 				_xmlRule = ""
 		End Select
@@ -2153,16 +2153,16 @@ Public Partial Class RulesForm
 					gceFeatureCollection.Items = features
 					
 				Case Else
-					Msgbox ("This rule is not recognized: " & xmlreader.LocalName.Replace("bar:",""))
+					Msgbox (globalRM.GetString("error_rules_unrecognized") & ": " & xmlreader.LocalName.Replace("bar:",""))
 			End Select
 			xmlReader.Close
 			
 			Return True
 		Catch x As XmlException
-			Msgbox("LoadRule - XMLException: The ruled could not be loaded." & vbNewLine & x.Message )
+			Msgbox(globalRM.GetString("exception_XML") & ": " & globalRM.GetString("error_rules_load") & vbNewLine & x.Message )
 			Return False
 		Catch x As Exception
-			Msgbox("LoadRule - Exception: The ruled could not be loaded." & vbNewLine & x.Message )
+			Msgbox(globalRM.GetString("exception") & ": " & globalRM.GetString("error_rules_load") & vbNewLine & x.Message )
 			Return False
 		End Try
 	End Function
@@ -2228,13 +2228,13 @@ Public Partial Class RulesForm
 	Sub ValidateFields
 		
 		If Me.cboComparison.SelectedIndex = -1 Then
-			Me.errorProviderRules.SetError(Me.cboComparison,"You must select a comparison.")
+			Me.errorProviderRules.SetError(Me.cboComparison,globalRM.GetString("warning_rules_comparison"))
 		Else
 			Me.errorProviderRules.SetError(Me.cboComparison,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtOSMajorVersion.Text) Or String.IsNullOrEmpty(Me.txtOSMinorVersion.Text) Then
-			Me.errorProviderRules.SetError(Me.txtOSMinorVersion,"You must enter a major and minor OS version.")
+			Me.errorProviderRules.SetError(Me.txtOSMinorVersion,globalRM.GetString("warning_rules_OS"))
 		Else
 			Me.errorProviderRules.SetError(Me.txtOSMinorVersion,"")
 		End If
@@ -2242,7 +2242,7 @@ Public Partial Class RulesForm
 		If Me.cboLanguage.SelectedIndex = -1 Then
 			Select Case Me.cboRuleType.SelectedIndex
 				Case RuleTypes.WindowsLanguage
-					Me.errorProviderRules.SetError(Me.cboLanguage,"You must select a language.")
+					Me.errorProviderRules.SetError(Me.cboLanguage,globalRM.GetString("warning_rules_language"))
 				Case Else
 					Me.errorProviderRules.SetError(Me.cboLanguage,"")
 			End Select
@@ -2251,27 +2251,27 @@ Public Partial Class RulesForm
 		End If
 		
 		If Me.cboProcessorType.SelectedIndex = -1 Then
-			Me.errorProviderRules.SetError(Me.cboProcessorType,"You must select a processor type.")
+			Me.errorProviderRules.SetError(Me.cboProcessorType,globalRM.GetString("warning_rules_processor"))
 		Else
 			Me.errorProviderRules.SetError(Me.cboProcessorType,"")
 		End If
 		
 		If Me.cboRegistryKey.SelectedIndex = -1 Then
-			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"You must select a registry key.")
+			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,globalRM.GetString("warning_rules_registry_key"))
 		Else If String.IsNullOrEmpty(Me.txtRegistrySubKey.Text) Then
-			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"You must enter a registry sub key.")
+			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,globalRM.GetString("warning_rules_registry_sub_key"))
 		Else
 			Me.errorProviderRules.SetError(Me.txtRegistrySubKey,"")
 		End If
 		
 		If Me.cboRegistryValueType.SelectedIndex = -1 Then
-			Me.errorProviderRules.SetError(Me.cboRegistryValueType,"You must select a registry value type.")
+			Me.errorProviderRules.SetError(Me.cboRegistryValueType,globalRM.GetString("warning_rules_registry_type"))
 		Else
 			Me.errorProviderRules.SetError(Me.cboRegistryValueType,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtFilePath.Text) Then
-			Me.errorProviderRules.SetError(Me.txtFilePath,"You must enter a file path.")
+			Me.errorProviderRules.SetError(Me.txtFilePath,globalRM.GetString("warning_rules_file_path"))
 		Else
 			Me.errorProviderRules.SetError(Me.txtFilePath,"")
 		End If
@@ -2279,9 +2279,9 @@ Public Partial Class RulesForm
 		If String.IsNullOrEmpty(Me.txtVersion.Text) Then
 			Select Case Me.cboRuleType.SelectedIndex
 				Case RuleTypes.FileVersion
-					Me.errorProviderRules.SetError(Me.txtVersion,"You must enter a version.")
+					Me.errorProviderRules.SetError(Me.txtVersion,globalRM.GetString("warning_rules_version"))
 				Case RuleTypes.FileVersionWithRegistry
-					Me.errorProviderRules.SetError(Me.txtVersion,"You must enter a version.")
+					Me.errorProviderRules.SetError(Me.txtVersion,globalRM.GetString("warning_rules_version"))
 				Case Else
 					Me.errorProviderRules.SetError(Me.txtVersion,"")
 			End Select
@@ -2294,17 +2294,17 @@ Public Partial Class RulesForm
 		If String.IsNullOrEmpty(Me.txtData.Text) Then
 			Select Case Me.cboRuleType.SelectedIndex
 				Case RuleTypes.FileSize
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter file size.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_file_size"))
 				Case RuleTypes.FileSizeWithRegistry
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter file size.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_file_size"))
 				Case RuleTypes.RegistryDWORDValue
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_registry_value"))
 				Case RuleTypes.RegistryExpandSzValue
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_registry_value"))
 				Case RuleTypes.RegistrySzValue
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter registry value.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_registry_value"))
 				Case RuleTypes.WMIQuery
-					Me.errorProviderRules.SetError(Me.txtData,"Must enter a namespace.")
+					Me.errorProviderRules.SetError(Me.txtData,globalRM.GetString("warning_rules_namespace"))
 				Case Else
 					Me.errorProviderRules.SetError(Me.txtData,"")
 			End Select
@@ -2313,13 +2313,13 @@ Public Partial Class RulesForm
 		End If
 		
 		If Not Me.dtpDate.Checked Then
-			Me.errorProviderRules.SetError(Me.dtpDate,"You must select a date.")
+			Me.errorProviderRules.SetError(Me.dtpDate,globalRM.GetString("warning_rules_date"))
 		Else
 			Me.errorProviderRules.SetError(Me.dtpDate,"")
 		End If
 		
 		If String.IsNullOrEmpty(Me.txtQuery.Text) Then
-			Me.errorProviderRules.SetError(Me.txtQuery,"You must enter a query.")
+			Me.errorProviderRules.SetError(Me.txtQuery,globalRM.GetString("warning_rules_query"))
 		Else
 			Me.errorProviderRules.SetError(Me.txtQuery,"")
 		End If
@@ -2328,14 +2328,14 @@ Public Partial Class RulesForm
 			Dim g As New Guid(Me.txtProductCode.Text)
 			Me.errorProviderRules.SetError(Me.txtProductCode,"")
 		Catch
-			Me.errorProviderRules.SetError(Me.txtProductCode,"You must enter a valid GUID.")
+			Me.errorProviderRules.SetError(Me.txtProductCode,globalRM.GetString("warning_rules_GUID"))
 		End Try
 		
 		Try
 			Dim g As New Guid(Me.txtPatchCode.Text)
 			Me.errorProviderRules.SetError(Me.txtPatchCode,"")
 		Catch
-			Me.errorProviderRules.SetError(Me.txtPatchCode,"You must enter a valid GUID.")
+			Me.errorProviderRules.SetError(Me.txtPatchCode,globalRM.GetString("warning_rules_GUID"))
 		End Try
 	End Sub
 	

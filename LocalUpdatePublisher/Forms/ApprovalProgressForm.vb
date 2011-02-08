@@ -27,7 +27,7 @@ Public Partial Class ApprovalProgressForm
 		
 		'Check server connection.
 		If Not ConnectionManager.Connected Then
-			Msgbox("The server is not connected.")
+			Msgbox(globalRM.GetString("error_server_disconnected"))
 			Return DialogResult.Cancel
 		End If
 		
@@ -43,7 +43,7 @@ Public Partial Class ApprovalProgressForm
 		
 		
 		'Setup label.
-		Me.lblProgress.Text = "Set approvals for " & selectedRows.Count & " updates."
+		Me.lblProgress.Text = String.Format(globalRM.GetString("label_approval_form_multiple"), selectedRows.Count)
 		
 		'Clear data grid view.
 		Me.dgvProgress.Rows.Clear
@@ -56,7 +56,7 @@ Public Partial Class ApprovalProgressForm
 			update = ConnectionManager.CurrentServer.GetUpdate(DirectCast(updateRow.Cells.Item("Id").Value, UpdateRevisionId))
 			
 			'Add new row
-			strAction = "Setting approvals for " & update.Title
+			strAction = String.Format(globalRM.GetString("label_approval_progress_form"), update.Title)
 			intCurrentRow = Me.dgvProgress.Rows.Add(New String() {strAction})
 			Me.Refresh
 			
@@ -72,15 +72,15 @@ Public Partial Class ApprovalProgressForm
 							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
 							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
 					Catch x As ArgumentOutOfRangeException
-						strResult = "Failed - ArgumentOutOfRangeException " & x.Message
+						strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
 					Catch x As ArgumentNullException
-						strResult = "Failed - ArgumentNullException " & x.Message
+						strResult = globalRM.GetString("exception_argument_null") & ": " & x.Message
 					Catch x As InvalidOperationException
-						strResult = "Failed - InvalidOperationException " & x.Message
+						strResult = globalRM.GetString("exception_invalid_operation") & ": " & x.Message
 					Catch x As WsusObjectNotFoundException
-						strResult = "Failed - WsusObjectNotFoundException " & x.Message
+						strResult = globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message
 					Catch x As Exception
-						strResult = "Failed - " & x.Message
+						strResult = globalRM.GetString("exception") & ": " & x.Message
 					End Try
 				End If
 			Next
@@ -122,7 +122,7 @@ Public Partial Class ApprovalProgressForm
 		Me.btnClose.Enabled = False
 		
 		'Setup label.
-		Me.lblProgress.Text = "Set approvals for " & update.Title
+		Me.lblProgress.Text = String.Format(globalRM.GetString("label_approval_progress_form"), update.Title)
 		
 		'Clear data grid view.
 		Me.dgvProgress.Rows.Clear
@@ -132,8 +132,8 @@ Public Partial Class ApprovalProgressForm
 		' then perform that action for that row's group.
 		For Each tempRow As DataGridViewRow In computerGroups
 			
-			strAction = "Setting approvals for " & update.Title & " to " & DirectCast(tempRow.Cells.Item("Approval").Value, String) & _
-				" on " & DirectCast(tempRow.Cells.Item("ComputerGroup").Value, String)
+			strAction = String.Format(globalRM.GetString("label_approval_progress_status") , _
+			update.Title,DirectCast(tempRow.Cells.Item("Approval").Value, String),DirectCast(tempRow.Cells.Item("ComputerGroup").Value, String))
 			
 			'Set default result to success.
 			strResult = "Success"
@@ -151,15 +151,15 @@ Public Partial Class ApprovalProgressForm
 						DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
 					
 				Catch x As ArgumentOutOfRangeException
-					strResult = "Failed - ArgumentOutOfRangeException " & x.Message
+					strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
 				Catch x As ArgumentNullException
-					strResult = "Failed - ArgumentNullException " & x.Message
+					strResult = globalRM.GetString("exception_argument_null") & ": " & x.Message
 				Catch x As InvalidOperationException
-					strResult = "Failed - InvalidOperationException " & x.Message
+					strResult = globalRM.GetString("exception_invalid_operation") & ": " & x.Message
 				Catch x As WsusObjectNotFoundException
-					strResult = "Failed - WsusObjectNotFoundException " & x.Message
+					strResult = globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message
 				Catch x As Exception
-					strResult = "Failed - " & x.Message
+					strResult = globalRM.GetString("exception") & ": " & x.Message
 				End Try
 				Me.pbUpdateApprovals.PerformStep
 				

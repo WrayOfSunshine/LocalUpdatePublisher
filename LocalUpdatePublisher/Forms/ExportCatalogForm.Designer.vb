@@ -33,6 +33,7 @@ Partial Class ExportCatalogForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ExportCatalogForm))
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnExport = New System.Windows.Forms.Button
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
@@ -48,25 +49,16 @@ Partial Class ExportCatalogForm
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(377, 263)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-		Me.btnCancel.TabIndex = 7
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnExport
 		'
-		Me.btnExport.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnExport, "btnExport")
 		Me.btnExport.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnExport.Enabled = false
-		Me.btnExport.Location = New System.Drawing.Point(296, 263)
 		Me.btnExport.Name = "btnExport"
-		Me.btnExport.Size = New System.Drawing.Size(75, 23)
-		Me.btnExport.TabIndex = 6
-		Me.btnExport.Text = "Export"
 		Me.btnExport.UseVisualStyleBackColor = true
 		AddHandler Me.btnExport.Click, AddressOf Me.BtnExportClick
 		'
@@ -76,77 +68,60 @@ Partial Class ExportCatalogForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.File, Me.Include, Me.Title})
-		Me.dgvUpdates.Location = New System.Drawing.Point(12, 12)
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
-		Me.dgvUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-		Me.dgvUpdates.Size = New System.Drawing.Size(434, 245)
-		Me.dgvUpdates.TabIndex = 5
 		'
 		'Id
 		'
-		Me.Id.HeaderText = "Id"
+		resources.ApplyResources(Me.Id, "Id")
 		Me.Id.Name = "Id"
-		Me.Id.Visible = false
 		'
 		'File
 		'
-		Me.File.HeaderText = "File"
+		resources.ApplyResources(Me.File, "File")
 		Me.File.Name = "File"
-		Me.File.Visible = false
 		'
 		'Include
 		'
 		Me.Include.FillWeight = 3.045685!
-		Me.Include.HeaderText = ""
+		resources.ApplyResources(Me.Include, "Include")
 		Me.Include.Name = "Include"
 		'
 		'Title
 		'
 		Me.Title.FillWeight = 56.95432!
-		Me.Title.HeaderText = "Title"
+		resources.ApplyResources(Me.Title, "Title")
 		Me.Title.Name = "Title"
 		Me.Title.ReadOnly = true
 		'
 		'btnAdd
 		'
-		Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.btnAdd.Location = New System.Drawing.Point(93, 262)
+		resources.ApplyResources(Me.btnAdd, "btnAdd")
 		Me.btnAdd.Name = "btnAdd"
-		Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-		Me.btnAdd.TabIndex = 9
-		Me.btnAdd.Text = "Add"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
 		'
 		'btnAddAll
 		'
-		Me.btnAddAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.btnAddAll.Location = New System.Drawing.Point(12, 262)
+		resources.ApplyResources(Me.btnAddAll, "btnAddAll")
 		Me.btnAddAll.Name = "btnAddAll"
-		Me.btnAddAll.Size = New System.Drawing.Size(75, 23)
-		Me.btnAddAll.TabIndex = 8
-		Me.btnAddAll.Text = "Add All"
 		Me.btnAddAll.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddAll.Click, AddressOf Me.BtnAddAllClick
 		'
 		'exportFileDialog
 		'
 		Me.exportFileDialog.DefaultExt = "tab"
-		Me.exportFileDialog.Filter = "Tab Delimited|*.tab"
+		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
 		'
 		'ExportCatalogForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(458, 297)
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.btnAddAll)
 		Me.Controls.Add(Me.btnCancel)
@@ -155,8 +130,6 @@ Partial Class ExportCatalogForm
 		Me.MinimizeBox = false
 		Me.Name = "ExportCatalogForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Select Updates to Export"
 		AddHandler FormClosed, AddressOf Me.ExportCatalogFormFormClosed
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)

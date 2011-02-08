@@ -94,9 +94,9 @@ Public Partial Class ReturnCodesForm
 		If DgvReturnCodes.Rows(e.RowIndex).IsNewRow Then 'Don't validate new rows.
 			errorText = String.Empty
 		Else If (String.IsNullOrEmpty(DirectCast(DgvReturnCodes.Rows(e.RowIndex).Cells("Result").Value, String))) Then
-			errorText = "Result must not be empty"
+			errorText = globalRM.GetString("error_result_code_empty")
 		Else If (String.IsNullOrEmpty(CStr(DgvReturnCodes.Rows(e.RowIndex).Cells("ReturnCode").Value))) Then
-			errorText = "Return Code must not be empty"
+			errorText = globalRM.GetString("error_return_codes_empty")
 		Else 'No errors in row.
 			errorText = String.Empty
 		End If

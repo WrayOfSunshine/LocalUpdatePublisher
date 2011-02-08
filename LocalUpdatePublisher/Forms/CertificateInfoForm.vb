@@ -30,7 +30,7 @@ Public Partial Class CertificateInfoForm
 			ConnectionManager.CreateCert(Nothing, Nothing)
 			LoadCertInfo()
 		Else
-			MessageBox.Show("A certificate has already been created.")
+			MessageBox.Show(globalRM.GetString("label_certificate_info_preexists"))
 		End If
 	End Sub
 	
@@ -54,7 +54,7 @@ Public Partial Class CertificateInfoForm
 					End If
 				End If
 			Else
-				MsgBox ("You cannot import a certificate unless you are connected securely to the WSUS server using SSL.")
+				MsgBox (globalRM.GetString("error_certificate_import_ssl"))
 			End If
 		Else
 			Dim DialogResult As DialogResult = Me.saveFileDialog.ShowDialog
@@ -72,16 +72,14 @@ Public Partial Class CertificateInfoForm
 	Sub LoadCertInfo()
 		If ConnectionManager.CurrentServerCertificate Is Nothing Then
 			Me.btnCreateCert.Show
-			Me.btnExportImportCert.Text = "Import Cert"
+			Me.btnExportImportCert.Text = globalRM.GetString("import_certificate")
 			Me.lblCertInfo.Size = New Size(305, 45)
-			Me.lblCertInfo.Text = "A certificate has not been created yet." & _
-				"  You must do so before publishing updates."
+			Me.lblCertInfo.Text = globalRM.GetString("label_certificate_info_no_cert")
 		Else
 			Me.btnCreateCert.Hide
-			Me.btnExportImportCert.Text = "Export Cert"
+			Me.btnExportImportCert.Text = globalRM.GetString("export_certificate")
 			Me.lblCertInfo.Size = New Size(415, 45)
-			Me.lblCertInfo.Text = "Below you will find information regarding the certificate installed on your WSUS server." & _
-				"  This certificate needs to be distributed to each client before they can receive locally published updates."
+			Me.lblCertInfo.Text = globalRM.GetString("label_certificate_info_exists")
 			Me.txtSubject.Text = ConnectionManager.CurrentServerCertificate.Subject.ToString
 			Me.txtIssuer.Text = ConnectionManager.CurrentServerCertificate.Issuer.ToString
 			Me.txtStartDate.Text = ConnectionManager.CurrentServerCertificate.GetEffectiveDateString

@@ -33,6 +33,7 @@ Partial Class ImportCatalogForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ImportCatalogForm))
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnImport = New System.Windows.Forms.Button
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
@@ -44,24 +45,16 @@ Partial Class ImportCatalogForm
 		'
 		'btnCancel
 		'
-		Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(367, 263)
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-		Me.btnCancel.TabIndex = 7
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnImport
 		'
-		Me.btnImport.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.btnImport, "btnImport")
 		Me.btnImport.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnImport.Location = New System.Drawing.Point(286, 263)
 		Me.btnImport.Name = "btnImport"
-		Me.btnImport.Size = New System.Drawing.Size(75, 23)
-		Me.btnImport.TabIndex = 6
-		Me.btnImport.Text = "Import"
 		Me.btnImport.UseVisualStyleBackColor = true
 		AddHandler Me.btnImport.Click, AddressOf Me.BtnImportClick
 		'
@@ -71,51 +64,42 @@ Partial Class ImportCatalogForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		Me.dgvUpdates.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-						Or System.Windows.Forms.AnchorStyles.Left)  _
-						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.Metadata, Me.Title})
-		Me.dgvUpdates.Location = New System.Drawing.Point(12, 12)
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
-		Me.dgvUpdates.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-		Me.dgvUpdates.Size = New System.Drawing.Size(430, 245)
-		Me.dgvUpdates.TabIndex = 5
 		'
 		'Include
 		'
 		Me.Include.FillWeight = 10!
-		Me.Include.HeaderText = ""
+		resources.ApplyResources(Me.Include, "Include")
 		Me.Include.Name = "Include"
 		'
 		'Metadata
 		'
 		Me.Metadata.FillWeight = 25!
-		Me.Metadata.HeaderText = "Metadata"
+		resources.ApplyResources(Me.Metadata, "Metadata")
 		Me.Metadata.Name = "Metadata"
 		'
 		'Title
 		'
 		Me.Title.FillWeight = 145.6853!
-		Me.Title.HeaderText = "Title"
+		resources.ApplyResources(Me.Title, "Title")
 		Me.Title.Name = "Title"
 		'
 		'ImportCatalogForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(452, 297)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnImport)
 		Me.Controls.Add(Me.dgvUpdates)
 		Me.MinimizeBox = false
 		Me.Name = "ImportCatalogForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Select Updates to Import"
 		AddHandler FormClosed, AddressOf Me.ImportCatalogFormFormClosed
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)

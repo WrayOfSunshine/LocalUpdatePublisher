@@ -33,8 +33,8 @@ Partial Class PasswordForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Dim secureString1 As System.Security.SecureString = New System.Security.SecureString
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PasswordForm))
+		Dim secureString1 As System.Security.SecureString = New System.Security.SecureString
 		Me.lblPassword = New System.Windows.Forms.Label
 		Me.btnOK = New System.Windows.Forms.Button
 		Me.stbPassword = New LocalUpdatePublisher.SecureTextBox
@@ -43,60 +43,44 @@ Partial Class PasswordForm
 		'
 		'lblPassword
 		'
-		Me.lblPassword.Location = New System.Drawing.Point(12, 9)
+		resources.ApplyResources(Me.lblPassword, "lblPassword")
 		Me.lblPassword.Name = "lblPassword"
-		Me.lblPassword.Size = New System.Drawing.Size(229, 15)
-		Me.lblPassword.TabIndex = 0
-		Me.lblPassword.Text = "If this certificate has a password, enter it here"
 		'
 		'btnOK
 		'
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOK.Location = New System.Drawing.Point(179, 56)
+		resources.ApplyResources(Me.btnOK, "btnOK")
 		Me.btnOK.Name = "btnOK"
-		Me.btnOK.Size = New System.Drawing.Size(48, 19)
-		Me.btnOK.TabIndex = 2
-		Me.btnOK.Text = "OK"
 		Me.btnOK.UseVisualStyleBackColor = true
 		AddHandler Me.btnOK.Click, AddressOf Me.BtnOKClick
 		'
 		'stbPassword
 		'
-		Me.stbPassword.Location = New System.Drawing.Point(12, 30)
+		resources.ApplyResources(Me.stbPassword, "stbPassword")
 		Me.stbPassword.Name = "stbPassword"
-		Me.stbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
 		Me.stbPassword.SecureText = secureString1
-		Me.stbPassword.Size = New System.Drawing.Size(269, 20)
-		Me.stbPassword.TabIndex = 3
 		'
 		'btnCancel
 		'
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Location = New System.Drawing.Point(233, 56)
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.Size = New System.Drawing.Size(48, 19)
-		Me.btnCancel.TabIndex = 4
-		Me.btnCancel.Text = "Cancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'PasswordForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.ClientSize = New System.Drawing.Size(290, 81)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.stbPassword)
 		Me.Controls.Add(Me.btnOK)
 		Me.Controls.Add(Me.lblPassword)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "PasswordForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "Enter Certificate Password"
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub

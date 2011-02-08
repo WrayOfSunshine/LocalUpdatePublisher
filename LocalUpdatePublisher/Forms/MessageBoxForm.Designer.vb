@@ -42,60 +42,47 @@ Partial Class MessageBoxForm
 		'
 		'lblText
 		'
-		Me.lblText.Location = New System.Drawing.Point(12, 9)
+		resources.ApplyResources(Me.lblText, "lblText")
 		Me.lblText.Name = "lblText"
-		Me.lblText.Size = New System.Drawing.Size(442, 45)
-		Me.lblText.TabIndex = 0
-		Me.lblText.Text = "label1"
 		'
 		'btnOne
 		'
 		Me.btnOne.DialogResult = System.Windows.Forms.DialogResult.Yes
-		Me.btnOne.Location = New System.Drawing.Point(217, 57)
+		resources.ApplyResources(Me.btnOne, "btnOne")
 		Me.btnOne.Name = "btnOne"
-		Me.btnOne.Size = New System.Drawing.Size(75, 23)
-		Me.btnOne.TabIndex = 1
 		Me.btnOne.UseVisualStyleBackColor = true
 		AddHandler Me.btnOne.Click, AddressOf Me.BtnOneClick
 		'
 		'btnTwo
 		'
 		Me.btnTwo.DialogResult = System.Windows.Forms.DialogResult.No
-		Me.btnTwo.Location = New System.Drawing.Point(298, 57)
+		resources.ApplyResources(Me.btnTwo, "btnTwo")
 		Me.btnTwo.Name = "btnTwo"
-		Me.btnTwo.Size = New System.Drawing.Size(75, 23)
-		Me.btnTwo.TabIndex = 2
 		Me.btnTwo.UseVisualStyleBackColor = true
 		AddHandler Me.btnTwo.Click, AddressOf Me.BtnTwoClick
 		'
 		'btnThree
 		'
 		Me.btnThree.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnThree.Location = New System.Drawing.Point(379, 57)
+		resources.ApplyResources(Me.btnThree, "btnThree")
 		Me.btnThree.Name = "btnThree"
-		Me.btnThree.Size = New System.Drawing.Size(75, 23)
-		Me.btnThree.TabIndex = 3
 		Me.btnThree.UseVisualStyleBackColor = true
 		AddHandler Me.btnThree.Click, AddressOf Me.BtnThreeClick
 		'
 		'MessageBoxForm
 		'
-		Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnThree
-		Me.ClientSize = New System.Drawing.Size(467, 85)
 		Me.Controls.Add(Me.btnThree)
 		Me.Controls.Add(Me.btnTwo)
 		Me.Controls.Add(Me.btnOne)
 		Me.Controls.Add(Me.lblText)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "MessageBoxForm"
 		Me.ShowInTaskbar = false
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-		Me.Text = "MessageBoxForm"
 		Me.ResumeLayout(false)
 	End Sub
 	Private btnThree As System.Windows.Forms.Button
