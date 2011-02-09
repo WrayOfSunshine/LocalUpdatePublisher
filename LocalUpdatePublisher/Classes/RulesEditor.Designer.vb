@@ -32,7 +32,7 @@ Partial Class RulesEditor
 		Me.btn_edit = New System.Windows.Forms.Button
 		Me.btn_remove = New System.Windows.Forms.Button
 		Me.dgv_rules = New System.Windows.Forms.DataGridView
-		Me.RuleColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.RuleCol = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.XML = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btn_add = New System.Windows.Forms.Button
 		Me.lbl_title = New System.Windows.Forms.Label
@@ -81,7 +81,7 @@ Partial Class RulesEditor
 		Me.dgv_rules.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
 		Me.dgv_rules.CausesValidation = false
 		Me.dgv_rules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RuleColumn, Me.XML})
+		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RuleCol, Me.XML})
 		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
 		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
 		dataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -100,12 +100,12 @@ Partial Class RulesEditor
 		AddHandler Me.dgv_rules.RowsRemoved, AddressOf Me.Dgv_rulesRowsAddRemoved
 		AddHandler Me.dgv_rules.SelectionChanged, AddressOf Me.dgv_rules_SelectionChanged
 		'
-		'RuleColumn
+		'Rule
 		'
-		Me.RuleColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		resources.ApplyResources(Me.RuleColumn, "Rule")
-		Me.RuleColumn.Name = "Rule"
-		Me.RuleColumn.ReadOnly = true
+		Me.RuleCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		resources.ApplyResources(Me.RuleCol, "RuleCol")
+		Me.RuleCol.Name = "Rule"
+		Me.RuleCol.ReadOnly = true
 		'
 		'XML
 		'
@@ -186,6 +186,7 @@ Partial Class RulesEditor
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private RuleCol As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private XML As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private RuleColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btnEditInstallableItem As System.Windows.Forms.Button

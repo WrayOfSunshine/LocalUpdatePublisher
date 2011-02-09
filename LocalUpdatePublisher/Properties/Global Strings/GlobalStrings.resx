@@ -169,7 +169,7 @@
     <value>Refreshing Update List</value>
   </data>
   <data name="computers_shown" xml:space="preserve">
-    <value>computers shown</value>
+    <value>{0} computers shown</value>
   </data>
   <data name="last_status_report" xml:space="preserve">
     <value>Last Status Report</value>
@@ -1046,5 +1046,41 @@
   </data>
   <data name="status_connection_downloading" xml:space="preserve">
     <value>Downloading files for {0}</value>
+  </data>
+  <data name="warning_update_vendor" xml:space="preserve">
+    <value>The vendor cannot be Microsoft.</value>
+  </data>
+  <data name="failed_or_needed" xml:space="preserve">
+    <value>Failed or Needed</value>
+  </data>
+  <data name="installed_not_applicable_no_status" xml:space="preserve">
+    <value>Installed/Not Applicable or No Status</value>
+  </data>
+  <data name="needed" xml:space="preserve">
+    <value>Needed</value>
+  </data>
+  <data name="no_status" xml:space="preserve">
+    <value>No Status</value>
+  </data>
+  <data name="any" xml:space="preserve">
+    <value>Any</value>
+  </data>
+  <data name="remove_group" xml:space="preserve">
+    <value>Remove Group</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="workstation" xml:space="preserve">
+    <value>Workstation</value>
+  </data>
+  <data name="domain_controller" xml:space="preserve">
+    <value>Domain Controller</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server</value>
   </data>
 </root>

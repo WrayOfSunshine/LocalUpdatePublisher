@@ -32,18 +32,18 @@ Public Module Data_Routines
 		End If
 		
 		'Filter the list by what update statuses the computer target has.
-		If status = "Failed or Needed" Then
+		If status = globalRM.GetString("failed_or_needed") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Failed or UpdateInstallationStates.NotInstalled
-		Else If status = "Installed/Not Applicable or No Status" Then
+		Else If status = globalRM.GetString("installed_not_applicable_no_status") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Installed or _
 				UpdateInstallationStates.NotApplicable or UpdateInstallationStates.Unknown or UpdateInstallationStates.InstalledPendingReboot
-		Else If status = "Failed" Then
+		Else If status = globalRM.GetString("failed") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Failed
-		Else If status = "Needed" Then
+		Else If status = globalRM.GetString("needed") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.NotInstalled
-		Else If status = "Installed/Not Applicable" Then
+		Else If status = globalRM.GetString("installed_not_applicable") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Installed or UpdateInstallationStates.NotApplicable or UpdateInstallationStates.InstalledPendingReboot
-		Else If status = "No Status" Then
+		Else If status = globalRM.GetString("no_status") Then
 			computers.IncludedInstallationStates = UpdateInstallationStates.Unknown
 		End If
 		
@@ -195,26 +195,26 @@ Public Module Data_Routines
 			
 			'We filter the report by skipping rows based on the update status
 			' combo box text and the update's installation state string.
-			If status = "Failed or Needed" And _
+			If status = globalRM.GetString("failed_or_needed") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
 				'Do not add this row
-			Else If status = "Installed/Not Applicable or No Status" And _
+			Else If status = globalRM.GetString("installed_not_applicable_no_status") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Installed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.InstalledPendingReboot And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotApplicable And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
 				'Do not add this row.
-			Else If status = "Failed" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed Then
+			Else If status = globalRM.GetString("failed") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed Then
 				'Do not add this row.
-			Else If status = "Needed" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
+			Else If status = globalRM.GetString("needed") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
 				'Do not add this row.
-			Else If status = "Installed/Not Applicable" And _
+			Else If status = globalRM.GetString("installed_not_applicable") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Installed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.InstalledPendingReboot And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotApplicable Then
 				'Do not add this row.
-			Else If status = "No Status" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
+			Else If status = globalRM.GetString("no_status") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
 				'Do not add this row.
 			Else 'Add this row.
 				Dim tmpRow As DataRow = dt.NewRow()
@@ -373,26 +373,26 @@ Public Module Data_Routines
 			
 			'We filter the report by skipping rows based on the update status
 			' combo box text and the update's installation state string.
-			If status = "Failed or Needed" And _
+			If status = globalRM.GetString("failed_or_needed") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
 				'Do not add this row.
-			Else If status = "Installed/Not Applicable or No Status" And _
+			Else If status = globalRM.GetString("installed_not_applicable_no_status") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Installed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.InstalledPendingReboot And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotApplicable And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
 				'Do not add this row.
-			Else If status = "Failed" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed Then
+			Else If status = globalRM.GetString("failed") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Failed Then
 				'Do not add this row.
-			Else If status = "Needed" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
+			Else If status = globalRM.GetString("needed") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotInstalled Then
 				'Do not add this row.
-			Else If status = "Installed/Not Applicable" And _
+			Else If status = globalRM.GetString("installed_not_applicable") And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Installed And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.InstalledPendingReboot And _
 				tmpUpdate.UpdateInstallationState <> UpdateInstallationState.NotApplicable Then
 				'Do not add this row.
-			Else If status = "No Status" And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
+			Else If status = globalRM.GetString("no_status") And tmpUpdate.UpdateInstallationState <> UpdateInstallationState.Unknown Then
 				'Do not add this row.
 			Else 'Add this row.
 				Dim tmpRow As DataRow = dt.NewRow()

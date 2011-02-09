@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkInheritApprovals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 25</value>
+  </data>
+  <data name="chkInheritApprovals.Text" xml:space="preserve">
+    <value>Approbations Hériter</value>
+  </data>
+  <data name="chkApprovedOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 27</value>
+  </data>
+  <data name="chkApprovedOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="chkApprovedOnly.Text" xml:space="preserve">
+    <value>Seuls les mises à jour approuvées</value>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text" xml:space="preserve">
+    <value>(# ordinateurs montré)</value>
+  </data>
+  <data name="lblSelectedTargetGroup.Text" xml:space="preserve">
+    <value>Sélection du Groupe Cible</value>
+  </data>
+  <data name="lblComputerStatus.Text" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="btnComputerListRefresh.Text" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 366</value>
+  </data>
+  <data name="lblNetwork.Text" xml:space="preserve">
+    <value>Nécessite Network</value>
+  </data>
+  <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>359, 363</value>
+  </data>
+  <data name="txtPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 7</value>
+  </data>
+  <data name="txtPackageType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="lblPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 7</value>
+  </data>
+  <data name="lblPackageType.Text" xml:space="preserve">
+    <value>Paquet Type</value>
+  </data>
+  <data name="lblPackageType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblPrerequisites.Text" xml:space="preserve">
+    <value>Préalables</value>
+  </data>
+  <data name="lblSupersedes.Text" xml:space="preserve">
+    <value>Remplace</value>
+  </data>
+  <data name="lblReturnCodes.Text" xml:space="preserve">
+    <value>Retour Codes</value>
+  </data>
+  <data name="lblUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 366</value>
+  </data>
+  <data name="lblUninstall.Text" xml:space="preserve">
+    <value>Désinstaller</value>
+  </data>
+  <data name="lblUninstall.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 363</value>
+  </data>
+  <data name="txtImpact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 337</value>
+  </data>
+  <data name="txtImpact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="txtPackage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 33</value>
+  </data>
+  <data name="txtPackage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="lblID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 33</value>
+  </data>
+  <data name="lblID.Text" xml:space="preserve">
+    <value>Paquet ID</value>
+  </data>
+  <data name="lblID.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 208</value>
+  </data>
+  <data name="txtProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 85</value>
+  </data>
+  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 39</value>
+  </data>
+  <data name="lblImpact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 339</value>
+  </data>
+  <data name="lblImpact.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtPackageTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 59</value>
+  </data>
+  <data name="txtPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="txtVendor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 182</value>
+  </data>
+  <data name="txtVendor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 86</value>
+  </data>
+  <data name="lblDescription.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-8, 392</value>
+  </data>
+  <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 17</value>
+  </data>
+  <data name="lblRebootBehavior.Text" xml:space="preserve">
+    <value>Redémarrez le Comportement</value>
+  </data>
+  <data name="lblRebootBehavior.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblPackageTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 59</value>
+  </data>
+  <data name="lblPackageTitle.Text" xml:space="preserve">
+    <value>Paquet Titre</value>
+  </data>
+  <data name="lblPackageTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtClassification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 130</value>
+  </data>
+  <data name="txtClassification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="txtRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 389</value>
+  </data>
+  <data name="txtRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="txtServerity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 286</value>
+  </data>
+  <data name="txtServerity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="txtArticleID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 236</value>
+  </data>
+  <data name="txtArticleID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="txtBulletinID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 156</value>
+  </data>
+  <data name="txtBulletinID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="lblMoreInfoURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 314</value>
+  </data>
+  <data name="lblMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="lblMoreInfoURL.Text" xml:space="preserve">
+    <value>URL Plus d'Info</value>
+  </data>
+  <data name="lblMoreInfoURL.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtCVEID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 260</value>
+  </data>
+  <data name="txtCVEID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 20</value>
+  </data>
+  <data name="lblArticleID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 235</value>
+  </data>
+  <data name="lblArticleID.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtMoreInfoURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 311</value>
+  </data>
+  <data name="txtMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 20</value>
+  </data>
+  <data name="lblProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 209</value>
+  </data>
+  <data name="lblProduct.Text" xml:space="preserve">
+    <value>Produit</value>
+  </data>
+  <data name="lblProduct.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblCVEID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 263</value>
+  </data>
+  <data name="lblCVEID.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblVendor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 185</value>
+  </data>
+  <data name="lblVendor.Text" xml:space="preserve">
+    <value>Vendeur</value>
+  </data>
+  <data name="lblVendor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblSeverity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 288</value>
+  </data>
+  <data name="lblSeverity.Text" xml:space="preserve">
+    <value>Gravité</value>
+  </data>
+  <data name="lblSeverity.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblBullitinID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 158</value>
+  </data>
+  <data name="lblBullitinID.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblClassification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 133</value>
+  </data>
+  <data name="lblClassification.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabUpdateStatus.Text" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="btnUpdateRefreshReport.Text" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="lblUpdateStatus.Text" xml:space="preserve">
+    <value>Mise à Jour Du</value>
+  </data>
+  <data name="lblComputerGroup.Text" xml:space="preserve">
+    <value>Groupe d'Ordinateurs</value>
+  </data>
+  <data name="tabUpdateReport.Text" xml:space="preserve">
+    <value>Rapport</value>
+  </data>
+  <data name="lblUpdateNoStatus.Text" xml:space="preserve">
+    <value>Mises à jour sans statut:</value>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text" xml:space="preserve">
+    <value>Mises à jour installées / non applicable:</value>
+  </data>
+  <data name="lblUpdatesNeeded.Text" xml:space="preserve">
+    <value>Mises à jour nécessaires::</value>
+  </data>
+  <data name="lblUpdatesWErrors.Text" xml:space="preserve">
+    <value>Mises à jour avec des erreurs:</value>
+  </data>
+  <data name="tabComputerStatus.Text" xml:space="preserve">
+    <value>Statut Groupe</value>
+  </data>
+  <data name="btnComputerRefreshReport.Text" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="dgvComputerReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 62</value>
+  </data>
+  <data name="lblComputerUpdateStatus.Text" xml:space="preserve">
+    <value>Statut de Mise à Jour</value>
+  </data>
+  <data name="tabComputerReport.Text" xml:space="preserve">
+    <value>Rapport</value>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importer Catalogue</value>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter Catalogue</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 6</value>
+  </data>
+  <data name="exportListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="exportListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter Liste</value>
+  </data>
+  <data name="exportReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter Rapport</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer mise à jour</value>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importer Mise à Jour</value>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter Mise à Jour</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 6</value>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gérer Règles</value>
+  </data>
+  <data name="importRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importer Règles</value>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter Règles</value>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Règles Enregistrées</value>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Infos Certificat</value>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Paramètres de Connexion</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="updateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mise à Jour</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Forum d'Aide</value>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aide Wiki</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
+        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
+        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
+        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
+        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
+        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
+        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
+        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
+        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
+        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
+        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
+        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
+        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+</root>

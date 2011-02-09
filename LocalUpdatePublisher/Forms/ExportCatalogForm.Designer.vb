@@ -37,43 +37,82 @@ Partial Class ExportCatalogForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnExport = New System.Windows.Forms.Button
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
+		Me.btnAdd = New System.Windows.Forms.Button
+		Me.btnAddAll = New System.Windows.Forms.Button
+		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.File = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Include = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.btnAdd = New System.Windows.Forms.Button
-		Me.btnAddAll = New System.Windows.Forms.Button
-		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
 		'btnCancel
 		'
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnExport
 		'
+		Me.btnExport.AccessibleDescription = Nothing
+		Me.btnExport.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnExport, "btnExport")
+		Me.btnExport.BackgroundImage = Nothing
 		Me.btnExport.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnExport.Font = Nothing
 		Me.btnExport.Name = "btnExport"
 		Me.btnExport.UseVisualStyleBackColor = true
 		AddHandler Me.btnExport.Click, AddressOf Me.BtnExportClick
 		'
 		'dgvUpdates
 		'
+		Me.dgvUpdates.AccessibleDescription = Nothing
+		Me.dgvUpdates.AccessibleName = Nothing
 		Me.dgvUpdates.AllowUserToAddRows = false
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
 		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvUpdates.BackgroundImage = Nothing
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.File, Me.Include, Me.Title})
+		Me.dgvUpdates.Font = Nothing
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
+		'
+		'btnAdd
+		'
+		Me.btnAdd.AccessibleDescription = Nothing
+		Me.btnAdd.AccessibleName = Nothing
+		resources.ApplyResources(Me.btnAdd, "btnAdd")
+		Me.btnAdd.BackgroundImage = Nothing
+		Me.btnAdd.Font = Nothing
+		Me.btnAdd.Name = "btnAdd"
+		Me.btnAdd.UseVisualStyleBackColor = true
+		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
+		'
+		'btnAddAll
+		'
+		Me.btnAddAll.AccessibleDescription = Nothing
+		Me.btnAddAll.AccessibleName = Nothing
+		resources.ApplyResources(Me.btnAddAll, "btnAddAll")
+		Me.btnAddAll.BackgroundImage = Nothing
+		Me.btnAddAll.Font = Nothing
+		Me.btnAddAll.Name = "btnAddAll"
+		Me.btnAddAll.UseVisualStyleBackColor = true
+		AddHandler Me.btnAddAll.Click, AddressOf Me.BtnAddAllClick
+		'
+		'exportFileDialog
+		'
+		Me.exportFileDialog.DefaultExt = "tab"
+		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
 		'
 		'Id
 		'
@@ -98,35 +137,21 @@ Partial Class ExportCatalogForm
 		Me.Title.Name = "Title"
 		Me.Title.ReadOnly = true
 		'
-		'btnAdd
-		'
-		resources.ApplyResources(Me.btnAdd, "btnAdd")
-		Me.btnAdd.Name = "btnAdd"
-		Me.btnAdd.UseVisualStyleBackColor = true
-		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
-		'
-		'btnAddAll
-		'
-		resources.ApplyResources(Me.btnAddAll, "btnAddAll")
-		Me.btnAddAll.Name = "btnAddAll"
-		Me.btnAddAll.UseVisualStyleBackColor = true
-		AddHandler Me.btnAddAll.Click, AddressOf Me.BtnAddAllClick
-		'
-		'exportFileDialog
-		'
-		Me.exportFileDialog.DefaultExt = "tab"
-		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
-		'
 		'ExportCatalogForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.btnAdd)
 		Me.Controls.Add(Me.btnAddAll)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnExport)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.Font = Nothing
+		Me.Icon = Nothing
 		Me.MinimizeBox = false
 		Me.Name = "ExportCatalogForm"
 		Me.ShowInTaskbar = false

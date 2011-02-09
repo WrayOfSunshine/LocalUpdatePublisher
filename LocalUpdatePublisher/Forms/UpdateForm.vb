@@ -692,7 +692,7 @@ Public Partial Class UpdateForm
 			If _Sdp.CommonVulnerabilitiesIds.Count > 0 Then Me.TxtCVEID.Text = _Sdp.CommonVulnerabilitiesIds.Item(0)
 			If Not _Sdp.SupportUrl Is Nothing Then Me.TxtSupportURL.Text = _Sdp.SupportUrl.ToString
 			If _Sdp.AdditionalInformationUrls.Count > 0 Then Me.TxtMoreInfoURL.Text = _Sdp.AdditionalInformationUrls.Item(0).ToString
-									
+			
 			'Load the Installable Item info
 			If _Sdp.InstallableItems.Count > 0 Then 'There is an Installable Item.
 				
@@ -992,13 +992,16 @@ Public Partial Class UpdateForm
 		Try
 			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox
 				
-				If DirectCast(Sender, Control).Text.Length = 0 Then
+				If Sender.Equals(Me.cboVendor) AndAlso Me.cboVendor.Text = "Microsoft" Then
+					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), globalRM.GetString("warning_update_vendor"))
+					E.Cancel = True
+				ElseIf DirectCast(Sender, Control).Text.Length = 0 Then
 					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), globalRM.GetString("warning_no_value"))
 					E.Cancel = True
 				End If
+				
+				Call ValidateTabControl() 'Validate the current tab.
 			End If
-			
-			Call ValidateTabControl() 'Validate the current tab.
 		Catch Ex As Exception
 			MsgBox(Ex.Message)
 		End Try

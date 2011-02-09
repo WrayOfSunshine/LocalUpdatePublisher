@@ -23,6 +23,8 @@ Public Partial Class RulesForm
 	Private Const _spacingConstant As Integer = 25
 	Private ReadOnly _scalarComparison As String ()
 	Private ReadOnly _stringComparison As String ()
+	Private ReadOnly _productTypes As String ()
+	Private ReadOnly _languages As String ()
 	
 	#REGION "Properties"
 	Private _readableRule As String
@@ -50,11 +52,20 @@ Public Partial Class RulesForm
 		' loaded into the combobox.
 		_scalarComparison =  New String() {globalRM.GetString("equal_to"), globalRM.GetString("less_than"), globalRM.GetString("less_than_or_equal_to"), globalRM.GetString("greater_than"), globalRM.GetString("greater_than_or_equal_to")}
 		_stringComparison =  New String() {globalRM.GetString("begins_with"), globalRM.GetString("ends_with"), globalRM.GetString("contains"), globalRM.GetString("equal_to")}
-		
+		_productTypes =  New String() {globalRM.GetString("none"), globalRM.GetString("workstation"), globalRM.GetString("domain_controller"), globalRM.GetString("server")}
+		_languages =  New String() {globalRM.GetString("language_arabic"), globalRM.GetString("language_chinese_HK_SAR"), globalRM.GetString("language_chinese_simplified"), globalRM.GetString("language_chinese_traditional"), _
+			globalRM.GetString("language_czech"), globalRM.GetString("language_danish"), globalRM.GetString("language_dutch"), globalRM.GetString("language_english"), globalRM.GetString("language_finnish"), _
+			globalRM.GetString("language_french"), globalRM.GetString("language_german"), globalRM.GetString("language_greek"), globalRM.GetString("language_hebrew"), globalRM.GetString("language_hungarian"), _
+			globalRM.GetString("language_italian"), globalRM.GetString("language_japanese"), globalRM.GetString("language_korean"), globalRM.GetString("language_norwegian"), globalRM.GetString("language_polish"), _
+		globalRM.GetString("language_portuguese"), globalRM.GetString("language_portuguese_brazil"), globalRM.GetString("language_russian"), globalRM.GetString("language_spanish"), globalRM.GetString("language_swedish"), globalRM.GetString("language_turkish")}
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 		Me.Text = title
+		
+		'Set comboboxes
+		Me.cboProductType.Items.AddRange(_productTypes)
+		Me.cboLanguage.Items.AddRange(_languages)
 		
 		'Set the Environment variable data source.
 		Me.cboEnvironmentVariable.DataSource = GetSortedEnum(GetType(CSIDL))
@@ -469,9 +480,9 @@ Public Partial Class RulesForm
 								controlObject.TabIndex = 6
 								Me.txtData.Width = Me.txtVersion.Width
 								
-								If Not Me.lblData.Text = "Size:" Then
+								If Not Me.lblData.Text = globalRM.GetString("size") & ":" Then
 									Me.txtData.Text = ""
-									Me.lblData.Text = "Size:"
+									Me.lblData.Text = globalRM.GetString("size") & ":"
 								End If
 								
 								Me.lblDataInfo.Text = globalRM.GetString("in_bytes_example")
@@ -1671,7 +1682,7 @@ Public Partial Class RulesForm
 				_xmlRule += " />"
 			Case RuleTypes.WMIQuery
 				'Set the readable rule.
-				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "NameSpace:" & Me.txtData.Text & " " 
+				If Not String.IsNullOrEmpty(Me.txtData.Text) Then Me._readableRule += "NameSpace:" & Me.txtData.Text & " "
 				Me._readableRule += globalRM.GetString("query") & ": " & Me.txtQuery.Text
 				
 				'Set the xmlrule.
@@ -2406,7 +2417,7 @@ Public Partial Class RulesForm
 		Dim sCh As String
 		Dim tmpString As String
 		Const SKIP As Integer = 6   'Character count to skip over character entity (i.e. at least '&#nnn;')
-
+		
 		' Do entity references first
 		tmpString = Replace(Replace(Replace(Replace(Replace( sText, "&", "&amp;"), "<", "&lt;"), ">", "&gt;"), """", "&quot;"), "'", "&apos;")
 		
@@ -2422,7 +2433,7 @@ Public Partial Class RulesForm
 			End If
 		Loop
 		
-	Return tmpString	
+		Return tmpString
 	End Function
 	#END Region
 	

@@ -58,92 +58,149 @@ Partial Class CertificateInfoForm
 		'
 		'lblSubject
 		'
+		Me.lblSubject.AccessibleDescription = Nothing
+		Me.lblSubject.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblSubject, "lblSubject")
+		Me.lblSubject.Font = Nothing
 		Me.lblSubject.Name = "lblSubject"
 		'
 		'lblIssuer
 		'
+		Me.lblIssuer.AccessibleDescription = Nothing
+		Me.lblIssuer.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblIssuer, "lblIssuer")
+		Me.lblIssuer.Font = Nothing
 		Me.lblIssuer.Name = "lblIssuer"
 		'
 		'lblEffectiveDates
 		'
+		Me.lblEffectiveDates.AccessibleDescription = Nothing
+		Me.lblEffectiveDates.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblEffectiveDates, "lblEffectiveDates")
+		Me.lblEffectiveDates.Font = Nothing
 		Me.lblEffectiveDates.Name = "lblEffectiveDates"
 		'
 		'lblSerial
 		'
+		Me.lblSerial.AccessibleDescription = Nothing
+		Me.lblSerial.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblSerial, "lblSerial")
+		Me.lblSerial.Font = Nothing
 		Me.lblSerial.Name = "lblSerial"
 		'
 		'lblHash
 		'
+		Me.lblHash.AccessibleDescription = Nothing
+		Me.lblHash.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblHash, "lblHash")
+		Me.lblHash.Font = Nothing
 		Me.lblHash.Name = "lblHash"
 		'
 		'txtSubject
 		'
+		Me.txtSubject.AccessibleDescription = Nothing
+		Me.txtSubject.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtSubject, "txtSubject")
+		Me.txtSubject.BackgroundImage = Nothing
+		Me.txtSubject.Font = Nothing
 		Me.txtSubject.Name = "txtSubject"
 		Me.txtSubject.ReadOnly = true
 		'
 		'txtHash
 		'
+		Me.txtHash.AccessibleDescription = Nothing
+		Me.txtHash.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtHash, "txtHash")
+		Me.txtHash.BackgroundImage = Nothing
+		Me.txtHash.Font = Nothing
 		Me.txtHash.Name = "txtHash"
 		Me.txtHash.ReadOnly = true
 		'
 		'txtEndDate
 		'
+		Me.txtEndDate.AccessibleDescription = Nothing
+		Me.txtEndDate.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtEndDate, "txtEndDate")
+		Me.txtEndDate.BackgroundImage = Nothing
+		Me.txtEndDate.Font = Nothing
 		Me.txtEndDate.Name = "txtEndDate"
 		Me.txtEndDate.ReadOnly = true
 		'
 		'txtStartDate
 		'
+		Me.txtStartDate.AccessibleDescription = Nothing
+		Me.txtStartDate.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtStartDate, "txtStartDate")
+		Me.txtStartDate.BackgroundImage = Nothing
+		Me.txtStartDate.Font = Nothing
 		Me.txtStartDate.Name = "txtStartDate"
 		Me.txtStartDate.ReadOnly = true
 		'
 		'txtIssuer
 		'
+		Me.txtIssuer.AccessibleDescription = Nothing
+		Me.txtIssuer.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtIssuer, "txtIssuer")
+		Me.txtIssuer.BackgroundImage = Nothing
+		Me.txtIssuer.Font = Nothing
 		Me.txtIssuer.Name = "txtIssuer"
 		Me.txtIssuer.ReadOnly = true
 		'
 		'lblTo
 		'
+		Me.lblTo.AccessibleDescription = Nothing
+		Me.lblTo.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblTo, "lblTo")
+		Me.lblTo.Font = Nothing
 		Me.lblTo.Name = "lblTo"
 		'
 		'txtSerial
 		'
+		Me.txtSerial.AccessibleDescription = Nothing
+		Me.txtSerial.AccessibleName = Nothing
 		resources.ApplyResources(Me.txtSerial, "txtSerial")
+		Me.txtSerial.BackgroundImage = Nothing
+		Me.txtSerial.Font = Nothing
 		Me.txtSerial.Name = "txtSerial"
 		Me.txtSerial.ReadOnly = true
 		'
 		'btnOK
 		'
-		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.AccessibleDescription = Nothing
+		Me.btnOK.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnOK, "btnOK")
+		Me.btnOK.BackgroundImage = Nothing
+		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.Font = Nothing
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.UseVisualStyleBackColor = true
 		'
 		'lblCertInfo
 		'
+		Me.lblCertInfo.AccessibleDescription = Nothing
+		Me.lblCertInfo.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblCertInfo, "lblCertInfo")
+		Me.lblCertInfo.Font = Nothing
 		Me.lblCertInfo.Name = "lblCertInfo"
 		'
 		'btnCreateCert
 		'
+		Me.btnCreateCert.AccessibleDescription = Nothing
+		Me.btnCreateCert.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCreateCert, "btnCreateCert")
+		Me.btnCreateCert.BackgroundImage = Nothing
+		Me.btnCreateCert.Font = Nothing
 		Me.btnCreateCert.Name = "btnCreateCert"
 		Me.btnCreateCert.UseVisualStyleBackColor = true
 		AddHandler Me.btnCreateCert.Click, AddressOf Me.BtnCreateCertClick
 		'
 		'btnExportImportCert
 		'
+		Me.btnExportImportCert.AccessibleDescription = Nothing
+		Me.btnExportImportCert.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnExportImportCert, "btnExportImportCert")
+		Me.btnExportImportCert.BackgroundImage = Nothing
+		Me.btnExportImportCert.Font = Nothing
 		Me.btnExportImportCert.Name = "btnExportImportCert"
 		Me.btnExportImportCert.UseVisualStyleBackColor = true
 		AddHandler Me.btnExportImportCert.Click, AddressOf Me.BtnExportImportCertClick
@@ -160,8 +217,11 @@ Partial Class CertificateInfoForm
 		'
 		'CertificateInfoForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnOK
 		Me.Controls.Add(Me.btnExportImportCert)
 		Me.Controls.Add(Me.btnCreateCert)
@@ -179,6 +239,7 @@ Partial Class CertificateInfoForm
 		Me.Controls.Add(Me.lblEffectiveDates)
 		Me.Controls.Add(Me.lblIssuer)
 		Me.Controls.Add(Me.lblSubject)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false

@@ -45,29 +45,41 @@ Partial Class ImportCatalogForm
 		'
 		'btnCancel
 		'
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnImport
 		'
+		Me.btnImport.AccessibleDescription = Nothing
+		Me.btnImport.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnImport, "btnImport")
+		Me.btnImport.BackgroundImage = Nothing
 		Me.btnImport.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnImport.Font = Nothing
 		Me.btnImport.Name = "btnImport"
 		Me.btnImport.UseVisualStyleBackColor = true
 		AddHandler Me.btnImport.Click, AddressOf Me.BtnImportClick
 		'
 		'dgvUpdates
 		'
+		Me.dgvUpdates.AccessibleDescription = Nothing
+		Me.dgvUpdates.AccessibleName = Nothing
 		Me.dgvUpdates.AllowUserToAddRows = false
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
 		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvUpdates.BackgroundImage = Nothing
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.Metadata, Me.Title})
+		Me.dgvUpdates.Font = Nothing
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
 		'
@@ -91,12 +103,17 @@ Partial Class ImportCatalogForm
 		'
 		'ImportCatalogForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnImport)
 		Me.Controls.Add(Me.dgvUpdates)
+		Me.Font = Nothing
+		Me.Icon = Nothing
 		Me.MinimizeBox = false
 		Me.Name = "ImportCatalogForm"
 		Me.ShowInTaskbar = false

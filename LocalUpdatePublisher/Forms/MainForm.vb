@@ -23,8 +23,8 @@ Public Partial Class MainForm
 	Private _rootNode As TreeNode
 	Private _originalValue As String
 	Private _noEvents As Boolean
-	private _windowState As PersistWindowState
-	
+	Private _windowState As PersistWindowState
+	Private ReadOnly _updateStatus As String()
 	
 	#Region "Properties"
 	Private _computerNode As TreeNode
@@ -66,6 +66,11 @@ Public Partial Class MainForm
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		'Populate the dropdowns
+		_updateStatus = New String() {globalRM.GetString("failed_or_needed"), globalRM.GetString("installed_not_applicable_no_status"), globalRM.GetString("failed"), globalRM.GetString("needed"), globalRM.GetString("installed_not_applicable"), globalRM.GetString("no_status"), globalRM.GetString("any")}
+		Me.cboUpdateStatus.Items.AddRange(_updateStatus)
+		Me.cboComputerStatus.Items.AddRange(_updateStatus)
 		
 		'Initialize the base treenodes
 		_updateNode = New TreeNode
@@ -599,7 +604,7 @@ Public Partial Class MainForm
 	'Import an update from a CAB file.
 	Sub ImportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
 		importFileDialog.Reset
-		importFileDialog.Filter = "CAB Files|*.cab"
+		importFileDialog.Filter = globalRM.GetString("file_filter_cab")
 		
 		'If we're connected and a file was chosen.
 		If ConnectionManager.Connected AndAlso _
@@ -1168,19 +1173,20 @@ Public Partial Class MainForm
 				tmpNode.Tag = New UpdateServer(downstreamServer.FullDomainName, ConnectionManager.CurrentServer.PortNumber, ConnectionManager.CurrentServer.IsConnectionSecureForApiRemoting, True, downstreamServer.IsReplica)
 			Next
 			
+			'Add the computer and update nodes
 			_computerNode = _serverNode.Nodes.Add("computers", globalRM.GetString("computers"))
+			_updateNode = _serverNode.Nodes.Add("updates", globalRM.GetString("updates"))
 			
-			'Add the Locally published packages category as the updates base node.
-			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
-				'
-				'If the category is the locally published category.
-				If category.Title = "Local Publisher" Then
-					
-					'Add the updateNode and set its tag.
-					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, globalRM.GetString("updates"))
-				End If
-				
-			Next
+'			'Add the Locally published packages category as the updates base node.
+'			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
+'				category.up
+'				'If the category is the locally published category.
+'				If category.Title = "Local Publisher" Then
+'					
+'					'Add the updateNode and set its tag.
+'					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, globalRM.GetString("updates"))
+'				End If
+'			Next
 			
 			'Load the tree nodes.
 			Call LoadComputerNodes(_computerNode)
@@ -1334,9 +1340,8 @@ Public Partial Class MainForm
 				'Load the companies categories under the Locally Published Packages category.
 				For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 					
-					'If the category is the locally published category.
-					If category.Title <> "Local Publisher" And _
-						category.Title <> "Microsoft" Then
+					'If the category is not from Microsoft, then load it.
+					If category.UpdateSource = UpdateSource.Other
 						
 						'Add the node and add its category.
 						Dim tmpNode As TreeNode = _updateNode.Nodes.Add( category.Title )
@@ -1649,7 +1654,7 @@ Public Partial Class MainForm
 			_dgvMain.DataSource = GetComputerList(DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup))
 			If _dgvMain.DataSource Is Nothing Then
 				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = "0 " & globalRM.GetString("computers_shown")
+				Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), "0")
 				_noEvents = False
 				Me.toolStripStatusLabel.Text = ""
 				Exit Sub
@@ -2149,9 +2154,9 @@ Public Partial Class MainForm
 			dgvUpdateReport.Columns("ComputerID").Visible = False
 			
 			'Rename some columns.
-			dgvUpdateReport.Columns("ComputerName").HeaderText = "Computer Name"
-			dgvUpdateReport.Columns("UpdateInstallationState").HeaderText = "Status"
-			dgvUpdateReport.Columns("UpdateApprovalAction").HeaderText = "Approval"
+			dgvUpdateReport.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
+			dgvUpdateReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
+			dgvUpdateReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
 			
 			'Make the status column's text blue
 			dgvUpdateReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue

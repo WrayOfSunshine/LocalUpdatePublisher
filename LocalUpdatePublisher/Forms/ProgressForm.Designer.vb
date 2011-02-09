@@ -41,26 +41,40 @@ Partial Class ProgressForm
 		'
 		'progressBar
 		'
+		Me.progressBar.AccessibleDescription = Nothing
+		Me.progressBar.AccessibleName = Nothing
 		resources.ApplyResources(Me.progressBar, "progressBar")
+		Me.progressBar.BackgroundImage = Nothing
+		Me.progressBar.Font = Nothing
 		Me.progressBar.Name = "progressBar"
 		'
 		'lblText
 		'
+		Me.lblText.AccessibleDescription = Nothing
+		Me.lblText.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblText, "lblText")
+		Me.lblText.Font = Nothing
 		Me.lblText.Name = "lblText"
 		'
 		'lblCurrentStep
 		'
+		Me.lblCurrentStep.AccessibleDescription = Nothing
+		Me.lblCurrentStep.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblCurrentStep, "lblCurrentStep")
+		Me.lblCurrentStep.Font = Nothing
 		Me.lblCurrentStep.Name = "lblCurrentStep"
 		'
 		'ProgressForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.Controls.Add(Me.lblCurrentStep)
 		Me.Controls.Add(Me.lblText)
 		Me.Controls.Add(Me.progressBar)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false

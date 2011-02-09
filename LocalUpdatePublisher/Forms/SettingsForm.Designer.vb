@@ -42,41 +42,61 @@ Partial Class SettingsForm
 		'
 		'chkRememberTreeNode
 		'
+		Me.chkRememberTreeNode.AccessibleDescription = Nothing
+		Me.chkRememberTreeNode.AccessibleName = Nothing
 		resources.ApplyResources(Me.chkRememberTreeNode, "chkRememberTreeNode")
+		Me.chkRememberTreeNode.BackgroundImage = Nothing
+		Me.chkRememberTreeNode.Font = Nothing
 		Me.chkRememberTreeNode.Name = "chkRememberTreeNode"
 		Me.chkRememberTreeNode.UseVisualStyleBackColor = true
 		AddHandler Me.chkRememberTreeNode.CheckedChanged, AddressOf Me.ChkRememberTreeNodeCheckedChanged
 		'
 		'btnClose
 		'
+		Me.btnClose.AccessibleDescription = Nothing
+		Me.btnClose.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnClose, "btnClose")
+		Me.btnClose.BackgroundImage = Nothing
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnClose.Font = Nothing
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'
 		'chkReportRollup
 		'
+		Me.chkReportRollup.AccessibleDescription = Nothing
+		Me.chkReportRollup.AccessibleName = Nothing
 		resources.ApplyResources(Me.chkReportRollup, "chkReportRollup")
+		Me.chkReportRollup.BackgroundImage = Nothing
+		Me.chkReportRollup.Font = Nothing
 		Me.chkReportRollup.Name = "chkReportRollup"
 		Me.chkReportRollup.UseVisualStyleBackColor = true
 		AddHandler Me.chkReportRollup.CheckedChanged, AddressOf Me.ChkReportRollupCheckedChanged
 		'
 		'chkDemoteClassification
 		'
+		Me.chkDemoteClassification.AccessibleDescription = Nothing
+		Me.chkDemoteClassification.AccessibleName = Nothing
 		resources.ApplyResources(Me.chkDemoteClassification, "chkDemoteClassification")
+		Me.chkDemoteClassification.BackgroundImage = Nothing
+		Me.chkDemoteClassification.Font = Nothing
 		Me.chkDemoteClassification.Name = "chkDemoteClassification"
 		Me.chkDemoteClassification.UseVisualStyleBackColor = true
 		AddHandler Me.chkDemoteClassification.CheckedChanged, AddressOf Me.ChkDemoteClassificationCheckedChanged
 		'
 		'SettingsForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnClose
 		Me.Controls.Add(Me.chkDemoteClassification)
 		Me.Controls.Add(Me.chkReportRollup)
 		Me.Controls.Add(Me.btnClose)
 		Me.Controls.Add(Me.chkRememberTreeNode)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false

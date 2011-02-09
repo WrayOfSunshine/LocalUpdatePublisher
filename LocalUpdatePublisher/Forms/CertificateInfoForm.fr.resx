@@ -117,39 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>Manual</value>
+  <data name="lblIssuer.Text" xml:space="preserve">
+    <value>Délivré Par</value>
   </data>
-  <data name="lblAbout.Text" xml:space="preserve">
-    <value>Local Update Publisher Version: 1.0
-
-Local Update Publisher uses the WSUS API to extend your WSUS implementation to include installs and updates from third parties.
-
-For support and updates go to</value>
+  <data name="lblEffectiveDates.Text" xml:space="preserve">
+    <value>En Effet</value>
+  </data>
+  <data name="lblSerial.Text" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="lblHash.Text" xml:space="preserve">
+    <value>Hachage</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>464, 109</value>
+  <data name="txtEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 111</value>
   </data>
-  <data name="&gt;&gt;linkLabel.Name" xml:space="preserve">
-    <value>linkLabel</value>
+  <data name="txtEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtStartDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 20</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="lblTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 109</value>
   </data>
-  <data name="lblAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 92</value>
+  <data name="lblTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 23</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AboutForm</value>
+  <data name="lblTo.Text" xml:space="preserve">
+    <value>Jusqu'à</value>
   </data>
-  <data name="linkLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 23</value>
+  <data name="btnCreateCert.Text" xml:space="preserve">
+    <value>Créer Certificat</value>
+  </data>
+  <data name="btnExportImportCert.Text" xml:space="preserve">
+    <value>Certificat Export</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -175,52 +178,7 @@ For support and updates go to</value>
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="&gt;&gt;linkLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>50, 50, 50, 50</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-4, 1</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
+    <value>Informations sur le Certificat</value>
   </data>
-  <data name="linkLabel.Text" xml:space="preserve">
-    <value>http://www.localupdatepublisher.com</value>
-  </data>
-  <data name="linkLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 70</value>
-  </data>
-  <data name="&gt;&gt;linkLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblAbout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Name" xml:space="preserve">
-    <value>lblAbout</value>
-  </data>
-  <data name="&gt;&gt;linkLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="linkLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

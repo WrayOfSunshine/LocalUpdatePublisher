@@ -21,6 +21,7 @@ Imports System.IO.Packaging
 Imports System.Xml
 Imports System.Xml.Schema
 Imports System.Windows.Forms
+Imports System.Threading
 
 
 Friend NotInheritable Class ConnectionManager
@@ -101,6 +102,9 @@ Friend NotInheritable Class ConnectionManager
 			Else
 				_currentServer = AdminProxy.GetUpdateServer(server.Name,server.Ssl,server.Port)
 			End If
+			
+			'Set the culture for the server.			
+			_currentServer.PreferredCulture = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
 			
 			'If this is a not a child server then set the parent server to
 			' be the current server.

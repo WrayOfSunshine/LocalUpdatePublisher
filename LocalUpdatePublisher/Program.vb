@@ -47,8 +47,8 @@ Namespace My
 			appSettings = Settings.LoadSettingsFromFile
 			
 			'Initialize the global resource handler
-			'Thread.CurrentThread.CurrentCulture = New CultureInfo("fr-CA")
-			'Thread.CurrentThread.CurrentUICulture = New CultureInfo("fr-CA")
+			Thread.CurrentThread.CurrentCulture = New CultureInfo("fr-CA")
+			Thread.CurrentThread.CurrentUICulture = New CultureInfo("fr-CA")
 			globalRM = New ResourceManager("LocalUpdatePublisher.GlobalStrings", Assembly.GetExecutingAssembly())
 			
 			'Load server connections.
@@ -114,7 +114,7 @@ Namespace My
 									Not String.IsNullOrEmpty(My.Application.CommandLineArgs(3))  Then
 									groupName = My.Application.CommandLineArgs(3)
 								Else
-									groupName = "All Computers"
+									groupName = ConnectionManager.CurrentServer.GetComputerTargetGroup(ComputerTargetGroupId.AllComputers).Name
 								End If
 								
 								'If a status was passed, set it here.
@@ -198,7 +198,7 @@ Namespace My
 										Not String.IsNullOrEmpty(My.Application.CommandLineArgs(4)) Then
 										groupName = My.Application.CommandLineArgs(4)
 									Else
-										groupName = "All Computers"
+										groupName = ConnectionManager.CurrentServer.GetComputerTargetGroup(ComputerTargetGroupId.AllComputers).Name
 									End If
 									
 									'If a status was passedthen set it here.

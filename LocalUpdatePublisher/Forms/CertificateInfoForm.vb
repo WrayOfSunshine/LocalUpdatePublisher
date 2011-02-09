@@ -36,7 +36,7 @@ Public Partial Class CertificateInfoForm
 	
 	'Prompt the user for a filename and then export the certificate.
 	Private Sub BtnExportImportCertClick(sender As Object, e As EventArgs)
-		If Me.btnExportImportCert.Text = "Import Cert" Then
+		If Me.btnExportImportCert.Text = globalRM.GetString("import_certificate") Then
 			
 			If ConnectionManager.CurrentServer.IsConnectionSecureForApiRemoting Then
 				Dim DialogResult As DialogResult = Me.openFileDialog.ShowDialog

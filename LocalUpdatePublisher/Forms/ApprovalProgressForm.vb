@@ -61,7 +61,7 @@ Public Partial Class ApprovalProgressForm
 			Me.Refresh
 			
 			'Set default result to success.
-			strResult = "Success"
+			strResult = globalRM.GetString("success")
 			
 			'Loop through the approval groups and if the row has an approval action
 			' then perform that action for that row's group.
@@ -136,7 +136,7 @@ Public Partial Class ApprovalProgressForm
 			update.Title,DirectCast(tempRow.Cells.Item("Approval").Value, String),DirectCast(tempRow.Cells.Item("ComputerGroup").Value, String))
 			
 			'Set default result to success.
-			strResult = "Success"
+			strResult = globalRM.GetString("success")
 			
 			'Skip any row where no approval action was set.
 			If tempRow.Cells.Item("ApprovalAction").Value Is Nothing Then

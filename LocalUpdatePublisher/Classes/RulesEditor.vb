@@ -16,25 +16,58 @@ Imports System.Xml
 
 Public Partial Class RulesEditor
 	Inherits UserControl
-	Private _beginAnd As String
-	Private _endAnd As String
-	Private _beginOr As String
-	Private _endOr As String
-	Private _addGroup As String
-	Private _removeAnd As String
-	Private _removeOr As String
+'	Private _endAnd As String = "End And"
+'	Private _beginOr As String = "Begin Or"
+'	Private _endOr As String = "End Or"
+'	Private _addGroup As String = "Add Group"
+'	Private _removeAnd As String = "Remove And"
+'	Private _removeOr As String = "Remove Or"
 	
 	Public Sub New()
 		InitializeComponent()
-		
-		_beginAnd = globalRM.GetString("group_begin_and")
-		_endAnd = globalRM.GetString("group_end_and")
-		_beginOr = globalRM.GetString("group_begin_or")
-		_endOr = globalRM.GetString("group_end_or")
-		_addGroup = globalRM.GetString("group")
-		_removeAnd = globalRM.GetString("group_remove_and")
-		_removeOr = globalRM.GetString("group_remove_or")
 	End Sub
+	
+	Private ReadOnly Property _Begin_And() As String
+		Get
+			Return globalRM.GetString("group_begin_and")
+		End Get		
+	End Property
+	
+	Private ReadOnly Property _End_And() As String
+		Get
+			Return globalRM.GetString("group_end_and")
+		End Get		
+	End Property
+	
+	Private ReadOnly Property _Begin_Or() As String
+		Get
+			Return globalRM.GetString("group_begin_or")
+		End Get		
+	End Property
+	
+	Private ReadOnly Property _End_Or() As String
+		Get
+			Return globalRM.GetString("group_end_or")
+		End Get		
+	End Property
+	
+	Private ReadOnly Property _Add_Group() As String
+		Get
+			Return globalRM.GetString("group")
+		End Get		
+	End Property
+	
+	Private ReadOnly Property _Remove_And() As String
+		Get
+			Return globalRM.GetString("group_remove_and")
+		End Get		
+	End Property	
+	
+	Private ReadOnly Property _Remove_Or() As String
+		Get
+			Return globalRM.GetString("group_remove_or")
+		End Get		
+	End Property
 	
 	#Region "Properties and Accessors"
 	
@@ -216,12 +249,12 @@ Public Partial Class RulesEditor
 				Select Case xmlReader.LocalName
 						
 					Case "And"
-						dgv_rules.Rows(tmpRow).Cells(0).Value = _beginAnd
+						dgv_rules.Rows(tmpRow).Cells(0).Value = _Begin_And
 						dgv_rules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
 						indentationDepth += 1
 						Exit Select
 					Case "Or"
-						dgv_rules.Rows(tmpRow).Cells(0).Value = _beginOr
+						dgv_rules.Rows(tmpRow).Cells(0).Value = _Begin_Or
 						dgv_rules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
 						indentationDepth += 1
 						Exit Select
@@ -306,7 +339,7 @@ Public Partial Class RulesEditor
 	Private Sub btn_group_Click(sender As Object, e As EventArgs)
 		'this code handles the button if it is not in "Make Group" mode
 		If TypeOf sender Is Button Then
-			If DirectCast(sender, Button).Text <> _addGroup Then
+			If DirectCast(sender, Button).Text <> _add_Group Then
 				GroupRules(False)
 				Return
 			End If
@@ -350,16 +383,16 @@ Public Partial Class RulesEditor
 			
 			Try
 				'If we are adding a rule group.
-				If btn_group.Text = _addGroup Then
+				If btn_group.Text = _add_Group Then
 					'Add an Add grouping.
 					If andRules Then
-						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_endAnd, "</lar:And>"})
-						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_beginAnd, "<lar:And>"})
+						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_And, "</lar:And>"})
+						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_Begin_And, "<lar:And>"})
 					Else
 						'Add an Or grouping.
 						
-						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_endOr, "</lar:Or>"})
-						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_beginOr, "<lar:Or>"})
+						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_Or, "</lar:Or>"})
+						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_begin_Or, "<lar:Or>"})
 					End If
 					
 					'Indent the new group.
@@ -368,7 +401,7 @@ Public Partial Class RulesEditor
 						tmpPadding.Left += defaultPaddingSize
 						dgv_rules.Rows(i).Cells(0).Style.Padding = tmpPadding
 					Next
-				ElseIf (btn_group.Text = _removeAnd) OrElse (btn_group.Text = _removeOr) Then
+				ElseIf (btn_group.Text = _remove_And) OrElse (btn_group.Text = _remove_Or) Then
 					'Remove grouping
 					
 					'Remove the first and last rows which contain the grouping rows.
@@ -404,7 +437,7 @@ Public Partial Class RulesEditor
 		'Finish the event then proceed.
 		If tmpDgv.SelectedRows.Count = 1 Then
 			btn_edit.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
-			btn_group.Text = "Remove Group"
+			btn_group.Text = globalRM.GetString("remove_group")
 			btn_group.Enabled = False
 			btn_remove.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
 		ElseIf tmpDgv.SelectedRows.Count > 1 Then
@@ -424,16 +457,16 @@ Public Partial Class RulesEditor
 				If tempRow.Index < tmpLowestIndex Then
 					tmpLowestIndex = tempRow.Index
 				End If
-				If tempRow.Cells(0).Value.ToString() = _beginAnd Then
+				If tempRow.Cells(0).Value.ToString() = _Begin_And Then
 					tmpAndRuleCount += 1
 				End If
-				If tempRow.Cells(0).Value.ToString() = _endAnd Then
+				If tempRow.Cells(0).Value.ToString() = _end_And Then
 					tmpAndRuleCount -= 1
 				End If
-				If tempRow.Cells(0).Value.ToString() = _beginOr Then
+				If tempRow.Cells(0).Value.ToString() = _begin_Or Then
 					tmpOrRuleCount += 1
 				End If
-				If tempRow.Cells(0).Value.ToString() = _endOr Then
+				If tempRow.Cells(0).Value.ToString() = _end_Or Then
 					tmpOrRuleCount -= 1
 				End If
 			Next
@@ -443,26 +476,26 @@ Public Partial Class RulesEditor
 			' number of rows selected.  If they do not, then the user has not selected
 			' a continuous collection of rows.
 			If (tmpHighestIndex - tmpLowestIndex) + 1 <> tmpDgv.SelectedRows.Count Then
-				btn_group.Text = _addGroup
+				btn_group.Text = _add_Group
 				btn_group.Enabled = False
 				
 				'If the lowest row is a Begin rule and the highest rule is a End
 				' rule of the same type then allow the user to remove the group.
-			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _beginAnd) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _endAnd) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
+			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _Begin_And) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_And) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
 				
-				btn_group.Text = _removeAnd
+				btn_group.Text = _remove_And
 				btn_group.Enabled = True
 				
-			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _beginOr) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _endOr) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
+			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _begin_Or) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_Or) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
 				
-				btn_group.Text = _removeOr
+				btn_group.Text = _remove_Or
 				btn_group.Enabled = True
 				
 			ElseIf (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
-				btn_group.Text = _addGroup
+				btn_group.Text = _add_Group
 				btn_group.Enabled = True
 			Else
-				btn_group.Text = _addGroup
+				btn_group.Text = _add_Group
 				btn_group.Enabled = False
 			End If
 			
@@ -488,7 +521,7 @@ Public Partial Class RulesEditor
 			Return Nothing
 		Else
 			Dim construct As String = row.Cells(0).Value.ToString()
-			Return ((construct = _beginAnd) OrElse (construct = _endAnd) OrElse (construct = _beginOr) OrElse (construct = _endOr))
+			Return ((construct = _Begin_And) OrElse (construct = _end_And) OrElse (construct = _begin_Or) OrElse (construct = _end_Or))
 		End If
 	End Function
 	
@@ -535,5 +568,6 @@ Public Partial Class RulesEditor
 	End Sub
 	
 	#End Region
+	
 End Class
 

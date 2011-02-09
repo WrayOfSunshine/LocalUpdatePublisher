@@ -42,22 +42,32 @@ Partial Class AboutForm
 		'
 		'lblAbout
 		'
+		Me.lblAbout.AccessibleDescription = Nothing
+		Me.lblAbout.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblAbout, "lblAbout")
+		Me.lblAbout.Font = Nothing
 		Me.lblAbout.Name = "lblAbout"
 		'
 		'linkLabel
 		'
+		Me.linkLabel.AccessibleDescription = Nothing
+		Me.linkLabel.AccessibleName = Nothing
 		resources.ApplyResources(Me.linkLabel, "linkLabel")
+		Me.linkLabel.Font = Nothing
 		Me.linkLabel.Name = "linkLabel"
 		Me.linkLabel.TabStop = true
 		AddHandler Me.linkLabel.LinkClicked, AddressOf Me.LinkLabelLinkClicked
 		'
 		'AboutForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.Controls.Add(Me.linkLabel)
 		Me.Controls.Add(Me.lblAbout)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.KeyPreview = true
 		Me.MaximizeBox = false

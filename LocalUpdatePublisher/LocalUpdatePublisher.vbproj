@@ -221,29 +221,71 @@
     <EmbeddedResource Include="Classes\RulesEditor.resx">
       <DependentUpon>RulesEditor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.fr.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApprovalForm.fr.resx">
+      <DependentUpon>ApprovalForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApprovalProgressForm.fr.resx">
+      <DependentUpon>ApprovalProgressForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApprovalProgressForm.resx">
       <DependentUpon>ApprovalProgressForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CertificateInfoForm.fr.resx">
+      <DependentUpon>CertificateInfoForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CertificateInfoForm.resx">
       <DependentUpon>CertificateInfoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectionSettingsForm.fr.resx">
+      <DependentUpon>ConnectionSettingsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConnectionSettingsForm.resx">
       <DependentUpon>ConnectionSettingsForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportCatalogForm.fr.resx">
+      <DependentUpon>ExportCatalogForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExportCatalogForm.resx">
       <DependentUpon>ExportCatalogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImportCatalogForm.fr.resx">
+      <DependentUpon>ImportCatalogForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImportCatalogForm.resx">
       <DependentUpon>ImportCatalogForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.fr.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordForm.fr.resx">
+      <DependentUpon>PasswordForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrerequisiteUpdatesForm.fr.resx">
+      <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrerequisiteUpdatesForm.resx">
       <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressForm.fr.resx">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnCodesForm.fr.resx">
+      <DependentUpon>ReturnCodesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReturnCodesForm.resx">
       <DependentUpon>ReturnCodesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulesForm.fr.resx">
+      <DependentUpon>RulesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SavedRulesForm.fr.resx">
+      <DependentUpon>SavedRulesForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SavedRulesForm.resx">
       <DependentUpon>SavedRulesForm.vb</DependentUpon>
@@ -263,8 +305,14 @@
     <EmbeddedResource Include="Forms\RulesForm.resx">
       <DependentUpon>RulesForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.fr.resx">
+      <DependentUpon>SettingsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupersededUpdatesForm.fr.resx">
+      <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupersededUpdatesForm.resx">
       <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>
@@ -274,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateSelectionForm.fr.resx">
+      <DependentUpon>UpdateSelectionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateSelectionForm.resx">
       <DependentUpon>UpdateSelectionForm.vb</DependentUpon>

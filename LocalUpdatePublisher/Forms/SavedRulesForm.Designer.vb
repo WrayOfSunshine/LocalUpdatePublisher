@@ -45,14 +45,18 @@ Partial Class SavedRulesForm
 		'
 		'dgvRules
 		'
+		Me.dgvRules.AccessibleDescription = Nothing
+		Me.dgvRules.AccessibleName = Nothing
 		Me.dgvRules.AllowUserToAddRows = false
 		Me.dgvRules.AllowUserToDeleteRows = false
 		Me.dgvRules.AllowUserToResizeColumns = false
 		Me.dgvRules.AllowUserToResizeRows = false
+		resources.ApplyResources(Me.dgvRules, "dgvRules")
+		Me.dgvRules.BackgroundImage = Nothing
 		Me.dgvRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvRules.ColumnHeadersVisible = false
 		Me.dgvRules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.RuleName})
-		resources.ApplyResources(Me.dgvRules, "dgvRules")
+		Me.dgvRules.Font = Nothing
 		Me.dgvRules.Name = "dgvRules"
 		Me.dgvRules.RowHeadersVisible = false
 		'
@@ -69,34 +73,50 @@ Partial Class SavedRulesForm
 		'
 		'btnCancel
 		'
-		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
+		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnAction
 		'
+		Me.btnAction.AccessibleDescription = Nothing
+		Me.btnAction.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnAction, "btnAction")
+		Me.btnAction.BackgroundImage = Nothing
+		Me.btnAction.Font = Nothing
 		Me.btnAction.Name = "btnAction"
 		Me.btnAction.UseVisualStyleBackColor = true
 		AddHandler Me.btnAction.Click, AddressOf Me.BtnActionClick
 		'
 		'btnAction2
 		'
+		Me.btnAction2.AccessibleDescription = Nothing
+		Me.btnAction2.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnAction2, "btnAction2")
+		Me.btnAction2.BackgroundImage = Nothing
+		Me.btnAction2.Font = Nothing
 		Me.btnAction2.Name = "btnAction2"
 		Me.btnAction2.UseVisualStyleBackColor = true
 		AddHandler Me.btnAction2.Click, AddressOf Me.BtnAction2Click
 		'
 		'SavedRulesForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.btnAction2)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnAction)
 		Me.Controls.Add(Me.dgvRules)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MinimizeBox = false
 		Me.Name = "SavedRulesForm"
