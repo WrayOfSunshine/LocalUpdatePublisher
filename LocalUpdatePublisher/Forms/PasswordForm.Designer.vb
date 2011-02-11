@@ -43,39 +43,58 @@ Partial Class PasswordForm
 		'
 		'lblPassword
 		'
+		Me.lblPassword.AccessibleDescription = Nothing
+		Me.lblPassword.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblPassword, "lblPassword")
+		Me.lblPassword.Font = Nothing
 		Me.lblPassword.Name = "lblPassword"
 		'
 		'btnOK
 		'
-		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.AccessibleDescription = Nothing
+		Me.btnOK.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnOK, "btnOK")
+		Me.btnOK.BackgroundImage = Nothing
+		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.Font = Nothing
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.UseVisualStyleBackColor = true
 		AddHandler Me.btnOK.Click, AddressOf Me.BtnOKClick
 		'
 		'stbPassword
 		'
+		Me.stbPassword.AccessibleDescription = Nothing
+		Me.stbPassword.AccessibleName = Nothing
 		resources.ApplyResources(Me.stbPassword, "stbPassword")
+		Me.stbPassword.BackgroundImage = Nothing
+		Me.stbPassword.Font = Nothing
 		Me.stbPassword.Name = "stbPassword"
 		Me.stbPassword.SecureText = secureString1
 		'
 		'btnCancel
 		'
-		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
+		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'PasswordForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.stbPassword)
 		Me.Controls.Add(Me.btnOK)
 		Me.Controls.Add(Me.lblPassword)
+		Me.Font = Nothing
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false

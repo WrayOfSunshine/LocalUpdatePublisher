@@ -36,6 +36,10 @@ Partial Class ReturnCodesForm
 		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnCodesForm))
 		Me.dgvReturnCodes = New System.Windows.Forms.DataGridView
+		Me.Result = New System.Windows.Forms.DataGridViewComboBoxColumn
+		Me.ReturnCode = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.Reboot = New System.Windows.Forms.DataGridViewCheckBoxColumn
+		Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.btnDelete = New System.Windows.Forms.Button
@@ -43,10 +47,6 @@ Partial Class ReturnCodesForm
 		Me.failedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.succeededToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.cancelledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.Result = New System.Windows.Forms.DataGridViewComboBoxColumn
-		Me.ReturnCode = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.Reboot = New System.Windows.Forms.DataGridViewCheckBoxColumn
-		Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.contextMenuCodeType.SuspendLayout
 		Me.SuspendLayout
@@ -67,6 +67,34 @@ Partial Class ReturnCodesForm
 		Me.dgvReturnCodes.MultiSelect = false
 		Me.dgvReturnCodes.Name = "dgvReturnCodes"
 		AddHandler Me.dgvReturnCodes.RowValidating, AddressOf Me.DgvReturnCodesRowValidating
+		'
+		'Result
+		'
+		Me.Result.FillWeight = 113.0288!
+		resources.ApplyResources(Me.Result, "Result")
+		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
+		Me.Result.Name = "Result"
+		'
+		'ReturnCode
+		'
+		Me.ReturnCode.FillWeight = 113.0288!
+		resources.ApplyResources(Me.ReturnCode, "ReturnCode")
+		Me.ReturnCode.Name = "ReturnCode"
+		'
+		'Reboot
+		'
+		Me.Reboot.FalseValue = false
+		Me.Reboot.FillWeight = 60.9137!
+		resources.ApplyResources(Me.Reboot, "Reboot")
+		Me.Reboot.IndeterminateValue = ""
+		Me.Reboot.Name = "Reboot"
+		Me.Reboot.TrueValue = true
+		'
+		'Description
+		'
+		Me.Description.FillWeight = 113.0288!
+		resources.ApplyResources(Me.Description, "Description")
+		Me.Description.Name = "Description"
 		'
 		'btnCancel
 		'
@@ -138,34 +166,6 @@ Partial Class ReturnCodesForm
 		Me.cancelledToolStripMenuItem.BackgroundImage = Nothing
 		Me.cancelledToolStripMenuItem.Name = "cancelledToolStripMenuItem"
 		Me.cancelledToolStripMenuItem.ShortcutKeyDisplayString = Nothing
-		'
-		'Result
-		'
-		Me.Result.FillWeight = 113.0288!
-		resources.ApplyResources(Me.Result, "Result")
-		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
-		Me.Result.Name = "Result"
-		'
-		'ReturnCode
-		'
-		Me.ReturnCode.FillWeight = 113.0288!
-		resources.ApplyResources(Me.ReturnCode, "ReturnCode")
-		Me.ReturnCode.Name = "ReturnCode"
-		'
-		'Reboot
-		'
-		Me.Reboot.FalseValue = false
-		Me.Reboot.FillWeight = 60.9137!
-		resources.ApplyResources(Me.Reboot, "Reboot")
-		Me.Reboot.IndeterminateValue = ""
-		Me.Reboot.Name = "Reboot"
-		Me.Reboot.TrueValue = true
-		'
-		'Description
-		'
-		Me.Description.FillWeight = 113.0288!
-		resources.ApplyResources(Me.Description, "Description")
-		Me.Description.Name = "Description"
 		'
 		'ReturnCodesForm
 		'

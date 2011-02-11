@@ -37,13 +37,13 @@ Partial Class ExportCatalogForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnExport = New System.Windows.Forms.Button
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
-		Me.btnAdd = New System.Windows.Forms.Button
-		Me.btnAddAll = New System.Windows.Forms.Button
-		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.File = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Include = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.btnAdd = New System.Windows.Forms.Button
+		Me.btnAddAll = New System.Windows.Forms.Button
+		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
@@ -87,6 +87,29 @@ Partial Class ExportCatalogForm
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
 		'
+		'Id
+		'
+		resources.ApplyResources(Me.Id, "Id")
+		Me.Id.Name = "Id"
+		'
+		'File
+		'
+		resources.ApplyResources(Me.File, "File")
+		Me.File.Name = "File"
+		'
+		'Include
+		'
+		Me.Include.FillWeight = 3.045685!
+		resources.ApplyResources(Me.Include, "Include")
+		Me.Include.Name = "Include"
+		'
+		'Title
+		'
+		Me.Title.FillWeight = 56.95432!
+		resources.ApplyResources(Me.Title, "Title")
+		Me.Title.Name = "Title"
+		Me.Title.ReadOnly = true
+		'
 		'btnAdd
 		'
 		Me.btnAdd.AccessibleDescription = Nothing
@@ -113,29 +136,6 @@ Partial Class ExportCatalogForm
 		'
 		Me.exportFileDialog.DefaultExt = "tab"
 		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
-		'
-		'Id
-		'
-		resources.ApplyResources(Me.Id, "Id")
-		Me.Id.Name = "Id"
-		'
-		'File
-		'
-		resources.ApplyResources(Me.File, "File")
-		Me.File.Name = "File"
-		'
-		'Include
-		'
-		Me.Include.FillWeight = 3.045685!
-		resources.ApplyResources(Me.Include, "Include")
-		Me.Include.Name = "Include"
-		'
-		'Title
-		'
-		Me.Title.FillWeight = 56.95432!
-		resources.ApplyResources(Me.Title, "Title")
-		Me.Title.Name = "Title"
-		Me.Title.ReadOnly = true
 		'
 		'ExportCatalogForm
 		'

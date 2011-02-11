@@ -117,110 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>Manual</value>
+  <data name="Action.HeaderText" xml:space="preserve">
+    <value>Aktion</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>464, 109</value>
+  <data name="Result.HeaderText" xml:space="preserve">
+    <value>Ergebnis</value>
   </data>
-  <data name="&gt;&gt;linkLabel.Name" xml:space="preserve">
-    <value>linkLabel</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Schließen</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="lblAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 92</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AboutForm</value>
-  </data>
-  <data name="linkLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 23</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wGMSQkDnVkQE754KkHLhjlx0ZBEj9KRRo/Lhzpzv3krQ59aEBeQTAkD////Af//
-        /wH///8B////Af///wGbVRcFrmQfP8RxKZ/KdTfj2IZT/eiVaP/qmGz/3IpY/cp2O+XAayajr2MdRaRc
-        GQX///8B////Af///wGNQhQDr2AjTcJoKNmpSBf7lTkS/6pQKv+/ZkH/wmpF/7BWMf+ZPhj/oUIS+7pg
-        Id+jVBlVlUcXBf///wF0JgkDo1MgQblhKNmNNAz/eSAA/4AlAf+XRyz/0qeV/9evnv+hVjn/gSYB/3oi
-        AP+FLQn/rVcg36FQHUd4KgoDhzYUFbNeKZ+MPRT7YxoA/3IgAP96IQD/lkg1/+zd1//x5eH/oFlC/3sh
-        AP91IgD/ZxsA/30xDfujUh+nijgUF6BMI0OaTCDlVRsF/1kaAP9lHQD/bB0A/4tEM//q29X/8OTg/5dV
-        QP9tHQD/Zx4A/10bAP9TGQP/hj0X65ZCHEuZRSFxeTgX/T0RAf9LFgD/VhgA/2AZAP+EQjP/6dvV//Dk
-        4P+TVED/ZhsA/18bAP9SGAD/QBEA/2MqD/+IORl9izsekV4rEf8+EgH/XyAF/3IoCf+BLgz/nVM4/+3d
-        1//y5uD/qWRH/4kyD/+EMQ//eCsL/2EgBv9mKQ3/gzMXmZY/IZGcRx3/kjoV/55CG/+hRR//okYg/7Ji
-        Qf/t2tL/8OHa/7hwUv+kSCH/okgi/6BFHv+cQBr/pUkd/5c7HZmgRih1ul4w/ahNJ/+sUiz/sFYw/7JY
-        Mv+4YDv/0JB1/9KWfP+8Z0P/tFo0/7NZM/+wVjD/q1Er/7NYLf+aPyN9m0QrQ8hwRuXJbkj/yW5I/8xy
-        TP/OdE7/0XlU/9iagP/aoYn/035b/9B2UP/PdU//zHJM/8txS//DakPrmD0nS3EZFRW+a0ih6pdt++iN
-        aP/qkGn/7JBq/+qZdv/55+D/+erj/+2ggP/tkWr/7JJs/+uRa//rlWz9vGVEq3MZFRlaAggDkTopQdqO
-        Ztv8s43//KiF//yohf/7rYz//djK//3d0P/7spT//amG//ypiP/8tI//2opl4Y42JktaAggD////AXAV
-        EQWSPy9T2Zl33fjDpvv+xKv//8Op///Dq///xKz//8Oq//7FrP/4xKj72ph54ZI+LllmCwsF////Af//
-        /wH///8BeR4UBZI+LkXCf2al3q6V5/DGr//5zrn/+c+5//DGsP/frZbpw4BnqYw6K0llDQoF////Af//
-        /wH///8B////Af///wFeAwUDcRoVF6BVQkesZ1h7r2pdma9qXZurZlh9oFRDSXMaFRljCQYD////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="&gt;&gt;linkLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>50, 50, 50, 50</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
+    <value>Genehmigung Progress</value>
   </data>
-  <data name="lblAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-4, 1</value>
-  </data>
-  <data name="lblAbout.Text" xml:space="preserve">
-    <value>Local Update Publisher Version: 1.0
-
-Local Update Publisher uses the WSUS API to extend your WSUS implementation to include installs and updates from third parties.
-
-For support and updates go to</value>
-  </data>
-  <data name="linkLabel.Text" xml:space="preserve">
-    <value>http://www.localupdatepublisher.com</value>
-  </data>
-  <data name="linkLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 70</value>
-  </data>
-  <data name="&gt;&gt;linkLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblAbout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Name" xml:space="preserve">
-    <value>lblAbout</value>
-  </data>
-  <data name="&gt;&gt;linkLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="linkLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

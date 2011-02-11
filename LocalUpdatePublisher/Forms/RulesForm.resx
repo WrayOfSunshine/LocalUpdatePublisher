@@ -122,8 +122,8 @@
     <value>55</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cboEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
+  <data name="cboComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
   </data>
   <data name="&gt;&gt;lblVersion.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -140,6 +140,9 @@
   </data>
   <data name="pnlProductCode.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lbl_OSVersion.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="pnlMinVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>555, 21</value>
@@ -165,8 +168,8 @@
   <data name="pnlMinVersion.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
   </data>
-  <data name="pnlFilePath.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;pnlProductCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pnlDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>555, 21</value>
@@ -174,11 +177,11 @@
   <data name="&gt;&gt;txtOSMajorVersion.Parent" xml:space="preserve">
     <value>pnlOSVersion</value>
   </data>
-  <data name="pnlComponentCollection.Error" xml:space="preserve">
-    <value />
+  <data name="splitContainer.Panel1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="txtRegistrySubKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 20</value>
+  <data name="splitContainer.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="pnlPatchCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>555, 21</value>
@@ -219,9 +222,6 @@
   <data name="txtOSMajorVersion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;chkNotRule.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;cboEnvironmentVariable.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -246,8 +246,8 @@
   <data name="&gt;&gt;pnlRegistry32Bit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblFeatureCollection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="cboRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
   </data>
   <data name="txtRegistrySubKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 0</value>
@@ -255,11 +255,8 @@
   <data name="&gt;&gt;txtMaxVersion.Name" xml:space="preserve">
     <value>txtMaxVersion</value>
   </data>
-  <data name="lblPatchCode.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;gceComponentCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.21256, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.28228, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pnlProductCollection.Name" xml:space="preserve">
     <value>pnlProductCollection</value>
@@ -318,9 +315,6 @@
   <data name="&gt;&gt;lblComparison.Name" xml:space="preserve">
     <value>lblComparison</value>
   </data>
-  <data name="&gt;&gt;lblServicePack.Name" xml:space="preserve">
-    <value>lblServicePack</value>
-  </data>
   <data name="lblFeatureCollection.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -332,9 +326,6 @@
   </data>
   <data name="pnlServicePack.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 41</value>
-  </data>
-  <data name="&gt;&gt;cboRegistryValueType.Parent" xml:space="preserve">
-    <value>pnlRegistryValueType</value>
   </data>
   <data name="&gt;&gt;chkNotRule.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
@@ -408,6 +399,9 @@
   <data name="lblProductCode.Text" xml:space="preserve">
     <value>Product Code</value>
   </data>
+  <data name="txtRegistrySubKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 20</value>
+  </data>
   <data name="chkNotRule.Location" type="System.Drawing.Point, System.Drawing">
     <value>315, 4</value>
   </data>
@@ -438,8 +432,8 @@
   <data name="&gt;&gt;cboOSVersion.Name" xml:space="preserve">
     <value>cboOSVersion</value>
   </data>
-  <data name="&gt;&gt;cboRegistryValueType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pnlPatchCode.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -453,13 +447,8 @@
   <data name="lblProductCode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="gceComponentCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
-        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
-        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
-        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
-</value>
+  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="lblRegistryKey.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -478,6 +467,9 @@
   </data>
   <data name="&gt;&gt;pnlPatchCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pnlFilePath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;chkComponentCollection_requireAll.Parent" xml:space="preserve">
     <value>pnlComponentCollection</value>
@@ -503,17 +495,14 @@
   <data name="lblComponentCollection.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblRegistryKey.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cboLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
   </data>
-  <data name="&gt;&gt;splitContainer.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer</value>
+  <data name="pnlProductCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
   </data>
   <data name="lblDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
-  </data>
-  <data name="&gt;&gt;cboProductType.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;lblFeatureCollection.Name" xml:space="preserve">
     <value>lblFeatureCollection</value>
@@ -526,6 +515,9 @@
   </data>
   <data name="lblDataInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 21</value>
+  </data>
+  <data name="lblRegistryKey.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="splitContainer.SplitterDistance" type="System.Int32, mscorlib">
     <value>30</value>
@@ -566,8 +558,8 @@
   <data name="&gt;&gt;lblProductCode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnlProductCollection.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
+  <data name="lblEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
   </data>
   <data name="lblVersion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -602,8 +594,11 @@
   <data name="&gt;&gt;lblMaxVersion.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;pnlRegistryKey.Name" xml:space="preserve">
+    <value>pnlRegistryKey</value>
+  </data>
   <data name="&gt;&gt;gceFeatureCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.21256, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.28228, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Parent" xml:space="preserve">
     <value>pnlProductCollection</value>
@@ -617,8 +612,8 @@
   <data name="txtData.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtOSMajorVersion.Name" xml:space="preserve">
-    <value>txtOSMajorVersion</value>
+  <data name="&gt;&gt;pnlRegistryValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblRegistryValueType.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -641,9 +636,6 @@
   <data name="lblDataInfo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="chkRegistry32Bit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
-  </data>
   <data name="&gt;&gt;lblMaxVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -662,8 +654,8 @@
   <data name="lblEnvironmentVariable.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="pnlPatchCode.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="gceFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 101</value>
   </data>
   <data name="pnlRegistryKey.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -683,8 +675,8 @@
   <data name="pnlFilePath.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblServicePack.Parent" xml:space="preserve">
-    <value>pnlServicePack</value>
+  <data name="&gt;&gt;lblFeatureCollection.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pnlComponentCollection.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -716,14 +708,14 @@
   <data name="&gt;&gt;lblComponentCollection.Name" xml:space="preserve">
     <value>lblComponentCollection</value>
   </data>
-  <data name="lblServicePack.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="lblDate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="cboComparison.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cboProductType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
+  <data name="chkComponentCollection_requireAll.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;cboRegistryKey.Parent" xml:space="preserve">
     <value>pnlRegistryKey</value>
@@ -755,8 +747,8 @@
   <data name="cboEnvironmentVariable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="gceFeatureCollection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 0</value>
+  <data name="&gt;&gt;cboRegistryValueType.Parent" xml:space="preserve">
+    <value>pnlRegistryValueType</value>
   </data>
   <data name="lblProcessorType.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -788,8 +780,8 @@
   <data name="lblFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
   </data>
-  <data name="&gt;&gt;pnlProductCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;splitContainer.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblProductCollection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -800,13 +792,8 @@
   <data name="lblDataInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="gceProductCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
-        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
-        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
-        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
-</value>
+  <data name="gceProductCollection.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtSPMinorVersion.Name" xml:space="preserve">
     <value>txtSPMinorVersion</value>
@@ -822,9 +809,6 @@
   </data>
   <data name="&gt;&gt;pnlComponentCollection.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="pnlComparison.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="lblServicePack.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -847,17 +831,17 @@
   <data name="&gt;&gt;chkRegistry32Bit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pnlData.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
+    <value>lblLanguage</value>
   </data>
   <data name="cboLanguage.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="chkRegistry32Bit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="chkFeatureCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;chkNotRule.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblQuery.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -871,8 +855,8 @@
   <data name="txtMaxVersion.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="lblEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 20</value>
+  <data name="cboEnvironmentVariable.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cboProductType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -901,8 +885,8 @@
   <data name="lblData.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="chkComponentCollection_requireAll.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;txtSPMinorVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
     <value>pnlLanguage</value>
@@ -933,8 +917,8 @@
   <data name="txtQuery.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;txtQuery.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chkNotRule.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="lblRegistryKey.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -977,9 +961,6 @@
   </data>
   <data name="pnlComparison.Error" xml:space="preserve">
     <value />
-  </data>
-  <data name="gceProductCollection.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;cboEnvironmentVariable.Name" xml:space="preserve">
     <value>cboEnvironmentVariable</value>
@@ -1026,8 +1007,8 @@
   <data name="&gt;&gt;txtMaxVersion.Parent" xml:space="preserve">
     <value>pnlMaxVersion</value>
   </data>
-  <data name="pnlLanguage.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="splitContainer.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cboRegistryValueType.Items3" xml:space="preserve">
     <value>REG_SZ</value>
@@ -1041,11 +1022,8 @@
   <data name="txtPatchCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
   </data>
-  <data name="&gt;&gt;pnlRegistryValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtProductCode.Error" xml:space="preserve">
-    <value />
+  <data name="cboOSVersion.Items2" xml:space="preserve">
+    <value>Windows Server 2003</value>
   </data>
   <data name="lblProcessorType.Error" xml:space="preserve">
     <value />
@@ -1080,6 +1058,9 @@
   <data name="lblRuleType.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
+  <data name="pnlRegistry32Bit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtSPMinorVersion.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
@@ -1095,7 +1076,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
   </data>
-  <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;cboProductType.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="pnlProcessorType.Error" xml:space="preserve">
@@ -1109,6 +1090,9 @@
   </data>
   <data name="txtPatchCode.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtOSMajorVersion.Name" xml:space="preserve">
+    <value>txtOSMajorVersion</value>
   </data>
   <data name="&gt;&gt;cboComparison.Name" xml:space="preserve">
     <value>cboComparison</value>
@@ -1124,9 +1108,6 @@
   </data>
   <data name="lblProductCollection.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="&gt;&gt;pnlFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlMinVersion.Name" xml:space="preserve">
     <value>pnlMinVersion</value>
@@ -1155,11 +1136,11 @@
   <data name="lblDate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="splitContainer.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="txtSPMajorVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
+  </data>
+  <data name="pnlOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>555, 21</value>
   </data>
   <data name="&gt;&gt;lblMaxVersion.Parent" xml:space="preserve">
     <value>pnlMaxVersion</value>
@@ -1170,14 +1151,17 @@
   <data name="&gt;&gt;cboRuleType.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pnlVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 266</value>
+  </data>
   <data name="&gt;&gt;pnlPatchCode.Name" xml:space="preserve">
     <value>pnlPatchCode</value>
   </data>
   <data name="&gt;&gt;pnlRegistry32Bit.Name" xml:space="preserve">
     <value>pnlRegistry32Bit</value>
   </data>
-  <data name="cboOSVersion.Items2" xml:space="preserve">
-    <value>Windows Server 2003</value>
+  <data name="&gt;&gt;pnlEnvironmentVariable.Parent" xml:space="preserve">
+    <value>splitContainer.Panel2</value>
   </data>
   <data name="cboEnvironmentVariable.Error" xml:space="preserve">
     <value />
@@ -1221,9 +1205,6 @@
   <data name="txtVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 0</value>
   </data>
-  <data name="&gt;&gt;cboOSVersion.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;errorProviderRules.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1244,9 +1225,6 @@
   </data>
   <data name="cboProcessorType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pnlProcessorType.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1338,6 +1316,9 @@
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
   </data>
+  <data name="txtProductCode.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblServicePack.Error" xml:space="preserve">
     <value />
   </data>
@@ -1349,9 +1330,6 @@
   </data>
   <data name="&gt;&gt;lblRegistryValueType.Parent" xml:space="preserve">
     <value>pnlRegistryValueType</value>
-  </data>
-  <data name="cboComparison.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
   </data>
   <data name="lblVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -1389,8 +1367,8 @@
   <data name="cboProductType.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="pnlLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
+  <data name="lblMinVersion.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;lblQuery.Parent" xml:space="preserve">
     <value>pnlQuery</value>
@@ -1406,6 +1384,9 @@
   </data>
   <data name="&gt;&gt;pnlComparison.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEnvironmentVariable.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cboRegistryKey.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1461,9 +1442,6 @@
   <data name="&gt;&gt;cboProcessorType.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblMinVersion.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblFeatureCollection.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -1497,8 +1475,17 @@
   <data name="lblData.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;pnlData.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pnlLanguage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 23</value>
+  </data>
+  <data name="&gt;&gt;txtProductCode.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pnlProcessorType.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -1596,6 +1583,9 @@
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblFeatureCollection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtOSMinorVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 0</value>
   </data>
@@ -1638,8 +1628,8 @@
   <data name="lblEnvironmentVariable.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
-    <value>lblLanguage</value>
+  <data name="cboComparison.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="txtMinVersion.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1695,26 +1685,20 @@
   <data name="&gt;&gt;cboRegistryValueType.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cboComparison.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="lblRuleType.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pnlEnvironmentVariable.Parent" xml:space="preserve">
-    <value>splitContainer.Panel2</value>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="pnlRegistry32Bit.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;lblDataInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRegistryValue.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
   </data>
   <data name="gceComponentCollection.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 101</value>
@@ -1734,8 +1718,8 @@
   <data name="lblFilePath.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;cboRegistryValueType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkProductCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1833,9 +1817,6 @@
   <data name="lblDataInfo.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;txtOSMinorVersion.Parent" xml:space="preserve">
-    <value>pnlOSVersion</value>
-  </data>
   <data name="&gt;&gt;lblPatchCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1878,9 +1859,6 @@
   <data name="pnlQuery.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblFeatureCollection.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="cboProductType.Error" xml:space="preserve">
     <value />
   </data>
@@ -1890,8 +1868,8 @@
   <data name="&gt;&gt;txtMinVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtSPMinorVersion.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lblRegistryKey.Text" xml:space="preserve">
+    <value>Registry Key</value>
   </data>
   <data name="&gt;&gt;lblDataInfo.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1938,8 +1916,8 @@
   <data name="pnlData.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblEnvironmentVariable.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;pnlProductCode.Parent" xml:space="preserve">
+    <value>splitContainer.Panel2</value>
   </data>
   <data name="lblDate.Text" xml:space="preserve">
     <value>Created Date</value>
@@ -1971,13 +1949,19 @@
         //8AAP//AAD//w==
 </value>
   </data>
+  <data name="pnlLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="cboProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 0</value>
+  </data>
   <data name="&gt;&gt;pnlLanguage.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="pnlRegistryKey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblComparison.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="chkRegistry32Bit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="lblQuery.Location" type="System.Drawing.Point, System.Drawing">
@@ -1995,8 +1979,8 @@
   <data name="lblVersion.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtProductCode.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;txtOSMinorVersion.Parent" xml:space="preserve">
+    <value>pnlOSVersion</value>
   </data>
   <data name="txtRegistryValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 0</value>
@@ -2007,8 +1991,8 @@
   <data name="lbl_OSVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
   </data>
-  <data name="&gt;&gt;pnlLanguage.Name" xml:space="preserve">
-    <value>pnlLanguage</value>
+  <data name="&gt;&gt;cboOSVersion.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="txtMinVersion.Error" xml:space="preserve">
     <value />
@@ -2022,14 +2006,14 @@
   <data name="txtData.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblDate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="pnlDate.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="lblFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
+  </data>
+  <data name="&gt;&gt;lblServicePack.Parent" xml:space="preserve">
+    <value>pnlServicePack</value>
   </data>
   <data name="gceFeatureCollection.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2070,8 +2054,8 @@
   <data name="&gt;&gt;lblRegistryValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Create Rule</value>
   </data>
   <data name="lblPatchCode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -2100,14 +2084,17 @@
   <data name="chkComponentCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="gceFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 101</value>
+  <data name="&gt;&gt;lblProductCode.Name" xml:space="preserve">
+    <value>lblProductCode</value>
   </data>
   <data name="lblProcessorType.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lbl_OSVersion.Error" xml:space="preserve">
-    <value />
+  <data name="chkFeatureCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlRegistryKey.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -2139,8 +2126,8 @@
   <data name="&gt;&gt;lblProcessorType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnlProductCollection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblRegistryValue.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
   <data name="txtMinVersion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2241,8 +2228,8 @@
   <data name="pnlEnvironmentVariable.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;pnlLanguage.Name" xml:space="preserve">
+    <value>pnlLanguage</value>
   </data>
   <data name="pnlComparison.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -2258,9 +2245,6 @@
   </data>
   <data name="chkProductCollection_requireAll.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="splitContainer.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="splitContainer.Panel2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2319,16 +2303,10 @@
   <data name="lbl_OSVersion.Text" xml:space="preserve">
     <value>OS Version</value>
   </data>
-  <data name="splitContainer.Panel1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="chkComponentCollection_requireAll.Text" xml:space="preserve">
     <value>All Components Required</value>
   </data>
   <data name="dtpDate.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cboEnvironmentVariable.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblProductCollection.Error" xml:space="preserve">
@@ -2354,6 +2332,9 @@
   </data>
   <data name="&gt;&gt;txtQuery.Name" xml:space="preserve">
     <value>txtQuery</value>
+  </data>
+  <data name="gceFeatureCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 0</value>
   </data>
   <data name="lblProductCollection.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -2406,8 +2387,13 @@
   <data name="txtQuery.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="lblRegistryKey.Text" xml:space="preserve">
-    <value>Registry Key</value>
+  <data name="gceProductCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
   </data>
   <data name="lblQuery.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -2429,9 +2415,6 @@
   </data>
   <data name="&gt;&gt;lblQuery.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlProductCode.Parent" xml:space="preserve">
-    <value>splitContainer.Panel2</value>
   </data>
   <data name="lblMaxVersion.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2468,6 +2451,14 @@
   </data>
   <data name="pnlRegistryValueType.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="gceComponentCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
   </data>
   <data name="&gt;&gt;splitContainer.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2526,8 +2517,8 @@
   <data name="&gt;&gt;txtProductCode.Parent" xml:space="preserve">
     <value>pnlProductCode</value>
   </data>
-  <data name="pnlVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 266</value>
+  <data name="lblPatchCode.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="pnlProductCollection.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 466</value>
@@ -2583,8 +2574,8 @@
   <data name="&gt;&gt;txtFilePath.Parent" xml:space="preserve">
     <value>pnlFilePath</value>
   </data>
-  <data name="&gt;&gt;pnlComponentCollection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblServicePack.Name" xml:space="preserve">
+    <value>lblServicePack</value>
   </data>
   <data name="&gt;&gt;pnlData.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -2619,14 +2610,14 @@
   <data name="&gt;&gt;pnlProcessorType.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pnlRegistry32Bit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="&gt;&gt;lbl_OSVersion.Name" xml:space="preserve">
+    <value>lbl_OSVersion</value>
+  </data>
+  <data name="pnlProductCollection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;pnlMinVersion.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblProductCode.Name" xml:space="preserve">
-    <value>lblProductCode</value>
   </data>
   <data name="cboProcessorType.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 0</value>
@@ -2694,8 +2685,11 @@
   <data name="lblData.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
   </data>
-  <data name="lblRuleType.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cboEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer</value>
   </data>
   <data name="lblFeatureCollection.Error" xml:space="preserve">
     <value />
@@ -2703,8 +2697,8 @@
   <data name="txtPatchCode.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;pnlRegistryKey.Name" xml:space="preserve">
-    <value>pnlRegistryKey</value>
+  <data name="chkRegistry32Bit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 21</value>
   </data>
   <data name="&gt;&gt;txtMaxVersion.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2721,8 +2715,8 @@
   <data name="&gt;&gt;chkFeatureCollection_requireAll.Name" xml:space="preserve">
     <value>chkFeatureCollection_requireAll</value>
   </data>
-  <data name="&gt;&gt;lbl_OSVersion.Name" xml:space="preserve">
-    <value>lbl_OSVersion</value>
+  <data name="&gt;&gt;pnlRegistryKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cboOSVersion.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2730,11 +2724,8 @@
   <data name="pnlMinVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 441</value>
   </data>
-  <data name="chkNotRule.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Create Rule</value>
+  <data name="pnlComparison.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="txtVersion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2751,6 +2742,9 @@
   <data name="&gt;&gt;pnlLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblComparison.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -2766,8 +2760,8 @@
   <data name="txtQuery.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="pnlOSVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>555, 21</value>
+  <data name="btnAdd.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="chkRegistry32Bit.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -2853,6 +2847,9 @@
   <data name="pnlProductCollection.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="pnlComponentCollection.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="splitContainer.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -2872,13 +2869,16 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.21256, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.28228, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="lblServicePack.Text" xml:space="preserve">
     <value>Service Pack</value>
   </data>
-  <data name="pnlPatchCode.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;pnlComponentCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblServicePack.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;pnlComparison.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -2946,6 +2946,9 @@
   <data name="&gt;&gt;pnlOSVersion.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <data name="pnlPatchCode.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="pnlRegistryValue.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -2985,17 +2988,14 @@
   <data name="pnlProductCode.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="cboRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 21</value>
+  <data name="&gt;&gt;pnlFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkFeatureCollection_requireAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>453, 0</value>
   </data>
   <data name="cboRuleType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;pnlRegistryKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblFeatureCollection.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>

@@ -35,49 +35,10 @@ Partial Class RulesForm
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RulesForm))
+		Me.splitContainer = New System.Windows.Forms.SplitContainer
 		Me.cboRuleType = New System.Windows.Forms.ComboBox
 		Me.lblRuleType = New System.Windows.Forms.Label
-		Me.lblProductType = New System.Windows.Forms.Label
-		Me.cboProductType = New System.Windows.Forms.ComboBox
-		Me.txtSPMinorVersion = New System.Windows.Forms.TextBox
-		Me.txtSPMajorVersion = New System.Windows.Forms.TextBox
-		Me.txtOSMinorVersion = New System.Windows.Forms.TextBox
-		Me.txtOSMajorVersion = New System.Windows.Forms.TextBox
-		Me.lblServicePack = New System.Windows.Forms.Label
-		Me.cboServicePack = New System.Windows.Forms.ComboBox
-		Me.lbl_OSVersion = New System.Windows.Forms.Label
-		Me.cboOSVersion = New System.Windows.Forms.ComboBox
-		Me.lblComparison = New System.Windows.Forms.Label
-		Me.cboComparison = New System.Windows.Forms.ComboBox
-		Me.lblLanguage = New System.Windows.Forms.Label
-		Me.cboLanguage = New System.Windows.Forms.ComboBox
-		Me.lblProcessorType = New System.Windows.Forms.Label
-		Me.cboProcessorType = New System.Windows.Forms.ComboBox
-		Me.lblEnvironmentVariable = New System.Windows.Forms.Label
-		Me.cboEnvironmentVariable = New System.Windows.Forms.ComboBox
-		Me.txtVersion = New System.Windows.Forms.TextBox
-		Me.lblVersion = New System.Windows.Forms.Label
-		Me.txtRegistryValue = New System.Windows.Forms.TextBox
-		Me.lblRegistryValue = New System.Windows.Forms.Label
-		Me.chkRegistry32Bit = New System.Windows.Forms.CheckBox
-		Me.txtRegistrySubKey = New System.Windows.Forms.TextBox
-		Me.lblRegistryKey = New System.Windows.Forms.Label
-		Me.cboRegistryKey = New System.Windows.Forms.ComboBox
-		Me.txtFilePath = New System.Windows.Forms.TextBox
-		Me.lblFilePath = New System.Windows.Forms.Label
-		Me.dtpDate = New System.Windows.Forms.DateTimePicker
-		Me.lblDate = New System.Windows.Forms.Label
-		Me.lblDataInfo = New System.Windows.Forms.Label
-		Me.txtData = New System.Windows.Forms.TextBox
-		Me.lblData = New System.Windows.Forms.Label
-		Me.txtQuery = New System.Windows.Forms.TextBox
-		Me.lblQuery = New System.Windows.Forms.Label
 		Me.chkNotRule = New System.Windows.Forms.CheckBox
-		Me.btnAdd = New System.Windows.Forms.Button
-		Me.btnCancel = New System.Windows.Forms.Button
-		Me.lblRegistryValueType = New System.Windows.Forms.Label
-		Me.cboRegistryValueType = New System.Windows.Forms.ComboBox
-		Me.splitContainer = New System.Windows.Forms.SplitContainer
 		Me.pnlComponentCollection = New System.Windows.Forms.Panel
 		Me.gceComponentCollection = New LocalUpdatePublisher.GuidCollectionEditor
 		Me.chkComponentCollection_requireAll = New System.Windows.Forms.CheckBox
@@ -103,21 +64,60 @@ Partial Class RulesForm
 		Me.txtProductCode = New System.Windows.Forms.TextBox
 		Me.lblProductCode = New System.Windows.Forms.Label
 		Me.pnlRegistry32Bit = New System.Windows.Forms.Panel
+		Me.chkRegistry32Bit = New System.Windows.Forms.CheckBox
 		Me.pnlQuery = New System.Windows.Forms.Panel
+		Me.txtQuery = New System.Windows.Forms.TextBox
+		Me.lblQuery = New System.Windows.Forms.Label
 		Me.pnlDate = New System.Windows.Forms.Panel
+		Me.dtpDate = New System.Windows.Forms.DateTimePicker
+		Me.lblDate = New System.Windows.Forms.Label
 		Me.pnlData = New System.Windows.Forms.Panel
+		Me.txtData = New System.Windows.Forms.TextBox
+		Me.lblData = New System.Windows.Forms.Label
+		Me.lblDataInfo = New System.Windows.Forms.Label
 		Me.pnlVersion = New System.Windows.Forms.Panel
+		Me.txtVersion = New System.Windows.Forms.TextBox
+		Me.lblVersion = New System.Windows.Forms.Label
 		Me.pnlFilePath = New System.Windows.Forms.Panel
+		Me.txtFilePath = New System.Windows.Forms.TextBox
+		Me.lblFilePath = New System.Windows.Forms.Label
 		Me.pnlEnvironmentVariable = New System.Windows.Forms.Panel
+		Me.cboEnvironmentVariable = New System.Windows.Forms.ComboBox
+		Me.lblEnvironmentVariable = New System.Windows.Forms.Label
 		Me.pnlRegistryValueType = New System.Windows.Forms.Panel
+		Me.cboRegistryValueType = New System.Windows.Forms.ComboBox
+		Me.lblRegistryValueType = New System.Windows.Forms.Label
 		Me.pnlRegistryValue = New System.Windows.Forms.Panel
+		Me.lblRegistryValue = New System.Windows.Forms.Label
+		Me.txtRegistryValue = New System.Windows.Forms.TextBox
 		Me.pnlRegistryKey = New System.Windows.Forms.Panel
+		Me.txtRegistrySubKey = New System.Windows.Forms.TextBox
+		Me.lblRegistryKey = New System.Windows.Forms.Label
+		Me.cboRegistryKey = New System.Windows.Forms.ComboBox
 		Me.pnlProcessorType = New System.Windows.Forms.Panel
+		Me.cboProcessorType = New System.Windows.Forms.ComboBox
+		Me.lblProcessorType = New System.Windows.Forms.Label
 		Me.pnlLanguage = New System.Windows.Forms.Panel
+		Me.cboLanguage = New System.Windows.Forms.ComboBox
+		Me.lblLanguage = New System.Windows.Forms.Label
 		Me.pnlProductType = New System.Windows.Forms.Panel
+		Me.cboProductType = New System.Windows.Forms.ComboBox
+		Me.lblProductType = New System.Windows.Forms.Label
 		Me.pnlServicePack = New System.Windows.Forms.Panel
+		Me.txtSPMinorVersion = New System.Windows.Forms.TextBox
+		Me.txtSPMajorVersion = New System.Windows.Forms.TextBox
+		Me.cboServicePack = New System.Windows.Forms.ComboBox
+		Me.lblServicePack = New System.Windows.Forms.Label
 		Me.pnlOSVersion = New System.Windows.Forms.Panel
+		Me.txtOSMinorVersion = New System.Windows.Forms.TextBox
+		Me.txtOSMajorVersion = New System.Windows.Forms.TextBox
+		Me.cboOSVersion = New System.Windows.Forms.ComboBox
+		Me.lbl_OSVersion = New System.Windows.Forms.Label
 		Me.pnlComparison = New System.Windows.Forms.Panel
+		Me.cboComparison = New System.Windows.Forms.ComboBox
+		Me.lblComparison = New System.Windows.Forms.Label
+		Me.btnAdd = New System.Windows.Forms.Button
+		Me.btnCancel = New System.Windows.Forms.Button
 		Me.errorProviderRules = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.splitContainer.Panel1.SuspendLayout
 		Me.splitContainer.Panel2.SuspendLayout
@@ -147,552 +147,6 @@ Partial Class RulesForm
 		Me.pnlComparison.SuspendLayout
 		CType(Me.errorProviderRules,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
-		'
-		'cboRuleType
-		'
-		Me.cboRuleType.AccessibleDescription = Nothing
-		Me.cboRuleType.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboRuleType, "cboRuleType")
-		Me.cboRuleType.BackgroundImage = Nothing
-		Me.cboRuleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboRuleType, resources.GetString("cboRuleType.Error"))
-		Me.cboRuleType.Font = Nothing
-		Me.cboRuleType.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboRuleType, CType(resources.GetObject("cboRuleType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboRuleType, CType(resources.GetObject("cboRuleType.IconPadding"),Integer))
-		Me.cboRuleType.Name = "cboRuleType"
-		AddHandler Me.cboRuleType.SelectedIndexChanged, AddressOf Me.cboRuleTypeSelectedIndexChanged
-		AddHandler Me.cboRuleType.Format, AddressOf Me.CboRuleTypeFormat
-		'
-		'lblRuleType
-		'
-		Me.lblRuleType.AccessibleDescription = Nothing
-		Me.lblRuleType.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblRuleType, "lblRuleType")
-		Me.errorProviderRules.SetError(Me.lblRuleType, resources.GetString("lblRuleType.Error"))
-		Me.lblRuleType.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblRuleType, CType(resources.GetObject("lblRuleType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblRuleType, CType(resources.GetObject("lblRuleType.IconPadding"),Integer))
-		Me.lblRuleType.Name = "lblRuleType"
-		'
-		'lblProductType
-		'
-		Me.lblProductType.AccessibleDescription = Nothing
-		Me.lblProductType.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblProductType, "lblProductType")
-		Me.errorProviderRules.SetError(Me.lblProductType, resources.GetString("lblProductType.Error"))
-		Me.lblProductType.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblProductType, CType(resources.GetObject("lblProductType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblProductType, CType(resources.GetObject("lblProductType.IconPadding"),Integer))
-		Me.lblProductType.Name = "lblProductType"
-		'
-		'cboProductType
-		'
-		Me.cboProductType.AccessibleDescription = Nothing
-		Me.cboProductType.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboProductType, "cboProductType")
-		Me.cboProductType.BackgroundImage = Nothing
-		Me.cboProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboProductType, resources.GetString("cboProductType.Error"))
-		Me.cboProductType.Font = Nothing
-		Me.cboProductType.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboProductType, CType(resources.GetObject("cboProductType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboProductType, CType(resources.GetObject("cboProductType.IconPadding"),Integer))
-		Me.cboProductType.Name = "cboProductType"
-		'
-		'txtSPMinorVersion
-		'
-		Me.txtSPMinorVersion.AccessibleDescription = Nothing
-		Me.txtSPMinorVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtSPMinorVersion, "txtSPMinorVersion")
-		Me.txtSPMinorVersion.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtSPMinorVersion, resources.GetString("txtSPMinorVersion.Error"))
-		Me.txtSPMinorVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtSPMinorVersion, CType(resources.GetObject("txtSPMinorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtSPMinorVersion, CType(resources.GetObject("txtSPMinorVersion.IconPadding"),Integer))
-		Me.txtSPMinorVersion.Name = "txtSPMinorVersion"
-		'
-		'txtSPMajorVersion
-		'
-		Me.txtSPMajorVersion.AccessibleDescription = Nothing
-		Me.txtSPMajorVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtSPMajorVersion, "txtSPMajorVersion")
-		Me.txtSPMajorVersion.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtSPMajorVersion, resources.GetString("txtSPMajorVersion.Error"))
-		Me.txtSPMajorVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtSPMajorVersion, CType(resources.GetObject("txtSPMajorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtSPMajorVersion, CType(resources.GetObject("txtSPMajorVersion.IconPadding"),Integer))
-		Me.txtSPMajorVersion.Name = "txtSPMajorVersion"
-		'
-		'txtOSMinorVersion
-		'
-		Me.txtOSMinorVersion.AccessibleDescription = Nothing
-		Me.txtOSMinorVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtOSMinorVersion, "txtOSMinorVersion")
-		Me.txtOSMinorVersion.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtOSMinorVersion, resources.GetString("txtOSMinorVersion.Error"))
-		Me.txtOSMinorVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtOSMinorVersion, CType(resources.GetObject("txtOSMinorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtOSMinorVersion, CType(resources.GetObject("txtOSMinorVersion.IconPadding"),Integer))
-		Me.txtOSMinorVersion.Name = "txtOSMinorVersion"
-		AddHandler Me.txtOSMinorVersion.TextChanged, AddressOf Me.ValidateForm
-		'
-		'txtOSMajorVersion
-		'
-		Me.txtOSMajorVersion.AccessibleDescription = Nothing
-		Me.txtOSMajorVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtOSMajorVersion, "txtOSMajorVersion")
-		Me.txtOSMajorVersion.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtOSMajorVersion, resources.GetString("txtOSMajorVersion.Error"))
-		Me.txtOSMajorVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtOSMajorVersion, CType(resources.GetObject("txtOSMajorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtOSMajorVersion, CType(resources.GetObject("txtOSMajorVersion.IconPadding"),Integer))
-		Me.txtOSMajorVersion.Name = "txtOSMajorVersion"
-		AddHandler Me.txtOSMajorVersion.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblServicePack
-		'
-		Me.lblServicePack.AccessibleDescription = Nothing
-		Me.lblServicePack.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblServicePack, "lblServicePack")
-		Me.errorProviderRules.SetError(Me.lblServicePack, resources.GetString("lblServicePack.Error"))
-		Me.lblServicePack.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblServicePack, CType(resources.GetObject("lblServicePack.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblServicePack, CType(resources.GetObject("lblServicePack.IconPadding"),Integer))
-		Me.lblServicePack.Name = "lblServicePack"
-		'
-		'cboServicePack
-		'
-		Me.cboServicePack.AccessibleDescription = Nothing
-		Me.cboServicePack.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboServicePack, "cboServicePack")
-		Me.cboServicePack.BackgroundImage = Nothing
-		Me.cboServicePack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboServicePack, resources.GetString("cboServicePack.Error"))
-		Me.cboServicePack.Font = Nothing
-		Me.cboServicePack.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboServicePack, CType(resources.GetObject("cboServicePack.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboServicePack, CType(resources.GetObject("cboServicePack.IconPadding"),Integer))
-		Me.cboServicePack.Items.AddRange(New Object() {resources.GetString("cboServicePack.Items"), resources.GetString("cboServicePack.Items1"), resources.GetString("cboServicePack.Items2"), resources.GetString("cboServicePack.Items3")})
-		Me.cboServicePack.Name = "cboServicePack"
-		AddHandler Me.cboServicePack.SelectedIndexChanged, AddressOf Me.GetServicePackCode
-		'
-		'lbl_OSVersion
-		'
-		Me.lbl_OSVersion.AccessibleDescription = Nothing
-		Me.lbl_OSVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.lbl_OSVersion, "lbl_OSVersion")
-		Me.errorProviderRules.SetError(Me.lbl_OSVersion, resources.GetString("lbl_OSVersion.Error"))
-		Me.lbl_OSVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lbl_OSVersion, CType(resources.GetObject("lbl_OSVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lbl_OSVersion, CType(resources.GetObject("lbl_OSVersion.IconPadding"),Integer))
-		Me.lbl_OSVersion.Name = "lbl_OSVersion"
-		'
-		'cboOSVersion
-		'
-		Me.cboOSVersion.AccessibleDescription = Nothing
-		Me.cboOSVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboOSVersion, "cboOSVersion")
-		Me.cboOSVersion.BackgroundImage = Nothing
-		Me.cboOSVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboOSVersion, resources.GetString("cboOSVersion.Error"))
-		Me.cboOSVersion.Font = Nothing
-		Me.cboOSVersion.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboOSVersion, CType(resources.GetObject("cboOSVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboOSVersion, CType(resources.GetObject("cboOSVersion.IconPadding"),Integer))
-		Me.cboOSVersion.Items.AddRange(New Object() {resources.GetString("cboOSVersion.Items"), resources.GetString("cboOSVersion.Items1"), resources.GetString("cboOSVersion.Items2"), resources.GetString("cboOSVersion.Items3"), resources.GetString("cboOSVersion.Items4"), resources.GetString("cboOSVersion.Items5")})
-		Me.cboOSVersion.Name = "cboOSVersion"
-		AddHandler Me.cboOSVersion.SelectedIndexChanged, AddressOf Me.GetOSVersionCodes
-		'
-		'lblComparison
-		'
-		Me.lblComparison.AccessibleDescription = Nothing
-		Me.lblComparison.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblComparison, "lblComparison")
-		Me.errorProviderRules.SetError(Me.lblComparison, resources.GetString("lblComparison.Error"))
-		Me.lblComparison.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblComparison, CType(resources.GetObject("lblComparison.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblComparison, CType(resources.GetObject("lblComparison.IconPadding"),Integer))
-		Me.lblComparison.Name = "lblComparison"
-		'
-		'cboComparison
-		'
-		Me.cboComparison.AccessibleDescription = Nothing
-		Me.cboComparison.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboComparison, "cboComparison")
-		Me.cboComparison.BackgroundImage = Nothing
-		Me.cboComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboComparison, resources.GetString("cboComparison.Error"))
-		Me.cboComparison.Font = Nothing
-		Me.cboComparison.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboComparison, CType(resources.GetObject("cboComparison.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboComparison, CType(resources.GetObject("cboComparison.IconPadding"),Integer))
-		Me.cboComparison.Name = "cboComparison"
-		AddHandler Me.cboComparison.SelectedIndexChanged, AddressOf Me.ValidateForm
-		'
-		'lblLanguage
-		'
-		Me.lblLanguage.AccessibleDescription = Nothing
-		Me.lblLanguage.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblLanguage, "lblLanguage")
-		Me.errorProviderRules.SetError(Me.lblLanguage, resources.GetString("lblLanguage.Error"))
-		Me.lblLanguage.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblLanguage, CType(resources.GetObject("lblLanguage.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblLanguage, CType(resources.GetObject("lblLanguage.IconPadding"),Integer))
-		Me.lblLanguage.Name = "lblLanguage"
-		'
-		'cboLanguage
-		'
-		Me.cboLanguage.AccessibleDescription = Nothing
-		Me.cboLanguage.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboLanguage, "cboLanguage")
-		Me.cboLanguage.BackgroundImage = Nothing
-		Me.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboLanguage, resources.GetString("cboLanguage.Error"))
-		Me.cboLanguage.Font = Nothing
-		Me.cboLanguage.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboLanguage, CType(resources.GetObject("cboLanguage.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboLanguage, CType(resources.GetObject("cboLanguage.IconPadding"),Integer))
-		Me.cboLanguage.Name = "cboLanguage"
-		AddHandler Me.cboLanguage.SelectedIndexChanged, AddressOf Me.ValidateForm
-		'
-		'lblProcessorType
-		'
-		Me.lblProcessorType.AccessibleDescription = Nothing
-		Me.lblProcessorType.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblProcessorType, "lblProcessorType")
-		Me.errorProviderRules.SetError(Me.lblProcessorType, resources.GetString("lblProcessorType.Error"))
-		Me.lblProcessorType.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblProcessorType, CType(resources.GetObject("lblProcessorType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblProcessorType, CType(resources.GetObject("lblProcessorType.IconPadding"),Integer))
-		Me.lblProcessorType.Name = "lblProcessorType"
-		'
-		'cboProcessorType
-		'
-		Me.cboProcessorType.AccessibleDescription = Nothing
-		Me.cboProcessorType.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboProcessorType, "cboProcessorType")
-		Me.cboProcessorType.BackgroundImage = Nothing
-		Me.cboProcessorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboProcessorType, resources.GetString("cboProcessorType.Error"))
-		Me.cboProcessorType.Font = Nothing
-		Me.cboProcessorType.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboProcessorType, CType(resources.GetObject("cboProcessorType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboProcessorType, CType(resources.GetObject("cboProcessorType.IconPadding"),Integer))
-		Me.cboProcessorType.Items.AddRange(New Object() {resources.GetString("cboProcessorType.Items"), resources.GetString("cboProcessorType.Items1"), resources.GetString("cboProcessorType.Items2")})
-		Me.cboProcessorType.Name = "cboProcessorType"
-		AddHandler Me.cboProcessorType.SelectedIndexChanged, AddressOf Me.ValidateForm
-		'
-		'lblEnvironmentVariable
-		'
-		Me.lblEnvironmentVariable.AccessibleDescription = Nothing
-		Me.lblEnvironmentVariable.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblEnvironmentVariable, "lblEnvironmentVariable")
-		Me.errorProviderRules.SetError(Me.lblEnvironmentVariable, resources.GetString("lblEnvironmentVariable.Error"))
-		Me.lblEnvironmentVariable.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblEnvironmentVariable, CType(resources.GetObject("lblEnvironmentVariable.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblEnvironmentVariable, CType(resources.GetObject("lblEnvironmentVariable.IconPadding"),Integer))
-		Me.lblEnvironmentVariable.Name = "lblEnvironmentVariable"
-		'
-		'cboEnvironmentVariable
-		'
-		Me.cboEnvironmentVariable.AccessibleDescription = Nothing
-		Me.cboEnvironmentVariable.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboEnvironmentVariable, "cboEnvironmentVariable")
-		Me.cboEnvironmentVariable.BackgroundImage = Nothing
-		Me.cboEnvironmentVariable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboEnvironmentVariable, resources.GetString("cboEnvironmentVariable.Error"))
-		Me.cboEnvironmentVariable.Font = Nothing
-		Me.cboEnvironmentVariable.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboEnvironmentVariable, CType(resources.GetObject("cboEnvironmentVariable.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboEnvironmentVariable, CType(resources.GetObject("cboEnvironmentVariable.IconPadding"),Integer))
-		Me.cboEnvironmentVariable.Name = "cboEnvironmentVariable"
-		'
-		'txtVersion
-		'
-		Me.txtVersion.AccessibleDescription = Nothing
-		Me.txtVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtVersion, "txtVersion")
-		Me.txtVersion.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtVersion, resources.GetString("txtVersion.Error"))
-		Me.txtVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtVersion, CType(resources.GetObject("txtVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtVersion, CType(resources.GetObject("txtVersion.IconPadding"),Integer))
-		Me.txtVersion.Name = "txtVersion"
-		AddHandler Me.txtVersion.TextChanged, AddressOf Me.ValidateForm
-		AddHandler Me.txtVersion.Validating, AddressOf Me.ValidateVersion
-		'
-		'lblVersion
-		'
-		Me.lblVersion.AccessibleDescription = Nothing
-		Me.lblVersion.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblVersion, "lblVersion")
-		Me.errorProviderRules.SetError(Me.lblVersion, resources.GetString("lblVersion.Error"))
-		Me.lblVersion.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblVersion, CType(resources.GetObject("lblVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblVersion, CType(resources.GetObject("lblVersion.IconPadding"),Integer))
-		Me.lblVersion.Name = "lblVersion"
-		'
-		'txtRegistryValue
-		'
-		Me.txtRegistryValue.AccessibleDescription = Nothing
-		Me.txtRegistryValue.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtRegistryValue, "txtRegistryValue")
-		Me.txtRegistryValue.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtRegistryValue, resources.GetString("txtRegistryValue.Error"))
-		Me.txtRegistryValue.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtRegistryValue, CType(resources.GetObject("txtRegistryValue.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtRegistryValue, CType(resources.GetObject("txtRegistryValue.IconPadding"),Integer))
-		Me.txtRegistryValue.Name = "txtRegistryValue"
-		AddHandler Me.txtRegistryValue.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblRegistryValue
-		'
-		Me.lblRegistryValue.AccessibleDescription = Nothing
-		Me.lblRegistryValue.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblRegistryValue, "lblRegistryValue")
-		Me.errorProviderRules.SetError(Me.lblRegistryValue, resources.GetString("lblRegistryValue.Error"))
-		Me.lblRegistryValue.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryValue, CType(resources.GetObject("lblRegistryValue.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblRegistryValue, CType(resources.GetObject("lblRegistryValue.IconPadding"),Integer))
-		Me.lblRegistryValue.Name = "lblRegistryValue"
-		'
-		'chkRegistry32Bit
-		'
-		Me.chkRegistry32Bit.AccessibleDescription = Nothing
-		Me.chkRegistry32Bit.AccessibleName = Nothing
-		resources.ApplyResources(Me.chkRegistry32Bit, "chkRegistry32Bit")
-		Me.chkRegistry32Bit.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.chkRegistry32Bit, resources.GetString("chkRegistry32Bit.Error"))
-		Me.chkRegistry32Bit.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.chkRegistry32Bit, CType(resources.GetObject("chkRegistry32Bit.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.chkRegistry32Bit, CType(resources.GetObject("chkRegistry32Bit.IconPadding"),Integer))
-		Me.chkRegistry32Bit.Name = "chkRegistry32Bit"
-		Me.chkRegistry32Bit.UseVisualStyleBackColor = true
-		'
-		'txtRegistrySubKey
-		'
-		Me.txtRegistrySubKey.AccessibleDescription = Nothing
-		Me.txtRegistrySubKey.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtRegistrySubKey, "txtRegistrySubKey")
-		Me.txtRegistrySubKey.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtRegistrySubKey, resources.GetString("txtRegistrySubKey.Error"))
-		Me.txtRegistrySubKey.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtRegistrySubKey, CType(resources.GetObject("txtRegistrySubKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtRegistrySubKey, CType(resources.GetObject("txtRegistrySubKey.IconPadding"),Integer))
-		Me.txtRegistrySubKey.Name = "txtRegistrySubKey"
-		AddHandler Me.txtRegistrySubKey.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblRegistryKey
-		'
-		Me.lblRegistryKey.AccessibleDescription = Nothing
-		Me.lblRegistryKey.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblRegistryKey, "lblRegistryKey")
-		Me.errorProviderRules.SetError(Me.lblRegistryKey, resources.GetString("lblRegistryKey.Error"))
-		Me.lblRegistryKey.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryKey, CType(resources.GetObject("lblRegistryKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblRegistryKey, CType(resources.GetObject("lblRegistryKey.IconPadding"),Integer))
-		Me.lblRegistryKey.Name = "lblRegistryKey"
-		'
-		'cboRegistryKey
-		'
-		Me.cboRegistryKey.AccessibleDescription = Nothing
-		Me.cboRegistryKey.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboRegistryKey, "cboRegistryKey")
-		Me.cboRegistryKey.BackgroundImage = Nothing
-		Me.cboRegistryKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboRegistryKey, resources.GetString("cboRegistryKey.Error"))
-		Me.cboRegistryKey.Font = Nothing
-		Me.cboRegistryKey.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboRegistryKey, CType(resources.GetObject("cboRegistryKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboRegistryKey, CType(resources.GetObject("cboRegistryKey.IconPadding"),Integer))
-		Me.cboRegistryKey.Items.AddRange(New Object() {resources.GetString("cboRegistryKey.Items")})
-		Me.cboRegistryKey.Name = "cboRegistryKey"
-		AddHandler Me.cboRegistryKey.SelectedIndexChanged, AddressOf Me.ValidateForm
-		'
-		'txtFilePath
-		'
-		Me.txtFilePath.AccessibleDescription = Nothing
-		Me.txtFilePath.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtFilePath, "txtFilePath")
-		Me.txtFilePath.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtFilePath, resources.GetString("txtFilePath.Error"))
-		Me.txtFilePath.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtFilePath, CType(resources.GetObject("txtFilePath.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtFilePath, CType(resources.GetObject("txtFilePath.IconPadding"),Integer))
-		Me.txtFilePath.Name = "txtFilePath"
-		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblFilePath
-		'
-		Me.lblFilePath.AccessibleDescription = Nothing
-		Me.lblFilePath.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblFilePath, "lblFilePath")
-		Me.errorProviderRules.SetError(Me.lblFilePath, resources.GetString("lblFilePath.Error"))
-		Me.lblFilePath.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblFilePath, CType(resources.GetObject("lblFilePath.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblFilePath, CType(resources.GetObject("lblFilePath.IconPadding"),Integer))
-		Me.lblFilePath.Name = "lblFilePath"
-		'
-		'dtpDate
-		'
-		Me.dtpDate.AccessibleDescription = Nothing
-		Me.dtpDate.AccessibleName = Nothing
-		resources.ApplyResources(Me.dtpDate, "dtpDate")
-		Me.dtpDate.BackgroundImage = Nothing
-		Me.dtpDate.CalendarFont = Nothing
-		Me.dtpDate.Checked = false
-		Me.dtpDate.Cursor = System.Windows.Forms.Cursors.IBeam
-		Me.errorProviderRules.SetError(Me.dtpDate, resources.GetString("dtpDate.Error"))
-		Me.dtpDate.Font = Nothing
-		Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-		Me.errorProviderRules.SetIconAlignment(Me.dtpDate, CType(resources.GetObject("dtpDate.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.dtpDate, CType(resources.GetObject("dtpDate.IconPadding"),Integer))
-		Me.dtpDate.Name = "dtpDate"
-		Me.dtpDate.ShowCheckBox = true
-		AddHandler Me.dtpDate.ValueChanged, AddressOf Me.ValidateForm
-		'
-		'lblDate
-		'
-		Me.lblDate.AccessibleDescription = Nothing
-		Me.lblDate.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblDate, "lblDate")
-		Me.errorProviderRules.SetError(Me.lblDate, resources.GetString("lblDate.Error"))
-		Me.lblDate.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblDate, CType(resources.GetObject("lblDate.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblDate, CType(resources.GetObject("lblDate.IconPadding"),Integer))
-		Me.lblDate.Name = "lblDate"
-		'
-		'lblDataInfo
-		'
-		Me.lblDataInfo.AccessibleDescription = Nothing
-		Me.lblDataInfo.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblDataInfo, "lblDataInfo")
-		Me.errorProviderRules.SetError(Me.lblDataInfo, resources.GetString("lblDataInfo.Error"))
-		Me.lblDataInfo.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblDataInfo, CType(resources.GetObject("lblDataInfo.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblDataInfo, CType(resources.GetObject("lblDataInfo.IconPadding"),Integer))
-		Me.lblDataInfo.Name = "lblDataInfo"
-		'
-		'txtData
-		'
-		Me.txtData.AccessibleDescription = Nothing
-		Me.txtData.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtData, "txtData")
-		Me.txtData.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtData, resources.GetString("txtData.Error"))
-		Me.txtData.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtData, CType(resources.GetObject("txtData.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtData, CType(resources.GetObject("txtData.IconPadding"),Integer))
-		Me.txtData.Name = "txtData"
-		AddHandler Me.txtData.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblData
-		'
-		Me.lblData.AccessibleDescription = Nothing
-		Me.lblData.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblData, "lblData")
-		Me.errorProviderRules.SetError(Me.lblData, resources.GetString("lblData.Error"))
-		Me.lblData.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblData, CType(resources.GetObject("lblData.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblData, CType(resources.GetObject("lblData.IconPadding"),Integer))
-		Me.lblData.Name = "lblData"
-		'
-		'txtQuery
-		'
-		Me.txtQuery.AcceptsReturn = true
-		Me.txtQuery.AcceptsTab = true
-		Me.txtQuery.AccessibleDescription = Nothing
-		Me.txtQuery.AccessibleName = Nothing
-		resources.ApplyResources(Me.txtQuery, "txtQuery")
-		Me.txtQuery.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.txtQuery, resources.GetString("txtQuery.Error"))
-		Me.txtQuery.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.txtQuery, CType(resources.GetObject("txtQuery.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.txtQuery, CType(resources.GetObject("txtQuery.IconPadding"),Integer))
-		Me.txtQuery.Name = "txtQuery"
-		AddHandler Me.txtQuery.TextChanged, AddressOf Me.ValidateForm
-		'
-		'lblQuery
-		'
-		Me.lblQuery.AccessibleDescription = Nothing
-		Me.lblQuery.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblQuery, "lblQuery")
-		Me.errorProviderRules.SetError(Me.lblQuery, resources.GetString("lblQuery.Error"))
-		Me.lblQuery.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblQuery, CType(resources.GetObject("lblQuery.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblQuery, CType(resources.GetObject("lblQuery.IconPadding"),Integer))
-		Me.lblQuery.Name = "lblQuery"
-		'
-		'chkNotRule
-		'
-		Me.chkNotRule.AccessibleDescription = Nothing
-		Me.chkNotRule.AccessibleName = Nothing
-		resources.ApplyResources(Me.chkNotRule, "chkNotRule")
-		Me.chkNotRule.BackgroundImage = Nothing
-		Me.errorProviderRules.SetError(Me.chkNotRule, resources.GetString("chkNotRule.Error"))
-		Me.chkNotRule.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.chkNotRule, CType(resources.GetObject("chkNotRule.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.chkNotRule, CType(resources.GetObject("chkNotRule.IconPadding"),Integer))
-		Me.chkNotRule.Name = "chkNotRule"
-		Me.chkNotRule.UseVisualStyleBackColor = true
-		'
-		'btnAdd
-		'
-		Me.btnAdd.AccessibleDescription = Nothing
-		Me.btnAdd.AccessibleName = Nothing
-		resources.ApplyResources(Me.btnAdd, "btnAdd")
-		Me.btnAdd.BackgroundImage = Nothing
-		Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.errorProviderRules.SetError(Me.btnAdd, resources.GetString("btnAdd.Error"))
-		Me.btnAdd.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.btnAdd, CType(resources.GetObject("btnAdd.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.btnAdd, CType(resources.GetObject("btnAdd.IconPadding"),Integer))
-		Me.btnAdd.Name = "btnAdd"
-		Me.btnAdd.UseVisualStyleBackColor = true
-		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
-		'
-		'btnCancel
-		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
-		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
-		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.errorProviderRules.SetError(Me.btnCancel, resources.GetString("btnCancel.Error"))
-		Me.btnCancel.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.btnCancel, CType(resources.GetObject("btnCancel.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.btnCancel, CType(resources.GetObject("btnCancel.IconPadding"),Integer))
-		Me.btnCancel.Name = "btnCancel"
-		Me.btnCancel.UseVisualStyleBackColor = true
-		'
-		'lblRegistryValueType
-		'
-		Me.lblRegistryValueType.AccessibleDescription = Nothing
-		Me.lblRegistryValueType.AccessibleName = Nothing
-		resources.ApplyResources(Me.lblRegistryValueType, "lblRegistryValueType")
-		Me.errorProviderRules.SetError(Me.lblRegistryValueType, resources.GetString("lblRegistryValueType.Error"))
-		Me.lblRegistryValueType.Font = Nothing
-		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryValueType, CType(resources.GetObject("lblRegistryValueType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.lblRegistryValueType, CType(resources.GetObject("lblRegistryValueType.IconPadding"),Integer))
-		Me.lblRegistryValueType.MinimumSize = Me.lblRegistryValueType.Size
-		Me.lblRegistryValueType.Name = "lblRegistryValueType"
-		'
-		'cboRegistryValueType
-		'
-		Me.cboRegistryValueType.AccessibleDescription = Nothing
-		Me.cboRegistryValueType.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboRegistryValueType, "cboRegistryValueType")
-		Me.cboRegistryValueType.BackgroundImage = Nothing
-		Me.cboRegistryValueType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.errorProviderRules.SetError(Me.cboRegistryValueType, resources.GetString("cboRegistryValueType.Error"))
-		Me.cboRegistryValueType.Font = Nothing
-		Me.cboRegistryValueType.FormattingEnabled = true
-		Me.errorProviderRules.SetIconAlignment(Me.cboRegistryValueType, CType(resources.GetObject("cboRegistryValueType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
-		Me.errorProviderRules.SetIconPadding(Me.cboRegistryValueType, CType(resources.GetObject("cboRegistryValueType.IconPadding"),Integer))
-		Me.cboRegistryValueType.Items.AddRange(New Object() {resources.GetString("cboRegistryValueType.Items"), resources.GetString("cboRegistryValueType.Items1"), resources.GetString("cboRegistryValueType.Items2"), resources.GetString("cboRegistryValueType.Items3")})
-		Me.cboRegistryValueType.Name = "cboRegistryValueType"
-		AddHandler Me.cboRegistryValueType.SelectedIndexChanged, AddressOf Me.ValidateForm
 		'
 		'splitContainer
 		'
@@ -755,6 +209,46 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.splitContainer.Panel2, CType(resources.GetObject("splitContainer.Panel2.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.splitContainer.Panel2, CType(resources.GetObject("splitContainer.Panel2.IconPadding"),Integer))
 		Me.splitContainer.TabStop = false
+		'
+		'cboRuleType
+		'
+		Me.cboRuleType.AccessibleDescription = Nothing
+		Me.cboRuleType.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboRuleType, "cboRuleType")
+		Me.cboRuleType.BackgroundImage = Nothing
+		Me.cboRuleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboRuleType, resources.GetString("cboRuleType.Error"))
+		Me.cboRuleType.Font = Nothing
+		Me.cboRuleType.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboRuleType, CType(resources.GetObject("cboRuleType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboRuleType, CType(resources.GetObject("cboRuleType.IconPadding"),Integer))
+		Me.cboRuleType.Name = "cboRuleType"
+		AddHandler Me.cboRuleType.SelectedIndexChanged, AddressOf Me.cboRuleTypeSelectedIndexChanged
+		AddHandler Me.cboRuleType.Format, AddressOf Me.CboRuleTypeFormat
+		'
+		'lblRuleType
+		'
+		Me.lblRuleType.AccessibleDescription = Nothing
+		Me.lblRuleType.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblRuleType, "lblRuleType")
+		Me.errorProviderRules.SetError(Me.lblRuleType, resources.GetString("lblRuleType.Error"))
+		Me.lblRuleType.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblRuleType, CType(resources.GetObject("lblRuleType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblRuleType, CType(resources.GetObject("lblRuleType.IconPadding"),Integer))
+		Me.lblRuleType.Name = "lblRuleType"
+		'
+		'chkNotRule
+		'
+		Me.chkNotRule.AccessibleDescription = Nothing
+		Me.chkNotRule.AccessibleName = Nothing
+		resources.ApplyResources(Me.chkNotRule, "chkNotRule")
+		Me.chkNotRule.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.chkNotRule, resources.GetString("chkNotRule.Error"))
+		Me.chkNotRule.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.chkNotRule, CType(resources.GetObject("chkNotRule.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.chkNotRule, CType(resources.GetObject("chkNotRule.IconPadding"),Integer))
+		Me.chkNotRule.Name = "chkNotRule"
+		Me.chkNotRule.UseVisualStyleBackColor = true
 		'
 		'pnlComponentCollection
 		'
@@ -1091,6 +585,19 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlRegistry32Bit, CType(resources.GetObject("pnlRegistry32Bit.IconPadding"),Integer))
 		Me.pnlRegistry32Bit.Name = "pnlRegistry32Bit"
 		'
+		'chkRegistry32Bit
+		'
+		Me.chkRegistry32Bit.AccessibleDescription = Nothing
+		Me.chkRegistry32Bit.AccessibleName = Nothing
+		resources.ApplyResources(Me.chkRegistry32Bit, "chkRegistry32Bit")
+		Me.chkRegistry32Bit.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.chkRegistry32Bit, resources.GetString("chkRegistry32Bit.Error"))
+		Me.chkRegistry32Bit.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.chkRegistry32Bit, CType(resources.GetObject("chkRegistry32Bit.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.chkRegistry32Bit, CType(resources.GetObject("chkRegistry32Bit.IconPadding"),Integer))
+		Me.chkRegistry32Bit.Name = "chkRegistry32Bit"
+		Me.chkRegistry32Bit.UseVisualStyleBackColor = true
+		'
 		'pnlQuery
 		'
 		Me.pnlQuery.AccessibleDescription = Nothing
@@ -1105,6 +612,32 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlQuery, CType(resources.GetObject("pnlQuery.IconPadding"),Integer))
 		Me.pnlQuery.Name = "pnlQuery"
 		'
+		'txtQuery
+		'
+		Me.txtQuery.AcceptsReturn = true
+		Me.txtQuery.AcceptsTab = true
+		Me.txtQuery.AccessibleDescription = Nothing
+		Me.txtQuery.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtQuery, "txtQuery")
+		Me.txtQuery.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtQuery, resources.GetString("txtQuery.Error"))
+		Me.txtQuery.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtQuery, CType(resources.GetObject("txtQuery.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtQuery, CType(resources.GetObject("txtQuery.IconPadding"),Integer))
+		Me.txtQuery.Name = "txtQuery"
+		AddHandler Me.txtQuery.TextChanged, AddressOf Me.ValidateForm
+		'
+		'lblQuery
+		'
+		Me.lblQuery.AccessibleDescription = Nothing
+		Me.lblQuery.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblQuery, "lblQuery")
+		Me.errorProviderRules.SetError(Me.lblQuery, resources.GetString("lblQuery.Error"))
+		Me.lblQuery.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblQuery, CType(resources.GetObject("lblQuery.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblQuery, CType(resources.GetObject("lblQuery.IconPadding"),Integer))
+		Me.lblQuery.Name = "lblQuery"
+		'
 		'pnlDate
 		'
 		Me.pnlDate.AccessibleDescription = Nothing
@@ -1118,6 +651,35 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlDate, CType(resources.GetObject("pnlDate.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlDate, CType(resources.GetObject("pnlDate.IconPadding"),Integer))
 		Me.pnlDate.Name = "pnlDate"
+		'
+		'dtpDate
+		'
+		Me.dtpDate.AccessibleDescription = Nothing
+		Me.dtpDate.AccessibleName = Nothing
+		resources.ApplyResources(Me.dtpDate, "dtpDate")
+		Me.dtpDate.BackgroundImage = Nothing
+		Me.dtpDate.CalendarFont = Nothing
+		Me.dtpDate.Checked = false
+		Me.dtpDate.Cursor = System.Windows.Forms.Cursors.IBeam
+		Me.errorProviderRules.SetError(Me.dtpDate, resources.GetString("dtpDate.Error"))
+		Me.dtpDate.Font = Nothing
+		Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.errorProviderRules.SetIconAlignment(Me.dtpDate, CType(resources.GetObject("dtpDate.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.dtpDate, CType(resources.GetObject("dtpDate.IconPadding"),Integer))
+		Me.dtpDate.Name = "dtpDate"
+		Me.dtpDate.ShowCheckBox = true
+		AddHandler Me.dtpDate.ValueChanged, AddressOf Me.ValidateForm
+		'
+		'lblDate
+		'
+		Me.lblDate.AccessibleDescription = Nothing
+		Me.lblDate.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblDate, "lblDate")
+		Me.errorProviderRules.SetError(Me.lblDate, resources.GetString("lblDate.Error"))
+		Me.lblDate.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblDate, CType(resources.GetObject("lblDate.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblDate, CType(resources.GetObject("lblDate.IconPadding"),Integer))
+		Me.lblDate.Name = "lblDate"
 		'
 		'pnlData
 		'
@@ -1134,6 +696,41 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlData, CType(resources.GetObject("pnlData.IconPadding"),Integer))
 		Me.pnlData.Name = "pnlData"
 		'
+		'txtData
+		'
+		Me.txtData.AccessibleDescription = Nothing
+		Me.txtData.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtData, "txtData")
+		Me.txtData.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtData, resources.GetString("txtData.Error"))
+		Me.txtData.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtData, CType(resources.GetObject("txtData.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtData, CType(resources.GetObject("txtData.IconPadding"),Integer))
+		Me.txtData.Name = "txtData"
+		AddHandler Me.txtData.TextChanged, AddressOf Me.ValidateForm
+		'
+		'lblData
+		'
+		Me.lblData.AccessibleDescription = Nothing
+		Me.lblData.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblData, "lblData")
+		Me.errorProviderRules.SetError(Me.lblData, resources.GetString("lblData.Error"))
+		Me.lblData.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblData, CType(resources.GetObject("lblData.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblData, CType(resources.GetObject("lblData.IconPadding"),Integer))
+		Me.lblData.Name = "lblData"
+		'
+		'lblDataInfo
+		'
+		Me.lblDataInfo.AccessibleDescription = Nothing
+		Me.lblDataInfo.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblDataInfo, "lblDataInfo")
+		Me.errorProviderRules.SetError(Me.lblDataInfo, resources.GetString("lblDataInfo.Error"))
+		Me.lblDataInfo.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblDataInfo, CType(resources.GetObject("lblDataInfo.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblDataInfo, CType(resources.GetObject("lblDataInfo.IconPadding"),Integer))
+		Me.lblDataInfo.Name = "lblDataInfo"
+		'
 		'pnlVersion
 		'
 		Me.pnlVersion.AccessibleDescription = Nothing
@@ -1147,6 +744,31 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlVersion, CType(resources.GetObject("pnlVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlVersion, CType(resources.GetObject("pnlVersion.IconPadding"),Integer))
 		Me.pnlVersion.Name = "pnlVersion"
+		'
+		'txtVersion
+		'
+		Me.txtVersion.AccessibleDescription = Nothing
+		Me.txtVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtVersion, "txtVersion")
+		Me.txtVersion.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtVersion, resources.GetString("txtVersion.Error"))
+		Me.txtVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtVersion, CType(resources.GetObject("txtVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtVersion, CType(resources.GetObject("txtVersion.IconPadding"),Integer))
+		Me.txtVersion.Name = "txtVersion"
+		AddHandler Me.txtVersion.TextChanged, AddressOf Me.ValidateForm
+		AddHandler Me.txtVersion.Validating, AddressOf Me.ValidateVersion
+		'
+		'lblVersion
+		'
+		Me.lblVersion.AccessibleDescription = Nothing
+		Me.lblVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblVersion, "lblVersion")
+		Me.errorProviderRules.SetError(Me.lblVersion, resources.GetString("lblVersion.Error"))
+		Me.lblVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblVersion, CType(resources.GetObject("lblVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblVersion, CType(resources.GetObject("lblVersion.IconPadding"),Integer))
+		Me.lblVersion.Name = "lblVersion"
 		'
 		'pnlFilePath
 		'
@@ -1162,6 +784,30 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlFilePath, CType(resources.GetObject("pnlFilePath.IconPadding"),Integer))
 		Me.pnlFilePath.Name = "pnlFilePath"
 		'
+		'txtFilePath
+		'
+		Me.txtFilePath.AccessibleDescription = Nothing
+		Me.txtFilePath.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtFilePath, "txtFilePath")
+		Me.txtFilePath.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtFilePath, resources.GetString("txtFilePath.Error"))
+		Me.txtFilePath.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtFilePath, CType(resources.GetObject("txtFilePath.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtFilePath, CType(resources.GetObject("txtFilePath.IconPadding"),Integer))
+		Me.txtFilePath.Name = "txtFilePath"
+		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.ValidateForm
+		'
+		'lblFilePath
+		'
+		Me.lblFilePath.AccessibleDescription = Nothing
+		Me.lblFilePath.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblFilePath, "lblFilePath")
+		Me.errorProviderRules.SetError(Me.lblFilePath, resources.GetString("lblFilePath.Error"))
+		Me.lblFilePath.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblFilePath, CType(resources.GetObject("lblFilePath.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblFilePath, CType(resources.GetObject("lblFilePath.IconPadding"),Integer))
+		Me.lblFilePath.Name = "lblFilePath"
+		'
 		'pnlEnvironmentVariable
 		'
 		Me.pnlEnvironmentVariable.AccessibleDescription = Nothing
@@ -1175,6 +821,31 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlEnvironmentVariable, CType(resources.GetObject("pnlEnvironmentVariable.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlEnvironmentVariable, CType(resources.GetObject("pnlEnvironmentVariable.IconPadding"),Integer))
 		Me.pnlEnvironmentVariable.Name = "pnlEnvironmentVariable"
+		'
+		'cboEnvironmentVariable
+		'
+		Me.cboEnvironmentVariable.AccessibleDescription = Nothing
+		Me.cboEnvironmentVariable.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboEnvironmentVariable, "cboEnvironmentVariable")
+		Me.cboEnvironmentVariable.BackgroundImage = Nothing
+		Me.cboEnvironmentVariable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboEnvironmentVariable, resources.GetString("cboEnvironmentVariable.Error"))
+		Me.cboEnvironmentVariable.Font = Nothing
+		Me.cboEnvironmentVariable.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboEnvironmentVariable, CType(resources.GetObject("cboEnvironmentVariable.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboEnvironmentVariable, CType(resources.GetObject("cboEnvironmentVariable.IconPadding"),Integer))
+		Me.cboEnvironmentVariable.Name = "cboEnvironmentVariable"
+		'
+		'lblEnvironmentVariable
+		'
+		Me.lblEnvironmentVariable.AccessibleDescription = Nothing
+		Me.lblEnvironmentVariable.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblEnvironmentVariable, "lblEnvironmentVariable")
+		Me.errorProviderRules.SetError(Me.lblEnvironmentVariable, resources.GetString("lblEnvironmentVariable.Error"))
+		Me.lblEnvironmentVariable.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblEnvironmentVariable, CType(resources.GetObject("lblEnvironmentVariable.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblEnvironmentVariable, CType(resources.GetObject("lblEnvironmentVariable.IconPadding"),Integer))
+		Me.lblEnvironmentVariable.Name = "lblEnvironmentVariable"
 		'
 		'pnlRegistryValueType
 		'
@@ -1190,6 +861,34 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlRegistryValueType, CType(resources.GetObject("pnlRegistryValueType.IconPadding"),Integer))
 		Me.pnlRegistryValueType.Name = "pnlRegistryValueType"
 		'
+		'cboRegistryValueType
+		'
+		Me.cboRegistryValueType.AccessibleDescription = Nothing
+		Me.cboRegistryValueType.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboRegistryValueType, "cboRegistryValueType")
+		Me.cboRegistryValueType.BackgroundImage = Nothing
+		Me.cboRegistryValueType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboRegistryValueType, resources.GetString("cboRegistryValueType.Error"))
+		Me.cboRegistryValueType.Font = Nothing
+		Me.cboRegistryValueType.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboRegistryValueType, CType(resources.GetObject("cboRegistryValueType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboRegistryValueType, CType(resources.GetObject("cboRegistryValueType.IconPadding"),Integer))
+		Me.cboRegistryValueType.Items.AddRange(New Object() {resources.GetString("cboRegistryValueType.Items"), resources.GetString("cboRegistryValueType.Items1"), resources.GetString("cboRegistryValueType.Items2"), resources.GetString("cboRegistryValueType.Items3")})
+		Me.cboRegistryValueType.Name = "cboRegistryValueType"
+		AddHandler Me.cboRegistryValueType.SelectedIndexChanged, AddressOf Me.ValidateForm
+		'
+		'lblRegistryValueType
+		'
+		Me.lblRegistryValueType.AccessibleDescription = Nothing
+		Me.lblRegistryValueType.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblRegistryValueType, "lblRegistryValueType")
+		Me.errorProviderRules.SetError(Me.lblRegistryValueType, resources.GetString("lblRegistryValueType.Error"))
+		Me.lblRegistryValueType.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryValueType, CType(resources.GetObject("lblRegistryValueType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblRegistryValueType, CType(resources.GetObject("lblRegistryValueType.IconPadding"),Integer))
+		Me.lblRegistryValueType.MinimumSize = Me.lblRegistryValueType.Size
+		Me.lblRegistryValueType.Name = "lblRegistryValueType"
+		'
 		'pnlRegistryValue
 		'
 		Me.pnlRegistryValue.AccessibleDescription = Nothing
@@ -1203,6 +902,30 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlRegistryValue, CType(resources.GetObject("pnlRegistryValue.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlRegistryValue, CType(resources.GetObject("pnlRegistryValue.IconPadding"),Integer))
 		Me.pnlRegistryValue.Name = "pnlRegistryValue"
+		'
+		'lblRegistryValue
+		'
+		Me.lblRegistryValue.AccessibleDescription = Nothing
+		Me.lblRegistryValue.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblRegistryValue, "lblRegistryValue")
+		Me.errorProviderRules.SetError(Me.lblRegistryValue, resources.GetString("lblRegistryValue.Error"))
+		Me.lblRegistryValue.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryValue, CType(resources.GetObject("lblRegistryValue.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblRegistryValue, CType(resources.GetObject("lblRegistryValue.IconPadding"),Integer))
+		Me.lblRegistryValue.Name = "lblRegistryValue"
+		'
+		'txtRegistryValue
+		'
+		Me.txtRegistryValue.AccessibleDescription = Nothing
+		Me.txtRegistryValue.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtRegistryValue, "txtRegistryValue")
+		Me.txtRegistryValue.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtRegistryValue, resources.GetString("txtRegistryValue.Error"))
+		Me.txtRegistryValue.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtRegistryValue, CType(resources.GetObject("txtRegistryValue.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtRegistryValue, CType(resources.GetObject("txtRegistryValue.IconPadding"),Integer))
+		Me.txtRegistryValue.Name = "txtRegistryValue"
+		AddHandler Me.txtRegistryValue.TextChanged, AddressOf Me.ValidateForm
 		'
 		'pnlRegistryKey
 		'
@@ -1219,6 +942,46 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlRegistryKey, CType(resources.GetObject("pnlRegistryKey.IconPadding"),Integer))
 		Me.pnlRegistryKey.Name = "pnlRegistryKey"
 		'
+		'txtRegistrySubKey
+		'
+		Me.txtRegistrySubKey.AccessibleDescription = Nothing
+		Me.txtRegistrySubKey.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtRegistrySubKey, "txtRegistrySubKey")
+		Me.txtRegistrySubKey.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtRegistrySubKey, resources.GetString("txtRegistrySubKey.Error"))
+		Me.txtRegistrySubKey.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtRegistrySubKey, CType(resources.GetObject("txtRegistrySubKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtRegistrySubKey, CType(resources.GetObject("txtRegistrySubKey.IconPadding"),Integer))
+		Me.txtRegistrySubKey.Name = "txtRegistrySubKey"
+		AddHandler Me.txtRegistrySubKey.TextChanged, AddressOf Me.ValidateForm
+		'
+		'lblRegistryKey
+		'
+		Me.lblRegistryKey.AccessibleDescription = Nothing
+		Me.lblRegistryKey.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblRegistryKey, "lblRegistryKey")
+		Me.errorProviderRules.SetError(Me.lblRegistryKey, resources.GetString("lblRegistryKey.Error"))
+		Me.lblRegistryKey.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblRegistryKey, CType(resources.GetObject("lblRegistryKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblRegistryKey, CType(resources.GetObject("lblRegistryKey.IconPadding"),Integer))
+		Me.lblRegistryKey.Name = "lblRegistryKey"
+		'
+		'cboRegistryKey
+		'
+		Me.cboRegistryKey.AccessibleDescription = Nothing
+		Me.cboRegistryKey.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboRegistryKey, "cboRegistryKey")
+		Me.cboRegistryKey.BackgroundImage = Nothing
+		Me.cboRegistryKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboRegistryKey, resources.GetString("cboRegistryKey.Error"))
+		Me.cboRegistryKey.Font = Nothing
+		Me.cboRegistryKey.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboRegistryKey, CType(resources.GetObject("cboRegistryKey.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboRegistryKey, CType(resources.GetObject("cboRegistryKey.IconPadding"),Integer))
+		Me.cboRegistryKey.Items.AddRange(New Object() {resources.GetString("cboRegistryKey.Items")})
+		Me.cboRegistryKey.Name = "cboRegistryKey"
+		AddHandler Me.cboRegistryKey.SelectedIndexChanged, AddressOf Me.ValidateForm
+		'
 		'pnlProcessorType
 		'
 		Me.pnlProcessorType.AccessibleDescription = Nothing
@@ -1232,6 +995,33 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlProcessorType, CType(resources.GetObject("pnlProcessorType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlProcessorType, CType(resources.GetObject("pnlProcessorType.IconPadding"),Integer))
 		Me.pnlProcessorType.Name = "pnlProcessorType"
+		'
+		'cboProcessorType
+		'
+		Me.cboProcessorType.AccessibleDescription = Nothing
+		Me.cboProcessorType.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboProcessorType, "cboProcessorType")
+		Me.cboProcessorType.BackgroundImage = Nothing
+		Me.cboProcessorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboProcessorType, resources.GetString("cboProcessorType.Error"))
+		Me.cboProcessorType.Font = Nothing
+		Me.cboProcessorType.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboProcessorType, CType(resources.GetObject("cboProcessorType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboProcessorType, CType(resources.GetObject("cboProcessorType.IconPadding"),Integer))
+		Me.cboProcessorType.Items.AddRange(New Object() {resources.GetString("cboProcessorType.Items"), resources.GetString("cboProcessorType.Items1"), resources.GetString("cboProcessorType.Items2")})
+		Me.cboProcessorType.Name = "cboProcessorType"
+		AddHandler Me.cboProcessorType.SelectedIndexChanged, AddressOf Me.ValidateForm
+		'
+		'lblProcessorType
+		'
+		Me.lblProcessorType.AccessibleDescription = Nothing
+		Me.lblProcessorType.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblProcessorType, "lblProcessorType")
+		Me.errorProviderRules.SetError(Me.lblProcessorType, resources.GetString("lblProcessorType.Error"))
+		Me.lblProcessorType.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblProcessorType, CType(resources.GetObject("lblProcessorType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblProcessorType, CType(resources.GetObject("lblProcessorType.IconPadding"),Integer))
+		Me.lblProcessorType.Name = "lblProcessorType"
 		'
 		'pnlLanguage
 		'
@@ -1247,6 +1037,32 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlLanguage, CType(resources.GetObject("pnlLanguage.IconPadding"),Integer))
 		Me.pnlLanguage.Name = "pnlLanguage"
 		'
+		'cboLanguage
+		'
+		Me.cboLanguage.AccessibleDescription = Nothing
+		Me.cboLanguage.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboLanguage, "cboLanguage")
+		Me.cboLanguage.BackgroundImage = Nothing
+		Me.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboLanguage, resources.GetString("cboLanguage.Error"))
+		Me.cboLanguage.Font = Nothing
+		Me.cboLanguage.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboLanguage, CType(resources.GetObject("cboLanguage.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboLanguage, CType(resources.GetObject("cboLanguage.IconPadding"),Integer))
+		Me.cboLanguage.Name = "cboLanguage"
+		AddHandler Me.cboLanguage.SelectedIndexChanged, AddressOf Me.ValidateForm
+		'
+		'lblLanguage
+		'
+		Me.lblLanguage.AccessibleDescription = Nothing
+		Me.lblLanguage.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblLanguage, "lblLanguage")
+		Me.errorProviderRules.SetError(Me.lblLanguage, resources.GetString("lblLanguage.Error"))
+		Me.lblLanguage.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblLanguage, CType(resources.GetObject("lblLanguage.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblLanguage, CType(resources.GetObject("lblLanguage.IconPadding"),Integer))
+		Me.lblLanguage.Name = "lblLanguage"
+		'
 		'pnlProductType
 		'
 		Me.pnlProductType.AccessibleDescription = Nothing
@@ -1260,6 +1076,31 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlProductType, CType(resources.GetObject("pnlProductType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlProductType, CType(resources.GetObject("pnlProductType.IconPadding"),Integer))
 		Me.pnlProductType.Name = "pnlProductType"
+		'
+		'cboProductType
+		'
+		Me.cboProductType.AccessibleDescription = Nothing
+		Me.cboProductType.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboProductType, "cboProductType")
+		Me.cboProductType.BackgroundImage = Nothing
+		Me.cboProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboProductType, resources.GetString("cboProductType.Error"))
+		Me.cboProductType.Font = Nothing
+		Me.cboProductType.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboProductType, CType(resources.GetObject("cboProductType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboProductType, CType(resources.GetObject("cboProductType.IconPadding"),Integer))
+		Me.cboProductType.Name = "cboProductType"
+		'
+		'lblProductType
+		'
+		Me.lblProductType.AccessibleDescription = Nothing
+		Me.lblProductType.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblProductType, "lblProductType")
+		Me.errorProviderRules.SetError(Me.lblProductType, resources.GetString("lblProductType.Error"))
+		Me.lblProductType.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblProductType, CType(resources.GetObject("lblProductType.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblProductType, CType(resources.GetObject("lblProductType.IconPadding"),Integer))
+		Me.lblProductType.Name = "lblProductType"
 		'
 		'pnlServicePack
 		'
@@ -1277,6 +1118,57 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlServicePack, CType(resources.GetObject("pnlServicePack.IconPadding"),Integer))
 		Me.pnlServicePack.Name = "pnlServicePack"
 		'
+		'txtSPMinorVersion
+		'
+		Me.txtSPMinorVersion.AccessibleDescription = Nothing
+		Me.txtSPMinorVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtSPMinorVersion, "txtSPMinorVersion")
+		Me.txtSPMinorVersion.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtSPMinorVersion, resources.GetString("txtSPMinorVersion.Error"))
+		Me.txtSPMinorVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtSPMinorVersion, CType(resources.GetObject("txtSPMinorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtSPMinorVersion, CType(resources.GetObject("txtSPMinorVersion.IconPadding"),Integer))
+		Me.txtSPMinorVersion.Name = "txtSPMinorVersion"
+		'
+		'txtSPMajorVersion
+		'
+		Me.txtSPMajorVersion.AccessibleDescription = Nothing
+		Me.txtSPMajorVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtSPMajorVersion, "txtSPMajorVersion")
+		Me.txtSPMajorVersion.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtSPMajorVersion, resources.GetString("txtSPMajorVersion.Error"))
+		Me.txtSPMajorVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtSPMajorVersion, CType(resources.GetObject("txtSPMajorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtSPMajorVersion, CType(resources.GetObject("txtSPMajorVersion.IconPadding"),Integer))
+		Me.txtSPMajorVersion.Name = "txtSPMajorVersion"
+		'
+		'cboServicePack
+		'
+		Me.cboServicePack.AccessibleDescription = Nothing
+		Me.cboServicePack.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboServicePack, "cboServicePack")
+		Me.cboServicePack.BackgroundImage = Nothing
+		Me.cboServicePack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboServicePack, resources.GetString("cboServicePack.Error"))
+		Me.cboServicePack.Font = Nothing
+		Me.cboServicePack.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboServicePack, CType(resources.GetObject("cboServicePack.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboServicePack, CType(resources.GetObject("cboServicePack.IconPadding"),Integer))
+		Me.cboServicePack.Items.AddRange(New Object() {resources.GetString("cboServicePack.Items"), resources.GetString("cboServicePack.Items1"), resources.GetString("cboServicePack.Items2"), resources.GetString("cboServicePack.Items3")})
+		Me.cboServicePack.Name = "cboServicePack"
+		AddHandler Me.cboServicePack.SelectedIndexChanged, AddressOf Me.GetServicePackCode
+		'
+		'lblServicePack
+		'
+		Me.lblServicePack.AccessibleDescription = Nothing
+		Me.lblServicePack.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblServicePack, "lblServicePack")
+		Me.errorProviderRules.SetError(Me.lblServicePack, resources.GetString("lblServicePack.Error"))
+		Me.lblServicePack.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblServicePack, CType(resources.GetObject("lblServicePack.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblServicePack, CType(resources.GetObject("lblServicePack.IconPadding"),Integer))
+		Me.lblServicePack.Name = "lblServicePack"
+		'
 		'pnlOSVersion
 		'
 		Me.pnlOSVersion.AccessibleDescription = Nothing
@@ -1293,6 +1185,59 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconPadding(Me.pnlOSVersion, CType(resources.GetObject("pnlOSVersion.IconPadding"),Integer))
 		Me.pnlOSVersion.Name = "pnlOSVersion"
 		'
+		'txtOSMinorVersion
+		'
+		Me.txtOSMinorVersion.AccessibleDescription = Nothing
+		Me.txtOSMinorVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtOSMinorVersion, "txtOSMinorVersion")
+		Me.txtOSMinorVersion.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtOSMinorVersion, resources.GetString("txtOSMinorVersion.Error"))
+		Me.txtOSMinorVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtOSMinorVersion, CType(resources.GetObject("txtOSMinorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtOSMinorVersion, CType(resources.GetObject("txtOSMinorVersion.IconPadding"),Integer))
+		Me.txtOSMinorVersion.Name = "txtOSMinorVersion"
+		AddHandler Me.txtOSMinorVersion.TextChanged, AddressOf Me.ValidateForm
+		'
+		'txtOSMajorVersion
+		'
+		Me.txtOSMajorVersion.AccessibleDescription = Nothing
+		Me.txtOSMajorVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.txtOSMajorVersion, "txtOSMajorVersion")
+		Me.txtOSMajorVersion.BackgroundImage = Nothing
+		Me.errorProviderRules.SetError(Me.txtOSMajorVersion, resources.GetString("txtOSMajorVersion.Error"))
+		Me.txtOSMajorVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.txtOSMajorVersion, CType(resources.GetObject("txtOSMajorVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.txtOSMajorVersion, CType(resources.GetObject("txtOSMajorVersion.IconPadding"),Integer))
+		Me.txtOSMajorVersion.Name = "txtOSMajorVersion"
+		AddHandler Me.txtOSMajorVersion.TextChanged, AddressOf Me.ValidateForm
+		'
+		'cboOSVersion
+		'
+		Me.cboOSVersion.AccessibleDescription = Nothing
+		Me.cboOSVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboOSVersion, "cboOSVersion")
+		Me.cboOSVersion.BackgroundImage = Nothing
+		Me.cboOSVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboOSVersion, resources.GetString("cboOSVersion.Error"))
+		Me.cboOSVersion.Font = Nothing
+		Me.cboOSVersion.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboOSVersion, CType(resources.GetObject("cboOSVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboOSVersion, CType(resources.GetObject("cboOSVersion.IconPadding"),Integer))
+		Me.cboOSVersion.Items.AddRange(New Object() {resources.GetString("cboOSVersion.Items"), resources.GetString("cboOSVersion.Items1"), resources.GetString("cboOSVersion.Items2"), resources.GetString("cboOSVersion.Items3"), resources.GetString("cboOSVersion.Items4"), resources.GetString("cboOSVersion.Items5")})
+		Me.cboOSVersion.Name = "cboOSVersion"
+		AddHandler Me.cboOSVersion.SelectedIndexChanged, AddressOf Me.GetOSVersionCodes
+		'
+		'lbl_OSVersion
+		'
+		Me.lbl_OSVersion.AccessibleDescription = Nothing
+		Me.lbl_OSVersion.AccessibleName = Nothing
+		resources.ApplyResources(Me.lbl_OSVersion, "lbl_OSVersion")
+		Me.errorProviderRules.SetError(Me.lbl_OSVersion, resources.GetString("lbl_OSVersion.Error"))
+		Me.lbl_OSVersion.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lbl_OSVersion, CType(resources.GetObject("lbl_OSVersion.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lbl_OSVersion, CType(resources.GetObject("lbl_OSVersion.IconPadding"),Integer))
+		Me.lbl_OSVersion.Name = "lbl_OSVersion"
+		'
 		'pnlComparison
 		'
 		Me.pnlComparison.AccessibleDescription = Nothing
@@ -1308,6 +1253,61 @@ Partial Class RulesForm
 		Me.errorProviderRules.SetIconAlignment(Me.pnlComparison, CType(resources.GetObject("pnlComparison.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
 		Me.errorProviderRules.SetIconPadding(Me.pnlComparison, CType(resources.GetObject("pnlComparison.IconPadding"),Integer))
 		Me.pnlComparison.Name = "pnlComparison"
+		'
+		'cboComparison
+		'
+		Me.cboComparison.AccessibleDescription = Nothing
+		Me.cboComparison.AccessibleName = Nothing
+		resources.ApplyResources(Me.cboComparison, "cboComparison")
+		Me.cboComparison.BackgroundImage = Nothing
+		Me.cboComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.errorProviderRules.SetError(Me.cboComparison, resources.GetString("cboComparison.Error"))
+		Me.cboComparison.Font = Nothing
+		Me.cboComparison.FormattingEnabled = true
+		Me.errorProviderRules.SetIconAlignment(Me.cboComparison, CType(resources.GetObject("cboComparison.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.cboComparison, CType(resources.GetObject("cboComparison.IconPadding"),Integer))
+		Me.cboComparison.Name = "cboComparison"
+		AddHandler Me.cboComparison.SelectedIndexChanged, AddressOf Me.ValidateForm
+		'
+		'lblComparison
+		'
+		Me.lblComparison.AccessibleDescription = Nothing
+		Me.lblComparison.AccessibleName = Nothing
+		resources.ApplyResources(Me.lblComparison, "lblComparison")
+		Me.errorProviderRules.SetError(Me.lblComparison, resources.GetString("lblComparison.Error"))
+		Me.lblComparison.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.lblComparison, CType(resources.GetObject("lblComparison.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.lblComparison, CType(resources.GetObject("lblComparison.IconPadding"),Integer))
+		Me.lblComparison.Name = "lblComparison"
+		'
+		'btnAdd
+		'
+		Me.btnAdd.AccessibleDescription = Nothing
+		Me.btnAdd.AccessibleName = Nothing
+		resources.ApplyResources(Me.btnAdd, "btnAdd")
+		Me.btnAdd.BackgroundImage = Nothing
+		Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.errorProviderRules.SetError(Me.btnAdd, resources.GetString("btnAdd.Error"))
+		Me.btnAdd.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.btnAdd, CType(resources.GetObject("btnAdd.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.btnAdd, CType(resources.GetObject("btnAdd.IconPadding"),Integer))
+		Me.btnAdd.Name = "btnAdd"
+		Me.btnAdd.UseVisualStyleBackColor = true
+		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
+		'
+		'btnCancel
+		'
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
+		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.errorProviderRules.SetError(Me.btnCancel, resources.GetString("btnCancel.Error"))
+		Me.btnCancel.Font = Nothing
+		Me.errorProviderRules.SetIconAlignment(Me.btnCancel, CType(resources.GetObject("btnCancel.IconAlignment"),System.Windows.Forms.ErrorIconAlignment))
+		Me.errorProviderRules.SetIconPadding(Me.btnCancel, CType(resources.GetObject("btnCancel.IconPadding"),Integer))
+		Me.btnCancel.Name = "btnCancel"
+		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'errorProviderRules
 		'

@@ -58,7 +58,7 @@ Public Partial Class ExportCatalogForm
 		nsmgr.AddNamespace("sdp", "http://schemas.microsoft.com/wsus/2005/04/CorporatePublishing/SoftwareDistributionPackage.xsd")
 		nsmgr.AddNamespace("usp", "http://schemas.microsoft.com/wsus/2005/04/CorporatePublishing/UpdateServicesPackage.xsd")
 		nsmgr.AddNamespace("xsi", "http://www.w3.org/2001/XMLSchema-instance")
-				
+		
 		'Setup temporary XML file and create the XML writer using it.
 		tmpFile = Path.Combine(Path.GetTempPath, Path.GetFileNameWithoutExtension(exportFileDialog.FileName) & ".xml")
 		writer = New XmlTextWriter(tmpFile, Nothing)
@@ -75,7 +75,7 @@ Public Partial Class ExportCatalogForm
 		writer.WriteAttributeString("xmlns", "msiar", Nothing, "http://schemas.microsoft.com/wsus/2005/04/CorporatePublishing/MsiApplicabilityRules.xsd")
 		writer.WriteAttributeString("xmlns", "msp", Nothing, "http://schemas.microsoft.com/wsus/2005/04/CorporatePublishing/Installers/MspInstallation.xsd")
 		writer.WriteAttributeString("xmlns", "sdp", Nothing, "http://schemas.microsoft.com/wsus/2005/04/CorporatePublishing/SoftwareDistributionPackage.xsd")
-		writer.WriteAttributeString("xmlns", "xsi", Nothing, "http://www.w3.org/2001/XMLSchema-instance")						
+		writer.WriteAttributeString("xmlns", "xsi", Nothing, "http://www.w3.org/2001/XMLSchema-instance")
 		
 		'Loop through each row and if it is selected add it to the catalog.
 		For Each tmpRow As DataGridViewRow In dgvUpdates.Rows
@@ -134,7 +134,7 @@ Public Partial Class ExportCatalogForm
 		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog
 		
 		
-		If Not tmpUpdateRevisionId Is Nothing Then
+		If ConnectionManager.Connected AndALso Not tmpUpdateRevisionId Is Nothing Then
 			
 			If AddSDPtoDGV ( ConnectionManager.ExportSDP(tmpUpdateRevisionId) ) = False Then
 				Msgbox (globalRM.GetString("error_export_catalog_no_url"))
@@ -146,20 +146,20 @@ Public Partial Class ExportCatalogForm
 	'Add all of the updates
 	Sub BtnAddAllClick(sender As Object, e As EventArgs)
 		Dim  errorBool As Boolean = False
-		
-		'Loop through each locally published package and add it to the DGV.
-		For Each tmpUpdate As IUpdate In ConnectionManager.CurrentServer.GetUpdates(localUpdatesScope)
+		If ConnectionManager.Connected Then
+			For Each tmpUpdate As IUpdate In ConnectionManager.CurrentServer.GetUpdates(localUpdatesScope)
+				
+				'Add the packages and track if any of them were not added.
+				If AddSDPtoDGV ( ConnectionManager.ExportSDP( tmpUpdate.Id ) ) = False Then
+					errorBool = True
+				End If
+			Next
 			
-			'Add the packages and track if any of them were not added.
-			If AddSDPtoDGV ( ConnectionManager.ExportSDP( tmpUpdate.Id ) ) = False Then
-				errorBool = True
+			'If any of the packages cannot be added, warn the user.
+			If errorBool Then
+				Msgbox (globalRM.GetString("error_export_catalog_no_url_multiple"))
 			End If
-		Next
-		
-		'If any of the packages cannot be added, warn the user.
-		If errorBool Then
-			Msgbox (globalRM.GetString("error_export_catalog_no_url_multiple"))
-		End If
+		End IF
 	End Sub
 	
 	'If there's in installable item and a file URI then add it to the DGV.

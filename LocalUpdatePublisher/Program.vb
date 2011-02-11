@@ -46,9 +46,13 @@ Namespace My
 			appSettings = New Settings()
 			appSettings = Settings.LoadSettingsFromFile
 			
+			'Set default scope.
+			localUpdatesScope = New UpdateScope()
+			localUpdatesScope.UpdateSources = UpdateSources.Other 'Show non-Microsoft updates
+			
 			'Initialize the global resource handler
-			Thread.CurrentThread.CurrentCulture = New CultureInfo("fr-CA")
-			Thread.CurrentThread.CurrentUICulture = New CultureInfo("fr-CA")
+'			Thread.CurrentThread.CurrentCulture = New CultureInfo("de-DE")
+'			Thread.CurrentThread.CurrentUICulture = New CultureInfo("de-DE")
 			globalRM = New ResourceManager("LocalUpdatePublisher.GlobalStrings", Assembly.GetExecutingAssembly())
 			
 			'Load server connections.
@@ -285,12 +289,12 @@ Namespace My
 		Private Shared Function Formatted(ByVal Message As String) As String
 			Return String.Format(vbNewLine & "{0} {1}", Now, Message)
 		End Function
-				
+		
 		'Create Main Form.
 		Protected Overrides Sub OnCreateMainForm()
 			Me.MainForm = My.Forms.MainForm
 		End Sub
-						
+		
 	End Class
 End Namespace
 

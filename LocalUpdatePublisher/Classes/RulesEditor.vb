@@ -346,8 +346,8 @@ Public Partial Class RulesEditor
 		End If
 		
 		Dim tmpContextMenu As New ContextMenu()
-		tmpContextMenu.MenuItems.Add(New MenuItem("AND", New EventHandler(AddressOf menuDoGrouping_Click)))
-		tmpContextMenu.MenuItems.Add(New MenuItem("OR", New EventHandler(AddressOf menuDoGrouping_Click)))
+		tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("and"), New EventHandler(AddressOf menuDoGrouping_Click)))
+		tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("or"), New EventHandler(AddressOf menuDoGrouping_Click)))
 		tmpContextMenu.Show(DirectCast(sender, Control), New Point(1, 1))
 	End Sub
 	

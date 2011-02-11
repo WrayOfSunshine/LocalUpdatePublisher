@@ -131,8 +131,8 @@
   <data name="txtSerial.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 20</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtEndDate.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lblIssuer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -146,8 +146,8 @@
   <data name="lblSerial.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 16</value>
   </data>
-  <data name="lblTo.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="txtEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
   </data>
   <data name="lblIssuer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -155,14 +155,14 @@
   <data name="lblHash.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 16</value>
   </data>
-  <data name="txtEndDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 111</value>
-  </data>
-  <data name="&gt;&gt;txtStartDate.Name" xml:space="preserve">
-    <value>txtStartDate</value>
+  <data name="&gt;&gt;btnCreateCert.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCreateCert.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblSubject.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -170,21 +170,21 @@
   <data name="&gt;&gt;txtSubject.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtHash.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblIssuer.Text" xml:space="preserve">
+    <value>Issued By</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
-  </data>
-  <data name="lblIssuer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
   </data>
   <data name="&gt;&gt;txtStartDate.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtSerial.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="btnExportImportCert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 200</value>
   </data>
   <data name="&gt;&gt;txtEndDate.Name" xml:space="preserve">
     <value>txtEndDate</value>
@@ -198,11 +198,17 @@
   <data name="&gt;&gt;lblHash.Name" xml:space="preserve">
     <value>lblHash</value>
   </data>
-  <data name="&gt;&gt;txtIssuer.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblEffectiveDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 16</value>
+  </data>
+  <data name="&gt;&gt;btnExportImportCert.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnExportImportCert.Text" xml:space="preserve">
     <value>Export Certificate</value>
+  </data>
+  <data name="txtHash.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 20</value>
   </data>
   <data name="&gt;&gt;txtStartDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -219,14 +225,14 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Certificate Information</value>
   </data>
-  <data name="&gt;&gt;txtHash.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnCreateCert.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 25</value>
   </data>
-  <data name="&gt;&gt;lblTo.Name" xml:space="preserve">
-    <value>lblTo</value>
+  <data name="&gt;&gt;lblSubject.Name" xml:space="preserve">
+    <value>lblSubject</value>
   </data>
   <data name="&gt;&gt;btnExportImportCert.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -246,14 +252,8 @@
   <data name="&gt;&gt;txtSerial.Name" xml:space="preserve">
     <value>txtSerial</value>
   </data>
-  <data name="&gt;&gt;lblIssuer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;btnExportImportCert.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblSerial.Name" xml:space="preserve">
-    <value>lblSerial</value>
   </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
@@ -261,29 +261,38 @@
   <data name="txtSerial.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="&gt;&gt;btnCreateCert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIssuer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lblSerial.Text" xml:space="preserve">
     <value>Serial Number</value>
   </data>
-  <data name="&gt;&gt;lblHash.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblEffectiveDates.Text" xml:space="preserve">
-    <value>Effective</value>
-  </data>
-  <data name="&gt;&gt;btnExportImportCert.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblCertInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblHash.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 167</value>
   </data>
+  <data name="&gt;&gt;lblSubject.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="btnCreateCert.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="lblEffectiveDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 111</value>
   </data>
   <data name="&gt;&gt;txtSerial.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSerial.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>PFX Certificate Files |*.pfx</value>
   </data>
   <data name="lblTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
@@ -302,9 +311,6 @@
   </data>
   <data name="btnExportImportCert.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="lblSerial.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -333,41 +339,38 @@
   <data name="&gt;&gt;lblHash.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
-    <value>openFileDialog</value>
+  <data name="lblTo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;lblEffectiveDates.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Certificates |*.cer</value>
   </data>
-  <data name="&gt;&gt;txtEndDate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="txtIssuer.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="lblCertInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 8</value>
   </data>
   <data name="&gt;&gt;txtStartDate.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="btnExportImportCert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 200</value>
+  <data name="lblHash.Text" xml:space="preserve">
+    <value>Hash</value>
   </data>
   <data name="lblSerial.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 139</value>
   </data>
-  <data name="&gt;&gt;lblSubject.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblSerial.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="txtSubject.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 56</value>
   </data>
-  <data name="btnCreateCert.Text" xml:space="preserve">
-    <value>Create Certificate</value>
+  <data name="&gt;&gt;btnExportImportCert.Name" xml:space="preserve">
+    <value>btnExportImportCert</value>
   </data>
-  <data name="lblHash.Text" xml:space="preserve">
-    <value>Hash</value>
+  <data name="lblHash.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="txtStartDate.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -375,8 +378,8 @@
   <data name="txtStartDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 111</value>
   </data>
-  <data name="&gt;&gt;btnExportImportCert.Name" xml:space="preserve">
-    <value>btnExportImportCert</value>
+  <data name="&gt;&gt;lblTo.Name" xml:space="preserve">
+    <value>lblTo</value>
   </data>
   <data name="btnCreateCert.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 200</value>
@@ -387,8 +390,11 @@
   <data name="lblTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>258, 109</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtHash.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIssuer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblIssuer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -402,8 +408,8 @@
   <data name="lblSubject.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 55</value>
   </data>
-  <data name="&gt;&gt;btnCreateCert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtStartDate.Name" xml:space="preserve">
+    <value>txtStartDate</value>
   </data>
   <data name="lblCertInfo.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -411,8 +417,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>452, 237</value>
   </data>
-  <data name="lblCertInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 8</value>
+  <data name="lblSubject.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblSubject.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -426,44 +432,38 @@
   <data name="&gt;&gt;lblTo.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="txtHash.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 20</value>
+  <data name="&gt;&gt;txtSubject.Name" xml:space="preserve">
+    <value>txtSubject</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>PFX Certificate Files |*.pfx</value>
+  <data name="lblIssuer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 16</value>
   </data>
   <data name="txtIssuer.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 20</value>
   </data>
-  <data name="lblSubject.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblHash.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="txtIssuer.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;lblSerial.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblEffectiveDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
-  </data>
-  <data name="&gt;&gt;txtSubject.Name" xml:space="preserve">
-    <value>txtSubject</value>
-  </data>
-  <data name="&gt;&gt;lblSubject.Name" xml:space="preserve">
-    <value>lblSubject</value>
-  </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="txtEndDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 20</value>
+  <data name="&gt;&gt;txtSubject.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtHash.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 163</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
   </data>
   <data name="&gt;&gt;lblCertInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblCertInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lblEffectiveDates.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -471,26 +471,26 @@
   <data name="txtStartDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 20</value>
   </data>
-  <data name="txtHash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 163</value>
+  <data name="&gt;&gt;lblHash.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="lblEffectiveDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 111</value>
+  <data name="&gt;&gt;lblSerial.Name" xml:space="preserve">
+    <value>lblSerial</value>
   </data>
   <data name="&gt;&gt;lblIssuer.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="lblIssuer.Text" xml:space="preserve">
-    <value>Issued By</value>
+  <data name="lblEffectiveDates.Text" xml:space="preserve">
+    <value>Effective</value>
   </data>
-  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnCreateCert.Text" xml:space="preserve">
+    <value>Create Certificate</value>
   </data>
   <data name="lblEffectiveDates.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtIssuer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtHash.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -525,7 +525,7 @@
   <data name="lblIssuer.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 83</value>
   </data>
-  <data name="&gt;&gt;btnCreateCert.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblIssuer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtSerial.ZOrder" xml:space="preserve">
@@ -540,14 +540,14 @@
   <data name="txtIssuer.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 83</value>
   </data>
-  <data name="&gt;&gt;lblHash.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCertInfo.Name" xml:space="preserve">
+    <value>lblCertInfo</value>
+  </data>
+  <data name="&gt;&gt;lblEffectiveDates.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtSubject.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="txtEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 111</value>
   </data>
   <data name="&gt;&gt;lblTo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -558,8 +558,8 @@
   <data name="&gt;&gt;txtEndDate.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;lblCertInfo.Name" xml:space="preserve">
-    <value>lblCertInfo</value>
+  <data name="&gt;&gt;lblHash.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>49</value>

@@ -118,40 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="approval" xml:space="preserve">
-    <value>Approval</value>
+    <value>Zulassung</value>
   </data>
   <data name="status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="update_title" xml:space="preserve">
-    <value>Update Title</value>
+    <value>Update Titel</value>
   </data>
   <data name="last_updated" xml:space="preserve">
-    <value>Last Updated</value>
+    <value>Zuletzt Aktualisiert</value>
   </data>
   <data name="unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>Unbekannt</value>
   </data>
   <data name="downloaded" xml:space="preserve">
-    <value>Downloaded</value>
+    <value>Heruntergeladen</value>
   </data>
   <data name="failed" xml:space="preserve">
-    <value>Failed</value>
+    <value>Gescheitert</value>
   </data>
   <data name="not_applicable" xml:space="preserve">
-    <value>Not Applicable</value>
+    <value>Nicht Anwendbar</value>
   </data>
   <data name="not_installed" xml:space="preserve">
-    <value>Not Installed</value>
+    <value>Nicht Installiert</value>
   </data>
   <data name="installed" xml:space="preserve">
-    <value>Installed</value>
+    <value>Installierte</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>Title</value>
+    <value>Titel</value>
   </data>
   <data name="group_name" xml:space="preserve">
-    <value>Group Name</value>
+    <value>Name Gruppe</value>
   </data>
   <data name="update" xml:space="preserve">
     <value>Update</value>
@@ -160,40 +160,40 @@
     <value>Driver</value>
   </data>
   <data name="application" xml:space="preserve">
-    <value>Application</value>
+    <value>Anwendung</value>
   </data>
   <data name="creation_date" xml:space="preserve">
-    <value>Creation Date</value>
+    <value>Erstellungsdatum</value>
   </data>
   <data name="refreshing_update_list" xml:space="preserve">
-    <value>Refreshing Update List</value>
+    <value>Erfrischend Liste aktualisieren</value>
   </data>
   <data name="computers_shown" xml:space="preserve">
-    <value>{0} computers shown</value>
+    <value>{0} Computer gezeigt</value>
   </data>
   <data name="last_status_report" xml:space="preserve">
-    <value>Last Status Report</value>
+    <value>Letzter Statusbericht</value>
   </data>
   <data name="installed_not_applicable" xml:space="preserve">
-    <value>Installed/Not Applicable</value>
+    <value>Installierte/Nicht Anwendbar</value>
   </data>
   <data name="operating_system" xml:space="preserve">
-    <value>Operating System</value>
+    <value>Betriebssystem</value>
   </data>
   <data name="ip_address" xml:space="preserve">
-    <value>IP Address</value>
+    <value>IP-Adresse</value>
   </data>
   <data name="computer_name" xml:space="preserve">
     <value>Computer Name</value>
   </data>
   <data name="refreshing_computer_list" xml:space="preserve">
-    <value>Refreshing computer list</value>
+    <value>Erfrischend Computer Liste</value>
   </data>
   <data name="history_for" xml:space="preserve">
-    <value>History for</value>
+    <value>Historie für</value>
   </data>
   <data name="date" xml:space="preserve">
-    <value>Date</value>
+    <value>Datum</value>
   </data>
   <data name="updates" xml:space="preserve">
     <value>Updates</value>
@@ -202,22 +202,22 @@
     <value>Computers</value>
   </data>
   <data name="error_packages_resigned" xml:space="preserve">
-    <value>Not all the packages were successfully re-signed.</value>
+    <value>Nicht alle Pakete wurden erfolgreich neu signiert.</value>
   </data>
   <data name="success_packages_resigned" xml:space="preserve">
-    <value>Packages successfully re-signed.</value>
+    <value>Pakete erfolgreich neu signiert.</value>
   </data>
   <data name="error_row_invalid_update_id" xml:space="preserve">
-    <value>This row did not return a valid UpdateID</value>
+    <value>Diese Zeile nicht zurückgeben eine gültige UpdateID</value>
   </data>
   <data name="exception" xml:space="preserve">
-    <value>Exception</value>
+    <value>Ausnahme</value>
   </data>
   <data name="exception_invalid_operation" xml:space="preserve">
-    <value>Invalid Operation Exception</value>
+    <value>Ungültige Operation Exception</value>
   </data>
   <data name="exception_invalid_data" xml:space="preserve">
-    <value>Invalid Data Exception</value>
+    <value>Ungültige Datum Exception</value>
   </data>
   <data name="exception_file_not_found" xml:space="preserve">
     <value>File Not Found Exception</value>
@@ -226,253 +226,253 @@
     <value>Argument Null Exception</value>
   </data>
   <data name="exception_unauthorized_access" xml:space="preserve">
-    <value>Unauthorized Access Exception</value>
+    <value>Unberechtigtem Zugriff Exception</value>
   </data>
   <data name="error_package_resigned" xml:space="preserve">
-    <value>The package could not be re-signed.</value>
+    <value>Das Paket konnte nicht neu signiert werden.</value>
   </data>
   <data name="warning_resign_metadata" xml:space="preserve">
-    <value>{0} appears to be a metadata only update.  Currently, these cannot be re-signed.</value>
+    <value>{0} zu sein scheint ein Metadaten nur aktualisieren. Derzeit können diese nicht wieder geschlossen.</value>
   </data>
   <data name="prompt_resign_package" xml:space="preserve">
-    <value>Do you wish to re-sign {0}?</value>
+    <value>Wollen Sie erneut signieren {0}?</value>
   </data>
   <data name="prompt_resign_packages" xml:space="preserve">
-    <value>Do you wish to re-sign these {0} updates?</value>
+    <value>Wollen Sie erneut signieren diese {0} Updates</value>
   </data>
   <data name="warning_no_row_selected" xml:space="preserve">
-    <value>No row selected</value>
+    <value>Keine Zeile ausgewählt</value>
   </data>
   <data name="error_packages_expired" xml:space="preserve">
-    <value>Not all the packages were successfully expired.</value>
+    <value>Nicht alle Pakete wurden erfolgreich abgelaufen.</value>
   </data>
   <data name="success_packages_expired" xml:space="preserve">
-    <value>Packages successfully expired.</value>
+    <value>Pakete erfolgreich abgelaufen.</value>
   </data>
   <data name="warning_expire_metadata" xml:space="preserve">
-    <value>{0} appears to be a metadata only update.  Currently, these cannot be expired.</value>
+    <value>{0} scheint ein Metadaten nur aktualisieren. Derzeit können diese nicht abgelaufen sein.</value>
   </data>
   <data name="prompt_expire_packages" xml:space="preserve">
-    <value>Do you wish to expire these {0} updates?</value>
+    <value>Wollen Sie diese {0} Updates ab?</value>
   </data>
   <data name="prompt_expire_package" xml:space="preserve">
-    <value>Do you wish to expire {0}?</value>
+    <value>Wollen Sie verfallen {0}?</value>
   </data>
   <data name="warning_remove_package_data" xml:space="preserve">
-    <value>There was a problem deleting the package content from the UpdateServicesPackages.  Use this UpdateID to do so manually</value>
+    <value>Es gab ein Problem beim Löschen der Inhalte aus dem Paket UpdateServicesPackages. Verwenden Sie diese UpdateID um dies manuell auszuführen</value>
   </data>
   <data name="exception_wsus_object_not_found" xml:space="preserve">
-    <value>WsusObjectNotFoundException</value>
+    <value>Wsus Objekt Nicht Gefunden Exception</value>
   </data>
   <data name="prompt_remove_packages" xml:space="preserve">
-    <value>Do you wish to remove these {0} updates?</value>
+    <value>Wollen Sie diese {0} Updates entfernen?</value>
   </data>
   <data name="prompt_remove_package" xml:space="preserve">
-    <value>Do you wish to remove {0}?</value>
+    <value>Wollen Sie entfernen {0}?</value>
   </data>
   <data name="prompt_decline_packages" xml:space="preserve">
-    <value>Do you wish to decline these {0} updates?</value>
+    <value>Wollen Sie diese {0} Updates ablehnen?</value>
   </data>
   <data name="prompt_decline_package" xml:space="preserve">
-    <value>Do you wish to decline {0}?</value>
+    <value>Sie möchten Rückgang {0}?</value>
   </data>
   <data name="warning_revised_package_data" xml:space="preserve">
-    <value>There was a problem checking for the package content from the UpdateServicesPackages.  This update cannot be revised.</value>
+    <value>Es gab ein Problem bei der Überprüfung für das Paket Inhalt aus dem UpdateServicesPackages. Dieses Update kann nicht revidiert werden.</value>
   </data>
   <data name="warning_revise_metadata" xml:space="preserve">
-    <value>{0} appears to be a metadata only update.  Currently, these cannot be revised.</value>
+    <value>{0} zu sein scheint ein Metadaten nur aktualisieren. Derzeit kann diese nicht revidiert werden.</value>
   </data>
   <data name="warning_revise_packages" xml:space="preserve">
-    <value>You cannot revise multiple updates at the same time.</value>
+    <value>Sie können nicht mehrere Updates überarbeiten zugleic</value>
   </data>
   <data name="error_update_imported" xml:space="preserve">
-    <value>Update was not imported.</value>
+    <value>Update wurde nicht importiert.</value>
   </data>
   <data name="success_update_imported" xml:space="preserve">
-    <value>Update was successfully imported.</value>
+    <value>Update wurde erfolgreich importiert.</value>
   </data>
   <data name="error_export_update_data" xml:space="preserve">
-    <value>The package content does not exist in the UpdateServicesPackages folder.  It cannot be exported.</value>
+    <value>Das Paket Inhalt nicht in der UpdateServicesPackages ordner vorhanden. Es kann nicht exportiert werden.</value>
   </data>
   <data name="file_filter_cab" xml:space="preserve">
-    <value>CAB Files|*.cab</value>
+    <value>CAB Dateien|*.cab</value>
   </data>
   <data name="file_filter_xml" xml:space="preserve">
-    <value>XML Files|*.xml</value>
+    <value>XML Dateien|*.xml</value>
   </data>
   <data name="update_services" xml:space="preserve">
     <value>Update Services</value>
   </data>
   <data name="status_loading_update_report" xml:space="preserve">
-    <value>Loading update report</value>
+    <value>Lade aktualisierten Bericht</value>
   </data>
   <data name="status_loading_computer_report" xml:space="preserve">
-    <value>Loading computer report</value>
+    <value>Lade Computer Bericht</value>
   </data>
   <data name="status_loading_form" xml:space="preserve">
-    <value>Loading form</value>
+    <value>Lade form</value>
   </data>
   <data name="no_approval" xml:space="preserve">
-    <value>No Approval</value>
+    <value>Keine Zulassung</value>
   </data>
   <data name="inherited" xml:space="preserve">
-    <value>inherited</value>
+    <value>geerbt</value>
   </data>
   <data name="warning_not_approved_all" xml:space="preserve">
-    <value>You cannot prevent installation for the All Computers group</value>
+    <value>Sie können nicht verhindern die Installation für die Gruppe Alle Computer</value>
   </data>
   <data name="error_cannot_uninstall" xml:space="preserve">
-    <value>This update cannot be uninstalled.</value>
+    <value>Dieses Update kann nicht deinstalliert werden.</value>
   </data>
   <data name="error_cannot_uninstall_multiple" xml:space="preserve">
-    <value>You cannot uninstall multiple updates.</value>
+    <value>Sie können nicht deinstalliert werden mehrere aktuelles.</value>
   </data>
   <data name="label_approval_form" xml:space="preserve">
-    <value>Select the approvals for {0}</value>
+    <value>Wählen Sie die Zulassungen für {0}</value>
   </data>
   <data name="label_approval_form_multiple" xml:space="preserve">
-    <value>Select the approvals for {0} updates.</value>
+    <value>Wählen Sie die Zulassungen für {0} Updates.</value>
   </data>
   <data name="exception_argument_out_of_range" xml:space="preserve">
-    <value>ArgumentOutOfRangeException</value>
+    <value>Argument außerhalb des Wertebereiches Exception</value>
   </data>
   <data name="label_approval_progress_status" xml:space="preserve">
-    <value>Setting approvals for {0} to {1} on {2}</value>
+    <value>Einstellen Zulassungen für {0} {1} {2} auf</value>
   </data>
   <data name="label_approval_progress_form" xml:space="preserve">
-    <value>Set approvals for {0}</value>
+    <value>Set Zulassungen für {0}</value>
   </data>
   <data name="error_server_disconnected" xml:space="preserve">
-    <value>The server is not connected.</value>
+    <value>Der Server ist nicht angeschlossen.</value>
   </data>
   <data name="label_certificate_info_exists" xml:space="preserve">
-    <value>Below you will find information regarding the certificate installed on your WSUS server. This certificate needs to be distributed to each client before they can receive locally published updates.</value>
+    <value>Nachfolgend finden Sie Informationen über das Zertifikat auf dem WSUS-Server installiert. Dieses Zertifikat muss auf jedem Client verteilt werden, bevor sie lokal veröffentlicht Updates erhalten können.</value>
   </data>
   <data name="export_certificate" xml:space="preserve">
-    <value>Export Cert</value>
+    <value>Export Zert</value>
   </data>
   <data name="import_certificate" xml:space="preserve">
-    <value>Import Cert</value>
+    <value>Import Zert</value>
   </data>
   <data name="label_certificate_info_no_cert" xml:space="preserve">
-    <value>A certificate has not been created yet.  You must do so before publishing updates.</value>
+    <value>Ein Zertifikat ist noch nicht erstellt. Sie müssen dies vor der Veröffentlichung Updates.</value>
   </data>
   <data name="error_certificate_import_ssl" xml:space="preserve">
-    <value>You cannot import a certificate unless you are connected securely to the WSUS server using SSL.</value>
+    <value>Man kann nicht importieren Sie ein Zertifikat, wenn Sie sicher mit dem WSUS-Server mit SSL verbunden sind.</value>
   </data>
   <data name="label_certificate_info_preexists" xml:space="preserve">
-    <value>A certificate has already been created.</value>
+    <value>Ein Zertifikat ist bereits angelegt.</value>
   </data>
   <data name="add_new_server" xml:space="preserve">
-    <value>Add New Server</value>
+    <value>Neuen Server Hinzufügen</value>
   </data>
   <data name="error_export_catalog_no_url_multiple" xml:space="preserve">
-    <value>Some packages could not be added because an Original URL was not entered.</value>
+    <value>Einige Pakete konnten nicht aufgenommen, weil ein Original-URL nicht eingetragen wurde.</value>
   </data>
   <data name="error_export_catalog_no_url" xml:space="preserve">
-    <value>This update cannot be exported because an Original URL has not be entered.</value>
+    <value>Dieses Update kann nicht ausgeführt werden, weil ein Original-URL nicht eingegeben hat sein werden.</value>
   </data>
   <data name="error_export_catalog_not_cab" xml:space="preserve">
-    <value>You must export to a cab file.</value>
+    <value>Sie müssen mit einer CAB-Datei zu exportieren.</value>
   </data>
   <data name="error_import_catalog_no_xml" xml:space="preserve">
-    <value>No XML file was found in this Cabinet file.</value>
+    <value>Keine XML-Datei wurde in dieser CAB-Datei gefunden.</value>
   </data>
   <data name="warning_GUID_not_found" xml:space="preserve">
-    <value>Could not add or find GUID</value>
+    <value>Konnte nicht hinzugefügt werden oder finden GUID</value>
   </data>
   <data name="exception_wsus_invalid_data" xml:space="preserve">
-    <value>WsusInvalidDataException</value>
+    <value>WSUS ungültigen Daten Exception</value>
   </data>
   <data name="error_return_codes_empty" xml:space="preserve">
-    <value>Return Code must not be empty.</value>
+    <value>Return-Code darf nicht leer sein.</value>
   </data>
   <data name="error_result_code_empty" xml:space="preserve">
-    <value>Result must not be empty.</value>
+    <value>Ergebnis darf nicht leer sein.</value>
   </data>
   <data name="warning_rules_GUID" xml:space="preserve">
-    <value>You must enter a valid GUID.</value>
+    <value>Sie müssen eine gültige GUID.</value>
   </data>
   <data name="warning_rules_query" xml:space="preserve">
-    <value>You must enter a query.</value>
+    <value>Sie müssen eine Abfrage.</value>
   </data>
   <data name="warning_rules_date" xml:space="preserve">
-    <value>You must select a date.</value>
+    <value>Sie müssen ein Datum auswählen.</value>
   </data>
   <data name="warning_rules_namespace" xml:space="preserve">
-    <value>Must enter a namespace.</value>
+    <value>Müssen Sie einen Namespace.</value>
   </data>
   <data name="warning_rules_registry_value" xml:space="preserve">
-    <value>Must enter registry value.</value>
+    <value>Müssen Sie Registrierungswert.</value>
   </data>
   <data name="warning_rules_file_size" xml:space="preserve">
-    <value>Must enter file size.</value>
+    <value>Müssen Sie die Dateigröße.</value>
   </data>
   <data name="warning_rules_version" xml:space="preserve">
-    <value>You must enter a version.</value>
+    <value>Sie müssen eine Version</value>
   </data>
   <data name="warning_rules_file_path" xml:space="preserve">
-    <value>You must enter a file path.</value>
+    <value>Sie müssen einen Pfad ein.</value>
   </data>
   <data name="warning_rules_registry_type" xml:space="preserve">
-    <value>You must select a registry value type.</value>
+    <value>Sie müssen einen Registrierungsschlüssel Werttyp.</value>
   </data>
   <data name="warning_rules_registry_sub_key" xml:space="preserve">
-    <value>You must enter a registry sub key.</value>
+    <value>Sie müssen einen Registrierungsschlüssel Sub.</value>
   </data>
   <data name="warning_rules_registry_key" xml:space="preserve">
-    <value>You must select a registry key.</value>
+    <value>Sie müssen einen Registrierungsschlüssel.</value>
   </data>
   <data name="warning_rules_processor" xml:space="preserve">
-    <value>You must select a processor type.</value>
+    <value>Sie müssen einen Prozessor-Typ.</value>
   </data>
   <data name="warning_rules_language" xml:space="preserve">
-    <value>You must select a language.</value>
+    <value>Sie müssen eine Sprache auszuwählen.</value>
   </data>
   <data name="warning_rules_OS" xml:space="preserve">
-    <value>You must enter a major and minor OS version.</value>
+    <value>Sie müssen einen Dur-und Moll-OS-Version.</value>
   </data>
   <data name="warning_rules_comparison" xml:space="preserve">
-    <value>You must select a comparison.</value>
+    <value>Sie müssen einen Vergleich.</value>
   </data>
   <data name="exception_XML" xml:space="preserve">
     <value>XMLException</value>
   </data>
   <data name="error_rules_load" xml:space="preserve">
-    <value>The rules could not be loaded.</value>
+    <value>Die Regeln könnten nicht geladen werden.</value>
   </data>
   <data name="error_rules_unrecognized" xml:space="preserve">
-    <value>This rule is not recognized.</value>
+    <value>Diese Regel wird nicht erkannt.</value>
   </data>
   <data name="error_rules_unsupported_type" xml:space="preserve">
-    <value>This rule type isn't supported yet.</value>
+    <value>Diese Regel Typ ist noch nicht unterstützt.</value>
   </data>
   <data name="all_required" xml:space="preserve">
-    <value>all required</value>
+    <value>alle erforderlichen</value>
   </data>
   <data name="products" xml:space="preserve">
-    <value>Products</value>
+    <value>Produkte</value>
   </data>
   <data name="features" xml:space="preserve">
     <value>Features</value>
   </data>
   <data name="components" xml:space="preserve">
-    <value>Components</value>
+    <value>Komponenten</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
   </data>
   <data name="version_minimum" xml:space="preserve">
-    <value>VersionMin</value>
+    <value>Min Version</value>
   </data>
   <data name="version_maximum" xml:space="preserve">
-    <value>VersionMax</value>
+    <value>Max Version</value>
   </data>
   <data name="product_code" xml:space="preserve">
-    <value>ProductCode</value>
+    <value>Produkt-Code</value>
   </data>
   <data name="patch_code" xml:space="preserve">
-    <value>PatchCode</value>
+    <value>Patch-Code</value>
   </data>
   <data name="query" xml:space="preserve">
     <value>Query</value>
@@ -484,16 +484,16 @@
     <value>String</value>
   </data>
   <data name="comparison" xml:space="preserve">
-    <value>Comparison</value>
+    <value>Vergleich</value>
   </data>
   <data name="data" xml:space="preserve">
-    <value>Data</value>
+    <value>Daten</value>
   </data>
   <data name="value_type" xml:space="preserve">
-    <value>ValueType</value>
+    <value>Werttyp</value>
   </data>
   <data name="value" xml:space="preserve">
-    <value>Value</value>
+    <value>Preis</value>
   </data>
   <data name="version" xml:space="preserve">
     <value>Version</value>
@@ -505,226 +505,226 @@
     <value>CSID</value>
   </data>
   <data name="size" xml:space="preserve">
-    <value>Size</value>
+    <value>Größe</value>
   </data>
   <data name="modified" xml:space="preserve">
-    <value>Modified</value>
+    <value>Geändert</value>
   </data>
   <data name="created" xml:space="preserve">
-    <value>Created</value>
+    <value>Erstellt</value>
   </data>
   <data name="service_pack" xml:space="preserve">
     <value>ServicePack</value>
   </data>
   <data name="product_type" xml:space="preserve">
-    <value>ProductType</value>
+    <value>Produkttyp</value>
   </data>
   <data name="build_number" xml:space="preserve">
-    <value>Build Number</value>
+    <value>Build-Nummer</value>
   </data>
   <data name="language_turkish" xml:space="preserve">
-    <value>Turkish</value>
+    <value>Türkisch</value>
   </data>
   <data name="language_swedish" xml:space="preserve">
-    <value>Swedish</value>
+    <value>Schwedisch</value>
   </data>
   <data name="language_spanish" xml:space="preserve">
-    <value>Spanish</value>
+    <value>Spanisch</value>
   </data>
   <data name="language_russian" xml:space="preserve">
-    <value>Russian</value>
+    <value>Russisch</value>
   </data>
   <data name="language_portuguese_brazil" xml:space="preserve">
-    <value>Portuguese (Brazil)</value>
+    <value>Portugiesisch (Brasilien)</value>
   </data>
   <data name="language_portuguese" xml:space="preserve">
-    <value>Portuguese</value>
+    <value>Portugiesisch</value>
   </data>
   <data name="language_polish" xml:space="preserve">
-    <value>Polish</value>
+    <value>Polnisch</value>
   </data>
   <data name="language_norwegian" xml:space="preserve">
-    <value>Norwegian</value>
+    <value>Norwegisch</value>
   </data>
   <data name="language_korean" xml:space="preserve">
-    <value>Korean</value>
+    <value>Koreanisch</value>
   </data>
   <data name="language_japanese" xml:space="preserve">
-    <value>Japanese</value>
+    <value>Japanisch</value>
   </data>
   <data name="language_italian" xml:space="preserve">
-    <value>Italian</value>
+    <value>Italienisch</value>
   </data>
   <data name="language_hungarian" xml:space="preserve">
-    <value>Hungarian</value>
+    <value>Ungarisch</value>
   </data>
   <data name="language_hebrew" xml:space="preserve">
-    <value>Hebrew</value>
+    <value>Hebräisch</value>
   </data>
   <data name="language_greek" xml:space="preserve">
-    <value>Greek</value>
+    <value>Griechisch</value>
   </data>
   <data name="language_german" xml:space="preserve">
-    <value>German</value>
+    <value>Deutsch</value>
   </data>
   <data name="language_french" xml:space="preserve">
-    <value>French</value>
+    <value>Französisch</value>
   </data>
   <data name="language_finnish" xml:space="preserve">
-    <value>Finnish</value>
+    <value>Finnisch</value>
   </data>
   <data name="language_english" xml:space="preserve">
-    <value>English</value>
+    <value>Englisch</value>
   </data>
   <data name="language_dutch" xml:space="preserve">
-    <value>Dutch</value>
+    <value>Niederländisch</value>
   </data>
   <data name="language_danish" xml:space="preserve">
-    <value>Danish</value>
+    <value>Dänisch</value>
   </data>
   <data name="language_czech" xml:space="preserve">
-    <value>Czech</value>
+    <value>Tschechische</value>
   </data>
   <data name="language_chinese_traditional" xml:space="preserve">
-    <value>Chinese (Traditional)</value>
+    <value>Chinesisch (Traditionell)</value>
   </data>
   <data name="language_chinese_simplified" xml:space="preserve">
-    <value>Chinese (Simplified)</value>
+    <value>Chinesisch (Vereinfacht)</value>
   </data>
   <data name="language_chinese_HK_SAR" xml:space="preserve">
-    <value>Chinese (Hong Kong SAR)</value>
+    <value>Chinesisch (Hongkong SAR)</value>
   </data>
   <data name="language_arabic" xml:space="preserve">
-    <value>Arabic</value>
+    <value>Arabisch</value>
   </data>
   <data name="contains" xml:space="preserve">
-    <value>Contains</value>
+    <value>Enthält</value>
   </data>
   <data name="ends_with" xml:space="preserve">
-    <value>Ends With</value>
+    <value>Endet Mit</value>
   </data>
   <data name="begins_with" xml:space="preserve">
-    <value>Begins With</value>
+    <value>Beginnt Mit</value>
   </data>
   <data name="greater_than_or_equal_to" xml:space="preserve">
-    <value>Greater Than Or Equal To</value>
+    <value>Größer As oder Geich</value>
   </data>
   <data name="greater_than" xml:space="preserve">
-    <value>Greater Than</value>
+    <value>Größer Als</value>
   </data>
   <data name="less_than_or_equal_to" xml:space="preserve">
-    <value>Less Than Or Equal To</value>
+    <value>Kleiner oder Gleich Zu</value>
   </data>
   <data name="less_than" xml:space="preserve">
-    <value>Less Than</value>
+    <value>Geringer Als</value>
   </data>
   <data name="equal_to" xml:space="preserve">
-    <value>Equal To</value>
+    <value>Ungleich</value>
   </data>
   <data name="label_rules_WMI_namespace" xml:space="preserve">
     <value>WMI Namespace</value>
   </data>
   <data name="DWORD_value" xml:space="preserve">
-    <value>DWORD Value</value>
+    <value>DWORD-Wert</value>
   </data>
   <data name="in_bytes_example" xml:space="preserve">
-    <value>in bytes (ex. 1024)</value>
+    <value>in bytes (z. B. 1024)</value>
   </data>
   <data name="modified_date" xml:space="preserve">
-    <value>Modified Date</value>
+    <value>Änderungsdatum</value>
   </data>
   <data name="save_rule" xml:space="preserve">
-    <value>Save Rule</value>
+    <value>Regel Speichern</value>
   </data>
   <data name="add_rule" xml:space="preserve">
-    <value>Add Rule</value>
+    <value>Regel Hinzufügen</value>
   </data>
   <data name="create_rule" xml:space="preserve">
-    <value>Create Rule</value>
+    <value>Regel Erstellen</value>
   </data>
   <data name="prompt_saves_rules_delete" xml:space="preserve">
-    <value>Are you sure you want to delete the selected rules?</value>
+    <value>Sind Sie sicher, dass Sie die ausgewählten Regeln löschen?</value>
   </data>
   <data name="error_saved_rules_export" xml:space="preserve">
-    <value>You have not selected any rules to export.</value>
+    <value>Sie haben keine Regeln für den Export ausgewählt.</value>
   </data>
   <data name="prompt_saved_rules_rule_exists" xml:space="preserve">
-    <value>There is already a rule called {0}.  What would you like to do?</value>
+    <value>Es gibt bereits eine Regel genannt {0}. Was möchten Sie tun?</value>
   </data>
   <data name="prompt_saved_rules_rename" xml:space="preserve">
-    <value>Change {0} to</value>
+    <value>Ändern {0}</value>
   </data>
   <data name="warning_saved_rules_delete" xml:space="preserve">
-    <value>You must select records for deletion.</value>
+    <value>Sie müssen Datensätze zum Löschen.</value>
   </data>
   <data name="rename_rule" xml:space="preserve">
-    <value>Rename rule</value>
+    <value>Benennen Regel</value>
   </data>
   <data name="rename" xml:space="preserve">
-    <value>Rename</value>
+    <value>Umbenennen</value>
   </data>
   <data name="skip" xml:space="preserve">
     <value>Skip</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Abbrechen</value>
   </data>
   <data name="warning_saved_rules_export" xml:space="preserve">
-    <value>You have not selected any rules to export.</value>
+    <value>Sie haben keine Regeln für den Export ausgewählt.</value>
   </data>
   <data name="clear_selection" xml:space="preserve">
-    <value>Clear Selection</value>
+    <value>Auswahl Löschen</value>
   </data>
   <data name="export" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="select_rules_to_export" xml:space="preserve">
-    <value>Select Rules to Export</value>
+    <value>Wählen Sie Regeln für den Export</value>
   </data>
   <data name="import" xml:space="preserve">
     <value>Import</value>
   </data>
   <data name="select_rules_to_import" xml:space="preserve">
-    <value>Select Rules to Import</value>
+    <value>Wählen Sie Regeln für den Import</value>
   </data>
   <data name="close" xml:space="preserve">
-    <value>Close</value>
+    <value>Schließen</value>
   </data>
   <data name="delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Löschen</value>
   </data>
   <data name="select_rules_to_manage" xml:space="preserve">
-    <value>Select Rules to Manage</value>
+    <value>Wählen Sie Regeln zum Verwalten von</value>
   </data>
   <data name="load" xml:space="preserve">
-    <value>Load</value>
+    <value>Laden</value>
   </data>
   <data name="select_rules_to_load" xml:space="preserve">
-    <value>Select Rules to Load</value>
+    <value>Wählen Regeln zu Laden</value>
   </data>
   <data name="warning_no_value" xml:space="preserve">
-    <value>You must enter a value.</value>
+    <value>Sie müssen einen Wert eingeben.</value>
   </data>
   <data name="warning_update_invalid_URI" xml:space="preserve">
-    <value>Invalid URI</value>
+    <value>Ungültige URI</value>
   </data>
   <data name="warning_update_file_mismatch" xml:space="preserve">
-    <value>File name does not match.</value>
+    <value>Dateiname stimmt nicht überein.</value>
   </data>
   <data name="warning_update_additional_files_uri" xml:space="preserve">
-    <value>Cannot publish URI when additional files are included.</value>
+    <value>Kann nicht veröffentlichen URI wenn noch weitere Dateien enthalten sind.</value>
   </data>
   <data name="warning_update_no_uri" xml:space="preserve">
-    <value>No URI Given.</value>
+    <value>Nein URI Angesichts.</value>
   </data>
   <data name="prompt_update_redownload" xml:space="preserve">
-    <value>If you modify the Original URL, it must be downloaded for verification.  Do you wish to proceed?</value>
+    <value>Wenn Sie die Original-URL ändern, muss dies für die Überprüfung heruntergeladen werden. Wollen Sie fortfahren?</value>
   </data>
   <data name="warning_update_metadata_additional_files" xml:space="preserve">
-    <value>You cannot publish a metadata only update with additional files.</value>
+    <value>Man kann nicht veröffentlichen Metadaten nur mit zusätzlichen Dateien zu aktualisieren.</value>
   </data>
   <data name="exception_object_disposed" xml:space="preserve">
-    <value>Object Disposed Exception</value>
+    <value>Objekt angeordnet Exception</value>
   </data>
   <data name="exception_argument" xml:space="preserve">
     <value>Argument Exception</value>
@@ -739,375 +739,375 @@
     <value>false</value>
   </data>
   <data name="warning_update_publish_failed" xml:space="preserve">
-    <value>Package was not published.</value>
+    <value>Paket wurde nicht veröffentlicht.</value>
   </data>
   <data name="warning_update_publish_success" xml:space="preserve">
-    <value>Package successfully published.</value>
+    <value>Paket erfolgreich veröffentlicht.</value>
   </data>
   <data name="warning_update_revised_failed" xml:space="preserve">
-    <value>Package was not revised.</value>
+    <value>Paket wurde nicht revidiert.</value>
   </data>
   <data name="warning_update_revise_success" xml:space="preserve">
-    <value>Package successfully revised.</value>
+    <value>Paket erfolgreich überarbeitet.</value>
   </data>
   <data name="exception_XML_schema" xml:space="preserve">
-    <value>XmlSchemaException</value>
+    <value>Xml Schema Exception</value>
   </data>
   <data name="error_update_invalid_XML" xml:space="preserve">
-    <value>The XML for the SDP is invalid.</value>
+    <value>Die XML für die SDP ist ungültig.</value>
   </data>
   <data name="exception_URI_format" xml:space="preserve">
-    <value>UriFormatException</value>
+    <value>URI-Format Exception</value>
   </data>
   <data name="error_update_save" xml:space="preserve">
-    <value>Could not save the update information.</value>
+    <value>Konnte nicht speichern Sie die Update-Informationen.</value>
   </data>
   <data name="exception_win32" xml:space="preserve">
-    <value>Win32Exception</value>
+    <value>Win32 Exception</value>
   </data>
   <data name="error_update_create_SDP" xml:space="preserve">
-    <value>Could not create Software Distribution Package.</value>
+    <value>Konnte nicht erstellt werden Softwareverteilungspaket.</value>
   </data>
   <data name="file_filter_update_binary" xml:space="preserve">
-    <value>MSI Files|*.MSI|MSP Files|*.MSP|EXE Files|*.EXE</value>
+    <value>MSI Dateien|*.MSI|MSP Dateien|*.MSP|EXE Dateien|*.EXE</value>
   </data>
   <data name="finish" xml:space="preserve">
-    <value>Finish</value>
+    <value>Fertig</value>
   </data>
   <data name="next" xml:space="preserve">
-    <value>Next</value>
+    <value>Weiter</value>
   </data>
   <data name="warning_update_manual_edit" xml:space="preserve">
-    <value>Edit this XML at your own risk.</value>
+    <value>Bearbeiten von XML auf eigene Gefahr</value>
   </data>
   <data name="prompt_update_selection_GUID" xml:space="preserve">
-    <value>Enter the GUID you would like to use</value>
+    <value>Geben Sie die GUID, die Sie verwenden möchten</value>
   </data>
   <data name="prompt_update_selection_GUID_title" xml:space="preserve">
-    <value>Custom GUID Entry</value>
+    <value>Custom GUID-Eintrag</value>
   </data>
   <data name="custom_GUID" xml:space="preserve">
     <value>Custom GUID</value>
   </data>
   <data name="approved" xml:space="preserve">
-    <value>Approved</value>
+    <value>Genehmigt</value>
   </data>
   <data name="superseded" xml:space="preserve">
-    <value>Superseded</value>
+    <value>Abgelöst</value>
   </data>
   <data name="declined" xml:space="preserve">
-    <value>Declined</value>
+    <value>Abgelehnt</value>
   </data>
   <data name="declined_expired" xml:space="preserve">
-    <value>Declined (Expired)</value>
+    <value>Abgelehnt (Abgelaufen)</value>
   </data>
   <data name="rule_windows_version" xml:space="preserve">
     <value>Windows Version</value>
   </data>
   <data name="rule_windows_language" xml:space="preserve">
-    <value>Windows Language</value>
+    <value>Windows Sprache</value>
   </data>
   <data name="rule_processor_architecture" xml:space="preserve">
-    <value>Processor Architecture</value>
+    <value>Prozessorarchitektur</value>
   </data>
   <data name="rule_file_exists" xml:space="preserve">
-    <value>File Exists</value>
+    <value>Datei vorhanden</value>
   </data>
   <data name="rule_file_exists_with_registry" xml:space="preserve">
-    <value>File Exists With Registry</value>
+    <value>Datei existiert Mit Registry</value>
   </data>
   <data name="rule_file_version" xml:space="preserve">
-    <value>File Version</value>
+    <value>Datei-Version</value>
   </data>
   <data name="rule_file_version_with_registry" xml:space="preserve">
-    <value>File Version With Registry</value>
+    <value>Datei-Version Mit Registry</value>
   </data>
   <data name="rule_file_creation" xml:space="preserve">
-    <value>File Creation</value>
+    <value>Erstellungsdatum der Datei</value>
   </data>
   <data name="rule_file_creation_with_registry" xml:space="preserve">
-    <value>File Creation With Registry</value>
+    <value>Datei Erstellungsdatum Mit Registry</value>
   </data>
   <data name="rule_file_modified" xml:space="preserve">
-    <value>File Modified</value>
+    <value>Datei Geändert</value>
   </data>
   <data name="rule_file_modified_with_registry" xml:space="preserve">
-    <value>File Modified With Registry</value>
+    <value>Datei geändert MIT Registry</value>
   </data>
   <data name="rule_file_size" xml:space="preserve">
-    <value>File Size</value>
+    <value>Datei-Größe</value>
   </data>
   <data name="rule_file_size_with_registry" xml:space="preserve">
-    <value>File Size With Registry</value>
+    <value>Datei-Größe Mit Registry</value>
   </data>
   <data name="rule_registry_key_exists" xml:space="preserve">
-    <value>Registry Key Exists</value>
+    <value>Registry-Schlüssel Vorhanden</value>
   </data>
   <data name="rule_registry_value_exists" xml:space="preserve">
-    <value>Registry Value Exists</value>
+    <value>Registry Wert Vorhanden</value>
   </data>
   <data name="rule_registry_DWORD_value" xml:space="preserve">
-    <value>Registry DWORD Value</value>
+    <value>Registrierung DWORD-Wert</value>
   </data>
   <data name="rule_registry_expand_SZ_value" xml:space="preserve">
-    <value>Registry Expand SZ Value</value>
+    <value>Registry Expand SZ Wert</value>
   </data>
   <data name="rule_registry_SZ_value" xml:space="preserve">
-    <value>Registry SZ Value</value>
+    <value>Registry SZ Wert</value>
   </data>
   <data name="rule_registry_version_in_SZ" xml:space="preserve">
-    <value>Registry Version in SZ</value>
+    <value>Registry-Version in SZ</value>
   </data>
   <data name="rule_WMI_query" xml:space="preserve">
     <value>WMI Query</value>
   </data>
   <data name="rule_MSI_product" xml:space="preserve">
-    <value>MSI Product Installed</value>
+    <value>MSI Produkt Installiert</value>
   </data>
   <data name="rule_MSI_patch" xml:space="preserve">
-    <value>MSI Patch Installed for Product</value>
+    <value>MSI-Patch für Produkt Installiert</value>
   </data>
   <data name="rule_MSI_component" xml:space="preserve">
-    <value>MSI Component Installed for Product</value>
+    <value>MSI-Komponente für Produkt Installiert</value>
   </data>
   <data name="rule_MSI_feature" xml:space="preserve">
-    <value>MSI Feature Installed for Product</value>
+    <value>MSI Feature für Produkt Installiert</value>
   </data>
   <data name="all" xml:space="preserve">
-    <value>All</value>
+    <value>Alle</value>
   </data>
   <data name="approved_for_install" xml:space="preserve">
-    <value>Approved for Install</value>
+    <value>Zugelassen für Installation</value>
   </data>
   <data name="not_approved" xml:space="preserve">
-    <value>Not Approved</value>
+    <value>Nicht Genehmigt</value>
   </data>
   <data name="uninstall" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>Deinstallieren</value>
   </data>
   <data name="error_sort_enumerator" xml:space="preserve">
-    <value>Must be an enumerator.</value>
+    <value>Muss ein Enumerator werden.</value>
   </data>
   <data name="error_command_arguments" xml:space="preserve">
-    <value>Not enough arguments to generate report</value>
+    <value>Nicht genug Argumente zu generieren Bericht</value>
   </data>
   <data name="error_command_connect" xml:space="preserve">
-    <value>Could not connect to {0}</value>
+    <value>Konnte keine Verbindung zu {0}</value>
   </data>
   <data name="error_command_unknown" xml:space="preserve">
     <value>Unknown Command</value>
   </data>
   <data name="error_command_find_group" xml:space="preserve">
-    <value>Could not find {0} group.</value>
+    <value>Konnte nicht gefunden werden {0}-Gruppe.</value>
   </data>
   <data name="error_command_find_update" xml:space="preserve">
-    <value>Could not find {0} update.</value>
+    <value>Konnte nicht gefunden werden {0} zu aktualisieren.</value>
   </data>
   <data name="error_command_find_computer" xml:space="preserve">
-    <value>Could not find {0} computer target.</value>
+    <value>Konnte nicht gefunden werden {0} Computer Ziel.</value>
   </data>
   <data name="exception_not_supported" xml:space="preserve">
-    <value>Not Supported Exception</value>
+    <value>Nicht unterstützt Exception</value>
   </data>
   <data name="exception_directory_not_found" xml:space="preserve">
-    <value>Directory Not Found Exception</value>
+    <value>Verzeichnis nicht gefunden Exception</value>
   </data>
   <data name="exception_path_too_long" xml:space="preserve">
-    <value>Path Too Long Exception</value>
+    <value>Pfad zu lang Exception</value>
   </data>
   <data name="warning_rules_editor_exists" xml:space="preserve">
-    <value>This rule already exists.</value>
+    <value>Diese Regel bereits vorhanden.</value>
   </data>
   <data name="prompt_rules_editor_name_new_rule" xml:space="preserve">
-    <value>Name the new Rule</value>
+    <value>Name der neuen Regel</value>
   </data>
   <data name="prompt_rules_editor_name_rule" xml:space="preserve">
-    <value>Name Rule</value>
+    <value>Name Regel</value>
   </data>
   <data name="error_rules_editor_add_remove_group" xml:space="preserve">
-    <value>Could not add/remove group.</value>
+    <value>Konnte nicht hinzufügen / entfernen Gruppe.</value>
   </data>
   <data name="edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Bearbeiten</value>
   </data>
   <data name="prompt_ruled_editor_confirm_delete" xml:space="preserve">
-    <value>Are you sure you want to delete this rule?</value>
+    <value>Sind Sie sicher, dass Sie diese Regel wirklich löschen?</value>
   </data>
   <data name="prompt_ruled_editor_delete" xml:space="preserve">
-    <value>Delete rule?</value>
+    <value>Regel löschen?</value>
   </data>
   <data name="group_begin_and" xml:space="preserve">
-    <value>Begin And</value>
+    <value>Beginnen Und</value>
   </data>
   <data name="group_end_and" xml:space="preserve">
-    <value>End And</value>
+    <value>Und Ende</value>
   </data>
   <data name="group_begin_or" xml:space="preserve">
-    <value>Begin Or</value>
+    <value>Beginnen Oder</value>
   </data>
   <data name="group_end_or" xml:space="preserve">
-    <value>End Or</value>
+    <value>Ende Oder</value>
   </data>
   <data name="group" xml:space="preserve">
-    <value>Group</value>
+    <value>Gruppe</value>
   </data>
   <data name="group_remove_and" xml:space="preserve">
-    <value>Remove And</value>
+    <value>Entfernen Und</value>
   </data>
   <data name="group_remove_or" xml:space="preserve">
-    <value>Remove Or</value>
+    <value>Entfernen Oder</value>
   </data>
   <data name="error_rulecollection_import_file_exists" xml:space="preserve">
-    <value>The import file does not exist.</value>
+    <value>Die Importdatei ist nicht vorhanden.</value>
   </data>
   <data name="error_rulecollection_cast" xml:space="preserve">
-    <value>Could not cast import rule file to rule collection.</value>
+    <value>Konnte keine Stimmen import-Regel-Datei Sammlung Regel.</value>
   </data>
   <data name="error_rulecollection_file_open" xml:space="preserve">
-    <value>Could not import rule file.</value>
+    <value>Konnte nicht importiert Regel-Datei.</value>
   </data>
   <data name="error_connection_download" xml:space="preserve">
-    <value>Could not download {0}.</value>
+    <value>Konnte nicht heruntergeladen werden {0}.</value>
   </data>
   <data name="error_connection_copy_directory" xml:space="preserve">
-    <value>Unable to copy directory</value>
+    <value>Kann Verzeichnis kopieren</value>
   </data>
   <data name="exception_security" xml:space="preserve">
-    <value>Security Exception</value>
+    <value>Sicherheit Exception</value>
   </data>
   <data name="error_connection_manager_publish" xml:space="preserve">
-    <value>The package could not be published.</value>
+    <value>Das Paket konnte nicht veröffentlicht werden.</value>
   </data>
   <data name="prompt_connection_wait" xml:space="preserve">
-    <value>Please wait while the update is published.</value>
+    <value>Bitte warten Sie das Update veröffentlicht wird.</value>
   </data>
   <data name="error_connection_no_cab" xml:space="preserve">
-    <value>This file does not contain a CAB file.</value>
+    <value>Diese Datei enthält keine CAB-Datei.</value>
   </data>
   <data name="error_connection_no_XML" xml:space="preserve">
-    <value>This file does not contain an XML file.</value>
+    <value>Diese Datei enthält keine XML-Datei.</value>
   </data>
   <data name="exception_HTTP_listener" xml:space="preserve">
-    <value>HttpListenerException</value>
+    <value>HTTP-Listener Exception</value>
   </data>
   <data name="prompt_connection_wait_revise" xml:space="preserve">
-    <value>Please wait while the update is revised.</value>
+    <value>Bitte warten Sie das Update überarbeitet.</value>
   </data>
   <data name="error_connection_cert_save" xml:space="preserve">
-    <value>There was an error creating the certificate.</value>
+    <value>Es gab einen Fehler beim Erstellen des Zertifikats.</value>
   </data>
   <data name="warning_connection_cert_import" xml:space="preserve">
-    <value>The certificate could not be imported. You must supply both a certificate file and a password to use an existing certificate.</value>
+    <value>Das Zertifikat konnte nicht importiert werden. Sie müssen sowohl ein Zertifikat-Datei und ein Passwort, um ein vorhandenes Zertifikat verwenden.e.</value>
   </data>
   <data name="success_connection_cert_created" xml:space="preserve">
-    <value>A self-signed certificate has been created. This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.</value>
+    <value>Ein selbst signiertes Zertifikat erstellt wurde. Dieses Zertifikat muss nun auf jedem Client nach der Microsofts Local Publsihing Dokumentation verteilt werden.</value>
   </data>
   <data name="success_connection_cert_import" xml:space="preserve">
-    <value>Your certificate was imported successfully. This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.</value>
+    <value>Das Zertifikat wurde erfolgreich importiert. Dieses Zertifikat muss nun auf jedem Client nach der Microsofts Local Publsihing Dokumentation verteilt werden.</value>
   </data>
   <data name="warning_connection_cert_exists" xml:space="preserve">
-    <value>A certificate already exists.</value>
+    <value>Ein Zertifikat ist bereits vorhanden.</value>
   </data>
   <data name="error_connection_get_SDP" xml:space="preserve">
-    <value>Could not get SDP</value>
+    <value>Konnte nicht abgerufen werden SDP</value>
   </data>
   <data name="error_connection_export_SDP" xml:space="preserve">
-    <value>Could not export SDP.</value>
+    <value>Könnte nicht exportieren SDP.</value>
   </data>
   <data name="error_connection_connect" xml:space="preserve">
-    <value>Failed to connect to server.</value>
+    <value>Konnte keine Verbindung zum Server herstellen.</value>
   </data>
   <data name="exception_wsus_invalid_server" xml:space="preserve">
-    <value>Wsus Invalid Server Exception</value>
+    <value>WSUS Ungültige Serve Exception</value>
   </data>
   <data name="exception_web" xml:space="preserve">
     <value>Web Exception</value>
   </data>
   <data name="error_connection_connect_URI" xml:space="preserve">
-    <value>Your servername is not properly formatted.</value>
+    <value>Ihr Servername ist nicht korrekt formatiert.</value>
   </data>
   <data name="error_connection_connect_security" xml:space="preserve">
-    <value>You are not permitted to connect to the WSUS server.</value>
+    <value>Sie sind nicht berechtigt, mit dem WSUS-Server herstellen.</value>
   </data>
   <data name="warning_connection_no_cert" xml:space="preserve">
-    <value>WSUS certificate not found.</value>
+    <value>WSUS-Zertifikat nicht gefunden.</value>
   </data>
   <data name="prompt_connection_cert" xml:space="preserve">
-    <value>Would you like to do so now?</value>
+    <value>Möchten Sie dies jetzt tun?</value>
   </data>
   <data name="error_connection_no_cert" xml:space="preserve">
-    <value>There is no certificate on {0}. Until you create or import a certificate you will not be able to publish updates. </value>
+    <value>Es gibt kein Zertifikat auf {0}. Bis Sie erstellen oder importieren Sie ein Zertifikat nicht in der Lage, um Updates zu veröffentlichen.</value>
   </data>
   <data name="status_server_connected" xml:space="preserve">
-    <value>Connected to {0}</value>
+    <value>Verbunden mit {0}</value>
   </data>
   <data name="status_server_connecting" xml:space="preserve">
-    <value>Connecting to {0}</value>
+    <value>Anschließen an {0}</value>
   </data>
   <data name="status_connection_downloading" xml:space="preserve">
-    <value>Downloading files for {0}</value>
+    <value>Herunterladen von Dateien für {0}</value>
   </data>
   <data name="warning_update_vendor" xml:space="preserve">
-    <value>The vendor cannot be Microsoft.</value>
+    <value>Der Verkäufer kann nicht Microsoft.</value>
   </data>
   <data name="failed_or_needed" xml:space="preserve">
-    <value>Failed or Needed</value>
+    <value>Konnte oder Benötigt</value>
   </data>
   <data name="installed_not_applicable_no_status" xml:space="preserve">
-    <value>Installed/Not Applicable or No Status</value>
+    <value>Installierte/Nicht Anwendbar oder Kein Status</value>
   </data>
   <data name="needed" xml:space="preserve">
-    <value>Needed</value>
+    <value>Benötigte</value>
   </data>
   <data name="no_status" xml:space="preserve">
-    <value>No Status</value>
+    <value>Kein Status</value>
   </data>
   <data name="any" xml:space="preserve">
-    <value>Any</value>
+    <value>Jeder</value>
   </data>
   <data name="remove_group" xml:space="preserve">
-    <value>Remove Group</value>
+    <value>Gruppe Entfernen</value>
   </data>
   <data name="success" xml:space="preserve">
     <value>Success</value>
   </data>
   <data name="none" xml:space="preserve">
-    <value>None</value>
+    <value>Keine</value>
   </data>
   <data name="workstation" xml:space="preserve">
-    <value>Workstation</value>
+    <value>Arbeitsplatz</value>
   </data>
   <data name="domain_controller" xml:space="preserve">
-    <value>Domain Controller</value>
+    <value>Domänen-Controller</value>
   </data>
   <data name="server" xml:space="preserve">
     <value>Server</value>
   </data>
   <data name="approve" xml:space="preserve">
-    <value>Approve</value>
+    <value>Genehmigen</value>
   </data>
   <data name="revise" xml:space="preserve">
-    <value>Revise</value>
+    <value>Überarbeiten</value>
   </data>
   <data name="resign" xml:space="preserve">
-    <value>Re-sign</value>
+    <value>Signieren</value>
   </data>
   <data name="expire" xml:space="preserve">
-    <value>Expire</value>
+    <value>Verfallen</value>
   </data>
   <data name="remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Entfernen</value>
   </data>
   <data name="decline" xml:space="preserve">
-    <value>Decline</value>
+    <value>Rückgang</value>
   </data>
   <data name="error_connection_none" xml:space="preserve">
-    <value>You are not connected to a WSUS server.</value>
+    <value>Sie sind nicht mit einem WSUS-Server verbunden.</value>
   </data>
   <data name="and" xml:space="preserve">
-    <value>AND</value>
+    <value>UND</value>
   </data>
   <data name="or" xml:space="preserve">
-    <value>OR</value>
+    <value>ODER</value>
   </data>
 </root>

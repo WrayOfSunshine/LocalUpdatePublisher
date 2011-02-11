@@ -121,15 +121,21 @@
   <data name="chkSsl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;cboServers.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="chkSsl.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 91</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 62</value>
   </data>
   <data name="&gt;&gt;lblServers.Name" xml:space="preserve">
     <value>lblServers</value>
@@ -140,9 +146,6 @@
   <data name="lblServers.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 19</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="&gt;&gt;btnConnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -151,9 +154,6 @@
   </data>
   <data name="&gt;&gt;lblLocalServer.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>503, 171</value>
@@ -167,21 +167,21 @@
   <data name="&gt;&gt;btnConnect.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;chkSsl.Name" xml:space="preserve">
-    <value>chkSsl</value>
-  </data>
-  <data name="lblPort.Text" xml:space="preserve">
-    <value>Port</value>
+  <data name="&gt;&gt;lblServers.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="cboServers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 27</value>
+  <data name="lblServers.Text" xml:space="preserve">
+    <value>Servers</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cboServers.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 27</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Connect to WSUS Server</value>
@@ -213,8 +213,11 @@
   <data name="&gt;&gt;lblLocalServer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 125</value>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;btnConnect.Name" xml:space="preserve">
     <value>btnConnect</value>
@@ -234,6 +237,9 @@
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>241, 125</value>
   </data>
+  <data name="&gt;&gt;lblServers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="chkSsl.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
@@ -243,8 +249,8 @@
   <data name="txtPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
   </data>
-  <data name="&gt;&gt;lblServers.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cboServers.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -252,8 +258,8 @@
   <data name="txtPort.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 62</value>
+  <data name="lblPort.Text" xml:space="preserve">
+    <value>Port</value>
   </data>
   <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -264,8 +270,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ConnectionSettingsForm</value>
   </data>
-  <data name="lblServers.Text" xml:space="preserve">
-    <value>Servers</value>
+  <data name="&gt;&gt;lblPort.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPort.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -309,17 +315,17 @@
   <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 20</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 125</value>
   </data>
-  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="txtPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 88</value>
-  </data>
-  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
   </data>
   <data name="chkSsl.Text" xml:space="preserve">
     <value>Use SSL</value>
@@ -360,9 +366,6 @@
   <data name="btnConnect.Text" xml:space="preserve">
     <value>Connect</value>
   </data>
-  <data name="&gt;&gt;chkSsl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
@@ -377,6 +380,9 @@
   </data>
   <data name="&gt;&gt;lblPort.Name" xml:space="preserve">
     <value>lblPort</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
@@ -408,11 +414,11 @@
   <data name="btnDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 27</value>
+  <data name="&gt;&gt;chkSsl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;chkSsl.Name" xml:space="preserve">
+    <value>chkSsl</value>
   </data>
   <data name="&gt;&gt;txtPort.Name" xml:space="preserve">
     <value>txtPort</value>
@@ -420,26 +426,20 @@
   <data name="lblPort.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;lblServers.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;cboServers.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblLocalServer.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="&gt;&gt;lblServers.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblPort.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="cboServers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 27</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
-    <value>txtName</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

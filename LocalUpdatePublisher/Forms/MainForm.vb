@@ -91,10 +91,6 @@ Public Partial Class MainForm
 		'Hide the header panel by default.
 		Me.scHeader.Panel1Collapsed = True
 		
-		'Set default scope.
-		localUpdatesScope = New UpdateScope()
-		localUpdatesScope.UpdateSources = UpdateSources.Other 'Show non-Microsoft updates
-		
 		'Load settings.
 		Me.chkApprovedOnly.Checked = appSettings.ApprovedUpdatesOnly
 		Me.chkInheritApprovals.Checked = appSettings.InheritApprovals
@@ -491,21 +487,32 @@ Public Partial Class MainForm
 	'Import updates from a catalog.
 	Sub ImportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs)
 		
-		ImportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
-		
-		'Select a file and open the import catalog dialog.
-		importFileDialog.Filter = globalRM.GetString("file_filter_cab") & "|" & globalRM.GetString("file_filter_xml")
-		If Not importFileDialog.ShowDialog = DialogResult.Cancel Then
-			My.Forms.ImportCatalogForm.ShowDialog(importFileDialog.FileName)
-			Call LoadUpdateNodes()
-			Call RefreshUpdateList()
+		If ConnectionManager.Connected Then
+			
+			ImportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+			'Select a file and open the import catalog dialog.
+			importFileDialog.Filter = globalRM.GetString("file_filter_cab") & "|" & globalRM.GetString("file_filter_xml")
+			If Not importFileDialog.ShowDialog = DialogResult.Cancel Then
+				My.Forms.ImportCatalogForm.ShowDialog(importFileDialog.FileName)
+				Call LoadUpdateNodes()
+				Call RefreshUpdateList()
+			End If
+			
+		Else
+			Msgbox ( globalRM.GetString("error_connection_none") )
 		End If
 	End Sub
 	
 	'Export updates to a catalog.
 	Sub ExportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs)
-		ExportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
-		My.Forms.ExportCatalogForm.ShowDialog
+		If ConnectionManager.Connected Then
+			
+			ExportCatalogForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+			My.Forms.ExportCatalogForm.ShowDialog
+			
+		Else
+			Msgbox( globalRM.GetString("error_connection_none") )
+		End If
 		
 	End Sub
 	
@@ -1054,18 +1061,18 @@ Public Partial Class MainForm
 			'Add the items to both the context menu and the update menustrip if
 			' this server is not a replica server.
 			If ConnectionManager.Connected AndAlso Not ConnectionManager.CurrentServerConfiguration.IsReplicaServer
-				Me.cmDgvMain.Items.Add("Approve", Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Approve", Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
-				Me.cmDgvMain.Items.Add("Revise", Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Revise", Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
-				Me.cmDgvMain.Items.Add("Re-sign", Nothing , New EventHandler(AddressOf ResignUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Re-sign", Nothing , New EventHandler(AddressOf ResignUpdate_Click))
-				Me.cmDgvMain.Items.Add("Expire", Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Expire", Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
-				Me.cmDgvMain.Items.Add("Decline", Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Decline", Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
-				Me.cmDgvMain.Items.Add("Remove", Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add("Remove", Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+				Me.cmDgvMain.Items.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
+				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
 				'			Future Functionality:
 				'			Me.cmDgvMain.Items.Add(New ToolStripSeparator)
 				'			Me.updateToolStripMenuItem.DropDownItems.Add(New ToolStripSeparator)
@@ -1177,16 +1184,16 @@ Public Partial Class MainForm
 			_computerNode = _serverNode.Nodes.Add("computers", globalRM.GetString("computers"))
 			_updateNode = _serverNode.Nodes.Add("updates", globalRM.GetString("updates"))
 			
-'			'Add the Locally published packages category as the updates base node.
-'			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
-'				category.up
-'				'If the category is the locally published category.
-'				If category.Title = "Local Publisher" Then
-'					
-'					'Add the updateNode and set its tag.
-'					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, globalRM.GetString("updates"))
-'				End If
-'			Next
+			'			'Add the Locally published packages category as the updates base node.
+			'			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
+			'				category.up
+			'				'If the category is the locally published category.
+			'				If category.Title = "Local Publisher" Then
+			'
+			'					'Add the updateNode and set its tag.
+			'					_updateNode = _serverNode.Nodes.Add(category.Id.ToString, globalRM.GetString("updates"))
+			'				End If
+			'			Next
 			
 			'Load the tree nodes.
 			Call LoadComputerNodes(_computerNode)
@@ -1326,7 +1333,7 @@ Public Partial Class MainForm
 	End Sub
 	
 	
-	'Load up the updates nodes.
+	'Load up the main update node.
 	Sub LoadUpdateNodes
 		
 		'Clear the updates node and the import update and report comboboxes.
@@ -1340,57 +1347,62 @@ Public Partial Class MainForm
 				'Load the companies categories under the Locally Published Packages category.
 				For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 					
-					'If the category is not from Microsoft, then load it.
-					If category.UpdateSource = UpdateSource.Other
-						
-						'Add the node and add its category.
-						Dim tmpNode As TreeNode = _updateNode.Nodes.Add( category.Title )
-						tmpNode.Tag = category
-						
-						'Add the vendor to the import update dropdown.
-						'_vendors += vbNewline & category.Title
-						Dim tmpVendor As New Vendor(category.Title)
-						
-						'If there might be subcategories then load them.
-						If category.ProhibitsSubcategories = False Then
-							Dim tmpProductCollection As Collections.Generic.List(Of String) = New Collections.Generic.List(Of String)
-							
-							'Now add the categories under the locally published category.
-							For Each subCategory As IUpdateCategory In category.GetSubcategories
-								
-								'Note: this code works to hide empty categories but it is resource
-								' intensive to load the updates for every category before adding it.
-								'If the category is empty hide it, and its parent.
-								'If subCategory.GetUpdates().Count > 0 Then
-								
-								'Add the node.
-								Dim tmpSubNode As TreeNode = tmpNode.Nodes.Add ( subCategory.Id.ToString, subCategory.Title)
-								tmpSubNode.Tag = subCategory
-								
-								'Add the software package to the import update dropdown
-								tmpProductCollection.Add( subCategory.Title )
-								
-								'								Else
-								'									'Remove the parent node.
-								'									tmpNode.Remove
-								'
-								'									'Remove the vendor from the list
-								'									_vendors.Replace(category.Title,"")
-								'								End If
-							Next
-							
-							'Add the products to the vendor object.
-							tmpVendor.Products = tmpProductCollection
-							
-							'Add the vendor to the vendor collection.
-							Me._vendorCollection.Add(tmpVendor)
-							
-						End If
-					End if
+					Call LoadUpdateNode(_updateNode,category)
 				Next
 				
 			End If
 		End If
+	End Sub
+	
+	'This is a recursive function that will populate the given category node with the given category and any of it's subcategories..
+	Sub LoadUpdateNode(node As TreeNode, category As IUpdateCategory)
+		Dim tmpNode As TreeNode
+		Dim tmpVendor As Vendor = New Vendor
+		
+		'If the category is not from Microsoft, then load it.
+		If category.UpdateSource = UpdateSource.Other
+			
+			'Add the node and add its category.
+			tmpNode = node.Nodes.Add( category.Title )
+			tmpNode.Tag = category
+			
+			'Add the category to the appropriate collection
+			If category.Type = UpdateCategoryType.Company Then
+				'_vendors += vbNewline & category.Title
+				tmpVendor = New Vendor(category.Title)
+				_vendorCollection.Add(tmpVendor)
+			End If
+									
+			'If there might be subcategories then load them.
+			If category.ProhibitsSubcategories = False Then
+				
+				'Now add the categories under the locally published category.
+				For Each subCategory As IUpdateCategory In category.GetSubcategories
+					
+					'Note: this code works to hide empty categories but it is resource
+					' intensive to load the updates for every category before adding it.
+					'If the category is empty hide it, and its parent.
+					'					If subCategory.GetUpdates().Count > 0 Then
+					
+					Call LoadUpdateNode(tmpNode, subCategory)
+					
+					'If this is a product, and the vendor has been set then add this product to this vendor.
+					If subCategory.Type = UpdateCategoryType.Product Then
+						tmpVendor.Products.Add(subCategory.Title)
+					End If
+
+					
+					'				Else
+					'					'Remove the parent node.
+					'					tmpNode.Remove
+					'
+					'					'Remove the vendor from the list
+					'					_vendors.Replace(category.Title,"")
+					'				End If
+				Next
+				
+			End If
+		End if
 	End Sub
 	
 	'Verify that the correct server is current based on the node that was selected.
@@ -1680,7 +1692,7 @@ Public Partial Class MainForm
 				Me._dgvMain.Columns("TargetID").Visible = False
 				
 				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = Me._dgvMain.Rows.Count & " " & globalRM.GetString("computers_shown")
+				Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), Me._dgvMain.Rows.Count)
 				
 				'If computers are listed in the DGV.
 				If _dgvMain.Rows.Count > 0 Then
@@ -2137,7 +2149,7 @@ Public Partial Class MainForm
 		Else
 			
 			'If the user hasn't selected an update status then choose any status.
-			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.SelectedIndex = 5
+			If cboUpdateStatus.SelectedIndex = -1 Then cboUpdateStatus.SelectedIndex = 6
 			
 			'If we are maintaining the status then save the status.
 			If maintainSelectedRow AndAlso Not dgvUpdateReport.CurrentRow Is Nothing Then
