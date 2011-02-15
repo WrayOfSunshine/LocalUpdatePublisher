@@ -20,6 +20,7 @@ Public Partial Class SettingsForm
 		Me.chkRememberTreeNode.Checked = appSettings.RememberTreePath
 		Me.chkReportRollup.Checked = appSettings.RollupReporting
 		Me.chkDemoteClassification.Checked = appSettings.DemoteClassification
+		Me.chkHideOfficialUpdates.Checked = appSettings.HideOfficialUpdates
 	End Sub
 	
 	Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs)
@@ -33,5 +34,10 @@ Public Partial Class SettingsForm
 	
 	Sub ChkDemoteClassificationCheckedChanged(sender As Object, e As EventArgs)
 		appSettings.DemoteClassification = Me.chkDemoteClassification.Checked
+	End Sub
+	
+	Sub ChkHideOfficialUpdatesCheckedChanged(sender As Object, e As EventArgs)
+		appSettings.HideOfficialUpdates = Me.chkHideOfficialUpdates.Checked
+		Msgbox (globalRM.GetString("warning_options_restart"))
 	End Sub
 End Class

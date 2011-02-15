@@ -252,13 +252,15 @@ Public Module Data_Routines
 	
 	'Return a datatable containing updates in the category except for the hidden Update.
 	Function GetUpdateList (updateCategory As IUpdateCategory, hiddenUpdate As Guid ) As DataTable
-		'Setup the category filter.
-		Dim categoryCollecion As UpdateCategoryCollection = New UpdateCategoryCollection()
-		categoryCollecion.Add( updateCategory )
+		Dim tmpUpdateScope As UpdateScope = New UpdateScope
+		tmpUpdateScope.Categories.Add(updateCategory)
+		
+		If appSettings.HideOfficialUpdates Then
+			tmpUpdateScope.UpdateSources = UpdateSources.Other
+		End If
 		
 		'Get update collection.
-		Dim tmpUpdateCollection As UpdateCollection = ConnectionManager.CurrentServer.GetUpdates( _
-			ApprovedStates.Any,DateTime.MinValue,DateTime.MaxValue, categoryCollecion , Nothing )
+		Dim tmpUpdateCollection As UpdateCollection = ConnectionManager.CurrentServer.GetUpdates(tmpUpdateScope)
 		
 		'Make sure there are updates in the collection before loading it.
 		If tmpUpdateCollection.Count > 0 Then
@@ -303,6 +305,66 @@ Public Module Data_Routines
 		Else
 			Return Nothing
 		End If
+	End Function
+	
+	'Return a datatable containing updates in the category except for the hidden Update.
+	Function GetUpdate (updateRevisionID As UpdateRevisionId ) As DataTable
+		If connectionManager.Connected Then
+			Try
+				
+				Dim tmpUpdate As IUpdate = connectionManager.CurrentServer.GetUpdate(updateRevisionID)
+				
+				'Make sure there are updates in the collection before loading it.
+				If Not tmpUpdate Is Nothing Then
+					
+					'Create new data table.
+					Dim dt As DataTable = New DataTable("Updates")
+					dt.Locale = System.Globalization.CultureInfo.CurrentCulture
+					
+					'Add columns to the data table.
+					dt.Columns.Add("IUpdate", System.Type.GetType("System.Object"))
+					dt.Columns.Add("Id", System.Type.GetType("System.Object"))
+					dt.Columns.Add("Title", System.Type.GetType("System.String"))
+					dt.Columns.Add("CreationDate", System.Type.GetType("System.DateTime"))
+					dt.Columns.Add("Status", System.Type.GetType("System.String"))
+					
+					'Add a row for the update.
+					Dim tmpRow As DataRow = dt.NewRow()
+					tmpRow("IUpdate") = tmpUpdate
+					tmpRow("Id") = tmpUpdate.Id
+					tmpRow("Title") = tmpUpdate.Title
+					tmpRow("CreationDate") = tmpUpdate.CreationDate.ToLocalTime
+					
+					If tmpUpdate.IsDeclined Then
+						If tmpUpdate.PublicationState = PublicationState.Expired
+							tmpRow("Status") = globalRM.GetString("declined_expired")
+						Else
+							tmpRow("Status") = globalRM.GetString("declined")
+						End If
+					Else If tmpUpdate.IsSuperseded
+						tmpRow("Status") = globalRM.GetString("superseded")
+					Else If tmpUpdate.IsApproved
+						tmpRow("Status") = globalRM.GetString("approved")
+					End If
+					
+					dt.Rows.Add(tmpRow)
+					
+					Return dt
+				Else
+					Return Nothing
+				End If
+				
+			Catch x As WsusInvalidDataException
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_invalid_data") & ": " & x.Message)
+			Catch x As WsusObjectNotFoundException
+				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
+					globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
+			End Try
+		End If
+		
+		'If there was an error, return nothing
+		Return Nothing
 	End Function
 	
 	Function GetUpdateStatus(update As IUpdate) As DataTable

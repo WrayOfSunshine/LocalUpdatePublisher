@@ -149,6 +149,14 @@ Public Partial Class ApprovalForm
 					tmpRow = Me.dgvApprovals.Rows.Add(New String() { computerGroup.Name, tmpApproval.Action.ToDisplayString()})
 					Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
 					Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
+					
+					'If the deadline is the max date then there is no deadling so set the value to nothing.
+					If tmpApproval.Deadline = Date.MaxValue Then
+						Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = Nothing
+					Else
+						Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = tmpApproval.Deadline
+					End If
+					
 				Else
 					'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
 					tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, globalRM.GetString("no_approval")})
@@ -193,6 +201,13 @@ Public Partial Class ApprovalForm
 							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.Action.ToDisplayString()})
 							Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
 							Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
+							
+							'If the deadline is the max date then there is no deadling so set the value to nothing.
+							If tmpApproval.Deadline = Date.MaxValue Then
+								Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = Nothing
+							Else
+								Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = tmpApproval.Deadline
+							End If
 							
 							'Set padding depth.
 							Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
@@ -251,9 +266,12 @@ Public Partial Class ApprovalForm
 	'Make the selected row current and show the context menu.  Show the menu
 	' if the user right clicks anywhere or left clicks in the approval column.
 	Private Sub DtaGridViewCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
-		If e.Button = Windows.Forms.MouseButtons.Right AndAlso e.RowIndex >= 0 Then
-			dgvApprovals.CurrentCell = dgvApprovals.Rows.Item(e.RowIndex).Cells(e.ColumnIndex)
-		Else If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 Then
+		'		If e.Button = Windows.Forms.MouseButtons.Right AndAlso e.RowIndex >= 0 Then
+		'			dgvApprovals.CurrentCell = dgvApprovals.Rows.Item(e.RowIndex).Cells(e.ColumnIndex)
+		'		Else If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 Then
+		'			cntxtMenuStrip.Show(Cursor.Position)
+		'		End If
+		If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 AndALso e.ColumnIndex = dgvApprovals.Columns("Approval").Index Then
 			cntxtMenuStrip.Show(Cursor.Position)
 		End If
 	End Sub

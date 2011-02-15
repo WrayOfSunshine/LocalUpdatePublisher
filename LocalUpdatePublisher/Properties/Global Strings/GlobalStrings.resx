@@ -769,7 +769,7 @@
     <value>Could not create Software Distribution Package.</value>
   </data>
   <data name="file_filter_update_binary" xml:space="preserve">
-    <value>MSI Files|*.MSI|MSP Files|*.MSP|EXE Files|*.EXE</value>
+    <value>Update Files (*.MSI;*.MSP;*.EXE)|*.MSI;*.MSP;*.EXE|MSI Files (*.MSI)|*.MSI|MSP Files (*.MSP)|*.MSP|EXE Files (*.EXE)|*.EXE</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>Finish</value>
@@ -1109,5 +1109,11 @@
   </data>
   <data name="or" xml:space="preserve">
     <value>OR</value>
+  </data>
+  <data name="warning_options_restart" xml:space="preserve">
+    <value>You must restart LUP for this option to take effect.</value>
+  </data>
+  <data name="warning_select_file" xml:space="preserve">
+    <value>Please select a file.</value>
   </data>
 </root>

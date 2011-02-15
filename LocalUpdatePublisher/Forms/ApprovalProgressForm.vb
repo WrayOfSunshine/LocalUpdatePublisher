@@ -68,9 +68,17 @@ Public Partial Class ApprovalProgressForm
 			For Each tempRow As DataGridViewRow In computerGroups
 				If Not tempRow.Cells.Item("ApprovalAction").Value Is Nothing Then
 					Try
-						update.Approve( _
-							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
+						
+						If Not String.IsNullOrEmpty(DirectCast(tempRow.Cells.Item("Deadline").Value, String)) Then
+							update.Approve( _
+								DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
+								DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup), _
+								DirectCast(tempRow.Cells.Item("Deadline").Value, Date))
+						Else
+							update.Approve( _
+								DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
+								DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
+						End If
 					Catch x As ArgumentOutOfRangeException
 						strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
 					Catch x As ArgumentNullException
@@ -133,7 +141,7 @@ Public Partial Class ApprovalProgressForm
 		For Each tempRow As DataGridViewRow In computerGroups
 			
 			strAction = String.Format(globalRM.GetString("label_approval_progress_status") , _
-			update.Title,DirectCast(tempRow.Cells.Item("Approval").Value, String),DirectCast(tempRow.Cells.Item("ComputerGroup").Value, String))
+				update.Title,DirectCast(tempRow.Cells.Item("Approval").Value, String),DirectCast(tempRow.Cells.Item("ComputerGroup").Value, String))
 			
 			'Set default result to success.
 			strResult = globalRM.GetString("success")
@@ -146,9 +154,17 @@ Public Partial Class ApprovalProgressForm
 				Me.Refresh
 				
 				Try
-					update.Approve( _
-						DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-						DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
+					'Msgbox ( tempRow.Cells.Item("Deadline").Value.ToString )
+					If Not tempRow.Cells.Item("Deadline").Value Is Nothing AndAlso Not IsDBNull(tempRow.Cells.Item("Deadline").Value)  Then
+						update.Approve( _
+							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
+							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup), _
+							DirectCast(tempRow.Cells.Item("Deadline").Value, Date))
+					Else
+						update.Approve( _
+							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
+							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
+					End If
 					
 				Catch x As ArgumentOutOfRangeException
 					strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message

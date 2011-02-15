@@ -1333,78 +1333,84 @@ Public Partial Class MainForm
 	End Sub
 	
 	
-	'Load up the main update node.
+	'Load the main update node with vendors, product families, and products.
 	Sub LoadUpdateNodes
+		Dim vendorNode As TreeNode
+		Dim tmpVendor As Vendor = New Vendor
+		Dim tmpProductNode As TreeNode
+		Dim tmpProductFamilyNode As TreeNode
 		
 		'Clear the updates node and the import update and report comboboxes.
 		If Not _updateNode Is Nothing Then
-			_updateNode.Nodes.Clear
 			
+			'Clear the main update node and the list of vendors.
+			_updateNode.Nodes.Clear
 			Me._vendorCollection.Clear
 			
 			If ConnectionManager.Connected Then 'Make sure we're connected still.
 				
-				'Load the companies categories under the Locally Published Packages category.
-				For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
+				'Load the vendor update categories
+				For Each vendorCategory As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 					
-					Call LoadUpdateNode(_updateNode,category)
-				Next
+					'Add the vendor and add its category.
+					vendorNode = _updateNode.Nodes.Add( vendorCategory.Title )					
+					vendorNode.Tag = vendorCategory
+					tmpVendor = New Vendor(vendorCategory.Title)					
+					
+					'Loop through each category under the vendor.
+					For Each category As IUpdateCategory In vendorCategory.GetSubcategories
+						
+						'If this is a product category then add it.
+						If category.Type = UpdateCategoryType.Product Then
+							
+							If category.UpdateSource = UpdateSource.Other OrElse Not appSettings.HideOfficialUpdates Then
+								tmpVendor.Products.Add(category.Title)
+								tmpProductNode = vendorNode.Nodes.Add(category.Title)
+								tmpProductNode.Tag = category
+								
+								If category.GetSubcategories.Count > 0 Then Msgbox ( category.Title & " " & category.GetSubcategories.Count)
+							End If
+							
+							'If this is a product family category and loop through it.
+						Else If category.Type = UpdateCategoryType.ProductFamily Then
+							tmpProductFamilyNode = vendorNode.Nodes.Add ( category.Title )
+							
+							'Loop through each product in the product family.
+							For Each product As IUpdateCategory In category.GetSubcategories
+								
+								If product.UpdateSource = UpdateSource.Other OrElse Not appSettings.HideOfficialUpdates Then
+									tmpVendor.Products.Add(product.Title)
+									tmpProductNode = tmpProductFamilyNode.Nodes.Add(product.Title)
+									tmpProductNode.Tag = product
+									
+									If product.GetSubcategories.Count > 0 Then Msgbox ( product.Title & " " & product.GetSubcategories.Count)
+								End If
+							Next
+							
+							'Remove the product family node if it doesn't have any product nodes under it.
+							If tmpProductFamilyNode.Nodes.Count = 0 Then
+								vendorNode.Nodes.Remove(tmpProductFamilyNode)
+							End If
+							
+						End If
+						
+					Next 'Product or Product Family
+					
+					
+					'If the vendor node has it's own nodes at this point then add the vendor
+					'to the list.  Otherwise, remove the empty node.
+					If vendorNode.Nodes.Count > 0 Then
+						_vendorCollection.Add(tmpVendor)
+					Else
+						_updateNode.Nodes.Remove(vendorNode)
+					End If					
+					
+				Next 'Vendor
 				
 			End If
 		End If
 	End Sub
-	
-	'This is a recursive function that will populate the given category node with the given category and any of it's subcategories..
-	Sub LoadUpdateNode(node As TreeNode, category As IUpdateCategory)
-		Dim tmpNode As TreeNode
-		Dim tmpVendor As Vendor = New Vendor
 		
-		'If the category is not from Microsoft, then load it.
-		If category.UpdateSource = UpdateSource.Other
-			
-			'Add the node and add its category.
-			tmpNode = node.Nodes.Add( category.Title )
-			tmpNode.Tag = category
-			
-			'Add the category to the appropriate collection
-			If category.Type = UpdateCategoryType.Company Then
-				'_vendors += vbNewline & category.Title
-				tmpVendor = New Vendor(category.Title)
-				_vendorCollection.Add(tmpVendor)
-			End If
-									
-			'If there might be subcategories then load them.
-			If category.ProhibitsSubcategories = False Then
-				
-				'Now add the categories under the locally published category.
-				For Each subCategory As IUpdateCategory In category.GetSubcategories
-					
-					'Note: this code works to hide empty categories but it is resource
-					' intensive to load the updates for every category before adding it.
-					'If the category is empty hide it, and its parent.
-					'					If subCategory.GetUpdates().Count > 0 Then
-					
-					Call LoadUpdateNode(tmpNode, subCategory)
-					
-					'If this is a product, and the vendor has been set then add this product to this vendor.
-					If subCategory.Type = UpdateCategoryType.Product Then
-						tmpVendor.Products.Add(subCategory.Title)
-					End If
-
-					
-					'				Else
-					'					'Remove the parent node.
-					'					tmpNode.Remove
-					'
-					'					'Remove the vendor from the list
-					'					_vendors.Replace(category.Title,"")
-					'				End If
-				Next
-				
-			End If
-		End if
-	End Sub
-	
 	'Verify that the correct server is current based on the node that was selected.
 	Sub VerifyCurrentServer(node As TreeNode)
 		If node Is Nothing Then

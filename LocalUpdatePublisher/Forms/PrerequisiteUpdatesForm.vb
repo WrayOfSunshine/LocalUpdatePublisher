@@ -78,37 +78,27 @@ Public Partial Class PrerequisiteUpdatesForm
 	'Prompt the user to add an update to the list.
 	Sub BtnAddClick(sender As Object, e As EventArgs)
 		UpdateSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog(_currentUpdate)
-		Dim tmpString As String = ""
 		
-		If Not tmpUpdateRevisionId Is Nothing Then
-			Try
-				tmpString = ConnectionManager.CurrentServer.GetUpdate(tmpUpdateRevisionId).Title
-			Catch x As WsusInvalidDataException
-				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
-					globalRM.GetString("exception_wsus_invalid_data") & ": " & x.Message)
-				Exit Sub
-			Catch x As WsusObjectNotFoundException
-				Msgbox (globalRM.GetString("warning_GUID_not_found") & ":" & vbNewline & _
-					globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
-				Exit Sub
-			End Try
+		'Loop through the selected updates and add them.
+		For Each tmpUpdate As IUpdate In UpdateSelectionForm.ShowDialog(_currentUpdate)
 			
 			Dim tmpRow As Integer = dgvUpdates.Rows.Add
-			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdateRevisionId.UpdateId
-			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpString
+			dgvUpdates.Rows(tmpRow).Cells("Id").Value = tmpUpdate.Id.UpdateId
+			dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpUpdate.Title
 			dgvUpdates.Refresh
 			
 			'Select the added cell.
 			dgvUpdates.CurrentCell = dgvUpdates.Rows(tmpRow).Cells("Title")
-		End If
+			
+		Next
+
 	End Sub
 	
 	'If there is a current row, delete it.
 	Sub BtnRemoveClick(sender As Object, e As EventArgs)
-		If Not dgvUpdates.CurrentRow Is Nothing Then
-			dgvUpdates.Rows.Remove(dgvUpdates.CurrentRow)
-		End If
+		For Each tmpRow As DataGridViewRow In dgvUpdates.SelectedRows			
+			dgvUpdates.Rows.Remove(tmpRow)
+		Next
 	End Sub
 	
 	'Save the changes and close the form.

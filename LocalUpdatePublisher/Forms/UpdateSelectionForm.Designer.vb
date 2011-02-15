@@ -44,41 +44,28 @@ Partial Class UpdateSelectionForm
 		'
 		'btnCancel
 		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnSelect
 		'
-		Me.btnSelect.AccessibleDescription = Nothing
-		Me.btnSelect.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnSelect, "btnSelect")
-		Me.btnSelect.BackgroundImage = Nothing
 		Me.btnSelect.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnSelect.Font = Nothing
 		Me.btnSelect.Name = "btnSelect"
 		Me.btnSelect.UseVisualStyleBackColor = true
 		'
 		'dgvUpdates
 		'
-		Me.dgvUpdates.AccessibleDescription = Nothing
-		Me.dgvUpdates.AccessibleName = Nothing
 		Me.dgvUpdates.AllowUserToAddRows = false
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
 		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvUpdates.BackgroundImage = Nothing
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
-		Me.dgvUpdates.Font = Nothing
-		Me.dgvUpdates.MultiSelect = false
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
@@ -87,38 +74,27 @@ Partial Class UpdateSelectionForm
 		'
 		'cboVendor
 		'
-		Me.cboVendor.AccessibleDescription = Nothing
-		Me.cboVendor.AccessibleName = Nothing
-		resources.ApplyResources(Me.cboVendor, "cboVendor")
-		Me.cboVendor.BackgroundImage = Nothing
 		Me.cboVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboVendor.Font = Nothing
 		Me.cboVendor.FormattingEnabled = true
+		resources.ApplyResources(Me.cboVendor, "cboVendor")
 		Me.cboVendor.Name = "cboVendor"
 		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
 		'
 		'lblVendor
 		'
-		Me.lblVendor.AccessibleDescription = Nothing
-		Me.lblVendor.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblVendor, "lblVendor")
 		Me.lblVendor.Name = "lblVendor"
 		'
 		'UpdateSelectionForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.cboVendor)
 		Me.Controls.Add(Me.lblVendor)
 		Me.Controls.Add(Me.btnCancel)
 		Me.Controls.Add(Me.btnSelect)
 		Me.Controls.Add(Me.dgvUpdates)
-		Me.Font = Nothing
-		Me.Icon = Nothing
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "UpdateSelectionForm"

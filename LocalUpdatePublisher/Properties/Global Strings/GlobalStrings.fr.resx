@@ -700,7 +700,7 @@
     <value>Impossible de créer le paquet de distribution de logiciels.</value>
   </data>
   <data name="file_filter_update_binary" xml:space="preserve">
-    <value>MSI Fichiers|*.MSI|MSP Fichiers|*.MSP|EXE Fichiers|*.EXE</value>
+    <value>Mise à jour des fichiers (*.MSI;*.MSP;*.EXE)|*.MSI;*.MSP;*.EXE|MSI Fichiers (*.MSI)|*.MSI|MSP Fichiers (*.MSP)|*.MSP|EXE Fichiers (*.EXE)|*.EXE</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>Terminer</value>
@@ -995,5 +995,11 @@
   </data>
   <data name="or" xml:space="preserve">
     <value>OU</value>
+  </data>
+  <data name="warning_options_restart" xml:space="preserve">
+    <value>Vous devez redémarrer LUP pour que cette option prendra effet.</value>
+  </data>
+  <data name="warning_select_file" xml:space="preserve">
+    <value>S'il vous plaît sélectionner un fichier.</value>
   </data>
 </root>

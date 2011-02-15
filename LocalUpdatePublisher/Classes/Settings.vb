@@ -165,6 +165,7 @@ Imports System.Reflection
 		ApprovedUpdatesOnly = True
 		InheritApprovals = True
 		DemoteClassification = True
+		HideOfficialUpdates = True
 		TreePath = ""
 		TreeSplitter = 175
 		UpdateSplitter = 175
@@ -269,6 +270,19 @@ Imports System.Reflection
 		End Get
 		Set
 			_settingsHash("DemoteClassification") = value
+		End Set
+	End Property	
+		
+	' Property Hide Official Updates
+	<Browsable(True)> _
+		<Description("Hide official Microsoft updates.")> _
+		<DefaultValue(True)> _
+		Public Property HideOfficialUpdates() As Boolean
+		Get
+			Return DirectCast(_settingsHash("HideOfficialUpdates"), Boolean)
+		End Get
+		Set
+			_settingsHash("HideOfficialUpdates") = value
 		End Set
 	End Property
 	

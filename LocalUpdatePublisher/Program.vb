@@ -46,13 +46,15 @@ Namespace My
 			appSettings = New Settings()
 			appSettings = Settings.LoadSettingsFromFile
 			
-			'Set default scope.
+			'Set default scope based on the app settings.
 			localUpdatesScope = New UpdateScope()
-			localUpdatesScope.UpdateSources = UpdateSources.Other 'Show non-Microsoft updates
+			If appSettings.HideOfficialUpdates Then
+				localUpdatesScope.UpdateSources = UpdateSources.Other 'Show non-Microsoft updates
+			End If
 			
 			'Initialize the global resource handler
-'			Thread.CurrentThread.CurrentCulture = New CultureInfo("de-DE")
-'			Thread.CurrentThread.CurrentUICulture = New CultureInfo("de-DE")
+			'			Thread.CurrentThread.CurrentCulture = New CultureInfo("de-DE")
+			'			Thread.CurrentThread.CurrentUICulture = New CultureInfo("de-DE")
 			globalRM = New ResourceManager("LocalUpdatePublisher.GlobalStrings", Assembly.GetExecutingAssembly())
 			
 			'Load server connections.

@@ -73,6 +73,7 @@
     <Import Include="System.Diagnostics" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+    <Compile Include="Classes\CalendarColumn.vb" />
     <Compile Include="Classes\ComboTargetGroups.vb" />
     <Compile Include="Classes\ComboVendors.vb" />
     <Compile Include="Classes\ConnectionManager.vb" />

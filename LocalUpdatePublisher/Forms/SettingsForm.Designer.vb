@@ -38,6 +38,7 @@ Partial Class SettingsForm
 		Me.btnClose = New System.Windows.Forms.Button
 		Me.chkReportRollup = New System.Windows.Forms.CheckBox
 		Me.chkDemoteClassification = New System.Windows.Forms.CheckBox
+		Me.chkHideOfficialUpdates = New System.Windows.Forms.CheckBox
 		Me.SuspendLayout
 		'
 		'chkRememberTreeNode
@@ -84,6 +85,17 @@ Partial Class SettingsForm
 		Me.chkDemoteClassification.UseVisualStyleBackColor = true
 		AddHandler Me.chkDemoteClassification.CheckedChanged, AddressOf Me.ChkDemoteClassificationCheckedChanged
 		'
+		'chkHideOfficialUpdates
+		'
+		Me.chkHideOfficialUpdates.AccessibleDescription = Nothing
+		Me.chkHideOfficialUpdates.AccessibleName = Nothing
+		resources.ApplyResources(Me.chkHideOfficialUpdates, "chkHideOfficialUpdates")
+		Me.chkHideOfficialUpdates.BackgroundImage = Nothing
+		Me.chkHideOfficialUpdates.Font = Nothing
+		Me.chkHideOfficialUpdates.Name = "chkHideOfficialUpdates"
+		Me.chkHideOfficialUpdates.UseVisualStyleBackColor = true
+		AddHandler Me.chkHideOfficialUpdates.CheckedChanged, AddressOf Me.ChkHideOfficialUpdatesCheckedChanged
+		'
 		'SettingsForm
 		'
 		Me.AccessibleDescription = Nothing
@@ -92,6 +104,7 @@ Partial Class SettingsForm
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnClose
+		Me.Controls.Add(Me.chkHideOfficialUpdates)
 		Me.Controls.Add(Me.chkDemoteClassification)
 		Me.Controls.Add(Me.chkReportRollup)
 		Me.Controls.Add(Me.btnClose)
@@ -105,6 +118,7 @@ Partial Class SettingsForm
 		AddHandler Load, AddressOf Me.SettingsLoad
 		Me.ResumeLayout(false)
 	End Sub
+	Private chkHideOfficialUpdates As System.Windows.Forms.CheckBox
 	Private chkDemoteClassification As System.Windows.Forms.CheckBox
 	Private chkReportRollup As System.Windows.Forms.CheckBox
 	Private btnClose As System.Windows.Forms.Button

@@ -769,7 +769,7 @@
     <value>Konnte nicht erstellt werden Softwareverteilungspaket.</value>
   </data>
   <data name="file_filter_update_binary" xml:space="preserve">
-    <value>MSI Dateien|*.MSI|MSP Dateien|*.MSP|EXE Dateien|*.EXE</value>
+    <value>Update-Dateien (*.MSI;*.MSP;*.EXE)|*.MSI;*.MSP;*.EXE|MSI Dateien (*.MSI)|*.MSI|MSP Dateien (*.MSP)|*.MSP|EXE Dateien (*.EXE)|*.EXE</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>Fertig</value>
@@ -1109,5 +1109,11 @@
   </data>
   <data name="or" xml:space="preserve">
     <value>ODER</value>
+  </data>
+  <data name="warning_options_restart" xml:space="preserve">
+    <value>Sie müssen neu FNP für diese Option wirksam wird.</value>
+  </data>
+  <data name="warning_select_file" xml:space="preserve">
+    <value>Bitte wählen Sie eine Datei.</value>
   </data>
 </root>

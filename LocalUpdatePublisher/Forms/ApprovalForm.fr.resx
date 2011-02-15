@@ -237,4 +237,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Approuver mise à jour</value>
   </data>
+  <data name="Deadline.HeaderText" xml:space="preserve">
+    <value>Date limite</value>
+  </data>
 </root>

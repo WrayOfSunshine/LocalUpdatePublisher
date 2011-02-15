@@ -61,7 +61,7 @@ Public Partial Class UpdateForm
 		Me._Revision = False
 		Me._OriginalURIChanged = False
 		Me.TxtMSIPath.Enabled = False
-		Me.ErrorProviderUpdate.SetError(Me.TxtUpdateFile, "Please Select A File.")
+		Me.ErrorProviderUpdate.SetError(Me.TxtUpdateFile, globalRM.GetString("warning_select_file"))
 		
 		'If there is a hidden tab in the temp tab control then load it.
 		If _TabsHidden.Count > 0 Then
@@ -990,12 +990,9 @@ Public Partial Class UpdateForm
 	'A generic validating routine that verifies the sender control isn't empty.
 	Sub ControlValidating(Sender As Object, E As CancelEventArgs)
 		Try
-			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox
+			If TypeOf Sender Is TextBox OrElse TypeOf Sender Is ComboBox Then
 				
-				If Sender.Equals(Me.cboVendor) AndAlso Me.cboVendor.Text = "Microsoft" Then
-					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), globalRM.GetString("warning_update_vendor"))
-					E.Cancel = True
-				ElseIf DirectCast(Sender, Control).Text.Length = 0 Then
+				If DirectCast(Sender, Control).Text.Length = 0 Then
 					Me.ErrorProviderUpdate.SetError(DirectCast(Sender, Control), globalRM.GetString("warning_no_value"))
 					E.Cancel = True
 				End If

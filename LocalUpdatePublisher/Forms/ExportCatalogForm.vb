@@ -131,16 +131,15 @@ Public Partial Class ExportCatalogForm
 	'Add an update to the list.
 	Sub BtnAddClick(sender As Object, e As EventArgs)
 		UpdateSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
-		Dim tmpUpdateRevisionId As UpdateRevisionId = UpdateSelectionForm.ShowDialog
 		
-		
-		If ConnectionManager.Connected AndALso Not tmpUpdateRevisionId Is Nothing Then
+		'Loop through the selected updates and add them.
+		For Each tmpUpdate As IUpdate In UpdateSelectionForm.ShowDialog
 			
-			If AddSDPtoDGV ( ConnectionManager.ExportSDP(tmpUpdateRevisionId) ) = False Then
+			If AddSDPtoDGV ( ConnectionManager.ExportSDP( tmpUpdate.Id ) ) = False Then
 				Msgbox (globalRM.GetString("error_export_catalog_no_url"))
 			End If
 			
-		End If
+		Next
 	End Sub
 	
 	'Add all of the updates

@@ -1,5 +1,7 @@
 Version 1.1
 -Globalization with really bad Google translations for French and German.
+-Add and remove multiple updates when exporting or selecting for prerequisite and superseded.
+-Show locally published updates regardless of vendor.
 
 Version 1.0
 -Several bugfixes.
