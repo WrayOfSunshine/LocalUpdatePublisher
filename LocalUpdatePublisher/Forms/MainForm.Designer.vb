@@ -144,6 +144,8 @@ Partial Class MainForm
 		Me.toolStripStatusLabelLink = New System.Windows.Forms.ToolStripStatusLabel
 		Me.importFileDialog = New System.Windows.Forms.OpenFileDialog
 		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
+		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
 		Me.splitContainerVert.SuspendLayout
@@ -171,6 +173,7 @@ Partial Class MainForm
 		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.menuStrip.SuspendLayout
 		Me.statusStrip.SuspendLayout
+		Me.cmCreateCategoryUpdate.SuspendLayout
 		Me.SuspendLayout
 		'
 		'splitContainerVert
@@ -211,6 +214,7 @@ Partial Class MainForm
 		Me.treeView.Font = Nothing
 		Me.treeView.HideSelection = false
 		Me.treeView.Name = "treeView"
+		AddHandler Me.treeView.MouseUp, AddressOf Me.TreeViewMouseUp
 		AddHandler Me.treeView.AfterSelect, AddressOf Me.TreeViewAfterSelect
 		AddHandler Me.treeView.BeforeSelect, AddressOf Me.TreeViewBeforeSelect
 		'
@@ -1395,6 +1399,26 @@ Partial Class MainForm
 		Me.exportFileDialog.DefaultExt = "tab"
 		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
 		'
+		'cmCreateCategoryUpdate
+		'
+		Me.cmCreateCategoryUpdate.AccessibleDescription = Nothing
+		Me.cmCreateCategoryUpdate.AccessibleName = Nothing
+		resources.ApplyResources(Me.cmCreateCategoryUpdate, "cmCreateCategoryUpdate")
+		Me.cmCreateCategoryUpdate.BackgroundImage = Nothing
+		Me.cmCreateCategoryUpdate.Font = Nothing
+		Me.cmCreateCategoryUpdate.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.createCategoryUpdateToolStripMenuItem})
+		Me.cmCreateCategoryUpdate.Name = "cmCreateUpdate"
+		'
+		'createCategoryUpdateToolStripMenuItem
+		'
+		Me.createCategoryUpdateToolStripMenuItem.AccessibleDescription = Nothing
+		Me.createCategoryUpdateToolStripMenuItem.AccessibleName = Nothing
+		resources.ApplyResources(Me.createCategoryUpdateToolStripMenuItem, "createCategoryUpdateToolStripMenuItem")
+		Me.createCategoryUpdateToolStripMenuItem.BackgroundImage = Nothing
+		Me.createCategoryUpdateToolStripMenuItem.Name = "createCategoryUpdateToolStripMenuItem"
+		Me.createCategoryUpdateToolStripMenuItem.ShortcutKeyDisplayString = Nothing
+		AddHandler Me.createCategoryUpdateToolStripMenuItem.Click, AddressOf Me.CreateCategoryUpdateToolStripMenuItemClick
+		'
 		'MainForm
 		'
 		Me.AccessibleDescription = Nothing
@@ -1442,9 +1466,12 @@ Partial Class MainForm
 		Me.menuStrip.PerformLayout
 		Me.statusStrip.ResumeLayout(false)
 		Me.statusStrip.PerformLayout
+		Me.cmCreateCategoryUpdate.ResumeLayout(false)
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private cmCreateCategoryUpdate As System.Windows.Forms.ContextMenuStrip
+	Private createCategoryUpdateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private lblNetwork As System.Windows.Forms.Label
 	Private txtNetwork As System.Windows.Forms.TextBox
 	Private exportFileDialog As System.Windows.Forms.SaveFileDialog

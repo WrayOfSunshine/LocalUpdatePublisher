@@ -1095,6 +1095,51 @@ Public Partial Class MainForm
 			exportReportToolStripMenuItem.Enabled = False
 		End If
 	End Sub
+	
+	'Create an update based on the currently selected vendor and/or product.
+	Sub createCategoryUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+		
+		'Make sure the selected node has a tag and that the tag is an update category.
+		If Not TreeView.SelectedNode.Tag Is Nothing AndAlso TypeOf( TreeView.SelectedNode.Tag ) Is IUpdateCategory Then
+			
+			Dim updateCategory As IUpdateCategory= DirectCast(TreeView.SelectedNode.Tag, IUpdateCategory )
+			Dim tmpSDP As SoftwareDistributionPackage = New SoftwareDistributionPackage
+			Dim tmpRevisionId As UpdateRevisionId
+			
+			'Show the Import Update dialog and dispose of it.
+			My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+			
+			'If this is a product then include the product and vendor.
+			If updateCategory.Type = UpdateCategoryType.Product Then
+				If updateCategory.GetParentUpdateCategory.Type = UpdateCategoryType.Company Then
+					tmpSDP = My.Forms.UpdateForm.ShowDialog(updateCategory.GetParentUpdateCategory,updateCategory)
+				Else
+					tmpSDP = My.Forms.UpdateForm.ShowDialog(updateCategory.GetParentUpdateCategory.GetParentUpdateCategory, updateCategory)
+				End If
+			Else If updateCategory.Type = UpdateCategoryType.Company
+				tmpSDP = My.Forms.UpdateForm.ShowDialog(updateCategory)
+			End If
+			
+			
+			'If the user didn't cancel then reload the tree.
+			If Not tmpSDP Is Nothing Then
+				Call LoadUpdateNodes()
+				'Call RefreshUpdateList()
+				
+				Call SelectNode(Me._updateNode, Path.Combine( tmpSDP.VendorName, tmpSDP.ProductNames(0)) )
+				
+				tmpRevisionID = New UpdateRevisionId(tmpSDP.PackageId)
+				For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+					If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionID.UpdateId) Then
+						Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
+					End If
+				Next
+			End If
+			
+			My.Forms.UpdateForm.Dispose
+			
+		End If
+	End Sub
 	#End Region
 	
 	#Region "TreeView Events"
@@ -1353,9 +1398,9 @@ Public Partial Class MainForm
 				For Each vendorCategory As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 					
 					'Add the vendor and add its category.
-					vendorNode = _updateNode.Nodes.Add( vendorCategory.Title )					
+					vendorNode = _updateNode.Nodes.Add( vendorCategory.Title )
 					vendorNode.Tag = vendorCategory
-					tmpVendor = New Vendor(vendorCategory.Title)					
+					tmpVendor = New Vendor(vendorCategory.Title)
 					
 					'Loop through each category under the vendor.
 					For Each category As IUpdateCategory In vendorCategory.GetSubcategories
@@ -1403,14 +1448,14 @@ Public Partial Class MainForm
 						_vendorCollection.Add(tmpVendor)
 					Else
 						_updateNode.Nodes.Remove(vendorNode)
-					End If					
+					End If
 					
 				Next 'Vendor
 				
 			End If
 		End If
 	End Sub
-		
+	
 	'Verify that the correct server is current based on the node that was selected.
 	Sub VerifyCurrentServer(node As TreeNode)
 		If node Is Nothing Then
@@ -1431,6 +1476,31 @@ Public Partial Class MainForm
 		Else
 			Exit Sub
 		End If
+	End Sub
+	
+	'Show a context menu when the user right clicks on a node.
+	Sub TreeViewMouseUp(sender As Object, e As MouseEventArgs)
+		
+		' Show menu only if Right Mouse button is clicked
+		If e.Button = MouseButtons.Right Then
+			
+			' Point where mouse is clicked
+			Dim p As Point = New Point(e.X, e.Y)
+			
+			' Go to the node that the user clicked
+			Dim node As TreeNode = treeView.GetNodeAt(p)
+			If Not node Is Nothing Then
+				
+				' Highlight the node that the user clicked.
+				treeView.SelectedNode = node
+				
+				'Show the context menu.
+				cmCreateCategoryUpdate.Show(treeView, p)
+				
+				
+			End If
+		End If
+		
 	End Sub
 	
 	'Used to enable or disable elements in the toolstrip.
@@ -1965,7 +2035,7 @@ Public Partial Class MainForm
 			'Set the superseded objects
 			If update.HasSupersededUpdates Then
 				lblSupersedes.Visible = True
-				SupersededUpdatesForm = Nothing
+				LanguageSelectionForm = Nothing
 			Else
 				lblSupersedes.Visible = False
 			End If

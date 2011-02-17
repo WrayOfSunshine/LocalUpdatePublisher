@@ -88,6 +88,7 @@
     <Compile Include="Classes\GuidCollectionEditor.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Classes\Languages.vb" />
     <Compile Include="Classes\PersistWindowState.vb" />
     <Compile Include="Classes\Rule.vb" />
     <Compile Include="Classes\RuleCollection.vb" />
@@ -138,6 +139,10 @@
       <DependentUpon>ImportCatalogForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ImportCatalogForm.vb" />
+    <Compile Include="Forms\LanguageSelectionForm.Designer.vb">
+      <DependentUpon>LanguageSelectionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LanguageSelectionForm.vb" />
     <Compile Include="Forms\PrerequisiteUpdatesForm.Designer.vb">
       <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
     </Compile>
@@ -287,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImportCatalogForm.resx">
       <DependentUpon>ImportCatalogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LanguageSelectionForm.resx">
+      <DependentUpon>LanguageSelectionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

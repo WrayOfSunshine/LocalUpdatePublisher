@@ -1,7 +1,9 @@
 Version 1.1
 -Globalization with really bad Google translations for French and German.
 -Add and remove multiple updates when exporting or selecting for prerequisite and superseded.
+-Support for approval deadlines.
 -Show locally published updates regardless of vendor.
+-Created updates by right clicking on Vendor or Product categories in the tree view.
 
 Version 1.0
 -Several bugfixes.

@@ -33,7 +33,7 @@ Partial Class SupersededUpdatesForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SupersededUpdatesForm))
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LanguageSelectionForm))
 		Me.btnRemove = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button

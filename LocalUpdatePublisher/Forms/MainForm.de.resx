@@ -117,11 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkInheritApprovals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 27</value>
+  </data>
+  <data name="chkInheritApprovals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
   <data name="chkInheritApprovals.Text" xml:space="preserve">
     <value>Vererben Zulassungen</value>
   </data>
   <data name="chkApprovedOnly.Text" xml:space="preserve">
     <value>Genehmigt Updates Nur</value>
+  </data>
+  <data name="btnComputerListRefresh.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
   </data>
   <data name="lblSelectedTargetGroupCount.Text" xml:space="preserve">
     <value>(# von Computern angezeigt)</value>
@@ -129,8 +139,8 @@
   <data name="lblSelectedTargetGroup.Text" xml:space="preserve">
     <value>Ausgewählte Zielgruppe</value>
   </data>
-  <data name="btnComputerListRefresh.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
+  <data name="lblLanguages.Text" xml:space="preserve">
+    <value>Sprachen</value>
   </data>
   <data name="lblNetwork.Text" xml:space="preserve">
     <value>Benötigt Netzwerk</value>
@@ -183,14 +193,14 @@
   <data name="lblClassification.Text" xml:space="preserve">
     <value>Klassifizierung</value>
   </data>
+  <data name="tabUpdateReport.Text" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
   <data name="btnUpdateRefreshReport.Text" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
   <data name="lblComputerGroup.Text" xml:space="preserve">
     <value>Computer Gruppe</value>
-  </data>
-  <data name="tabUpdateReport.Text" xml:space="preserve">
-    <value>Bericht</value>
   </data>
   <data name="lblUpdateNoStatus.Text" xml:space="preserve">
     <value>Updates ohne Status:</value>
@@ -204,13 +214,18 @@
   <data name="tabComputerStatus.Text" xml:space="preserve">
     <value>Gruppe Status</value>
   </data>
-  <data name="btnComputerRefreshReport.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
   <data name="tabComputerReport.Text" xml:space="preserve">
     <value>Bericht</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnComputerRefreshReport.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datei</value>
+  </data>
   <data name="importCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -244,11 +259,11 @@
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Datei</value>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
   </data>
   <data name="createUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -271,6 +286,12 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
   </data>
+  <data name="savedRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gespeicherte Regeln</value>
+  </data>
   <data name="manageRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 22</value>
   </data>
@@ -288,12 +309,6 @@
   </data>
   <data name="exportRulesToolStripMenuItem.Text" xml:space="preserve">
     <value>Regeln Exportieren</value>
-  </data>
-  <data name="savedRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="savedRulesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gespeicherte Regeln</value>
   </data>
   <data name="certificateInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -313,20 +328,14 @@
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Optionen</value>
   </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Werkzeuge</value>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hilfe</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Über</value>
   </data>
   <data name="helpForumsToolStripMenuItem.Text" xml:space="preserve">
     <value>Hilfe Forum</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hilfe</value>
   </data>
   <data name="exportFileDialog.Filter" xml:space="preserve">
     <value>Tabulatorgetrennt|*.tab</value>

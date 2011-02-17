@@ -137,8 +137,8 @@
   <data name="splitContainerVert.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lblVendor.Parent" xml:space="preserve">
-    <value>tabUpdateInfo</value>
+  <data name="&gt;&gt;dgvComputerReport.Parent" xml:space="preserve">
+    <value>tabComputerReport</value>
   </data>
   <data name="&gt;&gt;lblNetwork.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
@@ -279,9 +279,6 @@
   <data name="txtArticleID.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 20</value>
   </data>
-  <data name="helpForumsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
   <data name="&gt;&gt;dgvComputerGroupStatus.Parent" xml:space="preserve">
     <value>tabComputerStatus</value>
   </data>
@@ -290,9 +287,6 @@
   </data>
   <data name="&gt;&gt;txtMoreInfoURL.Name" xml:space="preserve">
     <value>txtMoreInfoURL</value>
-  </data>
-  <data name="&gt;&gt;dgvComputerReport.Parent" xml:space="preserve">
-    <value>tabComputerReport</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -351,9 +345,6 @@
   <data name="&gt;&gt;lblSeverity.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
   </data>
-  <data name="toolStripStatusLabel.Text" xml:space="preserve">
-    <value>toolStripStatusLabel</value>
-  </data>
   <data name="tabComputerReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -409,7 +400,7 @@
     <value>tabMainUpdates</value>
   </data>
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblBullitinID.Name" xml:space="preserve">
     <value>lblBullitinID</value>
@@ -441,8 +432,8 @@
   <data name="&gt;&gt;txtNetwork.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblPrerequisites.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="pnlHeaderTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>679, 25</value>
@@ -462,9 +453,6 @@
   <data name="txtCVEID.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="&gt;&gt;splitContainerHorz.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="txtMoreInfoURL.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
@@ -476,6 +464,9 @@
   </data>
   <data name="&gt;&gt;splitContainerHorz.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblUninstall.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
   </data>
   <data name="dgvUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>665, 446</value>
@@ -531,6 +522,9 @@
   <data name="txtProduct.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 208</value>
   </data>
+  <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="&gt;&gt;tabComputerStatus.Parent" xml:space="preserve">
     <value>tabMainComputers</value>
   </data>
@@ -550,7 +544,7 @@
     <value>Export Report</value>
   </data>
   <data name="lblPrerequisites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 337</value>
+    <value>481, 339</value>
   </data>
   <data name="dgvUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>657, 384</value>
@@ -558,8 +552,8 @@
   <data name="tabComputerStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>671, 452</value>
   </data>
-  <data name="scHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 147</value>
+  <data name="lblPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 7</value>
   </data>
   <data name="lblComputerUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 15</value>
@@ -567,8 +561,8 @@
   <data name="&gt;&gt;lblSelectedTargetGroupCount.Name" xml:space="preserve">
     <value>lblSelectedTargetGroupCount</value>
   </data>
-  <data name="lblUpdatesWErrors.Text" xml:space="preserve">
-    <value>Updates with Errors:</value>
+  <data name="toolStripStatusLabel.Text" xml:space="preserve">
+    <value>toolStripStatusLabel</value>
   </data>
   <data name="pnlUpdates.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -590,9 +584,6 @@
   </data>
   <data name="txtUpdateNoStatusNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -618,14 +609,11 @@
   <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
     <value>statusStrip</value>
   </data>
-  <data name="&gt;&gt;tabComputerReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="helpForumsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
   </data>
   <data name="&gt;&gt;lblPackageTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 363</value>
   </data>
   <data name="chkInheritApprovals.Text" xml:space="preserve">
     <value>Inherit Approvals</value>
@@ -675,6 +663,9 @@
   <data name="lblPrerequisites.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="cmCreateCategoryUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
   <data name="&gt;&gt;treeView.Name" xml:space="preserve">
     <value>treeView</value>
   </data>
@@ -696,8 +687,8 @@
   <data name="&gt;&gt;tabMainUpdates.Parent" xml:space="preserve">
     <value>pnlUpdates</value>
   </data>
-  <data name="dgvComputerGroupStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="lblSupersedes.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;cboUpdateStatus.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -708,8 +699,8 @@
   <data name="lblArticleID.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="pnlComputers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 478</value>
+  <data name="dgvUpdateStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblUpdatesInstalledorNA.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -732,11 +723,14 @@
   <data name="cboComputerStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>47, 27</value>
   </data>
+  <data name="&gt;&gt;lblVendor.Parent" xml:space="preserve">
+    <value>tabUpdateInfo</value>
+  </data>
   <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 17</value>
   </data>
   <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 363</value>
+    <value>481, 365</value>
   </data>
   <data name="&gt;&gt;lblComputerStatus.Name" xml:space="preserve">
     <value>lblComputerStatus</value>
@@ -770,6 +764,9 @@
   </data>
   <data name="lblReturnCodes.Text" xml:space="preserve">
     <value>Return Codes</value>
+  </data>
+  <data name="dgvComputerGroupStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
   <data name="tabUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -879,11 +876,17 @@
   <data name="&gt;&gt;lblImpact.Name" xml:space="preserve">
     <value>lblImpact</value>
   </data>
+  <data name="createCategoryUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create Update</value>
+  </data>
   <data name="&gt;&gt;certificateInfoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabUpdateStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmCreateCategoryUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnUpdateRefreshReport.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -909,8 +912,8 @@
   <data name="&gt;&gt;lupHelpToolStripMenuItem.Name" xml:space="preserve">
     <value>lupHelpToolStripMenuItem</value>
   </data>
-  <data name="txtUpdatesNeededNum.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="&gt;&gt;cboUpdateStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtArticleID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -999,6 +1002,9 @@
   <data name="&gt;&gt;cboUpdateStatus.Parent" xml:space="preserve">
     <value>tabUpdateReport</value>
   </data>
+  <data name="lblComputerStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
   <data name="lblUpdatesWErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 18</value>
   </data>
@@ -1027,7 +1033,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;splitContainerVert.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblComputerStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 31</value>
@@ -1121,9 +1127,6 @@
   </data>
   <data name="tabMainUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNetwork.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1455,8 +1458,8 @@
   <data name="&gt;&gt;tabUpdateStatus.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;splitContainerVert.Name" xml:space="preserve">
-    <value>splitContainerVert</value>
+  <data name="&gt;&gt;createCategoryUpdateToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabComputerInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1557,6 +1560,9 @@
   <data name="&gt;&gt;lblBullitinID.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
   </data>
+  <data name="lblPrerequisites.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblComputerUpdateStatus.Text" xml:space="preserve">
     <value>Update Status</value>
   </data>
@@ -1574,9 +1580,6 @@
   </data>
   <data name="&gt;&gt;splitContainerVert.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dgvUpdateStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 86</value>
@@ -1791,8 +1794,8 @@
   <data name="&gt;&gt;_dgvMain.Parent" xml:space="preserve">
     <value>scHeader.Panel2</value>
   </data>
-  <data name="lblPackageType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 7</value>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPackageType.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1863,6 +1866,9 @@
   <data name="&gt;&gt;txtUpdatesInstalledorNANum.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;createCategoryUpdateToolStripMenuItem.Name" xml:space="preserve">
+    <value>createCategoryUpdateToolStripMenuItem</value>
+  </data>
   <data name="pnlUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1904,6 +1910,9 @@
   </data>
   <data name="&gt;&gt;lblComputerGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="createCategoryUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
   </data>
   <data name="&gt;&gt;lblPackageType.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
@@ -1971,6 +1980,9 @@
   <data name="&gt;&gt;tabUpdateInfo.Parent" xml:space="preserve">
     <value>tabMainUpdates</value>
   </data>
+  <data name="lblUpdatesWErrors.Text" xml:space="preserve">
+    <value>Updates with Errors:</value>
+  </data>
   <data name="&gt;&gt;lblClassification.ZOrder" xml:space="preserve">
     <value>34</value>
   </data>
@@ -1985,6 +1997,9 @@
   </data>
   <data name="pnlHeaderTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="&gt;&gt;tabComputerReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblComputerStatus.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -2011,7 +2026,7 @@
     <value>Package Type</value>
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblComputerGroup.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -2214,8 +2229,8 @@
   <data name="&gt;&gt;lblID.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblUninstall.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+  <data name="&gt;&gt;tabMainUpdates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;createUpdateToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2241,14 +2256,11 @@
   <data name="lblComputerGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 15</value>
   </data>
-  <data name="&gt;&gt;cboUpdateStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;splitContainerHorz.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnComputerListRefresh.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;tabMainUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2261,6 +2273,9 @@
   </data>
   <data name="certificateInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
+  </data>
+  <data name="&gt;&gt;splitContainerVert.Name" xml:space="preserve">
+    <value>splitContainerVert</value>
   </data>
   <data name="lblUpdatesWErrors.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 12</value>
@@ -2371,7 +2386,7 @@
     <value>6, 54</value>
   </data>
   <data name="lblReturnCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 389</value>
+    <value>481, 391</value>
   </data>
   <data name="&gt;&gt;txtVendor.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -2408,6 +2423,9 @@
   </data>
   <data name="&gt;&gt;lblSeverity.ZOrder" xml:space="preserve">
     <value>32</value>
+  </data>
+  <data name="pnlComputers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>679, 478</value>
   </data>
   <data name="&gt;&gt;txtDescription.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
@@ -2451,8 +2469,8 @@
   <data name="&gt;&gt;lblUpdateStatus.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="scHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="txtUpdatesNeededNum.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;lblVendor.ZOrder" xml:space="preserve">
     <value>31</value>
@@ -2505,17 +2523,23 @@
   <data name="&gt;&gt;lblPrerequisites.Parent" xml:space="preserve">
     <value>tabUpdateInfo</value>
   </data>
-  <data name="lblComputerStatus.Text" xml:space="preserve">
-    <value>Status</value>
+  <data name="scHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>679, 147</value>
   </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
+  </data>
+  <data name="scHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;tabUpdateStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUpdatesWErrors.Name" xml:space="preserve">
     <value>lblUpdatesWErrors</value>
+  </data>
+  <data name="&gt;&gt;cmCreateCategoryUpdate.Name" xml:space="preserve">
+    <value>cmCreateCategoryUpdate</value>
   </data>
   <data name="&gt;&gt;cboTargetGroup.Name" xml:space="preserve">
     <value>cboTargetGroup</value>
@@ -2541,11 +2565,8 @@
   <data name="&gt;&gt;txtMoreInfoURL.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
-  <data name="lblSupersedes.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;txtPackage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 363</value>
   </data>
   <data name="&gt;&gt;lblUpdateNoStatus.Name" xml:space="preserve">
     <value>lblUpdateNoStatus</value>
@@ -2559,14 +2580,17 @@
   <data name="&gt;&gt;lblCVEID.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
-  <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;txtPackage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="exportFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>602, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>
+  </metadata>
+  <metadata name="cmCreateCategoryUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>735, 17</value>
   </metadata>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 659</value>
@@ -2582,5 +2606,8 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>German</value>
   </metadata>
 </root>

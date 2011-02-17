@@ -24,6 +24,7 @@ Imports System.Text
 Imports System.ComponentModel
 Imports System.Security
 Imports System.Security.Cryptography
+Imports System.Collections.Specialized
 
 Public Partial Class UpdateForm
 	
@@ -35,6 +36,7 @@ Public Partial Class UpdateForm
 	Private _OriginalFileInfo As FileInfo
 	Private _Publisher As IPublisher
 	Private _SdpFilePath As String
+	Private _Languages As StringCollection
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for windows forms designer support.
@@ -48,10 +50,23 @@ Public Partial Class UpdateForm
 		Me.BtnNext.Image = My.Resources.Forward.ToBitmap
 	End Sub
 	
-	#REGION "Form Methods"
-	'Create a new SDP.
+	#Region "Form Methods"
+	
+	'Call without either a vendor or product
 	Public Overloads Function ShowDialog() As SoftwareDistributionPackage
+		Return Me.ShowDialog( Nothing , Nothing )
+	End Function
+	
+	'Call with just a vendor.
+	Public Overloads Function ShowDialog(vendor As IUpdateCategory) As SoftwareDistributionPackage
+		Return Me.ShowDialog ( vendor , Nothing )
+	End Function
+	
+	
+	'Create a new SDP.
+	Public Overloads Function ShowDialog(vendor As IUpdateCategory, product As IUpdateCategory) As SoftwareDistributionPackage
 		'Clear The Supporting Forms.
+		LanguageSelectionForm = Nothing
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
 		ReturnCodesForm = Nothing
@@ -75,6 +90,10 @@ Public Partial Class UpdateForm
 			Me.cboVendor.Items.Add(tmpVendor.Name)
 		Next
 		
+		'Load the vendor and product if they were passed in.
+		If Not vendor Is Nothing Then Me.cboVendor.Text = vendor.Title
+		If Not product Is Nothing Then Me.cboProduct.Text = product.Title
+		
 		Me.DialogResult = DialogResult.Cancel
 		
 		'Return the SDP file.
@@ -88,6 +107,7 @@ Public Partial Class UpdateForm
 	'Revise and existing SDP.
 	Public Overloads Function ShowDialog(PackageFile As String ) As SoftwareDistributionPackage
 		'Clear the supporting forms.
+		LanguageSelectionForm = Nothing
 		SupersededUpdatesForm = Nothing
 		PrerequisiteUpdatesForm = Nothing
 		ReturnCodesForm = Nothing
@@ -288,6 +308,18 @@ Public Partial Class UpdateForm
 		SupersededUpdatesForm.ShowDialog(_Sdp.SupersededPackages, _Sdp.PackageId)
 	End Sub
 	
+	Sub LblLanguagesClick(sender As Object, e As EventArgs)
+		If _Sdp.InstallableItems.Count > 0 Then
+			LanguageSelectionForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
+			
+			If Not _Sdp.InstallableItems(0).Languages Is Nothing Then
+				_Languages = LanguageSelectionForm.ShowDialog(_Languages)
+			Else
+				_Languages = LanguageSelectionForm.ShowDialog()
+			End If
+		End If
+	End Sub
+	
 	'ManagetThe list of updates that this update requires before installing.
 	Sub LblPrerequisitesClick(Sender As Object, E As EventArgs)
 		PrerequisiteUpdatesForm.Location = New Point(Me.Location.X + 100 , Me.Location.Y + 100)
@@ -432,6 +464,13 @@ Public Partial Class UpdateForm
 					
 					'If there is an Installable Item, save its values as well.
 					If _Sdp.InstallableItems.Count > 0 Then
+						'Set the languages
+						_Sdp.InstallableItems.Item(0).Languages.Clear
+						If Not _Languages Is Nothing AndAlso _Languages.Count > 0 Then
+							For Each tmpLanguage As String In _Languages
+								_Sdp.InstallableItems.Item(0).Languages.Add(tmpLanguage)
+							Next
+						End If
 						
 						_Sdp.InstallableItems.Item(0).InstallBehavior.Impact = DirectCast(Me.CboImpact.SelectedIndex, InstallationImpact)
 						_Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior = DirectCast(Me.CboRebootBehavior.SelectedIndex, RebootBehavior)
@@ -686,8 +725,8 @@ Public Partial Class UpdateForm
 			Me.CboClassification.SelectedIndex = _Sdp.PackageUpdateClassification
 			If Not String.IsNullOrEmpty(_Sdp.SecurityBulletinId) Then Me.TxtBulletinID.Text = _Sdp.SecurityBulletinId
 			Me.CboSeverity.SelectedIndex = _Sdp.SecurityRating
-			If Not String.IsNullOrEmpty(_Sdp.VendorName) Then Me.CboVendor.Text = _Sdp.VendorName
-			If _Sdp.ProductNames.Count > 0 Then Me.CboProduct.Text = _Sdp.ProductNames(0)
+			If String.IsNullOrEmpty(Me.CboVendor.Text) AndAlso Not String.IsNullOrEmpty(_Sdp.VendorName) Then Me.CboVendor.Text = _Sdp.VendorName
+			If String.IsNullOrEmpty(Me.CboProduct.Text) AndAlso _Sdp.ProductNames.Count > 0 Then Me.CboProduct.Text = _Sdp.ProductNames(0)
 			If Not String.IsNullOrEmpty(_Sdp.KnowledgebaseArticleId) Then Me.TxtArticleID.Text = _Sdp.KnowledgebaseArticleId
 			If _Sdp.CommonVulnerabilitiesIds.Count > 0 Then Me.TxtCVEID.Text = _Sdp.CommonVulnerabilitiesIds.Item(0)
 			If Not _Sdp.SupportUrl Is Nothing Then Me.TxtSupportURL.Text = _Sdp.SupportUrl.ToString
@@ -696,13 +735,13 @@ Public Partial Class UpdateForm
 			'Load the Installable Item info
 			If _Sdp.InstallableItems.Count > 0 Then 'There is an Installable Item.
 				
+				_Languages = _Sdp.InstallableItems.Item(0).Languages
+				
 				If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
 					Me.TxtUninstall.Text = globalRM.GetString("false")
 				Else
 					Me.TxtUninstall.Text = globalRM.GetString("true")
 				End If
-				
-				
 				
 				Me.CboImpact.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.Impact
 				Me.CboRebootBehavior.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior

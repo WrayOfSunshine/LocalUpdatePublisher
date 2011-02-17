@@ -217,6 +217,9 @@
   <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
     <value>624, 517</value>
   </data>
+  <data name="lblLanguages.Text" xml:space="preserve">
+    <value>Sprachen</value>
+  </data>
   <data name="lblNetwork.Text" xml:space="preserve">
     <value>NetNetzwerk Erforderlich</value>
   </data>
@@ -229,14 +232,8 @@
   <data name="lblPackageType.Text" xml:space="preserve">
     <value>Pakettyp</value>
   </data>
-  <data name="lblPrerequisites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 498</value>
-  </data>
   <data name="lblPrerequisites.Text" xml:space="preserve">
     <value>Voraussetzungen</value>
-  </data>
-  <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 498</value>
   </data>
   <data name="lblSupersedes.Text" xml:space="preserve">
     <value>Ersetzt</value>

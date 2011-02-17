@@ -24,7 +24,6 @@ Public Partial Class RulesForm
 	Private ReadOnly _scalarComparison As String ()
 	Private ReadOnly _stringComparison As String ()
 	Private ReadOnly _productTypes As String ()
-	Private ReadOnly _languages As String ()
 	
 	#REGION "Properties"
 	Private _readableRule As String
@@ -52,12 +51,7 @@ Public Partial Class RulesForm
 		' loaded into the combobox.
 		_scalarComparison =  New String() {globalRM.GetString("equal_to"), globalRM.GetString("less_than"), globalRM.GetString("less_than_or_equal_to"), globalRM.GetString("greater_than"), globalRM.GetString("greater_than_or_equal_to")}
 		_stringComparison =  New String() {globalRM.GetString("begins_with"), globalRM.GetString("ends_with"), globalRM.GetString("contains"), globalRM.GetString("equal_to")}
-		_productTypes =  New String() {globalRM.GetString("none"), globalRM.GetString("workstation"), globalRM.GetString("domain_controller"), globalRM.GetString("server")}
-		_languages =  New String() {globalRM.GetString("language_arabic"), globalRM.GetString("language_chinese_HK_SAR"), globalRM.GetString("language_chinese_simplified"), globalRM.GetString("language_chinese_traditional"), _
-			globalRM.GetString("language_czech"), globalRM.GetString("language_danish"), globalRM.GetString("language_dutch"), globalRM.GetString("language_english"), globalRM.GetString("language_finnish"), _
-			globalRM.GetString("language_french"), globalRM.GetString("language_german"), globalRM.GetString("language_greek"), globalRM.GetString("language_hebrew"), globalRM.GetString("language_hungarian"), _
-			globalRM.GetString("language_italian"), globalRM.GetString("language_japanese"), globalRM.GetString("language_korean"), globalRM.GetString("language_norwegian"), globalRM.GetString("language_polish"), _
-		globalRM.GetString("language_portuguese"), globalRM.GetString("language_portuguese_brazil"), globalRM.GetString("language_russian"), globalRM.GetString("language_spanish"), globalRM.GetString("language_swedish"), globalRM.GetString("language_turkish")}
+		_productTypes =  New String() {globalRM.GetString("none"), globalRM.GetString("workstation"), globalRM.GetString("domain_controller"), globalRM.GetString("server")}		
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
@@ -65,7 +59,7 @@ Public Partial Class RulesForm
 		
 		'Set comboboxes
 		Me.cboProductType.Items.AddRange(_productTypes)
-		Me.cboLanguage.Items.AddRange(_languages)
+		Me.cboLanguage.Items.AddRange(Languages.Names)
 		
 		'Set the Environment variable data source.
 		Me.cboEnvironmentVariable.DataSource = GetSortedEnum(GetType(CSIDL))
@@ -1239,124 +1233,7 @@ Public Partial Class RulesForm
 				Throw New NotSupportedException("The language code " & iso6391Code & " does not have an MSI Langauge Number!")
 		End Select
 	End Function
-	
-	'Translates the MSI Language Number to an ISO 639-1 code.
-	Public Shared Function GetISOForMsiLanguage(msiLanguageNumber As Integer) As String
-		Select Case msiLanguageNumber
-			Case 1
-				Return "ar"
-			Case 3076
-				Return "zh-HK"
-			Case 4
-				Return "zh-CHS"
-			Case 31748
-				Return "zh-CHT"
-			Case 5
-				Return "cs"
-			Case 6
-				Return "da"
-			Case 19
-				Return "nl"
-			Case 9
-				Return "en"
-			Case 11
-				Return "fi"
-			Case 12
-				Return "fr"
-			Case 7
-				Return "de"
-			Case 8
-				Return "el"
-			Case 13
-				Return "he"
-			Case 14
-				Return "hu"
-			Case 16
-				Return "it"
-			Case 17
-				Return "ja"
-			Case 18
-				Return "ko"
-			Case 20
-				Return "no"
-			Case 21
-				Return "pl"
-			Case 22
-				Return "pt"
-			Case 1046
-				Return "pt-BR"
-			Case 25
-				Return "ru"
-			Case 10
-				Return "es"
-			Case 29
-				Return "sv"
-			Case 31
-				Return "tr"
-			Case Nothing
-				Return Nothing
-			Case Else
-				Throw New NotSupportedException("An ISO 639-1 code is not known for MSI Language " & msiLanguageNumber)
-		End Select
-	End Function
-	
-	'Return the human readable string based on the language code.
-	Shared Function GetLanguageText(languageCode As String) As String
-		Select Case languageCode
-			Case "ar"
-				Return globalRM.GetString("language_arabic")
-			Case "zh-HK"
-				Return globalRM.GetString("language_chinese_HK_SAR")
-			Case "zh-CHS"
-				Return globalRM.GetString("language_chinese_simplified")
-			Case "zh-CHT"
-				Return globalRM.GetString("language_chinese_traditional")
-			Case "cs"
-				Return globalRM.GetString("language_czech")
-			Case "da"
-				Return globalRM.GetString("language_danish")
-			Case "nl"
-				Return globalRM.GetString("language_dutch")
-			Case "en"
-				Return globalRM.GetString("language_english")
-			Case "fi"
-				Return globalRM.GetString("language_finnish")
-			Case "fr"
-				Return globalRM.GetString("language_french")
-			Case "de"
-				Return globalRM.GetString("language_german")
-			Case "el"
-				Return globalRM.GetString("language_greek")
-			Case "he"
-				Return globalRM.GetString("language_hebrew")
-			Case "hu"
-				Return globalRM.GetString("language_hungarian")
-			Case "it"
-				Return globalRM.GetString("language_italian")
-			Case "ja"
-				Return globalRM.GetString("language_japanese")
-			Case "ko"
-				Return globalRM.GetString("language_korean")
-			Case "no"
-				Return globalRM.GetString("language_norwegian")
-			Case "pl"
-				Return globalRM.GetString("language_polish")
-			Case "pt"
-				Return globalRM.GetString("language_portuguese")
-			Case "pt-BR"
-				Return globalRM.GetString("language_portuguese_brazil")
-			Case "ru"
-				Return globalRM.GetString("language_russian")
-			Case "es"
-				Return globalRM.GetString("language_spanish")
-			Case "sv"
-				Return globalRM.GetString("language_swedish")
-			Case "tr"
-				Return globalRM.GetString("language_turkish")
-			Case Else
-				Return Nothing
-		End Select
-	End Function
+		
 	
 	'When a processor type is selected show the XML compatible value.
 	Shared Function GetProcessorTypeCode(processorType as String) as String
@@ -1845,7 +1722,7 @@ Public Partial Class RulesForm
 					Me.cboRuleType.SelectedIndex = RuleTypes.WindowsLanguage
 					
 					'Load the data.
-					Me.cboLanguage.Text = GetLanguageText(xmlReader.GetAttribute("Language"))
+					Me.cboLanguage.Text = Languages.Name(xmlReader.GetAttribute("Language"))
 					
 				Case "Processor"
 					'Select the rule.
@@ -2060,7 +1937,7 @@ Public Partial Class RulesForm
 					Me.txtPatchCode.Text = xmlReader.GetAttribute("PatchCode")
 					Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
 					Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
-					Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
+					Me.cboLanguage.Text = Languages.Name(Languages.Code(Cint(xmlReader.GetAttribute("Language"))))
 					
 				Case "MsiProductInstalled"
 					'Select the rule.
@@ -2070,7 +1947,7 @@ Public Partial Class RulesForm
 					Me.txtProductCode.Text = xmlReader.GetAttribute("ProductCode")
 					Me.txtMaxVersion.Text = xmlReader.GetAttribute("VersionMax")
 					Me.txtMinVersion.Text = xmlReader.GetAttribute("VersionMin")
-					Me.cboLanguage.Text = GetLanguageText(GetISOForMsiLanguage(Cint(xmlReader.GetAttribute("Language"))))
+					Me.cboLanguage.Text = Languages.Name(Languages.Code(Cint(xmlReader.GetAttribute("Language"))))
 					
 				Case "MsiComponentInstalledForProduct"
 					'Select the rule.
