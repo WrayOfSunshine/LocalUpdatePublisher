@@ -7,6 +7,7 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Imports Microsoft.UpdateServices.Administration
+Imports System.IO
 
 Public Partial Class ApprovalProgressForm
 	Public Sub New()
@@ -154,6 +155,19 @@ Public Partial Class ApprovalProgressForm
 				Me.Refresh
 				
 				Try
+					' If the installation isn't possible then use the metadata to republish it with the binaries.
+					If update.State = UpdateState.InstallationImpossible Then
+						'SDP Path.
+						Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), update.Id.UpdateId.ToString() & ".xml") 
+						
+						'Export the udpate's metadata to the sdp path.
+						update.ExportPackageMetadata(sdpFilePath)
+						
+						'Publish the update as a catalog snippet which will download the files.
+						Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFilePath) 
+						ConnectionManager.PublishPackageFromCatalog(tmpSdp, sdpFilePath, Me) 
+					End If
+					
 					'Msgbox ( tempRow.Cells.Item("Deadline").Value.ToString )
 					If Not tempRow.Cells.Item("Deadline").Value Is Nothing AndAlso Not IsDBNull(tempRow.Cells.Item("Deadline").Value)  Then
 						update.Approve( _

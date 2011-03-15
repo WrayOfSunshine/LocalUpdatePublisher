@@ -103,7 +103,7 @@ Friend NotInheritable Class ConnectionManager
 				_currentServer = AdminProxy.GetUpdateServer(server.Name,server.Ssl,server.Port)
 			End If
 			
-			'Set the culture for the server.			
+			'Set the culture for the server.
 			_currentServer.PreferredCulture = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
 			
 			'If this is a not a child server then set the parent server to
@@ -722,10 +722,14 @@ Friend NotInheritable Class ConnectionManager
 			' local paths.
 			URLReq = WebRequest.CreateDefault(sURL)
 			
-			'If this is a file url then we do not need credentials.
-			If Not sURL.IsFile Then
+			'Handle FTP and File URLS.
+			If sURL.Scheme = "ftp" Then
+				URLReq.Method = WebRequestMethods.Ftp.DownloadFile
+			Else If Not sURL.IsFile Then
+				'If this is a file url then we do not need credentials.
 				URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
 			End If
+			
 			
 			URLRes = URLReq.GetResponse
 			sChunks = URLReq.GetResponse.GetResponseStream
