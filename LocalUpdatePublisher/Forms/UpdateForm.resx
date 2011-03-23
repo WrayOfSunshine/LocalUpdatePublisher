@@ -121,14 +121,980 @@
   <data name="tabsImportUpdate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="&gt;&gt;btnAddDir.Name" xml:space="preserve">
+    <value>btnAddDir</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
+    <value>lblInfo</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Name" xml:space="preserve">
+    <value>txtMSIPath</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Name" xml:space="preserve">
+    <value>lblMSIPath</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Name" xml:space="preserve">
+    <value>btnAddFiles</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Name" xml:space="preserve">
+    <value>dgvAdditionalFiles</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Name" xml:space="preserve">
+    <value>lblAdditionalFiles</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Name" xml:space="preserve">
+    <value>btnUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Name" xml:space="preserve">
+    <value>txtUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Name" xml:space="preserve">
+    <value>lblUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabIntro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIntro.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabIntro.Text" xml:space="preserve">
+    <value>Intro</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Name" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.Name" xml:space="preserve">
+    <value>lblLanguages</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Name" xml:space="preserve">
+    <value>txtNetwork</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Name" xml:space="preserve">
+    <value>lblNetwork</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtOriginalURI.Name" xml:space="preserve">
+    <value>txtOriginalURI</value>
+  </data>
+  <data name="&gt;&gt;txtOriginalURI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOriginalURI.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtOriginalURI.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalURI.Name" xml:space="preserve">
+    <value>lblOriginalURI</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalURI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalURI.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalURI.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cboPackageType.Name" xml:space="preserve">
+    <value>cboPackageType</value>
+  </data>
+  <data name="&gt;&gt;cboPackageType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboPackageType.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboPackageType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Name" xml:space="preserve">
+    <value>lblPackageType</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Name" xml:space="preserve">
+    <value>lblPrerequisites</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Name" xml:space="preserve">
+    <value>lblSupersedes</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Name" xml:space="preserve">
+    <value>lblReturnCodes</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Name" xml:space="preserve">
+    <value>txtUninstall</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblUninstall.Name" xml:space="preserve">
+    <value>lblUninstall</value>
+  </data>
+  <data name="&gt;&gt;lblUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUninstall.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblUninstall.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblPackageInfo.Name" xml:space="preserve">
+    <value>lblPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblPackageInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackageInfo.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblPackageInfo.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtCommandLine.Name" xml:space="preserve">
+    <value>txtCommandLine</value>
+  </data>
+  <data name="&gt;&gt;txtCommandLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCommandLine.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCommandLine.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblCommandLine.Name" xml:space="preserve">
+    <value>lblCommandLine</value>
+  </data>
+  <data name="&gt;&gt;lblCommandLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommandLine.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblCommandLine.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;cboRebootBehavior.Name" xml:space="preserve">
+    <value>cboRebootBehavior</value>
+  </data>
+  <data name="&gt;&gt;cboRebootBehavior.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboRebootBehavior.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboRebootBehavior.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;cboImpact.Name" xml:space="preserve">
+    <value>cboImpact</value>
+  </data>
+  <data name="&gt;&gt;cboImpact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboImpact.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboImpact.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtMoreInfoURL.Name" xml:space="preserve">
+    <value>txtMoreInfoURL</value>
+  </data>
+  <data name="&gt;&gt;txtMoreInfoURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMoreInfoURL.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtMoreInfoURL.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtSupportURL.Name" xml:space="preserve">
+    <value>txtSupportURL</value>
+  </data>
+  <data name="&gt;&gt;txtSupportURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSupportURL.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtSupportURL.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;cboSeverity.Name" xml:space="preserve">
+    <value>cboSeverity</value>
+  </data>
+  <data name="&gt;&gt;cboSeverity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboSeverity.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboSeverity.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;txtCVEID.Name" xml:space="preserve">
+    <value>txtCVEID</value>
+  </data>
+  <data name="&gt;&gt;txtCVEID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCVEID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCVEID.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtArticleID.Name" xml:space="preserve">
+    <value>txtArticleID</value>
+  </data>
+  <data name="&gt;&gt;txtArticleID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtArticleID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtArticleID.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Name" xml:space="preserve">
+    <value>cboProduct</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboProduct.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;cboVendor.Name" xml:space="preserve">
+    <value>cboVendor</value>
+  </data>
+  <data name="&gt;&gt;cboVendor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboVendor.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboVendor.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;cboClassification.Name" xml:space="preserve">
+    <value>cboClassification</value>
+  </data>
+  <data name="&gt;&gt;cboClassification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboClassification.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;cboClassification.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;txtBulletinID.Name" xml:space="preserve">
+    <value>txtBulletinID</value>
+  </data>
+  <data name="&gt;&gt;txtBulletinID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBulletinID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtBulletinID.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Name" xml:space="preserve">
+    <value>txtDescription</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txtPackageTitle.Name" xml:space="preserve">
+    <value>txtPackageTitle</value>
+  </data>
+  <data name="&gt;&gt;txtPackageTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPackageTitle.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;txtPackageTitle.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;lblRebootBehavior.Name" xml:space="preserve">
+    <value>lblRebootBehavior</value>
+  </data>
+  <data name="&gt;&gt;lblRebootBehavior.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRebootBehavior.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblRebootBehavior.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;lblImpact.Name" xml:space="preserve">
+    <value>lblImpact</value>
+  </data>
+  <data name="&gt;&gt;lblImpact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImpact.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblImpact.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;lblMoreInfoURL.Name" xml:space="preserve">
+    <value>lblMoreInfoURL</value>
+  </data>
+  <data name="&gt;&gt;lblMoreInfoURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMoreInfoURL.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblMoreInfoURL.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;lblSupportURL.Name" xml:space="preserve">
+    <value>lblSupportURL</value>
+  </data>
+  <data name="&gt;&gt;lblSupportURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSupportURL.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSupportURL.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;lblSeverity.Name" xml:space="preserve">
+    <value>lblSeverity</value>
+  </data>
+  <data name="&gt;&gt;lblSeverity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeverity.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSeverity.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;lblCVEID.Name" xml:space="preserve">
+    <value>lblCVEID</value>
+  </data>
+  <data name="&gt;&gt;lblCVEID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCVEID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblCVEID.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;lblArticleID.Name" xml:space="preserve">
+    <value>lblArticleID</value>
+  </data>
+  <data name="&gt;&gt;lblArticleID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblArticleID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblArticleID.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Name" xml:space="preserve">
+    <value>lblProduct</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblProduct.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;lblVendor.Name" xml:space="preserve">
+    <value>lblVendor</value>
+  </data>
+  <data name="&gt;&gt;lblVendor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVendor.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblVendor.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;lblBullitinID.Name" xml:space="preserve">
+    <value>lblBullitinID</value>
+  </data>
+  <data name="&gt;&gt;lblBullitinID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBullitinID.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblBullitinID.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;lblClassification.Name" xml:space="preserve">
+    <value>lblClassification</value>
+  </data>
+  <data name="&gt;&gt;lblClassification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblClassification.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblClassification.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;lblDescription.Name" xml:space="preserve">
+    <value>lblDescription</value>
+  </data>
+  <data name="&gt;&gt;lblDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDescription.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;lblPackageTitle.Name" xml:space="preserve">
+    <value>lblPackageTitle</value>
+  </data>
+  <data name="&gt;&gt;lblPackageTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackageTitle.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;lblPackageTitle.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="tabPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPackageInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabPackageInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPackageInfo.Text" xml:space="preserve">
+    <value>Package Info</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Name" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Name" xml:space="preserve">
+    <value>isInstalledRules</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.14365, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
+    <value>tabIsInstalled</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstalled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsInstalled.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabIsInstalled.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabIsInstalled.Text" xml:space="preserve">
+    <value>IsInstalled</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Name" xml:space="preserve">
+    <value>tabIsInstalled</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Name" xml:space="preserve">
+    <value>isInstallableRules</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.14365, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
+    <value>tabIsInstallable</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstallable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsInstallable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabIsInstallable.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabIsInstallable.Text" xml:space="preserve">
+    <value>IsInstallable</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Name" xml:space="preserve">
+    <value>tabIsInstallable</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Name" xml:space="preserve">
+    <value>btnIsSupersededEdit</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Name" xml:space="preserve">
+    <value>lblIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Name" xml:space="preserve">
+    <value>lblIsSuperceded_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Name" xml:space="preserve">
+    <value>txtIsSuperceded_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsSuperseded.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabIsSuperseded.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tabIsSuperseded.Text" xml:space="preserve">
+    <value>IsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Name" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Name" xml:space="preserve">
+    <value>btnMetaDataEdit</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Name" xml:space="preserve">
+    <value>lblMetaData_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Name" xml:space="preserve">
+    <value>lblMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Name" xml:space="preserve">
+    <value>txtInstallableItemMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabMetaData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabMetaData.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabMetaData.Text" xml:space="preserve">
+    <value>MetaData</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Name" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Name" xml:space="preserve">
+    <value>txtSummary</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Parent" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabSummary.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>605, 517</value>
+  </data>
+  <data name="tabSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabSummary.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Name" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Parent" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabsImportUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 3</value>
+  </data>
+  <data name="tabsImportUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>613, 544</value>
+  </data>
+  <data name="tabsImportUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabsImportUpdate.Name" xml:space="preserve">
+    <value>tabsImportUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabsImportUpdate.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.14365, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabsImportUpdate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabsImportUpdate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>534, 110</value>
   </data>
   <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 19</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAddDir.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -252,24 +1218,6 @@
   <data name="&gt;&gt;btnAddFiles.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="FileName.HeaderText" xml:space="preserve">
-    <value>File Name</value>
-  </data>
-  <data name="FileName.Width" type="System.Int32, mscorlib">
-    <value>270</value>
-  </data>
-  <data name="RemoveFile.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RemoveFile.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="FileObject.HeaderText" xml:space="preserve">
-    <value>File Object</value>
-  </data>
-  <data name="FileObject.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 114</value>
   </data>
@@ -290,6 +1238,24 @@
   </data>
   <data name="&gt;&gt;dgvAdditionalFiles.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="FileName.HeaderText" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="FileName.Width" type="System.Int32, mscorlib">
+    <value>270</value>
+  </data>
+  <data name="RemoveFile.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemoveFile.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="FileObject.HeaderText" xml:space="preserve">
+    <value>File Object</value>
+  </data>
+  <data name="FileObject.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lblAdditionalFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -398,33 +1364,6 @@
   </data>
   <data name="&gt;&gt;lblUpdateFile.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="tabIntro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIntro.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabIntro.Text" xml:space="preserve">
-    <value>Intro</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Name" xml:space="preserve">
-    <value>tabIntro</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblLanguages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1590,33 +2529,6 @@
   <data name="&gt;&gt;lblPackageTitle.ZOrder" xml:space="preserve">
     <value>40</value>
   </data>
-  <data name="tabPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabPackageInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabPackageInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPackageInfo.Text" xml:space="preserve">
-    <value>Package Info</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Name" xml:space="preserve">
-    <value>tabPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="isInstalledRules.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1636,40 +2548,13 @@
     <value>isInstalledRules</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.28410, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.14365, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
     <value>tabIsInstalled</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tabIsInstalled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsInstalled.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabIsInstalled.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabIsInstalled.Text" xml:space="preserve">
-    <value>IsInstalled</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Name" xml:space="preserve">
-    <value>tabIsInstalled</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="isInstallableRules.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1690,40 +2575,13 @@
     <value>isInstallableRules</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.28410, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.14365, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
     <value>tabIsInstallable</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tabIsInstallable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsInstallable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabIsInstallable.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabIsInstallable.Text" xml:space="preserve">
-    <value>IsInstallable</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Name" xml:space="preserve">
-    <value>tabIsInstallable</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="btnIsSupersededEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1835,33 +2693,6 @@
   </data>
   <data name="&gt;&gt;txtIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="tabIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsSuperseded.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabIsSuperseded.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tabIsSuperseded.Text" xml:space="preserve">
-    <value>IsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Name" xml:space="preserve">
-    <value>tabIsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="btnMetaDataEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1977,33 +2808,6 @@
   <data name="&gt;&gt;txtInstallableItemMetaData.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tabMetaData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabMetaData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabMetaData.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tabMetaData.Text" xml:space="preserve">
-    <value>MetaData</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Name" xml:space="preserve">
-    <value>tabMetaData</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -2063,54 +2867,6 @@
   </data>
   <data name="&gt;&gt;txtSummary.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="tabSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabSummary.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 517</value>
-  </data>
-  <data name="tabSummary.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabSummary.Text" xml:space="preserve">
-    <value>Summary</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Name" xml:space="preserve">
-    <value>tabSummary</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Parent" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabsImportUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 3</value>
-  </data>
-  <data name="tabsImportUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 544</value>
-  </data>
-  <data name="tabsImportUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabsImportUpdate.Name" xml:space="preserve">
-    <value>tabsImportUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabsImportUpdate.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.28410, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tabsImportUpdate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabsImportUpdate.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnPrevious.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>

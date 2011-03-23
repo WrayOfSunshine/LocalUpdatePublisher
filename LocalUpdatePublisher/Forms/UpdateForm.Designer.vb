@@ -217,7 +217,7 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.RemoveFile, "RemoveFile")
 		Me.RemoveFile.Name = "RemoveFile"
 		Me.RemoveFile.ReadOnly = true
-		Me.RemoveFile.Text = "Supprimer"
+		Me.RemoveFile.Text = "Delete"
 		Me.RemoveFile.UseColumnTextForButtonValue = true
 		'
 		'FileObject
@@ -578,10 +578,10 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.isInstalledRules, "isInstalledRules")
 		Me.isInstalledRules.Instructions = resources.GetString("isInstalledRules.Instructions")
 		Me.isInstalledRules.Name = "isInstalledRules"
-		Me.isInstalledRules.Rule = ""
-		Me.isInstalledRules.RuleEditorTitle = "Installé règle"
-		Me.isInstalledRules.Title = "Forfait Niveau - Règles installée"
-		Me.isInstalledRules.TitleItemLevel = "Niveau Point Installation"
+		Me.isInstalledRules.RuleEditorTitle = "German"
+		Me.isInstalledRules.Rules = ""
+		Me.isInstalledRules.Title = "Package Level - Installed Rules"
+		Me.isInstalledRules.TitleItemLevel = "Installation Item Level"
 		'
 		'tabIsInstallable
 		'
@@ -597,10 +597,10 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.isInstallableRules, "isInstallableRules")
 		Me.isInstallableRules.Instructions = resources.GetString("isInstallableRules.Instructions")
 		Me.isInstallableRules.Name = "isInstallableRules"
-		Me.isInstallableRules.Rule = ""
-		Me.isInstallableRules.RuleEditorTitle = "Règle Installable"
-		Me.isInstallableRules.Title = "Forfait Niveau - Règles Installable"
-		Me.isInstallableRules.TitleItemLevel = "Niveau Point Installation"
+		Me.isInstallableRules.RuleEditorTitle = "Installable"
+		Me.isInstallableRules.Rules = ""
+		Me.isInstallableRules.Title = "Package Level - Installable Rules"
+		Me.isInstallableRules.TitleItemLevel = "Installation Item Level"
 		'
 		'tabIsSuperseded
 		'

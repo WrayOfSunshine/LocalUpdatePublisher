@@ -1906,7 +1906,7 @@ Public Partial Class RulesForm
 					Me.txtRegistryValue.Text = xmlReader.GetAttribute("Value")
 					If xmlReader.GetAttribute("RegType32") = "true" Then Me.chkRegistry32Bit.Checked = True
 					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
-					Me.txtData.Text = xmlReader.GetAttribute("Data")
+					Me.txtVersion.Text = xmlReader.GetAttribute("Data")
 					
 				Case "RegSz"
 					'Select the rule.

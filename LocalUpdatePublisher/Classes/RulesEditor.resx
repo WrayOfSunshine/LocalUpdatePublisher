@@ -120,19 +120,15 @@
   <data name="&gt;&gt;lbl_xml.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+  <data name="&gt;&gt;btn_add.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tb_xml.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="btnSaveRules.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
-  </data>
-  <data name="lbl_instructions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="btn_remove.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;btn_remove.Parent" xml:space="preserve">
     <value>$this</value>
@@ -149,6 +145,7 @@
   <data name="&gt;&gt;dgv_rules.Name" xml:space="preserve">
     <value>dgv_rules</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnLoadRules.Location" type="System.Drawing.Point, System.Drawing">
     <value>503, 35</value>
   </data>
@@ -164,9 +161,6 @@
   <data name="&gt;&gt;lbl_instructions.Name" xml:space="preserve">
     <value>lbl_instructions</value>
   </data>
-  <data name="&gt;&gt;XML.Name" xml:space="preserve">
-    <value>XML</value>
-  </data>
   <data name="btn_add.Text" xml:space="preserve">
     <value>Add Rule</value>
   </data>
@@ -175,9 +169,6 @@
   </data>
   <data name="lbl_title.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 17</value>
-  </data>
-  <data name="&gt;&gt;btnSaveRules.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnLoadRules.Name" xml:space="preserve">
     <value>btnLoadRules</value>
@@ -200,8 +191,8 @@
   <data name="XML.HeaderText" xml:space="preserve">
     <value>XML</value>
   </data>
-  <data name="&gt;&gt;btn_add.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="dgv_rules.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 62</value>
   </data>
   <data name="btn_edit.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -230,9 +221,6 @@
   <data name="lbl_instructions.Size" type="System.Drawing.Size, System.Drawing">
     <value>595, 42</value>
   </data>
-  <data name="&gt;&gt;lbl_xml.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;btn_remove.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -245,29 +233,23 @@
   <data name="btn_add.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
+  <data name="&gt;&gt;tb_xml.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnLoadRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
   <data name="&gt;&gt;btnSaveRules.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnEditInstallableItem.Name" xml:space="preserve">
-    <value>btnEditInstallableItem</value>
-  </data>
-  <data name="btn_group.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 292</value>
-  </data>
-  <data name="lbl_xml.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 322</value>
   </data>
   <data name="&gt;&gt;dgv_rules.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;btnEditInstallableItem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="btnLoadRules.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
-  </data>
-  <data name="btn_remove.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnLoadRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
   </data>
   <data name="btn_group.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -275,8 +257,8 @@
   <data name="btnLoadRules.Text" xml:space="preserve">
     <value>Load Rules</value>
   </data>
-  <data name="&gt;&gt;tb_xml.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnSaveRules.Name" xml:space="preserve">
+    <value>btnSaveRules</value>
   </data>
   <data name="btnEditInstallableItem.Location" type="System.Drawing.Point, System.Drawing">
     <value>543, 319</value>
@@ -308,6 +290,9 @@
   <data name="btnSaveRules.Location" type="System.Drawing.Point, System.Drawing">
     <value>417, 35</value>
   </data>
+  <data name="&gt;&gt;lbl_title.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="btnSaveRules.Text" xml:space="preserve">
     <value>Save Rules</value>
   </data>
@@ -333,8 +318,8 @@
   <data name="lbl_instructions.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="&gt;&gt;btnSaveRules.Name" xml:space="preserve">
-    <value>btnSaveRules</value>
+  <data name="&gt;&gt;btnSaveRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;XML.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -348,8 +333,8 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>595, 459</value>
   </data>
-  <data name="&gt;&gt;tb_xml.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;btnEditInstallableItem.Name" xml:space="preserve">
+    <value>btnEditInstallableItem</value>
   </data>
   <data name="&gt;&gt;btnEditInstallableItem.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -357,11 +342,14 @@
   <data name="btnEditInstallableItem.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="dgv_rules.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 62</value>
+  <data name="&gt;&gt;lbl_xml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_group.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
+  </data>
+  <data name="lbl_xml.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 322</value>
   </data>
   <data name="btn_remove.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -372,11 +360,11 @@
   <data name="&gt;&gt;btn_group.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btn_remove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>506, 292</value>
+  <data name="btnSaveRules.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
   </data>
-  <data name="&gt;&gt;lbl_title.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lbl_instructions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="btn_group.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -386,6 +374,9 @@
   </data>
   <data name="&gt;&gt;lbl_instructions.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="btn_group.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 292</value>
   </data>
   <data name="&gt;&gt;btn_edit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -399,14 +390,14 @@
   <data name="&gt;&gt;btnLoadRules.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnEditInstallableItem.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnEditInstallableItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
   </data>
   <data name="&gt;&gt;dgv_rules.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Rule.HeaderText" xml:space="preserve">
-    <value>Rule</value>
+  <data name="&gt;&gt;lbl_instructions.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;lbl_instructions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -417,8 +408,8 @@
   <data name="&gt;&gt;btn_group.Name" xml:space="preserve">
     <value>btn_group</value>
   </data>
-  <data name="&gt;&gt;lbl_instructions.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="btn_remove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>506, 292</value>
   </data>
   <data name="btnSaveRules.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -426,8 +417,8 @@
   <data name="&gt;&gt;lbl_title.Name" xml:space="preserve">
     <value>lbl_title</value>
   </data>
-  <data name="btn_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 292</value>
+  <data name="&gt;&gt;XML.Name" xml:space="preserve">
+    <value>XML</value>
   </data>
   <data name="&gt;&gt;Rule.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -438,20 +429,29 @@
   <data name="lbl_title.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="lbl_instructions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnEditInstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="&gt;&gt;lbl_title.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;tb_xml.Name" xml:space="preserve">
     <value>tb_xml</value>
   </data>
+  <data name="lbl_instructions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;lbl_title.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Rule.HeaderText" xml:space="preserve">
+    <value>Rule</value>
+  </data>
+  <data name="btn_edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
   <data name="&gt;&gt;btn_add.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_xml.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btn_edit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 292</value>
   </data>
   <data name="lbl_xml.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -461,8 +461,5 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>German</value>
   </metadata>
 </root>

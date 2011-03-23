@@ -75,7 +75,8 @@ Public Partial Class ImportCatalogForm
 				
 				'We are using the deprecated constructor because the new one gives a validation error for no good reason.
 				Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(tmpNode.CreateNavigator)
-				'Add the new row and set the first column's tag as the SDP object.
+			
+			'Add the new row and set the first column's tag as the SDP object.
 				Dim tmpRow As Integer = dgvUpdates.Rows.Add(New Object() {False, False, tmpSdp.Title})
 				dgvUpdates.Rows(tmpRow).Cells("Include").Tag = tmpSdp
 			Next

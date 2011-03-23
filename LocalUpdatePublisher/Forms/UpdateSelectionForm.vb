@@ -14,25 +14,13 @@ Public Partial Class UpdateSelectionForm
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'Add the custom GUID option to the combo box.
-		cboVendor.Items.Add(globalRM.GetString("custom_GUID"))
-		
-		'If the update node is instantiated, load the vendor dropdown.
-		'cboVendor.Items.Clear
-		If Not My.Forms.MainForm.UpdateNode Is Nothing Then
-			For Each tmpNode As TreeNode In My.Forms.MainForm.UpdateNode.Nodes
-				If Not tmpNode.Tag Is Nothing AndAlso TypeOf(tmpNode.Tag) Is IUpdateCategory Then
-					cboVendor.Items.Add(New ComboVendors(DirectCast(tmpNode.Tag, IUpdateCategory)))
-				End If
-			Next
-		End If
 	End Sub
 	
 	
 	'Show the dialog and hide the current update.
 	Public Overloads Function ShowDialog(currentUpdate As Guid) As UpdateCollection
-		_currentUpdate = currentUpdate
+		_currentUpdate = currentUpdate		
+		Call UpdateVendors
 		
 		'If no row is currently selected return nothing.  Otherwise
 		' return the selected update revision Id.
@@ -49,6 +37,8 @@ Public Partial Class UpdateSelectionForm
 	Public Overloads Function ShowDialog() As UpdateCollection
 		cboVendor.SelectedIndex = -1
 		dgvUpdates.DataSource = Nothing
+		Call UpdateVendors
+		
 		
 		'If no row is currently selected return nothing.  Otherwise
 		' return the selected update revision Id.
@@ -59,6 +49,23 @@ Public Partial Class UpdateSelectionForm
 		End If
 		
 	End Function
+	
+	Private Sub UpdateVendors()
+		cboVendor.Items.Clear
+		
+		'Add the custom GUID option to the combo box.
+		cboVendor.Items.Add(globalRM.GetString("custom_GUID"))
+		
+		'If the update node is instantiated, load the vendor dropdown.
+		'cboVendor.Items.Clear
+		If Not My.Forms.MainForm.UpdateNode Is Nothing Then
+			For Each tmpNode As TreeNode In My.Forms.MainForm.UpdateNode.Nodes
+				If Not tmpNode.Tag Is Nothing AndAlso TypeOf(tmpNode.Tag) Is IUpdateCategory Then
+					cboVendor.Items.Add(New ComboVendors(DirectCast(tmpNode.Tag, IUpdateCategory)))
+				End If
+			Next
+		End If
+	End Sub
 	
 	Private Function GetUpdateCollection As UpdateCollection
 		Dim tmpUpdateCollection As UpdateCollection = New UpdateCollection

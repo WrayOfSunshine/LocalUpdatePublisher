@@ -190,6 +190,7 @@
     </Compile>
     <Compile Include="Forms\SettingsForm.vb">
       <SubType>Form</SubType>
+      <DependentUpon>UpdateForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\SupersededUpdatesForm.Designer.vb">
       <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>

@@ -1413,7 +1413,7 @@ Public Partial Class MainForm
 								tmpProductNode = vendorNode.Nodes.Add(category.Title)
 								tmpProductNode.Tag = category
 								
-								If category.GetSubcategories.Count > 0 Then Msgbox ( category.Title & " " & category.GetSubcategories.Count)
+								'If category.GetSubcategories.Count > 0 Then Msgbox ( category.Title & " " & category.GetSubcategories.Count)
 							End If
 							
 							'If this is a product family category and loop through it.
@@ -1428,7 +1428,7 @@ Public Partial Class MainForm
 									tmpProductNode = tmpProductFamilyNode.Nodes.Add(product.Title)
 									tmpProductNode.Tag = product
 									
-									If product.GetSubcategories.Count > 0 Then Msgbox ( product.Title & " " & product.GetSubcategories.Count)
+									'If product.GetSubcategories.Count > 0 Then Msgbox ( product.Title & " " & product.GetSubcategories.Count)
 								End If
 							Next
 							

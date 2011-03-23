@@ -166,6 +166,7 @@ Public Partial Class ApprovalProgressForm
 						'Publish the update as a catalog snippet which will download the files.
 						Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFilePath) 
 						ConnectionManager.PublishPackageFromCatalog(tmpSdp, sdpFilePath, Me) 
+						update.Refresh
 					End If
 					
 					'Msgbox ( tempRow.Cells.Item("Deadline").Value.ToString )

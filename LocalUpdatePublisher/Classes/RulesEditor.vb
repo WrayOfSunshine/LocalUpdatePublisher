@@ -130,8 +130,8 @@ Public Partial Class RulesEditor
 		End Get
 	End Property
 	
-	'The rule the editor is representing.
-	Public Property Rule() As String
+	'The rules the editor is representing.
+	Public Property Rules() As String
 		Get
 			Dim tmpStringBuilder As New StringBuilder()
 			If Me.Count > 1 Then
@@ -549,7 +549,7 @@ Public Partial Class RulesEditor
 			If appSettings.SavedRuleCollection.Contains(strInput) Then
 				Msgbox (globalRM.GetString("warning_rules_editor_exists"))
 			Else
-				appSettings.SavedRuleCollection.Add(New Rule(strInput, Rule))
+				appSettings.SavedRuleCollection.Add(New Rule(strInput, Rules))
 			End If
 		End If
 	End Sub

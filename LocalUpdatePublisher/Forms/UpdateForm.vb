@@ -349,9 +349,9 @@ Public Partial Class UpdateForm
 								If _Sdp.InstallableItems.Count > 0
 									Dim TmpGuid As String = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerItem).WindowsInstallerProductCode.ToString
 									IsInstalledRules.Clear
-									IsInstalledRules.Rule = "<msiar:MsiProductInstalled ProductCode=""{" & TmpGuid & "}"" />"
+									IsInstalledRules.Rules = "<msiar:MsiProductInstalled ProductCode=""{" & TmpGuid & "}"" />"
 									IsInstallableRules.Clear
-									IsInstallableRules.Rule = "<lar:Not ><msiar:MsiProductInstalled ProductCode=""{" & TmpGuid & "}"" /></lar:Not>"
+									IsInstallableRules.Rules = "<lar:Not ><msiar:MsiProductInstalled ProductCode=""{" & TmpGuid & "}"" /></lar:Not>"
 								End If
 								
 								'Set the package type to application.
@@ -574,8 +574,8 @@ Public Partial Class UpdateForm
 				End Try
 			Case "tabIsInstalled"
 				'If there are rules then add them to the IsInstallable property.
-				If Not String.IsNullOrEmpty(IsInstalledRules.Rule) Then
-					_Sdp.IsInstalled = IsInstalledRules.Rule
+				If Not String.IsNullOrEmpty(IsInstalledRules.Rules) Then
+					_Sdp.IsInstalled = IsInstalledRules.Rules
 				Else
 					_Sdp.IsInstalled = Nothing
 				End If
@@ -590,8 +590,8 @@ Public Partial Class UpdateForm
 				End If
 			Case "tabIsInstallable"
 				'If there are rules then add them to the IsInstallable property.
-				If Not String.IsNullOrEmpty(IsInstallableRules.Rule) Then
-					_Sdp.IsInstallable = IsInstallableRules.Rule
+				If Not String.IsNullOrEmpty(IsInstallableRules.Rules) Then
+					_Sdp.IsInstallable = IsInstallableRules.Rules
 				Else
 					_Sdp.IsInstallable = Nothing
 				End If
@@ -777,14 +777,14 @@ Public Partial Class UpdateForm
 			
 			'Load the package's IsInstalled rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstalled) Then
-				IsInstalledRules.Rule = _Sdp.IsInstalled
+				IsInstalledRules.Rules = _Sdp.IsInstalled
 			Else
 				_Sdp.IsInstalled = Nothing
 			End If
 			
 			'Load the package's IsInstallable rules.
 			If Not String.IsNullOrEmpty(_Sdp.IsInstallable) Then
-				IsInstallableRules.Rule = _Sdp.IsInstallable
+				IsInstallableRules.Rules = _Sdp.IsInstallable
 			Else
 				_Sdp.IsInstallable = Nothing
 			End If

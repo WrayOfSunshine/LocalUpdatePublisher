@@ -630,7 +630,7 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 			'Show the progress form and publish the package.
-			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)
+			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)			
 			publisher.PublishPackage(updateDir.FullName, Nothing, Nothing)
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler

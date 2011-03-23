@@ -52,6 +52,7 @@ Namespace My
 				localUpdatesScope.UpdateSources = UpdateSources.Other 'Show non-Microsoft updates
 			End If
 			
+			System.Net.ServicePointManager.Expect100Continue = False
 			'Initialize the global resource handler
 			'			Thread.CurrentThread.CurrentCulture = New CultureInfo("de-DE")
 			'			Thread.CurrentThread.CurrentUICulture = New CultureInfo("de-DE")
