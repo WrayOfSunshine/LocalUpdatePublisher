@@ -1,64 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,363 +58,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 583</value>
+  <data name="$this.Text">
+    <value>Importer la Mise à jour à partir du fichier</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
+  <data name="btnAddDir.Text">
+    <value>Ajouter répertoire</value>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Ajouter des Fichiers</value>
+  </data>
+  <data name="btnCancel.Text">
     <value>Annuler</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>639, 615</value>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Modifier</value>
   </data>
-  <data name="chkMetadataOnly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 575</value>
+  <data name="btnMetaDataEdit.Text">
+    <value>Modifier</value>
   </data>
-  <data name="chkMetadataOnly.Text" xml:space="preserve">
-    <value>Seuls Publier Métadonnées</value>
-  </data>
-  <data name="chkExportSdp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 592</value>
-  </data>
-  <data name="chkExportSdp.Text" xml:space="preserve">
-    <value>Paquet Enregistrer la Définition du Logiciel</value>
-  </data>
-  <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 583</value>
-  </data>
-  <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 24</value>
-  </data>
-  <data name="btnNext.Text" xml:space="preserve">
+  <data name="btnNext.Text">
     <value>Suivant</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnPrevious.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnPrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 583</value>
-  </data>
-  <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 24</value>
-  </data>
-  <data name="btnPrevious.Text" xml:space="preserve">
+  <data name="btnPrevious.Text">
     <value>Précédent</value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
-        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
-        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
-        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
-        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
-        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
-        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
-        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
-        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
-        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
-        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
-        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
-        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Mise à jour de l'importation à partir du fichier</value>
-  </data>
-  <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 110</value>
-  </data>
-  <data name="btnAddDir.Text" xml:space="preserve">
-    <value>Ajouter Dir</value>
-  </data>
-  <data name="lblInfo.Text" xml:space="preserve">
-    <value>Cet assistant vous mènera à travers le processus de créer un package de logiciels publiés localement. Vous devez sélectionner un MSI, MSP, ou le fichier EXE que le fichier de mise. Si le fichier EXE est un fichier MSI intégré, vous devez entrer le chemin d'accès relatif. S'il ya d'autres fichiers de support nécessaires, tels que transformer les fichiers, puis utilisez la liste des fichiers supplémentaires pour les ajouter.</value>
-  </data>
-  <data name="txtMSIPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 88</value>
-  </data>
-  <data name="lblMSIPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
-  </data>
-  <data name="lblMSIPath.Text" xml:space="preserve">
-    <value>Chemin MSI</value>
-  </data>
-  <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 131</value>
-  </data>
-  <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 35</value>
-  </data>
-  <data name="btnAddFiles.Text" xml:space="preserve">
-    <value>Ajouter Fichiers</value>
-  </data>
-  <data name="FileName.HeaderText" xml:space="preserve">
-    <value>Nom du Fichier</value>
-  </data>
-  <data name="FileObject.HeaderText" xml:space="preserve">
-    <value>Fichier Objet</value>
-  </data>
-  <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 114</value>
-  </data>
-  <data name="lblAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 114</value>
-  </data>
-  <data name="lblAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 28</value>
-  </data>
-  <data name="lblAdditionalFiles.Text" xml:space="preserve">
-    <value>Fichiers supplémentaires</value>
-  </data>
-  <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>549, 63</value>
-  </data>
-  <data name="btnUpdateFile.Text" xml:space="preserve">
+  <data name="btnUpdateFile.Text">
     <value>Parcourir</value>
   </data>
-  <data name="txtUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 62</value>
+  <data name="chkExportSdp.Text">
+    <value>Enregistrer la Définition du paquet Logiciel</value>
   </data>
-  <data name="lblUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 64</value>
+  <data name="chkMetadataOnly.Text">
+    <value>Publier uniquement les Métadonnées</value>
   </data>
-  <data name="lblUpdateFile.Text" xml:space="preserve">
-    <value>Mise à Jour du Fichier</value>
+  <data name="label4.Text">
+    <value>Utilisez ce formulaire pour modifier les données XML qui seront utilisées pour décrire le paquet logiciel. Sélectionnez Terminer pour publier ce paquet au serveur WSUS.</value>
   </data>
-  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
+  <data name="lblAdditionalFiles.Text">
+    <value>Fichiers supplémentaires</value>
   </data>
-  <data name="lblLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 498</value>
+  <data name="lblArticleID.Text">
+    <value>ID d'article</value>
   </data>
-  <data name="lblLanguages.Text" xml:space="preserve">
+  <data name="lblBullitinID.Text">
+    <value>ID de Bulletin</value>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Classification</value>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Ligne de Commande</value>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Description</value>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Cet assistant vous mènera à travers le processus de création d'un package logiciel publié localement. Vous devez sélectionner un fichier MSI, MSP, ou EXE comme source de mise à jour. Si le fichier EXE a un fichier MSI intégré, vous devez entrer le chemin d'accès relatif. S'il ya d'autres fichiers nécessaires, tels que des fichiers modifiés, alors utilisez la liste des fichiers supplémentaires pour les ajouter.</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Condition d'Installation de l'objet - Règles de remplacement</value>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Ce formulaire énumère les règles qui déterminent si le logiciel est remplacé. Si vous avez créé cette mise à jour en utilisant un fichier MSI ou MSP, vous verrez la règle générée automatiquement avec la condition de l'état installable.</value>
+  </data>
+  <data name="lblLanguages.Text">
     <value>Langues</value>
   </data>
-  <data name="lblNetwork.Text" xml:space="preserve">
-    <value>Réseau Requis</value>
+  <data name="lblMSIPath.Text">
+    <value>Chemin d'accès au MSI</value>
   </data>
-  <data name="lblOriginalURI.Text" xml:space="preserve">
-    <value>URL d'Origine</value>
+  <data name="lblMetaData.Text">
+    <value>Utilisez ce formulaire pour vérifier si les métadonnées utilisées précédement étaient avec une règle installable, installé, ou de remplacement.</value>
   </data>
-  <data name="cboPackageType.Items1" xml:space="preserve">
-    <value>Mise à Jour</value>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Condition d'Installation de l'Objet - Métadonnées de la règle</value>
   </data>
-  <data name="lblPackageType.Text" xml:space="preserve">
-    <value>Paquet Type</value>
-  </data>
-  <data name="lblPrerequisites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 498</value>
-  </data>
-  <data name="lblPrerequisites.Text" xml:space="preserve">
-    <value>Préalables</value>
-  </data>
-  <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 498</value>
-  </data>
-  <data name="lblSupersedes.Text" xml:space="preserve">
-    <value>Remplace</value>
-  </data>
-  <data name="lblReturnCodes.Text" xml:space="preserve">
-    <value>Codes Retour</value>
-  </data>
-  <data name="lblUninstall.Text" xml:space="preserve">
-    <value>Désinstaller</value>
-  </data>
-  <data name="lblPackageInfo.Text" xml:space="preserve">
-    <value>Entrez les détails relavant sur le logiciel ici. Reportez-vous à la documentation pour les questions relatives aux champs individuels.</value>
-  </data>
-  <data name="txtCommandLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 20</value>
-  </data>
-  <data name="lblCommandLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 476</value>
-  </data>
-  <data name="lblCommandLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="lblCommandLine.Text" xml:space="preserve">
-    <value>Ligne Commande</value>
-  </data>
-  <data name="cboRebootBehavior.Items" xml:space="preserve">
-    <value>Ne Redémarre</value>
-  </data>
-  <data name="cboRebootBehavior.Items1" xml:space="preserve">
-    <value>Toujours Nécessite un redémarrage</value>
-  </data>
-  <data name="cboRebootBehavior.Items2" xml:space="preserve">
-    <value>Puis une Demande de Redémarrage</value>
-  </data>
-  <data name="cboRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 449</value>
-  </data>
-  <data name="cboImpact.Items1" xml:space="preserve">
-    <value>Mineure</value>
-  </data>
-  <data name="cboImpact.Items2" xml:space="preserve">
-    <value>Nécessite un traitement exclusif</value>
-  </data>
-  <data name="txtMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>458, 20</value>
-  </data>
-  <data name="txtSupportURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>458, 20</value>
-  </data>
-  <data name="cboSeverity.Items" xml:space="preserve">
-    <value>Non spécifié</value>
-  </data>
-  <data name="cboSeverity.Items1" xml:space="preserve">
-    <value>Critique</value>
-  </data>
-  <data name="cboSeverity.Items3" xml:space="preserve">
-    <value>Modérée</value>
-  </data>
-  <data name="cboSeverity.Items4" xml:space="preserve">
-    <value>Faible</value>
-  </data>
-  <data name="cboProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 21</value>
-  </data>
-  <data name="cboVendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 21</value>
-  </data>
-  <data name="cboClassification.Items1" xml:space="preserve">
-    <value>Mises à Jour</value>
-  </data>
-  <data name="cboClassification.Items2" xml:space="preserve">
-    <value>Mises à Jour Critiques</value>
-  </data>
-  <data name="cboClassification.Items3" xml:space="preserve">
-    <value>Mises à Jour de Sécurité</value>
-  </data>
-  <data name="cboClassification.Items4" xml:space="preserve">
-    <value>Caractéristique Forfaits</value>
-  </data>
-  <data name="cboClassification.Items5" xml:space="preserve">
-    <value>Mise à Jour de Correctifs Cumulatifs</value>
-  </data>
-  <data name="cboClassification.Items6" xml:space="preserve">
-    <value>Service Forfaits</value>
-  </data>
-  <data name="cboClassification.Items7" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="cboClassification.Items8" xml:space="preserve">
-    <value>Correctifs</value>
-  </data>
-  <data name="cboClassification.Items9" xml:space="preserve">
-    <value>Pilotes</value>
-  </data>
-  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 39</value>
-  </data>
-  <data name="txtPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 20</value>
-  </data>
-  <data name="lblRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 451</value>
-  </data>
-  <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 17</value>
-  </data>
-  <data name="lblRebootBehavior.Text" xml:space="preserve">
-    <value>Redémarrez Comportement</value>
-  </data>
-  <data name="lblMoreInfoURL.Text" xml:space="preserve">
+  <data name="lblMoreInfoURL.Text">
     <value>URL Plus d'Info</value>
   </data>
-  <data name="lblSupportURL.Text" xml:space="preserve">
-    <value>URL Support</value>
+  <data name="lblNetwork.Text">
+    <value>Réseau Requis</value>
   </data>
-  <data name="lblSeverity.Text" xml:space="preserve">
-    <value>Gravité</value>
+  <data name="lblOriginalURI.Text">
+    <value>URL d'Origine</value>
   </data>
-  <data name="lblProduct.Text" xml:space="preserve">
+  <data name="lblPackageInfo.Text">
+    <value>Entrez les détails nécessaires sur le logiciel ici. Reportez-vous à la documentation pour les questions relatives aux champs individuels.</value>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Titre du Paquet</value>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Type de paquet</value>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Prérequis</value>
+  </data>
+  <data name="lblProduct.Text">
     <value>Produit</value>
   </data>
-  <data name="lblVendor.Text" xml:space="preserve">
+  <data name="lblRebootBehavior.Text">
+    <value>Comportement pour le Redémarrage</value>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Codes Retour</value>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Gravité</value>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Remplace</value>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>URL du Support</value>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Désinstaller</value>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Mise à Jour du Fichier</value>
+  </data>
+  <data name="lblVendor.Text">
     <value>Vendeur</value>
-  </data>
-  <data name="lblPackageTitle.Text" xml:space="preserve">
-    <value>Paquet Titre</value>
-  </data>
-  <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="isInstalledRules.Instructions" xml:space="preserve">
-    <value>Utilisez ce formulaire pour créer, éditer, supprimer et règles du groupe que de déterminer si ce logiciel est déjà installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
-  </data>
-  <data name="isInstalledRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>623, 541</value>
-  </data>
-  <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="isInstallableRules.Instructions" xml:space="preserve">
-    <value>Utilisez ce formulaire pour créer, éditer, supprimer, et les règles de groupe permettant de déterminer si ce logiciel peut être installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
-  </data>
-  <data name="isInstallableRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>623, 541</value>
-  </data>
-  <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="btnIsSupersededEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 42</value>
-  </data>
-  <data name="btnIsSupersededEdit.Text" xml:space="preserve">
-    <value>Modifier</value>
-  </data>
-  <data name="lblIsSuperseded.Text" xml:space="preserve">
-    <value>Ce formulaire énumère les règles qui déterminent si le logiciel est remplacée. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable.</value>
-  </data>
-  <data name="lblIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>427, 17</value>
-  </data>
-  <data name="lblIsSuperceded_InstallableItem.Text" xml:space="preserve">
-    <value>Niveau d'Installation de l'objet - Remplacé Règles</value>
-  </data>
-  <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="btnMetaDataEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 42</value>
-  </data>
-  <data name="btnMetaDataEdit.Text" xml:space="preserve">
-    <value>Modifier</value>
-  </data>
-  <data name="lblMetaData_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 17</value>
-  </data>
-  <data name="lblMetaData_InstallableItem.Text" xml:space="preserve">
-    <value>Niveau d'Installation de l'Objet - Métadonnées Règle</value>
-  </data>
-  <data name="lblMetaData.Text" xml:space="preserve">
-    <value>Utilisez ce formulaire pour examiner les métadonnées utilisées par le précédent est installable, est installé, ou est remplacé règles.</value>
-  </data>
-  <data name="txtInstallableItemMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>619, 476</value>
-  </data>
-  <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Utilisez ce formulaire pour examiner les données XML qui sera utilisé pour décrire le logiciel. Sélectionnez Terminer pour publier ce paquet au serveur WSUS.</value>
-  </data>
-  <data name="txtSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>617, 420</value>
-  </data>
-  <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>629, 547</value>
-  </data>
-  <data name="tabsImportUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 574</value>
   </data>
 </root>

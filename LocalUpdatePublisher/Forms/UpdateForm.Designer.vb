@@ -36,70 +36,71 @@ Partial Class UpdateForm
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdateForm))
-		Me.tabsImportUpdate = New LocalUpdatePublisher.CustomTabControl
+		Me.tabsUpdate = New LocalUpdatePublisher.CustomTabControl
 		Me.tabIntro = New System.Windows.Forms.TabPage
-		Me.btnAddDir = New System.Windows.Forms.Button
+		Me.tlpIntro = New System.Windows.Forms.TableLayoutPanel
 		Me.lblInfo = New System.Windows.Forms.Label
 		Me.txtMSIPath = New System.Windows.Forms.TextBox
-		Me.lblMSIPath = New System.Windows.Forms.Label
-		Me.btnAddFiles = New System.Windows.Forms.Button
+		Me.btnUpdateFile = New System.Windows.Forms.Button
 		Me.dgvAdditionalFiles = New System.Windows.Forms.DataGridView
 		Me.FileName = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.RemoveFile = New System.Windows.Forms.DataGridViewButtonColumn
 		Me.FileObject = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.lblAdditionalFiles = New System.Windows.Forms.Label
-		Me.btnUpdateFile = New System.Windows.Forms.Button
-		Me.txtUpdateFile = New System.Windows.Forms.TextBox
 		Me.lblUpdateFile = New System.Windows.Forms.Label
+		Me.lblMSIPath = New System.Windows.Forms.Label
+		Me.lblAdditionalFiles = New System.Windows.Forms.Label
+		Me.txtUpdateFile = New System.Windows.Forms.TextBox
+		Me.btnAddFiles = New System.Windows.Forms.Button
+		Me.btnAddDir = New System.Windows.Forms.Button
 		Me.tabPackageInfo = New System.Windows.Forms.TabPage
-		Me.lblLanguages = New System.Windows.Forms.Label
-		Me.txtNetwork = New System.Windows.Forms.TextBox
-		Me.lblNetwork = New System.Windows.Forms.Label
-		Me.txtOriginalURI = New System.Windows.Forms.TextBox
-		Me.lblOriginalURI = New System.Windows.Forms.Label
+		Me.tlpPackageInfo = New System.Windows.Forms.TableLayoutPanel
+		Me.lblRebootBehavior = New System.Windows.Forms.Label
 		Me.cboPackageType = New System.Windows.Forms.ComboBox
+		Me.txtOriginalURI = New System.Windows.Forms.TextBox
 		Me.lblPackageType = New System.Windows.Forms.Label
+		Me.lblPackageInfo = New System.Windows.Forms.Label
+		Me.txtNetwork = New System.Windows.Forms.TextBox
+		Me.lblOriginalURI = New System.Windows.Forms.Label
+		Me.cboRebootBehavior = New System.Windows.Forms.ComboBox
+		Me.lblNetwork = New System.Windows.Forms.Label
+		Me.lblUninstall = New System.Windows.Forms.Label
+		Me.txtUninstall = New System.Windows.Forms.TextBox
+		Me.lblImpact = New System.Windows.Forms.Label
+		Me.txtPackageTitle = New System.Windows.Forms.TextBox
+		Me.txtDescription = New System.Windows.Forms.TextBox
+		Me.lblPackageTitle = New System.Windows.Forms.Label
+		Me.cboSeverity = New System.Windows.Forms.ComboBox
+		Me.txtBulletinID = New System.Windows.Forms.TextBox
+		Me.cboImpact = New System.Windows.Forms.ComboBox
+		Me.lblClassification = New System.Windows.Forms.Label
+		Me.cboVendor = New System.Windows.Forms.ComboBox
+		Me.cboProduct = New System.Windows.Forms.ComboBox
+		Me.lblBullitinID = New System.Windows.Forms.Label
+		Me.txtArticleID = New System.Windows.Forms.TextBox
+		Me.txtCVEID = New System.Windows.Forms.TextBox
+		Me.lblSeverity = New System.Windows.Forms.Label
+		Me.lblMoreInfoURL = New System.Windows.Forms.Label
+		Me.txtMoreInfoURL = New System.Windows.Forms.TextBox
+		Me.lblSupportURL = New System.Windows.Forms.Label
+		Me.lblVendor = New System.Windows.Forms.Label
+		Me.txtSupportURL = New System.Windows.Forms.TextBox
+		Me.lblCVEID = New System.Windows.Forms.Label
+		Me.lblProduct = New System.Windows.Forms.Label
+		Me.lblArticleID = New System.Windows.Forms.Label
+		Me.cboClassification = New System.Windows.Forms.ComboBox
+		Me.lblDescription = New System.Windows.Forms.Label
+		Me.lblLanguages = New System.Windows.Forms.Label
 		Me.lblPrerequisites = New System.Windows.Forms.Label
 		Me.lblSupersedes = New System.Windows.Forms.Label
 		Me.lblReturnCodes = New System.Windows.Forms.Label
-		Me.txtUninstall = New System.Windows.Forms.TextBox
-		Me.lblUninstall = New System.Windows.Forms.Label
-		Me.lblPackageInfo = New System.Windows.Forms.Label
 		Me.txtCommandLine = New System.Windows.Forms.TextBox
 		Me.lblCommandLine = New System.Windows.Forms.Label
-		Me.cboRebootBehavior = New System.Windows.Forms.ComboBox
-		Me.cboImpact = New System.Windows.Forms.ComboBox
-		Me.txtMoreInfoURL = New System.Windows.Forms.TextBox
-		Me.txtSupportURL = New System.Windows.Forms.TextBox
-		Me.cboSeverity = New System.Windows.Forms.ComboBox
-		Me.txtCVEID = New System.Windows.Forms.TextBox
-		Me.txtArticleID = New System.Windows.Forms.TextBox
-		Me.cboProduct = New System.Windows.Forms.ComboBox
-		Me.cboVendor = New System.Windows.Forms.ComboBox
-		Me.cboClassification = New System.Windows.Forms.ComboBox
-		Me.txtBulletinID = New System.Windows.Forms.TextBox
-		Me.txtDescription = New System.Windows.Forms.TextBox
-		Me.txtPackageTitle = New System.Windows.Forms.TextBox
-		Me.lblRebootBehavior = New System.Windows.Forms.Label
-		Me.lblImpact = New System.Windows.Forms.Label
-		Me.lblMoreInfoURL = New System.Windows.Forms.Label
-		Me.lblSupportURL = New System.Windows.Forms.Label
-		Me.lblSeverity = New System.Windows.Forms.Label
-		Me.lblCVEID = New System.Windows.Forms.Label
-		Me.lblArticleID = New System.Windows.Forms.Label
-		Me.lblProduct = New System.Windows.Forms.Label
-		Me.lblVendor = New System.Windows.Forms.Label
-		Me.lblBullitinID = New System.Windows.Forms.Label
-		Me.lblClassification = New System.Windows.Forms.Label
-		Me.lblDescription = New System.Windows.Forms.Label
-		Me.lblPackageTitle = New System.Windows.Forms.Label
 		Me.tabIsInstalled = New System.Windows.Forms.TabPage
 		Me.isInstalledRules = New LocalUpdatePublisher.RulesEditor
 		Me.tabIsInstallable = New System.Windows.Forms.TabPage
 		Me.isInstallableRules = New LocalUpdatePublisher.RulesEditor
 		Me.tabIsSuperseded = New System.Windows.Forms.TabPage
 		Me.btnIsSupersededEdit = New System.Windows.Forms.Button
-		Me.lblIsSuperseded = New System.Windows.Forms.Label
 		Me.lblIsSuperceded_InstallableItem = New System.Windows.Forms.Label
 		Me.txtIsSuperceded_InstallableItem = New System.Windows.Forms.TextBox
 		Me.tabMetaData = New System.Windows.Forms.TabPage
@@ -108,8 +109,9 @@ Partial Class UpdateForm
 		Me.lblMetaData = New System.Windows.Forms.Label
 		Me.txtInstallableItemMetaData = New System.Windows.Forms.TextBox
 		Me.tabSummary = New System.Windows.Forms.TabPage
-		Me.label4 = New System.Windows.Forms.Label
+		Me.lblSummary = New System.Windows.Forms.Label
 		Me.txtSummary = New System.Windows.Forms.TextBox
+		Me.lblIsSuperseded = New System.Windows.Forms.Label
 		Me.btnPrevious = New System.Windows.Forms.Button
 		Me.btnNext = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
@@ -119,76 +121,84 @@ Partial Class UpdateForm
 		Me.dlgUpdateDir = New System.Windows.Forms.FolderBrowserDialog
 		Me.chkMetadataOnly = New System.Windows.Forms.CheckBox
 		Me.errorProviderUpdate = New System.Windows.Forms.ErrorProvider(Me.components)
-		Me.tabsImportUpdate.SuspendLayout
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpIsSuperseded = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMetaData = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpSummary = New System.Windows.Forms.TableLayoutPanel
+		Me.tabsUpdate.SuspendLayout
 		Me.tabIntro.SuspendLayout
+		Me.tlpIntro.SuspendLayout
 		CType(Me.dgvAdditionalFiles,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabPackageInfo.SuspendLayout
+		Me.tlpPackageInfo.SuspendLayout
 		Me.tabIsInstalled.SuspendLayout
 		Me.tabIsInstallable.SuspendLayout
 		Me.tabIsSuperseded.SuspendLayout
 		Me.tabMetaData.SuspendLayout
 		Me.tabSummary.SuspendLayout
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tlpMain.SuspendLayout
+		Me.tlpIsSuperseded.SuspendLayout
+		Me.tlpMetaData.SuspendLayout
+		Me.tlpSummary.SuspendLayout
 		Me.SuspendLayout
 		'
-		'tabsImportUpdate
+		'tabsUpdate
 		'
-		resources.ApplyResources(Me.tabsImportUpdate, "tabsImportUpdate")
-		Me.tabsImportUpdate.Controls.Add(Me.tabIntro)
-		Me.tabsImportUpdate.Controls.Add(Me.tabPackageInfo)
-		Me.tabsImportUpdate.Controls.Add(Me.tabIsInstalled)
-		Me.tabsImportUpdate.Controls.Add(Me.tabIsInstallable)
-		Me.tabsImportUpdate.Controls.Add(Me.tabIsSuperseded)
-		Me.tabsImportUpdate.Controls.Add(Me.tabMetaData)
-		Me.tabsImportUpdate.Controls.Add(Me.tabSummary)
-		Me.tabsImportUpdate.Name = "tabsImportUpdate"
-		Me.tabsImportUpdate.SelectedIndex = 0
+		Me.tlpMain.SetColumnSpan(Me.tabsUpdate, 5)
+		Me.tabsUpdate.Controls.Add(Me.tabIntro)
+		Me.tabsUpdate.Controls.Add(Me.tabPackageInfo)
+		Me.tabsUpdate.Controls.Add(Me.tabIsInstalled)
+		Me.tabsUpdate.Controls.Add(Me.tabIsInstallable)
+		Me.tabsUpdate.Controls.Add(Me.tabIsSuperseded)
+		Me.tabsUpdate.Controls.Add(Me.tabMetaData)
+		Me.tabsUpdate.Controls.Add(Me.tabSummary)
+		resources.ApplyResources(Me.tabsUpdate, "tabsUpdate")
+		Me.tabsUpdate.Name = "tabsUpdate"
+		Me.tabsUpdate.SelectedIndex = 0
 		'
 		'tabIntro
 		'
 		Me.tabIntro.BackColor = System.Drawing.SystemColors.Control
-		Me.tabIntro.Controls.Add(Me.btnAddDir)
-		Me.tabIntro.Controls.Add(Me.lblInfo)
-		Me.tabIntro.Controls.Add(Me.txtMSIPath)
-		Me.tabIntro.Controls.Add(Me.lblMSIPath)
-		Me.tabIntro.Controls.Add(Me.btnAddFiles)
-		Me.tabIntro.Controls.Add(Me.dgvAdditionalFiles)
-		Me.tabIntro.Controls.Add(Me.lblAdditionalFiles)
-		Me.tabIntro.Controls.Add(Me.btnUpdateFile)
-		Me.tabIntro.Controls.Add(Me.txtUpdateFile)
-		Me.tabIntro.Controls.Add(Me.lblUpdateFile)
+		Me.tabIntro.Controls.Add(Me.tlpIntro)
 		Me.tabIntro.ForeColor = System.Drawing.SystemColors.ControlText
 		resources.ApplyResources(Me.tabIntro, "tabIntro")
 		Me.tabIntro.Name = "tabIntro"
 		'
-		'btnAddDir
+		'tlpIntro
 		'
-		resources.ApplyResources(Me.btnAddDir, "btnAddDir")
-		Me.btnAddDir.Name = "btnAddDir"
-		Me.btnAddDir.UseVisualStyleBackColor = true
-		AddHandler Me.btnAddDir.Click, AddressOf Me.BtnAddDirClick
+		resources.ApplyResources(Me.tlpIntro, "tlpIntro")
+		Me.tlpIntro.Controls.Add(Me.lblInfo, 0, 0)
+		Me.tlpIntro.Controls.Add(Me.txtMSIPath, 1, 2)
+		Me.tlpIntro.Controls.Add(Me.btnUpdateFile, 2, 1)
+		Me.tlpIntro.Controls.Add(Me.dgvAdditionalFiles, 1, 3)
+		Me.tlpIntro.Controls.Add(Me.lblUpdateFile, 0, 1)
+		Me.tlpIntro.Controls.Add(Me.lblMSIPath, 0, 2)
+		Me.tlpIntro.Controls.Add(Me.lblAdditionalFiles, 0, 3)
+		Me.tlpIntro.Controls.Add(Me.txtUpdateFile, 1, 1)
+		Me.tlpIntro.Controls.Add(Me.btnAddFiles, 2, 4)
+		Me.tlpIntro.Controls.Add(Me.btnAddDir, 2, 3)
+		Me.tlpIntro.Name = "tlpIntro"
 		'
 		'lblInfo
 		'
 		resources.ApplyResources(Me.lblInfo, "lblInfo")
+		Me.tlpIntro.SetColumnSpan(Me.lblInfo, 3)
 		Me.lblInfo.Name = "lblInfo"
+		AddHandler Me.lblInfo.TextChanged, AddressOf Me.TextChanged
 		'
 		'txtMSIPath
 		'
 		resources.ApplyResources(Me.txtMSIPath, "txtMSIPath")
 		Me.txtMSIPath.Name = "txtMSIPath"
 		'
-		'lblMSIPath
+		'btnUpdateFile
 		'
-		resources.ApplyResources(Me.lblMSIPath, "lblMSIPath")
-		Me.lblMSIPath.Name = "lblMSIPath"
-		'
-		'btnAddFiles
-		'
-		resources.ApplyResources(Me.btnAddFiles, "btnAddFiles")
-		Me.btnAddFiles.Name = "btnAddFiles"
-		Me.btnAddFiles.UseVisualStyleBackColor = true
-		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFilesClick
+		resources.ApplyResources(Me.btnUpdateFile, "btnUpdateFile")
+		Me.btnUpdateFile.MinimumSize = New System.Drawing.Size(60, 25)
+		Me.btnUpdateFile.Name = "btnUpdateFile"
+		Me.btnUpdateFile.UseVisualStyleBackColor = true
+		AddHandler Me.btnUpdateFile.Click, AddressOf Me.BtnUpdateFileClick
 		'
 		'dgvAdditionalFiles
 		'
@@ -201,6 +211,7 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.Name = "dgvAdditionalFiles"
 		Me.dgvAdditionalFiles.ReadOnly = true
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
+		Me.tlpIntro.SetRowSpan(Me.dgvAdditionalFiles, 2)
 		Me.dgvAdditionalFiles.TabStop = false
 		AddHandler Me.dgvAdditionalFiles.CellContentClick, AddressOf Me.DgvAdditionalFilesCellContentClick
 		'
@@ -227,17 +238,20 @@ Partial Class UpdateForm
 		Me.FileObject.Name = "FileObject"
 		Me.FileObject.ReadOnly = true
 		'
+		'lblUpdateFile
+		'
+		resources.ApplyResources(Me.lblUpdateFile, "lblUpdateFile")
+		Me.lblUpdateFile.Name = "lblUpdateFile"
+		'
+		'lblMSIPath
+		'
+		resources.ApplyResources(Me.lblMSIPath, "lblMSIPath")
+		Me.lblMSIPath.Name = "lblMSIPath"
+		'
 		'lblAdditionalFiles
 		'
 		resources.ApplyResources(Me.lblAdditionalFiles, "lblAdditionalFiles")
 		Me.lblAdditionalFiles.Name = "lblAdditionalFiles"
-		'
-		'btnUpdateFile
-		'
-		resources.ApplyResources(Me.btnUpdateFile, "btnUpdateFile")
-		Me.btnUpdateFile.Name = "btnUpdateFile"
-		Me.btnUpdateFile.UseVisualStyleBackColor = true
-		AddHandler Me.btnUpdateFile.Click, AddressOf Me.BtnUpdateFileClick
 		'
 		'txtUpdateFile
 		'
@@ -248,64 +262,109 @@ Partial Class UpdateForm
 		AddHandler Me.txtUpdateFile.Validated, AddressOf Me.ControlValidated
 		AddHandler Me.txtUpdateFile.Validating, AddressOf Me.ControlValidating
 		'
-		'lblUpdateFile
+		'btnAddFiles
 		'
-		resources.ApplyResources(Me.lblUpdateFile, "lblUpdateFile")
-		Me.lblUpdateFile.Name = "lblUpdateFile"
+		resources.ApplyResources(Me.btnAddFiles, "btnAddFiles")
+		Me.btnAddFiles.MinimumSize = New System.Drawing.Size(60, 25)
+		Me.btnAddFiles.Name = "btnAddFiles"
+		Me.btnAddFiles.UseVisualStyleBackColor = true
+		AddHandler Me.btnAddFiles.Click, AddressOf Me.BtnAddFilesClick
+		'
+		'btnAddDir
+		'
+		resources.ApplyResources(Me.btnAddDir, "btnAddDir")
+		Me.btnAddDir.MinimumSize = New System.Drawing.Size(60, 25)
+		Me.btnAddDir.Name = "btnAddDir"
+		Me.btnAddDir.UseVisualStyleBackColor = true
+		AddHandler Me.btnAddDir.Click, AddressOf Me.BtnAddDirClick
 		'
 		'tabPackageInfo
 		'
 		Me.tabPackageInfo.BackColor = System.Drawing.SystemColors.Control
+		Me.tabPackageInfo.Controls.Add(Me.tlpPackageInfo)
 		Me.tabPackageInfo.Controls.Add(Me.lblLanguages)
-		Me.tabPackageInfo.Controls.Add(Me.txtNetwork)
-		Me.tabPackageInfo.Controls.Add(Me.lblNetwork)
-		Me.tabPackageInfo.Controls.Add(Me.txtOriginalURI)
-		Me.tabPackageInfo.Controls.Add(Me.lblOriginalURI)
-		Me.tabPackageInfo.Controls.Add(Me.cboPackageType)
-		Me.tabPackageInfo.Controls.Add(Me.lblPackageType)
 		Me.tabPackageInfo.Controls.Add(Me.lblPrerequisites)
 		Me.tabPackageInfo.Controls.Add(Me.lblSupersedes)
 		Me.tabPackageInfo.Controls.Add(Me.lblReturnCodes)
-		Me.tabPackageInfo.Controls.Add(Me.txtUninstall)
-		Me.tabPackageInfo.Controls.Add(Me.lblUninstall)
-		Me.tabPackageInfo.Controls.Add(Me.lblPackageInfo)
 		Me.tabPackageInfo.Controls.Add(Me.txtCommandLine)
 		Me.tabPackageInfo.Controls.Add(Me.lblCommandLine)
-		Me.tabPackageInfo.Controls.Add(Me.cboRebootBehavior)
-		Me.tabPackageInfo.Controls.Add(Me.cboImpact)
-		Me.tabPackageInfo.Controls.Add(Me.txtMoreInfoURL)
-		Me.tabPackageInfo.Controls.Add(Me.txtSupportURL)
-		Me.tabPackageInfo.Controls.Add(Me.cboSeverity)
-		Me.tabPackageInfo.Controls.Add(Me.txtCVEID)
-		Me.tabPackageInfo.Controls.Add(Me.txtArticleID)
-		Me.tabPackageInfo.Controls.Add(Me.cboProduct)
-		Me.tabPackageInfo.Controls.Add(Me.cboVendor)
-		Me.tabPackageInfo.Controls.Add(Me.cboClassification)
-		Me.tabPackageInfo.Controls.Add(Me.txtBulletinID)
-		Me.tabPackageInfo.Controls.Add(Me.txtDescription)
-		Me.tabPackageInfo.Controls.Add(Me.txtPackageTitle)
-		Me.tabPackageInfo.Controls.Add(Me.lblRebootBehavior)
-		Me.tabPackageInfo.Controls.Add(Me.lblImpact)
-		Me.tabPackageInfo.Controls.Add(Me.lblMoreInfoURL)
-		Me.tabPackageInfo.Controls.Add(Me.lblSupportURL)
-		Me.tabPackageInfo.Controls.Add(Me.lblSeverity)
-		Me.tabPackageInfo.Controls.Add(Me.lblCVEID)
-		Me.tabPackageInfo.Controls.Add(Me.lblArticleID)
-		Me.tabPackageInfo.Controls.Add(Me.lblProduct)
-		Me.tabPackageInfo.Controls.Add(Me.lblVendor)
-		Me.tabPackageInfo.Controls.Add(Me.lblBullitinID)
-		Me.tabPackageInfo.Controls.Add(Me.lblClassification)
-		Me.tabPackageInfo.Controls.Add(Me.lblDescription)
-		Me.tabPackageInfo.Controls.Add(Me.lblPackageTitle)
 		resources.ApplyResources(Me.tabPackageInfo, "tabPackageInfo")
 		Me.tabPackageInfo.Name = "tabPackageInfo"
 		'
-		'lblLanguages
+		'tlpPackageInfo
 		'
-		resources.ApplyResources(Me.lblLanguages, "lblLanguages")
-		Me.lblLanguages.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblLanguages.Name = "lblLanguages"
-		AddHandler Me.lblLanguages.Click, AddressOf Me.LblLanguagesClick
+		resources.ApplyResources(Me.tlpPackageInfo, "tlpPackageInfo")
+		Me.tlpPackageInfo.Controls.Add(Me.lblRebootBehavior, 0, 16)
+		Me.tlpPackageInfo.Controls.Add(Me.cboPackageType, 1, 1)
+		Me.tlpPackageInfo.Controls.Add(Me.txtOriginalURI, 1, 11)
+		Me.tlpPackageInfo.Controls.Add(Me.lblPackageType, 0, 1)
+		Me.tlpPackageInfo.Controls.Add(Me.lblPackageInfo, 0, 0)
+		Me.tlpPackageInfo.Controls.Add(Me.txtNetwork, 3, 15)
+		Me.tlpPackageInfo.Controls.Add(Me.lblOriginalURI, 0, 11)
+		Me.tlpPackageInfo.Controls.Add(Me.cboRebootBehavior, 1, 16)
+		Me.tlpPackageInfo.Controls.Add(Me.lblNetwork, 2, 15)
+		Me.tlpPackageInfo.Controls.Add(Me.lblUninstall, 0, 15)
+		Me.tlpPackageInfo.Controls.Add(Me.txtUninstall, 1, 15)
+		Me.tlpPackageInfo.Controls.Add(Me.lblImpact, 0, 14)
+		Me.tlpPackageInfo.Controls.Add(Me.txtPackageTitle, 1, 2)
+		Me.tlpPackageInfo.Controls.Add(Me.txtDescription, 1, 3)
+		Me.tlpPackageInfo.Controls.Add(Me.lblPackageTitle, 0, 2)
+		Me.tlpPackageInfo.Controls.Add(Me.cboSeverity, 1, 6)
+		Me.tlpPackageInfo.Controls.Add(Me.txtBulletinID, 1, 5)
+		Me.tlpPackageInfo.Controls.Add(Me.cboImpact, 1, 14)
+		Me.tlpPackageInfo.Controls.Add(Me.lblClassification, 0, 4)
+		Me.tlpPackageInfo.Controls.Add(Me.cboVendor, 1, 7)
+		Me.tlpPackageInfo.Controls.Add(Me.cboProduct, 1, 8)
+		Me.tlpPackageInfo.Controls.Add(Me.lblBullitinID, 0, 5)
+		Me.tlpPackageInfo.Controls.Add(Me.txtArticleID, 1, 9)
+		Me.tlpPackageInfo.Controls.Add(Me.txtCVEID, 1, 10)
+		Me.tlpPackageInfo.Controls.Add(Me.lblSeverity, 0, 6)
+		Me.tlpPackageInfo.Controls.Add(Me.lblMoreInfoURL, 0, 13)
+		Me.tlpPackageInfo.Controls.Add(Me.txtMoreInfoURL, 1, 13)
+		Me.tlpPackageInfo.Controls.Add(Me.lblSupportURL, 0, 12)
+		Me.tlpPackageInfo.Controls.Add(Me.lblVendor, 0, 7)
+		Me.tlpPackageInfo.Controls.Add(Me.txtSupportURL, 1, 12)
+		Me.tlpPackageInfo.Controls.Add(Me.lblCVEID, 0, 10)
+		Me.tlpPackageInfo.Controls.Add(Me.lblProduct, 0, 8)
+		Me.tlpPackageInfo.Controls.Add(Me.lblArticleID, 0, 9)
+		Me.tlpPackageInfo.Controls.Add(Me.cboClassification, 1, 4)
+		Me.tlpPackageInfo.Controls.Add(Me.lblDescription, 0, 3)
+		Me.tlpPackageInfo.Name = "tlpPackageInfo"
+		'
+		'lblRebootBehavior
+		'
+		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
+		Me.lblRebootBehavior.Name = "lblRebootBehavior"
+		'
+		'cboPackageType
+		'
+		resources.ApplyResources(Me.cboPackageType, "cboPackageType")
+		Me.cboPackageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboPackageType.FormattingEnabled = true
+		Me.cboPackageType.Items.AddRange(New Object() {resources.GetString("cboPackageType.Items"), resources.GetString("cboPackageType.Items1")})
+		Me.cboPackageType.Name = "cboPackageType"
+		AddHandler Me.cboPackageType.SelectedIndexChanged, AddressOf Me.CboPackageTypeSelectedIndexChanged
+		'
+		'txtOriginalURI
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtOriginalURI, 3)
+		resources.ApplyResources(Me.txtOriginalURI, "txtOriginalURI")
+		Me.txtOriginalURI.Name = "txtOriginalURI"
+		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
+		AddHandler Me.txtOriginalURI.KeyDown, AddressOf Me.TxtOriginalURIKeyDown
+		AddHandler Me.txtOriginalURI.KeyPress, AddressOf Me.TxtOriginalURIKeyPress
+		'
+		'lblPackageType
+		'
+		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
+		Me.lblPackageType.Name = "lblPackageType"
+		'
+		'lblPackageInfo
+		'
+		resources.ApplyResources(Me.lblPackageInfo, "lblPackageInfo")
+		Me.tlpPackageInfo.SetColumnSpan(Me.lblPackageInfo, 4)
+		Me.lblPackageInfo.Name = "lblPackageInfo"
+		AddHandler Me.lblPackageInfo.TextChanged, AddressOf Me.TextChanged
 		'
 		'txtNetwork
 		'
@@ -313,37 +372,206 @@ Partial Class UpdateForm
 		Me.txtNetwork.Name = "txtNetwork"
 		Me.txtNetwork.ReadOnly = true
 		'
-		'lblNetwork
-		'
-		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
-		Me.lblNetwork.Name = "lblNetwork"
-		'
-		'txtOriginalURI
-		'
-		resources.ApplyResources(Me.txtOriginalURI, "txtOriginalURI")
-		Me.txtOriginalURI.Name = "txtOriginalURI"
-		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
-		AddHandler Me.txtOriginalURI.KeyDown, AddressOf Me.TxtOriginalURIKeyDown
-		AddHandler Me.txtOriginalURI.KeyPress, AddressOf Me.TxtOriginalURIKeyPress
-		'
 		'lblOriginalURI
 		'
 		resources.ApplyResources(Me.lblOriginalURI, "lblOriginalURI")
 		Me.lblOriginalURI.Name = "lblOriginalURI"
 		'
-		'cboPackageType
+		'cboRebootBehavior
 		'
-		Me.cboPackageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboPackageType.FormattingEnabled = true
-		Me.cboPackageType.Items.AddRange(New Object() {resources.GetString("cboPackageType.Items"), resources.GetString("cboPackageType.Items1")})
-		resources.ApplyResources(Me.cboPackageType, "cboPackageType")
-		Me.cboPackageType.Name = "cboPackageType"
-		AddHandler Me.cboPackageType.SelectedIndexChanged, AddressOf Me.CboPackageTypeSelectedIndexChanged
+		Me.cboRebootBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboRebootBehavior.FormattingEnabled = true
+		Me.cboRebootBehavior.Items.AddRange(New Object() {resources.GetString("cboRebootBehavior.Items"), resources.GetString("cboRebootBehavior.Items1"), resources.GetString("cboRebootBehavior.Items2")})
+		resources.ApplyResources(Me.cboRebootBehavior, "cboRebootBehavior")
+		Me.cboRebootBehavior.Name = "cboRebootBehavior"
+		AddHandler Me.cboRebootBehavior.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboRebootBehavior.Validated, AddressOf Me.ControlValidated
 		'
-		'lblPackageType
+		'lblNetwork
 		'
-		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
-		Me.lblPackageType.Name = "lblPackageType"
+		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
+		Me.lblNetwork.Name = "lblNetwork"
+		'
+		'lblUninstall
+		'
+		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
+		Me.lblUninstall.Name = "lblUninstall"
+		'
+		'txtUninstall
+		'
+		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
+		Me.txtUninstall.Name = "txtUninstall"
+		Me.txtUninstall.ReadOnly = true
+		'
+		'lblImpact
+		'
+		resources.ApplyResources(Me.lblImpact, "lblImpact")
+		Me.lblImpact.Name = "lblImpact"
+		'
+		'txtPackageTitle
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtPackageTitle, 3)
+		resources.ApplyResources(Me.txtPackageTitle, "txtPackageTitle")
+		Me.txtPackageTitle.Name = "txtPackageTitle"
+		AddHandler Me.txtPackageTitle.Validated, AddressOf Me.ControlValidated
+		AddHandler Me.txtPackageTitle.Validating, AddressOf Me.ControlValidating
+		'
+		'txtDescription
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtDescription, 3)
+		resources.ApplyResources(Me.txtDescription, "txtDescription")
+		Me.txtDescription.Name = "txtDescription"
+		AddHandler Me.txtDescription.Validated, AddressOf Me.ControlValidated
+		AddHandler Me.txtDescription.Validating, AddressOf Me.ControlValidating
+		'
+		'lblPackageTitle
+		'
+		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
+		Me.lblPackageTitle.Name = "lblPackageTitle"
+		'
+		'cboSeverity
+		'
+		resources.ApplyResources(Me.cboSeverity, "cboSeverity")
+		Me.cboSeverity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboSeverity.FormattingEnabled = true
+		Me.cboSeverity.Items.AddRange(New Object() {resources.GetString("cboSeverity.Items"), resources.GetString("cboSeverity.Items1"), resources.GetString("cboSeverity.Items2"), resources.GetString("cboSeverity.Items3"), resources.GetString("cboSeverity.Items4")})
+		Me.cboSeverity.Name = "cboSeverity"
+		AddHandler Me.cboSeverity.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboSeverity.SelectedIndexChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboSeverity.Validated, AddressOf Me.ControlValidated
+		'
+		'txtBulletinID
+		'
+		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
+		Me.txtBulletinID.Name = "txtBulletinID"
+		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
+		'
+		'cboImpact
+		'
+		Me.cboImpact.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboImpact.FormattingEnabled = true
+		Me.cboImpact.Items.AddRange(New Object() {resources.GetString("cboImpact.Items"), resources.GetString("cboImpact.Items1"), resources.GetString("cboImpact.Items2")})
+		resources.ApplyResources(Me.cboImpact, "cboImpact")
+		Me.cboImpact.Name = "cboImpact"
+		AddHandler Me.cboImpact.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboImpact.SelectedValueChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboImpact.Validated, AddressOf Me.ControlValidated
+		'
+		'lblClassification
+		'
+		resources.ApplyResources(Me.lblClassification, "lblClassification")
+		Me.lblClassification.Name = "lblClassification"
+		'
+		'cboVendor
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.cboVendor, 3)
+		resources.ApplyResources(Me.cboVendor, "cboVendor")
+		Me.cboVendor.FormattingEnabled = true
+		Me.cboVendor.Name = "cboVendor"
+		AddHandler Me.cboVendor.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
+		AddHandler Me.cboVendor.Validated, AddressOf Me.ControlValidated
+		AddHandler Me.cboVendor.TextChanged, AddressOf Me.ValidateCombo
+		'
+		'cboProduct
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.cboProduct, 3)
+		resources.ApplyResources(Me.cboProduct, "cboProduct")
+		Me.cboProduct.FormattingEnabled = true
+		Me.cboProduct.Name = "cboProduct"
+		AddHandler Me.cboProduct.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboProduct.SelectedIndexChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboProduct.Validated, AddressOf Me.ControlValidated
+		AddHandler Me.cboProduct.TextChanged, AddressOf Me.ValidateCombo
+		'
+		'lblBullitinID
+		'
+		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
+		Me.lblBullitinID.Name = "lblBullitinID"
+		AddHandler Me.lblBullitinID.Validating, AddressOf Me.ControlValidating
+		'
+		'txtArticleID
+		'
+		resources.ApplyResources(Me.txtArticleID, "txtArticleID")
+		Me.txtArticleID.Name = "txtArticleID"
+		'
+		'txtCVEID
+		'
+		resources.ApplyResources(Me.txtCVEID, "txtCVEID")
+		Me.txtCVEID.Name = "txtCVEID"
+		'
+		'lblSeverity
+		'
+		resources.ApplyResources(Me.lblSeverity, "lblSeverity")
+		Me.lblSeverity.Name = "lblSeverity"
+		'
+		'lblMoreInfoURL
+		'
+		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
+		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
+		'
+		'txtMoreInfoURL
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtMoreInfoURL, 3)
+		resources.ApplyResources(Me.txtMoreInfoURL, "txtMoreInfoURL")
+		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
+		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
+		'
+		'lblSupportURL
+		'
+		resources.ApplyResources(Me.lblSupportURL, "lblSupportURL")
+		Me.lblSupportURL.Name = "lblSupportURL"
+		'
+		'lblVendor
+		'
+		resources.ApplyResources(Me.lblVendor, "lblVendor")
+		Me.lblVendor.Name = "lblVendor"
+		'
+		'txtSupportURL
+		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtSupportURL, 3)
+		resources.ApplyResources(Me.txtSupportURL, "txtSupportURL")
+		Me.txtSupportURL.Name = "txtSupportURL"
+		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
+		'
+		'lblCVEID
+		'
+		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
+		Me.lblCVEID.Name = "lblCVEID"
+		'
+		'lblProduct
+		'
+		resources.ApplyResources(Me.lblProduct, "lblProduct")
+		Me.lblProduct.Name = "lblProduct"
+		'
+		'lblArticleID
+		'
+		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
+		Me.lblArticleID.Name = "lblArticleID"
+		'
+		'cboClassification
+		'
+		resources.ApplyResources(Me.cboClassification, "cboClassification")
+		Me.cboClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboClassification.FormattingEnabled = true
+		Me.cboClassification.Items.AddRange(New Object() {resources.GetString("cboClassification.Items"), resources.GetString("cboClassification.Items1"), resources.GetString("cboClassification.Items2"), resources.GetString("cboClassification.Items3"), resources.GetString("cboClassification.Items4"), resources.GetString("cboClassification.Items5"), resources.GetString("cboClassification.Items6"), resources.GetString("cboClassification.Items7"), resources.GetString("cboClassification.Items8"), resources.GetString("cboClassification.Items9")})
+		Me.cboClassification.Name = "cboClassification"
+		AddHandler Me.cboClassification.Validating, AddressOf Me.ControlValidating
+		AddHandler Me.cboClassification.SelectedIndexChanged, AddressOf Me.ValidateCombo
+		AddHandler Me.cboClassification.Validated, AddressOf Me.ControlValidated
+		'
+		'lblDescription
+		'
+		resources.ApplyResources(Me.lblDescription, "lblDescription")
+		Me.lblDescription.Name = "lblDescription"
+		'
+		'lblLanguages
+		'
+		resources.ApplyResources(Me.lblLanguages, "lblLanguages")
+		Me.lblLanguages.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.lblLanguages.Name = "lblLanguages"
+		AddHandler Me.lblLanguages.Click, AddressOf Me.LblLanguagesClick
 		'
 		'lblPrerequisites
 		'
@@ -366,22 +594,6 @@ Partial Class UpdateForm
 		Me.lblReturnCodes.Name = "lblReturnCodes"
 		AddHandler Me.lblReturnCodes.Click, AddressOf Me.LblReturnCodesClick
 		'
-		'txtUninstall
-		'
-		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
-		Me.txtUninstall.Name = "txtUninstall"
-		Me.txtUninstall.ReadOnly = true
-		'
-		'lblUninstall
-		'
-		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
-		Me.lblUninstall.Name = "lblUninstall"
-		'
-		'lblPackageInfo
-		'
-		resources.ApplyResources(Me.lblPackageInfo, "lblPackageInfo")
-		Me.lblPackageInfo.Name = "lblPackageInfo"
-		'
 		'txtCommandLine
 		'
 		resources.ApplyResources(Me.txtCommandLine, "txtCommandLine")
@@ -391,178 +603,6 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.lblCommandLine, "lblCommandLine")
 		Me.lblCommandLine.Name = "lblCommandLine"
-		'
-		'cboRebootBehavior
-		'
-		Me.cboRebootBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboRebootBehavior.FormattingEnabled = true
-		Me.cboRebootBehavior.Items.AddRange(New Object() {resources.GetString("cboRebootBehavior.Items"), resources.GetString("cboRebootBehavior.Items1"), resources.GetString("cboRebootBehavior.Items2")})
-		resources.ApplyResources(Me.cboRebootBehavior, "cboRebootBehavior")
-		Me.cboRebootBehavior.Name = "cboRebootBehavior"
-		AddHandler Me.cboRebootBehavior.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
-		AddHandler Me.cboRebootBehavior.Validated, AddressOf Me.ControlValidated
-		'
-		'cboImpact
-		'
-		Me.cboImpact.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboImpact.FormattingEnabled = true
-		Me.cboImpact.Items.AddRange(New Object() {resources.GetString("cboImpact.Items"), resources.GetString("cboImpact.Items1"), resources.GetString("cboImpact.Items2")})
-		resources.ApplyResources(Me.cboImpact, "cboImpact")
-		Me.cboImpact.Name = "cboImpact"
-		AddHandler Me.cboImpact.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboImpact.SelectedValueChanged, AddressOf Me.ValidateCombo
-		AddHandler Me.cboImpact.Validated, AddressOf Me.ControlValidated
-		'
-		'txtMoreInfoURL
-		'
-		resources.ApplyResources(Me.txtMoreInfoURL, "txtMoreInfoURL")
-		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
-		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
-		'
-		'txtSupportURL
-		'
-		resources.ApplyResources(Me.txtSupportURL, "txtSupportURL")
-		Me.txtSupportURL.Name = "txtSupportURL"
-		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
-		'
-		'cboSeverity
-		'
-		Me.cboSeverity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		resources.ApplyResources(Me.cboSeverity, "cboSeverity")
-		Me.cboSeverity.FormattingEnabled = true
-		Me.cboSeverity.Items.AddRange(New Object() {resources.GetString("cboSeverity.Items"), resources.GetString("cboSeverity.Items1"), resources.GetString("cboSeverity.Items2"), resources.GetString("cboSeverity.Items3"), resources.GetString("cboSeverity.Items4")})
-		Me.cboSeverity.Name = "cboSeverity"
-		AddHandler Me.cboSeverity.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboSeverity.SelectedIndexChanged, AddressOf Me.ValidateCombo
-		AddHandler Me.cboSeverity.Validated, AddressOf Me.ControlValidated
-		'
-		'txtCVEID
-		'
-		resources.ApplyResources(Me.txtCVEID, "txtCVEID")
-		Me.txtCVEID.Name = "txtCVEID"
-		'
-		'txtArticleID
-		'
-		resources.ApplyResources(Me.txtArticleID, "txtArticleID")
-		Me.txtArticleID.Name = "txtArticleID"
-		'
-		'cboProduct
-		'
-		resources.ApplyResources(Me.cboProduct, "cboProduct")
-		Me.cboProduct.FormattingEnabled = true
-		Me.cboProduct.Name = "cboProduct"
-		AddHandler Me.cboProduct.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboProduct.SelectedIndexChanged, AddressOf Me.ValidateCombo
-		AddHandler Me.cboProduct.Validated, AddressOf Me.ControlValidated
-		AddHandler Me.cboProduct.TextChanged, AddressOf Me.ValidateCombo
-		'
-		'cboVendor
-		'
-		resources.ApplyResources(Me.cboVendor, "cboVendor")
-		Me.cboVendor.FormattingEnabled = true
-		Me.cboVendor.Name = "cboVendor"
-		AddHandler Me.cboVendor.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboVendor.SelectedIndexChanged, AddressOf Me.CboVendorSelectedIndexChanged
-		AddHandler Me.cboVendor.Validated, AddressOf Me.ControlValidated
-		AddHandler Me.cboVendor.TextChanged, AddressOf Me.ValidateCombo
-		'
-		'cboClassification
-		'
-		Me.cboClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboClassification.FormattingEnabled = true
-		Me.cboClassification.Items.AddRange(New Object() {resources.GetString("cboClassification.Items"), resources.GetString("cboClassification.Items1"), resources.GetString("cboClassification.Items2"), resources.GetString("cboClassification.Items3"), resources.GetString("cboClassification.Items4"), resources.GetString("cboClassification.Items5"), resources.GetString("cboClassification.Items6"), resources.GetString("cboClassification.Items7"), resources.GetString("cboClassification.Items8"), resources.GetString("cboClassification.Items9")})
-		resources.ApplyResources(Me.cboClassification, "cboClassification")
-		Me.cboClassification.Name = "cboClassification"
-		AddHandler Me.cboClassification.Validating, AddressOf Me.ControlValidating
-		AddHandler Me.cboClassification.SelectedIndexChanged, AddressOf Me.ValidateCombo
-		AddHandler Me.cboClassification.Validated, AddressOf Me.ControlValidated
-		'
-		'txtBulletinID
-		'
-		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
-		Me.txtBulletinID.Name = "txtBulletinID"
-		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
-		'
-		'txtDescription
-		'
-		resources.ApplyResources(Me.txtDescription, "txtDescription")
-		Me.txtDescription.Name = "txtDescription"
-		AddHandler Me.txtDescription.Validated, AddressOf Me.ControlValidated
-		AddHandler Me.txtDescription.Validating, AddressOf Me.ControlValidating
-		'
-		'txtPackageTitle
-		'
-		resources.ApplyResources(Me.txtPackageTitle, "txtPackageTitle")
-		Me.txtPackageTitle.Name = "txtPackageTitle"
-		AddHandler Me.txtPackageTitle.Validated, AddressOf Me.ControlValidated
-		AddHandler Me.txtPackageTitle.Validating, AddressOf Me.ControlValidating
-		'
-		'lblRebootBehavior
-		'
-		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
-		Me.lblRebootBehavior.Name = "lblRebootBehavior"
-		'
-		'lblImpact
-		'
-		resources.ApplyResources(Me.lblImpact, "lblImpact")
-		Me.lblImpact.Name = "lblImpact"
-		'
-		'lblMoreInfoURL
-		'
-		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
-		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
-		'
-		'lblSupportURL
-		'
-		resources.ApplyResources(Me.lblSupportURL, "lblSupportURL")
-		Me.lblSupportURL.Name = "lblSupportURL"
-		'
-		'lblSeverity
-		'
-		resources.ApplyResources(Me.lblSeverity, "lblSeverity")
-		Me.lblSeverity.Name = "lblSeverity"
-		'
-		'lblCVEID
-		'
-		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
-		Me.lblCVEID.Name = "lblCVEID"
-		'
-		'lblArticleID
-		'
-		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
-		Me.lblArticleID.Name = "lblArticleID"
-		'
-		'lblProduct
-		'
-		resources.ApplyResources(Me.lblProduct, "lblProduct")
-		Me.lblProduct.Name = "lblProduct"
-		'
-		'lblVendor
-		'
-		resources.ApplyResources(Me.lblVendor, "lblVendor")
-		Me.lblVendor.Name = "lblVendor"
-		'
-		'lblBullitinID
-		'
-		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
-		Me.lblBullitinID.Name = "lblBullitinID"
-		AddHandler Me.lblBullitinID.Validating, AddressOf Me.ControlValidating
-		'
-		'lblClassification
-		'
-		resources.ApplyResources(Me.lblClassification, "lblClassification")
-		Me.lblClassification.Name = "lblClassification"
-		'
-		'lblDescription
-		'
-		resources.ApplyResources(Me.lblDescription, "lblDescription")
-		Me.lblDescription.Name = "lblDescription"
-		'
-		'lblPackageTitle
-		'
-		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
-		Me.lblPackageTitle.Name = "lblPackageTitle"
 		'
 		'tabIsInstalled
 		'
@@ -576,12 +616,8 @@ Partial Class UpdateForm
 		Me.isInstalledRules.ApplicabilityRule = ""
 		Me.isInstalledRules.CausesValidation = false
 		resources.ApplyResources(Me.isInstalledRules, "isInstalledRules")
-		Me.isInstalledRules.Instructions = resources.GetString("isInstalledRules.Instructions")
 		Me.isInstalledRules.Name = "isInstalledRules"
-		Me.isInstalledRules.RuleEditorTitle = "German"
 		Me.isInstalledRules.Rules = ""
-		Me.isInstalledRules.Title = "Package Level - Installed Rules"
-		Me.isInstalledRules.TitleItemLevel = "Installation Item Level"
 		'
 		'tabIsInstallable
 		'
@@ -595,20 +631,13 @@ Partial Class UpdateForm
 		Me.isInstallableRules.ApplicabilityRule = ""
 		Me.isInstallableRules.CausesValidation = false
 		resources.ApplyResources(Me.isInstallableRules, "isInstallableRules")
-		Me.isInstallableRules.Instructions = resources.GetString("isInstallableRules.Instructions")
 		Me.isInstallableRules.Name = "isInstallableRules"
-		Me.isInstallableRules.RuleEditorTitle = "Installable"
 		Me.isInstallableRules.Rules = ""
-		Me.isInstallableRules.Title = "Package Level - Installable Rules"
-		Me.isInstallableRules.TitleItemLevel = "Installation Item Level"
 		'
 		'tabIsSuperseded
 		'
 		Me.tabIsSuperseded.BackColor = System.Drawing.SystemColors.Control
-		Me.tabIsSuperseded.Controls.Add(Me.btnIsSupersededEdit)
-		Me.tabIsSuperseded.Controls.Add(Me.lblIsSuperseded)
-		Me.tabIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem)
-		Me.tabIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem)
+		Me.tabIsSuperseded.Controls.Add(Me.tlpIsSuperseded)
 		resources.ApplyResources(Me.tabIsSuperseded, "tabIsSuperseded")
 		Me.tabIsSuperseded.Name = "tabIsSuperseded"
 		'
@@ -619,11 +648,6 @@ Partial Class UpdateForm
 		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
 		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
 		'
-		'lblIsSuperseded
-		'
-		resources.ApplyResources(Me.lblIsSuperseded, "lblIsSuperseded")
-		Me.lblIsSuperseded.Name = "lblIsSuperseded"
-		'
 		'lblIsSuperceded_InstallableItem
 		'
 		resources.ApplyResources(Me.lblIsSuperceded_InstallableItem, "lblIsSuperceded_InstallableItem")
@@ -631,6 +655,7 @@ Partial Class UpdateForm
 		'
 		'txtIsSuperceded_InstallableItem
 		'
+		Me.tlpIsSuperseded.SetColumnSpan(Me.txtIsSuperceded_InstallableItem, 2)
 		resources.ApplyResources(Me.txtIsSuperceded_InstallableItem, "txtIsSuperceded_InstallableItem")
 		Me.txtIsSuperceded_InstallableItem.Name = "txtIsSuperceded_InstallableItem"
 		Me.txtIsSuperceded_InstallableItem.ReadOnly = true
@@ -638,10 +663,7 @@ Partial Class UpdateForm
 		'tabMetaData
 		'
 		Me.tabMetaData.BackColor = System.Drawing.SystemColors.Control
-		Me.tabMetaData.Controls.Add(Me.btnMetaDataEdit)
-		Me.tabMetaData.Controls.Add(Me.lblMetaData_InstallableItem)
-		Me.tabMetaData.Controls.Add(Me.lblMetaData)
-		Me.tabMetaData.Controls.Add(Me.txtInstallableItemMetaData)
+		Me.tabMetaData.Controls.Add(Me.tlpMetaData)
 		resources.ApplyResources(Me.tabMetaData, "tabMetaData")
 		Me.tabMetaData.Name = "tabMetaData"
 		'
@@ -660,10 +682,13 @@ Partial Class UpdateForm
 		'lblMetaData
 		'
 		resources.ApplyResources(Me.lblMetaData, "lblMetaData")
+		Me.tlpMetaData.SetColumnSpan(Me.lblMetaData, 2)
 		Me.lblMetaData.Name = "lblMetaData"
+		AddHandler Me.lblMetaData.TextChanged, AddressOf Me.TextChanged
 		'
 		'txtInstallableItemMetaData
 		'
+		Me.tlpMetaData.SetColumnSpan(Me.txtInstallableItemMetaData, 2)
 		resources.ApplyResources(Me.txtInstallableItemMetaData, "txtInstallableItemMetaData")
 		Me.txtInstallableItemMetaData.Name = "txtInstallableItemMetaData"
 		Me.txtInstallableItemMetaData.ReadOnly = true
@@ -671,15 +696,15 @@ Partial Class UpdateForm
 		'tabSummary
 		'
 		Me.tabSummary.BackColor = System.Drawing.SystemColors.Control
-		Me.tabSummary.Controls.Add(Me.label4)
-		Me.tabSummary.Controls.Add(Me.txtSummary)
+		Me.tabSummary.Controls.Add(Me.tlpSummary)
 		resources.ApplyResources(Me.tabSummary, "tabSummary")
 		Me.tabSummary.Name = "tabSummary"
 		'
-		'label4
+		'lblSummary
 		'
-		resources.ApplyResources(Me.label4, "label4")
-		Me.label4.Name = "label4"
+		resources.ApplyResources(Me.lblSummary, "lblSummary")
+		Me.lblSummary.Name = "lblSummary"
+		AddHandler Me.lblSummary.TextChanged, AddressOf Me.TextChanged
 		'
 		'txtSummary
 		'
@@ -688,10 +713,18 @@ Partial Class UpdateForm
 		Me.txtSummary.ReadOnly = true
 		Me.txtSummary.TabStop = false
 		'
+		'lblIsSuperseded
+		'
+		resources.ApplyResources(Me.lblIsSuperseded, "lblIsSuperseded")
+		Me.tlpIsSuperseded.SetColumnSpan(Me.lblIsSuperseded, 2)
+		Me.lblIsSuperseded.Name = "lblIsSuperseded"
+		AddHandler Me.lblIsSuperseded.TextChanged, AddressOf Me.TextChanged
+		'
 		'btnPrevious
 		'
 		resources.ApplyResources(Me.btnPrevious, "btnPrevious")
 		Me.btnPrevious.CausesValidation = false
+		Me.btnPrevious.MinimumSize = New System.Drawing.Size(0, 25)
 		Me.btnPrevious.Name = "btnPrevious"
 		Me.btnPrevious.UseVisualStyleBackColor = true
 		AddHandler Me.btnPrevious.Click, AddressOf Me.BtnPreviousClick
@@ -700,6 +733,7 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.btnNext, "btnNext")
 		Me.btnNext.CausesValidation = false
+		Me.btnNext.MinimumSize = New System.Drawing.Size(0, 25)
 		Me.btnNext.Name = "btnNext"
 		Me.btnNext.UseVisualStyleBackColor = true
 		AddHandler Me.btnNext.Click, AddressOf Me.BtnNextClick
@@ -709,6 +743,7 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.CausesValidation = false
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(0, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		AddHandler Me.btnCancel.Click, AddressOf Me.BtnCancelClick
@@ -721,6 +756,7 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.chkExportSdp, "chkExportSdp")
 		Me.chkExportSdp.CausesValidation = false
+		Me.tlpMain.SetColumnSpan(Me.chkExportSdp, 5)
 		Me.chkExportSdp.Name = "chkExportSdp"
 		Me.chkExportSdp.UseVisualStyleBackColor = true
 		'
@@ -728,6 +764,8 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.chkMetadataOnly, "chkMetadataOnly")
 		Me.chkMetadataOnly.CausesValidation = false
+		Me.tlpMain.SetColumnSpan(Me.chkMetadataOnly, 2)
+		Me.chkMetadataOnly.MinimumSize = New System.Drawing.Size(0, 25)
 		Me.chkMetadataOnly.Name = "chkMetadataOnly"
 		Me.chkMetadataOnly.UseVisualStyleBackColor = true
 		AddHandler Me.chkMetadataOnly.CheckedChanged, AddressOf Me.CboMetadataOnlyCheckedChanged
@@ -737,40 +775,87 @@ Partial Class UpdateForm
 		Me.errorProviderUpdate.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
 		Me.errorProviderUpdate.ContainerControl = Me
 		'
+		'tlpMain
+		'
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.chkMetadataOnly, 0, 2)
+		Me.tlpMain.Controls.Add(Me.tabsUpdate, 0, 0)
+		Me.tlpMain.Controls.Add(Me.chkExportSdp, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 2)
+		Me.tlpMain.Controls.Add(Me.btnNext, 3, 2)
+		Me.tlpMain.Controls.Add(Me.btnPrevious, 2, 2)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpIsSuperseded
+		'
+		resources.ApplyResources(Me.tlpIsSuperseded, "tlpIsSuperseded")
+		Me.tlpIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem, 0, 2)
+		Me.tlpIsSuperseded.Controls.Add(Me.btnIsSupersededEdit, 1, 1)
+		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperseded, 0, 0)
+		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem, 0, 1)
+		Me.tlpIsSuperseded.Name = "tlpIsSuperseded"
+		'
+		'tlpMetaData
+		'
+		resources.ApplyResources(Me.tlpMetaData, "tlpMetaData")
+		Me.tlpMetaData.Controls.Add(Me.txtInstallableItemMetaData, 0, 2)
+		Me.tlpMetaData.Controls.Add(Me.btnMetaDataEdit, 1, 1)
+		Me.tlpMetaData.Controls.Add(Me.lblMetaData, 0, 0)
+		Me.tlpMetaData.Controls.Add(Me.lblMetaData_InstallableItem, 0, 1)
+		Me.tlpMetaData.Name = "tlpMetaData"
+		'
+		'tlpSummary
+		'
+		resources.ApplyResources(Me.tlpSummary, "tlpSummary")
+		Me.tlpSummary.Controls.Add(Me.txtSummary, 0, 1)
+		Me.tlpSummary.Controls.Add(Me.lblSummary, 0, 0)
+		Me.tlpSummary.Name = "tlpSummary"
+		'
 		'UpdateForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.chkMetadataOnly)
-		Me.Controls.Add(Me.chkExportSdp)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnNext)
-		Me.Controls.Add(Me.btnPrevious)
-		Me.Controls.Add(Me.tabsImportUpdate)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "UpdateForm"
 		Me.ShowInTaskbar = false
-		Me.tabsImportUpdate.ResumeLayout(false)
+		Me.tabsUpdate.ResumeLayout(false)
 		Me.tabIntro.ResumeLayout(false)
-		Me.tabIntro.PerformLayout
+		Me.tlpIntro.ResumeLayout(false)
+		Me.tlpIntro.PerformLayout
 		CType(Me.dgvAdditionalFiles,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabPackageInfo.ResumeLayout(false)
 		Me.tabPackageInfo.PerformLayout
+		Me.tlpPackageInfo.ResumeLayout(false)
+		Me.tlpPackageInfo.PerformLayout
 		Me.tabIsInstalled.ResumeLayout(false)
 		Me.tabIsInstallable.ResumeLayout(false)
 		Me.tabIsSuperseded.ResumeLayout(false)
-		Me.tabIsSuperseded.PerformLayout
 		Me.tabMetaData.ResumeLayout(false)
-		Me.tabMetaData.PerformLayout
 		Me.tabSummary.ResumeLayout(false)
-		Me.tabSummary.PerformLayout
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpIsSuperseded.ResumeLayout(false)
+		Me.tlpIsSuperseded.PerformLayout
+		Me.tlpMetaData.ResumeLayout(false)
+		Me.tlpMetaData.PerformLayout
+		Me.tlpSummary.ResumeLayout(false)
+		Me.tlpSummary.PerformLayout
 		Me.ResumeLayout(false)
 	End Sub
+	Private tlpSummary As System.Windows.Forms.TableLayoutPanel
+	Private tlpMetaData As System.Windows.Forms.TableLayoutPanel
+	Private lblSummary As System.Windows.Forms.Label
+	Private tlpIsSuperseded As System.Windows.Forms.TableLayoutPanel
+	Private tlpPackageInfo As System.Windows.Forms.TableLayoutPanel
+	Private tabsUpdate As LocalUpdatePublisher.CustomTabControl
+	Private tlpIntro As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private lblLanguages As System.Windows.Forms.Label
 	Private lblNetwork As System.Windows.Forms.Label
 	Private txtNetwork As System.Windows.Forms.TextBox
@@ -795,7 +880,6 @@ Partial Class UpdateForm
 	Private isInstalledRules As LocalUpdatePublisher.RulesEditor
 	Private isInstallableRules As LocalUpdatePublisher.RulesEditor
 	Private lblMetaData As System.Windows.Forms.Label
-	Private label4 As System.Windows.Forms.Label
 	Private lblMetaData_InstallableItem As System.Windows.Forms.Label
 	Private lblIsSuperseded As System.Windows.Forms.Label
 	Private lblPackageInfo As System.Windows.Forms.Label
@@ -854,5 +938,4 @@ Partial Class UpdateForm
 	Private btnCancel As System.Windows.Forms.Button
 	Private btnNext As System.Windows.Forms.Button
 	Private btnPrevious As System.Windows.Forms.Button
-	Private tabsImportUpdate As LocalUpdatePublisher.CustomTabControl
 End Class

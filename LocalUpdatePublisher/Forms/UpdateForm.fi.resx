@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Tuo päivitys tiedostosta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddDir.Text">
+    <value>Lisää Dir</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Lisää tiedostoja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Peruuta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Muokkaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnMetaDataEdit.Text">
+    <value>Muokkaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnNext.Text">
+    <value>Seuraava</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnPrevious.Text">
+    <value>Edellinen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateFile.Text">
+    <value>Selaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkExportSdp.Text">
+    <value>Tallenna Software Definition Paketti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkMetadataOnly.Text">
+    <value>Julkaise vain metatietoja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label4.Text">
+    <value>Tällä lomakkeella voit tarkistaa XML, jota käytetään kuvaamaan ohjelmistopaketin. Valitse Valmis julkaista tämän paketin WSUS-palvelimeen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblAdditionalFiles.Text">
+    <value>Lisää tiedostoja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artikkelin tunnus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Tiedotteen tunnus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Luokitus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Command Line</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Kuvaus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Tämä ohjattu vie sinut läpi prosessin luoda paikallisesti julkaistu ohjelmistopaketti. Sinun täytyy valita MSI, MSP, tai EXE tiedosto päivitystiedosto. Jos EXE tiedosto on upotettu MSI-tiedosto sinun täytyy syöttää suhteellinen polku. Jos on muita tukevat tarvittavat tiedostot, kuten muuntaa tiedostoja, niin käytä ylimääräisiä tiedostoja luetteloon lisätä ne.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Asennus alkiotason - Superseded säännöt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Tämä lomake luetellaan säännöistä, jotka määräävät, jos ohjelmisto on korvattu. Jos olet luonut tämän päivityksen avulla MSI tai MSP-tiedosto näet automaattisesti luotu sääntö asennettavaa kohteen tasolla.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Kielet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMSIPath.Text">
+    <value>MSI Path</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData.Text">
+    <value>Tällä lomakkeella voit tarkistaa metatiedot jota edellinen on asennettavissa, on asennettu, tai on korvattu sääntöjä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Asennus alkiotason - työjärjestyksen Metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Lisätietoja URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Verkko Pakollinen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>Alkuperäinen URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Anna tarvittavat tiedot siitä, ohjelmisto täällä. Katso asiakirjoja koskeviin kysymyksiin yksittäisiä kenttiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Paketti osasto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Pakkaustyyppi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Edellytykset</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Tuote</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Uudestisyntynyt Behavior</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Paluukoodit</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Vakavuus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Korvaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>Tuki URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Poista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Päivitä tiedosto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Myyjä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

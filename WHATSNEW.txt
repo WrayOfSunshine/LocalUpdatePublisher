@@ -1,5 +1,5 @@
 Version 1.1
--Globalization with really bad Google translations for French and German.
+-Globalization with translations for Catalan, Danish, French, and German.
 -Add and remove multiple updates when exporting or selecting for prerequisite and superseded.
 -Support for approval deadlines.
 -Show locally published updates regardless of vendor.

@@ -281,6 +281,7 @@ Public Module Data_Routines
 			For Each tmpUpdate As IUpdate In tmpUpdateCollection
 				If Not tmpUpdate.Id.UpdateId.Equals(hiddenUpdate)
 					Dim tmpRow As DataRow = dt.NewRow()
+															
 					tmpRow("IUpdate") = tmpUpdate
 					tmpRow("Id") = tmpUpdate.Id
 					tmpRow("Title") = tmpUpdate.Title

@@ -44,46 +44,37 @@ Partial Class ExportCatalogForm
 		Me.btnAdd = New System.Windows.Forms.Button
 		Me.btnAddAll = New System.Windows.Forms.Button
 		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnCancel
 		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
-		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Font = Nothing
+		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnExport
 		'
-		Me.btnExport.AccessibleDescription = Nothing
-		Me.btnExport.AccessibleName = Nothing
-		resources.ApplyResources(Me.btnExport, "btnExport")
-		Me.btnExport.BackgroundImage = Nothing
 		Me.btnExport.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnExport.Font = Nothing
+		resources.ApplyResources(Me.btnExport, "btnExport")
 		Me.btnExport.Name = "btnExport"
 		Me.btnExport.UseVisualStyleBackColor = true
 		AddHandler Me.btnExport.Click, AddressOf Me.BtnExportClick
 		'
 		'dgvUpdates
 		'
-		Me.dgvUpdates.AccessibleDescription = Nothing
-		Me.dgvUpdates.AccessibleName = Nothing
 		Me.dgvUpdates.AllowUserToAddRows = false
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvUpdates.BackgroundImage = Nothing
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.File, Me.Include, Me.Title})
-		Me.dgvUpdates.Font = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvUpdates, 5)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
 		'
@@ -112,22 +103,14 @@ Partial Class ExportCatalogForm
 		'
 		'btnAdd
 		'
-		Me.btnAdd.AccessibleDescription = Nothing
-		Me.btnAdd.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnAdd, "btnAdd")
-		Me.btnAdd.BackgroundImage = Nothing
-		Me.btnAdd.Font = Nothing
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
 		'
 		'btnAddAll
 		'
-		Me.btnAddAll.AccessibleDescription = Nothing
-		Me.btnAddAll.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnAddAll, "btnAddAll")
-		Me.btnAddAll.BackgroundImage = Nothing
-		Me.btnAddAll.Font = Nothing
 		Me.btnAddAll.Name = "btnAddAll"
 		Me.btnAddAll.UseVisualStyleBackColor = true
 		AddHandler Me.btnAddAll.Click, AddressOf Me.BtnAddAllClick
@@ -137,28 +120,32 @@ Partial Class ExportCatalogForm
 		Me.exportFileDialog.DefaultExt = "tab"
 		resources.ApplyResources(Me.exportFileDialog, "exportFileDialog")
 		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvUpdates, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnAdd, 1, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnExport, 3, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnAddAll, 0, 1)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		'
 		'ExportCatalogForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.btnAdd)
-		Me.Controls.Add(Me.btnAddAll)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnExport)
-		Me.Controls.Add(Me.dgvUpdates)
-		Me.Font = Nothing
-		Me.Icon = Nothing
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.MinimizeBox = false
 		Me.Name = "ExportCatalogForm"
 		Me.ShowInTaskbar = false
 		AddHandler FormClosed, AddressOf Me.ExportCatalogFormFormClosed
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tableLayoutPanel1.ResumeLayout(false)
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private File As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private exportFileDialog As System.Windows.Forms.SaveFileDialog
 	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text">
+    <value>Tietoja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerListRefresh.Text">
+    <value>Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>Todistus Info</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>Hyväksyttyjä päivityksiä vain</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>Peri hyväksynnät</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>Yhteysasetukset</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>Luo Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>Vienti Verkkokauppa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>Vie lista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>Vie raportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>Vienti Säännöt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>Vie päivitys</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>Tiedosto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
+    <value>Ohjekeskusteluryhmä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpToolStripMenuItem.Text">
+    <value>Ohjeet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>Tuo Verkkokauppa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>Tuo Säännöt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>Tuo päivitys</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artikkelin tunnus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Tiedotteen tunnus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Luokitus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>Tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>Päivitä tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Kuvaus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblID.Text">
+    <value>Paketti tunnus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Kielet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Lisätietoja URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Edellyttää verkon</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Paketti osasto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Pakkaustyyppi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Edellytykset</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Tuote</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Uudestisyntynyt Behavior</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Paluukoodit</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>Valitulle kohderyhmälle</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>(# Tietokoneiden kuvassa)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Vakavuus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Korvaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Poista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>Päivitykset joilla ei ole tilaa:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>Päivitykset asennettu / ei sovelleta:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>Päivitykset tarvitaan:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>Päivitykset ja virheet:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Myyjä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>Support Wiki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>Hallitse sääntöjä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="optionsToolStripMenuItem.Text">
+    <value>Valinnat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>Tallennetut Säännöt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>Raportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>Ryhmä tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>Raportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>Tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>Työkalut</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

@@ -1,64 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,251 +58,175 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="chkInheritApprovals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>531, 27</value>
-  </data>
-  <data name="chkInheritApprovals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
-  </data>
-  <data name="chkInheritApprovals.Text" xml:space="preserve">
-    <value>Vererben Zulassungen</value>
-  </data>
-  <data name="chkApprovedOnly.Text" xml:space="preserve">
-    <value>Genehmigt Updates Nur</value>
-  </data>
-  <data name="btnComputerListRefresh.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
-  <data name="lblSelectedTargetGroupCount.Text" xml:space="preserve">
-    <value>(# von Computern angezeigt)</value>
-  </data>
-  <data name="lblSelectedTargetGroup.Text" xml:space="preserve">
-    <value>Ausgewählte Zielgruppe</value>
-  </data>
-  <data name="lblLanguages.Text" xml:space="preserve">
-    <value>Sprachen</value>
-  </data>
-  <data name="lblNetwork.Text" xml:space="preserve">
-    <value>Benötigt Netzwerk</value>
-  </data>
-  <data name="lblPackageType.Text" xml:space="preserve">
-    <value>Pakettyp</value>
-  </data>
-  <data name="lblPrerequisites.Text" xml:space="preserve">
-    <value>Voraussetzungen</value>
-  </data>
-  <data name="lblSupersedes.Text" xml:space="preserve">
-    <value>Ersetzt</value>
-  </data>
-  <data name="lblReturnCodes.Text" xml:space="preserve">
-    <value>Rückgabecodes</value>
-  </data>
-  <data name="lblUninstall.Text" xml:space="preserve">
-    <value>Deinstallieren</value>
-  </data>
-  <data name="lblID.Text" xml:space="preserve">
-    <value>Paket-ID</value>
-  </data>
-  <data name="lblDescription.Text" xml:space="preserve">
-    <value>Beschreibung</value>
-  </data>
-  <data name="lblRebootBehavior.Text" xml:space="preserve">
-    <value>Reboot-Verhalten</value>
-  </data>
-  <data name="lblPackageTitle.Text" xml:space="preserve">
-    <value>Package Titel</value>
-  </data>
-  <data name="lblMoreInfoURL.Text" xml:space="preserve">
-    <value>Mehr Info URL</value>
-  </data>
-  <data name="lblArticleID.Text" xml:space="preserve">
-    <value>Artikel-ID</value>
-  </data>
-  <data name="lblProduct.Text" xml:space="preserve">
-    <value>Produkt</value>
-  </data>
-  <data name="lblVendor.Text" xml:space="preserve">
-    <value>Hersteller</value>
-  </data>
-  <data name="lblSeverity.Text" xml:space="preserve">
-    <value>Schwere</value>
-  </data>
-  <data name="lblBullitinID.Text" xml:space="preserve">
-    <value>Bulletin-ID</value>
-  </data>
-  <data name="lblClassification.Text" xml:space="preserve">
-    <value>Klassifizierung</value>
-  </data>
-  <data name="tabUpdateReport.Text" xml:space="preserve">
-    <value>Bericht</value>
-  </data>
-  <data name="btnUpdateRefreshReport.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
-  <data name="lblComputerGroup.Text" xml:space="preserve">
-    <value>Computer Gruppe</value>
-  </data>
-  <data name="lblUpdateNoStatus.Text" xml:space="preserve">
-    <value>Updates ohne Status:</value>
-  </data>
-  <data name="lblUpdatesNeeded.Text" xml:space="preserve">
-    <value>Updates benötigt:</value>
-  </data>
-  <data name="lblUpdatesWErrors.Text" xml:space="preserve">
-    <value>Updates mit Fehlern:</value>
-  </data>
-  <data name="tabComputerStatus.Text" xml:space="preserve">
-    <value>Gruppe Status</value>
-  </data>
-  <data name="tabComputerReport.Text" xml:space="preserve">
-    <value>Bericht</value>
-  </data>
-  <data name="btnComputerRefreshReport.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Datei</value>
-  </data>
-  <data name="importCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="importCatalogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Importieren Katalog</value>
-  </data>
-  <data name="exportCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="exportCatalogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export-Katalog</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="exportListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="exportListToolStripMenuItem.Text" xml:space="preserve">
-    <value>Liste Exportieren</value>
-  </data>
-  <data name="exportReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="exportReportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bericht Exportieren</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="createUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="createUpdateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Erstellen Update</value>
-  </data>
-  <data name="importUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="importUpdateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Importieren Update</value>
-  </data>
-  <data name="exportUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="exportUpdateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export-Update</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
-  </data>
-  <data name="savedRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="savedRulesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gespeicherte Regeln</value>
-  </data>
-  <data name="manageRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="manageRulesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verwalten Regeln</value>
-  </data>
-  <data name="importRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="importRulesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Regeln Importieren</value>
-  </data>
-  <data name="exportRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="exportRulesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Regeln Exportieren</value>
-  </data>
-  <data name="certificateInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="certificateInfoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Zertifikat Info</value>
-  </data>
-  <data name="connectionSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="connectionSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verbindungseinstellungen</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Optionen</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hilfe</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+  <data name="aboutToolStripMenuItem.Text">
     <value>Über</value>
   </data>
-  <data name="helpForumsToolStripMenuItem.Text" xml:space="preserve">
+  <data name="btnComputerListRefresh.Text">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>Zertifikats Info</value>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>Nur genehmigte Updates</value>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>Genehmigungen vererben</value>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>Verbindungseinstellungen</value>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>Update erstellen</value>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>Katalog exportieren</value>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>Liste exportieren</value>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>Bericht exportieren</value>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>Regeln exportieren</value>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>Update exportieren</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>Datei</value>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
     <value>Hilfe Forum</value>
   </data>
-  <data name="exportFileDialog.Filter" xml:space="preserve">
-    <value>Tabulatorgetrennt|*.tab</value>
+  <data name="helpToolStripMenuItem.Text">
+    <value>Hilfe</value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
-        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
-        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
-        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
-        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
-        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
-        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
-        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
-        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
-        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
-        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
-        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
-        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>Katalog importieren</value>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>Regeln importieren</value>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>Update importieren</value>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artikel-ID</value>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Bulletin-ID</value>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Klassifizierung</value>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>Computer Gruppe</value>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>Status</value>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>Update Status</value>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Beschreibung</value>
+  </data>
+  <data name="lblID.Text">
+    <value>Paket-ID</value>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Sprachen</value>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Mehr Info URL</value>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Benötigt Netzwerk</value>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Paket-Titel</value>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Paket-Typ</value>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Voraussetzungen</value>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Produkt</value>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reboot-Verhalten</value>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Rückgabecodes</value>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>Ausgewählte Zielgruppe</value>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>(# von angezeigten Computern)</value>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Auswirkung</value>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Ersetzt</value>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Deinstallieren</value>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>Updates ohne Status:</value>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>Updates installiert/nicht zutreffend:</value>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>Updates benötigt:</value>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>Updates mit Fehlern:</value>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Hersteller</value>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>Support Wiki</value>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>Regeln verwalten</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text">
+    <value>Optionen</value>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>Gespeicherte Regeln</value>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>Bericht</value>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>Gruppenstatus</value>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>Bericht</value>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>Status</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>Update</value>
   </data>
 </root>

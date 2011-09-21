@@ -47,23 +47,22 @@ Partial Class ReturnCodesForm
 		Me.failedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.succeededToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.cancelledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.contextMenuCodeType.SuspendLayout
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'dgvReturnCodes
 		'
-		Me.dgvReturnCodes.AccessibleDescription = Nothing
-		Me.dgvReturnCodes.AccessibleName = Nothing
 		Me.dgvReturnCodes.AllowUserToOrderColumns = true
 		Me.dgvReturnCodes.AllowUserToResizeColumns = false
 		Me.dgvReturnCodes.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvReturnCodes, "dgvReturnCodes")
 		Me.dgvReturnCodes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvReturnCodes.BackgroundImage = Nothing
 		Me.dgvReturnCodes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvReturnCodes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Result, Me.ReturnCode, Me.Reboot, Me.Description})
-		Me.dgvReturnCodes.Font = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvReturnCodes, 4)
+		resources.ApplyResources(Me.dgvReturnCodes, "dgvReturnCodes")
 		Me.dgvReturnCodes.MultiSelect = false
 		Me.dgvReturnCodes.Name = "dgvReturnCodes"
 		AddHandler Me.dgvReturnCodes.RowValidating, AddressOf Me.DgvReturnCodesRowValidating
@@ -98,99 +97,76 @@ Partial Class ReturnCodesForm
 		'
 		'btnCancel
 		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnOk
 		'
-		Me.btnOk.AccessibleDescription = Nothing
-		Me.btnOk.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnOk, "btnOk")
-		Me.btnOk.BackgroundImage = Nothing
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnOk.Font = Nothing
 		Me.btnOk.Name = "btnOk"
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
 		'
 		'btnDelete
 		'
-		Me.btnDelete.AccessibleDescription = Nothing
-		Me.btnDelete.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnDelete, "btnDelete")
-		Me.btnDelete.BackgroundImage = Nothing
-		Me.btnDelete.Font = Nothing
 		Me.btnDelete.Name = "btnDelete"
 		Me.btnDelete.UseVisualStyleBackColor = true
 		AddHandler Me.btnDelete.Click, AddressOf Me.BtnDeleteClick
 		'
 		'contextMenuCodeType
 		'
-		Me.contextMenuCodeType.AccessibleDescription = Nothing
-		Me.contextMenuCodeType.AccessibleName = Nothing
-		resources.ApplyResources(Me.contextMenuCodeType, "contextMenuCodeType")
-		Me.contextMenuCodeType.BackgroundImage = Nothing
-		Me.contextMenuCodeType.Font = Nothing
 		Me.contextMenuCodeType.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.failedToolStripMenuItem, Me.succeededToolStripMenuItem, Me.cancelledToolStripMenuItem})
 		Me.contextMenuCodeType.Name = "contextMenuStrip1"
+		resources.ApplyResources(Me.contextMenuCodeType, "contextMenuCodeType")
 		'
 		'failedToolStripMenuItem
 		'
-		Me.failedToolStripMenuItem.AccessibleDescription = Nothing
-		Me.failedToolStripMenuItem.AccessibleName = Nothing
-		resources.ApplyResources(Me.failedToolStripMenuItem, "failedToolStripMenuItem")
-		Me.failedToolStripMenuItem.BackgroundImage = Nothing
 		Me.failedToolStripMenuItem.Name = "failedToolStripMenuItem"
-		Me.failedToolStripMenuItem.ShortcutKeyDisplayString = Nothing
+		resources.ApplyResources(Me.failedToolStripMenuItem, "failedToolStripMenuItem")
 		'
 		'succeededToolStripMenuItem
 		'
-		Me.succeededToolStripMenuItem.AccessibleDescription = Nothing
-		Me.succeededToolStripMenuItem.AccessibleName = Nothing
-		resources.ApplyResources(Me.succeededToolStripMenuItem, "succeededToolStripMenuItem")
-		Me.succeededToolStripMenuItem.BackgroundImage = Nothing
 		Me.succeededToolStripMenuItem.Name = "succeededToolStripMenuItem"
-		Me.succeededToolStripMenuItem.ShortcutKeyDisplayString = Nothing
+		resources.ApplyResources(Me.succeededToolStripMenuItem, "succeededToolStripMenuItem")
 		'
 		'cancelledToolStripMenuItem
 		'
-		Me.cancelledToolStripMenuItem.AccessibleDescription = Nothing
-		Me.cancelledToolStripMenuItem.AccessibleName = Nothing
-		resources.ApplyResources(Me.cancelledToolStripMenuItem, "cancelledToolStripMenuItem")
-		Me.cancelledToolStripMenuItem.BackgroundImage = Nothing
 		Me.cancelledToolStripMenuItem.Name = "cancelledToolStripMenuItem"
-		Me.cancelledToolStripMenuItem.ShortcutKeyDisplayString = Nothing
+		resources.ApplyResources(Me.cancelledToolStripMenuItem, "cancelledToolStripMenuItem")
+		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvReturnCodes, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnDelete, 0, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnOk, 2, 1)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
 		'
 		'ReturnCodesForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
-		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.btnDelete)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnOk)
-		Me.Controls.Add(Me.dgvReturnCodes)
-		Me.Font = Nothing
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Icon = Nothing
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ReturnCodesForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).EndInit
 		Me.contextMenuCodeType.ResumeLayout(false)
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private Reboot As System.Windows.Forms.DataGridViewCheckBoxColumn
 	Private ReturnCode As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private Description As System.Windows.Forms.DataGridViewTextBoxColumn

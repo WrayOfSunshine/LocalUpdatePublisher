@@ -49,7 +49,7 @@ Public Partial Class CertificateInfoForm
 					
 					'If the user entered a password.
 					If DialogResult = DialogResult.OK Then
-						ConnectionManager.CreateCert(Me.openFileDialog.FileName, My.Forms.PasswordForm.Password)						
+						ConnectionManager.CreateCert(Me.openFileDialog.FileName, My.Forms.PasswordForm.Password)
 						Call LoadCertInfo
 					End If
 				End If
@@ -73,13 +73,11 @@ Public Partial Class CertificateInfoForm
 		If ConnectionManager.CurrentServerCertificate Is Nothing Then
 			Me.btnCreateCert.Show
 			Me.btnExportImportCert.Text = globalRM.GetString("import_certificate")
-			Me.lblCertInfo.Size = New Size(305, 45)
-			Me.lblCertInfo.Text = globalRM.GetString("label_certificate_info_no_cert")
+			Me.txtCertInfo.Text = globalRM.GetString("label_certificate_info_no_cert")
 		Else
 			Me.btnCreateCert.Hide
 			Me.btnExportImportCert.Text = globalRM.GetString("export_certificate")
-			Me.lblCertInfo.Size = New Size(415, 45)
-			Me.lblCertInfo.Text = globalRM.GetString("label_certificate_info_exists")
+			Me.txtCertInfo.Text = globalRM.GetString("label_certificate_info_exists")
 			Me.txtSubject.Text = ConnectionManager.CurrentServerCertificate.Subject.ToString
 			Me.txtIssuer.Text = ConnectionManager.CurrentServerCertificate.Issuer.ToString
 			Me.txtStartDate.Text = ConnectionManager.CurrentServerCertificate.GetEffectiveDateString
@@ -88,4 +86,5 @@ Public Partial Class CertificateInfoForm
 			Me.txtHash.Text = ConnectionManager.CurrentServerCertificate.GetCertHashString
 		End If
 	End Sub
+
 End Class

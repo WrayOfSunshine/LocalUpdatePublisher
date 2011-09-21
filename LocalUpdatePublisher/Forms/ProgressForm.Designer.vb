@@ -37,51 +37,50 @@ Partial Class ProgressForm
 		Me.progressBar = New System.Windows.Forms.ProgressBar
 		Me.lblText = New System.Windows.Forms.Label
 		Me.lblCurrentStep = New System.Windows.Forms.Label
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'progressBar
 		'
-		Me.progressBar.AccessibleDescription = Nothing
-		Me.progressBar.AccessibleName = Nothing
 		resources.ApplyResources(Me.progressBar, "progressBar")
-		Me.progressBar.BackgroundImage = Nothing
-		Me.progressBar.Font = Nothing
 		Me.progressBar.Name = "progressBar"
 		'
 		'lblText
 		'
-		Me.lblText.AccessibleDescription = Nothing
-		Me.lblText.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblText, "lblText")
-		Me.lblText.Font = Nothing
 		Me.lblText.Name = "lblText"
+		AddHandler Me.lblText.TextChanged, AddressOf Me.TextChanged
 		'
 		'lblCurrentStep
 		'
-		Me.lblCurrentStep.AccessibleDescription = Nothing
-		Me.lblCurrentStep.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblCurrentStep, "lblCurrentStep")
-		Me.lblCurrentStep.Font = Nothing
 		Me.lblCurrentStep.Name = "lblCurrentStep"
+		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.lblText, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.lblCurrentStep, 0, 2)
+		Me.tableLayoutPanel1.Controls.Add(Me.progressBar, 0, 1)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
 		'
 		'ProgressForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackgroundImage = Nothing
-		Me.Controls.Add(Me.lblCurrentStep)
-		Me.Controls.Add(Me.lblText)
-		Me.Controls.Add(Me.progressBar)
-		Me.Font = Nothing
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "ProgressForm"
 		Me.ShowInTaskbar = false
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private lblCurrentStep As System.Windows.Forms.Label
 	Private lblText As System.Windows.Forms.Label
 	Public progressBar As System.Windows.Forms.ProgressBar

@@ -26,5 +26,4 @@ Public Partial Class AboutForm
 			Me.Close
 		End If
 	End Sub
-	
 End Class

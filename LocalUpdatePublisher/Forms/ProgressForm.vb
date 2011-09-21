@@ -33,4 +33,8 @@ Public Partial Class ProgressForm
 		Me.lblCurrentStep.Text = value
 		Me.Refresh
 	End Sub
+	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically(sender, e)
+	End Sub
 End Class

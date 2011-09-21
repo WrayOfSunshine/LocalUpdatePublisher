@@ -77,6 +77,7 @@
     <Compile Include="Classes\ComboTargetGroups.vb" />
     <Compile Include="Classes\ComboVendors.vb" />
     <Compile Include="Classes\ConnectionManager.vb" />
+    <Compile Include="Classes\CustomResize.vb" />
     <Compile Include="Classes\CustomTabControl.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -190,7 +191,6 @@
     </Compile>
     <Compile Include="Forms\SettingsForm.vb">
       <SubType>Form</SubType>
-      <DependentUpon>UpdateForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\SupersededUpdatesForm.Designer.vb">
       <DependentUpon>SupersededUpdatesForm.vb</DependentUpon>
@@ -399,8 +399,13 @@
     <EmbeddedResource Include="Forms\UpdateSelectionForm.resx">
       <DependentUpon>UpdateSelectionForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.ca.resx" />
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.da.resx" />
     <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.de.resx" />
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.en.resx" />
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.fi.resx" />
     <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.fr.resx" />
+    <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.pl.resx" />
     <EmbeddedResource Include="Properties\Global Strings\GlobalStrings.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>

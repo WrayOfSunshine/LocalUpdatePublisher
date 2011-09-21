@@ -1,64 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,56 +58,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblSubject.Text" xml:space="preserve">
-    <value>Betrifft</value>
+  <data name="$this.Text">
+    <value>Zertifikats Informationen</value>
   </data>
-  <data name="lblIssuer.Text" xml:space="preserve">
+  <data name="btnCreateCert.Text">
+    <value>Zertifikat erstellen</value>
+  </data>
+  <data name="btnExportImportCert.Text">
+    <value>Zertifikat exportieren</value>
+  </data>
+  <data name="lblEffectiveDates.Text">
+    <value>Gültig bis</value>
+  </data>
+  <data name="lblHash.Text">
+    <value>Hash</value>
+  </data>
+  <data name="lblIssuer.Text">
     <value>Ausgestellt Von</value>
   </data>
-  <data name="lblEffectiveDates.Text" xml:space="preserve">
-    <value>Effektive</value>
+  <data name="lblSerial.Text">
+    <value>Seriennummer</value>
   </data>
-  <data name="lblTo.Text" xml:space="preserve">
+  <data name="lblSubject.Text">
+    <value>Subjekt</value>
+  </data>
+  <data name="lblTo.Text">
     <value>Um</value>
-  </data>
-  <data name="btnCreateCert.Text" xml:space="preserve">
-    <value>Erstellen Zertifikat</value>
-  </data>
-  <data name="btnExportImportCert.Text" xml:space="preserve">
-    <value>Export Zertifikat</value>
-  </data>
-  <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>Zertifikate |*.cer</value>
-  </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>PFX Zertifikat-Dateien |*.pfx</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wGMSQkDnVkQE754KkHLhjlx0ZBEj9KRRo/Lhzpzv3krQ59aEBeQTAkD////Af//
-        /wH///8B////Af///wGbVRcFrmQfP8RxKZ/KdTfj2IZT/eiVaP/qmGz/3IpY/cp2O+XAayajr2MdRaRc
-        GQX///8B////Af///wGNQhQDr2AjTcJoKNmpSBf7lTkS/6pQKv+/ZkH/wmpF/7BWMf+ZPhj/oUIS+7pg
-        Id+jVBlVlUcXBf///wF0JgkDo1MgQblhKNmNNAz/eSAA/4AlAf+XRyz/0qeV/9evnv+hVjn/gSYB/3oi
-        AP+FLQn/rVcg36FQHUd4KgoDhzYUFbNeKZ+MPRT7YxoA/3IgAP96IQD/lkg1/+zd1//x5eH/oFlC/3sh
-        AP91IgD/ZxsA/30xDfujUh+nijgUF6BMI0OaTCDlVRsF/1kaAP9lHQD/bB0A/4tEM//q29X/8OTg/5dV
-        QP9tHQD/Zx4A/10bAP9TGQP/hj0X65ZCHEuZRSFxeTgX/T0RAf9LFgD/VhgA/2AZAP+EQjP/6dvV//Dk
-        4P+TVED/ZhsA/18bAP9SGAD/QBEA/2MqD/+IORl9izsekV4rEf8+EgH/XyAF/3IoCf+BLgz/nVM4/+3d
-        1//y5uD/qWRH/4kyD/+EMQ//eCsL/2EgBv9mKQ3/gzMXmZY/IZGcRx3/kjoV/55CG/+hRR//okYg/7Ji
-        Qf/t2tL/8OHa/7hwUv+kSCH/okgi/6BFHv+cQBr/pUkd/5c7HZmgRih1ul4w/ahNJ/+sUiz/sFYw/7JY
-        Mv+4YDv/0JB1/9KWfP+8Z0P/tFo0/7NZM/+wVjD/q1Er/7NYLf+aPyN9m0QrQ8hwRuXJbkj/yW5I/8xy
-        TP/OdE7/0XlU/9iagP/aoYn/035b/9B2UP/PdU//zHJM/8txS//DakPrmD0nS3EZFRW+a0ih6pdt++iN
-        aP/qkGn/7JBq/+qZdv/55+D/+erj/+2ggP/tkWr/7JJs/+uRa//rlWz9vGVEq3MZFRlaAggDkTopQdqO
-        Ztv8s43//KiF//yohf/7rYz//djK//3d0P/7spT//amG//ypiP/8tI//2opl4Y42JktaAggD////AXAV
-        EQWSPy9T2Zl33fjDpvv+xKv//8Op///Dq///xKz//8Oq//7FrP/4xKj72ph54ZI+LllmCwsF////Af//
-        /wH///8BeR4UBZI+LkXCf2al3q6V5/DGr//5zrn/+c+5//DGsP/frZbpw4BnqYw6K0llDQoF////Af//
-        /wH///8B////Af///wFeAwUDcRoVF6BVQkesZ1h7r2pdma9qXZurZlh9oFRDSXMaFRljCQYD////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Informationen über Zertifikat</value>
   </data>
 </root>

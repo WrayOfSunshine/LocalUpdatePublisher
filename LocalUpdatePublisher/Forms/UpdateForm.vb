@@ -45,7 +45,7 @@ Public Partial Class UpdateForm
 		
 		'Set The Defaults.
 		Me.DialogResult = DialogResult.Cancel
-		Me.TabsImportUpdate.HideTabs = True
+		Me.TabsUpdate.HideTabs = True
 		Me.BtnPrevious.Image = My.Resources.Previous.ToBitmap
 		Me.BtnNext.Image = My.Resources.Forward.ToBitmap
 	End Sub
@@ -80,7 +80,7 @@ Public Partial Class UpdateForm
 		
 		'If there is a hidden tab in the temp tab control then load it.
 		If _TabsHidden.Count > 0 Then
-			Me.TabsImportUpdate.TabPages.Insert(0, Me._TabsHidden(0))
+			Me.TabsUpdate.TabPages.Insert(0, Me._TabsHidden(0))
 			_TabsHidden.RemoveAt(0)
 		End If
 		
@@ -135,8 +135,8 @@ Public Partial Class UpdateForm
 		
 		'We do not need to prompt the user for files so skip the initial tab.
 		If _TabsHidden.Count = 0 Then
-			Me._TabsHidden.Add(Me.TabsImportUpdate.TabPages("TabIntro"))
-			Me.TabsImportUpdate.TabPages.RemoveAt(Me.TabIntro.TabIndex)
+			Me._TabsHidden.Add(Me.TabsUpdate.TabPages("TabIntro"))
+			Me.TabsUpdate.TabPages.RemoveAt(Me.TabIntro.TabIndex)
 		End If
 		
 		'Load the vendor combo box.
@@ -175,19 +175,19 @@ Public Partial Class UpdateForm
 	
 	'This routine goes to the previous tab and hides buttons accordingly.
 	Private Sub BtnPreviousClick(Sender As Object, E As EventArgs)
-		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex - 1
+		Me.TabsUpdate.SelectedIndex = Me.TabsUpdate.SelectedIndex - 1
 		
 		Call SetMetadataOnly
 		
 		'Show and hide the previous button as needed.
-		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
+		If ( Me.TabsUpdate.SelectedIndex > 0 ) Then
 			Me.BtnPrevious.Show
 		Else
 			Me.BtnPrevious.Hide
 		End If
 		
 		'Change the next button's text as needed.
-		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount ) Then
+		If ( Me.TabsUpdate.SelectedIndex < Me.TabsUpdate.TabCount ) Then
 			Me.BtnNext.Show
 			Me.BtnNext.Text = globalRM.GetString("next")
 			Me.BtnNext.Image = My.Resources.Forward.ToBitmap
@@ -206,25 +206,25 @@ Public Partial Class UpdateForm
 		If Not PerformAction Then
 			Exit Sub
 			'User has selected the finish button so close the form.
-		Else If Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.TabCount - 1 Then
+		Else If Me.TabsUpdate.SelectedIndex = Me.TabsUpdate.TabCount - 1 Then
 			Me.Close
 			Exit Sub
 		End If
 		
 		'Move to the next tab.
-		Me.TabsImportUpdate.SelectedIndex = Me.TabsImportUpdate.SelectedIndex + 1
+		Me.TabsUpdate.SelectedIndex = Me.TabsUpdate.SelectedIndex + 1
 		
 		Call SetMetadataOnly
 		
 		'Show and hide the previous button as needed.
-		If ( Me.TabsImportUpdate.SelectedIndex > 0 ) Then
+		If ( Me.TabsUpdate.SelectedIndex > 0 ) Then
 			Me.BtnPrevious.Show
 		Else
 			Me.BtnPrevious.Hide
 		End If
 		
 		'Change the next button's text as needed.
-		If ( Me.TabsImportUpdate.SelectedIndex < Me.TabsImportUpdate.TabCount - 1 ) Then
+		If ( Me.TabsUpdate.SelectedIndex < Me.TabsUpdate.TabCount - 1 ) Then
 			Me.BtnNext.Show
 			Me.BtnNext.Text = globalRM.GetString("next")
 		Else
@@ -238,7 +238,7 @@ Public Partial Class UpdateForm
 	
 	'Depending on the current tab, enable or disable the metadata only check box.
 	Private Sub SetMetadataOnly
-		If Not Me._Revision AndAlso ( TabsImportUpdate.SelectedTab.Name = "tabIntro" OrElse TabsImportUpdate.SelectedTab.Name = "tabPackageInfo" ) Then
+		If Not Me._Revision AndAlso ( TabsUpdate.SelectedTab.Name = "tabIntro" OrElse TabsUpdate.SelectedTab.Name = "tabPackageInfo" ) Then
 			Me.chkMetadataOnly.Enabled = True
 		Else
 			Me.chkMetadataOnly.Enabled = False
@@ -331,7 +331,7 @@ Public Partial Class UpdateForm
 	Function PerformAction As Boolean
 		
 		'Import the file and set the appropriate fields if this isn't a revision.
-		Select Case TabsImportUpdate.SelectedTab.Name
+		Select Case TabsUpdate.SelectedTab.Name
 			Case "tabIntro"
 				'Don't do anything if this is a revision.
 				If Not Me._Revision Then
@@ -1049,7 +1049,7 @@ Public Partial Class UpdateForm
 			
 			Dim Invalid As Boolean = False
 			
-			Select Case tabsImportUpdate.SelectedTab.Name
+			Select Case TabsUpdate.SelectedTab.Name
 					'Verify a file has been selected.
 				Case "tabIntro"
 					If Not String.IsNullOrEmpty(Me.ErrorProviderUpdate.GetError(Me.txtUpdateFile)) Then
@@ -1115,4 +1115,8 @@ Public Partial Class UpdateForm
 	
 	#End Region
 	
+	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically( sender, e)	
+	End Sub
 End Class

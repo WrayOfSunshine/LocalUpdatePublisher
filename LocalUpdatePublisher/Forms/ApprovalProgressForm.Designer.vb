@@ -42,19 +42,18 @@ Partial Class ApprovalProgressForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnPause = New System.Windows.Forms.Button
 		Me.lblProgress = New System.Windows.Forms.Label
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'dgvProgress
 		'
-		Me.dgvProgress.AccessibleDescription = Nothing
-		Me.dgvProgress.AccessibleName = Nothing
-		resources.ApplyResources(Me.dgvProgress, "dgvProgress")
 		Me.dgvProgress.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvProgress.BackgroundImage = Nothing
 		Me.dgvProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvProgress.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Action, Me.Result})
-		Me.dgvProgress.Font = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvProgress, 5)
+		resources.ApplyResources(Me.dgvProgress, "dgvProgress")
 		Me.dgvProgress.Name = "dgvProgress"
 		Me.dgvProgress.RowHeadersVisible = false
 		'
@@ -72,77 +71,65 @@ Partial Class ApprovalProgressForm
 		'
 		'pbUpdateApprovals
 		'
-		Me.pbUpdateApprovals.AccessibleDescription = Nothing
-		Me.pbUpdateApprovals.AccessibleName = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.pbUpdateApprovals, 5)
 		resources.ApplyResources(Me.pbUpdateApprovals, "pbUpdateApprovals")
-		Me.pbUpdateApprovals.BackgroundImage = Nothing
-		Me.pbUpdateApprovals.Font = Nothing
 		Me.pbUpdateApprovals.ForeColor = System.Drawing.Color.SeaGreen
 		Me.pbUpdateApprovals.Name = "pbUpdateApprovals"
 		'
 		'btnClose
 		'
-		Me.btnClose.AccessibleDescription = Nothing
-		Me.btnClose.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnClose, "btnClose")
-		Me.btnClose.BackgroundImage = Nothing
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnClose.Font = Nothing
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'
 		'btnCancel
 		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnPause
 		'
-		Me.btnPause.AccessibleDescription = Nothing
-		Me.btnPause.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnPause, "btnPause")
-		Me.btnPause.BackgroundImage = Nothing
-		Me.btnPause.Font = Nothing
 		Me.btnPause.Name = "btnPause"
 		Me.btnPause.UseVisualStyleBackColor = true
 		AddHandler Me.btnPause.Click, AddressOf Me.BtnPauseClick
 		'
 		'lblProgress
 		'
-		Me.lblProgress.AccessibleDescription = Nothing
-		Me.lblProgress.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblProgress, "lblProgress")
-		Me.lblProgress.Font = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.lblProgress, 5)
 		Me.lblProgress.Name = "lblProgress"
+		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.btnPause, 2, 3)
+		Me.tableLayoutPanel1.Controls.Add(Me.lblProgress, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 3)
+		Me.tableLayoutPanel1.Controls.Add(Me.pbUpdateApprovals, 0, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnClose, 4, 3)
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvProgress, 0, 2)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
 		'
 		'ApprovalProgressForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnClose
-		Me.Controls.Add(Me.lblProgress)
-		Me.Controls.Add(Me.btnClose)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnPause)
-		Me.Controls.Add(Me.pbUpdateApprovals)
-		Me.Controls.Add(Me.dgvProgress)
-		Me.Font = Nothing
-		Me.Icon = Nothing
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalProgressForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private pbUpdateApprovals As System.Windows.Forms.ProgressBar
 	Private dgvProgress As System.Windows.Forms.DataGridView
 	Private lblProgress As System.Windows.Forms.Label

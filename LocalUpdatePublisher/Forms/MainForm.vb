@@ -95,6 +95,7 @@ Public Partial Class MainForm
 		Me.chkApprovedOnly.Checked = appSettings.ApprovedUpdatesOnly
 		Me.chkInheritApprovals.Checked = appSettings.InheritApprovals
 		Me.chkInheritApprovals.Enabled = Me.chkApprovedOnly.Checked
+		
 	End Sub
 	
 	#REGION "Form Events"
@@ -356,6 +357,7 @@ Public Partial Class MainForm
 		End If
 		
 		Me.Cursor = Cursors.Arrow 'Set arrow cursor.
+		
 	End Sub
 	
 	'Recall the node that was previously selected.

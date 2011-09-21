@@ -9,6 +9,7 @@
 ' Time: 11:10 AM
 ' Factored out of UpdateForm originally developed by BRD.
 
+Imports System.ComponentModel
 Imports System.Drawing
 Imports System.Text
 Imports System.Windows.Forms
@@ -72,6 +73,7 @@ Public Partial Class RulesEditor
 	#Region "Properties and Accessors"
 	
 	'Instructional text to appear at the top.
+	<Localizable(True)> _
 	Public Property Instructions() As String
 		Get
 			Return lbl_instructions.Text
@@ -82,6 +84,7 @@ Public Partial Class RulesEditor
 	End Property
 	
 	'Title of this rule builder.
+	<Localizable(True)> _
 	Public Property Title() As String
 		Get
 			Return lbl_title.Text
@@ -92,6 +95,7 @@ Public Partial Class RulesEditor
 	End Property
 	
 	'The title that goes under the main rule builder.
+	<Localizable(True)> _
 	Public Property TitleItemLevel() As String
 		Get
 			Return lbl_xml.Text
@@ -154,6 +158,7 @@ Public Partial Class RulesEditor
 	End Property
 	
 	Private _ruleEditorTitle As String
+	<Localizable(True)> _
 	Public Property RuleEditorTitle As String
 		Get
 			Return _ruleEditorTitle

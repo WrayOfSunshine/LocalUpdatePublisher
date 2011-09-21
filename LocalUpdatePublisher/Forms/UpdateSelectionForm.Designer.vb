@@ -39,7 +39,9 @@ Partial Class UpdateSelectionForm
 		Me.dgvUpdates = New System.Windows.Forms.DataGridView
 		Me.cboVendor = New System.Windows.Forms.ComboBox
 		Me.lblVendor = New System.Windows.Forms.Label
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnCancel
@@ -62,10 +64,11 @@ Partial Class UpdateSelectionForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvUpdates, 4)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
@@ -74,6 +77,7 @@ Partial Class UpdateSelectionForm
 		'
 		'cboVendor
 		'
+		Me.tableLayoutPanel1.SetColumnSpan(Me.cboVendor, 2)
 		Me.cboVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboVendor.FormattingEnabled = true
 		resources.ApplyResources(Me.cboVendor, "cboVendor")
@@ -85,23 +89,33 @@ Partial Class UpdateSelectionForm
 		resources.ApplyResources(Me.lblVendor, "lblVendor")
 		Me.lblVendor.Name = "lblVendor"
 		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvUpdates, 0, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnSelect, 2, 2)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 2)
+		Me.tableLayoutPanel1.Controls.Add(Me.lblVendor, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.cboVendor, 1, 0)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		'
 		'UpdateSelectionForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.cboVendor)
-		Me.Controls.Add(Me.lblVendor)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnSelect)
-		Me.Controls.Add(Me.dgvUpdates)
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "UpdateSelectionForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private lblVendor As System.Windows.Forms.Label
 	Private cboVendor As System.Windows.Forms.ComboBox
 	Private dgvUpdates As System.Windows.Forms.DataGridView

@@ -40,46 +40,37 @@ Partial Class ImportCatalogForm
 		Me.Include = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.Metadata = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnCancel
 		'
-		Me.btnCancel.AccessibleDescription = Nothing
-		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
-		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.Font = Nothing
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnImport
 		'
-		Me.btnImport.AccessibleDescription = Nothing
-		Me.btnImport.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnImport, "btnImport")
-		Me.btnImport.BackgroundImage = Nothing
 		Me.btnImport.DialogResult = System.Windows.Forms.DialogResult.OK
-		Me.btnImport.Font = Nothing
 		Me.btnImport.Name = "btnImport"
 		Me.btnImport.UseVisualStyleBackColor = true
 		AddHandler Me.btnImport.Click, AddressOf Me.BtnImportClick
 		'
 		'dgvUpdates
 		'
-		Me.dgvUpdates.AccessibleDescription = Nothing
-		Me.dgvUpdates.AccessibleName = Nothing
 		Me.dgvUpdates.AllowUserToAddRows = false
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvUpdates.BackgroundImage = Nothing
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.Metadata, Me.Title})
-		Me.dgvUpdates.Font = Nothing
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvUpdates, 5)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.RowHeadersVisible = false
 		'
@@ -101,26 +92,31 @@ Partial Class ImportCatalogForm
 		resources.ApplyResources(Me.Title, "Title")
 		Me.Title.Name = "Title"
 		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvUpdates, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnImport, 2, 1)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		'
 		'ImportCatalogForm
 		'
-		Me.AccessibleDescription = Nothing
-		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnImport)
-		Me.Controls.Add(Me.dgvUpdates)
-		Me.Font = Nothing
-		Me.Icon = Nothing
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.MinimizeBox = false
 		Me.Name = "ImportCatalogForm"
 		Me.ShowInTaskbar = false
 		AddHandler FormClosed, AddressOf Me.ImportCatalogFormFormClosed
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private Metadata As System.Windows.Forms.DataGridViewCheckBoxColumn
 	Private btnImport As System.Windows.Forms.Button
 	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn

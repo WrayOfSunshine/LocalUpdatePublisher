@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text">
+    <value>Sobre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerListRefresh.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>Informació del certificat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>Només les actualitzacions aprovades</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>Aprovacions heretades</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>Configurar la connexió</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>Crear una actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>Exportar catàleg</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>Llista de les exportacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>Informe d'exportacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>Regles d'exportació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>Exportar una actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>ARxiu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
+    <value>Fòrum d'ajuda</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpToolStripMenuItem.Text">
+    <value>Ajuda</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>Importar catàleg</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>Regles d'importació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>Importar una actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>ID de l'article</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Butlletí ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Classificació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>Grup d'equips</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>Estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>Estat de les actualitzacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Descripció</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblID.Text">
+    <value>ID del paquet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Idiomes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Més Informació URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Requereix la xarxa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Títol del paquet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Tipus de paquet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Requisits previs</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reinicieu el comportament</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Codis de retorn</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>Escull el grup destí</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>(es mostra el nombre d'ordinadors)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Gravetat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Reemplaça</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Desinstal·la</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>Actualitzacions sense estat:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>Actualitzacions instal·lades / no aplicables:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>Actualitzacions necessàries:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>Actualitzacions amb errors:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Venedor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>Wiki de suport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>Administrar regles</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="optionsToolStripMenuItem.Text">
+    <value>Opcions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>Regles desades</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>Informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>Estat del grup</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>Informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>Estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>Eines</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>Actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

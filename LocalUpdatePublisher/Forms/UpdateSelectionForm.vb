@@ -136,4 +136,5 @@ Public Partial Class UpdateSelectionForm
 		Me.DialogResult = DialogResult.OK
 		Me.Close
 	End Sub
+	
 End Class

@@ -65,4 +65,5 @@ Public Partial Class MessageBoxForm
 	Private Sub BtnThreeClick(sender As Object, e As EventArgs)
 		_result = 3
 	End Sub
+	
 End Class

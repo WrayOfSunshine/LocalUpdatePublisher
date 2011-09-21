@@ -121,12 +121,12 @@
     <value>Abbrechen</value>
   </data>
   <data name="btnSelect.Text" xml:space="preserve">
-    <value>Wählen Sie</value>
+    <value>Auswahl</value>
   </data>
   <data name="lblVendor.Text" xml:space="preserve">
     <value>Hersteller</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Wählen Sie Update</value>
+    <value>Update auswählen</value>
   </data>
 </root>

@@ -1,0 +1,1393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CSID">
+    <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="DWORD_value">
+    <value>Valor DWORD</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_new_server">
+    <value>Afegir un nou servidor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_rule">
+    <value>Afegir regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all">
+    <value>Tots</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all_required">
+    <value>tots els necessaris</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="and">
+    <value>I</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="any">
+    <value>Qualsevol</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="application">
+    <value>Aplicació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approval">
+    <value>Aprovació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approve">
+    <value>Aprovar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved">
+    <value>Aprovat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved_for_install">
+    <value>Aprovat per a la seva instal·lació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="begins_with">
+    <value>Comença amb</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="build_number">
+    <value>Nombre de compilació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="cancel">
+    <value>Cancel·lar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="clear_selection">
+    <value>Esborrar selecció</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="close">
+    <value>Tanca</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="comparison">
+    <value>Comparació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="components">
+    <value>Components</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computer_name">
+    <value>Nom d'equip</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers">
+    <value>Ordinadors</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers_shown">
+    <value>{0} ordinadors mostrats</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="contains">
+    <value>Conté</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="create_rule">
+    <value>Crear regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="created">
+    <value>Creat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="creation_date">
+    <value>Data de creació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="custom_GUID">
+    <value>GUID personalitzat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="data">
+    <value>Dades</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="date">
+    <value>Data</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="decline">
+    <value>Declinar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined">
+    <value>Declinat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined_expired">
+    <value>Declinat (Caducat)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="delete">
+    <value>Esborrar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="domain_controller">
+    <value>Controlador de domini</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="downloaded">
+    <value>Descarregat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="driver">
+    <value>Controlador</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="edit">
+    <value>Edita</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ends_with">
+    <value>Acaba amb</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="equal_to">
+    <value>Igual a</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Aquesta actualització no es pot desinstal·lar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>No podeu pas desinstal·lar actualitzacions múltiples.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>No podeu pas importar un certificat si no sou connectat segurament amb el servidor WSUS amb SSL.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_arguments">
+    <value>No hi ha prou arguments per generar l'informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_connect">
+    <value>No s'ha pogut connectar a {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_computer">
+    <value>No s'ha trobat l'equip de destinació {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_group">
+    <value>No s'ha trobat el grup {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_update">
+    <value>No s'ha trobat l'actualització {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_unknown">
+    <value>Comanda desconeguda</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Hi ha hagut un error en crear el certificat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect">
+    <value>No s'ha pogut connectar amb el servidor.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>El vostre nom de servidor no té pas el format correcte.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>No teniu permisos per connectar-vos al servidor WSUS.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>No es pot copiar el directori</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_download">
+    <value>No s'ha pogut descarregar {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>No s'ha pogut exportar l'SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>No s'ha pogut obtindre l'SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>El paquet no pot pas ésser publicat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Aquest fitxer no conté un arxiu XML.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Aquest fitxer no conté un arxiu CAB.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>No hi ha cap certificat a {0}. Fins que no en creeu o n'importeu un, no podreu pas publicar actualitzacions.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_none">
+    <value>No sou pas connectat a un servidor WSUS.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Aquesta actualització no es pot pas exportar per què no s'ha escrit una URL Original.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Alguns paquets no es poden pas afegir perquè no s'ha escrit una URL Original.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>Heu d'exportar un arxiu .cab.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_update_data">
+    <value>El contingut del paquet no existeix a la carpeta UpdateServicesPackages. No es pot exportar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>No s'ha trobat pas cap arxiu XMB dins d'aquest .cab.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_package_resigned">
+    <value>No es pot tornar a signar el paquet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_expired">
+    <value>No tots els paquets han expirat satisfactòriament.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_resigned">
+    <value>No tots es paquets s'han tornat a signar signat amb èxit.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_result_code_empty">
+    <value>El resultat no ha d'ésser pas buit.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>El codi de retorn no ha d'ésser pas buit.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Aquesta filera no ha retornat pas un UpdateID vàlid</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>No es pot assignar la regla d'importació a la col·lecció de regles.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>No s'ha pogut importar el fitxer de regles.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>El fitxer d'importació no existeix.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>No s'ha pogut afegir / esborrar el grup.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_load">
+    <value>Les regles no s'han pogut carregar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Aquesta regla no es reconeix.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Aquest tipus de regla no és encara compatible.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>No heu seleccionat cap regla per exportar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_server_disconnected">
+    <value>El servidor no és connectat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Ha d'ésser un enumerat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>No es pot pas crear el Paquet de Distribució de Programari.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_imported">
+    <value>L'actualització no s'ha importat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>L'XML per al SDP no és vàlid.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_save">
+    <value>No s'ha pogut desar la informació d'actualització.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception">
+    <value>Excepció</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_IO">
+    <value>Excepció d'E/S</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument">
+    <value>Excepció d'Argument</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_null">
+    <value>Excepció d'argument nul</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Excepció: No s'ha trobat el directori</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Excepció d'arxiu no trobat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Excepció de dades no vàlides</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Excepció d'operació no vàlida</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_not_supported">
+    <value>Excepció: No suportat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Excepció d'Objecte rebutjat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Excepció de memòria insuficient</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_path_too_long">
+    <value>Excepció: Ruta massa llarga</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_security">
+    <value>Excepció de seguretat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Excepció d'accés no autoritzat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_web">
+    <value>Excepció Web</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>Excepció: Servidor WSUS no vàlid</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>Excepció d'objecte del Wsus no trobat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="expire">
+    <value>Expirar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export">
+    <value>Exportació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export_certificate">
+    <value>Exportar certificat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed">
+    <value>Fallat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed_or_needed">
+    <value>Fallit o Necessitat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="false">
+    <value>fals</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="features">
+    <value>Característiques</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_cab">
+    <value>Arxius CAB | *. cab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Actualització dels arxius (*. MSI, *. MSP; *. EXE) | *. MSI, *. MSP; *. exe | Arxius MSI (MSI *.) | *. MSI | MSP arxius (*. MSP) | *. MSP | arxius EXE (*. EXE) | *. EXE</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_xml">
+    <value>Arxius XML | *. xml</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="finish">
+    <value>Acabar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than">
+    <value>Més gran que</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Més gran o igual que</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group">
+    <value>Grup</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_and">
+    <value>Començar "I"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_or">
+    <value>Començar "O"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_and">
+    <value>Acabar "I"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_or">
+    <value>Acabar "O"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_name">
+    <value>Nom del grup</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_and">
+    <value>Esborrar "I"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_or">
+    <value>Esborrar "O"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="history_for">
+    <value>Història per</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import">
+    <value>Importació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import_certificate">
+    <value>Importar certificat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="in_bytes_example">
+    <value>en octets (per exemple, 1024)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="inherited">
+    <value>Heretat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed">
+    <value>Instal·lat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Instal·lat / No aplicable</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Instal·lat / No aplicable o Sense Estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ip_address">
+    <value>Adreça IP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form">
+    <value>Seleccioneu les aprovacions per {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Seleccioneu les aprovacions per {0} actualitzacions.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Establir les aprovacions per {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Establiment de les aprovacions de {0} a {1} per {2}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>A continuació trobareu informació sobre el certificat instal lat al servidor WSUS. Aquest certificat ha d'ésser distribuït a cada client abans que puguin rebre les actualitzacions.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Encara no s'ha creat cap certificat. Ho heu de fer abans de publicar actualitzacions.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Ja hi ha un certificat creat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>WMI Namespace</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language">
+    <value>Llengua</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_arabic">
+    <value>Àrab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Xina (Hong Kong)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Xinès (simplificat)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Xinès (tradicional)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_czech">
+    <value>Txec</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_danish">
+    <value>Danès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_dutch">
+    <value>Holandès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_english">
+    <value>Anglès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_finnish">
+    <value>Finès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_french">
+    <value>Francès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_german">
+    <value>Alemany</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_greek">
+    <value>Grec</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hebrew">
+    <value>Hebreu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hungarian">
+    <value>Hongarès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_italian">
+    <value>Italià</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_japanese">
+    <value>Japonès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_korean">
+    <value>Coreà</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_norwegian">
+    <value>Noruec</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_polish">
+    <value>Polonès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese">
+    <value>Portuguès</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portuguès (Brasil)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_russian">
+    <value>Rus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_spanish">
+    <value>Espanyol</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_swedish">
+    <value>Suec</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_turkish">
+    <value>Turc</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_status_report">
+    <value>Informe del darrer estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_updated">
+    <value>Actualitzat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than">
+    <value>Menys que</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Menor o igual a</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="load">
+    <value>Càrrega</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified">
+    <value>Modificat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified_date">
+    <value>Data de modificació</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="needed">
+    <value>Cal</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="next">
+    <value>Següent</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_approval">
+    <value>No aprovat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_status">
+    <value>No hi ha Estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="none">
+    <value>Cap</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_applicable">
+    <value>No és aplicable</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_approved">
+    <value>No aprovats</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_installed">
+    <value>No s'ha instal·lat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="operating_system">
+    <value>Sistema Operatiu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="or">
+    <value>O</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="patch_code">
+    <value>Patch</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="path">
+    <value>Ruta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_code">
+    <value>Codi del producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_type">
+    <value>Tipus de producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="products">
+    <value>Productes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Voleu fer-ho ara?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Si us plau, espereu mentre l'actualització es publica.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Si us plau, espereu mentre l'actualització sigui revisada.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Voleu declinar {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Voleu declinar aquestes {0} actualitzacions?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Voleu expirar {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Voleu expirar aquestes {0} actualitzacions?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Voleu esborrar {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Voleu esborrar aquestes {0} actualitzacions?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Voleu tornar a signar {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Voleu tornar a signar aquestes {0} actualitzacions?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Esteu segur que voleu esborrar aquesta regla?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Esborrar la regla?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Nom de la nova regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Nom de la regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Canviar {0} a</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>Ja existeix una regla anomenada {0}. Què us agradaria fer?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Esteu segur que voleu eliminar les regles seleccionades?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Si modifiqueu l'URL original, s'ha de descarregar per verificar-ho. Voleu continuar?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Introduïu el GUID que us agradaria utilitzar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Entrada GUID personalitzada</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="query">
+    <value>Consulta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Refrescar la llista d'equips</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Refresca la llista d'actualitzacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove">
+    <value>Eliminar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove_group">
+    <value>Esborrar grup</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename">
+    <value>Reanomenar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename_rule">
+    <value>Regla de reanomenar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="resign">
+    <value>Tornar a signar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="revise">
+    <value>Revisar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_component">
+    <value>Component MSI instal·lat per al producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>Característiques MSI instalades per al producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>Pegat MSI instal·lat per al producte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_product">
+    <value>Producte MSI instal·lat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_WMI_query">
+    <value>Consulta WMI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation">
+    <value>Creació d'arxiu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>Creació d'arxiu en el registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists">
+    <value>L'arxiu existeix</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>L'arxiu existeix en el registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified">
+    <value>Arxiu modificat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>Arxiu modificat en el registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size">
+    <value>Mida de l'arxiu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Mida d'arxiu en el registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version">
+    <value>Versió de l'arxiu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>Versió de l'arxiu amb el registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Arquitectura del processador</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Valor DWORD del registre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Valor del Registre SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Registre Ampliar SZ valor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>La clau de registre existeix</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>El valor de registre existeix</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Versió de registre en SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_language">
+    <value>Idioma de Windows</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_version">
+    <value>Versió de Windows</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="save_rule">
+    <value>Desa la regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Escolliu les regles per exportar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Escolliu les regles per importar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Seleccioneu les regles a carregar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Escolliu les regles per administrar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="server">
+    <value>Servidor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="size">
+    <value>Mida</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="skip">
+    <value>Saltar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status">
+    <value>Estat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Descàrrega d'arxius per {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Carregant l'informe d'equips</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_form">
+    <value>Carregant el formulari</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Carregant l'informe d'actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connected">
+    <value>Connectat a {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connecting">
+    <value>Connectant a {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="string">
+    <value>Cadena</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success">
+    <value>Èxit</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>S'ha creat el certificat de signatura. Aquest certificat s'ha de distribuïr a cada client d'acord amb la documentació de Microsoft Local Publishing.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>El vostre certificat s'ha importat correctament. Aquest certificat s'ha de distribuïr a cada client d'acord amb la documentació de Microsoft Local Publishing.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_expired">
+    <value>Paquets expirat correctament.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Els paquets s'han tornat signat correctament.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_update_imported">
+    <value>L'actualització s'ha importat correctament.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="superseded">
+    <value>Substituït</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="title">
+    <value>Títol</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="true">
+    <value>Cert</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="uninstall">
+    <value>Desinstal·la</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="unknown">
+    <value>Desconegut</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update">
+    <value>Actualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_services">
+    <value>Serveis d'Aactualització</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_title">
+    <value>Actualitzar títol</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updates">
+    <value>Actualitzacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value">
+    <value>Valor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value_type">
+    <value>ValueType</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version">
+    <value>Versió</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>No s'ha pogut pas afegir o trobar GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Ja hi ha un certificat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>El certificat no sa'ha pogut pas importar. Heu de proporcionar un fitxer de certificat i una paraula de pas per utilitzar un certificat existent.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>Certificat del WSUS no trobat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} sembla ésser només una actualització de metadades. Actualment no se'l pot fer expirar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Cap filera seleccionada</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_value">
+    <value>Heu de posar-hi un valor.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>No podeu pas impedir la instal·lació per al grup "Tots els Equips"</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_options_restart">
+    <value>Heu de reiniciar el LUP perquè aquesta opció sigui efectiva.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Hi ha hagut un problema esborrant el contingut del paquet de l'UpdateServicesPackages. Utilitzeu aquest UpdateID per fer-ho manualment.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} sembla ésser una actualització només de metadades. Actualment, aquestes no es poden tornar a signar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} paquets sembla que són només actualitzacions de metadades. Actaulemtn no es poden pas revisar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_packages">
+    <value>No podeu pas revisar múltiples actualitzacions a la vegada.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Hi va haver un problema en comprovar el contingut del paquet de l'UpdateServicesPackages. Aquesta actualització no es pot revisar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>Heu d'introduir un GUID vàlid.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_OS">
+    <value>Podeu entrar una versió del sistema operatiu principal i secundària.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>Heu d'escollir una comparació.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_date">
+    <value>Heu de seleccionar una data.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Aquesta regla ja existeix.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>Heu d'escriure una ruta d'arxiu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Heu d'introduir la mida del fitxer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_language">
+    <value>Heu de seleccionar un idioma.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Heu d'escriure un namespace.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_processor">
+    <value>Heu de seleccionar un tipus de processador.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_query">
+    <value>Podeu escriure una consulta.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>Heu de seleccionar una clau de registre.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Heu d'escriure  una subclau de registre.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>Heu de seleccionar un tipus de valor del registre.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Heu d'introduir el valor de registre.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_version">
+    <value>Heu d'escriure una versió.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>Heu de seleccionar registres per esborrar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>No heu seleccionat cap regla per exportar.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_select_file">
+    <value>Si us plau, seleccioneu un arxiu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>No es pot publicar l'URI quan hi ha inclosos arxius addicionals.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>El nom del fitxer no coincideix.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>URI no vàlid</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Editeu aquest XML sota la vostra responsabilitat i risc.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>No podeu pas publicar una actualització només de metadades amb arxius addicionals.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>No heu donat cap URI.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>El paquet no s'ha publicat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Paquet publicat amb èxit.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Paquet correctament revisat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>El paquet no ha estat revisat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_vendor">
+    <value>El venedor no pot ésser Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="workstation">
+    <value>Workstation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

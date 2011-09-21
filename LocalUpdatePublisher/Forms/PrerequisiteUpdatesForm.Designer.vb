@@ -41,7 +41,9 @@ Partial Class PrerequisiteUpdatesForm
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnRemove
@@ -71,11 +73,12 @@ Partial Class PrerequisiteUpdatesForm
 		Me.dgvUpdates.AllowUserToDeleteRows = false
 		Me.dgvUpdates.AllowUserToResizeColumns = false
 		Me.dgvUpdates.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Title})
+		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvUpdates, 5)
+		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
 		Me.dgvUpdates.RowHeadersVisible = false
@@ -101,24 +104,34 @@ Partial Class PrerequisiteUpdatesForm
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
 		'
+		'tableLayoutPanel1
+		'
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.dgvUpdates, 0, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnOk, 3, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnRemove, 0, 1)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnAdd, 1, 1)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		'
 		'PrerequisiteUpdatesForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.btnOk)
-		Me.Controls.Add(Me.btnRemove)
-		Me.Controls.Add(Me.btnCancel)
-		Me.Controls.Add(Me.btnAdd)
-		Me.Controls.Add(Me.dgvUpdates)
+		Me.Controls.Add(Me.tableLayoutPanel1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "PrerequisiteUpdatesForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
 	Private btnCancel As System.Windows.Forms.Button
 	Private btnOk As System.Windows.Forms.Button
 	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn

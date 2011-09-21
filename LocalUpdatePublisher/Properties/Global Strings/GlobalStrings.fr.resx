@@ -1,64 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,889 +58,1003 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="approval" xml:space="preserve">
-    <value>Approbation</value>
+  <data name="CSID">
+    <value>CSID</value>
   </data>
-  <data name="status" xml:space="preserve">
-    <value>Statut</value>
-  </data>
-  <data name="update_title" xml:space="preserve">
-    <value>Mise à Jour du Titre</value>
-  </data>
-  <data name="last_updated" xml:space="preserve">
-    <value>Dernière Mise à Jour</value>
-  </data>
-  <data name="unknown" xml:space="preserve">
-    <value>Inconnue</value>
-  </data>
-  <data name="downloaded" xml:space="preserve">
-    <value>Téléchargé</value>
-  </data>
-  <data name="failed" xml:space="preserve">
-    <value>Échoué</value>
-  </data>
-  <data name="not_applicable" xml:space="preserve">
-    <value>Ne s'Applique Pas</value>
-  </data>
-  <data name="not_installed" xml:space="preserve">
-    <value>Non Installé</value>
-  </data>
-  <data name="installed" xml:space="preserve">
-    <value>Installée</value>
-  </data>
-  <data name="title" xml:space="preserve">
-    <value>Titre</value>
-  </data>
-  <data name="group_name" xml:space="preserve">
-    <value>Nom Groupe</value>
-  </data>
-  <data name="update" xml:space="preserve">
-    <value>Mise à jour</value>
-  </data>
-  <data name="creation_date" xml:space="preserve">
-    <value>Date Création</value>
-  </data>
-  <data name="refreshing_update_list" xml:space="preserve">
-    <value>Liste Mise à Jour Rafraîchissant</value>
-  </data>
-  <data name="computers_shown" xml:space="preserve">
-    <value>{0} ordinateurs montré</value>
-  </data>
-  <data name="last_status_report" xml:space="preserve">
-    <value>Dernier Rapport Situation</value>
-  </data>
-  <data name="installed_not_applicable" xml:space="preserve">
-    <value>Installée/Ne s'Applique Pas</value>
-  </data>
-  <data name="operating_system" xml:space="preserve">
-    <value>Système d'Exploitation</value>
-  </data>
-  <data name="ip_address" xml:space="preserve">
-    <value>Adresse IP</value>
-  </data>
-  <data name="computer_name" xml:space="preserve">
-    <value>Nom Ordinateur</value>
-  </data>
-  <data name="refreshing_computer_list" xml:space="preserve">
-    <value>Liste des ordinateurs Rafraîchissant</value>
-  </data>
-  <data name="history_for" xml:space="preserve">
-    <value>Histoire pour</value>
-  </data>
-  <data name="updates" xml:space="preserve">
-    <value>Mises à jour</value>
-  </data>
-  <data name="computers" xml:space="preserve">
-    <value>Ordinateurs</value>
-  </data>
-  <data name="error_packages_resigned" xml:space="preserve">
-    <value>Pas tous les paquets ont été re-signé avec succès.</value>
-  </data>
-  <data name="success_packages_resigned" xml:space="preserve">
-    <value>Forfaits réussi à re-signé.</value>
-  </data>
-  <data name="error_row_invalid_update_id" xml:space="preserve">
-    <value>This row did not return a valid UpdateID</value>
-  </data>
-  <data name="error_package_resigned" xml:space="preserve">
-    <value>Le paquet n'a pas pu être re-signé.</value>
-  </data>
-  <data name="warning_resign_metadata" xml:space="preserve">
-    <value>{0} qui semble être une mise à jour des métadonnées seulement. Actuellement, elles ne peuvent être re-signé.</value>
-  </data>
-  <data name="prompt_resign_package" xml:space="preserve">
-    <value>Voulez-vous signer de nouveau {0}?</value>
-  </data>
-  <data name="prompt_resign_packages" xml:space="preserve">
-    <value>Voulez-vous re-signer ces mises à jour {0}?</value>
-  </data>
-  <data name="warning_no_row_selected" xml:space="preserve">
-    <value>Aucune ligne sélectionnée</value>
-  </data>
-  <data name="error_packages_expired" xml:space="preserve">
-    <value>Pas tous les paquets ont été avec succès expiré.</value>
-  </data>
-  <data name="success_packages_expired" xml:space="preserve">
-    <value>Forfaits avec succès expiré.</value>
-  </data>
-  <data name="warning_expire_metadata" xml:space="preserve">
-    <value>{0} qui semble être une mise à jour des métadonnées seulement. Actuellement, ils ne peuvent pas être expiré.</value>
-  </data>
-  <data name="prompt_expire_packages" xml:space="preserve">
-    <value>Voulez-vous prendre fin à ces mises à jour {0}?</value>
-  </data>
-  <data name="prompt_expire_package" xml:space="preserve">
-    <value>Voulez-vous prendre fin {0}?</value>
-  </data>
-  <data name="warning_remove_package_data" xml:space="preserve">
-    <value>Il y avait un problème de supprimer le contenu du package de la UpdateServicesPackages. Utilisez ce UpdateID de le faire manuellement</value>
-  </data>
-  <data name="prompt_remove_packages" xml:space="preserve">
-    <value>Voulez-vous supprimer ces mises à jour {0}?</value>
-  </data>
-  <data name="prompt_remove_package" xml:space="preserve">
-    <value>Voulez-vous supprimer {0}?</value>
-  </data>
-  <data name="prompt_decline_packages" xml:space="preserve">
-    <value>Voulez-vous refuser ces mises à jour {0}?</value>
-  </data>
-  <data name="prompt_decline_package" xml:space="preserve">
-    <value>Voulez-vous déclin {0}?</value>
-  </data>
-  <data name="warning_revised_package_data" xml:space="preserve">
-    <value>Il y avait un problème pour vérifier le contenu du package de la UpdateServicesPackages. Cette mise à jour ne peut pas être révisée.</value>
-  </data>
-  <data name="warning_revise_metadata" xml:space="preserve">
-    <value>{0} qui semble être une mise à jour des métadonnées seulement. Actuellement, ils ne peuvent pas être révisés.</value>
-  </data>
-  <data name="warning_revise_packages" xml:space="preserve">
-    <value>Vous ne pouvez pas modifier plusieurs mises à jour en même temps.</value>
-  </data>
-  <data name="error_update_imported" xml:space="preserve">
-    <value>Mise à jour n'a pas été importé.</value>
-  </data>
-  <data name="success_update_imported" xml:space="preserve">
-    <value>Mise à jour a été importé avec succès.</value>
-  </data>
-  <data name="error_export_update_data" xml:space="preserve">
-    <value>Le contenu du package n'existe pas dans le dossier UpdateServicesPackages. Il ne peut pas être exporté.</value>
-  </data>
-  <data name="file_filter_cab" xml:space="preserve">
-    <value>CAB Fichiers|*.cab</value>
-  </data>
-  <data name="file_filter_xml" xml:space="preserve">
-    <value>XML Fichiers|*.xml</value>
-  </data>
-  <data name="update_services" xml:space="preserve">
-    <value>Services de Mise à Jour</value>
-  </data>
-  <data name="status_loading_update_report" xml:space="preserve">
-    <value>Chargement rapport mis à jour</value>
-  </data>
-  <data name="status_loading_computer_report" xml:space="preserve">
-    <value>Chargement rapport ordinateur</value>
-  </data>
-  <data name="status_loading_form" xml:space="preserve">
-    <value>Chargement forme</value>
-  </data>
-  <data name="no_approval" xml:space="preserve">
-    <value>Aucune approbation</value>
-  </data>
-  <data name="inherited" xml:space="preserve">
-    <value>hérité</value>
-  </data>
-  <data name="warning_not_approved_all" xml:space="preserve">
-    <value>Vous ne pouvez pas empêcher l'installation pour le groupe Tous les ordinateurs</value>
-  </data>
-  <data name="error_cannot_uninstall" xml:space="preserve">
-    <value>Cette mise à jour ne peut pas être désinstallé.</value>
-  </data>
-  <data name="error_cannot_uninstall_multiple" xml:space="preserve">
-    <value>Vous ne pouvez pas désinstaller plusieurs mises à jour.</value>
-  </data>
-  <data name="label_approval_form" xml:space="preserve">
-    <value>Sélectionnez les autorisations pour {0}</value>
-  </data>
-  <data name="label_approval_form_multiple" xml:space="preserve">
-    <value>Sélectionnez les autorisations pour {0} mises à jour.</value>
-  </data>
-  <data name="label_approval_progress_status" xml:space="preserve">
-    <value>Approbations Cadre pour {0} {1} le {2}</value>
-  </data>
-  <data name="label_approval_progress_form" xml:space="preserve">
-    <value>Approbations set pour {0}</value>
-  </data>
-  <data name="error_server_disconnected" xml:space="preserve">
-    <value>Le serveur n'est pas connecté.</value>
-  </data>
-  <data name="label_certificate_info_exists" xml:space="preserve">
-    <value>Ci-dessous vous trouverez des informations sur le certificat installé sur votre serveur WSUS. Ce certificat doit être distribuée à chaque client avant de pouvoir recevoir les mises à jour publiées localement.</value>
-  </data>
-  <data name="export_certificate" xml:space="preserve">
-    <value>Exporter Certificat</value>
-  </data>
-  <data name="import_certificate" xml:space="preserve">
-    <value>Importer Cert</value>
-  </data>
-  <data name="label_certificate_info_no_cert" xml:space="preserve">
-    <value>Un certificat n'a pas encore été créé. Vous devez le faire avant les mises à jour de l'édition.</value>
-  </data>
-  <data name="error_certificate_import_ssl" xml:space="preserve">
-    <value>Vous ne pouvez pas installer plusieurs mises à jour.</value>
-  </data>
-  <data name="label_certificate_info_preexists" xml:space="preserve">
-    <value>Un brevet a déjà été créé.</value>
-  </data>
-  <data name="add_new_server" xml:space="preserve">
-    <value>Ajouter Nouveau Serveur</value>
-  </data>
-  <data name="error_export_catalog_no_url_multiple" xml:space="preserve">
-    <value>Certains paquets ne peuvent être ajouté, car une URL d'origine n'a pas été entré.</value>
-  </data>
-  <data name="error_export_catalog_no_url" xml:space="preserve">
-    <value>Cette mise à jour ne peut pas être exporté en raison d'une URL d'origine n'a pas inscrit.</value>
-  </data>
-  <data name="error_export_catalog_not_cab" xml:space="preserve">
-    <value>Vous devez exporter vers un fichier cab.</value>
-  </data>
-  <data name="error_import_catalog_no_xml" xml:space="preserve">
-    <value>Aucun fichier XML a été trouvée dans ce fichier Cabinet.</value>
-  </data>
-  <data name="warning_GUID_not_found" xml:space="preserve">
-    <value>Impossible d'ajouter ou de trouver GUID</value>
-  </data>
-  <data name="error_return_codes_empty" xml:space="preserve">
-    <value>Résultat ne doit pas être vide.</value>
-  </data>
-  <data name="error_result_code_empty" xml:space="preserve">
-    <value>Résultat ne doit pas être vide.</value>
-  </data>
-  <data name="warning_rules_GUID" xml:space="preserve">
-    <value>Vous devez entrer un GUID valide.</value>
-  </data>
-  <data name="warning_rules_query" xml:space="preserve">
-    <value>Vous devez entrer une requête.</value>
-  </data>
-  <data name="warning_rules_date" xml:space="preserve">
-    <value>Vous devez sélectionner une date.</value>
-  </data>
-  <data name="warning_rules_namespace" xml:space="preserve">
-    <value>Vous devez entrer un espace de noms.</value>
-  </data>
-  <data name="warning_rules_registry_value" xml:space="preserve">
-    <value>Vous devez entrer la valeur de registre.</value>
-  </data>
-  <data name="warning_rules_file_size" xml:space="preserve">
-    <value>Vous devez entrer la taille du fichier.</value>
-  </data>
-  <data name="warning_rules_version" xml:space="preserve">
-    <value>Vous devez entrer une version</value>
-  </data>
-  <data name="warning_rules_file_path" xml:space="preserve">
-    <value>Vous devez entrer un chemin de fichier.</value>
-  </data>
-  <data name="warning_rules_registry_type" xml:space="preserve">
-    <value>Vous devez sélectionner un type de valeur de Registre.</value>
-  </data>
-  <data name="warning_rules_registry_sub_key" xml:space="preserve">
-    <value>Vous devez entrer une clé de registre sous.</value>
-  </data>
-  <data name="warning_rules_registry_key" xml:space="preserve">
-    <value>Vous devez choisir une clé de registre.</value>
-  </data>
-  <data name="warning_rules_processor" xml:space="preserve">
-    <value>Vous devez sélectionner un type de processeur.</value>
-  </data>
-  <data name="warning_rules_language" xml:space="preserve">
-    <value>Vous devez sélectionner une langue.</value>
-  </data>
-  <data name="warning_rules_OS" xml:space="preserve">
-    <value>Vous devez entrer une version majeure et mineure OS.</value>
-  </data>
-  <data name="warning_rules_comparison" xml:space="preserve">
-    <value>Vous devez sélectionner une comparaison.</value>
-  </data>
-  <data name="error_rules_load" xml:space="preserve">
-    <value>Impossible d'ajouter / supprimer le groupe.</value>
-  </data>
-  <data name="error_rules_unrecognized" xml:space="preserve">
-    <value>Cette règle n'est pas reconnu.</value>
-  </data>
-  <data name="error_rules_unsupported_type" xml:space="preserve">
-    <value>Ce type de règle n'est pas encore supporté.</value>
-  </data>
-  <data name="all_required" xml:space="preserve">
-    <value>tous les nécessaires</value>
-  </data>
-  <data name="products" xml:space="preserve">
-    <value>Produits</value>
-  </data>
-  <data name="features" xml:space="preserve">
-    <value>Caractéristiques</value>
-  </data>
-  <data name="components" xml:space="preserve">
-    <value>Composants</value>
-  </data>
-  <data name="language" xml:space="preserve">
-    <value>Langue</value>
-  </data>
-  <data name="approve" xml:space="preserve">
-    <value>Approuver</value>
-  </data>
-  <data name="revise" xml:space="preserve">
-    <value>Réviser</value>
-  </data>
-  <data name="product_code" xml:space="preserve">
-    <value>Code Produit</value>
-  </data>
-  <data name="query" xml:space="preserve">
-    <value>Requête</value>
-  </data>
-  <data name="true" xml:space="preserve">
-    <value>Vrai</value>
-  </data>
-  <data name="expire" xml:space="preserve">
-    <value>Fin</value>
-  </data>
-  <data name="comparison" xml:space="preserve">
-    <value>Comparaison</value>
-  </data>
-  <data name="data" xml:space="preserve">
-    <value>Données</value>
-  </data>
-  <data name="value_type" xml:space="preserve">
-    <value>Type de Valeur</value>
-  </data>
-  <data name="value" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
-  <data name="resign" xml:space="preserve">
-    <value>Re-signer</value>
-  </data>
-  <data name="size" xml:space="preserve">
-    <value>Taille</value>
-  </data>
-  <data name="modified" xml:space="preserve">
-    <value>Modification</value>
-  </data>
-  <data name="created" xml:space="preserve">
-    <value>Créé</value>
-  </data>
-  <data name="remove" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="product_type" xml:space="preserve">
-    <value>Type Produit</value>
-  </data>
-  <data name="build_number" xml:space="preserve">
-    <value>Numéro Version</value>
-  </data>
-  <data name="language_turkish" xml:space="preserve">
-    <value>Turque</value>
-  </data>
-  <data name="language_swedish" xml:space="preserve">
-    <value>Suédoise</value>
-  </data>
-  <data name="language_spanish" xml:space="preserve">
-    <value>Espagnole</value>
-  </data>
-  <data name="language_russian" xml:space="preserve">
-    <value>Russie</value>
-  </data>
-  <data name="language_portuguese_brazil" xml:space="preserve">
-    <value>Portugais (Brésil)</value>
-  </data>
-  <data name="language_portuguese" xml:space="preserve">
-    <value>Portugaise</value>
-  </data>
-  <data name="language_polish" xml:space="preserve">
-    <value>Polonaise</value>
-  </data>
-  <data name="language_norwegian" xml:space="preserve">
-    <value>Norvégienne</value>
-  </data>
-  <data name="language_korean" xml:space="preserve">
-    <value>Coréenne</value>
-  </data>
-  <data name="language_japanese" xml:space="preserve">
-    <value>Japonais</value>
-  </data>
-  <data name="language_italian" xml:space="preserve">
-    <value>Italian</value>
-  </data>
-  <data name="language_hungarian" xml:space="preserve">
-    <value>Hongrois</value>
-  </data>
-  <data name="language_hebrew" xml:space="preserve">
-    <value>Hébreu</value>
-  </data>
-  <data name="language_greek" xml:space="preserve">
-    <value>Grecque</value>
-  </data>
-  <data name="language_german" xml:space="preserve">
-    <value>Allemande</value>
-  </data>
-  <data name="language_french" xml:space="preserve">
-    <value>Française</value>
-  </data>
-  <data name="language_finnish" xml:space="preserve">
-    <value>Finlandaise</value>
-  </data>
-  <data name="language_english" xml:space="preserve">
-    <value>Anglais</value>
-  </data>
-  <data name="language_dutch" xml:space="preserve">
-    <value>Néerlandais</value>
-  </data>
-  <data name="language_danish" xml:space="preserve">
-    <value>Danoise</value>
-  </data>
-  <data name="language_czech" xml:space="preserve">
-    <value>Tchèque</value>
-  </data>
-  <data name="language_chinese_traditional" xml:space="preserve">
-    <value>Chinois (Traditionnel)</value>
-  </data>
-  <data name="language_chinese_simplified" xml:space="preserve">
-    <value>Chinois (Simplifié)</value>
-  </data>
-  <data name="language_chinese_HK_SAR" xml:space="preserve">
-    <value>Chinois (Hong Kong SAR)</value>
-  </data>
-  <data name="language_arabic" xml:space="preserve">
-    <value>Arabe</value>
-  </data>
-  <data name="contains" xml:space="preserve">
-    <value>Contient</value>
-  </data>
-  <data name="ends_with" xml:space="preserve">
-    <value>Termine Par</value>
-  </data>
-  <data name="begins_with" xml:space="preserve">
-    <value>Commence Par</value>
-  </data>
-  <data name="greater_than_or_equal_to" xml:space="preserve">
-    <value>Supérieur ou Égal à</value>
-  </data>
-  <data name="greater_than" xml:space="preserve">
-    <value>Supérieur</value>
-  </data>
-  <data name="less_than_or_equal_to" xml:space="preserve">
-    <value>Moins Que ou Égal à</value>
-  </data>
-  <data name="less_than" xml:space="preserve">
-    <value>Moins Que</value>
-  </data>
-  <data name="equal_to" xml:space="preserve">
-    <value>Pour l'Egalité</value>
-  </data>
-  <data name="label_rules_WMI_namespace" xml:space="preserve">
-    <value>Espace de noms WMI</value>
-  </data>
-  <data name="DWORD_value" xml:space="preserve">
+  <data name="DWORD_value">
     <value>Valeur DWORD</value>
   </data>
-  <data name="in_bytes_example" xml:space="preserve">
-    <value>en octets (ex. 1024)</value>
+  <data name="add_new_server">
+    <value>Ajouter un Nouveau Serveur</value>
   </data>
-  <data name="modified_date" xml:space="preserve">
-    <value>Date de Modification</value>
+  <data name="add_rule">
+    <value>Ajouter une Règle</value>
   </data>
-  <data name="save_rule" xml:space="preserve">
-    <value>Enregistrer la Règle</value>
-  </data>
-  <data name="add_rule" xml:space="preserve">
-    <value>Ajouter Règle</value>
-  </data>
-  <data name="create_rule" xml:space="preserve">
-    <value>Créer Règle</value>
-  </data>
-  <data name="prompt_saves_rules_delete" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer les règles sélectionnées?</value>
-  </data>
-  <data name="error_saved_rules_export" xml:space="preserve">
-    <value>Vous n'avez sélectionné aucun règles à l'exportation.</value>
-  </data>
-  <data name="prompt_saved_rules_rule_exists" xml:space="preserve">
-    <value>Il existe déjà une règle appelée {0}. Que voulez-vous faire?</value>
-  </data>
-  <data name="prompt_saved_rules_rename" xml:space="preserve">
-    <value>Changement {0}</value>
-  </data>
-  <data name="warning_saved_rules_delete" xml:space="preserve">
-    <value>Vous devez sélectionner des enregistrements à supprimer..</value>
-  </data>
-  <data name="rename_rule" xml:space="preserve">
-    <value>Renommer la Règle</value>
-  </data>
-  <data name="rename" xml:space="preserve">
-    <value>Renommer</value>
-  </data>
-  <data name="decline" xml:space="preserve">
-    <value>Baisse</value>
-  </data>
-  <data name="cancel" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="warning_saved_rules_export" xml:space="preserve">
-    <value>Vous n'avez sélectionné aucun règles à l'exportation.</value>
-  </data>
-  <data name="clear_selection" xml:space="preserve">
-    <value>Effacer Sélection</value>
-  </data>
-  <data name="export" xml:space="preserve">
-    <value>Exporter</value>
-  </data>
-  <data name="select_rules_to_export" xml:space="preserve">
-    <value>Sélectionnez Règles d'Exportation</value>
-  </data>
-  <data name="import" xml:space="preserve">
-    <value>Importer</value>
-  </data>
-  <data name="select_rules_to_import" xml:space="preserve">
-    <value>Sélectionnez Règles d'Importation</value>
-  </data>
-  <data name="close" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="delete" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="select_rules_to_manage" xml:space="preserve">
-    <value>Sélectionnez Règles de Gestion</value>
-  </data>
-  <data name="load" xml:space="preserve">
-    <value>Charge</value>
-  </data>
-  <data name="select_rules_to_load" xml:space="preserve">
-    <value>Sélectionnez Règles à Charge</value>
-  </data>
-  <data name="warning_no_value" xml:space="preserve">
-    <value>Vous devez entrer une valeur.</value>
-  </data>
-  <data name="warning_update_invalid_URI" xml:space="preserve">
-    <value>Blancs URI</value>
-  </data>
-  <data name="warning_update_file_mismatch" xml:space="preserve">
-    <value>Nom de fichier ne correspond pas.</value>
-  </data>
-  <data name="warning_update_additional_files_uri" xml:space="preserve">
-    <value>Impossible de publier URI lorsque des fichiers supplémentaires sont inclus.</value>
-  </data>
-  <data name="warning_update_no_uri" xml:space="preserve">
-    <value>Aucun URI tenu.</value>
-  </data>
-  <data name="prompt_update_redownload" xml:space="preserve">
-    <value>Si vous modifiez l'URL d'origine, il doit être téléchargé pour la vérification. Voulez-vous procéder?</value>
-  </data>
-  <data name="warning_update_metadata_additional_files" xml:space="preserve">
-    <value>Vous ne pouvez pas publier une mise à jour des métadonnées uniquement avec des fichiers supplémentaires.</value>
-  </data>
-  <data name="false" xml:space="preserve">
-    <value>faux</value>
-  </data>
-  <data name="warning_update_publish_failed" xml:space="preserve">
-    <value>Paquet n'a pas été publié.</value>
-  </data>
-  <data name="warning_update_publish_success" xml:space="preserve">
-    <value>Paquet a publié avec succès.</value>
-  </data>
-  <data name="warning_update_revised_failed" xml:space="preserve">
-    <value>Paquet n'a pas été révisé.</value>
-  </data>
-  <data name="warning_update_revise_success" xml:space="preserve">
-    <value>Forfait avec succès révi</value>
-  </data>
-  <data name="error_update_invalid_XML" xml:space="preserve">
-    <value>Le XML pour le SDP est invalide.</value>
-  </data>
-  <data name="error_update_save" xml:space="preserve">
-    <value>Impossible d'enregistrer l'information mise à jour.</value>
-  </data>
-  <data name="error_update_create_SDP" xml:space="preserve">
-    <value>Impossible de créer le paquet de distribution de logiciels.</value>
-  </data>
-  <data name="file_filter_update_binary" xml:space="preserve">
-    <value>Mise à jour des fichiers (*.MSI;*.MSP;*.EXE)|*.MSI;*.MSP;*.EXE|MSI Fichiers (*.MSI)|*.MSI|MSP Fichiers (*.MSP)|*.MSP|EXE Fichiers (*.EXE)|*.EXE</value>
-  </data>
-  <data name="finish" xml:space="preserve">
-    <value>Terminer</value>
-  </data>
-  <data name="next" xml:space="preserve">
-    <value>Suivant</value>
-  </data>
-  <data name="warning_update_manual_edit" xml:space="preserve">
-    <value>Modifier cette XML à vos propres risques.</value>
-  </data>
-  <data name="prompt_update_selection_GUID" xml:space="preserve">
-    <value>Entrez le GUID que vous souhaitez utiliser</value>
-  </data>
-  <data name="prompt_update_selection_GUID_title" xml:space="preserve">
-    <value>Custom GUID d'entrée</value>
-  </data>
-  <data name="approved" xml:space="preserve">
-    <value>Approuvé</value>
-  </data>
-  <data name="superseded" xml:space="preserve">
-    <value>Remplacé</value>
-  </data>
-  <data name="declined" xml:space="preserve">
-    <value>Refusée</value>
-  </data>
-  <data name="declined_expired" xml:space="preserve">
-    <value>Refusée (Périmée)</value>
-  </data>
-  <data name="rule_windows_version" xml:space="preserve">
-    <value>Version Windows</value>
-  </data>
-  <data name="rule_windows_language" xml:space="preserve">
-    <value>Langue Windows</value>
-  </data>
-  <data name="rule_processor_architecture" xml:space="preserve">
-    <value>Architecture de Processeur</value>
-  </data>
-  <data name="rule_file_exists" xml:space="preserve">
-    <value>Fichier Existe</value>
-  </data>
-  <data name="rule_file_exists_with_registry" xml:space="preserve">
-    <value>Fichier Existe avec Registre</value>
-  </data>
-  <data name="rule_file_version" xml:space="preserve">
-    <value>Version du Fichier</value>
-  </data>
-  <data name="rule_file_version_with_registry" xml:space="preserve">
-    <value>Version du Fichier avec Registre</value>
-  </data>
-  <data name="rule_file_creation" xml:space="preserve">
-    <value>Création de Fichier</value>
-  </data>
-  <data name="rule_file_creation_with_registry" xml:space="preserve">
-    <value>Création de Fichier  avec Registre</value>
-  </data>
-  <data name="rule_file_modified" xml:space="preserve">
-    <value>Fichier de Modification</value>
-  </data>
-  <data name="rule_file_modified_with_registry" xml:space="preserve">
-    <value>Fichier Modifié avec Registre</value>
-  </data>
-  <data name="rule_file_size" xml:space="preserve">
-    <value>Taille du Fichier</value>
-  </data>
-  <data name="rule_file_size_with_registry" xml:space="preserve">
-    <value>Taille du Fichier avec Registre</value>
-  </data>
-  <data name="rule_registry_key_exists" xml:space="preserve">
-    <value>Clé de Registre Existe</value>
-  </data>
-  <data name="rule_registry_value_exists" xml:space="preserve">
-    <value>Valeur de Registre Existe</value>
-  </data>
-  <data name="rule_registry_DWORD_value" xml:space="preserve">
-    <value>Valeur DWORD du Registre</value>
-  </data>
-  <data name="rule_registry_expand_SZ_value" xml:space="preserve">
-    <value>Développer la Valeur du Registre SZ</value>
-  </data>
-  <data name="rule_registry_SZ_value" xml:space="preserve">
-    <value>Valeur du Registre SZ</value>
-  </data>
-  <data name="rule_registry_version_in_SZ" xml:space="preserve">
-    <value>Version Registre SZ</value>
-  </data>
-  <data name="rule_WMI_query" xml:space="preserve">
-    <value>Requête WMI</value>
-  </data>
-  <data name="rule_MSI_product" xml:space="preserve">
-    <value>Produit MSI Installée</value>
-  </data>
-  <data name="rule_MSI_patch" xml:space="preserve">
-    <value>Patch MSI Installée pour le Produit</value>
-  </data>
-  <data name="rule_MSI_component" xml:space="preserve">
-    <value>Composant MSI Installée pour le Produit</value>
-  </data>
-  <data name="rule_MSI_feature" xml:space="preserve">
-    <value>MSI Entité Installée pour le Produit</value>
-  </data>
-  <data name="all" xml:space="preserve">
+  <data name="all">
     <value>Tous</value>
   </data>
-  <data name="approved_for_install" xml:space="preserve">
-    <value>Approuvé pour l'Installation</value>
+  <data name="all_required">
+    <value>tous nécessaires</value>
   </data>
-  <data name="not_approved" xml:space="preserve">
-    <value>Non Approuvé</value>
-  </data>
-  <data name="uninstall" xml:space="preserve">
-    <value>Désinstaller</value>
-  </data>
-  <data name="error_sort_enumerator" xml:space="preserve">
-    <value>Doit être un agent recenseur.</value>
-  </data>
-  <data name="error_command_arguments" xml:space="preserve">
-    <value>Arguments n'y a pas suffisamment de générer des rapports</value>
-  </data>
-  <data name="error_command_connect" xml:space="preserve">
-    <value>Impossible de se connecter à {0}</value>
-  </data>
-  <data name="error_command_unknown" xml:space="preserve">
-    <value>Commande Inconnue</value>
-  </data>
-  <data name="error_command_find_group" xml:space="preserve">
-    <value>Impossible de trouver le groupe {0}.</value>
-  </data>
-  <data name="error_command_find_update" xml:space="preserve">
-    <value>Impossible de trouver le {0} mise à jour.</value>
-  </data>
-  <data name="error_command_find_computer" xml:space="preserve">
-    <value>Impossible de trouver l'ordinateur cible {0}.</value>
-  </data>
-  <data name="warning_rules_editor_exists" xml:space="preserve">
-    <value>Cette règle existe déjà.</value>
-  </data>
-  <data name="prompt_rules_editor_name_new_rule" xml:space="preserve">
-    <value>Nom de la nouvelle règle</value>
-  </data>
-  <data name="prompt_rules_editor_name_rule" xml:space="preserve">
-    <value>Nom Règle</value>
-  </data>
-  <data name="error_rules_editor_add_remove_group" xml:space="preserve">
-    <value>Impossible d'ajouter/supprimer le groupe</value>
-  </data>
-  <data name="edit" xml:space="preserve">
-    <value>Modifier</value>
-  </data>
-  <data name="prompt_ruled_editor_confirm_delete" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer cette règle?</value>
-  </data>
-  <data name="prompt_ruled_editor_delete" xml:space="preserve">
-    <value>Supprimer la règle?</value>
-  </data>
-  <data name="group_begin_and" xml:space="preserve">
-    <value>Commencez Et</value>
-  </data>
-  <data name="group_end_and" xml:space="preserve">
-    <value>Fin Et</value>
-  </data>
-  <data name="group_begin_or" xml:space="preserve">
-    <value>Commencez Ou</value>
-  </data>
-  <data name="group_end_or" xml:space="preserve">
-    <value>Fin Ou</value>
-  </data>
-  <data name="group" xml:space="preserve">
-    <value>Groupe</value>
-  </data>
-  <data name="group_remove_and" xml:space="preserve">
-    <value>Retirer Et</value>
-  </data>
-  <data name="group_remove_or" xml:space="preserve">
-    <value>Retirer Ou</value>
-  </data>
-  <data name="error_rulecollection_import_file_exists" xml:space="preserve">
-    <value>Le fichier d'importation n'existe pas.</value>
-  </data>
-  <data name="error_rulecollection_cast" xml:space="preserve">
-    <value>Cette ligne n'a pas retourné un UpdateID valide</value>
-  </data>
-  <data name="error_rulecollection_file_open" xml:space="preserve">
-    <value>Impossible d'importer le fichier de règles.</value>
-  </data>
-  <data name="error_connection_download" xml:space="preserve">
-    <value>Impossible de télécharger {0}.</value>
-  </data>
-  <data name="error_connection_copy_directory" xml:space="preserve">
-    <value>Impossible de copier le répertoire</value>
-  </data>
-  <data name="error_connection_manager_publish" xml:space="preserve">
-    <value>Le paquet n'a pas pu être publié.</value>
-  </data>
-  <data name="prompt_connection_wait" xml:space="preserve">
-    <value>S'il vous plaît patienter pendant que la mise à jour est publiée.</value>
-  </data>
-  <data name="error_connection_no_cab" xml:space="preserve">
-    <value>Ce fichier ne contient pas un fichier CAB.</value>
-  </data>
-  <data name="error_connection_no_XML" xml:space="preserve">
-    <value>Ce fichier ne contient pas un fichier XML.</value>
-  </data>
-  <data name="prompt_connection_wait_revise" xml:space="preserve">
-    <value>S'il vous plaît patienter pendant que la mise à jour est révisé.</value>
-  </data>
-  <data name="error_connection_cert_save" xml:space="preserve">
-    <value>Il ya eu une erreur pendant la création du certificat.</value>
-  </data>
-  <data name="warning_connection_cert_import" xml:space="preserve">
-    <value>Le certificat n'a pas pu être importés. Vous devez fournir un fichier de certificat et un mot de passe pour utiliser un certificat existant.</value>
-  </data>
-  <data name="success_connection_cert_created" xml:space="preserve">
-    <value>Un certificat auto-signé a été créé. Ce certificat doit maintenant être distribués à chaque client selon les Microsoft locale Publsihing documentation.</value>
-  </data>
-  <data name="success_connection_cert_import" xml:space="preserve">
-    <value>Votre certificat a été importé avec succès. Ce certificat doit maintenant être distribués à chaque client selon les Microsoft locale Publsihing documentation.</value>
-  </data>
-  <data name="warning_connection_cert_exists" xml:space="preserve">
-    <value>Un certificat existe déjà.</value>
-  </data>
-  <data name="error_connection_get_SDP" xml:space="preserve">
-    <value>Impossible d'obtenir le SDP</value>
-  </data>
-  <data name="error_connection_export_SDP" xml:space="preserve">
-    <value>Impossible d'exportation SDP.</value>
-  </data>
-  <data name="error_connection_connect" xml:space="preserve">
-    <value>Impossible de se connecter au serveur.</value>
-  </data>
-  <data name="error_connection_connect_URI" xml:space="preserve">
-    <value>Votre nom de serveur n'est pas formaté correctement.</value>
-  </data>
-  <data name="error_connection_connect_security" xml:space="preserve">
-    <value>Vous n'êtes pas autorisé à se connecter au serveur WSUS.</value>
-  </data>
-  <data name="warning_connection_no_cert" xml:space="preserve">
-    <value>Certificat WSUS introuvable.</value>
-  </data>
-  <data name="prompt_connection_cert" xml:space="preserve">
-    <value>Souhaitez-vous faire maintenant?</value>
-  </data>
-  <data name="error_connection_no_cert" xml:space="preserve">
-    <value>Il n'ya pas de certificat sur {0}. Jusqu'à ce que vous créez ou importez un certificat vous ne serez pas en mesure de publier des mises à jour.</value>
-  </data>
-  <data name="status_server_connected" xml:space="preserve">
-    <value>Connecté à {0}</value>
-  </data>
-  <data name="status_server_connecting" xml:space="preserve">
-    <value>Connexion à {0}</value>
-  </data>
-  <data name="status_connection_downloading" xml:space="preserve">
-    <value>Le téléchargement de fichiers pour {0}</value>
-  </data>
-  <data name="warning_update_vendor" xml:space="preserve">
-    <value>Le vendeur ne peut pas être Microsoft.</value>
-  </data>
-  <data name="failed_or_needed" xml:space="preserve">
-    <value>Échoué ou Nécessaire</value>
-  </data>
-  <data name="installed_not_applicable_no_status" xml:space="preserve">
-    <value>Installée/Ne s'Applique Pas or Pas de Statut</value>
-  </data>
-  <data name="needed" xml:space="preserve">
-    <value>Nécessaire</value>
-  </data>
-  <data name="no_status" xml:space="preserve">
-    <value>Pas de Statut</value>
-  </data>
-  <data name="any" xml:space="preserve">
-    <value>Tout</value>
-  </data>
-  <data name="remove_group" xml:space="preserve">
-    <value>Supprimer le Groupe</value>
-  </data>
-  <data name="success" xml:space="preserve">
-    <value>Succès</value>
-  </data>
-  <data name="none" xml:space="preserve">
-    <value>Aucun</value>
-  </data>
-  <data name="workstation" xml:space="preserve">
-    <value>Station de Travail</value>
-  </data>
-  <data name="domain_controller" xml:space="preserve">
-    <value>Contrôleur Domaine</value>
-  </data>
-  <data name="error_connection_none" xml:space="preserve">
-    <value>Vous n'êtes pas connecté à un serveur WSUS.</value>
-  </data>
-  <data name="and" xml:space="preserve">
+  <data name="and">
     <value>ET</value>
   </data>
-  <data name="or" xml:space="preserve">
+  <data name="any">
+    <value>Tout</value>
+  </data>
+  <data name="application">
+    <value>Application</value>
+  </data>
+  <data name="approval">
+    <value>Approbation</value>
+  </data>
+  <data name="approve">
+    <value>Approuver</value>
+  </data>
+  <data name="approved">
+    <value>Approuvé</value>
+  </data>
+  <data name="approved_for_install">
+    <value>Approuvé pour l'Installation</value>
+  </data>
+  <data name="begins_with">
+    <value>Commence Par</value>
+  </data>
+  <data name="build_number">
+    <value>Numéro de Version</value>
+  </data>
+  <data name="cancel">
+    <value>Annuler</value>
+  </data>
+  <data name="clear_selection">
+    <value>Effacer la Sélection</value>
+  </data>
+  <data name="close">
+    <value>Fermer</value>
+  </data>
+  <data name="comparison">
+    <value>Comparaison</value>
+  </data>
+  <data name="components">
+    <value>Composants</value>
+  </data>
+  <data name="computer_name">
+    <value>Nom Ordinateur</value>
+  </data>
+  <data name="computers">
+    <value>Ordinateurs</value>
+  </data>
+  <data name="computers_shown">
+    <value>{0} ordinateurs affichés</value>
+  </data>
+  <data name="contains">
+    <value>Contient</value>
+  </data>
+  <data name="create_rule">
+    <value>Créer une Règle</value>
+  </data>
+  <data name="created">
+    <value>Créé</value>
+  </data>
+  <data name="creation_date">
+    <value>Date de Création</value>
+  </data>
+  <data name="custom_GUID">
+    <value>GUID customisé</value>
+  </data>
+  <data name="data">
+    <value>Données</value>
+  </data>
+  <data name="date">
+    <value>Date</value>
+  </data>
+  <data name="decline">
+    <value>Refuser</value>
+  </data>
+  <data name="declined">
+    <value>Refusée</value>
+  </data>
+  <data name="declined_expired">
+    <value>Refusée (Expirée)</value>
+  </data>
+  <data name="delete">
+    <value>Supprimer</value>
+  </data>
+  <data name="domain_controller">
+    <value>Contrôleur de Domaine</value>
+  </data>
+  <data name="downloaded">
+    <value>Téléchargé</value>
+  </data>
+  <data name="driver">
+    <value>Pilote</value>
+  </data>
+  <data name="edit">
+    <value>Modifier</value>
+  </data>
+  <data name="ends_with">
+    <value>Termine Par</value>
+  </data>
+  <data name="equal_to">
+    <value>Egal à</value>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Cette mise à jour ne peut pas être désinstallée.</value>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>Vous ne pouvez pas désinstaller plusieurs mises à jour.</value>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>Vous ne pouvez pas importer un certificat à moins d'établir une connection sécurisée au serveur WSUS en utilisant SSL.</value>
+  </data>
+  <data name="error_command_arguments">
+    <value>Pas assez d'arguments pour générer un rapport</value>
+  </data>
+  <data name="error_command_connect">
+    <value>Impossible de se connecter à {0}</value>
+  </data>
+  <data name="error_command_find_computer">
+    <value>Impossible de trouver l'ordinateur cible {0}.</value>
+  </data>
+  <data name="error_command_find_group">
+    <value>Impossible de trouver le groupe {0}.</value>
+  </data>
+  <data name="error_command_find_update">
+    <value>Impossible de trouver la mise à jour {0}.</value>
+  </data>
+  <data name="error_command_unknown">
+    <value>Commande Inconnue</value>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Il ya eu une erreur pendant la création du certificat.</value>
+  </data>
+  <data name="error_connection_connect">
+    <value>Impossible de se connecter au serveur.</value>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>Votre nom de serveur n'est pas formaté correctement.</value>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>Vous n'êtes pas autorisé à vous connecter au serveur WSUS.</value>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>Impossible de copier le répertoire</value>
+  </data>
+  <data name="error_connection_download">
+    <value>Impossible de télécharger {0}.</value>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>Impossible d'exporter le SDP.</value>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>Impossible d'obtenir le SDP</value>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>Le paquet n'a pas pu être publié.</value>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Ce fichier ne contient pas de fichier XML.</value>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Ce fichier ne contient pas de fichier CAB.</value>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>Il n'ya pas de certificat sur {0}. A moins de créer ou importer un certificat, vous ne serez pas en mesure de publier des mises à jour.</value>
+  </data>
+  <data name="error_connection_none">
+    <value>Vous n'êtes pas connecté à un serveur WSUS.</value>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Cette mise à jour ne peut pas être exportée, car une URL d'origine n'a pas été entrée.</value>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Certains paquets ne peuvent être ajoutés, car une URL d'origine n'a pas été entrée.</value>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>Vous devez exporter vers un fichier cab.</value>
+  </data>
+  <data name="error_export_update_data">
+    <value>Le contenu du paquet n'existe pas dans le dossier UpdateServicesPackages. Il ne peut pas être exporté.</value>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>Aucun fichier XML n'a été trouvé dans ce fichier Cabinet.</value>
+  </data>
+  <data name="error_package_resigned">
+    <value>Le paquet n'a pas pu être re-signé.</value>
+  </data>
+  <data name="error_packages_expired">
+    <value>Certains paquets ne sont pas passés Expiré avec succès.</value>
+  </data>
+  <data name="error_packages_resigned">
+    <value>Certains paquets n'ont pas été re-signés avec succès.</value>
+  </data>
+  <data name="error_result_code_empty">
+    <value>Le résultat ne doit pas être vide.</value>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>Le code de retour ne doit pas être vide.</value>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Cet enregistrement ne retourne pas un UpdateID valide.</value>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>Impossible de charger le fichier de Règle dans le catalogue des Règles.</value>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>Impossible d'importer le fichier de règle.</value>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>Le fichier à importer n'existe pas.</value>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>Impossible d'ajouter/supprimer le groupe</value>
+  </data>
+  <data name="error_rules_load">
+    <value>La règle ne peut pas être chargée.</value>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Cette règle n'est pas reconnue.</value>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Ce type de règle n'est pas encore supporté.</value>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>Vous n'avez sélectionné aucune règle à exporter.</value>
+  </data>
+  <data name="error_server_disconnected">
+    <value>Le serveur n'est pas connecté.</value>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Doit être un énumerateur.</value>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>Impossible de créer le paquet de distribution de logiciels.</value>
+  </data>
+  <data name="error_update_imported">
+    <value>La mise à jour n'a pas été importée.</value>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>Le XML pour le SDP est invalide.</value>
+  </data>
+  <data name="error_update_save">
+    <value>Impossible d'enregistrer l'information sur la mise à jour.</value>
+  </data>
+  <data name="exception">
+    <value>Exception</value>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+  </data>
+  <data name="exception_IO">
+    <value>IO Exception</value>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+  </data>
+  <data name="exception_argument">
+    <value>Argument Exception</value>
+  </data>
+  <data name="exception_argument_null">
+    <value>Erreur : argument vide</value>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Directory Not Found Exception</value>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Erreur : Fichier non trouvé</value>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Erreur : Données non valides.</value>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Erreur : Opération non valide</value>
+  </data>
+  <data name="exception_not_supported">
+    <value>Not Supported Exception</value>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Out Of Memory Exception</value>
+  </data>
+  <data name="exception_path_too_long">
+    <value>Path Too Long Exception</value>
+  </data>
+  <data name="exception_security">
+    <value>Security Exception</value>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Erreur : Accès non authorisé</value>
+  </data>
+  <data name="exception_web">
+    <value>Web Exception</value>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>Wsus Invalid Server Exception</value>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>WsusObjectNotFoundException</value>
+  </data>
+  <data name="expire">
+    <value>Fin de vie</value>
+  </data>
+  <data name="export">
+    <value>Exporter</value>
+  </data>
+  <data name="export_certificate">
+    <value>Exporter le Certificat</value>
+  </data>
+  <data name="failed">
+    <value>Échoué</value>
+  </data>
+  <data name="failed_or_needed">
+    <value>Échec ou Nécessaire</value>
+  </data>
+  <data name="false">
+    <value>faux</value>
+  </data>
+  <data name="features">
+    <value>Caractéristiques</value>
+  </data>
+  <data name="file_filter_cab">
+    <value>CAB Fichiers|*.cab</value>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Fichiers de mise à jour (*.MSI;*.MSP;*.EXE)|*.MSI;*.MSP;*.EXE|MSI Fichiers (*.MSI)|*.MSI|MSP Fichiers (*.MSP)|*.MSP|EXE Fichiers (*.EXE)|*.EXE</value>
+  </data>
+  <data name="file_filter_xml">
+    <value>XML Fichiers|*.xml</value>
+  </data>
+  <data name="finish">
+    <value>Terminer</value>
+  </data>
+  <data name="greater_than">
+    <value>Plus grand que</value>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Plus grand que ou Égal à</value>
+  </data>
+  <data name="group">
+    <value>Groupe</value>
+  </data>
+  <data name="group_begin_and">
+    <value>Commencez Et</value>
+  </data>
+  <data name="group_begin_or">
+    <value>Commencez Ou</value>
+  </data>
+  <data name="group_end_and">
+    <value>Finir Et</value>
+  </data>
+  <data name="group_end_or">
+    <value>Finir Ou</value>
+  </data>
+  <data name="group_name">
+    <value>Nom du Groupe</value>
+  </data>
+  <data name="group_remove_and">
+    <value>Retirer Et</value>
+  </data>
+  <data name="group_remove_or">
+    <value>Retirer Ou</value>
+  </data>
+  <data name="history_for">
+    <value>Historique de</value>
+  </data>
+  <data name="import">
+    <value>Importer</value>
+  </data>
+  <data name="import_certificate">
+    <value>Importer le Certificat</value>
+  </data>
+  <data name="in_bytes_example">
+    <value>en octets (ex. 1024)</value>
+  </data>
+  <data name="inherited">
+    <value>hérité</value>
+  </data>
+  <data name="installed">
+    <value>Installée</value>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Installée/Ne s'Applique Pas</value>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Installée/Ne s'Applique Pas ouPas de Statut</value>
+  </data>
+  <data name="ip_address">
+    <value>Adresse IP</value>
+  </data>
+  <data name="label_approval_form">
+    <value>Sélectionnez les approbations pour {0}</value>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Sélectionnez les approbations pour {0} mises à jour.</value>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Définir les Approbations pour {0}</value>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Paramètre d'Approbations de {0} à {1} sur {2}</value>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>Ci-dessous vous trouverez des informations sur le certificat installé sur votre serveur WSUS. Ce certificat doit être distribuée à chaque client avant de pouvoir recevoir les mises à jour publiées localement.</value>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Un certificat n'a pas encore été créé. Vous devez le faire avant de publier des mises à jour.</value>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Un certificat a déjà été créé.</value>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>Espace de noms WMI</value>
+  </data>
+  <data name="language">
+    <value>Langue</value>
+  </data>
+  <data name="language_arabic">
+    <value>Arabe</value>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Chinois (Hong Kong SAR)</value>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Chinois (Simplifié)</value>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Chinois (Traditionnel)</value>
+  </data>
+  <data name="language_czech">
+    <value>Tchèque</value>
+  </data>
+  <data name="language_danish">
+    <value>Danoise</value>
+  </data>
+  <data name="language_dutch">
+    <value>Néerlandais</value>
+  </data>
+  <data name="language_english">
+    <value>Anglais</value>
+  </data>
+  <data name="language_finnish">
+    <value>Finlandais</value>
+  </data>
+  <data name="language_french">
+    <value>Français</value>
+  </data>
+  <data name="language_german">
+    <value>Allemand</value>
+  </data>
+  <data name="language_greek">
+    <value>Grecque</value>
+  </data>
+  <data name="language_hebrew">
+    <value>Hébreu</value>
+  </data>
+  <data name="language_hungarian">
+    <value>Hongrois</value>
+  </data>
+  <data name="language_italian">
+    <value>Italien</value>
+  </data>
+  <data name="language_japanese">
+    <value>Japonais</value>
+  </data>
+  <data name="language_korean">
+    <value>Coréen</value>
+  </data>
+  <data name="language_norwegian">
+    <value>Norvégien</value>
+  </data>
+  <data name="language_polish">
+    <value>Polonais</value>
+  </data>
+  <data name="language_portuguese">
+    <value>Portugais</value>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portugais (Brésil)</value>
+  </data>
+  <data name="language_russian">
+    <value>Russe</value>
+  </data>
+  <data name="language_spanish">
+    <value>Espagnol</value>
+  </data>
+  <data name="language_swedish">
+    <value>Suédois</value>
+  </data>
+  <data name="language_turkish">
+    <value>Turque</value>
+  </data>
+  <data name="last_status_report">
+    <value>Rapport du Dernier Statut</value>
+  </data>
+  <data name="last_updated">
+    <value>Dernière Mise à Jour</value>
+  </data>
+  <data name="less_than">
+    <value>Moins Que</value>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Moins Que ou Égal à</value>
+  </data>
+  <data name="load">
+    <value>Charger</value>
+  </data>
+  <data name="modified">
+    <value>Modifié</value>
+  </data>
+  <data name="modified_date">
+    <value>Date de Modification</value>
+  </data>
+  <data name="needed">
+    <value>Nécessaire</value>
+  </data>
+  <data name="next">
+    <value>Suivant</value>
+  </data>
+  <data name="no_approval">
+    <value>Aucune approbation</value>
+  </data>
+  <data name="no_status">
+    <value>Pas de Statut</value>
+  </data>
+  <data name="none">
+    <value>Aucun</value>
+  </data>
+  <data name="not_applicable">
+    <value>Ne s'Applique Pas</value>
+  </data>
+  <data name="not_approved">
+    <value>Non Approuvé</value>
+  </data>
+  <data name="not_installed">
+    <value>Non Installé</value>
+  </data>
+  <data name="operating_system">
+    <value>Système d'Exploitation</value>
+  </data>
+  <data name="or">
     <value>OU</value>
   </data>
-  <data name="warning_options_restart" xml:space="preserve">
-    <value>Vous devez redémarrer LUP pour que cette option prendra effet.</value>
+  <data name="patch_code">
+    <value>PatchCode</value>
   </data>
-  <data name="warning_select_file" xml:space="preserve">
-    <value>S'il vous plaît sélectionner un fichier.</value>
+  <data name="path">
+    <value>Chemin d'accès</value>
+  </data>
+  <data name="product_code">
+    <value>Code du Produit</value>
+  </data>
+  <data name="product_type">
+    <value>Type de produit</value>
+  </data>
+  <data name="products">
+    <value>Produits</value>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Souhaitez-vous le faire maintenant?</value>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Merci de patienter pendant la publication de la mise à jour.</value>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Merci de patienter pendant la révision de la mise à jour.</value>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Voulez-vous refuser {0}?</value>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Voulez-vous refuser ces mises à jour {0}?</value>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Voulez-vous passer Expiré {0}?</value>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Voulez-vous passer Expiré ces mises à jour {0}?</value>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Voulez-vous supprimer {0}?</value>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Voulez-vous supprimer ces mises à jour {0}?</value>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Voulez-vous signer de nouveau {0}?</value>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Voulez-vous re-signer ces mises à jour {0}?</value>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Etes-vous sûr de vouloir supprimer cette règle?</value>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Supprimer la règle?</value>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Nom de la nouvelle règle</value>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Nom de la Règle</value>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Changer {0} vers</value>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>Il y a déjà une règle nommée {0}. Que voulez-vous faire?</value>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Etes-vous sûr de vouloir supprimer les règles sélectionnées?</value>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Si vous modifiez l'URL d'origine, elle doit être téléchargée pour vérification. Voulez-vous le faire ?</value>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Entrez le GUID que vous souhaitez utiliser</value>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Entrée de GUID customisé</value>
+  </data>
+  <data name="query">
+    <value>Requête</value>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Actualisation de la Liste des ordinateurs</value>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Actualisation de la Liste des Mises à Jour</value>
+  </data>
+  <data name="remove">
+    <value>Supprimer</value>
+  </data>
+  <data name="remove_group">
+    <value>Supprimer le Groupe</value>
+  </data>
+  <data name="rename">
+    <value>Renommer</value>
+  </data>
+  <data name="rename_rule">
+    <value>Renommer la règle</value>
+  </data>
+  <data name="resign">
+    <value>Re-signer</value>
+  </data>
+  <data name="revise">
+    <value>Réviser</value>
+  </data>
+  <data name="rule_MSI_component">
+    <value>Composant MSI Installé pour le Produit</value>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>Fonctionnalité MSI Installée pour le Produit</value>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>Patch MSI Installé pour le Produit</value>
+  </data>
+  <data name="rule_MSI_product">
+    <value>Produit MSI Installé</value>
+  </data>
+  <data name="rule_WMI_query">
+    <value>Requête WMI</value>
+  </data>
+  <data name="rule_file_creation">
+    <value>Création de Fichier</value>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>Création de Fichier avec Base de Registre</value>
+  </data>
+  <data name="rule_file_exists">
+    <value>Le Fichier Existe</value>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>Le Fichier Existe avec Base de Registre</value>
+  </data>
+  <data name="rule_file_modified">
+    <value>Fichier Modifié</value>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>Fichier Modifié avec Base de Registre</value>
+  </data>
+  <data name="rule_file_size">
+    <value>Taille du Fichier</value>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Taille du Fichier avec Base de Registre</value>
+  </data>
+  <data name="rule_file_version">
+    <value>Version du Fichier</value>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>Version du Fichier avec Base de Registre</value>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Architecture de Processeur</value>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Valeur DWORD de la Base de Registre</value>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Valeur Chaine de la Base de Registre</value>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Valeur de Chaine Extensible de la Base de Registre</value>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>La Clé de Base de Registre Existe</value>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>La Valeur de la Clef de Base Registre Existe</value>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Version de la Chaine dans la Base de Registre</value>
+  </data>
+  <data name="rule_windows_language">
+    <value>Langue de Windows</value>
+  </data>
+  <data name="rule_windows_version">
+    <value>Version de Windows</value>
+  </data>
+  <data name="save_rule">
+    <value>Enregistrer la Règle</value>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Sélectionnez les Règles à Exporter</value>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Sélectionnez les Règles à Importer</value>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Sélectionnez les Règles à Charger</value>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Sélectionnez les Règles à gérer</value>
+  </data>
+  <data name="server">
+    <value>Serveur</value>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+  </data>
+  <data name="size">
+    <value>Taille</value>
+  </data>
+  <data name="skip">
+    <value>Passer</value>
+  </data>
+  <data name="status">
+    <value>Statut</value>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Téléchargement de fichiers pour {0}</value>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Chargement du rapport d'ordinateur</value>
+  </data>
+  <data name="status_loading_form">
+    <value>Chargement du formulaire</value>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Chargement du rapport de mise à jour</value>
+  </data>
+  <data name="status_server_connected">
+    <value>Connecté à {0}</value>
+  </data>
+  <data name="status_server_connecting">
+    <value>Connexion à {0}</value>
+  </data>
+  <data name="string">
+    <value>Chaine de caractères</value>
+  </data>
+  <data name="success">
+    <value>Succès</value>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>Un certificat auto-signé a été créé. Ce certificat doit maintenant être distribué à chaque client selon la documentation Microsoft Local Publishing.</value>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>Votre certificat a été importé avec succès. Ce certificat doit maintenant être distribué à chaque client selon la documentation Microsoft Local Publishing.</value>
+  </data>
+  <data name="success_packages_expired">
+    <value>Tous les paquets sont passés Expiré.</value>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Tous les paquets ont pas été re-signés avec succès.</value>
+  </data>
+  <data name="success_update_imported">
+    <value>La mise à jour a été importée avec succès.</value>
+  </data>
+  <data name="superseded">
+    <value>Remplacé</value>
+  </data>
+  <data name="title">
+    <value>Titre</value>
+  </data>
+  <data name="true">
+    <value>Vrai</value>
+  </data>
+  <data name="uninstall">
+    <value>Désinstaller</value>
+  </data>
+  <data name="unknown">
+    <value>Inconnu</value>
+  </data>
+  <data name="update">
+    <value>Mise à Jour</value>
+  </data>
+  <data name="update_services">
+    <value>Service de Mise à Jour</value>
+  </data>
+  <data name="update_title">
+    <value>Titre de la Mise à Jour</value>
+  </data>
+  <data name="updates">
+    <value>Mises à jour</value>
+  </data>
+  <data name="value">
+    <value>Valeur</value>
+  </data>
+  <data name="value_type">
+    <value>Type de Valeur</value>
+  </data>
+  <data name="version">
+    <value>Version</value>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>Impossible d'ajouter ou de trouver le GUID</value>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Un certificat existe déjà.</value>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>Le certificat n'a pas pu être importé. Vous devez fournir un fichier de certificat et un mot de passe pour utiliser un certificat existant.</value>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>Certificat WSUS introuvable.</value>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} semble être une mise à jour des métadonnées uniquement. Actuellement, elle ne peut pas être expirée.</value>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Aucune ligne sélectionnée</value>
+  </data>
+  <data name="warning_no_value">
+    <value>Vous devez entrer une valeur.</value>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>Vous ne pouvez pas empêcher l'installation pour le groupe Tous les ordinateurs</value>
+  </data>
+  <data name="warning_options_restart">
+    <value>Vous devez redémarrer LUP pour que cette option prenne effet.</value>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Il y avait un problème pour supprimer le contenu du paquet dans UpdateServicesPackages. Utilisez l'identifiant UpdateID pour le faire manuellement</value>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} semble être une mise à jour des métadonnées seulement. Actuellement, elle ne peut pas être re-signée.</value>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} semble être une mise à jour des métadonnées seulement. Actuellement, elle ne peut pas être révisée.</value>
+  </data>
+  <data name="warning_revise_packages">
+    <value>Vous ne pouvez pas réviser plusieurs mises à jour en même temps.</value>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Il y avait un problème pour vérifier le contenu du paquet dans UpdateServicesPackages. Cette mise à jour ne peut pas être révisée.</value>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>Vous devez entrer un GUID valide.</value>
+  </data>
+  <data name="warning_rules_OS">
+    <value>Vous devez entrer une version supérieure et inférieure du système d'exploitation.</value>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>Vous devez sélectionner une comparaison.</value>
+  </data>
+  <data name="warning_rules_date">
+    <value>Vous devez sélectionner une date.</value>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Cette règle existe déjà.</value>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>Vous devez entrer un chemin de fichier.</value>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Vous devez entrer la taille du fichier.</value>
+  </data>
+  <data name="warning_rules_language">
+    <value>Vous devez sélectionner une langue.</value>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Vous devez entrer un espace de noms.</value>
+  </data>
+  <data name="warning_rules_processor">
+    <value>Vous devez sélectionner un type de processeur.</value>
+  </data>
+  <data name="warning_rules_query">
+    <value>Vous devez entrer une requête.</value>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>Vous devez choisir une clef de registre.</value>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Vous devez entrer une sous-clef de registre.</value>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>Vous devez sélectionner un type de clef de Registre.</value>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Vous devez entrer la valeur de la clef de registre.</value>
+  </data>
+  <data name="warning_rules_version">
+    <value>Vous devez entrer une version</value>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>Vous devez sélectionner des enregistrements à supprimer.</value>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>Vous n'avez sélectionné aucune règle à exporter.</value>
+  </data>
+  <data name="warning_select_file">
+    <value>Merci de sélectionner un fichier.</value>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>Impossible de publier l'URI lorsque des fichiers supplémentaires sont inclus.</value>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>Le nom de fichier ne correspond pas.</value>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>URI invalide</value>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Modifier ce XML à vos propres risques.</value>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>Vous ne pouvez pas publier une mise à jour seule des métadonnées avec des fichiers supplémentaires.</value>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>Aucun URI donné.</value>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>Le paquet n'a pas été publié.</value>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Le paquet a été publié avec succès.</value>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Le paquet a été révisé avec succès.</value>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>Le paquet n'a pas été révisé.</value>
+  </data>
+  <data name="warning_update_vendor">
+    <value>Le vendeur ne peut pas être Microsoft.</value>
+  </data>
+  <data name="workstation">
+    <value>Station de Travail</value>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Object Disposed Exception</value>
   </data>
 </root>
