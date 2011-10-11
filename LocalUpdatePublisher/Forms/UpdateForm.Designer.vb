@@ -59,7 +59,9 @@ Partial Class UpdateForm
 		Me.txtOriginalURI = New System.Windows.Forms.TextBox
 		Me.lblPackageType = New System.Windows.Forms.Label
 		Me.lblPackageInfo = New System.Windows.Forms.Label
+		Me.txtCommandLine = New System.Windows.Forms.TextBox
 		Me.txtNetwork = New System.Windows.Forms.TextBox
+		Me.lblCommandLine = New System.Windows.Forms.Label
 		Me.lblOriginalURI = New System.Windows.Forms.Label
 		Me.cboRebootBehavior = New System.Windows.Forms.ComboBox
 		Me.lblNetwork = New System.Windows.Forms.Label
@@ -89,29 +91,31 @@ Partial Class UpdateForm
 		Me.lblArticleID = New System.Windows.Forms.Label
 		Me.cboClassification = New System.Windows.Forms.ComboBox
 		Me.lblDescription = New System.Windows.Forms.Label
+		Me.tlpOptions = New System.Windows.Forms.TableLayoutPanel
 		Me.lblLanguages = New System.Windows.Forms.Label
 		Me.lblPrerequisites = New System.Windows.Forms.Label
-		Me.lblSupersedes = New System.Windows.Forms.Label
 		Me.lblReturnCodes = New System.Windows.Forms.Label
-		Me.txtCommandLine = New System.Windows.Forms.TextBox
-		Me.lblCommandLine = New System.Windows.Forms.Label
+		Me.lblSupersedes = New System.Windows.Forms.Label
 		Me.tabIsInstalled = New System.Windows.Forms.TabPage
 		Me.isInstalledRules = New LocalUpdatePublisher.RulesEditor
 		Me.tabIsInstallable = New System.Windows.Forms.TabPage
 		Me.isInstallableRules = New LocalUpdatePublisher.RulesEditor
 		Me.tabIsSuperseded = New System.Windows.Forms.TabPage
-		Me.btnIsSupersededEdit = New System.Windows.Forms.Button
-		Me.lblIsSuperceded_InstallableItem = New System.Windows.Forms.Label
+		Me.tlpIsSuperseded = New System.Windows.Forms.TableLayoutPanel
 		Me.txtIsSuperceded_InstallableItem = New System.Windows.Forms.TextBox
-		Me.tabMetaData = New System.Windows.Forms.TabPage
-		Me.btnMetaDataEdit = New System.Windows.Forms.Button
-		Me.lblMetaData_InstallableItem = New System.Windows.Forms.Label
-		Me.lblMetaData = New System.Windows.Forms.Label
-		Me.txtInstallableItemMetaData = New System.Windows.Forms.TextBox
-		Me.tabSummary = New System.Windows.Forms.TabPage
-		Me.lblSummary = New System.Windows.Forms.Label
-		Me.txtSummary = New System.Windows.Forms.TextBox
+		Me.btnIsSupersededEdit = New System.Windows.Forms.Button
 		Me.lblIsSuperseded = New System.Windows.Forms.Label
+		Me.lblIsSuperceded_InstallableItem = New System.Windows.Forms.Label
+		Me.tabMetaData = New System.Windows.Forms.TabPage
+		Me.tlpMetaData = New System.Windows.Forms.TableLayoutPanel
+		Me.txtInstallableItemMetaData = New System.Windows.Forms.TextBox
+		Me.btnMetaDataEdit = New System.Windows.Forms.Button
+		Me.lblMetaData = New System.Windows.Forms.Label
+		Me.lblMetaData_InstallableItem = New System.Windows.Forms.Label
+		Me.tabSummary = New System.Windows.Forms.TabPage
+		Me.tlpSummary = New System.Windows.Forms.TableLayoutPanel
+		Me.txtSummary = New System.Windows.Forms.TextBox
+		Me.lblSummary = New System.Windows.Forms.Label
 		Me.btnPrevious = New System.Windows.Forms.Button
 		Me.btnNext = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
@@ -119,33 +123,34 @@ Partial Class UpdateForm
 		Me.chkExportSdp = New System.Windows.Forms.CheckBox
 		Me.dlgExportSdp = New System.Windows.Forms.SaveFileDialog
 		Me.dlgUpdateDir = New System.Windows.Forms.FolderBrowserDialog
-		Me.chkMetadataOnly = New System.Windows.Forms.CheckBox
 		Me.errorProviderUpdate = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpIsSuperseded = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpMetaData = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpSummary = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtons = New System.Windows.Forms.TableLayoutPanel
+		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.chkMetadataOnly = New System.Windows.Forms.CheckBox
 		Me.tabsUpdate.SuspendLayout
 		Me.tabIntro.SuspendLayout
 		Me.tlpIntro.SuspendLayout
 		CType(Me.dgvAdditionalFiles,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabPackageInfo.SuspendLayout
 		Me.tlpPackageInfo.SuspendLayout
+		Me.tlpOptions.SuspendLayout
 		Me.tabIsInstalled.SuspendLayout
 		Me.tabIsInstallable.SuspendLayout
 		Me.tabIsSuperseded.SuspendLayout
+		Me.tlpIsSuperseded.SuspendLayout
 		Me.tabMetaData.SuspendLayout
+		Me.tlpMetaData.SuspendLayout
 		Me.tabSummary.SuspendLayout
+		Me.tlpSummary.SuspendLayout
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
-		Me.tlpIsSuperseded.SuspendLayout
-		Me.tlpMetaData.SuspendLayout
-		Me.tlpSummary.SuspendLayout
+		Me.tlpButtons.SuspendLayout
+		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'tabsUpdate
 		'
-		Me.tlpMain.SetColumnSpan(Me.tabsUpdate, 5)
 		Me.tabsUpdate.Controls.Add(Me.tabIntro)
 		Me.tabsUpdate.Controls.Add(Me.tabPackageInfo)
 		Me.tabsUpdate.Controls.Add(Me.tabIsInstalled)
@@ -154,6 +159,7 @@ Partial Class UpdateForm
 		Me.tabsUpdate.Controls.Add(Me.tabMetaData)
 		Me.tabsUpdate.Controls.Add(Me.tabSummary)
 		resources.ApplyResources(Me.tabsUpdate, "tabsUpdate")
+		Me.tabsUpdate.Multiline = true
 		Me.tabsUpdate.Name = "tabsUpdate"
 		Me.tabsUpdate.SelectedIndex = 0
 		'
@@ -208,6 +214,7 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.ColumnHeadersVisible = false
 		Me.dgvAdditionalFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FileName, Me.RemoveFile, Me.FileObject})
 		resources.ApplyResources(Me.dgvAdditionalFiles, "dgvAdditionalFiles")
+		Me.dgvAdditionalFiles.MinimumSize = New System.Drawing.Size(450, 408)
 		Me.dgvAdditionalFiles.Name = "dgvAdditionalFiles"
 		Me.dgvAdditionalFiles.ReadOnly = true
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
@@ -282,12 +289,6 @@ Partial Class UpdateForm
 		'
 		Me.tabPackageInfo.BackColor = System.Drawing.SystemColors.Control
 		Me.tabPackageInfo.Controls.Add(Me.tlpPackageInfo)
-		Me.tabPackageInfo.Controls.Add(Me.lblLanguages)
-		Me.tabPackageInfo.Controls.Add(Me.lblPrerequisites)
-		Me.tabPackageInfo.Controls.Add(Me.lblSupersedes)
-		Me.tabPackageInfo.Controls.Add(Me.lblReturnCodes)
-		Me.tabPackageInfo.Controls.Add(Me.txtCommandLine)
-		Me.tabPackageInfo.Controls.Add(Me.lblCommandLine)
 		resources.ApplyResources(Me.tabPackageInfo, "tabPackageInfo")
 		Me.tabPackageInfo.Name = "tabPackageInfo"
 		'
@@ -299,7 +300,9 @@ Partial Class UpdateForm
 		Me.tlpPackageInfo.Controls.Add(Me.txtOriginalURI, 1, 11)
 		Me.tlpPackageInfo.Controls.Add(Me.lblPackageType, 0, 1)
 		Me.tlpPackageInfo.Controls.Add(Me.lblPackageInfo, 0, 0)
+		Me.tlpPackageInfo.Controls.Add(Me.txtCommandLine, 1, 17)
 		Me.tlpPackageInfo.Controls.Add(Me.txtNetwork, 3, 15)
+		Me.tlpPackageInfo.Controls.Add(Me.lblCommandLine, 0, 17)
 		Me.tlpPackageInfo.Controls.Add(Me.lblOriginalURI, 0, 11)
 		Me.tlpPackageInfo.Controls.Add(Me.cboRebootBehavior, 1, 16)
 		Me.tlpPackageInfo.Controls.Add(Me.lblNetwork, 2, 15)
@@ -329,6 +332,7 @@ Partial Class UpdateForm
 		Me.tlpPackageInfo.Controls.Add(Me.lblArticleID, 0, 9)
 		Me.tlpPackageInfo.Controls.Add(Me.cboClassification, 1, 4)
 		Me.tlpPackageInfo.Controls.Add(Me.lblDescription, 0, 3)
+		Me.tlpPackageInfo.Controls.Add(Me.tlpOptions, 1, 18)
 		Me.tlpPackageInfo.Name = "tlpPackageInfo"
 		'
 		'lblRebootBehavior
@@ -338,6 +342,7 @@ Partial Class UpdateForm
 		'
 		'cboPackageType
 		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.cboPackageType, 3)
 		resources.ApplyResources(Me.cboPackageType, "cboPackageType")
 		Me.cboPackageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboPackageType.FormattingEnabled = true
@@ -366,11 +371,21 @@ Partial Class UpdateForm
 		Me.lblPackageInfo.Name = "lblPackageInfo"
 		AddHandler Me.lblPackageInfo.TextChanged, AddressOf Me.TextChanged
 		'
+		'txtCommandLine
+		'
+		resources.ApplyResources(Me.txtCommandLine, "txtCommandLine")
+		Me.txtCommandLine.Name = "txtCommandLine"
+		'
 		'txtNetwork
 		'
 		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
 		Me.txtNetwork.Name = "txtNetwork"
 		Me.txtNetwork.ReadOnly = true
+		'
+		'lblCommandLine
+		'
+		resources.ApplyResources(Me.lblCommandLine, "lblCommandLine")
+		Me.lblCommandLine.Name = "lblCommandLine"
 		'
 		'lblOriginalURI
 		'
@@ -379,10 +394,10 @@ Partial Class UpdateForm
 		'
 		'cboRebootBehavior
 		'
+		resources.ApplyResources(Me.cboRebootBehavior, "cboRebootBehavior")
 		Me.cboRebootBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboRebootBehavior.FormattingEnabled = true
 		Me.cboRebootBehavior.Items.AddRange(New Object() {resources.GetString("cboRebootBehavior.Items"), resources.GetString("cboRebootBehavior.Items1"), resources.GetString("cboRebootBehavior.Items2")})
-		resources.ApplyResources(Me.cboRebootBehavior, "cboRebootBehavior")
 		Me.cboRebootBehavior.Name = "cboRebootBehavior"
 		AddHandler Me.cboRebootBehavior.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
@@ -443,16 +458,17 @@ Partial Class UpdateForm
 		'
 		'txtBulletinID
 		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.txtBulletinID, 3)
 		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
 		Me.txtBulletinID.Name = "txtBulletinID"
 		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
 		'
 		'cboImpact
 		'
+		resources.ApplyResources(Me.cboImpact, "cboImpact")
 		Me.cboImpact.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboImpact.FormattingEnabled = true
 		Me.cboImpact.Items.AddRange(New Object() {resources.GetString("cboImpact.Items"), resources.GetString("cboImpact.Items1"), resources.GetString("cboImpact.Items2")})
-		resources.ApplyResources(Me.cboImpact, "cboImpact")
 		Me.cboImpact.Name = "cboImpact"
 		AddHandler Me.cboImpact.Validating, AddressOf Me.ControlValidating
 		AddHandler Me.cboImpact.SelectedValueChanged, AddressOf Me.ValidateCombo
@@ -552,6 +568,7 @@ Partial Class UpdateForm
 		'
 		'cboClassification
 		'
+		Me.tlpPackageInfo.SetColumnSpan(Me.cboClassification, 3)
 		resources.ApplyResources(Me.cboClassification, "cboClassification")
 		Me.cboClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboClassification.FormattingEnabled = true
@@ -566,43 +583,43 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.lblDescription, "lblDescription")
 		Me.lblDescription.Name = "lblDescription"
 		'
+		'tlpOptions
+		'
+		resources.ApplyResources(Me.tlpOptions, "tlpOptions")
+		Me.tlpPackageInfo.SetColumnSpan(Me.tlpOptions, 3)
+		Me.tlpOptions.Controls.Add(Me.lblLanguages, 4, 0)
+		Me.tlpOptions.Controls.Add(Me.lblPrerequisites, 0, 0)
+		Me.tlpOptions.Controls.Add(Me.lblReturnCodes, 2, 0)
+		Me.tlpOptions.Controls.Add(Me.lblSupersedes, 1, 0)
+		Me.tlpOptions.Name = "tlpOptions"
+		'
 		'lblLanguages
 		'
 		resources.ApplyResources(Me.lblLanguages, "lblLanguages")
 		Me.lblLanguages.ForeColor = System.Drawing.SystemColors.ActiveCaption
 		Me.lblLanguages.Name = "lblLanguages"
-		AddHandler Me.lblLanguages.Click, AddressOf Me.LblLanguagesClick
+		AddHandler Me.lblLanguages.Click, AddressOf Me.lblLanguagesClick
 		'
 		'lblPrerequisites
 		'
 		resources.ApplyResources(Me.lblPrerequisites, "lblPrerequisites")
 		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
 		Me.lblPrerequisites.Name = "lblPrerequisites"
-		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
-		'
-		'lblSupersedes
-		'
-		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
-		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblSupersedes.Name = "lblSupersedes"
-		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
+		AddHandler Me.lblPrerequisites.Click, AddressOf Me.lblPrerequisitesClick
 		'
 		'lblReturnCodes
 		'
 		resources.ApplyResources(Me.lblReturnCodes, "lblReturnCodes")
 		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
 		Me.lblReturnCodes.Name = "lblReturnCodes"
-		AddHandler Me.lblReturnCodes.Click, AddressOf Me.LblReturnCodesClick
+		AddHandler Me.lblReturnCodes.Click, AddressOf Me.lblReturnCodesClick
 		'
-		'txtCommandLine
+		'lblSupersedes
 		'
-		resources.ApplyResources(Me.txtCommandLine, "txtCommandLine")
-		Me.txtCommandLine.Name = "txtCommandLine"
-		'
-		'lblCommandLine
-		'
-		resources.ApplyResources(Me.lblCommandLine, "lblCommandLine")
-		Me.lblCommandLine.Name = "lblCommandLine"
+		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
+		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.lblSupersedes.Name = "lblSupersedes"
+		AddHandler Me.lblSupersedes.Click, AddressOf Me.lblSupersedesClick
 		'
 		'tabIsInstalled
 		'
@@ -614,8 +631,8 @@ Partial Class UpdateForm
 		'isInstalledRules
 		'
 		Me.isInstalledRules.ApplicabilityRule = ""
-		Me.isInstalledRules.CausesValidation = false
 		resources.ApplyResources(Me.isInstalledRules, "isInstalledRules")
+		Me.isInstalledRules.CausesValidation = false
 		Me.isInstalledRules.Name = "isInstalledRules"
 		Me.isInstalledRules.Rules = ""
 		'
@@ -629,8 +646,8 @@ Partial Class UpdateForm
 		'isInstallableRules
 		'
 		Me.isInstallableRules.ApplicabilityRule = ""
-		Me.isInstallableRules.CausesValidation = false
 		resources.ApplyResources(Me.isInstallableRules, "isInstallableRules")
+		Me.isInstallableRules.CausesValidation = false
 		Me.isInstallableRules.Name = "isInstallableRules"
 		Me.isInstallableRules.Rules = ""
 		'
@@ -641,17 +658,14 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.tabIsSuperseded, "tabIsSuperseded")
 		Me.tabIsSuperseded.Name = "tabIsSuperseded"
 		'
-		'btnIsSupersededEdit
+		'tlpIsSuperseded
 		'
-		resources.ApplyResources(Me.btnIsSupersededEdit, "btnIsSupersededEdit")
-		Me.btnIsSupersededEdit.Name = "btnIsSupersededEdit"
-		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
-		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
-		'
-		'lblIsSuperceded_InstallableItem
-		'
-		resources.ApplyResources(Me.lblIsSuperceded_InstallableItem, "lblIsSuperceded_InstallableItem")
-		Me.lblIsSuperceded_InstallableItem.Name = "lblIsSuperceded_InstallableItem"
+		resources.ApplyResources(Me.tlpIsSuperseded, "tlpIsSuperseded")
+		Me.tlpIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem, 0, 2)
+		Me.tlpIsSuperseded.Controls.Add(Me.btnIsSupersededEdit, 1, 1)
+		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperseded, 0, 0)
+		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem, 0, 1)
+		Me.tlpIsSuperseded.Name = "tlpIsSuperseded"
 		'
 		'txtIsSuperceded_InstallableItem
 		'
@@ -660,58 +674,12 @@ Partial Class UpdateForm
 		Me.txtIsSuperceded_InstallableItem.Name = "txtIsSuperceded_InstallableItem"
 		Me.txtIsSuperceded_InstallableItem.ReadOnly = true
 		'
-		'tabMetaData
+		'btnIsSupersededEdit
 		'
-		Me.tabMetaData.BackColor = System.Drawing.SystemColors.Control
-		Me.tabMetaData.Controls.Add(Me.tlpMetaData)
-		resources.ApplyResources(Me.tabMetaData, "tabMetaData")
-		Me.tabMetaData.Name = "tabMetaData"
-		'
-		'btnMetaDataEdit
-		'
-		resources.ApplyResources(Me.btnMetaDataEdit, "btnMetaDataEdit")
-		Me.btnMetaDataEdit.Name = "btnMetaDataEdit"
-		Me.btnMetaDataEdit.UseVisualStyleBackColor = true
-		AddHandler Me.btnMetaDataEdit.Click, AddressOf Me.BtnMetaDataEditClick
-		'
-		'lblMetaData_InstallableItem
-		'
-		resources.ApplyResources(Me.lblMetaData_InstallableItem, "lblMetaData_InstallableItem")
-		Me.lblMetaData_InstallableItem.Name = "lblMetaData_InstallableItem"
-		'
-		'lblMetaData
-		'
-		resources.ApplyResources(Me.lblMetaData, "lblMetaData")
-		Me.tlpMetaData.SetColumnSpan(Me.lblMetaData, 2)
-		Me.lblMetaData.Name = "lblMetaData"
-		AddHandler Me.lblMetaData.TextChanged, AddressOf Me.TextChanged
-		'
-		'txtInstallableItemMetaData
-		'
-		Me.tlpMetaData.SetColumnSpan(Me.txtInstallableItemMetaData, 2)
-		resources.ApplyResources(Me.txtInstallableItemMetaData, "txtInstallableItemMetaData")
-		Me.txtInstallableItemMetaData.Name = "txtInstallableItemMetaData"
-		Me.txtInstallableItemMetaData.ReadOnly = true
-		'
-		'tabSummary
-		'
-		Me.tabSummary.BackColor = System.Drawing.SystemColors.Control
-		Me.tabSummary.Controls.Add(Me.tlpSummary)
-		resources.ApplyResources(Me.tabSummary, "tabSummary")
-		Me.tabSummary.Name = "tabSummary"
-		'
-		'lblSummary
-		'
-		resources.ApplyResources(Me.lblSummary, "lblSummary")
-		Me.lblSummary.Name = "lblSummary"
-		AddHandler Me.lblSummary.TextChanged, AddressOf Me.TextChanged
-		'
-		'txtSummary
-		'
-		resources.ApplyResources(Me.txtSummary, "txtSummary")
-		Me.txtSummary.Name = "txtSummary"
-		Me.txtSummary.ReadOnly = true
-		Me.txtSummary.TabStop = false
+		resources.ApplyResources(Me.btnIsSupersededEdit, "btnIsSupersededEdit")
+		Me.btnIsSupersededEdit.Name = "btnIsSupersededEdit"
+		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
+		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
 		'
 		'lblIsSuperseded
 		'
@@ -720,11 +688,84 @@ Partial Class UpdateForm
 		Me.lblIsSuperseded.Name = "lblIsSuperseded"
 		AddHandler Me.lblIsSuperseded.TextChanged, AddressOf Me.TextChanged
 		'
+		'lblIsSuperceded_InstallableItem
+		'
+		resources.ApplyResources(Me.lblIsSuperceded_InstallableItem, "lblIsSuperceded_InstallableItem")
+		Me.lblIsSuperceded_InstallableItem.Name = "lblIsSuperceded_InstallableItem"
+		'
+		'tabMetaData
+		'
+		Me.tabMetaData.BackColor = System.Drawing.SystemColors.Control
+		Me.tabMetaData.Controls.Add(Me.tlpMetaData)
+		resources.ApplyResources(Me.tabMetaData, "tabMetaData")
+		Me.tabMetaData.Name = "tabMetaData"
+		'
+		'tlpMetaData
+		'
+		resources.ApplyResources(Me.tlpMetaData, "tlpMetaData")
+		Me.tlpMetaData.Controls.Add(Me.txtInstallableItemMetaData, 0, 2)
+		Me.tlpMetaData.Controls.Add(Me.btnMetaDataEdit, 1, 1)
+		Me.tlpMetaData.Controls.Add(Me.lblMetaData, 0, 0)
+		Me.tlpMetaData.Controls.Add(Me.lblMetaData_InstallableItem, 0, 1)
+		Me.tlpMetaData.Name = "tlpMetaData"
+		'
+		'txtInstallableItemMetaData
+		'
+		Me.tlpMetaData.SetColumnSpan(Me.txtInstallableItemMetaData, 2)
+		resources.ApplyResources(Me.txtInstallableItemMetaData, "txtInstallableItemMetaData")
+		Me.txtInstallableItemMetaData.Name = "txtInstallableItemMetaData"
+		Me.txtInstallableItemMetaData.ReadOnly = true
+		'
+		'btnMetaDataEdit
+		'
+		resources.ApplyResources(Me.btnMetaDataEdit, "btnMetaDataEdit")
+		Me.btnMetaDataEdit.Name = "btnMetaDataEdit"
+		Me.btnMetaDataEdit.UseVisualStyleBackColor = true
+		AddHandler Me.btnMetaDataEdit.Click, AddressOf Me.BtnMetaDataEditClick
+		'
+		'lblMetaData
+		'
+		resources.ApplyResources(Me.lblMetaData, "lblMetaData")
+		Me.tlpMetaData.SetColumnSpan(Me.lblMetaData, 2)
+		Me.lblMetaData.Name = "lblMetaData"
+		AddHandler Me.lblMetaData.TextChanged, AddressOf Me.TextChanged
+		'
+		'lblMetaData_InstallableItem
+		'
+		resources.ApplyResources(Me.lblMetaData_InstallableItem, "lblMetaData_InstallableItem")
+		Me.lblMetaData_InstallableItem.Name = "lblMetaData_InstallableItem"
+		'
+		'tabSummary
+		'
+		Me.tabSummary.BackColor = System.Drawing.SystemColors.Control
+		Me.tabSummary.Controls.Add(Me.tlpSummary)
+		resources.ApplyResources(Me.tabSummary, "tabSummary")
+		Me.tabSummary.Name = "tabSummary"
+		'
+		'tlpSummary
+		'
+		resources.ApplyResources(Me.tlpSummary, "tlpSummary")
+		Me.tlpSummary.Controls.Add(Me.txtSummary, 0, 1)
+		Me.tlpSummary.Controls.Add(Me.lblSummary, 0, 0)
+		Me.tlpSummary.Name = "tlpSummary"
+		'
+		'txtSummary
+		'
+		resources.ApplyResources(Me.txtSummary, "txtSummary")
+		Me.txtSummary.Name = "txtSummary"
+		Me.txtSummary.ReadOnly = true
+		Me.txtSummary.TabStop = false
+		'
+		'lblSummary
+		'
+		resources.ApplyResources(Me.lblSummary, "lblSummary")
+		Me.lblSummary.Name = "lblSummary"
+		AddHandler Me.lblSummary.TextChanged, AddressOf Me.TextChanged
+		'
 		'btnPrevious
 		'
 		resources.ApplyResources(Me.btnPrevious, "btnPrevious")
-		Me.btnPrevious.CausesValidation = false
-		Me.btnPrevious.MinimumSize = New System.Drawing.Size(0, 25)
+		Me.btnPrevious.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnPrevious.Name = "btnPrevious"
 		Me.btnPrevious.UseVisualStyleBackColor = true
 		AddHandler Me.btnPrevious.Click, AddressOf Me.BtnPreviousClick
@@ -733,7 +774,7 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.btnNext, "btnNext")
 		Me.btnNext.CausesValidation = false
-		Me.btnNext.MinimumSize = New System.Drawing.Size(0, 25)
+		Me.btnNext.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnNext.Name = "btnNext"
 		Me.btnNext.UseVisualStyleBackColor = true
 		AddHandler Me.btnNext.Click, AddressOf Me.BtnNextClick
@@ -743,7 +784,7 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.CausesValidation = false
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnCancel.MinimumSize = New System.Drawing.Size(0, 25)
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		AddHandler Me.btnCancel.Click, AddressOf Me.BtnCancelClick
@@ -756,19 +797,8 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.chkExportSdp, "chkExportSdp")
 		Me.chkExportSdp.CausesValidation = false
-		Me.tlpMain.SetColumnSpan(Me.chkExportSdp, 5)
 		Me.chkExportSdp.Name = "chkExportSdp"
 		Me.chkExportSdp.UseVisualStyleBackColor = true
-		'
-		'chkMetadataOnly
-		'
-		resources.ApplyResources(Me.chkMetadataOnly, "chkMetadataOnly")
-		Me.chkMetadataOnly.CausesValidation = false
-		Me.tlpMain.SetColumnSpan(Me.chkMetadataOnly, 2)
-		Me.chkMetadataOnly.MinimumSize = New System.Drawing.Size(0, 25)
-		Me.chkMetadataOnly.Name = "chkMetadataOnly"
-		Me.chkMetadataOnly.UseVisualStyleBackColor = true
-		AddHandler Me.chkMetadataOnly.CheckedChanged, AddressOf Me.CboMetadataOnlyCheckedChanged
 		'
 		'errorProviderUpdate
 		'
@@ -778,38 +808,33 @@ Partial Class UpdateForm
 		'tlpMain
 		'
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.chkMetadataOnly, 0, 2)
+		Me.tlpMain.Controls.Add(Me.tlpButtons, 0, 2)
 		Me.tlpMain.Controls.Add(Me.tabsUpdate, 0, 0)
 		Me.tlpMain.Controls.Add(Me.chkExportSdp, 0, 1)
-		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 2)
-		Me.tlpMain.Controls.Add(Me.btnNext, 3, 2)
-		Me.tlpMain.Controls.Add(Me.btnPrevious, 2, 2)
 		Me.tlpMain.Name = "tlpMain"
 		'
-		'tlpIsSuperseded
+		'tlpButtons
 		'
-		resources.ApplyResources(Me.tlpIsSuperseded, "tlpIsSuperseded")
-		Me.tlpIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem, 0, 2)
-		Me.tlpIsSuperseded.Controls.Add(Me.btnIsSupersededEdit, 1, 1)
-		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperseded, 0, 0)
-		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem, 0, 1)
-		Me.tlpIsSuperseded.Name = "tlpIsSuperseded"
+		resources.ApplyResources(Me.tlpButtons, "tlpButtons")
+		Me.tlpButtons.Controls.Add(Me.tableLayoutPanel1, 1, 0)
+		Me.tlpButtons.Controls.Add(Me.chkMetadataOnly, 0, 0)
+		Me.tlpButtons.Name = "tlpButtons"
 		'
-		'tlpMetaData
+		'tableLayoutPanel1
 		'
-		resources.ApplyResources(Me.tlpMetaData, "tlpMetaData")
-		Me.tlpMetaData.Controls.Add(Me.txtInstallableItemMetaData, 0, 2)
-		Me.tlpMetaData.Controls.Add(Me.btnMetaDataEdit, 1, 1)
-		Me.tlpMetaData.Controls.Add(Me.lblMetaData, 0, 0)
-		Me.tlpMetaData.Controls.Add(Me.lblMetaData_InstallableItem, 0, 1)
-		Me.tlpMetaData.Name = "tlpMetaData"
+		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
+		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 2, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnNext, 1, 0)
+		Me.tableLayoutPanel1.Controls.Add(Me.btnPrevious, 0, 0)
+		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
 		'
-		'tlpSummary
+		'chkMetadataOnly
 		'
-		resources.ApplyResources(Me.tlpSummary, "tlpSummary")
-		Me.tlpSummary.Controls.Add(Me.txtSummary, 0, 1)
-		Me.tlpSummary.Controls.Add(Me.lblSummary, 0, 0)
-		Me.tlpSummary.Name = "tlpSummary"
+		Me.chkMetadataOnly.CausesValidation = false
+		resources.ApplyResources(Me.chkMetadataOnly, "chkMetadataOnly")
+		Me.chkMetadataOnly.MinimumSize = New System.Drawing.Size(0, 25)
+		Me.chkMetadataOnly.Name = "chkMetadataOnly"
+		Me.chkMetadataOnly.UseVisualStyleBackColor = true
 		'
 		'UpdateForm
 		'
@@ -825,6 +850,7 @@ Partial Class UpdateForm
 		Me.ShowInTaskbar = false
 		Me.tabsUpdate.ResumeLayout(false)
 		Me.tabIntro.ResumeLayout(false)
+		Me.tabIntro.PerformLayout
 		Me.tlpIntro.ResumeLayout(false)
 		Me.tlpIntro.PerformLayout
 		CType(Me.dgvAdditionalFiles,System.ComponentModel.ISupportInitialize).EndInit
@@ -832,22 +858,37 @@ Partial Class UpdateForm
 		Me.tabPackageInfo.PerformLayout
 		Me.tlpPackageInfo.ResumeLayout(false)
 		Me.tlpPackageInfo.PerformLayout
+		Me.tlpOptions.ResumeLayout(false)
+		Me.tlpOptions.PerformLayout
 		Me.tabIsInstalled.ResumeLayout(false)
+		Me.tabIsInstalled.PerformLayout
 		Me.tabIsInstallable.ResumeLayout(false)
+		Me.tabIsInstallable.PerformLayout
 		Me.tabIsSuperseded.ResumeLayout(false)
+		Me.tabIsSuperseded.PerformLayout
+		Me.tlpIsSuperseded.ResumeLayout(false)
+		Me.tlpIsSuperseded.PerformLayout
 		Me.tabMetaData.ResumeLayout(false)
+		Me.tabMetaData.PerformLayout
+		Me.tlpMetaData.ResumeLayout(false)
+		Me.tlpMetaData.PerformLayout
 		Me.tabSummary.ResumeLayout(false)
+		Me.tabSummary.PerformLayout
+		Me.tlpSummary.ResumeLayout(false)
+		Me.tlpSummary.PerformLayout
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
-		Me.tlpIsSuperseded.ResumeLayout(false)
-		Me.tlpIsSuperseded.PerformLayout
-		Me.tlpMetaData.ResumeLayout(false)
-		Me.tlpMetaData.PerformLayout
-		Me.tlpSummary.ResumeLayout(false)
-		Me.tlpSummary.PerformLayout
+		Me.tlpButtons.ResumeLayout(false)
+		Me.tlpButtons.PerformLayout
+		Me.tableLayoutPanel1.ResumeLayout(false)
+		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
+		Me.PerformLayout
 	End Sub
+	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
+	Private tlpOptions As System.Windows.Forms.TableLayoutPanel
 	Private tlpSummary As System.Windows.Forms.TableLayoutPanel
 	Private tlpMetaData As System.Windows.Forms.TableLayoutPanel
 	Private lblSummary As System.Windows.Forms.Label

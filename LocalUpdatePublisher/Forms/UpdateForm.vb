@@ -1117,6 +1117,6 @@ Public Partial Class UpdateForm
 	
 	
 	Shadows Sub TextChanged(sender As Object, e As EventArgs)
-		CustomResize.ResizeVertically( sender, e)	
+		'CustomResize.ResizeVertically( sender, e)	
 	End Sub
 End Class

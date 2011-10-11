@@ -40,9 +40,11 @@ Partial Class SavedRulesForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnAction = New System.Windows.Forms.Button
 		Me.btnAction2 = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtonsRight = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
+		Me.tlpButtonsRight.SuspendLayout
 		Me.SuspendLayout
 		'
 		'dgvRules
@@ -54,7 +56,7 @@ Partial Class SavedRulesForm
 		Me.dgvRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvRules.ColumnHeadersVisible = false
 		Me.dgvRules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Include, Me.RuleName})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvRules, 5)
+		Me.tlpMain.SetColumnSpan(Me.dgvRules, 2)
 		resources.ApplyResources(Me.dgvRules, "dgvRules")
 		Me.dgvRules.Name = "dgvRules"
 		Me.dgvRules.RowHeadersVisible = false
@@ -74,12 +76,14 @@ Partial Class SavedRulesForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnAction
 		'
 		resources.ApplyResources(Me.btnAction, "btnAction")
+		Me.btnAction.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnAction.Name = "btnAction"
 		Me.btnAction.UseVisualStyleBackColor = true
 		AddHandler Me.btnAction.Click, AddressOf Me.BtnActionClick
@@ -87,36 +91,46 @@ Partial Class SavedRulesForm
 		'btnAction2
 		'
 		resources.ApplyResources(Me.btnAction2, "btnAction2")
+		Me.btnAction2.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnAction2.Name = "btnAction2"
 		Me.btnAction2.UseVisualStyleBackColor = true
 		AddHandler Me.btnAction2.Click, AddressOf Me.BtnAction2Click
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvRules, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnAction2, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnAction, 3, 1)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpButtonsRight, 1, 1)
+		Me.tlpMain.Controls.Add(Me.dgvRules, 0, 0)
+		Me.tlpMain.Controls.Add(Me.btnAction2, 0, 1)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpButtonsRight
+		'
+		resources.ApplyResources(Me.tlpButtonsRight, "tlpButtonsRight")
+		Me.tlpButtonsRight.Controls.Add(Me.btnAction, 0, 0)
+		Me.tlpButtonsRight.Controls.Add(Me.btnCancel, 1, 0)
+		Me.tlpButtonsRight.Name = "tlpButtonsRight"
 		'
 		'SavedRulesForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MinimizeBox = false
 		Me.Name = "SavedRulesForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpButtonsRight.ResumeLayout(false)
+		Me.tlpButtonsRight.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtonsRight As System.Windows.Forms.TableLayoutPanel
 	Private btnAction2 As System.Windows.Forms.Button
 	Private RuleName As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btnAction As System.Windows.Forms.Button

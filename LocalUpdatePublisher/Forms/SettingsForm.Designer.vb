@@ -54,6 +54,7 @@ Partial Class SettingsForm
 		'
 		resources.ApplyResources(Me.btnClose, "btnClose")
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnClose.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'

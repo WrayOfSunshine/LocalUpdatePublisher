@@ -26,7 +26,7 @@ Partial Class RulesEditor
 	''' </summary>
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RulesEditor))
-		Dim dataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+		Dim dataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
 		Me.lbl_instructions = New System.Windows.Forms.Label
 		Me.btn_group = New System.Windows.Forms.Button
 		Me.btn_edit = New System.Windows.Forms.Button
@@ -46,30 +46,30 @@ Partial Class RulesEditor
 		'
 		'lbl_instructions
 		'
-		Me.lbl_instructions.CausesValidation = false
 		resources.ApplyResources(Me.lbl_instructions, "lbl_instructions")
+		Me.lbl_instructions.CausesValidation = false
 		Me.lbl_instructions.Name = "lbl_instructions"
 		'
 		'btn_group
 		'
-		Me.btn_group.CausesValidation = false
 		resources.ApplyResources(Me.btn_group, "btn_group")
+		Me.btn_group.CausesValidation = false
 		Me.btn_group.Name = "btn_group"
 		Me.btn_group.UseVisualStyleBackColor = true
 		AddHandler Me.btn_group.Click, AddressOf Me.btn_group_Click
 		'
 		'btn_edit
 		'
-		Me.btn_edit.CausesValidation = false
 		resources.ApplyResources(Me.btn_edit, "btn_edit")
+		Me.btn_edit.CausesValidation = false
 		Me.btn_edit.Name = "btn_edit"
 		Me.btn_edit.UseVisualStyleBackColor = true
 		AddHandler Me.btn_edit.Click, AddressOf Me.btn_edit_Click
 		'
 		'btn_remove
 		'
-		Me.btn_remove.CausesValidation = false
 		resources.ApplyResources(Me.btn_remove, "btn_remove")
+		Me.btn_remove.CausesValidation = false
 		Me.btn_remove.Name = "btn_remove"
 		Me.btn_remove.UseVisualStyleBackColor = true
 		AddHandler Me.btn_remove.Click, AddressOf Me.btn_remove_Click
@@ -82,14 +82,14 @@ Partial Class RulesEditor
 		Me.dgv_rules.CausesValidation = false
 		Me.dgv_rules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Rule, Me.XML})
-		dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-		dataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-		dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.dgv_rules.DefaultCellStyle = dataGridViewCellStyle2
+		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+		dataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+		dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.dgv_rules.DefaultCellStyle = dataGridViewCellStyle1
 		resources.ApplyResources(Me.dgv_rules, "dgv_rules")
 		Me.dgv_rules.Name = "dgv_rules"
 		Me.dgv_rules.ReadOnly = true
@@ -115,22 +115,22 @@ Partial Class RulesEditor
 		'
 		'btn_add
 		'
-		Me.btn_add.CausesValidation = false
 		resources.ApplyResources(Me.btn_add, "btn_add")
+		Me.btn_add.CausesValidation = false
 		Me.btn_add.Name = "btn_add"
 		Me.btn_add.UseVisualStyleBackColor = true
 		AddHandler Me.btn_add.Click, AddressOf Me.btn_add_Click
 		'
 		'lbl_title
 		'
-		Me.lbl_title.CausesValidation = false
 		resources.ApplyResources(Me.lbl_title, "lbl_title")
+		Me.lbl_title.CausesValidation = false
 		Me.lbl_title.Name = "lbl_title"
 		'
 		'lbl_xml
 		'
-		Me.lbl_xml.CausesValidation = false
 		resources.ApplyResources(Me.lbl_xml, "lbl_xml")
+		Me.lbl_xml.CausesValidation = false
 		Me.lbl_xml.Name = "lbl_xml"
 		'
 		'tb_xml
@@ -142,24 +142,24 @@ Partial Class RulesEditor
 		'
 		'btnSaveRules
 		'
-		Me.btnSaveRules.CausesValidation = false
 		resources.ApplyResources(Me.btnSaveRules, "btnSaveRules")
+		Me.btnSaveRules.CausesValidation = false
 		Me.btnSaveRules.Name = "btnSaveRules"
 		Me.btnSaveRules.UseVisualStyleBackColor = true
 		AddHandler Me.btnSaveRules.Click, AddressOf Me.BtnSaveRulesClick
 		'
 		'btnLoadRules
 		'
-		Me.btnLoadRules.CausesValidation = false
 		resources.ApplyResources(Me.btnLoadRules, "btnLoadRules")
+		Me.btnLoadRules.CausesValidation = false
 		Me.btnLoadRules.Name = "btnLoadRules"
 		Me.btnLoadRules.UseVisualStyleBackColor = true
 		AddHandler Me.btnLoadRules.Click, AddressOf Me.BtnLoadRulesClick
 		'
 		'btnEditInstallableItem
 		'
-		Me.btnEditInstallableItem.CausesValidation = false
 		resources.ApplyResources(Me.btnEditInstallableItem, "btnEditInstallableItem")
+		Me.btnEditInstallableItem.CausesValidation = false
 		Me.btnEditInstallableItem.Name = "btnEditInstallableItem"
 		Me.btnEditInstallableItem.UseVisualStyleBackColor = true
 		AddHandler Me.btnEditInstallableItem.Click, AddressOf Me.BtnEditInstallableItemClick

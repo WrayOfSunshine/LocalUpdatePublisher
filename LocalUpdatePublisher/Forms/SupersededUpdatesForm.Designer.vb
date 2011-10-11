@@ -41,14 +41,19 @@ Partial Class SupersededUpdatesForm
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtonsLeft = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtonsRight = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
+		Me.tlpButtonsLeft.SuspendLayout
+		Me.tlpButtonsRight.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnRemove
 		'
 		resources.ApplyResources(Me.btnRemove, "btnRemove")
+		Me.btnRemove.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnRemove.Name = "btnRemove"
 		Me.btnRemove.UseVisualStyleBackColor = true
 		AddHandler Me.btnRemove.Click, AddressOf Me.BtnRemoveClick
@@ -57,12 +62,14 @@ Partial Class SupersededUpdatesForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnAdd
 		'
 		resources.ApplyResources(Me.btnAdd, "btnAdd")
+		Me.btnAdd.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
@@ -77,7 +84,7 @@ Partial Class SupersededUpdatesForm
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Title})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvUpdates, 5)
+		Me.tlpMain.SetColumnSpan(Me.dgvUpdates, 2)
 		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
@@ -100,38 +107,57 @@ Partial Class SupersededUpdatesForm
 		'
 		resources.ApplyResources(Me.btnOk, "btnOk")
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOk.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOk.Name = "btnOk"
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvUpdates, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOk, 3, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnRemove, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnAdd, 1, 1)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpButtonsRight, 1, 1)
+		Me.tlpMain.Controls.Add(Me.dgvUpdates, 0, 0)
+		Me.tlpMain.Controls.Add(Me.tlpButtonsLeft, 0, 1)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpButtonsLeft
+		'
+		resources.ApplyResources(Me.tlpButtonsLeft, "tlpButtonsLeft")
+		Me.tlpButtonsLeft.Controls.Add(Me.btnRemove, 0, 0)
+		Me.tlpButtonsLeft.Controls.Add(Me.btnAdd, 1, 0)
+		Me.tlpButtonsLeft.Name = "tlpButtonsLeft"
+		'
+		'tlpButtonsRight
+		'
+		resources.ApplyResources(Me.tlpButtonsRight, "tlpButtonsRight")
+		Me.tlpButtonsRight.Controls.Add(Me.btnOk, 0, 0)
+		Me.tlpButtonsRight.Controls.Add(Me.btnCancel, 1, 0)
+		Me.tlpButtonsRight.Name = "tlpButtonsRight"
 		'
 		'SupersededUpdatesForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "SupersededUpdatesForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpButtonsLeft.ResumeLayout(false)
+		Me.tlpButtonsLeft.PerformLayout
+		Me.tlpButtonsRight.ResumeLayout(false)
+		Me.tlpButtonsRight.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtonsLeft As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtonsRight As System.Windows.Forms.TableLayoutPanel
 	Private btnOk As System.Windows.Forms.Button
 	Private btnCancel As System.Windows.Forms.Button
 	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn

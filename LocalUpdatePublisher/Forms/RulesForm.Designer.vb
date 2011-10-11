@@ -42,7 +42,7 @@ Partial Class RulesForm
 		Me.tlpFooter = New System.Windows.Forms.TableLayoutPanel
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button
-		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpRules = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpComparison = New System.Windows.Forms.TableLayoutPanel
 		Me.cboComparison = New System.Windows.Forms.ComboBox
 		Me.lblComparison = New System.Windows.Forms.Label
@@ -120,9 +120,10 @@ Partial Class RulesForm
 		Me.txtQuery = New System.Windows.Forms.TextBox
 		Me.lblQuery = New System.Windows.Forms.Label
 		Me.errorProviderRules = New System.Windows.Forms.ErrorProvider(Me.components)
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpHeader.SuspendLayout
 		Me.tlpFooter.SuspendLayout
-		Me.tlpMain.SuspendLayout
+		Me.tlpRules.SuspendLayout
 		Me.tlpComparison.SuspendLayout
 		Me.tlpOSVersion.SuspendLayout
 		Me.tlpServicePack.SuspendLayout
@@ -146,6 +147,7 @@ Partial Class RulesForm
 		Me.tlpMinVersion.SuspendLayout
 		Me.tlpQuery.SuspendLayout
 		CType(Me.errorProviderRules,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'tlpHeader
@@ -179,14 +181,15 @@ Partial Class RulesForm
 		'tlpFooter
 		'
 		resources.ApplyResources(Me.tlpFooter, "tlpFooter")
-		Me.tlpFooter.Controls.Add(Me.btnCancel, 4, 0)
-		Me.tlpFooter.Controls.Add(Me.btnAdd, 3, 0)
+		Me.tlpFooter.Controls.Add(Me.btnCancel, 1, 0)
+		Me.tlpFooter.Controls.Add(Me.btnAdd, 0, 0)
 		Me.tlpFooter.Name = "tlpFooter"
 		'
 		'btnCancel
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(85, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
@@ -194,38 +197,37 @@ Partial Class RulesForm
 		'
 		resources.ApplyResources(Me.btnAdd, "btnAdd")
 		Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnAdd.MinimumSize = New System.Drawing.Size(85, 25)
 		Me.btnAdd.Name = "btnAdd"
 		Me.btnAdd.UseVisualStyleBackColor = true
 		AddHandler Me.btnAdd.Click, AddressOf Me.BtnAddClick
 		'
-		'tlpMain
+		'tlpRules
 		'
-		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.tlpFooter, 0, 23)
-		Me.tlpMain.Controls.Add(Me.tlpHeader, 0, 0)
-		Me.tlpMain.Controls.Add(Me.tlpComparison, 0, 1)
-		Me.tlpMain.Controls.Add(Me.tlpOSVersion, 0, 2)
-		Me.tlpMain.Controls.Add(Me.tlpServicePack, 0, 3)
-		Me.tlpMain.Controls.Add(Me.tlpProductType, 0, 4)
-		Me.tlpMain.Controls.Add(Me.tlpLanguage, 0, 5)
-		Me.tlpMain.Controls.Add(Me.tlpProcessorType, 0, 6)
-		Me.tlpMain.Controls.Add(Me.tlpRegistryKey, 0, 7)
-		Me.tlpMain.Controls.Add(Me.tlpRegistryValue, 0, 8)
-		Me.tlpMain.Controls.Add(Me.tlpRegistryValueType, 0, 9)
-		Me.tlpMain.Controls.Add(Me.tlpEnvironmentVariable, 0, 10)
-		Me.tlpMain.Controls.Add(Me.tlpFilePath, 0, 11)
-		Me.tlpMain.Controls.Add(Me.tlpVersion, 0, 12)
-		Me.tlpMain.Controls.Add(Me.tlpData, 0, 13)
-		Me.tlpMain.Controls.Add(Me.tlpDate, 0, 14)
-		Me.tlpMain.Controls.Add(Me.tlpProductCode, 0, 16)
-		Me.tlpMain.Controls.Add(Me.tlpPatchCode, 0, 17)
-		Me.tlpMain.Controls.Add(Me.tlpMaxVersion, 0, 18)
-		Me.tlpMain.Controls.Add(Me.pnlFeatureCollection, 0, 22)
-		Me.tlpMain.Controls.Add(Me.pnlComponentCollection, 0, 21)
-		Me.tlpMain.Controls.Add(Me.pnlProductCollection, 0, 20)
-		Me.tlpMain.Controls.Add(Me.tlpMinVersion, 0, 19)
-		Me.tlpMain.Controls.Add(Me.tlpQuery, 0, 15)
-		Me.tlpMain.Name = "tlpMain"
+		resources.ApplyResources(Me.tlpRules, "tlpRules")
+		Me.tlpRules.Controls.Add(Me.tlpComparison, 0, 0)
+		Me.tlpRules.Controls.Add(Me.tlpOSVersion, 0, 1)
+		Me.tlpRules.Controls.Add(Me.tlpServicePack, 0, 2)
+		Me.tlpRules.Controls.Add(Me.tlpProductType, 0, 3)
+		Me.tlpRules.Controls.Add(Me.tlpLanguage, 0, 4)
+		Me.tlpRules.Controls.Add(Me.tlpProcessorType, 0, 5)
+		Me.tlpRules.Controls.Add(Me.tlpRegistryKey, 0, 6)
+		Me.tlpRules.Controls.Add(Me.tlpRegistryValue, 0, 7)
+		Me.tlpRules.Controls.Add(Me.tlpRegistryValueType, 0, 8)
+		Me.tlpRules.Controls.Add(Me.tlpEnvironmentVariable, 0, 9)
+		Me.tlpRules.Controls.Add(Me.tlpFilePath, 0, 10)
+		Me.tlpRules.Controls.Add(Me.tlpVersion, 0, 11)
+		Me.tlpRules.Controls.Add(Me.tlpData, 0, 12)
+		Me.tlpRules.Controls.Add(Me.tlpDate, 0, 13)
+		Me.tlpRules.Controls.Add(Me.tlpProductCode, 0, 15)
+		Me.tlpRules.Controls.Add(Me.tlpPatchCode, 0, 16)
+		Me.tlpRules.Controls.Add(Me.tlpMaxVersion, 0, 17)
+		Me.tlpRules.Controls.Add(Me.pnlFeatureCollection, 0, 21)
+		Me.tlpRules.Controls.Add(Me.pnlComponentCollection, 0, 20)
+		Me.tlpRules.Controls.Add(Me.pnlProductCollection, 0, 19)
+		Me.tlpRules.Controls.Add(Me.tlpMinVersion, 0, 18)
+		Me.tlpRules.Controls.Add(Me.tlpQuery, 0, 14)
+		Me.tlpRules.Name = "tlpRules"
 		'
 		'tlpComparison
 		'
@@ -738,6 +740,14 @@ Partial Class RulesForm
 		Me.errorProviderRules.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
 		Me.errorProviderRules.ContainerControl = Me
 		'
+		'tlpMain
+		'
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpHeader, 0, 0)
+		Me.tlpMain.Controls.Add(Me.tlpFooter, 0, 2)
+		Me.tlpMain.Controls.Add(Me.tlpRules, 0, 1)
+		Me.tlpMain.Name = "tlpMain"
+		'
 		'RulesForm
 		'
 		Me.AcceptButton = Me.btnAdd
@@ -755,8 +765,8 @@ Partial Class RulesForm
 		Me.tlpHeader.PerformLayout
 		Me.tlpFooter.ResumeLayout(false)
 		Me.tlpFooter.PerformLayout
-		Me.tlpMain.ResumeLayout(false)
-		Me.tlpMain.PerformLayout
+		Me.tlpRules.ResumeLayout(false)
+		Me.tlpRules.PerformLayout
 		Me.tlpComparison.ResumeLayout(false)
 		Me.tlpComparison.PerformLayout
 		Me.tlpOSVersion.ResumeLayout(false)
@@ -799,9 +809,13 @@ Partial Class RulesForm
 		Me.tlpQuery.ResumeLayout(false)
 		Me.tlpQuery.PerformLayout
 		CType(Me.errorProviderRules,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
+	Private tlpRules As System.Windows.Forms.TableLayoutPanel
 	Private tlpHeader As System.Windows.Forms.TableLayoutPanel
 	Private tlpFooter As System.Windows.Forms.TableLayoutPanel
 	Private tlpOSVersion As System.Windows.Forms.TableLayoutPanel
@@ -823,7 +837,6 @@ Partial Class RulesForm
 	Private tlpProcessorType As System.Windows.Forms.TableLayoutPanel
 	Private tlpLanguage As System.Windows.Forms.TableLayoutPanel
 	Private tlpProductType As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private errorProviderRules As System.Windows.Forms.ErrorProvider
 	Private chkComponentCollection_requireAll As System.Windows.Forms.CheckBox
 	Private lblComponentCollection As System.Windows.Forms.Label

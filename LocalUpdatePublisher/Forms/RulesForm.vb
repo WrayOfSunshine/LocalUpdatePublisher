@@ -51,7 +51,7 @@ Public Partial Class RulesForm
 		' loaded into the combobox.
 		_scalarComparison =  New String() {globalRM.GetString("equal_to"), globalRM.GetString("less_than"), globalRM.GetString("less_than_or_equal_to"), globalRM.GetString("greater_than"), globalRM.GetString("greater_than_or_equal_to")}
 		_stringComparison =  New String() {globalRM.GetString("begins_with"), globalRM.GetString("ends_with"), globalRM.GetString("contains"), globalRM.GetString("equal_to")}
-		_productTypes =  New String() {globalRM.GetString("none"), globalRM.GetString("workstation"), globalRM.GetString("domain_controller"), globalRM.GetString("server")}		
+		_productTypes =  New String() {globalRM.GetString("none"), globalRM.GetString("workstation"), globalRM.GetString("domain_controller"), globalRM.GetString("server")}
 		
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
@@ -140,7 +140,7 @@ Public Partial Class RulesForm
 			'Setup the panel based on the selection from the combobox.
 			Select Case Me.cboRuleType.SelectedIndex
 				Case RuleTypes.WindowsVersion
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpComparison"
 								
@@ -150,18 +150,18 @@ Public Partial Class RulesForm
 									'Me.cboComparison.SelectedIndex = -1
 									Me.cboComparison.Items.Clear
 									Me.cboComparison.Items.AddRange(_scalarComparison)
-								End If
+								End If								
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpOSVersion"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpServicePack"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + ( 2 * _spacingConstant )
+								'controlObject.Top = _startingYConstant + ( 2 * _spacingConstant )
 							Case "tlpData"
 								
 								controlObject.TabIndex = 4
@@ -174,95 +174,95 @@ Public Partial Class RulesForm
 								
 								Me.lblDataInfo.Hide
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "tlpProductType"
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.WindowsLanguage
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpLanguage"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.ProcessorArchitecture
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpProcessorType"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileExists
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpEnvironmentVariable"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpFilePath"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpVersion"
 								controlObject.TabIndex =3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileExistsWithRegistry
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpFilePath"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpVersion"
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileCreation
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpEnvironmentVariable"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpFilePath"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox
@@ -273,36 +273,36 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpDate"
 								controlObject.TabIndex = 4
 								Me.lblDate.Text = globalRM.GetString("creation_date") & ":"
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileCreationWithRegistry
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpFilePath"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -313,27 +313,27 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "tlpDate"
 								controlObject.TabIndex = 6
 								Me.lblDate.Text = globalRM.GetString("creation_date") & ":"
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileModified
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpEnvironmentVariable"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpFilePath"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -344,41 +344,41 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpDate"
 								controlObject.TabIndex = 4
 								Me.lblDate.Text = globalRM.GetString("modified_date") & ":"
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileModifiedWithRegistry
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpFilePath"
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -389,27 +389,27 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 6
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "tlpDate"
 								controlObject.TabIndex = 7
 								Me.lblDate.Text = globalRM.GetString("modified_date") & ":"
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileSize
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpEnvironmentVariable"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpFilePath"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -420,7 +420,7 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpData"
 								controlObject.TabIndex = 4
 								Me.txtData.Width = Me.txtVersion.Width
@@ -433,31 +433,31 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Text = globalRM.GetString("in_bytes_example")
 								Me.lblDataInfo.Show
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileSizeWithRegistry
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpFilePath"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -468,7 +468,7 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "tlpData"
 								controlObject.TabIndex = 6
 								Me.txtData.Width = Me.txtVersion.Width
@@ -481,22 +481,22 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Text = globalRM.GetString("in_bytes_example")
 								Me.lblDataInfo.Show
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileVersion
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpEnvironmentVariable"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpFilePath"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -507,35 +507,35 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpVersion"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.FileVersionWithRegistry
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpFilePath"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
 								' first element needed already exists in the combobox.
@@ -546,70 +546,70 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case "tlpVersion"
 								controlObject.TabIndex = 6
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistryKeyExists
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.cboRegistryKey.Left
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistryValueExists
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpRegistryValueType"
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistryDWORDValue
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
@@ -621,7 +621,7 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpData"
 								controlObject.TabIndex = 5
 								
@@ -633,26 +633,26 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistryExpandSzValue
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
@@ -664,7 +664,7 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpData"
 								controlObject.TabIndex = 5
 								If Not Me.lblData.Text = globalRM.GetString("string") & ":" Then
@@ -674,26 +674,26 @@ Public Partial Class RulesForm
 								Me.lblDataInfo.Hide
 								Me.txtData.Width = Me.txtFilePath.Width
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistryVersionInSz
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
@@ -705,30 +705,30 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpVersion"
 								controlObject.TabIndex = 5
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.RegistrySzValue
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpRegistryKey"
 								controlObject.TabIndex = 1
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpRegistryValue"
 								controlObject.TabIndex = 2
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 							Case "tlpRegistry32Bit"
 								controlObject.TabIndex = 3
 								controlObject.Show
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Left = Me.tlpRegistryValue.Left + Me.tlpRegistryValue.Width + 5
 							Case "tlpComparison"
 								'Only change if we need to by testing to see if the
@@ -740,7 +740,7 @@ Public Partial Class RulesForm
 								
 								controlObject.TabIndex = 4
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
 							Case "tlpData"
 								controlObject.TabIndex = 5
 								Me.txtData.Width = Me.txtFilePath.Width
@@ -752,13 +752,13 @@ Public Partial Class RulesForm
 								
 								Me.lblDataInfo.Hide
 								controlObject.Show
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
 							Case Else
 								controlObject.Hide
 						End Select
 					Next
 				Case RuleTypes.WMIQuery
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpData"
 								controlObject.TabIndex = 1
@@ -767,10 +767,10 @@ Public Partial Class RulesForm
 								Me.lblData.Text = globalRM.GetString("label_rules_WMI_namespace") & ":"
 								Me.lblDataInfo.Hide
 								controlObject.Show
-								controlObject.Top = _startingYConstant
+								'controlObject.Top = _startingYConstant
 							Case "tlpQuery"
 								controlObject.TabIndex = 2
-								controlObject.Top = _startingYConstant + _spacingConstant
+								'controlObject.Top = _startingYConstant + _spacingConstant
 								controlObject.Height = controlObject.Parent.Height - controlObject.Top - btnAdd.Height - _spacingConstant
 								controlObject.Show
 							Case Else
@@ -778,106 +778,106 @@ Public Partial Class RulesForm
 						End Select
 					Next
 				Case RuleTypes.MsiProductInstalled
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpProductCode"
 								controlObject.TabIndex = 1
-								controlObject.Top = _startingYConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant
+								controlObject.Show
 								Exit Select
 							Case "tlpMinVersion"
 								controlObject.TabIndex = 2
-								controlObject.Top = _startingYConstant + _spacingConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + _spacingConstant
+								controlObject.Show
 								Exit Select
 							Case "tlpMaxVersion"
 								controlObject.TabIndex = 3
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case "tlpLanguage"
 								controlObject.TabIndex = 4
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case Else
-								controlObject.Hide()
+								controlObject.Hide
 								Exit Select
 						End Select
 					Next
 				Case RuleTypes.MsiPatchInstalled
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "tlpProductCode"
 								controlObject.TabIndex = 1
-								controlObject.Top = _startingYConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant
+								controlObject.Show
 								Exit Select
 							Case "tlpPatchCode"
 								controlObject.TabIndex = 2
-								controlObject.Top = _startingYConstant + _spacingConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + _spacingConstant
+								controlObject.Show
 								Exit Select
 							Case "tlpMinVersion"
 								controlObject.TabIndex = 3
-								controlObject.Top = _startingYConstant + (2 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (2 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case "tlpMaxVersion"
 								controlObject.TabIndex = 4
-								controlObject.Top = _startingYConstant + (3 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (3 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case "tlpLanguage"
 								controlObject.TabIndex = 5
-								controlObject.Top = _startingYConstant + (4 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (4 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case Else
-								controlObject.Hide()
+								controlObject.Hide
 								Exit Select
 						End Select
 					Next
 				Case RuleTypes.MsiComponentInstalled
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCollection"
 								controlObject.TabIndex = 1
-								controlObject.Top = _startingYConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant
+								controlObject.Show
 								Exit Select
 							Case "pnlComponentCollection"
 								controlObject.TabIndex = 2
-								controlObject.Top = _startingYConstant + (5 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (5 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case Else
-								controlObject.Hide()
+								controlObject.Hide
 								Exit Select
 						End Select
 					Next
 				Case RuleTypes.MsiFeatureInstalled
-					For Each controlObject As Control In Me.tlpMain.Controls
+					For Each controlObject As Control In Me.tlpRules.Controls
 						Select Case controlObject.Name
 							Case "pnlProductCollection"
 								controlObject.TabIndex = 1
-								controlObject.Top = _startingYConstant
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant
+								controlObject.Show
 								Exit Select
 							Case "pnlFeatureCollection"
 								controlObject.TabIndex = 2
-								controlObject.Top = _startingYConstant + (5 * _spacingConstant)
-								controlObject.Show()
+								'controlObject.Top = _startingYConstant + (5 * _spacingConstant)
+								controlObject.Show
 								Exit Select
 							Case Else
-								controlObject.Hide()
+								controlObject.Hide
 								Exit Select
 						End Select
 					Next
 				Case Else
 					Msgbox(globalRM.GetString("error_rules_unsupported_type"))
-					For Each controlObject As Control In Me.tlpMain.Controls
-						If TypeOf controlObject Is Panel Then
+					For Each controlObject As Control In Me.tlpRules.Controls
+						If TypeOf controlObject Is Panel or TypeOf controlObject Is TableLayoutPanel Then
 							controlObject.Hide
 						End If
 					Next

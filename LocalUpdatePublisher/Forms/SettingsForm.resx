@@ -130,7 +130,7 @@
     <value>3, 3</value>
   </data>
   <data name="chkRememberTreeNode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 17</value>
+    <value>238, 17</value>
   </data>
   <data name="chkRememberTreeNode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -160,10 +160,10 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 97</value>
+    <value>161, 95</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 23</value>
+    <value>80, 25</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -193,7 +193,7 @@
     <value>3, 26</value>
   </data>
   <data name="chkReportRollup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 17</value>
+    <value>238, 17</value>
   </data>
   <data name="chkReportRollup.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -223,7 +223,7 @@
     <value>3, 49</value>
   </data>
   <data name="chkDemoteClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 17</value>
+    <value>238, 17</value>
   </data>
   <data name="chkDemoteClassification.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -256,7 +256,7 @@
     <value>3, 72</value>
   </data>
   <data name="chkHideOfficialUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 17</value>
+    <value>238, 17</value>
   </data>
   <data name="chkHideOfficialUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -295,7 +295,7 @@
     <value>6</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 123</value>
+    <value>244, 123</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -328,7 +328,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>418, 123</value>
+    <value>244, 123</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
