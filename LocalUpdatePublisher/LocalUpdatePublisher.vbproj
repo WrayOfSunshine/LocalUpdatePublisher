@@ -384,9 +384,6 @@
     <EmbeddedResource Include="Forms\UpdateForm.de.resx">
       <DependentUpon>UpdateForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateForm.en-US.resx">
-      <DependentUpon>UpdateForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.fr.resx">
       <DependentUpon>UpdateForm.vb</DependentUpon>
     </EmbeddedResource>
