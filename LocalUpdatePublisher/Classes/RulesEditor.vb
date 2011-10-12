@@ -17,12 +17,12 @@ Imports System.Xml
 
 Public Partial Class RulesEditor
 	Inherits UserControl
-'	Private _endAnd As String = "End And"
-'	Private _beginOr As String = "Begin Or"
-'	Private _endOr As String = "End Or"
-'	Private _addGroup As String = "Add Group"
-'	Private _removeAnd As String = "Remove And"
-'	Private _removeOr As String = "Remove Or"
+	'	Private _endAnd As String = "End And"
+	'	Private _beginOr As String = "Begin Or"
+	'	Private _endOr As String = "End Or"
+	'	Private _addGroup As String = "Add Group"
+	'	Private _removeAnd As String = "Remove And"
+	'	Private _removeOr As String = "Remove Or"
 	
 	Public Sub New()
 		InitializeComponent()
@@ -31,50 +31,50 @@ Public Partial Class RulesEditor
 	Private ReadOnly Property _Begin_And() As String
 		Get
 			Return globalRM.GetString("group_begin_and")
-		End Get		
+		End Get
 	End Property
 	
 	Private ReadOnly Property _End_And() As String
 		Get
 			Return globalRM.GetString("group_end_and")
-		End Get		
+		End Get
 	End Property
 	
 	Private ReadOnly Property _Begin_Or() As String
 		Get
 			Return globalRM.GetString("group_begin_or")
-		End Get		
+		End Get
 	End Property
 	
 	Private ReadOnly Property _End_Or() As String
 		Get
 			Return globalRM.GetString("group_end_or")
-		End Get		
+		End Get
 	End Property
 	
 	Private ReadOnly Property _Add_Group() As String
 		Get
 			Return globalRM.GetString("group")
-		End Get		
+		End Get
 	End Property
 	
 	Private ReadOnly Property _Remove_And() As String
 		Get
 			Return globalRM.GetString("group_remove_and")
-		End Get		
-	End Property	
+		End Get
+	End Property
 	
 	Private ReadOnly Property _Remove_Or() As String
 		Get
 			Return globalRM.GetString("group_remove_or")
-		End Get		
+		End Get
 	End Property
 	
 	#Region "Properties and Accessors"
 	
 	'Instructional text to appear at the top.
 	<Localizable(True)> _
-	Public Property Instructions() As String
+		Public Property Instructions() As String
 		Get
 			Return lbl_instructions.Text
 		End Get
@@ -85,7 +85,7 @@ Public Partial Class RulesEditor
 	
 	'Title of this rule builder.
 	<Localizable(True)> _
-	Public Property Title() As String
+		Public Property Title() As String
 		Get
 			Return lbl_title.Text
 		End Get
@@ -96,7 +96,7 @@ Public Partial Class RulesEditor
 	
 	'The title that goes under the main rule builder.
 	<Localizable(True)> _
-	Public Property TitleItemLevel() As String
+		Public Property TitleItemLevel() As String
 		Get
 			Return lbl_xml.Text
 		End Get
@@ -159,7 +159,7 @@ Public Partial Class RulesEditor
 	
 	Private _ruleEditorTitle As String
 	<Localizable(True)> _
-	Public Property RuleEditorTitle As String
+		Public Property RuleEditorTitle As String
 		Get
 			Return _ruleEditorTitle
 		End Get
@@ -570,6 +570,10 @@ Public Partial Class RulesEditor
 	'Clear all the rules.
 	Sub Clear
 		Me.dgv_rules.Rows.Clear
+	End Sub
+	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically( sender, e)
 	End Sub
 	
 	#End Region

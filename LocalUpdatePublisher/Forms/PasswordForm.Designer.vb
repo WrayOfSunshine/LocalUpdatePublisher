@@ -34,69 +34,80 @@ Partial Class PasswordForm
 	''' </summary>
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PasswordForm))
-		Dim secureString1 As System.Security.SecureString = New System.Security.SecureString
+		Dim secureString2 As System.Security.SecureString = New System.Security.SecureString
 		Me.lblPassword = New System.Windows.Forms.Label
 		Me.btnOK = New System.Windows.Forms.Button
 		Me.stbPassword = New LocalUpdatePublisher.SecureTextBox
 		Me.btnCancel = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtons = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain.SuspendLayout
+		Me.tlpButtons.SuspendLayout
 		Me.SuspendLayout
 		'
 		'lblPassword
 		'
 		resources.ApplyResources(Me.lblPassword, "lblPassword")
-		Me.tableLayoutPanel1.SetColumnSpan(Me.lblPassword, 4)
 		Me.lblPassword.Name = "lblPassword"
 		'
 		'btnOK
 		'
 		resources.ApplyResources(Me.btnOK, "btnOK")
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.UseVisualStyleBackColor = true
 		AddHandler Me.btnOK.Click, AddressOf Me.BtnOKClick
 		'
 		'stbPassword
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.stbPassword, 4)
 		resources.ApplyResources(Me.stbPassword, "stbPassword")
 		Me.stbPassword.Name = "stbPassword"
-		Me.stbPassword.SecureText = secureString1
+		Me.stbPassword.SecureText = secureString2
 		'
 		'btnCancel
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 2)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblPassword, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.stbPassword, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOK, 2, 2)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpButtons, 0, 2)
+		Me.tlpMain.Controls.Add(Me.lblPassword, 0, 0)
+		Me.tlpMain.Controls.Add(Me.stbPassword, 0, 1)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpButtons
+		'
+		resources.ApplyResources(Me.tlpButtons, "tlpButtons")
+		Me.tlpButtons.Controls.Add(Me.btnOK, 0, 0)
+		Me.tlpButtons.Controls.Add(Me.btnCancel, 1, 0)
+		Me.tlpButtons.Name = "tlpButtons"
 		'
 		'PasswordForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "PasswordForm"
 		Me.ShowInTaskbar = false
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpButtons.ResumeLayout(false)
+		Me.tlpButtons.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private btnCancel As System.Windows.Forms.Button
 	Private stbPassword As LocalUpdatePublisher.SecureTextBox
 	Private btnOK As System.Windows.Forms.Button

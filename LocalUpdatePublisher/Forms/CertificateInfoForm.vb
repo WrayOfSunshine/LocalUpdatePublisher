@@ -86,5 +86,8 @@ Public Partial Class CertificateInfoForm
 			Me.txtHash.Text = ConnectionManager.CurrentServerCertificate.GetCertHashString
 		End If
 	End Sub
-
+	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically( sender, e)
+	End Sub
 End Class

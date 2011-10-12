@@ -47,12 +47,13 @@ Partial Class ConnectionSettingsForm
 		Me.cboServers = New System.Windows.Forms.ComboBox
 		Me.lblServers = New System.Windows.Forms.Label
 		Me.btnDelete = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'chkSsl
 		'
+		Me.tlpMain.SetColumnSpan(Me.chkSsl, 2)
 		resources.ApplyResources(Me.chkSsl, "chkSsl")
 		Me.chkSsl.Name = "chkSsl"
 		Me.chkSsl.UseVisualStyleBackColor = true
@@ -61,6 +62,7 @@ Partial Class ConnectionSettingsForm
 		'lblLocalServer
 		'
 		resources.ApplyResources(Me.lblLocalServer, "lblLocalServer")
+		Me.tlpMain.SetColumnSpan(Me.lblLocalServer, 2)
 		Me.lblLocalServer.Name = "lblLocalServer"
 		'
 		'txtPort
@@ -75,7 +77,7 @@ Partial Class ConnectionSettingsForm
 		'
 		'txtName
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.txtName, 3)
+		Me.tlpMain.SetColumnSpan(Me.txtName, 2)
 		resources.ApplyResources(Me.txtName, "txtName")
 		Me.txtName.Name = "txtName"
 		'
@@ -88,6 +90,7 @@ Partial Class ConnectionSettingsForm
 		'
 		resources.ApplyResources(Me.btnConnect, "btnConnect")
 		Me.btnConnect.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnConnect.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnConnect.Name = "btnConnect"
 		Me.btnConnect.UseVisualStyleBackColor = true
 		AddHandler Me.btnConnect.Click, AddressOf Me.BtnConnectClick
@@ -96,12 +99,13 @@ Partial Class ConnectionSettingsForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'cboServers
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.cboServers, 4)
+		Me.tlpMain.SetColumnSpan(Me.cboServers, 4)
 		resources.ApplyResources(Me.cboServers, "cboServers")
 		Me.cboServers.FormattingEnabled = true
 		Me.cboServers.Name = "cboServers"
@@ -115,32 +119,33 @@ Partial Class ConnectionSettingsForm
 		'btnDelete
 		'
 		resources.ApplyResources(Me.btnDelete, "btnDelete")
+		Me.btnDelete.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnDelete.Name = "btnDelete"
 		Me.btnDelete.UseVisualStyleBackColor = true
 		AddHandler Me.btnDelete.Click, AddressOf Me.BtnDeleteClick
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblLocalServer, 4, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.cboServers, 1, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.txtName, 1, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnDelete, 3, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnConnect, 2, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.chkSsl, 3, 2)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblPort, 0, 2)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblName, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.txtPort, 1, 2)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblServers, 0, 0)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 3)
+		Me.tlpMain.Controls.Add(Me.lblLocalServer, 3, 1)
+		Me.tlpMain.Controls.Add(Me.cboServers, 1, 0)
+		Me.tlpMain.Controls.Add(Me.txtName, 1, 1)
+		Me.tlpMain.Controls.Add(Me.btnDelete, 3, 3)
+		Me.tlpMain.Controls.Add(Me.btnConnect, 2, 3)
+		Me.tlpMain.Controls.Add(Me.chkSsl, 3, 2)
+		Me.tlpMain.Controls.Add(Me.lblPort, 0, 2)
+		Me.tlpMain.Controls.Add(Me.lblName, 0, 1)
+		Me.tlpMain.Controls.Add(Me.txtPort, 1, 2)
+		Me.tlpMain.Controls.Add(Me.lblServers, 0, 0)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'ConnectionSettingsForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
@@ -148,12 +153,12 @@ Partial Class ConnectionSettingsForm
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private chkSsl As System.Windows.Forms.CheckBox
 	Private btnDelete As System.Windows.Forms.Button
 	Private lblServers As System.Windows.Forms.Label

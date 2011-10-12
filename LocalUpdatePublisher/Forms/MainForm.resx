@@ -183,11 +183,14 @@
   <data name="scHeader.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <data name="chkInheritApprovals.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="chkInheritApprovals.Location" type="System.Drawing.Point, System.Drawing">
     <value>530, 25</value>
   </data>
   <data name="chkInheritApprovals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 24</value>
+    <value>105, 17</value>
   </data>
   <data name="chkInheritApprovals.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -207,11 +210,14 @@
   <data name="&gt;&gt;chkInheritApprovals.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="chkApprovedOnly.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="chkApprovedOnly.Location" type="System.Drawing.Point, System.Drawing">
     <value>380, 27</value>
   </data>
   <data name="chkApprovedOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 21</value>
+    <value>139, 17</value>
   </data>
   <data name="chkApprovedOnly.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -231,6 +237,9 @@
   <data name="&gt;&gt;chkApprovedOnly.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblSelectedTargetGroupCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblSelectedTargetGroupCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11pt</value>
   </data>
@@ -238,7 +247,7 @@
     <value>241, 0</value>
   </data>
   <data name="lblSelectedTargetGroupCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 24</value>
+    <value>166, 18</value>
   </data>
   <data name="lblSelectedTargetGroupCount.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -261,6 +270,9 @@
   <data name="&gt;&gt;lblSelectedTargetGroupCount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lblSelectedTargetGroup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblSelectedTargetGroup.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -268,7 +280,7 @@
     <value>0, 1</value>
   </data>
   <data name="lblSelectedTargetGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 24</value>
+    <value>192, 20</value>
   </data>
   <data name="lblSelectedTargetGroup.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -315,11 +327,14 @@
   <data name="&gt;&gt;pnlHeaderTop.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblComputerStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblComputerStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 31</value>
   </data>
   <data name="lblComputerStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 15</value>
+    <value>37, 13</value>
   </data>
   <data name="lblComputerStatus.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -471,6 +486,12 @@
   <data name="&gt;&gt;splitContainerHorz.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tlpUpdateInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpUpdateInfo.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="tlpUpdateInfo.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -484,7 +505,7 @@
     <value>3, 357</value>
   </data>
   <data name="lblUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 27</value>
+    <value>87, 26</value>
   </data>
   <data name="lblUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -507,6 +528,12 @@
   <data name="&gt;&gt;lblUninstall.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tlpUpdateInfoUninstall.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpUpdateInfoUninstall.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="tlpUpdateInfoUninstall.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -514,10 +541,10 @@
     <value>Fill</value>
   </data>
   <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 3</value>
+    <value>226, 3</value>
   </data>
   <data name="txtNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+    <value>73, 20</value>
   </data>
   <data name="txtNetwork.TabIndex" type="System.Int32, mscorlib">
     <value>68</value>
@@ -541,7 +568,7 @@
     <value>3, 3</value>
   </data>
   <data name="txtUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+    <value>72, 20</value>
   </data>
   <data name="txtUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -565,13 +592,13 @@
     <value>Fill</value>
   </data>
   <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 0</value>
+    <value>128, 0</value>
   </data>
   <data name="lblNetwork.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>50, 0, 3, 0</value>
   </data>
   <data name="lblNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 21</value>
+    <value>92, 26</value>
   </data>
   <data name="lblNetwork.TabIndex" type="System.Int32, mscorlib">
     <value>67</value>
@@ -598,13 +625,16 @@
     <value>Fill</value>
   </data>
   <data name="tlpUpdateInfoUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 360</value>
+    <value>93, 357</value>
+  </data>
+  <data name="tlpUpdateInfoUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="tlpUpdateInfoUninstall.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tlpUpdateInfoUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 21</value>
+    <value>302, 26</value>
   </data>
   <data name="tlpUpdateInfoUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
@@ -655,10 +685,10 @@
     <value>Fill</value>
   </data>
   <data name="lblRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 384</value>
+    <value>3, 383</value>
   </data>
   <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 134</value>
+    <value>87, 26</value>
   </data>
   <data name="lblRebootBehavior.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -793,7 +823,7 @@
     <value>Fill</value>
   </data>
   <data name="txtRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 387</value>
+    <value>96, 386</value>
   </data>
   <data name="txtRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 20</value>
@@ -1015,7 +1045,7 @@
     <value>398, 357</value>
   </data>
   <data name="lblSupersedes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>548, 27</value>
+    <value>548, 26</value>
   </data>
   <data name="lblSupersedes.TabIndex" type="System.Int32, mscorlib">
     <value>63</value>
@@ -1048,10 +1078,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="lblReturnCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 384</value>
+    <value>398, 383</value>
   </data>
   <data name="lblReturnCodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>548, 134</value>
+    <value>548, 26</value>
   </data>
   <data name="lblReturnCodes.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -1536,11 +1566,14 @@
   <data name="tlpUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 28</value>
   </data>
+  <data name="tlpUpdateInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="tlpUpdateInfo.RowCount" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="tlpUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 518</value>
+    <value>949, 409</value>
   </data>
   <data name="tlpUpdateInfo.TabIndex" type="System.Int32, mscorlib">
     <value>69</value>
@@ -1594,7 +1627,7 @@
     <value>3, 3</value>
   </data>
   <data name="dgvUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>665, 445</value>
+    <value>1019, 643</value>
   </data>
   <data name="dgvUpdateStatus.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1618,7 +1651,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>671, 451</value>
+    <value>1025, 649</value>
   </data>
   <data name="tabUpdateStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1678,7 +1711,7 @@
     <value>7, 60</value>
   </data>
   <data name="dgvUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 383</value>
+    <value>1011, 581</value>
   </data>
   <data name="dgvUpdateReport.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1798,7 +1831,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>671, 451</value>
+    <value>1025, 649</value>
   </data>
   <data name="tabUpdateReport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2095,7 +2128,7 @@
     <value>3, 3</value>
   </data>
   <data name="dgvComputerGroupStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>665, 445</value>
+    <value>1019, 643</value>
   </data>
   <data name="dgvComputerGroupStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2119,7 +2152,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabComputerStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>671, 451</value>
+    <value>1025, 649</value>
   </data>
   <data name="tabComputerStatus.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2173,7 +2206,7 @@
     <value>7, 63</value>
   </data>
   <data name="dgvComputerReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 383</value>
+    <value>1011, 581</value>
   </data>
   <data name="dgvComputerReport.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2221,7 +2254,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabComputerReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>671, 451</value>
+    <value>1025, 649</value>
   </data>
   <data name="tabComputerReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2554,7 +2587,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 659</value>
+    <value>0, 915</value>
   </metadata>
   <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>598, 17</value>

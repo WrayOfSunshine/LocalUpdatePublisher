@@ -1654,7 +1654,7 @@
     <value>gceFeatureCollection</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Parent" xml:space="preserve">
     <value>pnlFeatureCollection</value>
@@ -1723,7 +1723,7 @@
     <value>gceComponentCollection</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Parent" xml:space="preserve">
     <value>pnlComponentCollection</value>
@@ -1792,7 +1792,7 @@
     <value>gceProductCollection</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Parent" xml:space="preserve">
     <value>pnlProductCollection</value>
@@ -2500,7 +2500,7 @@
     <value>287, 20</value>
   </data>
   <data name="chkRegistry32Bit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="chkRegistry32Bit.Text" xml:space="preserve">
     <value>32 Bit Registry</value>
@@ -2764,7 +2764,7 @@
     <value>1</value>
   </data>
   <data name="txtVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="txtVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>51, 3</value>
@@ -2773,7 +2773,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 20</value>
+    <value>185, 20</value>
   </data>
   <data name="txtVersion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3100,7 +3100,7 @@
     <value>1</value>
   </data>
   <data name="txtMaxVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="txtMaxVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 3</value>
@@ -3109,7 +3109,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 20</value>
+    <value>185, 20</value>
   </data>
   <data name="txtMaxVersion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3180,7 +3180,7 @@
     <value>gceFeatureCollection</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Parent" xml:space="preserve">
     <value>pnlFeatureCollection</value>
@@ -3260,7 +3260,7 @@
     <value>gceComponentCollection</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Parent" xml:space="preserve">
     <value>pnlComponentCollection</value>
@@ -3340,7 +3340,7 @@
     <value>gceProductCollection</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.26562, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.15101, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Parent" xml:space="preserve">
     <value>pnlProductCollection</value>
@@ -3433,7 +3433,7 @@
     <value>0</value>
   </data>
   <data name="txtMinVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="txtMinVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>95, 3</value>
@@ -3442,7 +3442,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtMinVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 20</value>
+    <value>185, 20</value>
   </data>
   <data name="txtMinVersion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3508,7 +3508,7 @@
     <value>Query</value>
   </data>
   <data name="lblQuery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;lblQuery.Name" xml:space="preserve">
     <value>lblQuery</value>
@@ -3541,7 +3541,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>588, 1004</value>
+    <value>588, 1005</value>
   </data>
   <data name="tlpMain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3562,7 +3562,7 @@
     <value>3</value>
   </data>
   <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>588, 1004</value>
+    <value>588, 1005</value>
   </data>
   <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
     <value>73</value>

@@ -41,19 +41,24 @@ Partial Class RulesEditor
 		Me.btnSaveRules = New System.Windows.Forms.Button
 		Me.btnLoadRules = New System.Windows.Forms.Button
 		Me.btnEditInstallableItem = New System.Windows.Forms.Button
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgv_rules,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'lbl_instructions
 		'
 		resources.ApplyResources(Me.lbl_instructions, "lbl_instructions")
 		Me.lbl_instructions.CausesValidation = false
+		Me.tlpMain.SetColumnSpan(Me.lbl_instructions, 5)
 		Me.lbl_instructions.Name = "lbl_instructions"
+		AddHandler Me.lbl_instructions.TextChanged, AddressOf Me.TextChanged
 		'
 		'btn_group
 		'
 		resources.ApplyResources(Me.btn_group, "btn_group")
 		Me.btn_group.CausesValidation = false
+		Me.btn_group.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_group.Name = "btn_group"
 		Me.btn_group.UseVisualStyleBackColor = true
 		AddHandler Me.btn_group.Click, AddressOf Me.btn_group_Click
@@ -62,6 +67,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btn_edit, "btn_edit")
 		Me.btn_edit.CausesValidation = false
+		Me.btn_edit.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_edit.Name = "btn_edit"
 		Me.btn_edit.UseVisualStyleBackColor = true
 		AddHandler Me.btn_edit.Click, AddressOf Me.btn_edit_Click
@@ -70,6 +76,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btn_remove, "btn_remove")
 		Me.btn_remove.CausesValidation = false
+		Me.btn_remove.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_remove.Name = "btn_remove"
 		Me.btn_remove.UseVisualStyleBackColor = true
 		AddHandler Me.btn_remove.Click, AddressOf Me.btn_remove_Click
@@ -82,6 +89,7 @@ Partial Class RulesEditor
 		Me.dgv_rules.CausesValidation = false
 		Me.dgv_rules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Rule, Me.XML})
+		Me.tlpMain.SetColumnSpan(Me.dgv_rules, 5)
 		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
 		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
 		dataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -117,6 +125,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btn_add, "btn_add")
 		Me.btn_add.CausesValidation = false
+		Me.btn_add.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_add.Name = "btn_add"
 		Me.btn_add.UseVisualStyleBackColor = true
 		AddHandler Me.btn_add.Click, AddressOf Me.btn_add_Click
@@ -125,6 +134,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.lbl_title, "lbl_title")
 		Me.lbl_title.CausesValidation = false
+		Me.tlpMain.SetColumnSpan(Me.lbl_title, 3)
 		Me.lbl_title.Name = "lbl_title"
 		'
 		'lbl_xml
@@ -136,6 +146,7 @@ Partial Class RulesEditor
 		'tb_xml
 		'
 		Me.tb_xml.CausesValidation = false
+		Me.tlpMain.SetColumnSpan(Me.tb_xml, 5)
 		resources.ApplyResources(Me.tb_xml, "tb_xml")
 		Me.tb_xml.Name = "tb_xml"
 		Me.tb_xml.ReadOnly = true
@@ -144,6 +155,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btnSaveRules, "btnSaveRules")
 		Me.btnSaveRules.CausesValidation = false
+		Me.btnSaveRules.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnSaveRules.Name = "btnSaveRules"
 		Me.btnSaveRules.UseVisualStyleBackColor = true
 		AddHandler Me.btnSaveRules.Click, AddressOf Me.BtnSaveRulesClick
@@ -152,6 +164,7 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btnLoadRules, "btnLoadRules")
 		Me.btnLoadRules.CausesValidation = false
+		Me.btnLoadRules.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnLoadRules.Name = "btnLoadRules"
 		Me.btnLoadRules.UseVisualStyleBackColor = true
 		AddHandler Me.btnLoadRules.Click, AddressOf Me.BtnLoadRulesClick
@@ -160,32 +173,42 @@ Partial Class RulesEditor
 		'
 		resources.ApplyResources(Me.btnEditInstallableItem, "btnEditInstallableItem")
 		Me.btnEditInstallableItem.CausesValidation = false
+		Me.btnEditInstallableItem.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnEditInstallableItem.Name = "btnEditInstallableItem"
 		Me.btnEditInstallableItem.UseVisualStyleBackColor = true
 		AddHandler Me.btnEditInstallableItem.Click, AddressOf Me.BtnEditInstallableItemClick
+		'
+		'tlpMain
+		'
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.lbl_instructions, 0, 0)
+		Me.tlpMain.Controls.Add(Me.btnEditInstallableItem, 4, 4)
+		Me.tlpMain.Controls.Add(Me.tb_xml, 0, 5)
+		Me.tlpMain.Controls.Add(Me.lbl_title, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btn_group, 2, 3)
+		Me.tlpMain.Controls.Add(Me.btnSaveRules, 3, 1)
+		Me.tlpMain.Controls.Add(Me.btn_edit, 3, 3)
+		Me.tlpMain.Controls.Add(Me.btnLoadRules, 4, 1)
+		Me.tlpMain.Controls.Add(Me.btn_remove, 4, 3)
+		Me.tlpMain.Controls.Add(Me.dgv_rules, 0, 2)
+		Me.tlpMain.Controls.Add(Me.btn_add, 0, 3)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'RulesEditor
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CausesValidation = false
-		Me.Controls.Add(Me.btnEditInstallableItem)
-		Me.Controls.Add(Me.btnSaveRules)
-		Me.Controls.Add(Me.btnLoadRules)
-		Me.Controls.Add(Me.btn_group)
-		Me.Controls.Add(Me.btn_edit)
-		Me.Controls.Add(Me.btn_remove)
-		Me.Controls.Add(Me.dgv_rules)
-		Me.Controls.Add(Me.btn_add)
-		Me.Controls.Add(Me.lbl_title)
+		Me.Controls.Add(Me.tlpMain)
 		Me.Controls.Add(Me.lbl_xml)
-		Me.Controls.Add(Me.tb_xml)
-		Me.Controls.Add(Me.lbl_instructions)
 		Me.Name = "RulesEditor"
 		CType(Me.dgv_rules,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private Rule As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private RuleCol As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private XML As System.Windows.Forms.DataGridViewTextBoxColumn

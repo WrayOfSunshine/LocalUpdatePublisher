@@ -38,21 +38,23 @@ Partial Class MessageBoxForm
 		Me.btnOne = New System.Windows.Forms.Button
 		Me.btnTwo = New System.Windows.Forms.Button
 		Me.btnThree = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtons = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain.SuspendLayout
+		Me.tlpButtons.SuspendLayout
 		Me.SuspendLayout
 		'
 		'lblText
 		'
 		resources.ApplyResources(Me.lblText, "lblText")
-		Me.tableLayoutPanel1.SetColumnSpan(Me.lblText, 5)
 		Me.lblText.Name = "lblText"
-		AddHandler Me.lblText.TextChanged, AddressOf CustomResize.ResizeVertically
+		AddHandler Me.lblText.TextChanged, AddressOf Me.TextChanged
 		'
 		'btnOne
 		'
 		resources.ApplyResources(Me.btnOne, "btnOne")
 		Me.btnOne.DialogResult = System.Windows.Forms.DialogResult.Yes
+		Me.btnOne.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOne.Name = "btnOne"
 		Me.btnOne.UseVisualStyleBackColor = true
 		AddHandler Me.btnOne.Click, AddressOf Me.BtnOneClick
@@ -61,6 +63,7 @@ Partial Class MessageBoxForm
 		'
 		resources.ApplyResources(Me.btnTwo, "btnTwo")
 		Me.btnTwo.DialogResult = System.Windows.Forms.DialogResult.No
+		Me.btnTwo.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnTwo.Name = "btnTwo"
 		Me.btnTwo.UseVisualStyleBackColor = true
 		AddHandler Me.btnTwo.Click, AddressOf Me.BtnTwoClick
@@ -69,36 +72,46 @@ Partial Class MessageBoxForm
 		'
 		resources.ApplyResources(Me.btnThree, "btnThree")
 		Me.btnThree.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnThree.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnThree.Name = "btnThree"
 		Me.btnThree.UseVisualStyleBackColor = true
 		AddHandler Me.btnThree.Click, AddressOf Me.BtnThreeClick
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnThree, 4, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblText, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOne, 2, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnTwo, 3, 1)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpButtons, 0, 1)
+		Me.tlpMain.Controls.Add(Me.lblText, 0, 0)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpButtons
+		'
+		resources.ApplyResources(Me.tlpButtons, "tlpButtons")
+		Me.tlpButtons.Controls.Add(Me.btnOne, 0, 0)
+		Me.tlpButtons.Controls.Add(Me.btnThree, 2, 0)
+		Me.tlpButtons.Controls.Add(Me.btnTwo, 1, 0)
+		Me.tlpButtons.Name = "tlpButtons"
 		'
 		'MessageBoxForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnThree
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "MessageBoxForm"
 		Me.ShowInTaskbar = false
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpButtons.ResumeLayout(false)
+		Me.tlpButtons.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private btnThree As System.Windows.Forms.Button
 	Private btnTwo As System.Windows.Forms.Button
 	Private btnOne As System.Windows.Forms.Button

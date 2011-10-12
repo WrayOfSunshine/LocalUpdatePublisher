@@ -42,9 +42,9 @@ Partial Class ApprovalProgressForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.btnPause = New System.Windows.Forms.Button
 		Me.lblProgress = New System.Windows.Forms.Label
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'dgvProgress
@@ -52,7 +52,7 @@ Partial Class ApprovalProgressForm
 		Me.dgvProgress.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvProgress.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Action, Me.Result})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvProgress, 5)
+		Me.tlpMain.SetColumnSpan(Me.dgvProgress, 5)
 		resources.ApplyResources(Me.dgvProgress, "dgvProgress")
 		Me.dgvProgress.Name = "dgvProgress"
 		Me.dgvProgress.RowHeadersVisible = false
@@ -71,7 +71,7 @@ Partial Class ApprovalProgressForm
 		'
 		'pbUpdateApprovals
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.pbUpdateApprovals, 5)
+		Me.tlpMain.SetColumnSpan(Me.pbUpdateApprovals, 5)
 		resources.ApplyResources(Me.pbUpdateApprovals, "pbUpdateApprovals")
 		Me.pbUpdateApprovals.ForeColor = System.Drawing.Color.SeaGreen
 		Me.pbUpdateApprovals.Name = "pbUpdateApprovals"
@@ -80,6 +80,7 @@ Partial Class ApprovalProgressForm
 		'
 		resources.ApplyResources(Me.btnClose, "btnClose")
 		Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnClose.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnClose.Name = "btnClose"
 		Me.btnClose.UseVisualStyleBackColor = true
 		'
@@ -87,12 +88,14 @@ Partial Class ApprovalProgressForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'btnPause
 		'
 		resources.ApplyResources(Me.btnPause, "btnPause")
+		Me.btnPause.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnPause.Name = "btnPause"
 		Me.btnPause.UseVisualStyleBackColor = true
 		AddHandler Me.btnPause.Click, AddressOf Me.BtnPauseClick
@@ -100,36 +103,36 @@ Partial Class ApprovalProgressForm
 		'lblProgress
 		'
 		resources.ApplyResources(Me.lblProgress, "lblProgress")
-		Me.tableLayoutPanel1.SetColumnSpan(Me.lblProgress, 5)
+		Me.tlpMain.SetColumnSpan(Me.lblProgress, 5)
 		Me.lblProgress.Name = "lblProgress"
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnPause, 2, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblProgress, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.pbUpdateApprovals, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnClose, 4, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvProgress, 0, 2)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.btnPause, 2, 3)
+		Me.tlpMain.Controls.Add(Me.lblProgress, 0, 0)
+		Me.tlpMain.Controls.Add(Me.btnCancel, 3, 3)
+		Me.tlpMain.Controls.Add(Me.pbUpdateApprovals, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btnClose, 4, 3)
+		Me.tlpMain.Controls.Add(Me.dgvProgress, 0, 2)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'ApprovalProgressForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnClose
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalProgressForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private pbUpdateApprovals As System.Windows.Forms.ProgressBar
 	Private dgvProgress As System.Windows.Forms.DataGridView
 	Private lblProgress As System.Windows.Forms.Label

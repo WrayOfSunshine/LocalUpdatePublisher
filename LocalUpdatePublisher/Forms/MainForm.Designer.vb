@@ -51,41 +51,43 @@ Partial Class MainForm
 		Me.pnlUpdates = New System.Windows.Forms.Panel
 		Me.tabMainUpdates = New System.Windows.Forms.TabControl
 		Me.tabUpdateInfo = New System.Windows.Forms.TabPage
-		Me.lblNetwork = New System.Windows.Forms.Label
-		Me.txtNetwork = New System.Windows.Forms.TextBox
+		Me.tlpUpdateInfo = New System.Windows.Forms.TableLayoutPanel
 		Me.txtPackageType = New System.Windows.Forms.TextBox
-		Me.lblPackageType = New System.Windows.Forms.Label
-		Me.lblPrerequisites = New System.Windows.Forms.Label
-		Me.lblSupersedes = New System.Windows.Forms.Label
-		Me.lblReturnCodes = New System.Windows.Forms.Label
-		Me.lblUninstall = New System.Windows.Forms.Label
-		Me.txtUninstall = New System.Windows.Forms.TextBox
 		Me.txtImpact = New System.Windows.Forms.TextBox
 		Me.txtPackage = New System.Windows.Forms.TextBox
-		Me.lblID = New System.Windows.Forms.Label
 		Me.txtProduct = New System.Windows.Forms.TextBox
 		Me.txtDescription = New System.Windows.Forms.TextBox
-		Me.lblImpact = New System.Windows.Forms.Label
 		Me.txtPackageTitle = New System.Windows.Forms.TextBox
 		Me.txtVendor = New System.Windows.Forms.TextBox
-		Me.lblDescription = New System.Windows.Forms.Label
-		Me.lblRebootBehavior = New System.Windows.Forms.Label
-		Me.lblPackageTitle = New System.Windows.Forms.Label
 		Me.txtClassification = New System.Windows.Forms.TextBox
 		Me.txtRebootBehavior = New System.Windows.Forms.TextBox
 		Me.txtServerity = New System.Windows.Forms.TextBox
 		Me.txtArticleID = New System.Windows.Forms.TextBox
 		Me.txtBulletinID = New System.Windows.Forms.TextBox
-		Me.lblMoreInfoURL = New System.Windows.Forms.Label
 		Me.txtCVEID = New System.Windows.Forms.TextBox
-		Me.lblArticleID = New System.Windows.Forms.Label
 		Me.txtMoreInfoURL = New System.Windows.Forms.TextBox
-		Me.lblProduct = New System.Windows.Forms.Label
-		Me.lblCVEID = New System.Windows.Forms.Label
-		Me.lblVendor = New System.Windows.Forms.Label
+		Me.lblUninstall = New System.Windows.Forms.Label
+		Me.tlpUpdateInfoUninstall = New System.Windows.Forms.TableLayoutPanel
+		Me.txtNetwork = New System.Windows.Forms.TextBox
+		Me.txtUninstall = New System.Windows.Forms.TextBox
+		Me.lblNetwork = New System.Windows.Forms.Label
+		Me.lblRebootBehavior = New System.Windows.Forms.Label
+		Me.lblPackageType = New System.Windows.Forms.Label
+		Me.lblID = New System.Windows.Forms.Label
+		Me.lblPrerequisites = New System.Windows.Forms.Label
+		Me.lblSupersedes = New System.Windows.Forms.Label
+		Me.lblReturnCodes = New System.Windows.Forms.Label
+		Me.lblPackageTitle = New System.Windows.Forms.Label
+		Me.lblDescription = New System.Windows.Forms.Label
+		Me.lblImpact = New System.Windows.Forms.Label
+		Me.lblMoreInfoURL = New System.Windows.Forms.Label
 		Me.lblSeverity = New System.Windows.Forms.Label
-		Me.lblBullitinID = New System.Windows.Forms.Label
+		Me.lblCVEID = New System.Windows.Forms.Label
 		Me.lblClassification = New System.Windows.Forms.Label
+		Me.lblBullitinID = New System.Windows.Forms.Label
+		Me.lblVendor = New System.Windows.Forms.Label
+		Me.lblArticleID = New System.Windows.Forms.Label
+		Me.lblProduct = New System.Windows.Forms.Label
 		Me.tabUpdateStatus = New System.Windows.Forms.TabPage
 		Me.dgvUpdateStatus = New System.Windows.Forms.DataGridView
 		Me.tabUpdateReport = New System.Windows.Forms.TabPage
@@ -146,8 +148,6 @@ Partial Class MainForm
 		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.tlpUpdateInfo = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpUpdateInfoUninstall = New System.Windows.Forms.TableLayoutPanel
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
 		Me.splitContainerVert.SuspendLayout
@@ -162,6 +162,8 @@ Partial Class MainForm
 		Me.pnlUpdates.SuspendLayout
 		Me.tabMainUpdates.SuspendLayout
 		Me.tabUpdateInfo.SuspendLayout
+		Me.tlpUpdateInfo.SuspendLayout
+		Me.tlpUpdateInfoUninstall.SuspendLayout
 		Me.tabUpdateStatus.SuspendLayout
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabUpdateReport.SuspendLayout
@@ -176,8 +178,6 @@ Partial Class MainForm
 		Me.menuStrip.SuspendLayout
 		Me.statusStrip.SuspendLayout
 		Me.cmCreateCategoryUpdate.SuspendLayout
-		Me.tlpUpdateInfo.SuspendLayout
-		Me.tlpUpdateInfoUninstall.SuspendLayout
 		Me.SuspendLayout
 		'
 		'splitContainerVert
@@ -336,16 +336,43 @@ Partial Class MainForm
 		Me.tabUpdateInfo.Name = "tabUpdateInfo"
 		Me.tabUpdateInfo.UseVisualStyleBackColor = true
 		'
-		'lblNetwork
+		'tlpUpdateInfo
 		'
-		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
-		Me.lblNetwork.Name = "lblNetwork"
-		'
-		'txtNetwork
-		'
-		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
-		Me.txtNetwork.Name = "txtNetwork"
-		Me.txtNetwork.ReadOnly = true
+		resources.ApplyResources(Me.tlpUpdateInfo, "tlpUpdateInfo")
+		Me.tlpUpdateInfo.Controls.Add(Me.lblUninstall, 0, 13)
+		Me.tlpUpdateInfo.Controls.Add(Me.tlpUpdateInfoUninstall, 1, 13)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtPackageType, 1, 0)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblRebootBehavior, 0, 14)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtPackage, 1, 1)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblPackageType, 0, 0)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtPackageTitle, 1, 2)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtDescription, 1, 3)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtRebootBehavior, 1, 14)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtImpact, 1, 12)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtClassification, 1, 4)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtVendor, 1, 6)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtBulletinID, 1, 5)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblID, 0, 1)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblPrerequisites, 3, 12)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtProduct, 1, 7)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblSupersedes, 3, 13)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblReturnCodes, 3, 14)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblPackageTitle, 0, 2)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblDescription, 0, 3)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblImpact, 0, 12)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblMoreInfoURL, 0, 11)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblSeverity, 0, 10)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblCVEID, 0, 9)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblClassification, 0, 4)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblBullitinID, 0, 5)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblVendor, 0, 6)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblArticleID, 0, 8)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtArticleID, 1, 8)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtServerity, 1, 10)
+		Me.tlpUpdateInfo.Controls.Add(Me.lblProduct, 0, 7)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtCVEID, 1, 9)
+		Me.tlpUpdateInfo.Controls.Add(Me.txtMoreInfoURL, 1, 11)
+		Me.tlpUpdateInfo.Name = "tlpUpdateInfo"
 		'
 		'txtPackageType
 		'
@@ -353,42 +380,6 @@ Partial Class MainForm
 		resources.ApplyResources(Me.txtPackageType, "txtPackageType")
 		Me.txtPackageType.Name = "txtPackageType"
 		Me.txtPackageType.ReadOnly = true
-		'
-		'lblPackageType
-		'
-		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
-		Me.lblPackageType.Name = "lblPackageType"
-		'
-		'lblPrerequisites
-		'
-		resources.ApplyResources(Me.lblPrerequisites, "lblPrerequisites")
-		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblPrerequisites.Name = "lblPrerequisites"
-		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
-		'
-		'lblSupersedes
-		'
-		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
-		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblSupersedes.Name = "lblSupersedes"
-		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
-		'
-		'lblReturnCodes
-		'
-		resources.ApplyResources(Me.lblReturnCodes, "lblReturnCodes")
-		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.lblReturnCodes.Name = "lblReturnCodes"
-		'
-		'lblUninstall
-		'
-		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
-		Me.lblUninstall.Name = "lblUninstall"
-		'
-		'txtUninstall
-		'
-		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
-		Me.txtUninstall.Name = "txtUninstall"
-		Me.txtUninstall.ReadOnly = true
 		'
 		'txtImpact
 		'
@@ -404,11 +395,6 @@ Partial Class MainForm
 		Me.txtPackage.Name = "txtPackage"
 		Me.txtPackage.ReadOnly = true
 		'
-		'lblID
-		'
-		resources.ApplyResources(Me.lblID, "lblID")
-		Me.lblID.Name = "lblID"
-		'
 		'txtProduct
 		'
 		Me.tlpUpdateInfo.SetColumnSpan(Me.txtProduct, 3)
@@ -423,11 +409,6 @@ Partial Class MainForm
 		Me.txtDescription.Name = "txtDescription"
 		Me.txtDescription.ReadOnly = true
 		'
-		'lblImpact
-		'
-		resources.ApplyResources(Me.lblImpact, "lblImpact")
-		Me.lblImpact.Name = "lblImpact"
-		'
 		'txtPackageTitle
 		'
 		Me.tlpUpdateInfo.SetColumnSpan(Me.txtPackageTitle, 3)
@@ -441,21 +422,6 @@ Partial Class MainForm
 		resources.ApplyResources(Me.txtVendor, "txtVendor")
 		Me.txtVendor.Name = "txtVendor"
 		Me.txtVendor.ReadOnly = true
-		'
-		'lblDescription
-		'
-		resources.ApplyResources(Me.lblDescription, "lblDescription")
-		Me.lblDescription.Name = "lblDescription"
-		'
-		'lblRebootBehavior
-		'
-		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
-		Me.lblRebootBehavior.Name = "lblRebootBehavior"
-		'
-		'lblPackageTitle
-		'
-		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
-		Me.lblPackageTitle.Name = "lblPackageTitle"
 		'
 		'txtClassification
 		'
@@ -492,22 +458,12 @@ Partial Class MainForm
 		Me.txtBulletinID.Name = "txtBulletinID"
 		Me.txtBulletinID.ReadOnly = true
 		'
-		'lblMoreInfoURL
-		'
-		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
-		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
-		'
 		'txtCVEID
 		'
 		Me.tlpUpdateInfo.SetColumnSpan(Me.txtCVEID, 3)
 		resources.ApplyResources(Me.txtCVEID, "txtCVEID")
 		Me.txtCVEID.Name = "txtCVEID"
 		Me.txtCVEID.ReadOnly = true
-		'
-		'lblArticleID
-		'
-		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
-		Me.lblArticleID.Name = "lblArticleID"
 		'
 		'txtMoreInfoURL
 		'
@@ -516,35 +472,126 @@ Partial Class MainForm
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
 		Me.txtMoreInfoURL.ReadOnly = true
 		'
-		'lblProduct
+		'lblUninstall
 		'
-		resources.ApplyResources(Me.lblProduct, "lblProduct")
-		Me.lblProduct.Name = "lblProduct"
+		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
+		Me.lblUninstall.Name = "lblUninstall"
 		'
-		'lblCVEID
+		'tlpUpdateInfoUninstall
 		'
-		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
-		Me.lblCVEID.Name = "lblCVEID"
+		resources.ApplyResources(Me.tlpUpdateInfoUninstall, "tlpUpdateInfoUninstall")
+		Me.tlpUpdateInfo.SetColumnSpan(Me.tlpUpdateInfoUninstall, 2)
+		Me.tlpUpdateInfoUninstall.Controls.Add(Me.txtNetwork, 2, 0)
+		Me.tlpUpdateInfoUninstall.Controls.Add(Me.txtUninstall, 0, 0)
+		Me.tlpUpdateInfoUninstall.Controls.Add(Me.lblNetwork, 1, 0)
+		Me.tlpUpdateInfoUninstall.Name = "tlpUpdateInfoUninstall"
 		'
-		'lblVendor
+		'txtNetwork
 		'
-		resources.ApplyResources(Me.lblVendor, "lblVendor")
-		Me.lblVendor.Name = "lblVendor"
+		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
+		Me.txtNetwork.Name = "txtNetwork"
+		Me.txtNetwork.ReadOnly = true
+		'
+		'txtUninstall
+		'
+		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
+		Me.txtUninstall.Name = "txtUninstall"
+		Me.txtUninstall.ReadOnly = true
+		'
+		'lblNetwork
+		'
+		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
+		Me.lblNetwork.Name = "lblNetwork"
+		'
+		'lblRebootBehavior
+		'
+		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
+		Me.lblRebootBehavior.Name = "lblRebootBehavior"
+		'
+		'lblPackageType
+		'
+		resources.ApplyResources(Me.lblPackageType, "lblPackageType")
+		Me.lblPackageType.Name = "lblPackageType"
+		'
+		'lblID
+		'
+		resources.ApplyResources(Me.lblID, "lblID")
+		Me.lblID.Name = "lblID"
+		'
+		'lblPrerequisites
+		'
+		resources.ApplyResources(Me.lblPrerequisites, "lblPrerequisites")
+		Me.lblPrerequisites.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.lblPrerequisites.Name = "lblPrerequisites"
+		AddHandler Me.lblPrerequisites.Click, AddressOf Me.LblPrerequisitesClick
+		'
+		'lblSupersedes
+		'
+		resources.ApplyResources(Me.lblSupersedes, "lblSupersedes")
+		Me.lblSupersedes.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.lblSupersedes.Name = "lblSupersedes"
+		AddHandler Me.lblSupersedes.Click, AddressOf Me.LblSupersedesClick
+		'
+		'lblReturnCodes
+		'
+		resources.ApplyResources(Me.lblReturnCodes, "lblReturnCodes")
+		Me.lblReturnCodes.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.lblReturnCodes.Name = "lblReturnCodes"
+		'
+		'lblPackageTitle
+		'
+		resources.ApplyResources(Me.lblPackageTitle, "lblPackageTitle")
+		Me.lblPackageTitle.Name = "lblPackageTitle"
+		'
+		'lblDescription
+		'
+		resources.ApplyResources(Me.lblDescription, "lblDescription")
+		Me.lblDescription.Name = "lblDescription"
+		'
+		'lblImpact
+		'
+		resources.ApplyResources(Me.lblImpact, "lblImpact")
+		Me.lblImpact.Name = "lblImpact"
+		'
+		'lblMoreInfoURL
+		'
+		resources.ApplyResources(Me.lblMoreInfoURL, "lblMoreInfoURL")
+		Me.lblMoreInfoURL.Name = "lblMoreInfoURL"
 		'
 		'lblSeverity
 		'
 		resources.ApplyResources(Me.lblSeverity, "lblSeverity")
 		Me.lblSeverity.Name = "lblSeverity"
 		'
-		'lblBullitinID
+		'lblCVEID
 		'
-		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
-		Me.lblBullitinID.Name = "lblBullitinID"
+		resources.ApplyResources(Me.lblCVEID, "lblCVEID")
+		Me.lblCVEID.Name = "lblCVEID"
 		'
 		'lblClassification
 		'
 		resources.ApplyResources(Me.lblClassification, "lblClassification")
 		Me.lblClassification.Name = "lblClassification"
+		'
+		'lblBullitinID
+		'
+		resources.ApplyResources(Me.lblBullitinID, "lblBullitinID")
+		Me.lblBullitinID.Name = "lblBullitinID"
+		'
+		'lblVendor
+		'
+		resources.ApplyResources(Me.lblVendor, "lblVendor")
+		Me.lblVendor.Name = "lblVendor"
+		'
+		'lblArticleID
+		'
+		resources.ApplyResources(Me.lblArticleID, "lblArticleID")
+		Me.lblArticleID.Name = "lblArticleID"
+		'
+		'lblProduct
+		'
+		resources.ApplyResources(Me.lblProduct, "lblProduct")
+		Me.lblProduct.Name = "lblProduct"
 		'
 		'tabUpdateStatus
 		'
@@ -975,53 +1022,6 @@ Partial Class MainForm
 		resources.ApplyResources(Me.createCategoryUpdateToolStripMenuItem, "createCategoryUpdateToolStripMenuItem")
 		AddHandler Me.createCategoryUpdateToolStripMenuItem.Click, AddressOf Me.CreateCategoryUpdateToolStripMenuItemClick
 		'
-		'tlpUpdateInfo
-		'
-		resources.ApplyResources(Me.tlpUpdateInfo, "tlpUpdateInfo")
-		Me.tlpUpdateInfo.Controls.Add(Me.lblUninstall, 0, 13)
-		Me.tlpUpdateInfo.Controls.Add(Me.tlpUpdateInfoUninstall, 1, 13)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtPackageType, 1, 0)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblRebootBehavior, 0, 14)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtPackage, 1, 1)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblPackageType, 0, 0)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtPackageTitle, 1, 2)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtDescription, 1, 3)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtRebootBehavior, 1, 14)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtImpact, 1, 12)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtClassification, 1, 4)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtVendor, 1, 6)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtBulletinID, 1, 5)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblID, 0, 1)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblPrerequisites, 3, 12)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtProduct, 1, 7)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblSupersedes, 3, 13)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblReturnCodes, 3, 14)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblPackageTitle, 0, 2)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblDescription, 0, 3)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblImpact, 0, 12)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblMoreInfoURL, 0, 11)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblSeverity, 0, 10)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblCVEID, 0, 9)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblClassification, 0, 4)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblBullitinID, 0, 5)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblVendor, 0, 6)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblArticleID, 0, 8)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtArticleID, 1, 8)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtServerity, 1, 10)
-		Me.tlpUpdateInfo.Controls.Add(Me.lblProduct, 0, 7)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtCVEID, 1, 9)
-		Me.tlpUpdateInfo.Controls.Add(Me.txtMoreInfoURL, 1, 11)
-		Me.tlpUpdateInfo.Name = "tlpUpdateInfo"
-		'
-		'tlpUpdateInfoUninstall
-		'
-		resources.ApplyResources(Me.tlpUpdateInfoUninstall, "tlpUpdateInfoUninstall")
-		Me.tlpUpdateInfo.SetColumnSpan(Me.tlpUpdateInfoUninstall, 2)
-		Me.tlpUpdateInfoUninstall.Controls.Add(Me.txtNetwork, 2, 0)
-		Me.tlpUpdateInfoUninstall.Controls.Add(Me.txtUninstall, 0, 0)
-		Me.tlpUpdateInfoUninstall.Controls.Add(Me.lblNetwork, 1, 0)
-		Me.tlpUpdateInfoUninstall.Name = "tlpUpdateInfoUninstall"
-		'
 		'MainForm
 		'
 		resources.ApplyResources(Me, "$this")
@@ -1045,10 +1045,16 @@ Partial Class MainForm
 		Me.scHeader.Panel2.ResumeLayout(false)
 		Me.scHeader.ResumeLayout(false)
 		Me.pnlHeaderTop.ResumeLayout(false)
+		Me.pnlHeaderTop.PerformLayout
 		CType(Me._dgvMain,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlUpdates.ResumeLayout(false)
 		Me.tabMainUpdates.ResumeLayout(false)
 		Me.tabUpdateInfo.ResumeLayout(false)
+		Me.tabUpdateInfo.PerformLayout
+		Me.tlpUpdateInfo.ResumeLayout(false)
+		Me.tlpUpdateInfo.PerformLayout
+		Me.tlpUpdateInfoUninstall.ResumeLayout(false)
+		Me.tlpUpdateInfoUninstall.PerformLayout
 		Me.tabUpdateStatus.ResumeLayout(false)
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabUpdateReport.ResumeLayout(false)
@@ -1067,10 +1073,6 @@ Partial Class MainForm
 		Me.statusStrip.ResumeLayout(false)
 		Me.statusStrip.PerformLayout
 		Me.cmCreateCategoryUpdate.ResumeLayout(false)
-		Me.tlpUpdateInfo.ResumeLayout(false)
-		Me.tlpUpdateInfo.PerformLayout
-		Me.tlpUpdateInfoUninstall.ResumeLayout(false)
-		Me.tlpUpdateInfoUninstall.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub

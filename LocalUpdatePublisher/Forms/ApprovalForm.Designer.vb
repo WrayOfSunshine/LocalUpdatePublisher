@@ -51,15 +51,15 @@ Partial Class ApprovalForm
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.lblUninstallable = New System.Windows.Forms.Label
 		Me.btnReload = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.cntxtMenuStrip.SuspendLayout
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'lblInfo
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.lblInfo, 4)
+		Me.tlpMain.SetColumnSpan(Me.lblInfo, 4)
 		resources.ApplyResources(Me.lblInfo, "lblInfo")
 		Me.lblInfo.Name = "lblInfo"
 		'
@@ -69,7 +69,7 @@ Partial Class ApprovalForm
 		Me.dgvApprovals.AllowUserToDeleteRows = false
 		Me.dgvApprovals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.Approval, Me.Deadline, Me.CreationDate, Me.ApprovalAction, Me.TargetGroup})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvApprovals, 4)
+		Me.tlpMain.SetColumnSpan(Me.dgvApprovals, 4)
 		resources.ApplyResources(Me.dgvApprovals, "dgvApprovals")
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.RowHeadersVisible = false
@@ -145,6 +145,7 @@ Partial Class ApprovalForm
 		'
 		resources.ApplyResources(Me.btnOK, "btnOK")
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.UseVisualStyleBackColor = true
 		AddHandler Me.btnOK.Click, AddressOf Me.btnOKClick
@@ -153,39 +154,41 @@ Partial Class ApprovalForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'lblUninstallable
 		'
-		Me.tableLayoutPanel1.SetColumnSpan(Me.lblUninstallable, 4)
+		Me.tlpMain.SetColumnSpan(Me.lblUninstallable, 4)
 		resources.ApplyResources(Me.lblUninstallable, "lblUninstallable")
 		Me.lblUninstallable.Name = "lblUninstallable"
 		'
 		'btnReload
 		'
 		resources.ApplyResources(Me.btnReload, "btnReload")
+		Me.btnReload.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnReload.Name = "btnReload"
 		Me.btnReload.UseVisualStyleBackColor = true
 		AddHandler Me.btnReload.Click, AddressOf Me.BtnReloadClick
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOK, 2, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnReload, 0, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvApprovals, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblInfo, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.lblUninstallable, 0, 2)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.btnCancel, 3, 3)
+		Me.tlpMain.Controls.Add(Me.btnOK, 2, 3)
+		Me.tlpMain.Controls.Add(Me.btnReload, 0, 3)
+		Me.tlpMain.Controls.Add(Me.dgvApprovals, 0, 1)
+		Me.tlpMain.Controls.Add(Me.lblInfo, 0, 0)
+		Me.tlpMain.Controls.Add(Me.lblUninstallable, 0, 2)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'ApprovalForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false
@@ -193,12 +196,12 @@ Partial Class ApprovalForm
 		AddHandler FormClosed, AddressOf Me.UpdateApprovalFormFormClosed
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).EndInit
 		Me.cntxtMenuStrip.ResumeLayout(false)
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private Deadline As LocalUpdatePublisher.CalendarColumn
 	Private CreationDate As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btnOK As System.Windows.Forms.Button

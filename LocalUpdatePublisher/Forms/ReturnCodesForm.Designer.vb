@@ -47,10 +47,10 @@ Partial Class ReturnCodesForm
 		Me.failedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.succeededToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.cancelledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.contextMenuCodeType.SuspendLayout
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'dgvReturnCodes
@@ -61,7 +61,7 @@ Partial Class ReturnCodesForm
 		Me.dgvReturnCodes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvReturnCodes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvReturnCodes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Result, Me.ReturnCode, Me.Reboot, Me.Description})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvReturnCodes, 4)
+		Me.tlpMain.SetColumnSpan(Me.dgvReturnCodes, 4)
 		resources.ApplyResources(Me.dgvReturnCodes, "dgvReturnCodes")
 		Me.dgvReturnCodes.MultiSelect = false
 		Me.dgvReturnCodes.Name = "dgvReturnCodes"
@@ -99,6 +99,7 @@ Partial Class ReturnCodesForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
@@ -106,6 +107,7 @@ Partial Class ReturnCodesForm
 		'
 		resources.ApplyResources(Me.btnOk, "btnOk")
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOk.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOk.Name = "btnOk"
 		Me.btnOk.UseVisualStyleBackColor = true
 		AddHandler Me.btnOk.Click, AddressOf Me.BtnOkClick
@@ -113,6 +115,7 @@ Partial Class ReturnCodesForm
 		'btnDelete
 		'
 		resources.ApplyResources(Me.btnDelete, "btnDelete")
+		Me.btnDelete.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnDelete.Name = "btnDelete"
 		Me.btnDelete.UseVisualStyleBackColor = true
 		AddHandler Me.btnDelete.Click, AddressOf Me.BtnDeleteClick
@@ -138,14 +141,14 @@ Partial Class ReturnCodesForm
 		Me.cancelledToolStripMenuItem.Name = "cancelledToolStripMenuItem"
 		resources.ApplyResources(Me.cancelledToolStripMenuItem, "cancelledToolStripMenuItem")
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvReturnCodes, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnDelete, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 3, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOk, 2, 1)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.dgvReturnCodes, 0, 0)
+		Me.tlpMain.Controls.Add(Me.btnDelete, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btnCancel, 3, 1)
+		Me.tlpMain.Controls.Add(Me.btnOk, 2, 1)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'ReturnCodesForm
 		'
@@ -153,7 +156,7 @@ Partial Class ReturnCodesForm
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
@@ -161,12 +164,12 @@ Partial Class ReturnCodesForm
 		Me.ShowInTaskbar = false
 		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).EndInit
 		Me.contextMenuCodeType.ResumeLayout(false)
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private Reboot As System.Windows.Forms.DataGridViewCheckBoxColumn
 	Private ReturnCode As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private Description As System.Windows.Forms.DataGridViewTextBoxColumn

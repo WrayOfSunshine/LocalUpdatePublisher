@@ -40,14 +40,15 @@ Partial Class LanguageSelectionForm
 		Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.Language = New System.Windows.Forms.DataGridViewComboBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvLanguages,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnRemove
 		'
 		resources.ApplyResources(Me.btnRemove, "btnRemove")
+		Me.btnRemove.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnRemove.Name = "btnRemove"
 		Me.btnRemove.UseVisualStyleBackColor = true
 		AddHandler Me.btnRemove.Click, AddressOf Me.BtnRemoveClick
@@ -56,6 +57,7 @@ Partial Class LanguageSelectionForm
 		'
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
@@ -67,7 +69,7 @@ Partial Class LanguageSelectionForm
 		Me.dgvLanguages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvLanguages.ColumnHeadersVisible = false
 		Me.dgvLanguages.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Language})
-		Me.tableLayoutPanel1.SetColumnSpan(Me.dgvLanguages, 5)
+		Me.tlpMain.SetColumnSpan(Me.dgvLanguages, 5)
 		resources.ApplyResources(Me.dgvLanguages, "dgvLanguages")
 		Me.dgvLanguages.Name = "dgvLanguages"
 		Me.dgvLanguages.RowHeadersVisible = false
@@ -90,36 +92,37 @@ Partial Class LanguageSelectionForm
 		'
 		resources.ApplyResources(Me.btnOk, "btnOk")
 		Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOk.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOk.Name = "btnOk"
 		Me.btnOk.UseVisualStyleBackColor = true
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.dgvLanguages, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 4, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnOk, 3, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnRemove, 0, 1)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.dgvLanguages, 0, 0)
+		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 1)
+		Me.tlpMain.Controls.Add(Me.btnOk, 3, 1)
+		Me.tlpMain.Controls.Add(Me.btnRemove, 0, 1)
+		Me.tlpMain.Name = "tlpMain"
 		'
 		'LanguageSelectionForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnCancel
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "LanguageSelectionForm"
 		Me.ShowInTaskbar = false
 		CType(Me.dgvLanguages,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private dgvLanguages As System.Windows.Forms.DataGridView
 	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn
 	Private btnOk As System.Windows.Forms.Button

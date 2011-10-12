@@ -130,7 +130,7 @@
     <value>3, 26</value>
   </data>
   <data name="lblSubject.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 25</value>
+    <value>73, 26</value>
   </data>
   <data name="lblSubject.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -148,7 +148,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSubject.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblSubject.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -160,10 +160,10 @@
     <value>Fill</value>
   </data>
   <data name="lblIssuer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 51</value>
+    <value>3, 52</value>
   </data>
   <data name="lblIssuer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 25</value>
+    <value>73, 26</value>
   </data>
   <data name="lblIssuer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -181,7 +181,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblIssuer.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblIssuer.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -193,10 +193,10 @@
     <value>Fill</value>
   </data>
   <data name="lblEffectiveDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 76</value>
+    <value>3, 78</value>
   </data>
   <data name="lblEffectiveDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 25</value>
+    <value>73, 26</value>
   </data>
   <data name="lblEffectiveDates.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -214,7 +214,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblEffectiveDates.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblEffectiveDates.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -226,10 +226,10 @@
     <value>Fill</value>
   </data>
   <data name="lblSerial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 101</value>
+    <value>3, 104</value>
   </data>
   <data name="lblSerial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 25</value>
+    <value>73, 26</value>
   </data>
   <data name="lblSerial.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -247,7 +247,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSerial.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblSerial.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -259,10 +259,10 @@
     <value>Fill</value>
   </data>
   <data name="lblHash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 126</value>
+    <value>3, 130</value>
   </data>
   <data name="lblHash.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 25</value>
+    <value>73, 26</value>
   </data>
   <data name="lblHash.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -280,34 +280,34 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblHash.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblHash.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="tableLayoutPanelMain.AutoSize" type="System.Boolean, mscorlib">
+  <data name="tlpMain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tableLayoutPanelMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="tlpMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="tableLayoutPanelMain.ColumnCount" type="System.Int32, mscorlib">
+  <data name="tlpMain.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="tlpButtonsLeft.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tableLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="tlpButtonsLeft.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+  <data name="tlpButtonsLeft.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="btnExportImportCert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnExportImportCert.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
-  </data>
-  <data name="btnExportImportCert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="btnExportImportCert.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -316,7 +316,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnExportImportCert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 25</value>
+    <value>97, 25</value>
   </data>
   <data name="btnExportImportCert.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -331,25 +331,25 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnExportImportCert.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>tlpButtonsLeft</value>
   </data>
   <data name="&gt;&gt;btnExportImportCert.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCreateCert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnCreateCert.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="btnCreateCert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="btnCreateCert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 0</value>
+    <value>98, 0</value>
   </data>
   <data name="btnCreateCert.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnCreateCert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 25</value>
+    <value>98, 25</value>
   </data>
   <data name="btnCreateCert.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -364,42 +364,42 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCreateCert.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>tlpButtonsLeft</value>
   </data>
   <data name="&gt;&gt;btnCreateCert.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tlpButtonsLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 151</value>
+  <data name="tlpButtonsLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 156</value>
   </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tlpButtonsLeft.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+  <data name="tlpButtonsLeft.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 25</value>
+  <data name="tlpButtonsLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 25</value>
   </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="tlpButtonsLeft.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="&gt;&gt;tlpButtonsLeft.Name" xml:space="preserve">
+    <value>tlpButtonsLeft</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tlpButtonsLeft.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+  <data name="&gt;&gt;tlpButtonsLeft.Parent" xml:space="preserve">
+    <value>tlpMain</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tlpButtonsLeft.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+  <data name="tlpButtonsLeft.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnExportImportCert" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnCreateCert" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="txtCertInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -424,7 +424,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtCertInfo.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtCertInfo.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -436,13 +436,13 @@
     <value>Fill</value>
   </data>
   <data name="lblTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 76</value>
+    <value>279, 78</value>
   </data>
   <data name="lblTo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 25</value>
+    <value>20, 26</value>
   </data>
   <data name="lblTo.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -460,7 +460,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTo.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;lblTo.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -469,10 +469,10 @@
     <value>Fill</value>
   </data>
   <data name="txtEndDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>351, 79</value>
+    <value>302, 81</value>
   </data>
   <data name="txtEndDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 20</value>
+    <value>244, 20</value>
   </data>
   <data name="txtEndDate.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -484,7 +484,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtEndDate.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtEndDate.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -493,7 +493,7 @@
     <value>Fill</value>
   </data>
   <data name="txtStartDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 79</value>
+    <value>82, 81</value>
   </data>
   <data name="txtStartDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 20</value>
@@ -508,7 +508,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtStartDate.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtStartDate.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -517,10 +517,10 @@
     <value>Fill</value>
   </data>
   <data name="txtHash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 129</value>
+    <value>82, 133</value>
   </data>
   <data name="txtHash.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
+    <value>464, 20</value>
   </data>
   <data name="txtHash.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -532,7 +532,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtHash.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtHash.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -541,10 +541,10 @@
     <value>Fill</value>
   </data>
   <data name="txtSerial.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 104</value>
+    <value>82, 107</value>
   </data>
   <data name="txtSerial.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
+    <value>464, 20</value>
   </data>
   <data name="txtSerial.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -556,7 +556,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtSerial.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtSerial.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -565,10 +565,10 @@
     <value>Fill</value>
   </data>
   <data name="txtIssuer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 54</value>
+    <value>82, 55</value>
   </data>
   <data name="txtIssuer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
+    <value>464, 20</value>
   </data>
   <data name="txtIssuer.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -580,25 +580,28 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtIssuer.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtIssuer.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="btnOK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnOK.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="btnOK.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 151</value>
+    <value>469, 156</value>
   </data>
   <data name="btnOK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 25</value>
+    <value>80, 25</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -613,49 +616,49 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="tableLayoutPanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tableLayoutPanelMain.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tlpMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="tableLayoutPanelMain.RowCount" type="System.Int32, mscorlib">
+  <data name="tlpMain.RowCount" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="tableLayoutPanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 176</value>
+  <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>549, 181</value>
   </data>
-  <data name="tableLayoutPanelMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelMain.Name" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+  <data name="&gt;&gt;tlpMain.Name" xml:space="preserve">
+    <value>tlpMain</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;tlpMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tlpMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanelMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tlpMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanelMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel1" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="txtCertInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="lblTo" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtEndDate" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lblSubject" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtStartDate" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblIssuer" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblEffectiveDates" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSubject" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtHash" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblSerial" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSerial" Row="4" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtIssuer" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblHash" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnOK" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,18.24818,Percent,36.49635,Percent,8.759125,Percent,36.49635" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpButtonsLeft" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="txtCertInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="lblTo" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtEndDate" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lblSubject" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtStartDate" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblIssuer" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblEffectiveDates" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSubject" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtHash" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblSerial" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSerial" Row="4" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtIssuer" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblHash" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnOK" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="txtSubject.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="txtSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 29</value>
+    <value>82, 29</value>
   </data>
   <data name="txtSubject.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
+    <value>464, 20</value>
   </data>
   <data name="txtSubject.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -667,7 +670,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtSubject.Parent" xml:space="preserve">
-    <value>tableLayoutPanelMain</value>
+    <value>tlpMain</value>
   </data>
   <data name="&gt;&gt;txtSubject.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -700,7 +703,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>549, 176</value>
+    <value>549, 181</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

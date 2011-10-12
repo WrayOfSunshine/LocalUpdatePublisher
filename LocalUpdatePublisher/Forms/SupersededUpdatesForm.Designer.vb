@@ -42,12 +42,8 @@ Partial Class SupersededUpdatesForm
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpButtonsLeft = New System.Windows.Forms.TableLayoutPanel
-		Me.tlpButtonsRight = New System.Windows.Forms.TableLayoutPanel
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
-		Me.tlpButtonsLeft.SuspendLayout
-		Me.tlpButtonsRight.SuspendLayout
 		Me.SuspendLayout
 		'
 		'btnRemove
@@ -84,7 +80,7 @@ Partial Class SupersededUpdatesForm
 		Me.dgvUpdates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvUpdates.ColumnHeadersVisible = false
 		Me.dgvUpdates.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Title})
-		Me.tlpMain.SetColumnSpan(Me.dgvUpdates, 2)
+		Me.tlpMain.SetColumnSpan(Me.dgvUpdates, 5)
 		resources.ApplyResources(Me.dgvUpdates, "dgvUpdates")
 		Me.dgvUpdates.Name = "dgvUpdates"
 		Me.dgvUpdates.ReadOnly = true
@@ -115,24 +111,12 @@ Partial Class SupersededUpdatesForm
 		'tlpMain
 		'
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.tlpButtonsRight, 1, 1)
+		Me.tlpMain.Controls.Add(Me.btnRemove, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btnAdd, 1, 1)
+		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 1)
 		Me.tlpMain.Controls.Add(Me.dgvUpdates, 0, 0)
-		Me.tlpMain.Controls.Add(Me.tlpButtonsLeft, 0, 1)
+		Me.tlpMain.Controls.Add(Me.btnOk, 3, 1)
 		Me.tlpMain.Name = "tlpMain"
-		'
-		'tlpButtonsLeft
-		'
-		resources.ApplyResources(Me.tlpButtonsLeft, "tlpButtonsLeft")
-		Me.tlpButtonsLeft.Controls.Add(Me.btnRemove, 0, 0)
-		Me.tlpButtonsLeft.Controls.Add(Me.btnAdd, 1, 0)
-		Me.tlpButtonsLeft.Name = "tlpButtonsLeft"
-		'
-		'tlpButtonsRight
-		'
-		resources.ApplyResources(Me.tlpButtonsRight, "tlpButtonsRight")
-		Me.tlpButtonsRight.Controls.Add(Me.btnOk, 0, 0)
-		Me.tlpButtonsRight.Controls.Add(Me.btnCancel, 1, 0)
-		Me.tlpButtonsRight.Name = "tlpButtonsRight"
 		'
 		'SupersededUpdatesForm
 		'
@@ -148,16 +132,10 @@ Partial Class SupersededUpdatesForm
 		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
-		Me.tlpButtonsLeft.ResumeLayout(false)
-		Me.tlpButtonsLeft.PerformLayout
-		Me.tlpButtonsRight.ResumeLayout(false)
-		Me.tlpButtonsRight.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private tlpButtonsLeft As System.Windows.Forms.TableLayoutPanel
-	Private tlpButtonsRight As System.Windows.Forms.TableLayoutPanel
 	Private btnOk As System.Windows.Forms.Button
 	Private btnCancel As System.Windows.Forms.Button
 	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn
