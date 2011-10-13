@@ -77,4 +77,7 @@
     <value>An übergeordneten Server berichten.</value>
     <comment>xxx</comment>
   </data>
+  <data name="lblCulture.Text">
+    <value>Kultur</value>
+  </data>
 </root>

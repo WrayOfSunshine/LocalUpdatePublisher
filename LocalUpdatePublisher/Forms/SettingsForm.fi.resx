@@ -82,4 +82,7 @@
     <value>Rollup loppupään asiakkaille.</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblCulture.Text">
+    <value>Kulttuuri</value>
+  </data>
 </root>

@@ -76,4 +76,7 @@
   <data name="chkReportRollup.Text">
     <value>Rollup downstream clients.</value>
   </data>
+  <data name="lblCulture.Text">
+    <value>Culture</value>
+  </data>
 </root>

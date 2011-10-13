@@ -48,6 +48,8 @@ Partial Class RulesEditor
 		'
 		'lbl_instructions
 		'
+		Me.lbl_instructions.AccessibleDescription = Nothing
+		Me.lbl_instructions.AccessibleName = Nothing
 		resources.ApplyResources(Me.lbl_instructions, "lbl_instructions")
 		Me.lbl_instructions.CausesValidation = false
 		Me.tlpMain.SetColumnSpan(Me.lbl_instructions, 5)
@@ -56,8 +58,12 @@ Partial Class RulesEditor
 		'
 		'btn_group
 		'
+		Me.btn_group.AccessibleDescription = Nothing
+		Me.btn_group.AccessibleName = Nothing
 		resources.ApplyResources(Me.btn_group, "btn_group")
+		Me.btn_group.BackgroundImage = Nothing
 		Me.btn_group.CausesValidation = false
+		Me.btn_group.Font = Nothing
 		Me.btn_group.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_group.Name = "btn_group"
 		Me.btn_group.UseVisualStyleBackColor = true
@@ -65,8 +71,12 @@ Partial Class RulesEditor
 		'
 		'btn_edit
 		'
+		Me.btn_edit.AccessibleDescription = Nothing
+		Me.btn_edit.AccessibleName = Nothing
 		resources.ApplyResources(Me.btn_edit, "btn_edit")
+		Me.btn_edit.BackgroundImage = Nothing
 		Me.btn_edit.CausesValidation = false
+		Me.btn_edit.Font = Nothing
 		Me.btn_edit.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_edit.Name = "btn_edit"
 		Me.btn_edit.UseVisualStyleBackColor = true
@@ -74,8 +84,12 @@ Partial Class RulesEditor
 		'
 		'btn_remove
 		'
+		Me.btn_remove.AccessibleDescription = Nothing
+		Me.btn_remove.AccessibleName = Nothing
 		resources.ApplyResources(Me.btn_remove, "btn_remove")
+		Me.btn_remove.BackgroundImage = Nothing
 		Me.btn_remove.CausesValidation = false
+		Me.btn_remove.Font = Nothing
 		Me.btn_remove.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_remove.Name = "btn_remove"
 		Me.btn_remove.UseVisualStyleBackColor = true
@@ -83,9 +97,13 @@ Partial Class RulesEditor
 		'
 		'dgv_rules
 		'
+		Me.dgv_rules.AccessibleDescription = Nothing
+		Me.dgv_rules.AccessibleName = Nothing
 		Me.dgv_rules.AllowUserToAddRows = false
 		Me.dgv_rules.AllowUserToDeleteRows = false
+		resources.ApplyResources(Me.dgv_rules, "dgv_rules")
 		Me.dgv_rules.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+		Me.dgv_rules.BackgroundImage = Nothing
 		Me.dgv_rules.CausesValidation = false
 		Me.dgv_rules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgv_rules.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Rule, Me.XML})
@@ -98,7 +116,7 @@ Partial Class RulesEditor
 		dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
 		dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
 		Me.dgv_rules.DefaultCellStyle = dataGridViewCellStyle1
-		resources.ApplyResources(Me.dgv_rules, "dgv_rules")
+		Me.dgv_rules.Font = Nothing
 		Me.dgv_rules.Name = "dgv_rules"
 		Me.dgv_rules.ReadOnly = true
 		Me.dgv_rules.RowHeadersVisible = false
@@ -123,8 +141,12 @@ Partial Class RulesEditor
 		'
 		'btn_add
 		'
+		Me.btn_add.AccessibleDescription = Nothing
+		Me.btn_add.AccessibleName = Nothing
 		resources.ApplyResources(Me.btn_add, "btn_add")
+		Me.btn_add.BackgroundImage = Nothing
 		Me.btn_add.CausesValidation = false
+		Me.btn_add.Font = Nothing
 		Me.btn_add.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btn_add.Name = "btn_add"
 		Me.btn_add.UseVisualStyleBackColor = true
@@ -132,6 +154,8 @@ Partial Class RulesEditor
 		'
 		'lbl_title
 		'
+		Me.lbl_title.AccessibleDescription = Nothing
+		Me.lbl_title.AccessibleName = Nothing
 		resources.ApplyResources(Me.lbl_title, "lbl_title")
 		Me.lbl_title.CausesValidation = false
 		Me.tlpMain.SetColumnSpan(Me.lbl_title, 3)
@@ -139,22 +163,32 @@ Partial Class RulesEditor
 		'
 		'lbl_xml
 		'
+		Me.lbl_xml.AccessibleDescription = Nothing
+		Me.lbl_xml.AccessibleName = Nothing
 		resources.ApplyResources(Me.lbl_xml, "lbl_xml")
 		Me.lbl_xml.CausesValidation = false
 		Me.lbl_xml.Name = "lbl_xml"
 		'
 		'tb_xml
 		'
+		Me.tb_xml.AccessibleDescription = Nothing
+		Me.tb_xml.AccessibleName = Nothing
+		resources.ApplyResources(Me.tb_xml, "tb_xml")
+		Me.tb_xml.BackgroundImage = Nothing
 		Me.tb_xml.CausesValidation = false
 		Me.tlpMain.SetColumnSpan(Me.tb_xml, 5)
-		resources.ApplyResources(Me.tb_xml, "tb_xml")
+		Me.tb_xml.Font = Nothing
 		Me.tb_xml.Name = "tb_xml"
 		Me.tb_xml.ReadOnly = true
 		'
 		'btnSaveRules
 		'
+		Me.btnSaveRules.AccessibleDescription = Nothing
+		Me.btnSaveRules.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnSaveRules, "btnSaveRules")
+		Me.btnSaveRules.BackgroundImage = Nothing
 		Me.btnSaveRules.CausesValidation = false
+		Me.btnSaveRules.Font = Nothing
 		Me.btnSaveRules.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnSaveRules.Name = "btnSaveRules"
 		Me.btnSaveRules.UseVisualStyleBackColor = true
@@ -162,8 +196,12 @@ Partial Class RulesEditor
 		'
 		'btnLoadRules
 		'
+		Me.btnLoadRules.AccessibleDescription = Nothing
+		Me.btnLoadRules.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnLoadRules, "btnLoadRules")
+		Me.btnLoadRules.BackgroundImage = Nothing
 		Me.btnLoadRules.CausesValidation = false
+		Me.btnLoadRules.Font = Nothing
 		Me.btnLoadRules.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnLoadRules.Name = "btnLoadRules"
 		Me.btnLoadRules.UseVisualStyleBackColor = true
@@ -171,7 +209,10 @@ Partial Class RulesEditor
 		'
 		'btnEditInstallableItem
 		'
+		Me.btnEditInstallableItem.AccessibleDescription = Nothing
+		Me.btnEditInstallableItem.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnEditInstallableItem, "btnEditInstallableItem")
+		Me.btnEditInstallableItem.BackgroundImage = Nothing
 		Me.btnEditInstallableItem.CausesValidation = false
 		Me.btnEditInstallableItem.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnEditInstallableItem.Name = "btnEditInstallableItem"
@@ -180,7 +221,10 @@ Partial Class RulesEditor
 		'
 		'tlpMain
 		'
+		Me.tlpMain.AccessibleDescription = Nothing
+		Me.tlpMain.AccessibleName = Nothing
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.BackgroundImage = Nothing
 		Me.tlpMain.Controls.Add(Me.lbl_instructions, 0, 0)
 		Me.tlpMain.Controls.Add(Me.btnEditInstallableItem, 4, 4)
 		Me.tlpMain.Controls.Add(Me.tb_xml, 0, 5)
@@ -192,15 +236,20 @@ Partial Class RulesEditor
 		Me.tlpMain.Controls.Add(Me.btn_remove, 4, 3)
 		Me.tlpMain.Controls.Add(Me.dgv_rules, 0, 2)
 		Me.tlpMain.Controls.Add(Me.btn_add, 0, 3)
+		Me.tlpMain.Font = Nothing
 		Me.tlpMain.Name = "tlpMain"
 		'
 		'RulesEditor
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CausesValidation = false
 		Me.Controls.Add(Me.tlpMain)
 		Me.Controls.Add(Me.lbl_xml)
+		Me.Font = Nothing
 		Me.Name = "RulesEditor"
 		CType(Me.dgv_rules,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)

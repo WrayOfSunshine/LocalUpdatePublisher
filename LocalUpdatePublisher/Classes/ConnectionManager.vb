@@ -104,7 +104,11 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 			'Set the culture for the server.
-			_currentServer.PreferredCulture = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
+			Try
+				_currentServer.PreferredCulture = appSettings.Culture
+			Catch x As ArgumentOutOfRangeException
+				'This culture is not supported.
+			End Try
 			
 			'If this is a not a child server then set the parent server to
 			' be the current server.
@@ -630,7 +634,7 @@ Friend NotInheritable Class ConnectionManager
 			End If
 			
 			'Show the progress form and publish the package.
-			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)			
+			My.Forms.ProgressForm.ShowDialog(globalRM.GetString("prompt_connection_wait"), parentForm)
 			publisher.PublishPackage(updateDir.FullName, Nothing, Nothing)
 			My.Forms.ProgressForm.Dispose
 			RemoveHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler

@@ -82,4 +82,7 @@
     <value>Desplegament acumulatiu dels clients.</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblCulture.Text">
+    <value>Cultura</value>
+  </data>
 </root>

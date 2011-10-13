@@ -82,4 +82,7 @@
     <value>Opdateringspakke underliggende klienter.</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblCulture.Text">
+    <value>Kultur</value>
+  </data>
 </root>

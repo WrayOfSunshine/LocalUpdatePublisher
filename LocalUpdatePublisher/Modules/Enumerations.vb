@@ -289,7 +289,7 @@ Public Module EnumExtensions
 	' its binary data.
 	Public Function GetSortedEnum(ByVal enumType As Type) As ArrayList
 		Dim tmpArray As ArrayList = New ArrayList
-			
+		
 		'Make sure it's an enumerator.
 		If enumType.BaseType.FullName = "System.Enum" Then
 			
@@ -309,7 +309,7 @@ Public Module EnumExtensions
 			Throw New ArgumentException(globalRM.GetString("error_sort_enumerator"), "t")
 			Return Nothing
 		End If
-	End Function
+	End Function	
 	
 End Module
 

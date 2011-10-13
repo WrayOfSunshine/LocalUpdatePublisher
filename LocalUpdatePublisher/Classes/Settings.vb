@@ -18,6 +18,8 @@ Imports System.Xml.Serialization
 Imports System.IO
 Imports System.ComponentModel
 Imports System.Reflection
+Imports System.Threading
+Imports System.Globalization
 
 
 <Serializable> _
@@ -178,6 +180,7 @@ Imports System.Reflection
 		StateComputerGroupStatusDGV = New DataGridViewState
 		StateUpdateReportDGV = New DataGridViewState
 		StateUpdateStatusDGV = New DataGridViewState
+		Culture = Thread.CurrentThread.CurrentCulture.Name
 	End Sub
 	#End Region
 	
@@ -258,8 +261,8 @@ Imports System.Reflection
 		Set
 			_settingsHash("InheritApprovals") = value
 		End Set
-	End Property	
-		
+	End Property
+	
 	' Property Inherit Approvals
 	<Browsable(True)> _
 		<Description("Demote critical and security updates to normal updates.")> _
@@ -271,8 +274,8 @@ Imports System.Reflection
 		Set
 			_settingsHash("DemoteClassification") = value
 		End Set
-	End Property	
-		
+	End Property
+	
 	' Property Hide Official Updates
 	<Browsable(True)> _
 		<Description("Hide official Microsoft updates.")> _
@@ -351,7 +354,7 @@ Imports System.Reflection
 			_settingsHash("WindowLeft") = value
 		End Set
 	End Property
-		
+	
 	' Property for the main form's window state
 	<Browsable(True)> _
 		<Description("Main window location")> _
@@ -364,7 +367,7 @@ Imports System.Reflection
 			_settingsHash("WindowTop") = value
 		End Set
 	End Property
-		
+	
 	' Property for the main form's window state
 	<Browsable(True)> _
 		<Description("Main window location")> _
@@ -377,7 +380,7 @@ Imports System.Reflection
 			_settingsHash("WindowWidth") = value
 		End Set
 	End Property
-			
+	
 	' Property for the main form's window state
 	<Browsable(True)> _
 		<Description("Main window location")> _
@@ -390,7 +393,7 @@ Imports System.Reflection
 			_settingsHash("WindowHeight") = value
 		End Set
 	End Property
-				
+	
 	' Property for the main form's window state
 	<Browsable(True)> _
 		<Description("Main window location")> _
@@ -492,6 +495,19 @@ Imports System.Reflection
 		End Get
 		Set
 			_settingsHash("StateUpdateStatusDGV") = value
+		End Set
+	End Property
+	
+	' Property for the culture to be used.
+	<Browsable(True)> _
+		<Description("Culture and language")> _
+		<DefaultValue("")> _
+		Public Property Culture() As String
+		Get
+			Return CType(_settingsHash("Culture"), String)
+		End Get
+		Set
+			_settingsHash("Culture") = value
 		End Set
 	End Property
 	

@@ -125,8 +125,8 @@ Partial Class UpdateForm
 		Me.dlgUpdateDir = New System.Windows.Forms.FolderBrowserDialog
 		Me.errorProviderUpdate = New System.Windows.Forms.ErrorProvider(Me.components)
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpFooter = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpButtons = New System.Windows.Forms.TableLayoutPanel
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
 		Me.chkMetadataOnly = New System.Windows.Forms.CheckBox
 		Me.tabsUpdate.SuspendLayout
 		Me.tabIntro.SuspendLayout
@@ -145,8 +145,8 @@ Partial Class UpdateForm
 		Me.tlpSummary.SuspendLayout
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
+		Me.tlpFooter.SuspendLayout
 		Me.tlpButtons.SuspendLayout
-		Me.tableLayoutPanel1.SuspendLayout
 		Me.SuspendLayout
 		'
 		'tabsUpdate
@@ -214,7 +214,6 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.ColumnHeadersVisible = false
 		Me.dgvAdditionalFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FileName, Me.RemoveFile, Me.FileObject})
 		resources.ApplyResources(Me.dgvAdditionalFiles, "dgvAdditionalFiles")
-		Me.dgvAdditionalFiles.MinimumSize = New System.Drawing.Size(450, 408)
 		Me.dgvAdditionalFiles.Name = "dgvAdditionalFiles"
 		Me.dgvAdditionalFiles.ReadOnly = true
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
@@ -808,25 +807,25 @@ Partial Class UpdateForm
 		'tlpMain
 		'
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.tlpButtons, 0, 2)
+		Me.tlpMain.Controls.Add(Me.tlpFooter, 0, 2)
 		Me.tlpMain.Controls.Add(Me.tabsUpdate, 0, 0)
 		Me.tlpMain.Controls.Add(Me.chkExportSdp, 0, 1)
 		Me.tlpMain.Name = "tlpMain"
 		'
+		'tlpFooter
+		'
+		resources.ApplyResources(Me.tlpFooter, "tlpFooter")
+		Me.tlpFooter.Controls.Add(Me.tlpButtons, 1, 0)
+		Me.tlpFooter.Controls.Add(Me.chkMetadataOnly, 0, 0)
+		Me.tlpFooter.Name = "tlpFooter"
+		'
 		'tlpButtons
 		'
 		resources.ApplyResources(Me.tlpButtons, "tlpButtons")
-		Me.tlpButtons.Controls.Add(Me.tableLayoutPanel1, 1, 0)
-		Me.tlpButtons.Controls.Add(Me.chkMetadataOnly, 0, 0)
+		Me.tlpButtons.Controls.Add(Me.btnCancel, 2, 0)
+		Me.tlpButtons.Controls.Add(Me.btnNext, 1, 0)
+		Me.tlpButtons.Controls.Add(Me.btnPrevious, 0, 0)
 		Me.tlpButtons.Name = "tlpButtons"
-		'
-		'tableLayoutPanel1
-		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.btnCancel, 2, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnNext, 1, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnPrevious, 0, 0)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
 		'
 		'chkMetadataOnly
 		'
@@ -879,14 +878,14 @@ Partial Class UpdateForm
 		CType(Me.errorProviderUpdate,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
+		Me.tlpFooter.ResumeLayout(false)
+		Me.tlpFooter.PerformLayout
 		Me.tlpButtons.ResumeLayout(false)
 		Me.tlpButtons.PerformLayout
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpFooter As System.Windows.Forms.TableLayoutPanel
 	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
 	Private tlpOptions As System.Windows.Forms.TableLayoutPanel
 	Private tlpSummary As System.Windows.Forms.TableLayoutPanel

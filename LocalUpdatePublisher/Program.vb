@@ -53,9 +53,10 @@ Namespace My
 			End If
 			
 			System.Net.ServicePointManager.Expect100Continue = False
+			
 			'Initialize the global resource handler
-			Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
-			Thread.CurrentThread.CurrentUICulture = New CultureInfo("en-US")
+			Thread.CurrentThread.CurrentCulture = New CultureInfo(appSettings.Culture)
+			Thread.CurrentThread.CurrentUICulture = New CultureInfo(appSettings.Culture)
 			globalRM = New ResourceManager("LocalUpdatePublisher.GlobalStrings", Assembly.GetExecutingAssembly())
 			
 			'Load server connections.

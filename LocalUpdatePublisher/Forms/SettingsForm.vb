@@ -8,11 +8,43 @@
 ' User: Bryan Dam
 ' Date: 2/3/2010
 ' Time: 8:31 AM
+Imports System.Data
 
 Public Partial Class SettingsForm
+	Private _dtCultures As DataTable
+	Private _cultures As ArrayList
+	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		Call PopulateCultureData
+		
+		'Associate data table to combobox
+		Me.cboCulture.DataSource = _dtCultures
+		Me.cboCulture.DisplayMember = "Culture"
+		Me.cboCulture.ValueMember = "Code"
+		Me.cboCulture.BindingContext = me.BindingContext
+	End Sub
+	
+	'Populate the culture data table with the list of supported cultures.
+	Sub PopulateCultureData
+		'Create datatable
+		_dtCultures = New DataTable("Cultures")
+		_dtCultures.Locale = System.Globalization.CultureInfo.CurrentCulture
+		
+		'Add Columns to the data table.
+		_dtCultures.Columns.Add("Culture", System.Type.GetType("System.String"))
+		_dtCultures.Columns.Add("Code", System.Type.GetType("System.String"))
+		
+		'Add list of supported cultures
+		_dtCultures.Rows.Add((New String(){"Català","ca-ES"}))
+		_dtCultures.Rows.Add((New String(){"Dansk","da-DK"}))
+		_dtCultures.Rows.Add((New String(){"Deutsch","de-DE"}))
+		_dtCultures.Rows.Add((New String(){"Français","fr-FR"}))
+		_dtCultures.Rows.Add((New String(){"English","en-US"}))
+		_dtCultures.Rows.Add((New String(){"Polski","pl-PL"}))		
+		_dtCultures.Rows.Add((New String(){"Suomi","fi-FI"}))
 	End Sub
 	
 	'Load the appSetting into the form.
@@ -21,6 +53,7 @@ Public Partial Class SettingsForm
 		Me.chkReportRollup.Checked = appSettings.RollupReporting
 		Me.chkDemoteClassification.Checked = appSettings.DemoteClassification
 		Me.chkHideOfficialUpdates.Checked = appSettings.HideOfficialUpdates
+		Me.cboCulture.SelectedValue = appSettings.Culture
 	End Sub
 	
 	Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs)
@@ -36,8 +69,18 @@ Public Partial Class SettingsForm
 		appSettings.DemoteClassification = Me.chkDemoteClassification.Checked
 	End Sub
 	
-	Sub ChkHideOfficialUpdatesCheckedChanged(sender As Object, e As EventArgs)
+	
+	Sub ChkHideOfficialUpdatesMouseClick(sender As Object, e As MouseEventArgs)
 		appSettings.HideOfficialUpdates = Me.chkHideOfficialUpdates.Checked
+		Msgbox (globalRM.GetString("warning_options_restart"))
+	End Sub
+	
+	Sub CboCultureSelectedIndexChanged(sender As Object, e As EventArgs)
+		appSettings.Culture = DirectCast(cboCulture.SelectedValue, String)
+	End Sub
+	
+	Sub CboCultureSelectionChangeCommitted(sender As Object, e As EventArgs)
+		
 		Msgbox (globalRM.GetString("warning_options_restart"))
 	End Sub
 End Class

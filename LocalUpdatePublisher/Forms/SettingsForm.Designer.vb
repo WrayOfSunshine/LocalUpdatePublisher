@@ -39,8 +39,12 @@ Partial Class SettingsForm
 		Me.chkReportRollup = New System.Windows.Forms.CheckBox
 		Me.chkDemoteClassification = New System.Windows.Forms.CheckBox
 		Me.chkHideOfficialUpdates = New System.Windows.Forms.CheckBox
-		Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-		Me.tableLayoutPanel1.SuspendLayout
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpCulture = New System.Windows.Forms.TableLayoutPanel
+		Me.lblCulture = New System.Windows.Forms.Label
+		Me.cboCulture = New System.Windows.Forms.ComboBox
+		Me.tlpMain.SuspendLayout
+		Me.tlpCulture.SuspendLayout
 		Me.SuspendLayout
 		'
 		'chkRememberTreeNode
@@ -77,36 +81,62 @@ Partial Class SettingsForm
 		resources.ApplyResources(Me.chkHideOfficialUpdates, "chkHideOfficialUpdates")
 		Me.chkHideOfficialUpdates.Name = "chkHideOfficialUpdates"
 		Me.chkHideOfficialUpdates.UseVisualStyleBackColor = true
-		AddHandler Me.chkHideOfficialUpdates.CheckedChanged, AddressOf Me.ChkHideOfficialUpdatesCheckedChanged
+		AddHandler Me.chkHideOfficialUpdates.MouseClick, AddressOf Me.ChkHideOfficialUpdatesMouseClick
 		'
-		'tableLayoutPanel1
+		'tlpMain
 		'
-		resources.ApplyResources(Me.tableLayoutPanel1, "tableLayoutPanel1")
-		Me.tableLayoutPanel1.Controls.Add(Me.chkRememberTreeNode, 0, 0)
-		Me.tableLayoutPanel1.Controls.Add(Me.chkHideOfficialUpdates, 0, 3)
-		Me.tableLayoutPanel1.Controls.Add(Me.chkReportRollup, 0, 1)
-		Me.tableLayoutPanel1.Controls.Add(Me.chkDemoteClassification, 0, 2)
-		Me.tableLayoutPanel1.Controls.Add(Me.btnClose, 0, 5)
-		Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
+		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.Controls.Add(Me.tlpCulture, 0, 4)
+		Me.tlpMain.Controls.Add(Me.chkRememberTreeNode, 0, 0)
+		Me.tlpMain.Controls.Add(Me.chkHideOfficialUpdates, 0, 3)
+		Me.tlpMain.Controls.Add(Me.chkReportRollup, 0, 1)
+		Me.tlpMain.Controls.Add(Me.chkDemoteClassification, 0, 2)
+		Me.tlpMain.Controls.Add(Me.btnClose, 0, 5)
+		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpCulture
+		'
+		resources.ApplyResources(Me.tlpCulture, "tlpCulture")
+		Me.tlpCulture.Controls.Add(Me.lblCulture, 0, 0)
+		Me.tlpCulture.Controls.Add(Me.cboCulture, 1, 0)
+		Me.tlpCulture.Name = "tlpCulture"
+		'
+		'lblCulture
+		'
+		resources.ApplyResources(Me.lblCulture, "lblCulture")
+		Me.lblCulture.Name = "lblCulture"
+		'
+		'cboCulture
+		'
+		resources.ApplyResources(Me.cboCulture, "cboCulture")
+		Me.cboCulture.FormattingEnabled = true
+		Me.cboCulture.Name = "cboCulture"
+		AddHandler Me.cboCulture.SelectionChangeCommitted, AddressOf Me.CboCultureSelectionChangeCommitted
+		AddHandler Me.cboCulture.SelectedIndexChanged, AddressOf Me.CboCultureSelectedIndexChanged
 		'
 		'SettingsForm
 		'
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnClose
-		Me.Controls.Add(Me.tableLayoutPanel1)
+		Me.Controls.Add(Me.tlpMain)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = false
 		Me.MinimizeBox = false
 		Me.Name = "SettingsForm"
 		Me.ShowInTaskbar = false
 		AddHandler Load, AddressOf Me.SettingsLoad
-		Me.tableLayoutPanel1.ResumeLayout(false)
-		Me.tableLayoutPanel1.PerformLayout
+		Me.tlpMain.ResumeLayout(false)
+		Me.tlpMain.PerformLayout
+		Me.tlpCulture.ResumeLayout(false)
+		Me.tlpCulture.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+	Private tlpMain As System.Windows.Forms.TableLayoutPanel
+	Private cboCulture As System.Windows.Forms.ComboBox
+	Private lblCulture As System.Windows.Forms.Label
+	Private tlpCulture As System.Windows.Forms.TableLayoutPanel
 	Private chkHideOfficialUpdates As System.Windows.Forms.CheckBox
 	Private chkDemoteClassification As System.Windows.Forms.CheckBox
 	Private chkReportRollup As System.Windows.Forms.CheckBox

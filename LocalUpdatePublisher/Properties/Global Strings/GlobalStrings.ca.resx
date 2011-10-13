@@ -535,7 +535,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_update_binary">
-    <value>Actualització dels arxius (*. MSI, *. MSP; *. EXE) | *. MSI, *. MSP; *. exe | Arxius MSI (MSI *.) | *. MSI | MSP arxius (*. MSP) | *. MSP | arxius EXE (*. EXE) | *. EXE</value>
+    <value>Actualització dels arxius (*. MSI,*. MSP;*. EXE)|*. MSI;*. MSP;*. EXE|Arxius MSI (*.MSI)|*. MSI|MSP arxius (*. MSP)|*. MSP|arxius EXE (*. EXE)|*. EXE</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_xml">

@@ -146,6 +146,9 @@ Public Partial Class MainForm
 			Else If TypeOf treeView.SelectedNode.Tag Is IUpdateCategory Then 'Update Node
 				appSettings.UpdateSplitter = Me.splitContainerHorz.SplitterDistance
 			End If
+			
+			'This shouldn't be necessary but fixes a bug with the background when expanding a panel.
+			Me.splitContainerHorz.Refresh
 		End If
 		
 		

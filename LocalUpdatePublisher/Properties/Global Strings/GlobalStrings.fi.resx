@@ -535,7 +535,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_update_binary">
-    <value>Päivitä Files (*. MSI, *. MSP, *. exe) | *. MSI, *. MSP, *. exe | MSI-tiedostot (*. MSI) | *. MSI | MSP-tiedostot (*. MSP) | *. MSP | EXE-tiedostot (*. exe) | *. exe</value>
+    <value>Päivitä Files (*. MSI, *. MSP, *. exe) | *. MSI; *. MSP; *. EXE| MSI-tiedostot (*. MSI) | *. MSI | MSP-tiedostot (*. MSP) | *. MSP | EXE-tiedostot (*. EXE) | *. EXE</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_xml">
