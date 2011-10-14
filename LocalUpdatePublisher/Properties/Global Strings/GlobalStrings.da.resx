@@ -66,6 +66,32 @@
     <value>DWORD-værdi</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Brug denne formular til at oprette, redigere, fjerne, og gruppe regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se det automatisk genererede reglen på installerbare vareniveau. Som standard reglerne er i en og gruppe.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Pakke Level - Installerbare Regler</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Brug denne formular til at oprette, redigere, fjerne, og gruppe regler, der bestemmer, om denne software pakke allerede er installeret. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se det automatisk genererede reglen på installerbare vareniveau. Som standard reglerne er i en og gruppe.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Pakke Level - Installeret Regler</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Opret regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Rediger regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="add_new_server">
     <value>Tilføj ny server</value>
     <comment>Automatically translated using Google</comment>
@@ -511,7 +537,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="export_certificate">
-    <value>Eksporter Certifikat</value>
+    <value>Eksporter certifikat</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="failed">
@@ -1196,10 +1222,6 @@
   </data>
   <data name="value_type">
     <value>ValueType</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="version">
-    <value>Version</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="version_maximum">

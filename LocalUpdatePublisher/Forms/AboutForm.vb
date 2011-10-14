@@ -26,4 +26,9 @@ Public Partial Class AboutForm
 			Me.Close
 		End If
 	End Sub
+	
+	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically( sender, e)
+	End Sub
 End Class

@@ -64,6 +64,30 @@
   <data name="DWORD_value">
     <value>DWORD-Wert</value>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Verwenden Sie dieses Formular erstellen, bearbeiten, entfernen und Regeln der Gruppe, wenn dieses Software-Paket installiert werden kann bestimmen. Wenn Sie dieses Update mit dem MSI-oder MSP-Datei erstellt werden Sie das automatisch generierte Regel am installierbar Positionsebene sehen. Standardmäßig sind die Regeln in einem UND-Gruppe.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Package Level - Installierbares Rules</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installation Gegenstandsstufe</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Verwenden Sie dieses Formular erstellen, bearbeiten, entfernen und Regeln der Gruppe, wenn dieses Software-Paket bereits installiert ist zu bestimmen. Wenn Sie dieses Update mit dem MSI-oder MSP-Datei erstellt werden Sie das automatisch generierte Regel am installierbar Positionsebene sehen. Standardmäßig sind die Regeln in einem UND-Gruppe.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Installed Rules</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installation Gegenstandsstufe</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Regel erstellen</value>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Regel bearbeiten</value>
+  </data>
   <data name="add_new_server">
     <value>Neuen Server hinzufügen</value>
   </data>
@@ -403,7 +427,7 @@
     <value>Export</value>
   </data>
   <data name="export_certificate">
-    <value>Exportire Zertifikat</value>
+    <value>Zertifikat exportieren</value>
   </data>
   <data name="failed">
     <value>Fehlgeschlagen</value>
@@ -917,9 +941,6 @@
   </data>
   <data name="value_type">
     <value>WertTyp</value>
-  </data>
-  <data name="version">
-    <value>Version</value>
   </data>
   <data name="version_maximum">
     <value>MaxVersion</value>

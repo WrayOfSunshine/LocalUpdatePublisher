@@ -48,6 +48,15 @@ Public Partial Class UpdateForm
 		Me.TabsUpdate.HideTabs = True
 		Me.BtnPrevious.Image = My.Resources.Previous.ToBitmap
 		Me.BtnNext.Image = My.Resources.Forward.ToBitmap
+		
+		'Set the strings for the Rule Editor controls using the resource manager.
+		Me.isInstallableRules.Instructions = globalRM.GetString("IsInstallable_Instructions")
+		Me.isInstallableRules.Title = globalRM.GetString("IsInstallable_Title")
+		Me.isInstallableRules.TitleItemLevel = globalRM.GetString("IsInstallable_TitleItemLevel")
+		
+		Me.isInstalledRules.Instructions = globalRM.GetString("IsInstalled_Instructions")
+		Me.isInstalledRules.Title = globalRM.GetString("IsInstalled_Title")
+		Me.isInstalledRules.TitleItemLevel = globalRM.GetString("IsInstalled_TitleItemLevel")
 	End Sub
 	
 	#Region "Form Methods"
@@ -882,6 +891,10 @@ Public Partial Class UpdateForm
 		End If
 	End Sub
 	
+	Shadows Sub TextChanged(sender As Object, e As EventArgs)
+		CustomResize.ResizeVertically( sender, e)
+	End Sub
+	
 	#End Region
 	
 	#Region "Validation"
@@ -1115,8 +1128,4 @@ Public Partial Class UpdateForm
 	
 	#End Region
 	
-	
-	Shadows Sub TextChanged(sender As Object, e As EventArgs)
-		CustomResize.ResizeVertically( sender, e)	
-	End Sub
 End Class

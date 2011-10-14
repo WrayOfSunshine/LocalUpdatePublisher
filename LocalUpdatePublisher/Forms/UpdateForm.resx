@@ -142,13 +142,13 @@
     <value>3, 0</value>
   </data>
   <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 13</value>
+    <value>534, 13</value>
   </data>
   <data name="lblInfo.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="lblInfo.Text" xml:space="preserve">
-    <value>Intro Text</value>
+    <value>lblInfo</value>
   </data>
   <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
     <value>lblInfo</value>
@@ -172,7 +172,7 @@
     <value>102, 47</value>
   </data>
   <data name="txtMSIPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 20</value>
+    <value>369, 20</value>
   </data>
   <data name="txtMSIPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -199,7 +199,7 @@
     <value>Fill</value>
   </data>
   <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 16</value>
+    <value>477, 16</value>
   </data>
   <data name="btnUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 25</value>
@@ -247,7 +247,7 @@
     <value>102, 73</value>
   </data>
   <data name="dgvAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 408</value>
+    <value>369, 423</value>
   </data>
   <data name="dgvAdditionalFiles.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -385,7 +385,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 20</value>
+    <value>352, 20</value>
   </data>
   <data name="txtUpdateFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -412,7 +412,7 @@
     <value>Top</value>
   </data>
   <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 104</value>
+    <value>477, 104</value>
   </data>
   <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 25</value>
@@ -445,7 +445,7 @@
     <value>Fill</value>
   </data>
   <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 73</value>
+    <value>477, 73</value>
   </data>
   <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 25</value>
@@ -481,7 +481,7 @@
     <value>5</value>
   </data>
   <data name="tlpIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="tlpIntro.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -508,7 +508,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -535,7 +535,139 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="tlpPackageInfo.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtUninstall.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="txtUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtUninstall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 20</value>
+  </data>
+  <data name="txtUninstall.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Name" xml:space="preserve">
+    <value>txtUninstall</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.Parent" xml:space="preserve">
+    <value>tlpPackageIinfoUninstall</value>
+  </data>
+  <data name="&gt;&gt;txtUninstall.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNetwork.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNetwork.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblNetwork.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 0</value>
+  </data>
+  <data name="lblNetwork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 26</value>
+  </data>
+  <data name="lblNetwork.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="lblNetwork.Text" xml:space="preserve">
+    <value>Network Required</value>
+  </data>
+  <data name="lblNetwork.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Name" xml:space="preserve">
+    <value>lblNetwork</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.Parent" xml:space="preserve">
+    <value>tlpPackageIinfoUninstall</value>
+  </data>
+  <data name="&gt;&gt;lblNetwork.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtNetwork.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 3</value>
+  </data>
+  <data name="txtNetwork.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtNetwork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="txtNetwork.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Name" xml:space="preserve">
+    <value>txtNetwork</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.Parent" xml:space="preserve">
+    <value>tlpPackageIinfoUninstall</value>
+  </data>
+  <data name="&gt;&gt;txtNetwork.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 402</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 26</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageIinfoUninstall.Name" xml:space="preserve">
+    <value>tlpPackageIinfoUninstall</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageIinfoUninstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageIinfoUninstall.Parent" xml:space="preserve">
+    <value>tlpPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageIinfoUninstall.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpPackageIinfoUninstall.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtUninstall" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblNetwork" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtNetwork" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="lblRebootBehavior.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -571,7 +703,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblRebootBehavior.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cboPackageType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -589,7 +721,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboPackageType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboPackageType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -604,7 +736,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboPackageType.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtOriginalURI.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -616,7 +748,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtOriginalURI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtOriginalURI.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -631,7 +763,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtOriginalURI.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblPackageType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -667,7 +799,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblPackageType.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblPackageInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -682,13 +814,13 @@
     <value>3, 0</value>
   </data>
   <data name="lblPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 13</value>
+    <value>534, 13</value>
   </data>
   <data name="lblPackageInfo.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="lblPackageInfo.Text" xml:space="preserve">
-    <value>Package Info</value>
+    <value>lblPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblPackageInfo.Name" xml:space="preserve">
     <value>lblPackageInfo</value>
@@ -700,7 +832,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblPackageInfo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtCommandLine.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -712,7 +844,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtCommandLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtCommandLine.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -727,30 +859,6 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtCommandLine.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 405</value>
-  </data>
-  <data name="txtNetwork.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 20, 3</value>
-  </data>
-  <data name="txtNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
-  </data>
-  <data name="txtNetwork.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="&gt;&gt;txtNetwork.Name" xml:space="preserve">
-    <value>txtNetwork</value>
-  </data>
-  <data name="&gt;&gt;txtNetwork.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNetwork.Parent" xml:space="preserve">
-    <value>tlpPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;txtNetwork.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="lblCommandLine.AutoSize" type="System.Boolean, mscorlib">
@@ -844,7 +952,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboRebootBehavior.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -860,42 +968,6 @@
   </data>
   <data name="&gt;&gt;cboRebootBehavior.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="lblNetwork.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNetwork.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblNetwork.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 402</value>
-  </data>
-  <data name="lblNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 26</value>
-  </data>
-  <data name="lblNetwork.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="lblNetwork.Text" xml:space="preserve">
-    <value>Network Required</value>
-  </data>
-  <data name="lblNetwork.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblNetwork.Name" xml:space="preserve">
-    <value>lblNetwork</value>
-  </data>
-  <data name="&gt;&gt;lblNetwork.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNetwork.Parent" xml:space="preserve">
-    <value>tlpPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;lblNetwork.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="lblUninstall.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -931,31 +1003,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblUninstall.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 405</value>
-  </data>
-  <data name="txtUninstall.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 20, 3</value>
-  </data>
-  <data name="txtUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 20</value>
-  </data>
-  <data name="txtUninstall.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;txtUninstall.Name" xml:space="preserve">
-    <value>txtUninstall</value>
-  </data>
-  <data name="&gt;&gt;txtUninstall.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUninstall.Parent" xml:space="preserve">
-    <value>tlpPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;txtUninstall.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="lblImpact.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -991,7 +1039,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblImpact.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="txtPackageTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1003,7 +1051,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtPackageTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1018,7 +1066,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtPackageTitle.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="txtDescription.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1033,7 +1081,7 @@
     <value>True</value>
   </data>
   <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 39</value>
+    <value>409, 39</value>
   </data>
   <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1048,7 +1096,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="lblPackageTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1084,10 +1132,10 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblPackageTitle.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="cboSeverity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="cboSeverity.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1129,7 +1177,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboSeverity.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="txtBulletinID.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1141,7 +1189,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtBulletinID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtBulletinID.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1156,7 +1204,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtBulletinID.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="cboImpact.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1177,7 +1225,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboImpact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboImpact.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1192,7 +1240,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboImpact.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>17</value>
   </data>
   <data name="lblClassification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1228,7 +1276,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblClassification.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>18</value>
   </data>
   <data name="cboVendor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1240,7 +1288,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboVendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboVendor.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1255,7 +1303,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboVendor.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>19</value>
   </data>
   <data name="cboProduct.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1267,7 +1315,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboProduct.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1282,7 +1330,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboProduct.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>20</value>
   </data>
   <data name="lblBullitinID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1318,10 +1366,10 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblBullitinID.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>21</value>
   </data>
   <data name="txtArticleID.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="txtArticleID.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 248</value>
@@ -1345,10 +1393,10 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtArticleID.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>22</value>
   </data>
   <data name="txtCVEID.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>Left</value>
   </data>
   <data name="txtCVEID.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 274</value>
@@ -1372,7 +1420,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtCVEID.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>23</value>
   </data>
   <data name="lblSeverity.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,7 +1456,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblSeverity.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>24</value>
   </data>
   <data name="lblMoreInfoURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1444,7 +1492,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblMoreInfoURL.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>25</value>
   </data>
   <data name="txtMoreInfoURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1456,7 +1504,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtMoreInfoURL.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1471,7 +1519,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtMoreInfoURL.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>26</value>
   </data>
   <data name="lblSupportURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1507,7 +1555,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblSupportURL.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>27</value>
   </data>
   <data name="lblVendor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1543,7 +1591,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblVendor.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>28</value>
   </data>
   <data name="txtSupportURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1555,7 +1603,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtSupportURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 20</value>
+    <value>409, 20</value>
   </data>
   <data name="txtSupportURL.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1570,7 +1618,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;txtSupportURL.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>29</value>
   </data>
   <data name="lblCVEID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1606,7 +1654,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblCVEID.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>30</value>
   </data>
   <data name="lblProduct.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1642,7 +1690,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblProduct.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>31</value>
   </data>
   <data name="lblArticleID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1678,7 +1726,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblArticleID.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>32</value>
   </data>
   <data name="cboClassification.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1720,7 +1768,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="cboClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 21</value>
+    <value>409, 21</value>
   </data>
   <data name="cboClassification.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1735,7 +1783,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;cboClassification.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>33</value>
   </data>
   <data name="lblDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1771,7 +1819,7 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>34</value>
   </data>
   <data name="tlpOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1792,7 +1840,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 0</value>
+    <value>264, 0</value>
+  </data>
+  <data name="lblLanguages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 3, 0</value>
   </data>
   <data name="lblLanguages.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -1805,6 +1856,9 @@
   </data>
   <data name="lblLanguages.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="lblLanguages.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblLanguages.Name" xml:space="preserve">
     <value>lblLanguages</value>
@@ -1864,7 +1918,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblReturnCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 0</value>
+    <value>172, 0</value>
+  </data>
+  <data name="lblReturnCodes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 3, 0</value>
   </data>
   <data name="lblReturnCodes.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
@@ -1903,7 +1960,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 0</value>
+    <value>91, 0</value>
+  </data>
+  <data name="lblSupersedes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 3, 0</value>
   </data>
   <data name="lblSupersedes.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -1942,7 +2002,7 @@
     <value>1</value>
   </data>
   <data name="tlpOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>330, 13</value>
+    <value>336, 18</value>
   </data>
   <data name="tlpOptions.TabIndex" type="System.Int32, mscorlib">
     <value>75</value>
@@ -1957,10 +2017,10 @@
     <value>tlpPackageInfo</value>
   </data>
   <data name="&gt;&gt;tlpOptions.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>35</value>
   </data>
   <data name="tlpOptions.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblLanguages" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblPrerequisites" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblReturnCodes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblSupersedes" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,16" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblLanguages" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblPrerequisites" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblReturnCodes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblSupersedes" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,18" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tlpPackageInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1975,7 +2035,7 @@
     <value>19</value>
   </data>
   <data name="tlpPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="tlpPackageInfo.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1993,7 +2053,7 @@
     <value>0</value>
   </data>
   <data name="tlpPackageInfo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblRebootBehavior" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboPackageType" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtOriginalURI" Row="11" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblPackageType" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="txtCommandLine" Row="17" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtNetwork" Row="15" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lblCommandLine" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblOriginalURI" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboRebootBehavior" Row="16" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblNetwork" Row="15" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblUninstall" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtUninstall" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblImpact" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPackageTitle" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="txtDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblPackageTitle" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboSeverity" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtBulletinID" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="cboImpact" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblClassification" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboVendor" Row="7" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="cboProduct" Row="8" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblBullitinID" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtArticleID" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtCVEID" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSeverity" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMoreInfoURL" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMoreInfoURL" Row="13" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblSupportURL" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblVendor" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSupportURL" Row="12" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblCVEID" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblProduct" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblArticleID" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboClassification" Row="4" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="lblDescription" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpOptions" Row="18" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpPackageIinfoUninstall" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRebootBehavior" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboPackageType" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtOriginalURI" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageType" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="txtCommandLine" Row="17" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCommandLine" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblOriginalURI" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboRebootBehavior" Row="16" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblUninstall" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblImpact" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPackageTitle" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageTitle" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboSeverity" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtBulletinID" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboImpact" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblClassification" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboVendor" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboProduct" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblBullitinID" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtArticleID" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtCVEID" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSeverity" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMoreInfoURL" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMoreInfoURL" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSupportURL" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblVendor" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSupportURL" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCVEID" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblProduct" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblArticleID" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboClassification" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblDescription" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpOptions" Row="18" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2002,7 +2062,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabPackageInfo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2032,31 +2092,28 @@
     <value>Fill</value>
   </data>
   <data name="isInstalledRules.Instructions" xml:space="preserve">
-    <value>Use this form to create, edit, remove, and group rules that determine if this software package is already installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+    <value>Instructions</value>
   </data>
   <data name="isInstalledRules.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="isInstalledRules.RuleEditorTitle" xml:space="preserve">
-    <value>Default</value>
-  </data>
   <data name="isInstalledRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="isInstalledRules.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
   <data name="isInstalledRules.Title" xml:space="preserve">
-    <value>Package Level - Installed Rules</value>
+    <value>Title</value>
   </data>
   <data name="isInstalledRules.TitleItemLevel" xml:space="preserve">
-    <value>Installation Item Level</value>
+    <value>TitleItemLevel</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Name" xml:space="preserve">
     <value>isInstalledRules</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25088, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
     <value>tabIsInstalled</value>
@@ -2071,7 +2128,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabIsInstalled.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2101,31 +2158,28 @@
     <value>Fill</value>
   </data>
   <data name="isInstallableRules.Instructions" xml:space="preserve">
-    <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+    <value>Instructions</value>
   </data>
   <data name="isInstallableRules.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="isInstallableRules.RuleEditorTitle" xml:space="preserve">
-    <value>Default</value>
-  </data>
   <data name="isInstallableRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="isInstallableRules.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="isInstallableRules.Title" xml:space="preserve">
-    <value>Package Level - Installable Rules</value>
+    <value>Title</value>
   </data>
   <data name="isInstallableRules.TitleItemLevel" xml:space="preserve">
-    <value>Installation Item Level</value>
+    <value>TitleItemLevel</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Name" xml:space="preserve">
     <value>isInstallableRules</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25088, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
     <value>tabIsInstallable</value>
@@ -2140,7 +2194,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabIsInstallable.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2169,56 +2223,23 @@
   <data name="tlpIsSuperseded.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="txtIsSuperceded_InstallableItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="txtIsSuperceded_InstallableItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="txtIsSuperceded_InstallableItem.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 455</value>
-  </data>
-  <data name="txtIsSuperceded_InstallableItem.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Name" xml:space="preserve">
-    <value>txtIsSuperceded_InstallableItem</value>
-  </data>
-  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Parent" xml:space="preserve">
-    <value>tlpIsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnIsSupersededEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnIsSupersededEdit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnIsSupersededEdit.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="btnIsSupersededEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7pt</value>
+  <data name="btnIsSupersededEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnIsSupersededEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>610, 13</value>
-  </data>
-  <data name="btnIsSupersededEdit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>457, 16</value>
   </data>
   <data name="btnIsSupersededEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 23</value>
+    <value>80, 25</value>
   </data>
   <data name="btnIsSupersededEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>41</value>
   </data>
   <data name="btnIsSupersededEdit.Text" xml:space="preserve">
     <value>Edit</value>
@@ -2233,6 +2254,33 @@
     <value>tlpIsSuperseded</value>
   </data>
   <data name="&gt;&gt;btnIsSupersededEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 47</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 449</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Name" xml:space="preserve">
+    <value>txtIsSuperceded_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Parent" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblIsSuperseded.AutoSize" type="System.Boolean, mscorlib">
@@ -2248,13 +2296,13 @@
     <value>3, 0</value>
   </data>
   <data name="lblIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 13</value>
+    <value>534, 13</value>
   </data>
   <data name="lblIsSuperseded.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="lblIsSuperseded.Text" xml:space="preserve">
-    <value>Superseded Info</value>
+    <value>lblIsSuperseded</value>
   </data>
   <data name="&gt;&gt;lblIsSuperseded.Name" xml:space="preserve">
     <value>lblIsSuperseded</value>
@@ -2281,7 +2329,7 @@
     <value>3, 13</value>
   </data>
   <data name="lblIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 23</value>
+    <value>448, 31</value>
   </data>
   <data name="lblIsSuperceded_InstallableItem.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2317,7 +2365,7 @@
     <value>3</value>
   </data>
   <data name="tlpIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="tlpIsSuperseded.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2335,7 +2383,7 @@
     <value>0</value>
   </data>
   <data name="tlpIsSuperseded.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtIsSuperceded_InstallableItem" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="btnIsSupersededEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblIsSuperseded" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperceded_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnIsSupersededEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtIsSuperceded_InstallableItem" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperseded" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperceded_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2344,7 +2392,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabIsSuperseded.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2373,53 +2421,20 @@
   <data name="tlpMetaData.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="txtInstallableItemMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="txtInstallableItemMetaData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="txtInstallableItemMetaData.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtInstallableItemMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 455</value>
-  </data>
-  <data name="txtInstallableItemMetaData.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtInstallableItemMetaData.Name" xml:space="preserve">
-    <value>txtInstallableItemMetaData</value>
-  </data>
-  <data name="&gt;&gt;txtInstallableItemMetaData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtInstallableItemMetaData.Parent" xml:space="preserve">
-    <value>tlpMetaData</value>
-  </data>
-  <data name="&gt;&gt;txtInstallableItemMetaData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnMetaDataEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnMetaDataEdit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnMetaDataEdit.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="btnMetaDataEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7pt</value>
+  <data name="btnMetaDataEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnMetaDataEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>610, 13</value>
-  </data>
-  <data name="btnMetaDataEdit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>457, 16</value>
   </data>
   <data name="btnMetaDataEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 23</value>
+    <value>80, 25</value>
   </data>
   <data name="btnMetaDataEdit.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -2437,6 +2452,33 @@
     <value>tlpMetaData</value>
   </data>
   <data name="&gt;&gt;btnMetaDataEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 47</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 449</value>
+  </data>
+  <data name="txtInstallableItemMetaData.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Name" xml:space="preserve">
+    <value>txtInstallableItemMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Parent" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblMetaData.AutoSize" type="System.Boolean, mscorlib">
@@ -2452,13 +2494,13 @@
     <value>3, 0</value>
   </data>
   <data name="lblMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 13</value>
+    <value>534, 13</value>
   </data>
   <data name="lblMetaData.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="lblMetaData.Text" xml:space="preserve">
-    <value>MetaData Info</value>
+    <value>lblMetaData</value>
   </data>
   <data name="&gt;&gt;lblMetaData.Name" xml:space="preserve">
     <value>lblMetaData</value>
@@ -2485,7 +2527,7 @@
     <value>3, 13</value>
   </data>
   <data name="lblMetaData_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 23</value>
+    <value>448, 31</value>
   </data>
   <data name="lblMetaData_InstallableItem.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -2521,7 +2563,7 @@
     <value>3</value>
   </data>
   <data name="tlpMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="tlpMetaData.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2539,7 +2581,7 @@
     <value>0</value>
   </data>
   <data name="tlpMetaData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtInstallableItemMetaData" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="btnMetaDataEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblMetaData" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnMetaDataEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInstallableItemMetaData" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabMetaData.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2548,7 +2590,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabMetaData.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2590,7 +2632,7 @@
     <value>Both</value>
   </data>
   <data name="txtSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 478</value>
+    <value>534, 480</value>
   </data>
   <data name="txtSummary.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2623,13 +2665,13 @@
     <value>3, 0</value>
   </data>
   <data name="lblSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>637, 13</value>
+    <value>534, 13</value>
   </data>
   <data name="lblSummary.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
   <data name="lblSummary.Text" xml:space="preserve">
-    <value>Summary Info</value>
+    <value>lblSummary</value>
   </data>
   <data name="&gt;&gt;lblSummary.Name" xml:space="preserve">
     <value>lblSummary</value>
@@ -2656,7 +2698,7 @@
     <value>2</value>
   </data>
   <data name="tlpSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 464</value>
+    <value>540, 499</value>
   </data>
   <data name="tlpSummary.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2674,7 +2716,7 @@
     <value>0</value>
   </data>
   <data name="tlpSummary.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSummary" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSummary" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSummary" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSummary" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabSummary.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2683,7 +2725,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 470</value>
+    <value>546, 505</value>
   </data>
   <data name="tabSummary.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2710,7 +2752,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabsUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 497</value>
+    <value>554, 532</value>
   </data>
   <data name="tabsUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2719,7 +2761,7 @@
     <value>tabsUpdate</value>
   </data>
   <data name="&gt;&gt;tabsUpdate.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.25088, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabsUpdate.Parent" xml:space="preserve">
     <value>tlpMain</value>
@@ -2863,10 +2905,10 @@
     <value>Fill</value>
   </data>
   <data name="chkExportSdp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 506</value>
+    <value>3, 541</value>
   </data>
   <data name="chkExportSdp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>657, 17</value>
+    <value>554, 17</value>
   </data>
   <data name="chkExportSdp.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2914,7 +2956,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>663, 563</value>
+    <value>560, 598</value>
   </data>
   <data name="tlpMain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2947,7 +2989,7 @@
     <value>Right</value>
   </data>
   <data name="tlpButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 3</value>
+    <value>299, 3</value>
   </data>
   <data name="tlpButtons.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3016,7 +3058,7 @@
     <value>Fill</value>
   </data>
   <data name="tlpFooter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 526</value>
+    <value>0, 561</value>
   </data>
   <data name="tlpFooter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3025,7 +3067,7 @@
     <value>1</value>
   </data>
   <data name="tlpFooter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>663, 37</value>
+    <value>560, 37</value>
   </data>
   <data name="tlpFooter.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3058,7 +3100,7 @@
     <value>3</value>
   </data>
   <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>663, 563</value>
+    <value>560, 598</value>
   </data>
   <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

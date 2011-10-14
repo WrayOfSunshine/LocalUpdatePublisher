@@ -17,17 +17,13 @@ Imports System.Xml
 
 Public Partial Class RulesEditor
 	Inherits UserControl
-	'	Private _endAnd As String = "End And"
-	'	Private _beginOr As String = "Begin Or"
-	'	Private _endOr As String = "End Or"
-	'	Private _addGroup As String = "Add Group"
-	'	Private _removeAnd As String = "Remove And"
-	'	Private _removeOr As String = "Remove Or"
 	
 	Public Sub New()
 		InitializeComponent()
 	End Sub
 	
+	
+	#Region "Properties and Accessors"
 	Private ReadOnly Property _Begin_And() As String
 		Get
 			Return globalRM.GetString("group_begin_and")
@@ -70,16 +66,15 @@ Public Partial Class RulesEditor
 		End Get
 	End Property
 	
-	#Region "Properties and Accessors"
 	
 	'Instructional text to appear at the top.
 	<Localizable(True)> _
 		Public Property Instructions() As String
 		Get
-			Return lbl_instructions.Text
+			Return lblinstructions.Text
 		End Get
 		Set
-			lbl_instructions.Text = value
+			lblinstructions.Text = value
 		End Set
 	End Property
 	
@@ -87,10 +82,10 @@ Public Partial Class RulesEditor
 	<Localizable(True)> _
 		Public Property Title() As String
 		Get
-			Return lbl_title.Text
+			Return lbltitle.Text
 		End Get
 		Set
-			lbl_title.Text = value
+			lbltitle.Text = value
 		End Set
 	End Property
 	
@@ -98,35 +93,35 @@ Public Partial Class RulesEditor
 	<Localizable(True)> _
 		Public Property TitleItemLevel() As String
 		Get
-			Return lbl_xml.Text
+			Return lblxml.Text
 		End Get
 		Set
-			lbl_xml.Text = value
+			lblxml.Text = value
 		End Set
 	End Property
 	
 	'Number of rules listed.
 	Public ReadOnly Property Count() As Integer
 		Get
-			Return dgv_rules.Rows.Count
+			Return dgvRules.Rows.Count
 		End Get
 	End Property
 	
 	'The item applicability rule.
 	Public Property ApplicabilityRule() As String
 		Get
-			Return tb_xml.Text
+			Return txtXml.Text
 		End Get
 		Set
 			'TODO more stuff here
-			tb_xml.Text = value
+			txtXml.Text = value
 		End Set
 	End Property
 	
 	'If the item applicability rule was edited manually.
 	Public ReadOnly Property ApplicabilityRuleEdited() As Boolean
 		Get
-			If tb_xml.ReadOnly Then
+			If txtXml.ReadOnly Then
 				Return False
 			Else
 				Return True
@@ -142,7 +137,7 @@ Public Partial Class RulesEditor
 				tmpStringBuilder.Append("<lar:And>")
 			End If
 			
-			For Each row As DataGridViewRow In dgv_rules.Rows
+			For Each row As DataGridViewRow In dgvRules.Rows
 				tmpStringBuilder.Append(row.Cells(1).Value.ToString())
 			Next
 			
@@ -157,18 +152,6 @@ Public Partial Class RulesEditor
 		End Set
 	End Property
 	
-	Private _ruleEditorTitle As String
-	<Localizable(True)> _
-		Public Property RuleEditorTitle As String
-		Get
-			Return _ruleEditorTitle
-		End Get
-		Set
-			_ruleEditorTitle = value
-		End Set
-	End Property
-	
-	
 	#End Region
 	
 	#REGION "Implementation"
@@ -178,7 +161,7 @@ Public Partial Class RulesEditor
 		
 		'Make sure we have at least two columns in our datagridview and that
 		' the xmlFragment isn't empty.
-		If (dgv_rules.Columns.Count < 2) OrElse (xmlFragment Is Nothing) Then
+		If (dgvRules.Columns.Count < 2) OrElse (xmlFragment Is Nothing) Then
 			Return
 		End If
 		
@@ -244,29 +227,29 @@ Public Partial Class RulesEditor
 				' we want the outer XML so that we include the not element as well as
 				' the inner bar element.
 				
-				Dim tmpRow As Integer = dgv_rules.Rows.Add()
+				Dim tmpRow As Integer = dgvRules.Rows.Add()
 				
 				'Set padding depth.
-				Dim tmpPadding As Padding = dgv_rules.Rows(tmpRow).Cells(0).Style.Padding
+				Dim tmpPadding As Padding = dgvRules.Rows(tmpRow).Cells(0).Style.Padding
 				tmpPadding.Left = defaultPaddingSize * indentationDepth
-				dgv_rules.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+				dgvRules.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
 				
 				Select Case xmlReader.LocalName
 						
 					Case "And"
-						dgv_rules.Rows(tmpRow).Cells(0).Value = _Begin_And
-						dgv_rules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
+						dgvRules.Rows(tmpRow).Cells(0).Value = _Begin_And
+						dgvRules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
 						indentationDepth += 1
 						Exit Select
 					Case "Or"
-						dgv_rules.Rows(tmpRow).Cells(0).Value = _Begin_Or
-						dgv_rules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
+						dgvRules.Rows(tmpRow).Cells(0).Value = _Begin_Or
+						dgvRules.Rows(tmpRow).Cells(1).Value = "<" & xmlReader.Name & ">"
 						indentationDepth += 1
 						Exit Select
 					Case Else
-						dgv_rules.Rows(tmpRow).Cells(1).Value = xmlReader.ReadOuterXml()
+						dgvRules.Rows(tmpRow).Cells(1).Value = xmlReader.ReadOuterXml()
 						Dim f As New RulesForm()
-						dgv_rules.Rows(tmpRow).Cells(0).Value = f.GenerateReadableRuleFromXml(dgv_rules.Rows(tmpRow).Cells(1).Value.ToString())
+						dgvRules.Rows(tmpRow).Cells(0).Value = f.GenerateReadableRuleFromXml(dgvRules.Rows(tmpRow).Cells(1).Value.ToString())
 						f.Dispose()
 						needRead = False
 						'We don't need a read because of the ReadOuterXML call
@@ -275,15 +258,15 @@ Public Partial Class RulesEditor
 			Else
 				'Element is a closing element.
 				indentationDepth -= 1
-				Dim tmpRow As Integer = dgv_rules.Rows.Add()
+				Dim tmpRow As Integer = dgvRules.Rows.Add()
 				
 				'Set padding depth.
-				Dim tmpPadding As Padding = dgv_rules.Rows(tmpRow).Cells(0).Style.Padding
+				Dim tmpPadding As Padding = dgvRules.Rows(tmpRow).Cells(0).Style.Padding
 				tmpPadding.Left = defaultPaddingSize * indentationDepth
-				dgv_rules.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+				dgvRules.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
 				
-				dgv_rules.Rows(tmpRow).Cells(0).Value = "End " & xmlReader.LocalName
-				dgv_rules.Rows(tmpRow).Cells(1).Value = "</" & xmlReader.Name & ">"
+				dgvRules.Rows(tmpRow).Cells(0).Value = "End " & xmlReader.LocalName
+				dgvRules.Rows(tmpRow).Cells(1).Value = "</" & xmlReader.Name & ">"
 				'Loop through XML.
 			End If
 		End While
@@ -291,57 +274,57 @@ Public Partial Class RulesEditor
 	
 	
 	'Add rule.
-	Private Sub btn_add_Click(sender As Object, e As EventArgs)
+	Private Sub btnAdd_Click(sender As Object, e As EventArgs)
 		Dim tmpRow As Integer
 		
 		'Prompt user to create rule.
-		Dim tmpRulesForm As New RulesForm("Create " & Me.RuleEditorTitle)
+		Dim tmpRulesForm As New RulesForm(globalRM.GetString("RulesEditor_CreatePrompt"))
 		tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 		
 		If DialogResult.OK = tmpRulesForm.ShowDialog(Me) Then
-			tmpRow = Me.dgv_rules.Rows.Add(New String() {tmpRulesForm.ReadableRule, tmpRulesForm.XmlRule})
-			Me.dgv_rules.CurrentCell = Me.dgv_rules.Rows(tmpRow).Cells("Rule")
+			tmpRow = Me.dgvRules.Rows.Add(New String() {tmpRulesForm.ReadableRule, tmpRulesForm.XmlRule})
+			Me.dgvRules.CurrentCell = Me.dgvRules.Rows(tmpRow).Cells("Rule")
 		End If
 		tmpRulesForm.Dispose()
 	End Sub
 	
 	'Remove rule.
-	Private Sub btn_remove_Click(sender As Object, e As EventArgs)
+	Private Sub btnRemove_Click(sender As Object, e As EventArgs)
 		'Make sure a Row is selected.
-		If dgv_rules.SelectedRows.Count > 0 Then
+		If dgvRules.SelectedRows.Count > 0 Then
 			'Prompt the user and remove the row
 			If DialogResult.Yes = MessageBox.Show(Me, globalRM.GetString("prompt_ruled_editor_confirm_delete"), globalRM.GetString("prompt_ruled_editor_delete"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-				For Each tempRow As DataGridViewRow In dgv_rules.SelectedRows
-					dgv_rules.Rows.RemoveAt(tempRow.Index)
+				For Each tempRow As DataGridViewRow In dgvRules.SelectedRows
+					dgvRules.Rows.RemoveAt(tempRow.Index)
 				Next
 			End If
 		End If
 	End Sub
 	
 	'Edit rule.
-	Private Sub btn_edit_Click(sender As Object, e As EventArgs)
+	Private Sub btnEdit_Click(sender As Object, e As EventArgs)
 		'Make sure a row is selected.
-		If dgv_rules.SelectedRows.Count = 1 Then
-			Dim tmpRulesForm As New RulesForm(globalRM.GetString("edit") & " " & Me.RuleEditorTitle)
+		If dgvRules.SelectedRows.Count = 1 Then
+			Dim tmpRulesForm As New RulesForm(globalRM.GetString("RulesEditor_EditPrompt"))
 			tmpRulesForm.Location =  New Point(ParentForm.Location.X + 100, ParentForm.Location.Y + 100)
 			
-			If DialogResult.OK = tmpRulesForm.ShowDialog(Me, dgv_rules.CurrentRow.Cells(1).Value.ToString()) Then
-				dgv_rules.CurrentRow.Cells(0).Value = tmpRulesForm.ReadableRule
-				dgv_rules.CurrentRow.Cells(1).Value = tmpRulesForm.XmlRule
+			If DialogResult.OK = tmpRulesForm.ShowDialog(Me, dgvRules.CurrentRow.Cells(1).Value.ToString()) Then
+				dgvRules.CurrentRow.Cells(0).Value = tmpRulesForm.ReadableRule
+				dgvRules.CurrentRow.Cells(1).Value = tmpRulesForm.XmlRule
 			End If
 			tmpRulesForm.Dispose()
 		End If
 	End Sub
 	
 	'If the user double clicks on a row, then edit it.
-	Sub Dgv_rulesCellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs)
+	Sub dgvRulesCellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs)
 		If e.RowIndex > -1 Then
-			btn_edit_Click(sender, e)
+			btnEdit_Click(sender, e)
 		End If
 	End Sub
 	
 	'Group rules.
-	Private Sub btn_group_Click(sender As Object, e As EventArgs)
+	Private Sub btnGroup_Click(sender As Object, e As EventArgs)
 		'this code handles the button if it is not in "Make Group" mode
 		If TypeOf sender Is Button Then
 			If DirectCast(sender, Button).Text <> _add_Group Then
@@ -365,13 +348,13 @@ Public Partial Class RulesEditor
 	
 	'GroupRules deals with adding and removing And/Or groupings to the selected set of rules.
 	Public Sub GroupRules(andRules As Boolean)
-		If dgv_rules.SelectedRows.Count > 1 Then
+		If dgvRules.SelectedRows.Count > 1 Then
 			'Must have more than one row selected.
 			
 			'Find the highest and lowest index values in the selected rows.
 			Dim tmpHighestIndex As Integer = -1
 			Dim tmpLowestIndex As Integer = -1
-			For Each tempRow As DataGridViewRow In dgv_rules.SelectedRows
+			For Each tempRow As DataGridViewRow In dgvRules.SelectedRows
 				If tmpHighestIndex = -1 Then
 					tmpHighestIndex = tempRow.Index
 				End If
@@ -388,38 +371,38 @@ Public Partial Class RulesEditor
 			
 			Try
 				'If we are adding a rule group.
-				If btn_group.Text = _add_Group Then
+				If btnGroup.Text = _add_Group Then
 					'Add an Add grouping.
 					If andRules Then
-						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_And, "</lar:And>"})
-						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_Begin_And, "<lar:And>"})
+						dgvRules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_And, "</lar:And>"})
+						dgvRules.Rows.Insert(tmpLowestIndex, New String() {_Begin_And, "<lar:And>"})
 					Else
 						'Add an Or grouping.
 						
-						dgv_rules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_Or, "</lar:Or>"})
-						dgv_rules.Rows.Insert(tmpLowestIndex, New String() {_begin_Or, "<lar:Or>"})
+						dgvRules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_Or, "</lar:Or>"})
+						dgvRules.Rows.Insert(tmpLowestIndex, New String() {_begin_Or, "<lar:Or>"})
 					End If
 					
 					'Indent the new group.
 					For i As Integer = tmpLowestIndex To tmpHighestIndex + 2
-						Dim tmpPadding As Padding = dgv_rules.Rows(i).Cells(0).Style.Padding
+						Dim tmpPadding As Padding = dgvRules.Rows(i).Cells(0).Style.Padding
 						tmpPadding.Left += defaultPaddingSize
-						dgv_rules.Rows(i).Cells(0).Style.Padding = tmpPadding
+						dgvRules.Rows(i).Cells(0).Style.Padding = tmpPadding
 					Next
-				ElseIf (btn_group.Text = _remove_And) OrElse (btn_group.Text = _remove_Or) Then
+				ElseIf (btnGroup.Text = _remove_And) OrElse (btnGroup.Text = _remove_Or) Then
 					'Remove grouping
 					
 					'Remove the first and last rows which contain the grouping rows.
-					dgv_rules.Rows.RemoveAt(tmpHighestIndex)
-					dgv_rules.Rows.RemoveAt(tmpLowestIndex)
+					dgvRules.Rows.RemoveAt(tmpHighestIndex)
+					dgvRules.Rows.RemoveAt(tmpLowestIndex)
 					
 					'Un-indent the selected rows.
 					For i As Integer = tmpLowestIndex To tmpHighestIndex - 2
-						Dim tmpPadding As Padding = dgv_rules.Rows(i).Cells(0).Style.Padding
+						Dim tmpPadding As Padding = dgvRules.Rows(i).Cells(0).Style.Padding
 						tmpPadding.Left = tmpPadding.Left - defaultPaddingSize
-						dgv_rules.Rows(i).Cells(0).Style.Padding = tmpPadding
+						dgvRules.Rows(i).Cells(0).Style.Padding = tmpPadding
 						
-						'dgv_rules.Rows(i).Cells(0).Value = dgv_rules.Rows(i).Cells(0).Value.ToString().TrimStart(New Char() {" "C})
+						'dgvRules.Rows(i).Cells(0).Value = dgvRules.Rows(i).Cells(0).Value.ToString().TrimStart(New Char() {" "C})
 						'Adding or removing rule group.
 					Next
 				End If
@@ -432,19 +415,19 @@ Public Partial Class RulesEditor
 	
 	'When the user select a records enable and disable buttons depending
 	' on what they selected.
-	Private Sub dgv_rules_SelectionChanged(sender As Object, e As EventArgs)
+	Private Sub dgvRules_SelectionChanged(sender As Object, e As EventArgs)
 		Dim tmpDgv As DataGridView = DirectCast(sender, DataGridView)
 		
 		Application.DoEvents()
 		
-		btn_remove.Enabled = False
+		btnRemove.Enabled = False
 		
 		'Finish the event then proceed.
 		If tmpDgv.SelectedRows.Count = 1 Then
-			btn_edit.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
-			btn_group.Text = globalRM.GetString("remove_group")
-			btn_group.Enabled = False
-			btn_remove.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
+			btnEdit.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
+			btnGroup.Text = globalRM.GetString("remove_group")
+			btnGroup.Enabled = False
+			btnRemove.Enabled = Not RowIsGroupConstruct(tmpDgv.SelectedRows(0))
 		ElseIf tmpDgv.SelectedRows.Count > 1 Then
 			
 			'Find the highest and lowest index values in the selected rows.
@@ -481,38 +464,38 @@ Public Partial Class RulesEditor
 			' number of rows selected.  If they do not, then the user has not selected
 			' a continuous collection of rows.
 			If (tmpHighestIndex - tmpLowestIndex) + 1 <> tmpDgv.SelectedRows.Count Then
-				btn_group.Text = _add_Group
-				btn_group.Enabled = False
+				btnGroup.Text = _add_Group
+				btnGroup.Enabled = False
 				
 				'If the lowest row is a Begin rule and the highest rule is a End
 				' rule of the same type then allow the user to remove the group.
-			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _Begin_And) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_And) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
+			ElseIf (dgvRules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _Begin_And) AndAlso (dgvRules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_And) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
 				
-				btn_group.Text = _remove_And
-				btn_group.Enabled = True
+				btnGroup.Text = _remove_And
+				btnGroup.Enabled = True
 				
-			ElseIf (dgv_rules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _begin_Or) AndAlso (dgv_rules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_Or) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
+			ElseIf (dgvRules.Rows(tmpLowestIndex).Cells(0).Value.ToString().Trim() = _begin_Or) AndAlso (dgvRules.Rows(tmpHighestIndex).Cells(0).Value.ToString().Trim() = _end_Or) AndAlso (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
 				
-				btn_group.Text = _remove_Or
-				btn_group.Enabled = True
+				btnGroup.Text = _remove_Or
+				btnGroup.Enabled = True
 				
 			ElseIf (tmpAndRuleCount = 0) AndAlso (tmpOrRuleCount = 0) Then
-				btn_group.Text = _add_Group
-				btn_group.Enabled = True
+				btnGroup.Text = _add_Group
+				btnGroup.Enabled = True
 			Else
-				btn_group.Text = _add_Group
-				btn_group.Enabled = False
+				btnGroup.Text = _add_Group
+				btnGroup.Enabled = False
 			End If
 			
 			'Only one row selected.
-			btn_edit.Enabled = False
+			btnEdit.Enabled = False
 		End If
 	End Sub
 	
 	
 	'If there are no rules then disable the Save Rules button.
-	Sub Dgv_rulesRowsAddRemoved(sender As Object, e As Object)
-		If Dgv_rules.Rows.Count > 0 Then
+	Sub dgvRulesRowsAddRemoved(sender As Object, e As Object)
+		If dgvRules.Rows.Count > 0 Then
 			btnSaveRules.Enabled = True
 		Else
 			btnSaveRules.Enabled = False
@@ -561,15 +544,15 @@ Public Partial Class RulesEditor
 	
 	'Allow user to edit the Installable Item level rules.
 	Sub BtnEditInstallableItemClick(sender As Object, e As EventArgs)
-		Msgbox("Edit this XML at your own risk.")
-		tb_xml.ScrollBars = ScrollBars.Vertical
-		tb_xml.ReadOnly = False
+		Msgbox (globalRM.GetString("warning_update_manual_edit"))
+		txtXml.ScrollBars = ScrollBars.Vertical
+		txtXml.ReadOnly = False
 		btnEditInstallableItem.Visible = False
 	End Sub
 	
 	'Clear all the rules.
 	Sub Clear
-		Me.dgv_rules.Rows.Clear
+		Me.dgvRules.Rows.Clear
 	End Sub
 	
 	Shadows Sub TextChanged(sender As Object, e As EventArgs)

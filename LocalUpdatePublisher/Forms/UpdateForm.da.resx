@@ -1,64 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,377 +58,168 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuller</value>
-  </data>
-  <data name="btnNext.Text" xml:space="preserve">
-    <value>Næste</value>
-  </data>
-  <data name="btnPrevious.Text" xml:space="preserve">
-    <value>Forrige</value>
-  </data>
-  <data name="chkMetadataOnly.Text" xml:space="preserve">
-    <value>Udgiv kun metadata</value>
-  </data>
-  <data name="chkExportSdp.Text" xml:space="preserve">
-    <value>Gem Software definitionspakke</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
-        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
-        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
-        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
-        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
-        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
-        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
-        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
-        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
-        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
-        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
-        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
-        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
+  <data name="$this.Text">
     <value>Importer opdatering fra fil</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1559, 13</value>
-  </data>
-  <data name="lblInfo.Text" xml:space="preserve">
-    <value>Denne guide vil bringe dig gennem processen med at skabe et lokalt offentliggjort softwarepakke. Du skal vælge en MSI, MSP, eller EXE-fil som opdateringsfil. Hvis den EXE fil har en indbygget MSI-fil skal du indtaste den relative sti. Hvis der er andre understøttende nødvendige filer, såsom transformationsfiler, tilføjes disse ti listen.</value>
-  </data>
-  <data name="txtMSIPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 47</value>
-  </data>
-  <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 16</value>
-  </data>
-  <data name="btnUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 25</value>
-  </data>
-  <data name="btnUpdateFile.Text" xml:space="preserve">
-    <value>Gennemse</value>
-  </data>
-  <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 73</value>
-  </data>
-  <data name="lblUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 31</value>
-  </data>
-  <data name="lblUpdateFile.Text" xml:space="preserve">
-    <value>Opdater fil</value>
-  </data>
-  <data name="lblMSIPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 26</value>
-  </data>
-  <data name="lblMSIPath.Text" xml:space="preserve">
-    <value>MSI sti</value>
-  </data>
-  <data name="lblAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 31</value>
-  </data>
-  <data name="lblAdditionalFiles.Text" xml:space="preserve">
-    <value>Yderligere filer</value>
-  </data>
-  <data name="txtUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 16</value>
-  </data>
-  <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 104</value>
-  </data>
-  <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 25</value>
-  </data>
-  <data name="btnAddFiles.Text" xml:space="preserve">
-    <value>Tilføj filer</value>
-  </data>
-  <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 73</value>
-  </data>
-  <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 25</value>
-  </data>
-  <data name="btnAddDir.Text" xml:space="preserve">
+  <data name="btnAddDir.Text">
     <value>Tilføj mappe</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
+  <data name="btnAddFiles.Text">
+    <value>Tilføj filer</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblRebootBehavior.Text" xml:space="preserve">
-    <value>Genstart muligheder</value>
+  <data name="btnCancel.Text">
+    <value>Annuller</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="cboPackageType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 16</value>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Rediger</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="cboPackageType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 21</value>
+  <data name="btnMetaDataEdit.Text">
+    <value>Rediger</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="txtOriginalURI.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 300</value>
+  <data name="btnNext.Text">
+    <value>Næste</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="txtOriginalURI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
+  <data name="btnPrevious.Text">
+    <value>Forrige</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblPackageType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
+  <data name="btnUpdateFile.Text">
+    <value>Gennemse</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblPackageType.Text" xml:space="preserve">
-    <value>Pakketype</value>
+  <data name="chkExportSdp.Text">
+    <value>Gem Software definitionspakke</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 13</value>
+  <data name="chkMetadataOnly.Text">
+    <value>Udgiv kun metadata</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblPackageInfo.Text" xml:space="preserve">
-    <value>Indtast de relevante oplysninger om denne software-pakke her. Der henvises til dokumentationen for spørgsmål vedrørende de enkelte felter.</value>
+  <data name="lblAdditionalFiles.Text">
+    <value>Yderligere filer</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="txtCommandLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 458</value>
-  </data>
-  <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 405</value>
-  </data>
-  <data name="lblCommandLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblCommandLine.Text" xml:space="preserve">
-    <value>Kommandolinie</value>
-  </data>
-  <data name="lblOriginalURI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="cboRebootBehavior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 431</value>
-  </data>
-  <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 402</value>
-  </data>
-  <data name="lblNetwork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 26</value>
-  </data>
-  <data name="lblNetwork.Text" xml:space="preserve">
-    <value>Netværksforbindelse kræves</value>
-  </data>
-  <data name="lblUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblUninstall.Text" xml:space="preserve">
-    <value>Afinstaller</value>
-  </data>
-  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 405</value>
-  </data>
-  <data name="lblImpact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="txtPackageTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 43</value>
-  </data>
-  <data name="txtPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
-  </data>
-  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 69</value>
-  </data>
-  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 39</value>
-  </data>
-  <data name="lblPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblPackageTitle.Text" xml:space="preserve">
-    <value>Pakke Titel</value>
-  </data>
-  <data name="cboSeverity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 167</value>
-  </data>
-  <data name="txtBulletinID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 141</value>
-  </data>
-  <data name="txtBulletinID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
-  </data>
-  <data name="cboImpact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 378</value>
-  </data>
-  <data name="lblClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="lblClassification.Text" xml:space="preserve">
-    <value>Klassificering</value>
-  </data>
-  <data name="cboVendor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 194</value>
-  </data>
-  <data name="cboVendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 21</value>
-  </data>
-  <data name="cboProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 221</value>
-  </data>
-  <data name="cboProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 21</value>
-  </data>
-  <data name="lblBullitinID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblBullitinID.Text" xml:space="preserve">
-    <value>Bulletin-id</value>
-  </data>
-  <data name="txtArticleID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 248</value>
-  </data>
-  <data name="txtCVEID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 274</value>
-  </data>
-  <data name="lblSeverity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="lblSeverity.Text" xml:space="preserve">
-    <value>Sværhedsgrad</value>
-  </data>
-  <data name="lblMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblMoreInfoURL.Text" xml:space="preserve">
-    <value>Mere info URL</value>
-  </data>
-  <data name="txtMoreInfoURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 352</value>
-  </data>
-  <data name="txtMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
-  </data>
-  <data name="lblSupportURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblVendor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="lblVendor.Text" xml:space="preserve">
-    <value>Udgiver</value>
-  </data>
-  <data name="txtSupportURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 326</value>
-  </data>
-  <data name="txtSupportURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 20</value>
-  </data>
-  <data name="lblCVEID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="lblProduct.Text" xml:space="preserve">
-    <value>Produkt</value>
-  </data>
-  <data name="lblArticleID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 26</value>
-  </data>
-  <data name="lblArticleID.Text" xml:space="preserve">
+  <data name="lblArticleID.Text">
     <value>Artikel-id</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="cboClassification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 114</value>
+  <data name="lblBullitinID.Text">
+    <value>Bulletin-id</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="cboClassification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 21</value>
+  <data name="lblClassification.Text">
+    <value>Klassificering</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 45</value>
+  <data name="lblCommandLine.Text">
+    <value>Kommandolinie</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblDescription.Text" xml:space="preserve">
+  <data name="lblDescription.Text">
     <value>Beskrivelse</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 0</value>
+  <data name="lblInfo.Text">
+    <value>Denne guide vil bringe dig gennem processen med at skabe et lokalt offentliggjort softwarepakke. Du skal vælge en MSI, MSP, eller EXE-fil som opdateringsfil. Hvis den EXE fil har en indbygget MSI-fil skal du indtaste den relative sti. Hvis der er andre understøttende nødvendige filer, såsom transformationsfiler, tilføjes disse ti listen.</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lblLanguages.Text" xml:space="preserve">
-    <value>Sprog</value>
-  </data>
-  <data name="lblPrerequisites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
-  </data>
-  <data name="lblPrerequisites.Text" xml:space="preserve">
-    <value>Forudsætninger</value>
-  </data>
-  <data name="lblReturnCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 0</value>
-  </data>
-  <data name="lblReturnCodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
-  </data>
-  <data name="lblReturnCodes.Text" xml:space="preserve">
-    <value>Returkoder</value>
-  </data>
-  <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 0</value>
-  </data>
-  <data name="lblSupersedes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="lblSupersedes.Text" xml:space="preserve">
-    <value>Erstatter</value>
-  </data>
-  <data name="tlpOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 481</value>
-  </data>
-  <data name="tlpOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 16</value>
-  </data>
-  <data name="txtIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1027, 455</value>
-  </data>
-  <data name="btnIsSupersededEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>980, 13</value>
-  </data>
-  <data name="btnIsSupersededEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 23</value>
-  </data>
-  <data name="btnIsSupersededEdit.Text" xml:space="preserve">
-    <value>Rediger</value>
-  </data>
-  <data name="lblIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1027, 13</value>
-  </data>
-  <data name="lblIsSuperseded.Text" xml:space="preserve">
-    <value>Denne formular viser de regler, der bestemmer om software-pakken er erstattet. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se den automatisk genererede regel på installationsniveau.</value>
-  </data>
-  <data name="lblIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 23</value>
-  </data>
-  <data name="lblIsSuperceded_InstallableItem.Text" xml:space="preserve">
+  <data name="lblIsSuperceded_InstallableItem.Text">
     <value>Installation på post-Niveau - Erstattede regler</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnMetaDataEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 13</value>
+  <data name="lblIsSuperseded.Text">
+    <value>Denne formular viser de regler, der bestemmer om software-pakken er erstattet. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se den automatisk genererede regel på installationsniveau.</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnMetaDataEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 23</value>
+  <data name="lblLanguages.Text">
+    <value>Sprog</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnMetaDataEdit.Text" xml:space="preserve">
-    <value>Rediger</value>
+  <data name="lblMSIPath.Text">
+    <value>MSI sti</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblMetaData.Text" xml:space="preserve">
+  <data name="lblMetaData.Text">
     <value>Brug denne formular til at gennemgå de metadata der brugt tidligere,  kan installeres, er installeret, eller er erstattet.</value>
+    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblMetaData_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 23</value>
-  </data>
-  <data name="lblMetaData_InstallableItem.Text" xml:space="preserve">
+  <data name="lblMetaData_InstallableItem.Text">
     <value>Installation på post-niveau - Regel Metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Mere info URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Netværksforbindelse kræves</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>Original URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Indtast de relevante oplysninger om denne software-pakke her. Der henvises til dokumentationen for spørgsmål vedrørende de enkelte felter.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Pakke Titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Pakketype</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Forudsætninger</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Produkt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Genstart muligheder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Returkoder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Sværhedsgrad</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Brug denne formular til at gennemgå XML-data, som vil blive brugt til at beskrive denne softwarepakke. Vælg Udfør for at offentliggøre denne pakke til WSUS-serveren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Erstatter</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>Support URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Afinstaller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Opdater fil</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Udgiver</value>
+    <comment>Automatically translated using Google</comment>
   </data>
 </root>

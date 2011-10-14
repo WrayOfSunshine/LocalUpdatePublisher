@@ -46,6 +46,7 @@ Partial Class AboutForm
 		'
 		resources.ApplyResources(Me.lblAbout, "lblAbout")
 		Me.lblAbout.Name = "lblAbout"
+		AddHandler Me.lblAbout.TextChanged, AddressOf Me.TextChanged
 		'
 		'linkLabel
 		'

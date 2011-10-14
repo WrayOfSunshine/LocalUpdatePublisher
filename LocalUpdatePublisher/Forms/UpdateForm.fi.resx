@@ -102,10 +102,6 @@
     <value>Julkaise vain metatietoja</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="label4.Text">
-    <value>Tällä lomakkeella voit tarkistaa XML, jota käytetään kuvaamaan ohjelmistopaketin. Valitse Valmis julkaista tämän paketin WSUS-palvelimeen.</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Lisää tiedostoja</value>
     <comment>Automatically translated using Google</comment>
@@ -200,6 +196,10 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Vakavuus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Tällä lomakkeella voit tarkistaa XML, jota käytetään kuvaamaan ohjelmistopaketin. Valitse Valmis julkaista tämän paketin WSUS-palvelimeen.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblSupersedes.Text">

@@ -66,6 +66,32 @@
     <value>DWORD-arvo</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto voidaan asentaa. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Package Level - Installable Säännöt</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Asennus alkiotason</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto on jo asennettu. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Asennettu Säännöt</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Asennus alkiotason</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Luo sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Muokkaa sääntöä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="add_new_server">
     <value>Lisää uusi palvelin</value>
     <comment>Automatically translated using Google</comment>
@@ -511,7 +537,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="export_certificate">
-    <value>Vienti Cert</value>
+    <value>Vientitodistuksella</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="failed">
@@ -1196,10 +1222,6 @@
   </data>
   <data name="value_type">
     <value>ValueType</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="version">
-    <value>Version</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="version_maximum">

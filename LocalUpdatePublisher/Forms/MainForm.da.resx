@@ -75,7 +75,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text">
-    <value>Certifikat Info</value>
+    <value>Certifikat information</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkApprovedOnly.Text">
@@ -230,6 +230,10 @@
     <value>Opdateringer med ingen status:</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Opdater Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Opdateringer installeret / ikke relevant:</value>
     <comment>Automatically translated using Google</comment>
@@ -254,13 +258,12 @@
     <value>Administrer regler</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Optioner</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Gemte Regler</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Indstillinger</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Rapport</value>

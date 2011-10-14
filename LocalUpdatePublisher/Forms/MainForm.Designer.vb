@@ -49,24 +49,6 @@ Partial Class MainForm
 		Me.lblSelectedTargetGroup = New System.Windows.Forms.Label
 		Me.lblSelectedTargetGroupCount = New System.Windows.Forms.Label
 		Me._dgvMain = New System.Windows.Forms.DataGridView
-		Me.pnlComputers = New System.Windows.Forms.Panel
-		Me.tabMainComputers = New System.Windows.Forms.TabControl
-		Me.tabComputerInfo = New System.Windows.Forms.TabPage
-		Me.tlpComputerInfo = New System.Windows.Forms.TableLayoutPanel
-		Me.lblUpdatesWErrors = New System.Windows.Forms.Label
-		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
-		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
-		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
-		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
-		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
-		Me.tabComputerStatus = New System.Windows.Forms.TabPage
-		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
-		Me.tabComputerReport = New System.Windows.Forms.TabPage
-		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
-		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
-		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
 		Me.pnlUpdates = New System.Windows.Forms.Panel
 		Me.tabMainUpdates = New System.Windows.Forms.TabControl
 		Me.tabUpdateInfo = New System.Windows.Forms.TabPage
@@ -116,6 +98,24 @@ Partial Class MainForm
 		Me.lblComputerGroup = New System.Windows.Forms.Label
 		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
 		Me.cboTargetGroup = New System.Windows.Forms.ComboBox
+		Me.pnlComputers = New System.Windows.Forms.Panel
+		Me.tabMainComputers = New System.Windows.Forms.TabControl
+		Me.tabComputerInfo = New System.Windows.Forms.TabPage
+		Me.tlpComputerInfo = New System.Windows.Forms.TableLayoutPanel
+		Me.lblUpdatesWErrors = New System.Windows.Forms.Label
+		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
+		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
+		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
+		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
+		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
+		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
+		Me.tabComputerStatus = New System.Windows.Forms.TabPage
+		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
+		Me.tabComputerReport = New System.Windows.Forms.TabPage
+		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
+		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
+		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
 		Me.menuStrip = New System.Windows.Forms.MenuStrip
 		Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.importCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -136,7 +136,7 @@ Partial Class MainForm
 		Me.exportRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.certificateInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.connectionSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.optionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+		Me.settingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.updateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.helpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.aboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -163,14 +163,6 @@ Partial Class MainForm
 		Me.tlpHeader.SuspendLayout
 		Me.tlpHeaderTop.SuspendLayout
 		CType(Me._dgvMain,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.pnlComputers.SuspendLayout
-		Me.tabMainComputers.SuspendLayout
-		Me.tabComputerInfo.SuspendLayout
-		Me.tlpComputerInfo.SuspendLayout
-		Me.tabComputerStatus.SuspendLayout
-		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).BeginInit
-		Me.tabComputerReport.SuspendLayout
-		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlUpdates.SuspendLayout
 		Me.tabMainUpdates.SuspendLayout
 		Me.tabUpdateInfo.SuspendLayout
@@ -180,6 +172,14 @@ Partial Class MainForm
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabUpdateReport.SuspendLayout
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.pnlComputers.SuspendLayout
+		Me.tabMainComputers.SuspendLayout
+		Me.tabComputerInfo.SuspendLayout
+		Me.tlpComputerInfo.SuspendLayout
+		Me.tabComputerStatus.SuspendLayout
+		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.tabComputerReport.SuspendLayout
+		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.menuStrip.SuspendLayout
 		Me.statusStrip.SuspendLayout
 		Me.cmCreateCategoryUpdate.SuspendLayout
@@ -327,160 +327,6 @@ Partial Class MainForm
 		AddHandler Me._dgvMain.CellMouseDown, AddressOf Me.dgvMainCellMouseDown
 		AddHandler Me._dgvMain.Leave, AddressOf Me.dgvMainLeave
 		AddHandler Me._dgvMain.KeyUp, AddressOf Me.dgvMainKeyUp
-		'
-		'pnlComputers
-		'
-		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
-		resources.ApplyResources(Me.pnlComputers, "pnlComputers")
-		Me.pnlComputers.Name = "pnlComputers"
-		'
-		'tabMainComputers
-		'
-		Me.tabMainComputers.Controls.Add(Me.tabComputerInfo)
-		Me.tabMainComputers.Controls.Add(Me.tabComputerStatus)
-		Me.tabMainComputers.Controls.Add(Me.tabComputerReport)
-		resources.ApplyResources(Me.tabMainComputers, "tabMainComputers")
-		Me.tabMainComputers.Name = "tabMainComputers"
-		Me.tabMainComputers.SelectedIndex = 0
-		'
-		'tabComputerInfo
-		'
-		Me.tabComputerInfo.BackColor = System.Drawing.Color.Transparent
-		Me.tabComputerInfo.Controls.Add(Me.tlpComputerInfo)
-		resources.ApplyResources(Me.tabComputerInfo, "tabComputerInfo")
-		Me.tabComputerInfo.Name = "tabComputerInfo"
-		'
-		'tlpComputerInfo
-		'
-		resources.ApplyResources(Me.tlpComputerInfo, "tlpComputerInfo")
-		Me.tlpComputerInfo.BackColor = System.Drawing.Color.White
-		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesWErrors, 0, 0)
-		Me.tlpComputerInfo.Controls.Add(Me.txtUpdateNoStatusNum, 1, 3)
-		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesInstalledorNANum, 1, 2)
-		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesNeededNum, 1, 1)
-		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesNeeded, 0, 1)
-		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA, 0, 2)
-		Me.tlpComputerInfo.Controls.Add(Me.lblUpdateNoStatus, 0, 3)
-		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesWErrorsNum, 1, 0)
-		Me.tlpComputerInfo.Name = "tlpComputerInfo"
-		'
-		'lblUpdatesWErrors
-		'
-		resources.ApplyResources(Me.lblUpdatesWErrors, "lblUpdatesWErrors")
-		Me.lblUpdatesWErrors.Name = "lblUpdatesWErrors"
-		'
-		'txtUpdateNoStatusNum
-		'
-		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.Color.White
-		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		resources.ApplyResources(Me.txtUpdateNoStatusNum, "txtUpdateNoStatusNum")
-		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
-		Me.txtUpdateNoStatusNum.ReadOnly = true
-		'
-		'txtUpdatesInstalledorNANum
-		'
-		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.Color.White
-		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		resources.ApplyResources(Me.txtUpdatesInstalledorNANum, "txtUpdatesInstalledorNANum")
-		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
-		Me.txtUpdatesInstalledorNANum.ReadOnly = true
-		'
-		'txtUpdatesNeededNum
-		'
-		Me.txtUpdatesNeededNum.BackColor = System.Drawing.Color.White
-		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		resources.ApplyResources(Me.txtUpdatesNeededNum, "txtUpdatesNeededNum")
-		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
-		Me.txtUpdatesNeededNum.ReadOnly = true
-		'
-		'lblUpdatesNeeded
-		'
-		resources.ApplyResources(Me.lblUpdatesNeeded, "lblUpdatesNeeded")
-		Me.lblUpdatesNeeded.Name = "lblUpdatesNeeded"
-		'
-		'lblUpdatesInstalledorNA
-		'
-		resources.ApplyResources(Me.lblUpdatesInstalledorNA, "lblUpdatesInstalledorNA")
-		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
-		'
-		'lblUpdateNoStatus
-		'
-		resources.ApplyResources(Me.lblUpdateNoStatus, "lblUpdateNoStatus")
-		Me.lblUpdateNoStatus.Name = "lblUpdateNoStatus"
-		'
-		'txtUpdatesWErrorsNum
-		'
-		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.Color.White
-		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
-		resources.ApplyResources(Me.txtUpdatesWErrorsNum, "txtUpdatesWErrorsNum")
-		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
-		Me.txtUpdatesWErrorsNum.ReadOnly = true
-		'
-		'tabComputerStatus
-		'
-		Me.tabComputerStatus.Controls.Add(Me.dgvComputerGroupStatus)
-		resources.ApplyResources(Me.tabComputerStatus, "tabComputerStatus")
-		Me.tabComputerStatus.Name = "tabComputerStatus"
-		Me.tabComputerStatus.UseVisualStyleBackColor = true
-		'
-		'dgvComputerGroupStatus
-		'
-		Me.dgvComputerGroupStatus.AllowUserToAddRows = false
-		Me.dgvComputerGroupStatus.AllowUserToDeleteRows = false
-		Me.dgvComputerGroupStatus.AllowUserToOrderColumns = true
-		Me.dgvComputerGroupStatus.AllowUserToResizeRows = false
-		Me.dgvComputerGroupStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvComputerGroupStatus.BackgroundColor = System.Drawing.SystemColors.Window
-		Me.dgvComputerGroupStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.dgvComputerGroupStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-		Me.dgvComputerGroupStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		resources.ApplyResources(Me.dgvComputerGroupStatus, "dgvComputerGroupStatus")
-		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
-		Me.dgvComputerGroupStatus.ReadOnly = true
-		Me.dgvComputerGroupStatus.RowHeadersVisible = false
-		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		'
-		'tabComputerReport
-		'
-		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
-		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
-		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
-		resources.ApplyResources(Me.tabComputerReport, "tabComputerReport")
-		Me.tabComputerReport.Name = "tabComputerReport"
-		Me.tabComputerReport.UseVisualStyleBackColor = true
-		'
-		'btnComputerRefreshReport
-		'
-		resources.ApplyResources(Me.btnComputerRefreshReport, "btnComputerRefreshReport")
-		Me.btnComputerRefreshReport.MinimumSize = New System.Drawing.Size(80, 25)
-		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
-		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
-		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
-		'
-		'dgvComputerReport
-		'
-		Me.dgvComputerReport.AllowUserToAddRows = false
-		Me.dgvComputerReport.AllowUserToDeleteRows = false
-		Me.dgvComputerReport.AllowUserToOrderColumns = true
-		Me.dgvComputerReport.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvComputerReport, "dgvComputerReport")
-		Me.dgvComputerReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvComputerReport.BackgroundColor = System.Drawing.SystemColors.Window
-		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvComputerReport.Name = "dgvComputerReport"
-		Me.dgvComputerReport.ReadOnly = true
-		Me.dgvComputerReport.RowHeadersVisible = false
-		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
-		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
-		'
-		'lblComputerUpdateStatus
-		'
-		resources.ApplyResources(Me.lblComputerUpdateStatus, "lblComputerUpdateStatus")
-		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
 		'
 		'pnlUpdates
 		'
@@ -849,6 +695,160 @@ Partial Class MainForm
 		Me.cboTargetGroup.Name = "cboTargetGroup"
 		AddHandler Me.cboTargetGroup.SelectedIndexChanged, AddressOf Me.CboTargetGroupSelectedIndexChanged
 		'
+		'pnlComputers
+		'
+		Me.pnlComputers.Controls.Add(Me.tabMainComputers)
+		resources.ApplyResources(Me.pnlComputers, "pnlComputers")
+		Me.pnlComputers.Name = "pnlComputers"
+		'
+		'tabMainComputers
+		'
+		Me.tabMainComputers.Controls.Add(Me.tabComputerInfo)
+		Me.tabMainComputers.Controls.Add(Me.tabComputerStatus)
+		Me.tabMainComputers.Controls.Add(Me.tabComputerReport)
+		resources.ApplyResources(Me.tabMainComputers, "tabMainComputers")
+		Me.tabMainComputers.Name = "tabMainComputers"
+		Me.tabMainComputers.SelectedIndex = 0
+		'
+		'tabComputerInfo
+		'
+		Me.tabComputerInfo.BackColor = System.Drawing.Color.Transparent
+		Me.tabComputerInfo.Controls.Add(Me.tlpComputerInfo)
+		resources.ApplyResources(Me.tabComputerInfo, "tabComputerInfo")
+		Me.tabComputerInfo.Name = "tabComputerInfo"
+		'
+		'tlpComputerInfo
+		'
+		resources.ApplyResources(Me.tlpComputerInfo, "tlpComputerInfo")
+		Me.tlpComputerInfo.BackColor = System.Drawing.Color.White
+		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesWErrors, 0, 0)
+		Me.tlpComputerInfo.Controls.Add(Me.txtUpdateNoStatusNum, 1, 3)
+		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesInstalledorNANum, 1, 2)
+		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesNeededNum, 1, 1)
+		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesNeeded, 0, 1)
+		Me.tlpComputerInfo.Controls.Add(Me.lblUpdatesInstalledorNA, 0, 2)
+		Me.tlpComputerInfo.Controls.Add(Me.lblUpdateNoStatus, 0, 3)
+		Me.tlpComputerInfo.Controls.Add(Me.txtUpdatesWErrorsNum, 1, 0)
+		Me.tlpComputerInfo.Name = "tlpComputerInfo"
+		'
+		'lblUpdatesWErrors
+		'
+		resources.ApplyResources(Me.lblUpdatesWErrors, "lblUpdatesWErrors")
+		Me.lblUpdatesWErrors.Name = "lblUpdatesWErrors"
+		'
+		'txtUpdateNoStatusNum
+		'
+		Me.txtUpdateNoStatusNum.BackColor = System.Drawing.Color.White
+		Me.txtUpdateNoStatusNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		resources.ApplyResources(Me.txtUpdateNoStatusNum, "txtUpdateNoStatusNum")
+		Me.txtUpdateNoStatusNum.Name = "txtUpdateNoStatusNum"
+		Me.txtUpdateNoStatusNum.ReadOnly = true
+		'
+		'txtUpdatesInstalledorNANum
+		'
+		Me.txtUpdatesInstalledorNANum.BackColor = System.Drawing.Color.White
+		Me.txtUpdatesInstalledorNANum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		resources.ApplyResources(Me.txtUpdatesInstalledorNANum, "txtUpdatesInstalledorNANum")
+		Me.txtUpdatesInstalledorNANum.Name = "txtUpdatesInstalledorNANum"
+		Me.txtUpdatesInstalledorNANum.ReadOnly = true
+		'
+		'txtUpdatesNeededNum
+		'
+		Me.txtUpdatesNeededNum.BackColor = System.Drawing.Color.White
+		Me.txtUpdatesNeededNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		resources.ApplyResources(Me.txtUpdatesNeededNum, "txtUpdatesNeededNum")
+		Me.txtUpdatesNeededNum.Name = "txtUpdatesNeededNum"
+		Me.txtUpdatesNeededNum.ReadOnly = true
+		'
+		'lblUpdatesNeeded
+		'
+		resources.ApplyResources(Me.lblUpdatesNeeded, "lblUpdatesNeeded")
+		Me.lblUpdatesNeeded.Name = "lblUpdatesNeeded"
+		'
+		'lblUpdatesInstalledorNA
+		'
+		resources.ApplyResources(Me.lblUpdatesInstalledorNA, "lblUpdatesInstalledorNA")
+		Me.lblUpdatesInstalledorNA.Name = "lblUpdatesInstalledorNA"
+		'
+		'lblUpdateNoStatus
+		'
+		resources.ApplyResources(Me.lblUpdateNoStatus, "lblUpdateNoStatus")
+		Me.lblUpdateNoStatus.Name = "lblUpdateNoStatus"
+		'
+		'txtUpdatesWErrorsNum
+		'
+		Me.txtUpdatesWErrorsNum.BackColor = System.Drawing.Color.White
+		Me.txtUpdatesWErrorsNum.BorderStyle = System.Windows.Forms.BorderStyle.None
+		resources.ApplyResources(Me.txtUpdatesWErrorsNum, "txtUpdatesWErrorsNum")
+		Me.txtUpdatesWErrorsNum.Name = "txtUpdatesWErrorsNum"
+		Me.txtUpdatesWErrorsNum.ReadOnly = true
+		'
+		'tabComputerStatus
+		'
+		Me.tabComputerStatus.Controls.Add(Me.dgvComputerGroupStatus)
+		resources.ApplyResources(Me.tabComputerStatus, "tabComputerStatus")
+		Me.tabComputerStatus.Name = "tabComputerStatus"
+		Me.tabComputerStatus.UseVisualStyleBackColor = true
+		'
+		'dgvComputerGroupStatus
+		'
+		Me.dgvComputerGroupStatus.AllowUserToAddRows = false
+		Me.dgvComputerGroupStatus.AllowUserToDeleteRows = false
+		Me.dgvComputerGroupStatus.AllowUserToOrderColumns = true
+		Me.dgvComputerGroupStatus.AllowUserToResizeRows = false
+		Me.dgvComputerGroupStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvComputerGroupStatus.BackgroundColor = System.Drawing.SystemColors.Window
+		Me.dgvComputerGroupStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.dgvComputerGroupStatus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+		Me.dgvComputerGroupStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		resources.ApplyResources(Me.dgvComputerGroupStatus, "dgvComputerGroupStatus")
+		Me.dgvComputerGroupStatus.Name = "dgvComputerGroupStatus"
+		Me.dgvComputerGroupStatus.ReadOnly = true
+		Me.dgvComputerGroupStatus.RowHeadersVisible = false
+		Me.dgvComputerGroupStatus.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+		Me.dgvComputerGroupStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		'
+		'tabComputerReport
+		'
+		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
+		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
+		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
+		resources.ApplyResources(Me.tabComputerReport, "tabComputerReport")
+		Me.tabComputerReport.Name = "tabComputerReport"
+		Me.tabComputerReport.UseVisualStyleBackColor = true
+		'
+		'btnComputerRefreshReport
+		'
+		resources.ApplyResources(Me.btnComputerRefreshReport, "btnComputerRefreshReport")
+		Me.btnComputerRefreshReport.MinimumSize = New System.Drawing.Size(80, 25)
+		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
+		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
+		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
+		'
+		'dgvComputerReport
+		'
+		Me.dgvComputerReport.AllowUserToAddRows = false
+		Me.dgvComputerReport.AllowUserToDeleteRows = false
+		Me.dgvComputerReport.AllowUserToOrderColumns = true
+		Me.dgvComputerReport.AllowUserToResizeRows = false
+		resources.ApplyResources(Me.dgvComputerReport, "dgvComputerReport")
+		Me.dgvComputerReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvComputerReport.BackgroundColor = System.Drawing.SystemColors.Window
+		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvComputerReport.Name = "dgvComputerReport"
+		Me.dgvComputerReport.ReadOnly = true
+		Me.dgvComputerReport.RowHeadersVisible = false
+		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
+		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
+		'
+		'lblComputerUpdateStatus
+		'
+		resources.ApplyResources(Me.lblComputerUpdateStatus, "lblComputerUpdateStatus")
+		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
+		'
 		'menuStrip
 		'
 		resources.ApplyResources(Me.menuStrip, "menuStrip")
@@ -903,7 +903,7 @@ Partial Class MainForm
 		'
 		'toolsToolStripMenuItem
 		'
-		Me.toolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.createUpdateToolStripMenuItem, Me.importUpdateToolStripMenuItem, Me.exportUpdateToolStripMenuItem, Me.toolStripSeparator1, Me.savedRulesToolStripMenuItem, Me.certificateInfoToolStripMenuItem, Me.connectionSettingsToolStripMenuItem, Me.optionsToolStripMenuItem})
+		Me.toolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.createUpdateToolStripMenuItem, Me.importUpdateToolStripMenuItem, Me.exportUpdateToolStripMenuItem, Me.toolStripSeparator1, Me.savedRulesToolStripMenuItem, Me.certificateInfoToolStripMenuItem, Me.connectionSettingsToolStripMenuItem, Me.settingsToolStripMenuItem})
 		Me.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem"
 		resources.ApplyResources(Me.toolsToolStripMenuItem, "toolsToolStripMenuItem")
 		'
@@ -966,11 +966,11 @@ Partial Class MainForm
 		resources.ApplyResources(Me.connectionSettingsToolStripMenuItem, "connectionSettingsToolStripMenuItem")
 		AddHandler Me.connectionSettingsToolStripMenuItem.Click, AddressOf Me.ConnectionSettingsToolStripMenuItemClick
 		'
-		'optionsToolStripMenuItem
+		'settingsToolStripMenuItem
 		'
-		Me.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem"
-		resources.ApplyResources(Me.optionsToolStripMenuItem, "optionsToolStripMenuItem")
-		AddHandler Me.optionsToolStripMenuItem.Click, AddressOf Me.OptionsToolStripMenuItemClick
+		Me.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem"
+		resources.ApplyResources(Me.settingsToolStripMenuItem, "settingsToolStripMenuItem")
+		AddHandler Me.settingsToolStripMenuItem.Click, AddressOf Me.OptionsToolStripMenuItemClick
 		'
 		'updateToolStripMenuItem
 		'
@@ -1077,17 +1077,6 @@ Partial Class MainForm
 		Me.tlpHeaderTop.ResumeLayout(false)
 		Me.tlpHeaderTop.PerformLayout
 		CType(Me._dgvMain,System.ComponentModel.ISupportInitialize).EndInit
-		Me.pnlComputers.ResumeLayout(false)
-		Me.tabMainComputers.ResumeLayout(false)
-		Me.tabComputerInfo.ResumeLayout(false)
-		Me.tabComputerInfo.PerformLayout
-		Me.tlpComputerInfo.ResumeLayout(false)
-		Me.tlpComputerInfo.PerformLayout
-		Me.tabComputerStatus.ResumeLayout(false)
-		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
-		Me.tabComputerReport.ResumeLayout(false)
-		Me.tabComputerReport.PerformLayout
-		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlUpdates.ResumeLayout(false)
 		Me.tabMainUpdates.ResumeLayout(false)
 		Me.tabUpdateInfo.ResumeLayout(false)
@@ -1101,6 +1090,17 @@ Partial Class MainForm
 		Me.tabUpdateReport.ResumeLayout(false)
 		Me.tabUpdateReport.PerformLayout
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).EndInit
+		Me.pnlComputers.ResumeLayout(false)
+		Me.tabMainComputers.ResumeLayout(false)
+		Me.tabComputerInfo.ResumeLayout(false)
+		Me.tabComputerInfo.PerformLayout
+		Me.tlpComputerInfo.ResumeLayout(false)
+		Me.tlpComputerInfo.PerformLayout
+		Me.tabComputerStatus.ResumeLayout(false)
+		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
+		Me.tabComputerReport.ResumeLayout(false)
+		Me.tabComputerReport.PerformLayout
+		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.menuStrip.ResumeLayout(false)
 		Me.menuStrip.PerformLayout
 		Me.statusStrip.ResumeLayout(false)
@@ -1111,6 +1111,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private settingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private tlpComputerInfo As System.Windows.Forms.TableLayoutPanel
 	Private tlpHeaderTop As System.Windows.Forms.TableLayoutPanel
@@ -1154,7 +1155,6 @@ Partial Class MainForm
 	Private lblUninstall As System.Windows.Forms.Label
 	Private toolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
 	Private toolStripStatusLabelLink As System.Windows.Forms.ToolStripStatusLabel
-	Private optionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private connectionSettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private toolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
 	Private statusStrip As System.Windows.Forms.StatusStrip

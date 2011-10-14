@@ -112,8 +112,14 @@
   <data name="lblMinVersion.Text">
     <value>Minimale Version</value>
   </data>
+  <data name="lblOSVersion.Text">
+    <value>OS Version</value>
+  </data>
   <data name="lblPatchCode.Text">
     <value>Patch-Code</value>
+  </data>
+  <data name="lblPath.Text">
+    <value>Weg</value>
   </data>
   <data name="lblProcessorType.Text">
     <value>Prozessor-Typ</value>
@@ -141,5 +147,11 @@
   </data>
   <data name="lblRuleType.Text">
     <value>Regeltyp</value>
+  </data>
+  <data name="lblServicePack.Text">
+    <value>Service Pack</value>
+  </data>
+  <data name="lblVersion.Text">
+    <value>Version</value>
   </data>
 </root>

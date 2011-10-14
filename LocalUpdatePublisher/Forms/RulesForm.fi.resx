@@ -130,9 +130,15 @@
     <value>Pienin versio</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblOSVersion.Text">
+    <value>OS Versio</value>
+  </data>
   <data name="lblPatchCode.Text">
     <value>PatchCode</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPath.Text">
+    <value>Polku</value>
   </data>
   <data name="lblProcessorType.Text">
     <value>Prosessorin tyyppi</value>
@@ -169,5 +175,11 @@
   <data name="lblRuleType.Text">
     <value>Säännön tyyppi</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblServicePack.Text">
+    <value>Service Pack</value>
+  </data>
+  <data name="lblVersion.Text">
+    <value>Versio</value>
   </data>
 </root>

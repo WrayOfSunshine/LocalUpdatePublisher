@@ -59,18 +59,25 @@ Partial Class ApprovalForm
 		'
 		'lblInfo
 		'
-		Me.tlpMain.SetColumnSpan(Me.lblInfo, 4)
+		Me.lblInfo.AccessibleDescription = Nothing
+		Me.lblInfo.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblInfo, "lblInfo")
+		Me.tlpMain.SetColumnSpan(Me.lblInfo, 4)
+		Me.lblInfo.Font = Nothing
 		Me.lblInfo.Name = "lblInfo"
 		'
 		'dgvApprovals
 		'
+		Me.dgvApprovals.AccessibleDescription = Nothing
+		Me.dgvApprovals.AccessibleName = Nothing
 		Me.dgvApprovals.AllowUserToAddRows = false
 		Me.dgvApprovals.AllowUserToDeleteRows = false
+		resources.ApplyResources(Me.dgvApprovals, "dgvApprovals")
+		Me.dgvApprovals.BackgroundImage = Nothing
 		Me.dgvApprovals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.Approval, Me.Deadline, Me.CreationDate, Me.ApprovalAction, Me.TargetGroup})
 		Me.tlpMain.SetColumnSpan(Me.dgvApprovals, 4)
-		resources.ApplyResources(Me.dgvApprovals, "dgvApprovals")
+		Me.dgvApprovals.Font = Nothing
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.RowHeadersVisible = false
 		AddHandler Me.dgvApprovals.CellMouseDown, AddressOf Me.DtaGridViewCellMouseDown
@@ -94,26 +101,42 @@ Partial Class ApprovalForm
 		'
 		'cntxtMenuStrip
 		'
+		Me.cntxtMenuStrip.AccessibleDescription = Nothing
+		Me.cntxtMenuStrip.AccessibleName = Nothing
+		resources.ApplyResources(Me.cntxtMenuStrip, "cntxtMenuStrip")
+		Me.cntxtMenuStrip.BackgroundImage = Nothing
+		Me.cntxtMenuStrip.Font = Nothing
 		Me.cntxtMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.approveForInstallToolStripMenuItem, Me.approveForRemovalToolStripMenuItem, Me.notApprovedToolStripMenuItem})
 		Me.cntxtMenuStrip.Name = "contextMenuStrip"
-		resources.ApplyResources(Me.cntxtMenuStrip, "cntxtMenuStrip")
 		'
 		'approveForInstallToolStripMenuItem
 		'
-		Me.approveForInstallToolStripMenuItem.Name = "approveForInstallToolStripMenuItem"
+		Me.approveForInstallToolStripMenuItem.AccessibleDescription = Nothing
+		Me.approveForInstallToolStripMenuItem.AccessibleName = Nothing
 		resources.ApplyResources(Me.approveForInstallToolStripMenuItem, "approveForInstallToolStripMenuItem")
+		Me.approveForInstallToolStripMenuItem.BackgroundImage = Nothing
+		Me.approveForInstallToolStripMenuItem.Name = "approveForInstallToolStripMenuItem"
+		Me.approveForInstallToolStripMenuItem.ShortcutKeyDisplayString = Nothing
 		AddHandler Me.approveForInstallToolStripMenuItem.Click, AddressOf Me.ApproveForInstallToolStripMenuItemClick
 		'
 		'approveForRemovalToolStripMenuItem
 		'
-		Me.approveForRemovalToolStripMenuItem.Name = "approveForRemovalToolStripMenuItem"
+		Me.approveForRemovalToolStripMenuItem.AccessibleDescription = Nothing
+		Me.approveForRemovalToolStripMenuItem.AccessibleName = Nothing
 		resources.ApplyResources(Me.approveForRemovalToolStripMenuItem, "approveForRemovalToolStripMenuItem")
+		Me.approveForRemovalToolStripMenuItem.BackgroundImage = Nothing
+		Me.approveForRemovalToolStripMenuItem.Name = "approveForRemovalToolStripMenuItem"
+		Me.approveForRemovalToolStripMenuItem.ShortcutKeyDisplayString = Nothing
 		AddHandler Me.approveForRemovalToolStripMenuItem.Click, AddressOf Me.ApproveForRemovalToolStripMenuItemClick
 		'
 		'notApprovedToolStripMenuItem
 		'
-		Me.notApprovedToolStripMenuItem.Name = "notApprovedToolStripMenuItem"
+		Me.notApprovedToolStripMenuItem.AccessibleDescription = Nothing
+		Me.notApprovedToolStripMenuItem.AccessibleName = Nothing
 		resources.ApplyResources(Me.notApprovedToolStripMenuItem, "notApprovedToolStripMenuItem")
+		Me.notApprovedToolStripMenuItem.BackgroundImage = Nothing
+		Me.notApprovedToolStripMenuItem.Name = "notApprovedToolStripMenuItem"
+		Me.notApprovedToolStripMenuItem.ShortcutKeyDisplayString = Nothing
 		AddHandler Me.notApprovedToolStripMenuItem.Click, AddressOf Me.NotApprovedToolStripMenuItemClick
 		'
 		'Deadline
@@ -143,8 +166,12 @@ Partial Class ApprovalForm
 		'
 		'btnOK
 		'
+		Me.btnOK.AccessibleDescription = Nothing
+		Me.btnOK.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnOK, "btnOK")
+		Me.btnOK.BackgroundImage = Nothing
 		Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
+		Me.btnOK.Font = Nothing
 		Me.btnOK.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnOK.Name = "btnOK"
 		Me.btnOK.UseVisualStyleBackColor = true
@@ -152,21 +179,31 @@ Partial Class ApprovalForm
 		'
 		'btnCancel
 		'
+		Me.btnCancel.AccessibleDescription = Nothing
+		Me.btnCancel.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnCancel, "btnCancel")
+		Me.btnCancel.BackgroundImage = Nothing
 		Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+		Me.btnCancel.Font = Nothing
 		Me.btnCancel.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnCancel.Name = "btnCancel"
 		Me.btnCancel.UseVisualStyleBackColor = true
 		'
 		'lblUninstallable
 		'
-		Me.tlpMain.SetColumnSpan(Me.lblUninstallable, 4)
+		Me.lblUninstallable.AccessibleDescription = Nothing
+		Me.lblUninstallable.AccessibleName = Nothing
 		resources.ApplyResources(Me.lblUninstallable, "lblUninstallable")
+		Me.tlpMain.SetColumnSpan(Me.lblUninstallable, 4)
 		Me.lblUninstallable.Name = "lblUninstallable"
 		'
 		'btnReload
 		'
+		Me.btnReload.AccessibleDescription = Nothing
+		Me.btnReload.AccessibleName = Nothing
 		resources.ApplyResources(Me.btnReload, "btnReload")
+		Me.btnReload.BackgroundImage = Nothing
+		Me.btnReload.Font = Nothing
 		Me.btnReload.MinimumSize = New System.Drawing.Size(80, 25)
 		Me.btnReload.Name = "btnReload"
 		Me.btnReload.UseVisualStyleBackColor = true
@@ -174,21 +211,29 @@ Partial Class ApprovalForm
 		'
 		'tlpMain
 		'
+		Me.tlpMain.AccessibleDescription = Nothing
+		Me.tlpMain.AccessibleName = Nothing
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
+		Me.tlpMain.BackgroundImage = Nothing
 		Me.tlpMain.Controls.Add(Me.btnCancel, 3, 3)
 		Me.tlpMain.Controls.Add(Me.btnOK, 2, 3)
 		Me.tlpMain.Controls.Add(Me.btnReload, 0, 3)
 		Me.tlpMain.Controls.Add(Me.dgvApprovals, 0, 1)
 		Me.tlpMain.Controls.Add(Me.lblInfo, 0, 0)
 		Me.tlpMain.Controls.Add(Me.lblUninstallable, 0, 2)
+		Me.tlpMain.Font = Nothing
 		Me.tlpMain.Name = "tlpMain"
 		'
 		'ApprovalForm
 		'
+		Me.AccessibleDescription = Nothing
+		Me.AccessibleName = Nothing
 		resources.ApplyResources(Me, "$this")
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackgroundImage = Nothing
 		Me.CancelButton = Me.btnCancel
 		Me.Controls.Add(Me.tlpMain)
+		Me.Font = Nothing
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalForm"
 		Me.ShowIcon = false

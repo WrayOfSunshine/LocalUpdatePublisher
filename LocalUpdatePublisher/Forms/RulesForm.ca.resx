@@ -1,5 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -58,116 +117,362 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text">
-    <value>Crear regla</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="btnAdd.Text">
+  <data name="btnAdd.Text" xml:space="preserve">
     <value>Afegir regla</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnCancel.Text">
+  <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel·lar</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="chkComponentCollection_requireAll.Text">
-    <value>Tots els components necessaris</value>
-    <comment>Automatically translated using Google</comment>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tlpFooter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 974</value>
   </data>
-  <data name="chkFeatureCollection_requireAll.Text">
-    <value>Totes les característiques requerides</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="cboComparison.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 3</value>
   </data>
-  <data name="chkNotRule.Text">
-    <value>Regla de negació</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 27</value>
   </data>
-  <data name="chkProductCollection_requireAll.Text">
-    <value>Tots els productes necessaris</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="chkRegistry32Bit.Text">
-    <value>Registre de 32 bits</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblComparison.Text">
+  <data name="lblComparison.Text" xml:space="preserve">
     <value>Comparació</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblComponentCollection.Text">
-    <value>Components</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
   </data>
-  <data name="lblData.Text">
-    <value>Dades</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="txtOSMinorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 3</value>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>en Octets (per exemple, 1024)</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 27</value>
   </data>
-  <data name="lblDate.Text">
-    <value>Data de creació</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblOSVersion.Text" xml:space="preserve">
+    <value>Versió OS</value>
   </data>
-  <data name="lblEnvironmentVariable.Text">
-    <value>Variable d'entorn</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="txtOSMajorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 3</value>
   </data>
-  <data name="lblFeatureCollection.Text">
-    <value>Característiques</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="cboOSVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 3</value>
   </data>
-  <data name="lblLanguage.Text">
-    <value>Llengua</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
   </data>
-  <data name="lblMaxVersion.Text">
-    <value>Versió màxima</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpServicePack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
   </data>
-  <data name="lblMinVersion.Text">
-    <value>Versió mínima</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="cboProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 3</value>
   </data>
-  <data name="lblPatchCode.Text">
-    <value>Patch</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 27</value>
   </data>
-  <data name="lblProcessorType.Text">
-    <value>Tipus de processador</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblProductCode.Text">
-    <value>Codi del producte</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblProductCollection.Text">
-    <value>Productes</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblProductType.Text">
+  <data name="lblProductType.Text" xml:space="preserve">
     <value>Tipus de producte</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblQuery.Text">
-    <value>Consulta</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
   </data>
-  <data name="lblRegistryKey.Text">
+  <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 3</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 27</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Llengua</value>
+  </data>
+  <data name="tlpLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
+  </data>
+  <data name="cboProcessorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 3</value>
+  </data>
+  <data name="lblProcessorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 27</value>
+  </data>
+  <data name="lblProcessorType.Text" xml:space="preserve">
+    <value>Tipus de processador</value>
+  </data>
+  <data name="tlpProcessorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
+  </data>
+  <data name="txtRegistrySubKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 3</value>
+  </data>
+  <data name="txtRegistrySubKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 20</value>
+  </data>
+  <data name="lblRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 27</value>
+  </data>
+  <data name="lblRegistryKey.Text" xml:space="preserve">
     <value>Clau de registre</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblRegistryValue.Text">
+  <data name="cboRegistryKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 3</value>
+  </data>
+  <data name="tlpRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
+  </data>
+  <data name="chkRegistry32Bit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 3</value>
+  </data>
+  <data name="chkRegistry32Bit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 20</value>
+  </data>
+  <data name="chkRegistry32Bit.Text" xml:space="preserve">
+    <value>Registre de 32 bits</value>
+  </data>
+  <data name="txtRegistryValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 3</value>
+  </data>
+  <data name="lblRegistryValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 26</value>
+  </data>
+  <data name="lblRegistryValue.Text" xml:space="preserve">
     <value>Valor del registre</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblRegistryValueType.Text">
+  <data name="tlpRegistryValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="cboRegistryValueType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 3</value>
+  </data>
+  <data name="lblRegistryValueType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 27</value>
+  </data>
+  <data name="lblRegistryValueType.Text" xml:space="preserve">
     <value>Tipus del valor del registre</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblRuleType.Text">
+  <data name="tlpRegistryValueType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
+  </data>
+  <data name="cboEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 3</value>
+  </data>
+  <data name="lblEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 27</value>
+  </data>
+  <data name="lblEnvironmentVariable.Text" xml:space="preserve">
+    <value>Variable d'entorn</value>
+  </data>
+  <data name="tlpEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 27</value>
+  </data>
+  <data name="txtFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>542, 20</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>Camí</value>
+  </data>
+  <data name="tlpFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="txtVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 3</value>
+  </data>
+  <data name="lblVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 26</value>
+  </data>
+  <data name="lblVersion.Text" xml:space="preserve">
+    <value>Versió</value>
+  </data>
+  <data name="tlpVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="lblDataInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 0</value>
+  </data>
+  <data name="lblDataInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 26</value>
+  </data>
+  <data name="lblDataInfo.Text" xml:space="preserve">
+    <value>en Octets (per exemple, 1024)</value>
+  </data>
+  <data name="txtData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 3</value>
+  </data>
+  <data name="lblData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 26</value>
+  </data>
+  <data name="lblData.Text" xml:space="preserve">
+    <value>Dades</value>
+  </data>
+  <data name="tlpData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="dtpDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 3</value>
+  </data>
+  <data name="lblDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 26</value>
+  </data>
+  <data name="lblDate.Text" xml:space="preserve">
+    <value>Data de creació</value>
+  </data>
+  <data name="tlpDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="txtProductCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 3</value>
+  </data>
+  <data name="lblProductCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 26</value>
+  </data>
+  <data name="lblProductCode.Text" xml:space="preserve">
+    <value>Codi del producte</value>
+  </data>
+  <data name="tlpProductCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="txtPatchCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 3</value>
+  </data>
+  <data name="txtPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>607, 20</value>
+  </data>
+  <data name="lblPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 26</value>
+  </data>
+  <data name="lblPatchCode.Text" xml:space="preserve">
+    <value>Patch</value>
+  </data>
+  <data name="tlpPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="txtMaxVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 3</value>
+  </data>
+  <data name="lblMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 26</value>
+  </data>
+  <data name="lblMaxVersion.Text" xml:space="preserve">
+    <value>Versió màxima</value>
+  </data>
+  <data name="tlpMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="gceFeatureCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="chkFeatureCollection_requireAll.Text" xml:space="preserve">
+    <value>Totes les característiques requerides</value>
+  </data>
+  <data name="lblFeatureCollection.Text" xml:space="preserve">
+    <value>Característiques</value>
+  </data>
+  <data name="pnlFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 104</value>
+  </data>
+  <data name="gceComponentCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="chkComponentCollection_requireAll.Text" xml:space="preserve">
+    <value>Tots els components necessaris</value>
+  </data>
+  <data name="pnlComponentCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 104</value>
+  </data>
+  <data name="gceProductCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="chkProductCollection_requireAll.Text" xml:space="preserve">
+    <value>Tots els productes necessaris</value>
+  </data>
+  <data name="lblProductCollection.Text" xml:space="preserve">
+    <value>Productes</value>
+  </data>
+  <data name="pnlProductCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 104</value>
+  </data>
+  <data name="lblMinVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 26</value>
+  </data>
+  <data name="lblMinVersion.Text" xml:space="preserve">
+    <value>Versió mínima</value>
+  </data>
+  <data name="txtMinVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 3</value>
+  </data>
+  <data name="tlpMinVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="txtQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 3</value>
+  </data>
+  <data name="txtQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>594, 20</value>
+  </data>
+  <data name="lblQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 26</value>
+  </data>
+  <data name="lblQuery.Text" xml:space="preserve">
+    <value>Consulta</value>
+  </data>
+  <data name="tlpQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>671, 26</value>
+  </data>
+  <data name="tlpRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>677, 947</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
+        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
+        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
+        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
+        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
+        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
+        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
+        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
+        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
+        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
+        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
+        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
+        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Crear regla</value>
+  </data>
+  <data name="chkNotRule.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 3</value>
+  </data>
+  <data name="chkNotRule.Text" xml:space="preserve">
+    <value>Regla de negació</value>
+  </data>
+  <data name="cboRuleType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 3</value>
+  </data>
+  <data name="lblRuleType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 27</value>
+  </data>
+  <data name="lblRuleType.Text" xml:space="preserve">
     <value>Tipus de regla</value>
-    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tlpHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>677, 27</value>
   </data>
 </root>

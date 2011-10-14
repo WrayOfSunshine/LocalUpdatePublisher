@@ -54,19 +54,20 @@ Partial Class UpdateForm
 		Me.btnAddDir = New System.Windows.Forms.Button
 		Me.tabPackageInfo = New System.Windows.Forms.TabPage
 		Me.tlpPackageInfo = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpPackageIinfoUninstall = New System.Windows.Forms.TableLayoutPanel
+		Me.txtUninstall = New System.Windows.Forms.TextBox
+		Me.lblNetwork = New System.Windows.Forms.Label
+		Me.txtNetwork = New System.Windows.Forms.TextBox
 		Me.lblRebootBehavior = New System.Windows.Forms.Label
 		Me.cboPackageType = New System.Windows.Forms.ComboBox
 		Me.txtOriginalURI = New System.Windows.Forms.TextBox
 		Me.lblPackageType = New System.Windows.Forms.Label
 		Me.lblPackageInfo = New System.Windows.Forms.Label
 		Me.txtCommandLine = New System.Windows.Forms.TextBox
-		Me.txtNetwork = New System.Windows.Forms.TextBox
 		Me.lblCommandLine = New System.Windows.Forms.Label
 		Me.lblOriginalURI = New System.Windows.Forms.Label
 		Me.cboRebootBehavior = New System.Windows.Forms.ComboBox
-		Me.lblNetwork = New System.Windows.Forms.Label
 		Me.lblUninstall = New System.Windows.Forms.Label
-		Me.txtUninstall = New System.Windows.Forms.TextBox
 		Me.lblImpact = New System.Windows.Forms.Label
 		Me.txtPackageTitle = New System.Windows.Forms.TextBox
 		Me.txtDescription = New System.Windows.Forms.TextBox
@@ -102,14 +103,14 @@ Partial Class UpdateForm
 		Me.isInstallableRules = New LocalUpdatePublisher.RulesEditor
 		Me.tabIsSuperseded = New System.Windows.Forms.TabPage
 		Me.tlpIsSuperseded = New System.Windows.Forms.TableLayoutPanel
-		Me.txtIsSuperceded_InstallableItem = New System.Windows.Forms.TextBox
 		Me.btnIsSupersededEdit = New System.Windows.Forms.Button
+		Me.txtIsSuperceded_InstallableItem = New System.Windows.Forms.TextBox
 		Me.lblIsSuperseded = New System.Windows.Forms.Label
 		Me.lblIsSuperceded_InstallableItem = New System.Windows.Forms.Label
 		Me.tabMetaData = New System.Windows.Forms.TabPage
 		Me.tlpMetaData = New System.Windows.Forms.TableLayoutPanel
-		Me.txtInstallableItemMetaData = New System.Windows.Forms.TextBox
 		Me.btnMetaDataEdit = New System.Windows.Forms.Button
+		Me.txtInstallableItemMetaData = New System.Windows.Forms.TextBox
 		Me.lblMetaData = New System.Windows.Forms.Label
 		Me.lblMetaData_InstallableItem = New System.Windows.Forms.Label
 		Me.tabSummary = New System.Windows.Forms.TabPage
@@ -134,6 +135,7 @@ Partial Class UpdateForm
 		CType(Me.dgvAdditionalFiles,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabPackageInfo.SuspendLayout
 		Me.tlpPackageInfo.SuspendLayout
+		Me.tlpPackageIinfoUninstall.SuspendLayout
 		Me.tlpOptions.SuspendLayout
 		Me.tabIsInstalled.SuspendLayout
 		Me.tabIsInstallable.SuspendLayout
@@ -294,19 +296,17 @@ Partial Class UpdateForm
 		'tlpPackageInfo
 		'
 		resources.ApplyResources(Me.tlpPackageInfo, "tlpPackageInfo")
+		Me.tlpPackageInfo.Controls.Add(Me.tlpPackageIinfoUninstall, 1, 15)
 		Me.tlpPackageInfo.Controls.Add(Me.lblRebootBehavior, 0, 16)
 		Me.tlpPackageInfo.Controls.Add(Me.cboPackageType, 1, 1)
 		Me.tlpPackageInfo.Controls.Add(Me.txtOriginalURI, 1, 11)
 		Me.tlpPackageInfo.Controls.Add(Me.lblPackageType, 0, 1)
 		Me.tlpPackageInfo.Controls.Add(Me.lblPackageInfo, 0, 0)
 		Me.tlpPackageInfo.Controls.Add(Me.txtCommandLine, 1, 17)
-		Me.tlpPackageInfo.Controls.Add(Me.txtNetwork, 3, 15)
 		Me.tlpPackageInfo.Controls.Add(Me.lblCommandLine, 0, 17)
 		Me.tlpPackageInfo.Controls.Add(Me.lblOriginalURI, 0, 11)
 		Me.tlpPackageInfo.Controls.Add(Me.cboRebootBehavior, 1, 16)
-		Me.tlpPackageInfo.Controls.Add(Me.lblNetwork, 2, 15)
 		Me.tlpPackageInfo.Controls.Add(Me.lblUninstall, 0, 15)
-		Me.tlpPackageInfo.Controls.Add(Me.txtUninstall, 1, 15)
 		Me.tlpPackageInfo.Controls.Add(Me.lblImpact, 0, 14)
 		Me.tlpPackageInfo.Controls.Add(Me.txtPackageTitle, 1, 2)
 		Me.tlpPackageInfo.Controls.Add(Me.txtDescription, 1, 3)
@@ -334,6 +334,31 @@ Partial Class UpdateForm
 		Me.tlpPackageInfo.Controls.Add(Me.tlpOptions, 1, 18)
 		Me.tlpPackageInfo.Name = "tlpPackageInfo"
 		'
+		'tlpPackageIinfoUninstall
+		'
+		resources.ApplyResources(Me.tlpPackageIinfoUninstall, "tlpPackageIinfoUninstall")
+		Me.tlpPackageIinfoUninstall.Controls.Add(Me.txtUninstall, 0, 0)
+		Me.tlpPackageIinfoUninstall.Controls.Add(Me.lblNetwork, 1, 0)
+		Me.tlpPackageIinfoUninstall.Controls.Add(Me.txtNetwork, 2, 0)
+		Me.tlpPackageIinfoUninstall.Name = "tlpPackageIinfoUninstall"
+		'
+		'txtUninstall
+		'
+		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
+		Me.txtUninstall.Name = "txtUninstall"
+		Me.txtUninstall.ReadOnly = true
+		'
+		'lblNetwork
+		'
+		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
+		Me.lblNetwork.Name = "lblNetwork"
+		'
+		'txtNetwork
+		'
+		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
+		Me.txtNetwork.Name = "txtNetwork"
+		Me.txtNetwork.ReadOnly = true
+		'
 		'lblRebootBehavior
 		'
 		resources.ApplyResources(Me.lblRebootBehavior, "lblRebootBehavior")
@@ -341,7 +366,6 @@ Partial Class UpdateForm
 		'
 		'cboPackageType
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.cboPackageType, 3)
 		resources.ApplyResources(Me.cboPackageType, "cboPackageType")
 		Me.cboPackageType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboPackageType.FormattingEnabled = true
@@ -351,7 +375,6 @@ Partial Class UpdateForm
 		'
 		'txtOriginalURI
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtOriginalURI, 3)
 		resources.ApplyResources(Me.txtOriginalURI, "txtOriginalURI")
 		Me.txtOriginalURI.Name = "txtOriginalURI"
 		AddHandler Me.txtOriginalURI.TextChanged, AddressOf Me.txtOriginalURITextChanged
@@ -366,7 +389,7 @@ Partial Class UpdateForm
 		'lblPackageInfo
 		'
 		resources.ApplyResources(Me.lblPackageInfo, "lblPackageInfo")
-		Me.tlpPackageInfo.SetColumnSpan(Me.lblPackageInfo, 4)
+		Me.tlpPackageInfo.SetColumnSpan(Me.lblPackageInfo, 2)
 		Me.lblPackageInfo.Name = "lblPackageInfo"
 		AddHandler Me.lblPackageInfo.TextChanged, AddressOf Me.TextChanged
 		'
@@ -374,12 +397,6 @@ Partial Class UpdateForm
 		'
 		resources.ApplyResources(Me.txtCommandLine, "txtCommandLine")
 		Me.txtCommandLine.Name = "txtCommandLine"
-		'
-		'txtNetwork
-		'
-		resources.ApplyResources(Me.txtNetwork, "txtNetwork")
-		Me.txtNetwork.Name = "txtNetwork"
-		Me.txtNetwork.ReadOnly = true
 		'
 		'lblCommandLine
 		'
@@ -402,21 +419,10 @@ Partial Class UpdateForm
 		AddHandler Me.cboRebootBehavior.SelectedValueChanged, AddressOf Me.ValidateCombo
 		AddHandler Me.cboRebootBehavior.Validated, AddressOf Me.ControlValidated
 		'
-		'lblNetwork
-		'
-		resources.ApplyResources(Me.lblNetwork, "lblNetwork")
-		Me.lblNetwork.Name = "lblNetwork"
-		'
 		'lblUninstall
 		'
 		resources.ApplyResources(Me.lblUninstall, "lblUninstall")
 		Me.lblUninstall.Name = "lblUninstall"
-		'
-		'txtUninstall
-		'
-		resources.ApplyResources(Me.txtUninstall, "txtUninstall")
-		Me.txtUninstall.Name = "txtUninstall"
-		Me.txtUninstall.ReadOnly = true
 		'
 		'lblImpact
 		'
@@ -425,7 +431,6 @@ Partial Class UpdateForm
 		'
 		'txtPackageTitle
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtPackageTitle, 3)
 		resources.ApplyResources(Me.txtPackageTitle, "txtPackageTitle")
 		Me.txtPackageTitle.Name = "txtPackageTitle"
 		AddHandler Me.txtPackageTitle.Validated, AddressOf Me.ControlValidated
@@ -433,7 +438,6 @@ Partial Class UpdateForm
 		'
 		'txtDescription
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtDescription, 3)
 		resources.ApplyResources(Me.txtDescription, "txtDescription")
 		Me.txtDescription.Name = "txtDescription"
 		AddHandler Me.txtDescription.Validated, AddressOf Me.ControlValidated
@@ -457,7 +461,6 @@ Partial Class UpdateForm
 		'
 		'txtBulletinID
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtBulletinID, 3)
 		resources.ApplyResources(Me.txtBulletinID, "txtBulletinID")
 		Me.txtBulletinID.Name = "txtBulletinID"
 		AddHandler Me.txtBulletinID.Validating, AddressOf Me.TxtBulletinIDValidating
@@ -480,7 +483,6 @@ Partial Class UpdateForm
 		'
 		'cboVendor
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.cboVendor, 3)
 		resources.ApplyResources(Me.cboVendor, "cboVendor")
 		Me.cboVendor.FormattingEnabled = true
 		Me.cboVendor.Name = "cboVendor"
@@ -491,7 +493,6 @@ Partial Class UpdateForm
 		'
 		'cboProduct
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.cboProduct, 3)
 		resources.ApplyResources(Me.cboProduct, "cboProduct")
 		Me.cboProduct.FormattingEnabled = true
 		Me.cboProduct.Name = "cboProduct"
@@ -528,7 +529,6 @@ Partial Class UpdateForm
 		'
 		'txtMoreInfoURL
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtMoreInfoURL, 3)
 		resources.ApplyResources(Me.txtMoreInfoURL, "txtMoreInfoURL")
 		Me.txtMoreInfoURL.Name = "txtMoreInfoURL"
 		AddHandler Me.txtMoreInfoURL.TextChanged, AddressOf Me.txtURITextChanged
@@ -545,7 +545,6 @@ Partial Class UpdateForm
 		'
 		'txtSupportURL
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.txtSupportURL, 3)
 		resources.ApplyResources(Me.txtSupportURL, "txtSupportURL")
 		Me.txtSupportURL.Name = "txtSupportURL"
 		AddHandler Me.txtSupportURL.TextChanged, AddressOf Me.txtURITextChanged
@@ -567,7 +566,6 @@ Partial Class UpdateForm
 		'
 		'cboClassification
 		'
-		Me.tlpPackageInfo.SetColumnSpan(Me.cboClassification, 3)
 		resources.ApplyResources(Me.cboClassification, "cboClassification")
 		Me.cboClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboClassification.FormattingEnabled = true
@@ -585,7 +583,6 @@ Partial Class UpdateForm
 		'tlpOptions
 		'
 		resources.ApplyResources(Me.tlpOptions, "tlpOptions")
-		Me.tlpPackageInfo.SetColumnSpan(Me.tlpOptions, 3)
 		Me.tlpOptions.Controls.Add(Me.lblLanguages, 4, 0)
 		Me.tlpOptions.Controls.Add(Me.lblPrerequisites, 0, 0)
 		Me.tlpOptions.Controls.Add(Me.lblReturnCodes, 2, 0)
@@ -660,11 +657,19 @@ Partial Class UpdateForm
 		'tlpIsSuperseded
 		'
 		resources.ApplyResources(Me.tlpIsSuperseded, "tlpIsSuperseded")
-		Me.tlpIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem, 0, 2)
 		Me.tlpIsSuperseded.Controls.Add(Me.btnIsSupersededEdit, 1, 1)
+		Me.tlpIsSuperseded.Controls.Add(Me.txtIsSuperceded_InstallableItem, 0, 2)
 		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperseded, 0, 0)
 		Me.tlpIsSuperseded.Controls.Add(Me.lblIsSuperceded_InstallableItem, 0, 1)
 		Me.tlpIsSuperseded.Name = "tlpIsSuperseded"
+		'
+		'btnIsSupersededEdit
+		'
+		resources.ApplyResources(Me.btnIsSupersededEdit, "btnIsSupersededEdit")
+		Me.btnIsSupersededEdit.MinimumSize = New System.Drawing.Size(80, 25)
+		Me.btnIsSupersededEdit.Name = "btnIsSupersededEdit"
+		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
+		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
 		'
 		'txtIsSuperceded_InstallableItem
 		'
@@ -672,13 +677,6 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.txtIsSuperceded_InstallableItem, "txtIsSuperceded_InstallableItem")
 		Me.txtIsSuperceded_InstallableItem.Name = "txtIsSuperceded_InstallableItem"
 		Me.txtIsSuperceded_InstallableItem.ReadOnly = true
-		'
-		'btnIsSupersededEdit
-		'
-		resources.ApplyResources(Me.btnIsSupersededEdit, "btnIsSupersededEdit")
-		Me.btnIsSupersededEdit.Name = "btnIsSupersededEdit"
-		Me.btnIsSupersededEdit.UseVisualStyleBackColor = true
-		AddHandler Me.btnIsSupersededEdit.Click, AddressOf Me.BtnIsSupersededEditClick
 		'
 		'lblIsSuperseded
 		'
@@ -702,11 +700,19 @@ Partial Class UpdateForm
 		'tlpMetaData
 		'
 		resources.ApplyResources(Me.tlpMetaData, "tlpMetaData")
-		Me.tlpMetaData.Controls.Add(Me.txtInstallableItemMetaData, 0, 2)
 		Me.tlpMetaData.Controls.Add(Me.btnMetaDataEdit, 1, 1)
+		Me.tlpMetaData.Controls.Add(Me.txtInstallableItemMetaData, 0, 2)
 		Me.tlpMetaData.Controls.Add(Me.lblMetaData, 0, 0)
 		Me.tlpMetaData.Controls.Add(Me.lblMetaData_InstallableItem, 0, 1)
 		Me.tlpMetaData.Name = "tlpMetaData"
+		'
+		'btnMetaDataEdit
+		'
+		resources.ApplyResources(Me.btnMetaDataEdit, "btnMetaDataEdit")
+		Me.btnMetaDataEdit.MinimumSize = New System.Drawing.Size(80, 25)
+		Me.btnMetaDataEdit.Name = "btnMetaDataEdit"
+		Me.btnMetaDataEdit.UseVisualStyleBackColor = true
+		AddHandler Me.btnMetaDataEdit.Click, AddressOf Me.BtnMetaDataEditClick
 		'
 		'txtInstallableItemMetaData
 		'
@@ -714,13 +720,6 @@ Partial Class UpdateForm
 		resources.ApplyResources(Me.txtInstallableItemMetaData, "txtInstallableItemMetaData")
 		Me.txtInstallableItemMetaData.Name = "txtInstallableItemMetaData"
 		Me.txtInstallableItemMetaData.ReadOnly = true
-		'
-		'btnMetaDataEdit
-		'
-		resources.ApplyResources(Me.btnMetaDataEdit, "btnMetaDataEdit")
-		Me.btnMetaDataEdit.Name = "btnMetaDataEdit"
-		Me.btnMetaDataEdit.UseVisualStyleBackColor = true
-		AddHandler Me.btnMetaDataEdit.Click, AddressOf Me.BtnMetaDataEditClick
 		'
 		'lblMetaData
 		'
@@ -857,6 +856,8 @@ Partial Class UpdateForm
 		Me.tabPackageInfo.PerformLayout
 		Me.tlpPackageInfo.ResumeLayout(false)
 		Me.tlpPackageInfo.PerformLayout
+		Me.tlpPackageIinfoUninstall.ResumeLayout(false)
+		Me.tlpPackageIinfoUninstall.PerformLayout
 		Me.tlpOptions.ResumeLayout(false)
 		Me.tlpOptions.PerformLayout
 		Me.tabIsInstalled.ResumeLayout(false)
@@ -885,6 +886,9 @@ Partial Class UpdateForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private btnIsSupersededEdit As System.Windows.Forms.Button
+	Private btnMetaDataEdit As System.Windows.Forms.Button
+	Private tlpPackageIinfoUninstall As System.Windows.Forms.TableLayoutPanel
 	Private tlpFooter As System.Windows.Forms.TableLayoutPanel
 	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
 	Private tlpOptions As System.Windows.Forms.TableLayoutPanel
@@ -911,8 +915,6 @@ Partial Class UpdateForm
 	Private lblReturnCodes As System.Windows.Forms.Label
 	Private dlgUpdateDir As System.Windows.Forms.FolderBrowserDialog
 	Private btnAddDir As System.Windows.Forms.Button
-	Private btnIsSupersededEdit As System.Windows.Forms.Button
-	Private btnMetaDataEdit As System.Windows.Forms.Button
 	Private lblUninstall As System.Windows.Forms.Label
 	Private txtUninstall As System.Windows.Forms.TextBox
 	Private dlgExportSdp As System.Windows.Forms.SaveFileDialog

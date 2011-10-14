@@ -91,9 +91,6 @@
   <data name="chkMetadataOnly.Text">
     <value>Publish Metadata Only</value>
   </data>
-  <data name="label4.Text">
-    <value>Use this form to review the XML data that will be used to describe the software package.  Select Finish to publish this package to the WSUS server.</value>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Additional Files</value>
   </data>
@@ -165,6 +162,9 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Severity</value>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Use this form to review the XML data that will be used to describe the software package.  Select Finish to publish this package to the WSUS server.</value>
   </data>
   <data name="lblSupersedes.Text">
     <value>Supersedes</value>

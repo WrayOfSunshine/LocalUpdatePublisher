@@ -48,7 +48,7 @@ Partial Class RulesForm
 		Me.lblComparison = New System.Windows.Forms.Label
 		Me.tlpOSVersion = New System.Windows.Forms.TableLayoutPanel
 		Me.txtOSMinorVersion = New System.Windows.Forms.TextBox
-		Me.lbl_OSVersion = New System.Windows.Forms.Label
+		Me.lblOSVersion = New System.Windows.Forms.Label
 		Me.txtOSMajorVersion = New System.Windows.Forms.TextBox
 		Me.cboOSVersion = New System.Windows.Forms.ComboBox
 		Me.tlpServicePack = New System.Windows.Forms.TableLayoutPanel
@@ -81,7 +81,7 @@ Partial Class RulesForm
 		Me.lblEnvironmentVariable = New System.Windows.Forms.Label
 		Me.tlpFilePath = New System.Windows.Forms.TableLayoutPanel
 		Me.txtFilePath = New System.Windows.Forms.TextBox
-		Me.lblFilePath = New System.Windows.Forms.Label
+		Me.lblPath = New System.Windows.Forms.Label
 		Me.tlpVersion = New System.Windows.Forms.TableLayoutPanel
 		Me.txtVersion = New System.Windows.Forms.TextBox
 		Me.lblVersion = New System.Windows.Forms.Label
@@ -253,7 +253,7 @@ Partial Class RulesForm
 		'
 		resources.ApplyResources(Me.tlpOSVersion, "tlpOSVersion")
 		Me.tlpOSVersion.Controls.Add(Me.txtOSMinorVersion, 3, 0)
-		Me.tlpOSVersion.Controls.Add(Me.lbl_OSVersion, 0, 0)
+		Me.tlpOSVersion.Controls.Add(Me.lblOSVersion, 0, 0)
 		Me.tlpOSVersion.Controls.Add(Me.txtOSMajorVersion, 2, 0)
 		Me.tlpOSVersion.Controls.Add(Me.cboOSVersion, 1, 0)
 		Me.tlpOSVersion.Name = "tlpOSVersion"
@@ -264,10 +264,10 @@ Partial Class RulesForm
 		Me.txtOSMinorVersion.Name = "txtOSMinorVersion"
 		AddHandler Me.txtOSMinorVersion.TextChanged, AddressOf Me.ValidateForm
 		'
-		'lbl_OSVersion
+		'lblOSVersion
 		'
-		resources.ApplyResources(Me.lbl_OSVersion, "lbl_OSVersion")
-		Me.lbl_OSVersion.Name = "lbl_OSVersion"
+		resources.ApplyResources(Me.lblOSVersion, "lblOSVersion")
+		Me.lblOSVersion.Name = "lblOSVersion"
 		'
 		'txtOSMajorVersion
 		'
@@ -475,7 +475,7 @@ Partial Class RulesForm
 		'
 		resources.ApplyResources(Me.tlpFilePath, "tlpFilePath")
 		Me.tlpFilePath.Controls.Add(Me.txtFilePath, 1, 0)
-		Me.tlpFilePath.Controls.Add(Me.lblFilePath, 0, 0)
+		Me.tlpFilePath.Controls.Add(Me.lblPath, 0, 0)
 		Me.tlpFilePath.Name = "tlpFilePath"
 		'
 		'txtFilePath
@@ -484,10 +484,10 @@ Partial Class RulesForm
 		Me.txtFilePath.Name = "txtFilePath"
 		AddHandler Me.txtFilePath.TextChanged, AddressOf Me.ValidateForm
 		'
-		'lblFilePath
+		'lblPath
 		'
-		resources.ApplyResources(Me.lblFilePath, "lblFilePath")
-		Me.lblFilePath.Name = "lblFilePath"
+		resources.ApplyResources(Me.lblPath, "lblPath")
+		Me.lblPath.Name = "lblPath"
 		'
 		'tlpVersion
 		'
@@ -814,6 +814,8 @@ Partial Class RulesForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private lblPath As System.Windows.Forms.Label
+	Private lblOSVersion As System.Windows.Forms.Label
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private tlpRules As System.Windows.Forms.TableLayoutPanel
 	Private tlpHeader As System.Windows.Forms.TableLayoutPanel
@@ -878,7 +880,6 @@ Partial Class RulesForm
 	Private txtOSMinorVersion As System.Windows.Forms.TextBox
 	Private txtOSMajorVersion As System.Windows.Forms.TextBox
 	Private lblServicePack As System.Windows.Forms.Label
-	Private lbl_OSVersion As System.Windows.Forms.Label
 	Private lblComparison As System.Windows.Forms.Label
 	Private lblEnvironmentVariable As System.Windows.Forms.Label
 	Private txtQuery As System.Windows.Forms.TextBox
@@ -890,7 +891,6 @@ Partial Class RulesForm
 	Private txtRegistrySubKey As System.Windows.Forms.TextBox
 	Private lblRegistryKey As System.Windows.Forms.Label
 	Private txtFilePath As System.Windows.Forms.TextBox
-	Private lblFilePath As System.Windows.Forms.Label
 	Private dtpDate As System.Windows.Forms.DateTimePicker
 	Private lblDate As System.Windows.Forms.Label
 	Private lblDataInfo As System.Windows.Forms.Label

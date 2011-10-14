@@ -130,9 +130,15 @@
     <value>Minimum Version</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblOSVersion.Text">
+    <value>OS Version</value>
+  </data>
   <data name="lblPatchCode.Text">
     <value>PatchCode</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPath.Text">
+    <value>Sti</value>
   </data>
   <data name="lblProcessorType.Text">
     <value>Processor Type</value>
@@ -169,5 +175,11 @@
   <data name="lblRuleType.Text">
     <value>Regeltype</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblServicePack.Text">
+    <value>Service Pack</value>
+  </data>
+  <data name="lblVersion.Text">
+    <value>Version</value>
   </data>
 </root>

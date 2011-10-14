@@ -75,7 +75,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text">
-    <value>Certyfikat Info</value>
+    <value>Informacje o certyfikacie</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkApprovedOnly.Text">
@@ -230,6 +230,10 @@
     <value>Aktualizacje bez status:</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Stan aktualizacji</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Aktualizacje zainstalowany / nie dotyczy:</value>
     <comment>Automatically translated using Google</comment>
@@ -254,13 +258,12 @@
     <value>Zarządzanie regułami</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Opcje</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Zapisane regulaminu</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Ustawienia</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Zgłoś</value>

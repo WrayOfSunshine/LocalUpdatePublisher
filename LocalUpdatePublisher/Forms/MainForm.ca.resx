@@ -230,6 +230,10 @@
     <value>Actualitzacions sense estat:</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Estat de les actualitzacions</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Actualitzacions instal·lades / no aplicables:</value>
     <comment>Automatically translated using Google</comment>
@@ -254,13 +258,12 @@
     <value>Administrar regles</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Opcions</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Regles desades</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Configuració</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Informe</value>

@@ -102,10 +102,6 @@
     <value>Publicar només les metadades</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="label4.Text">
-    <value>Utilitzi aquest formulari per revisar les dades XML que s'utilitzaran per descriure el paquet de programari. Seleccioneu "Finalitzar" per publicar aquest paquet al servidor WSUS.</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Arxius addicionals</value>
     <comment>Automatically translated using Google</comment>
@@ -200,6 +196,10 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Gravetat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Utilitzi aquest formulari per revisar les dades XML que s'utilitzaran per descriure el paquet de programari. Seleccioneu "Finalitzar" per publicar aquest paquet al servidor WSUS.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblSupersedes.Text">

@@ -64,6 +64,30 @@
   <data name="DWORD_value">
     <value>Valeur DWORD</value>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Utilisez ce formulaire pour créer, éditer, supprimer, et les règles de groupe permettant de déterminer si ce logiciel peut être installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Niveau paquet - Règles installables</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Item Level installation</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Utilisez ce formulaire pour créer, éditer, supprimer et règles du groupe que de déterminer si ce logiciel est déjà installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Niveau paquet - Règles installée</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Item Level installation</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Créer une Règle</value>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Modifier la Règle</value>
+  </data>
   <data name="add_new_server">
     <value>Ajouter un Nouveau Serveur</value>
   </data>
@@ -909,9 +933,6 @@
   </data>
   <data name="value_type">
     <value>Type de Valeur</value>
-  </data>
-  <data name="version">
-    <value>Version</value>
   </data>
   <data name="version_maximum">
     <value>VersionMax</value>

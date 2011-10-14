@@ -75,7 +75,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text">
-    <value>Todistus Info</value>
+    <value>Varmenteen tiedot</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkApprovedOnly.Text">
@@ -230,6 +230,10 @@
     <value>Päivitykset joilla ei ole tilaa:</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Päivitä tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Päivitykset asennettu / ei sovelleta:</value>
     <comment>Automatically translated using Google</comment>
@@ -254,13 +258,12 @@
     <value>Hallitse sääntöjä</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Valinnat</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Tallennetut Säännöt</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Asetukset</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Raportti</value>

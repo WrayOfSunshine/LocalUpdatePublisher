@@ -64,6 +64,30 @@
   <data name="DWORD_value">
     <value>DWORD Value</value>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Package Level - Installable Rules</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package is already installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Installed Rules</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Create Rule</value>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Edit Rule</value>
+  </data>
   <data name="add_new_server">
     <value>Add New Server</value>
   </data>
@@ -398,7 +422,7 @@
     <value>Export</value>
   </data>
   <data name="export_certificate">
-    <value>Export Cert</value>
+    <value>Export Certificate</value>
   </data>
   <data name="failed">
     <value>Failed</value>
@@ -912,9 +936,6 @@
   </data>
   <data name="value_type">
     <value>ValueType</value>
-  </data>
-  <data name="version">
-    <value>Version</value>
   </data>
   <data name="version_maximum">
     <value>VersionMax</value>

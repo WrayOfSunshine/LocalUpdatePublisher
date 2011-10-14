@@ -48,12 +48,13 @@ Partial Class ConnectionSettingsForm
 		Me.lblServers = New System.Windows.Forms.Label
 		Me.btnDelete = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.tlpButtons = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpMain.SuspendLayout
+		Me.tlpButtons.SuspendLayout
 		Me.SuspendLayout
 		'
 		'chkSsl
 		'
-		Me.tlpMain.SetColumnSpan(Me.chkSsl, 2)
 		resources.ApplyResources(Me.chkSsl, "chkSsl")
 		Me.chkSsl.Name = "chkSsl"
 		Me.chkSsl.UseVisualStyleBackColor = true
@@ -62,7 +63,6 @@ Partial Class ConnectionSettingsForm
 		'lblLocalServer
 		'
 		resources.ApplyResources(Me.lblLocalServer, "lblLocalServer")
-		Me.tlpMain.SetColumnSpan(Me.lblLocalServer, 2)
 		Me.lblLocalServer.Name = "lblLocalServer"
 		'
 		'txtPort
@@ -77,7 +77,6 @@ Partial Class ConnectionSettingsForm
 		'
 		'txtName
 		'
-		Me.tlpMain.SetColumnSpan(Me.txtName, 2)
 		resources.ApplyResources(Me.txtName, "txtName")
 		Me.txtName.Name = "txtName"
 		'
@@ -105,7 +104,7 @@ Partial Class ConnectionSettingsForm
 		'
 		'cboServers
 		'
-		Me.tlpMain.SetColumnSpan(Me.cboServers, 4)
+		Me.tlpMain.SetColumnSpan(Me.cboServers, 2)
 		resources.ApplyResources(Me.cboServers, "cboServers")
 		Me.cboServers.FormattingEnabled = true
 		Me.cboServers.Name = "cboServers"
@@ -127,18 +126,25 @@ Partial Class ConnectionSettingsForm
 		'tlpMain
 		'
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.btnCancel, 4, 3)
-		Me.tlpMain.Controls.Add(Me.lblLocalServer, 3, 1)
+		Me.tlpMain.Controls.Add(Me.lblLocalServer, 2, 1)
 		Me.tlpMain.Controls.Add(Me.cboServers, 1, 0)
 		Me.tlpMain.Controls.Add(Me.txtName, 1, 1)
-		Me.tlpMain.Controls.Add(Me.btnDelete, 3, 3)
-		Me.tlpMain.Controls.Add(Me.btnConnect, 2, 3)
-		Me.tlpMain.Controls.Add(Me.chkSsl, 3, 2)
+		Me.tlpMain.Controls.Add(Me.chkSsl, 2, 2)
 		Me.tlpMain.Controls.Add(Me.lblPort, 0, 2)
 		Me.tlpMain.Controls.Add(Me.lblName, 0, 1)
 		Me.tlpMain.Controls.Add(Me.txtPort, 1, 2)
 		Me.tlpMain.Controls.Add(Me.lblServers, 0, 0)
+		Me.tlpMain.Controls.Add(Me.tlpButtons, 0, 3)
 		Me.tlpMain.Name = "tlpMain"
+		'
+		'tlpButtons
+		'
+		resources.ApplyResources(Me.tlpButtons, "tlpButtons")
+		Me.tlpMain.SetColumnSpan(Me.tlpButtons, 3)
+		Me.tlpButtons.Controls.Add(Me.btnConnect, 0, 0)
+		Me.tlpButtons.Controls.Add(Me.btnCancel, 2, 0)
+		Me.tlpButtons.Controls.Add(Me.btnDelete, 1, 0)
+		Me.tlpButtons.Name = "tlpButtons"
 		'
 		'ConnectionSettingsForm
 		'
@@ -155,9 +161,12 @@ Partial Class ConnectionSettingsForm
 		Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
+		Me.tlpButtons.ResumeLayout(false)
+		Me.tlpButtons.PerformLayout
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private chkSsl As System.Windows.Forms.CheckBox
 	Private btnDelete As System.Windows.Forms.Button

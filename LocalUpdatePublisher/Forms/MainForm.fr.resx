@@ -188,7 +188,7 @@
     <value>Mises à jour sans statut:</value>
   </data>
   <data name="lblUpdateStatus.Text">
-    <value>Mise à Jour Du</value>
+    <value>Statut de la Mise à Jour</value>
   </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Mises à jour installées / non applicable:</value>
@@ -208,11 +208,11 @@
   <data name="manageRulesToolStripMenuItem.Text">
     <value>Gérer les Règles</value>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Options</value>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Règles Enregistrées</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Réglages</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Rapport</value>

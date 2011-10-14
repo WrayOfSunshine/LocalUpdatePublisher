@@ -91,9 +91,6 @@
   <data name="chkMetadataOnly.Text">
     <value>Nur Metadaten veröffentlichen</value>
   </data>
-  <data name="label4.Text">
-    <value>Benutzen sie dieses Formular um die XML-Daten, mit denen die Software beschrieben wird, zu überprüfen. Klicken Sie auf FERTIG STELLEN, um dieses Paket mit dem WSUS-Server zu veröffentlichen.</value>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Zusätzliche Dateien</value>
   </data>
@@ -165,6 +162,9 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Auswirkung</value>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Benutzen sie dieses Formular um die XML-Daten, mit denen die Software beschrieben wird, zu überprüfen. Klicken Sie auf FERTIG STELLEN, um dieses Paket mit dem WSUS-Server zu veröffentlichen.</value>
   </data>
   <data name="lblSupersedes.Text">
     <value>Ersetzt</value>

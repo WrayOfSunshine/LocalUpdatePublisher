@@ -102,10 +102,6 @@
     <value>Publikowanie tylko metadanych</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="label4.Text">
-    <value>Formularz ten służy do przeglądu danych XML, które można używać do opisu pakietu oprogramowania. Wybierz Zakończ, aby opublikować ten pakiet do serwera WSUS.</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Dodatkowe pliki</value>
     <comment>Automatically translated using Google</comment>
@@ -200,6 +196,10 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Dotkliwość</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Formularz ten służy do przeglądu danych XML, które można używać do opisu pakietu oprogramowania. Wybierz Zakończ, aby opublikować ten pakiet do serwera WSUS.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblSupersedes.Text">

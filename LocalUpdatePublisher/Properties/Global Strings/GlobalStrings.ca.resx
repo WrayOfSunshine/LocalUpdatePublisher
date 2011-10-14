@@ -66,6 +66,32 @@
     <value>Valor DWORD</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="IsInstallable_Instructions">
+    <value>Utilitzi aquest formulari per crear, editar, eliminar, i les regles del grup de determinar si aquest paquet de programari pot ser instal · lat. Si heu creat aquesta actualització amb un arxiu MSI o MSP podrà veure l'estat genera automàticament en el nivell d'ítem instal · lable. Per defecte les regles estan en un grup d'AND.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Nivell de paquet - Regles instal</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Instal · lació de nivell d'element</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Utilitzi aquest formulari per crear, editar, eliminar, i les regles del grup de determinar si aquest paquet de programari ja està instal · lat. Si heu creat aquesta actualització amb un arxiu MSI o MSP podrà veure l'estat genera automàticament en el nivell d'ítem instal · lable. Per defecte les regles estan en un grup d'AND.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Nivell de paquet - Regles Instal</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Instal · lació de nivell d'element</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Crear regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Modificar la regla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="add_new_server">
     <value>Afegir un nou servidor</value>
     <comment>Automatically translated using Google</comment>
@@ -1196,10 +1222,6 @@
   </data>
   <data name="value_type">
     <value>ValueType</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="version">
-    <value>Versió</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="version_maximum">

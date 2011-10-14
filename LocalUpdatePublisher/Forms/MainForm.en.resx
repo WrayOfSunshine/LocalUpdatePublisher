@@ -71,7 +71,7 @@
     <value>Refresh</value>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text">
-    <value>Certificate Info</value>
+    <value>Certificate Information</value>
   </data>
   <data name="chkApprovedOnly.Text">
     <value>Approved Updates Only</value>
@@ -187,6 +187,9 @@
   <data name="lblUpdateNoStatus.Text">
     <value>Updates with no status:</value>
   </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Update Status</value>
+  </data>
   <data name="lblUpdatesInstalledorNA.Text">
     <value>Updates installed/not applicable:</value>
   </data>
@@ -205,11 +208,11 @@
   <data name="manageRulesToolStripMenuItem.Text">
     <value>Manage Rules</value>
   </data>
-  <data name="optionsToolStripMenuItem.Text">
-    <value>Options</value>
-  </data>
   <data name="savedRulesToolStripMenuItem.Text">
     <value>Saved Rules</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Settings</value>
   </data>
   <data name="tabComputerReport.Text">
     <value>Report</value>

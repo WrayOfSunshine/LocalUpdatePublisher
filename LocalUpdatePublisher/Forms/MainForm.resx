@@ -469,7 +469,7 @@
     <value>5</value>
   </data>
   <data name="tlpHeaderTop.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblSelectedTargetGroup" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSelectedTargetGroupCount" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblSelectedTargetGroup" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSelectedTargetGroupCount" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,23" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tlpHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -598,7 +598,7 @@
     <value>Fill</value>
   </data>
   <data name="lblUpdatesWErrors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>8, 10</value>
   </data>
   <data name="lblUpdatesWErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 19</value>
@@ -625,7 +625,7 @@
     <value>Fill</value>
   </data>
   <data name="txtUpdateNoStatusNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 60</value>
+    <value>176, 70</value>
   </data>
   <data name="txtUpdateNoStatusNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>854, 13</value>
@@ -652,7 +652,7 @@
     <value>Fill</value>
   </data>
   <data name="txtUpdatesInstalledorNANum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 41</value>
+    <value>176, 51</value>
   </data>
   <data name="txtUpdatesInstalledorNANum.Size" type="System.Drawing.Size, System.Drawing">
     <value>854, 13</value>
@@ -679,7 +679,7 @@
     <value>Fill</value>
   </data>
   <data name="txtUpdatesNeededNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 22</value>
+    <value>176, 32</value>
   </data>
   <data name="txtUpdatesNeededNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>854, 13</value>
@@ -709,7 +709,7 @@
     <value>Fill</value>
   </data>
   <data name="lblUpdatesNeeded.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 19</value>
+    <value>8, 29</value>
   </data>
   <data name="lblUpdatesNeeded.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 19</value>
@@ -739,7 +739,7 @@
     <value>Fill</value>
   </data>
   <data name="lblUpdatesInstalledorNA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 38</value>
+    <value>8, 48</value>
   </data>
   <data name="lblUpdatesInstalledorNA.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 19</value>
@@ -769,10 +769,10 @@
     <value>Fill</value>
   </data>
   <data name="lblUpdateNoStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 57</value>
+    <value>8, 67</value>
   </data>
   <data name="lblUpdateNoStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 395</value>
+    <value>162, 385</value>
   </data>
   <data name="lblUpdateNoStatus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -796,7 +796,7 @@
     <value>Fill</value>
   </data>
   <data name="txtUpdatesWErrorsNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 3</value>
+    <value>176, 13</value>
   </data>
   <data name="txtUpdatesWErrorsNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>854, 13</value>
@@ -827,6 +827,9 @@
   </data>
   <data name="tlpComputerInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpComputerInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 10, 0, 0</value>
   </data>
   <data name="tlpComputerInfo.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2700,11 +2703,11 @@
   <data name="connectionSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Connection Settings</value>
   </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
   </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Options</value>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -2722,19 +2725,19 @@
     <value>False</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>145, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="helpForumsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>145, 22</value>
   </data>
   <data name="helpForumsToolStripMenuItem.Text" xml:space="preserve">
     <value>Help Forum</value>
   </data>
   <data name="lupHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>145, 22</value>
   </data>
   <data name="lupHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Support Wiki</value>
@@ -2782,7 +2785,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 62</value>
+    <value>0, 915</value>
   </metadata>
   <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3051,10 +3054,10 @@
   <data name="&gt;&gt;connectionSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>optionsToolStripMenuItem</value>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>settingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;updateToolStripMenuItem.Name" xml:space="preserve">

@@ -58,25 +58,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd.Text">
+    <value>Ajouter une Règle</value>
+  </data>
+  <data name="btnEdit.Text">
+    <value>Modifier la Règle</value>
+  </data>
   <data name="btnEditInstallableItem.Text">
     <value>Modifier</value>
+  </data>
+  <data name="btnGroup.Text">
+    <value>Règles de Groupe</value>
   </data>
   <data name="btnLoadRules.Text">
     <value>Règles Charge</value>
   </data>
+  <data name="btnRemove.Text">
+    <value>Supprimer la règle</value>
+  </data>
   <data name="btnSaveRules.Text">
     <value>Enregistrer les Règles</value>
-  </data>
-  <data name="btn_add.Text">
-    <value>Ajouter une Règle</value>
-  </data>
-  <data name="btn_edit.Text">
-    <value>Modifier la Règle</value>
-  </data>
-  <data name="btn_group.Text">
-    <value>Règles de Groupe</value>
-  </data>
-  <data name="btn_remove.Text">
-    <value>Supprimer la règle</value>
   </data>
 </root>

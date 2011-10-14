@@ -91,9 +91,6 @@
   <data name="chkMetadataOnly.Text">
     <value>Publier uniquement les Métadonnées</value>
   </data>
-  <data name="label4.Text">
-    <value>Utilisez ce formulaire pour modifier les données XML qui seront utilisées pour décrire le paquet logiciel. Sélectionnez Terminer pour publier ce paquet au serveur WSUS.</value>
-  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Fichiers supplémentaires</value>
   </data>
@@ -165,6 +162,9 @@
   </data>
   <data name="lblSeverity.Text">
     <value>Gravité</value>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Utilisez ce formulaire pour modifier les données XML qui seront utilisées pour décrire le paquet logiciel. Sélectionnez Terminer pour publier ce paquet au serveur WSUS.</value>
   </data>
   <data name="lblSupersedes.Text">
     <value>Remplace</value>
