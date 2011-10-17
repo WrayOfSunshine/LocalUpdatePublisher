@@ -58,13 +58,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Action</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Godkendelse Action</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Gruppe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Oprettelsesdato</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="DWORD_value">
     <value>DWORD-værdi</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Deadline</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Brug denne formular til at oprette, redigere, fjerne, og gruppe regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se det automatisk genererede reglen på installerbare vareniveau. Som standard reglerne er i en og gruppe.</value>
@@ -84,6 +101,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Installation Item Level</value>
   </data>
+  <data name="Result">
+    <value>Resultat</value>
+  </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Opret regel</value>
     <comment>Automatically translated using Google</comment>
@@ -91,6 +111,9 @@
   <data name="RulesEditor_EditPrompt">
     <value>Rediger regel</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Målgruppe</value>
   </data>
   <data name="add_new_server">
     <value>Tilføj ny server</value>
@@ -1181,7 +1204,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Erstattet</value>
+    <value>Erstatter</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="title">

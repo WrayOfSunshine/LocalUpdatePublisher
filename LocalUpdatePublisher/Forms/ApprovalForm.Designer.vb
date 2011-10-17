@@ -94,7 +94,7 @@ Partial Class ApprovalForm
 		Me.Approval.ContextMenuStrip = Me.cntxtMenuStrip
 		Me.Approval.FillWeight = 96.79607!
 		resources.ApplyResources(Me.Approval, "Approval")
-		Me.Approval.Name = "Approval"
+		Me.Approval.Name = "approval"
 		Me.Approval.ReadOnly = true
 		Me.Approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
 		Me.Approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable

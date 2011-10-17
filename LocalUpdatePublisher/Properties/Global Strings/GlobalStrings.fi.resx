@@ -58,13 +58,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Toiminta</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Hyväksyntätoimen</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Luontipäivämäärä</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="DWORD_value">
     <value>DWORD-arvo</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Määräaika</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto voidaan asentaa. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
@@ -84,6 +101,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Asennus alkiotason</value>
   </data>
+  <data name="Result">
+    <value>Tulos</value>
+  </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Luo sääntö</value>
     <comment>Automatically translated using Google</comment>
@@ -91,6 +111,9 @@
   <data name="RulesEditor_EditPrompt">
     <value>Muokkaa sääntöä</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Kohderyhmä</value>
   </data>
   <data name="add_new_server">
     <value>Lisää uusi palvelin</value>
@@ -1181,7 +1204,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Korvattavan</value>
+    <value>Korvaa</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="title">

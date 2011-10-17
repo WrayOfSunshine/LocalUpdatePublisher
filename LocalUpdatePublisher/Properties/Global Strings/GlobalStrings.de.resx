@@ -58,11 +58,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Aktion</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Genehmigung Aktion</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
   </data>
+  <data name="ComputerGroup">
+    <value>Computer Gruppe</value>
+  </data>
+  <data name="CreationDate">
+    <value>Erstellungsdatum</value>
+  </data>
   <data name="DWORD_value">
     <value>DWORD-Wert</value>
+  </data>
+  <data name="Deadline">
+    <value>Frist</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Verwenden Sie dieses Formular erstellen, bearbeiten, entfernen und Regeln der Gruppe, wenn dieses Software-Paket installiert werden kann bestimmen. Wenn Sie dieses Update mit dem MSI-oder MSP-Datei erstellt werden Sie das automatisch generierte Regel am installierbar Positionsebene sehen. Standardmäßig sind die Regeln in einem UND-Gruppe.</value>
@@ -82,11 +97,17 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Installation Gegenstandsstufe</value>
   </data>
+  <data name="Result">
+    <value>Ergebnis</value>
+  </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Regel erstellen</value>
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Regel bearbeiten</value>
+  </data>
+  <data name="TargetGroup">
+    <value>Zielgruppe</value>
   </data>
   <data name="add_new_server">
     <value>Neuen Server hinzufügen</value>

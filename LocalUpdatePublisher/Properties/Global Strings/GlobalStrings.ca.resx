@@ -58,13 +58,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Acció</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Aprovació d'Acció</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Grup d'equips</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Data de creació</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="DWORD_value">
     <value>Valor DWORD</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Data límit</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Utilitzi aquest formulari per crear, editar, eliminar, i les regles del grup de determinar si aquest paquet de programari pot ser instal · lat. Si heu creat aquesta actualització amb un arxiu MSI o MSP podrà veure l'estat genera automàticament en el nivell d'ítem instal · lable. Per defecte les regles estan en un grup d'AND.</value>
@@ -84,6 +101,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Instal · lació de nivell d'element</value>
   </data>
+  <data name="Result">
+    <value>Resultat</value>
+  </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Crear regla</value>
     <comment>Automatically translated using Google</comment>
@@ -91,6 +111,9 @@
   <data name="RulesEditor_EditPrompt">
     <value>Modificar la regla</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Grup Objectiu</value>
   </data>
   <data name="add_new_server">
     <value>Afegir un nou servidor</value>
@@ -1181,7 +1204,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Substituït</value>
+    <value>Reemplaça</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="title">

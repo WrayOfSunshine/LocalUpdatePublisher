@@ -23,6 +23,11 @@ Public Partial Class ApprovalForm
 		
 		'Prevent the form from being sized too small.
 		Me.MinimumSize = Me.Size
+		
+		'Localize the data grid view
+		For Each colTemp As DataGridViewColumn In Me.dgvApprovals.Columns
+			colTemp.HeaderText = globalRM.GetString(colTemp.Name)
+		Next
 	End Sub
 	
 	'Call ShowDialog
@@ -90,7 +95,7 @@ Public Partial Class ApprovalForm
 		Me.btnOK.Enabled = True
 		
 		'Set the current row to approve the update.
-		Me.dgvApprovals.CurrentRow.Cells("Approval").Value = approval.ToDisplayString()
+		Me.dgvApprovals.CurrentRow.Cells("approval").Value = approval.ToDisplayString()
 		Me.dgvApprovals.CurrentRow.Cells("ApprovalAction").Value = approval
 		
 	End Sub
@@ -271,7 +276,7 @@ Public Partial Class ApprovalForm
 		'		Else If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 Then
 		'			cntxtMenuStrip.Show(Cursor.Position)
 		'		End If
-		If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 AndALso e.ColumnIndex = dgvApprovals.Columns("Approval").Index Then
+		If e.Button = Windows.Forms.MouseButtons.Left AndAlso e.RowIndex >= 0 AndALso e.ColumnIndex = dgvApprovals.Columns("approval").Index Then
 			cntxtMenuStrip.Show(Cursor.Position)
 		End If
 	End Sub

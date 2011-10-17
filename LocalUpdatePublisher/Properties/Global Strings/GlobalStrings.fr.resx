@@ -58,35 +58,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Action</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Approbation d'Action</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
+  </data>
+  <data name="ComputerGroup">
+    <value>Groupe d'Ordinateurs</value>
+  </data>
+  <data name="CreationDate">
+    <value>Date de Création</value>
   </data>
   <data name="DWORD_value">
     <value>Valeur DWORD</value>
   </data>
+  <data name="Deadline">
+    <value>Date limite</value>
+  </data>
   <data name="IsInstallable_Instructions">
-    <value>Utilisez ce formulaire pour créer, éditer, supprimer, et les règles de groupe permettant de déterminer si ce logiciel peut être installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
+    <value>Utiliser ce formulaire pour créer, éditer, supprimer et grouper les règles qui déterminent si ce paquet logiciel peut être installé. Si vous avez créé cette mise à jour utilisant un MSI ou un fichier MSP vous verrez la règle automatiquement générée au niveau installable. Par défaut, les règles sont dans un groupe ET.</value>
   </data>
   <data name="IsInstallable_Title">
     <value>Niveau paquet - Règles installables</value>
   </data>
   <data name="IsInstallable_TitleItemLevel">
-    <value>Item Level installation</value>
+    <value>Niveau d’Installation</value>
   </data>
   <data name="IsInstalled_Instructions">
-    <value>Utilisez ce formulaire pour créer, éditer, supprimer et règles du groupe que de déterminer si ce logiciel est déjà installé. Si vous avez créé cette mise à jour en utilisant un MSI ou MSP fichier, vous verrez la règle générés automatiquement au niveau du numéro installable. Par défaut les règles sont dans un groupe d'ET.</value>
+    <value>Utiliser ce formulaire pour créer, éditer, supprimer et grouper les règles qui déterminent si ce paquet logiciel est déjà installé. Si vous avez créé cette mise à jour utilisant un MSI ou un fichier MSP vous verrez la règle automatiquement générée au niveau installable. Par défaut, les règles sont dans un groupe ET.</value>
   </data>
   <data name="IsInstalled_Title">
-    <value>Niveau paquet - Règles installée</value>
+    <value>Niveau de paquet – Règles installées</value>
   </data>
   <data name="IsInstalled_TitleItemLevel">
-    <value>Item Level installation</value>
+    <value>Niveau d’Installation</value>
+  </data>
+  <data name="Result">
+    <value>Résultat</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Créer une Règle</value>
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Modifier la Règle</value>
+  </data>
+  <data name="TargetGroup">
+    <value>Groupe Cible</value>
   </data>
   <data name="add_new_server">
     <value>Ajouter un Nouveau Serveur</value>
@@ -902,7 +923,7 @@
     <value>La mise à jour a été importée avec succès.</value>
   </data>
   <data name="superseded">
-    <value>Remplacé</value>
+    <value>Remplace</value>
   </data>
   <data name="title">
     <value>Titre</value>

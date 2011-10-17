@@ -58,11 +58,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action">
+    <value>Action</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Approval Action</value>
+  </data>
   <data name="CSID">
     <value>CSID</value>
   </data>
+  <data name="ComputerGroup">
+    <value>Computer Group</value>
+  </data>
+  <data name="CreationDate">
+    <value>Creation Date</value>
+  </data>
   <data name="DWORD_value">
     <value>DWORD Value</value>
+  </data>
+  <data name="Deadline">
+    <value>Deadline</value>
+  </data>
+  <data name="IsInstallable_Instructions">
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Niveau de paquet – Règles installables</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Use this form to create, edit, remove, and group rules that determine if this software package is already installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Installed Rules</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installation Item Level</value>
+  </data>
+  <data name="Result">
+    <value>Result</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Create Rule</value>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Edit Rule</value>
+  </data>
+  <data name="TargetGroup">
+    <value>Target Group</value>
   </data>
   <data name="add_new_server">
     <value>Add New Server</value>
@@ -146,7 +191,7 @@
     <value>Data</value>
   </data>
   <data name="date">
-    <value>Date</value>
+    <value>Approval Date</value>
   </data>
   <data name="decline">
     <value>Decline</value>
@@ -398,7 +443,7 @@
     <value>Export</value>
   </data>
   <data name="export_certificate">
-    <value>Export Cert</value>
+    <value>Export Certificate</value>
   </data>
   <data name="failed">
     <value>Failed</value>
@@ -881,7 +926,7 @@
     <value>Update was successfully imported.</value>
   </data>
   <data name="superseded">
-    <value>Superseded</value>
+    <value>Supersedes</value>
   </data>
   <data name="title">
     <value>Title</value>
@@ -912,9 +957,6 @@
   </data>
   <data name="value_type">
     <value>ValueType</value>
-  </data>
-  <data name="version">
-    <value>Version</value>
   </data>
   <data name="version_maximum">
     <value>VersionMax</value>

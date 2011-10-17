@@ -13,10 +13,11 @@ Public Partial Class ApprovalProgressForm
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
+						
+		'Localize the data grid view
+		For Each colTemp As DataGridViewColumn In Me.dgvProgress.Columns
+			colTemp.HeaderText = globalRM.GetString(colTemp.Name)
+		Next
 	End Sub
 	
 	'Call ShowDialog with multiple updates.
