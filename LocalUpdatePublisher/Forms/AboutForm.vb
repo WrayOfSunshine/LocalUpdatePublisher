@@ -13,6 +13,8 @@ Public Partial Class AboutForm
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		Me.lblAbout.Text = String.Format(lblAbout.Text, Application.ProductVersion)
 	End Sub
 	
 	'Go to the home page and close the form.

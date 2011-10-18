@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Paikallinen Update Julkaisija Versio: 1.0 Paikallinen Päivitä Publisher käyttää WSUS API laajentaa WSUS täytäntöönpano kuuluu asentaa ja päivittää kolmansilta osapuolilta. Saat tukea ja päivitykset mennä</value>
+    <value>Paikallinen Update Julkaisija Versio: {0}
+
+Paikallinen Päivitä Publisher käyttää WSUS API laajentaa WSUS täytäntöönpano kuuluu asentaa ja päivittää kolmansilta osapuolilta. 
+
+Saat tukea ja päivitykset mennä</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>

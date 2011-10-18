@@ -210,6 +210,7 @@ Partial Class UpdateForm
 		'
 		'dgvAdditionalFiles
 		'
+		Me.dgvAdditionalFiles.AllowDrop = true
 		Me.dgvAdditionalFiles.AllowUserToAddRows = false
 		Me.dgvAdditionalFiles.AllowUserToDeleteRows = false
 		Me.dgvAdditionalFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -221,6 +222,8 @@ Partial Class UpdateForm
 		Me.dgvAdditionalFiles.RowHeadersVisible = false
 		Me.tlpIntro.SetRowSpan(Me.dgvAdditionalFiles, 2)
 		Me.dgvAdditionalFiles.TabStop = false
+		AddHandler Me.dgvAdditionalFiles.DragEnter, AddressOf Me.DgvAdditionalFilesDragEnter
+		AddHandler Me.dgvAdditionalFiles.DragDrop, AddressOf Me.DgvAdditionalFilesDragDrop
 		AddHandler Me.dgvAdditionalFiles.CellContentClick, AddressOf Me.DgvAdditionalFilesCellContentClick
 		'
 		'FileName

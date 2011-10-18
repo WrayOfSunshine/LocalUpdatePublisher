@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Local Update Wydawnictwo Wersja: 1.0 Local Update Publisher używa WSUS API do przedłużenia realizacji celu włączenia WSUS instaluje i aktualizuje od osób trzecich. Aby uzyskać wsparcie i aktualizacje idź do</value>
+    <value>Local Update Wydawnictwo Wersja: {0}
+
+Local Update Publisher używa WSUS API do przedłużenia realizacji celu włączenia WSUS instaluje i aktualizuje od osób trzecich.
+
+Aby uzyskać wsparcie i aktualizacje idź do</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>

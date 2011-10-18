@@ -141,7 +141,6 @@ Public Partial Class UpdateForm
 		
 		Call LoadSdpData
 		
-		
 		'We do not need to prompt the user for files so skip the initial tab.
 		If _TabsHidden.Count = 0 Then
 			Me._TabsHidden.Add(Me.TabsUpdate.TabPages("TabIntro"))
@@ -546,6 +545,7 @@ Public Partial Class UpdateForm
 							'Get the SHA1 hash of the file.
 							inStream = _OriginalFileInfo.OpenRead()
 							digest = Convert.ToBase64String(hashProvider.ComputeHash(inStream))
+							'Msgbox ( System.BitConverter.ToString(Convert.FromBase64String(digest)))
 							instream.Close
 							
 							'Setup the FileForInstallable Item
@@ -774,7 +774,7 @@ Public Partial Class UpdateForm
 				
 				'Load the Original URI
 				If Not _Sdp.InstallableItems(0).OriginalSourceFile Is Nothing AndAlso _
-					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then
+					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then										
 					Me.txtOriginalURI.Text = _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri.ToString
 				End If
 				
@@ -856,8 +856,6 @@ Public Partial Class UpdateForm
 	
 	'Prompt the user for files and add them to the collection.
 	Private Sub BtnAddFilesClick(Sender As Object, E As EventArgs)
-		Dim tmpFile As FileInfo
-		Dim tmpRow As Integer
 		
 		'Set dialog values.
 		Me.dlgUpdateFile.Filter = ""
@@ -867,19 +865,59 @@ Public Partial Class UpdateForm
 		If Me.DlgUpdateFile.ShowDialog(Me) = VbOK Then
 			
 			'Loop through the selected files and add them.
-			For Each tmpString As String In Me.dlgUpdateFile.FileNames
-				tmpFile = New FileInfo(tmpString)
-				tmpRow = DgvAdditionalFiles.Rows.Add(New String() {TmpFile.Name })
-				Me.dgvAdditionalFiles.Rows.Item(TmpRow).Cells("FileObject").Value = TmpFile
+			For Each tmpFile As String In Me.dlgUpdateFile.FileNames
+				Call DgvAdditionalFileAddFile(tmpFile)
 			Next
 		End If
 	End Sub
 	
+	'Prompt the user for a directory and add it to the collection.
 	Sub BtnAddDirClick(Sender As Object, E As EventArgs)
-		
 		If DlgUpdateDir.ShowDialog(Me) = VbOK Then
-			Dim TmpDir As DirectoryInfo = New DirectoryInfo(DlgUpdateDir.SelectedPath)
-			Dim TmpRow As Integer = DgvAdditionalFiles.Rows.Add(New String() {TmpDir.Name & " (Dir)" })
+			Call DgvAdditionalFileAddDirectory(DlgUpdateDir.SelectedPath)
+		End If
+	End Sub
+	
+	'Give the user feedback when hovering items over the data grid view.
+	Sub DgvAdditionalFilesDragEnter(sender As Object, e As DragEventArgs)
+		e.Effect = DragDropEffects.Copy
+	End Sub
+	
+	'Allow the user to drop files and folders onto the data grid view.
+	Sub DgvAdditionalFilesDragDrop(sender As Object, e As DragEventArgs)
+		If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+			For Each tmpPath As String In DirectCast(e.Data.GetData(DataFormats.FileDrop), String())
+				If System.IO.Directory.Exists(tmpPath) Then
+					Call DgvAdditionalFileAddDirectory(tmpPath)
+				Else If System.IO.File.Exists(tmpPath)
+					Call DgvAdditionalFileAddFile(tmpPath)
+				Else
+					'Do nothing if this is neither a file nor a drecotry.
+				End If
+			Next
+		End If
+	End Sub
+	
+	'Add the file to the additional files data grid view
+	Sub DgvAdditionalFileAddFile(filePath As String)
+		Dim tmpFile As FileInfo
+		Dim tmpRow As Integer
+		
+		If System.IO.File.Exists(filePath) Then
+			tmpFile = New FileInfo(filePath)
+			tmpRow = DgvAdditionalFiles.Rows.Add(New String() {TmpFile.Name })
+			Me.dgvAdditionalFiles.Rows.Item(TmpRow).Cells("FileObject").Value = TmpFile
+		End If
+	End Sub
+	
+	'Add the directory to the additional files data grid view
+	Sub DgvAdditionalFileAddDirectory(dirPath As String)
+		Dim tmpDir As DirectoryInfo
+		Dim tmpRow As Integer
+		
+		If System.IO.Directory.Exists(dirPath) Then
+			tmpDir = New DirectoryInfo(dirPath)
+			tmpRow = DgvAdditionalFiles.Rows.Add(New String() {TmpDir.Name & " (Dir)" })
 			DgvAdditionalFiles.Rows.Item(TmpRow).Cells("FileObject").Value = TmpDir
 		End If
 	End Sub
@@ -1127,5 +1165,4 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#End Region
-	
 End Class

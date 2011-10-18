@@ -2113,7 +2113,7 @@
     <value>isInstalledRules</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
     <value>tabIsInstalled</value>
@@ -2179,7 +2179,7 @@
     <value>isInstallableRules</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
     <value>tabIsInstallable</value>
@@ -2761,7 +2761,7 @@
     <value>tabsUpdate</value>
   </data>
   <data name="&gt;&gt;tabsUpdate.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.25469, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tabsUpdate.Parent" xml:space="preserve">
     <value>tlpMain</value>

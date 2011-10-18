@@ -62,7 +62,7 @@
     <value>About</value>
   </data>
   <data name="lblAbout.Text">
-    <value>Local Update Publisher Version: 1.0
+    <value>Local Update Publisher Version: {0}
 
 Local Update Publisher uses the WSUS API to extend your WSUS implementation to include installs and updates from third parties.
 

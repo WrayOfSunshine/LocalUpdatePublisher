@@ -63,7 +63,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Versió del Local Update Publisher: 1.0
+    <value>Versió del Local Update Publisher: {0}
 
 El Local Update Publisher utilitza les API del WSUS per incloure al WSUS instal·lacions i actualitzacions de tercers.
 

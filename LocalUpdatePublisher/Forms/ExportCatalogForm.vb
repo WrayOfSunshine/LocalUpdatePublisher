@@ -103,7 +103,6 @@ Public Partial Class ExportCatalogForm
 		tmpFileList = New ArrayList
 		tmpFileList.Add(New String() { tmpFile , Path.GetFileName(tmpFile) })
 		tmpCompress.CompressFileList( tmpFileList , exportFileDialog.FileName, True, True, 0)
-		
 		'Delete the temporary file.
 		Try
 			My.Computer.FileSystem.DeleteFile( tmpFile )
