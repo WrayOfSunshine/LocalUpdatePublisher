@@ -13,7 +13,7 @@ Public Partial Class ApprovalProgressForm
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-						
+		
 		'Localize the data grid view
 		For Each colTemp As DataGridViewColumn In Me.dgvProgress.Columns
 			colTemp.HeaderText = globalRM.GetString(colTemp.Name)
@@ -68,30 +68,17 @@ Public Partial Class ApprovalProgressForm
 			'Loop through the approval groups and if the row has an approval action
 			' then perform that action for that row's group.
 			For Each tempRow As DataGridViewRow In computerGroups
-				If Not tempRow.Cells.Item("ApprovalAction").Value Is Nothing Then
-					Try
-						
-						If Not String.IsNullOrEmpty(DirectCast(tempRow.Cells.Item("Deadline").Value, String)) Then
-							update.Approve( _
-								DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-								DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup), _
-								DirectCast(tempRow.Cells.Item("Deadline").Value, Date))
-						Else
-							update.Approve( _
-								DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-								DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
-						End If
-					Catch x As ArgumentOutOfRangeException
-						strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
-					Catch x As ArgumentNullException
-						strResult = globalRM.GetString("exception_argument_null") & ": " & x.Message
-					Catch x As InvalidOperationException
-						strResult = globalRM.GetString("exception_invalid_operation") & ": " & x.Message
-					Catch x As WsusObjectNotFoundException
-						strResult = globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message
-					Catch x As Exception
-						strResult = globalRM.GetString("exception") & ": " & x.Message
-					End Try
+				Dim tmpResult As String
+				'Approve the Update
+				tmpResult= ApproveUpdate( update, _
+					tempRow.Cells.Item("ApprovalAction").Value, _
+					tempRow.Cells.Item("TargetGroup").Value, _
+					tempRow.Cells.Item("OptionalInstall").Value, _
+					tempRow.Cells.Item("Deadline").Value)
+				
+				'Ignore successfull approvals so that if error occur the entire update is flagged with that error.
+				If Not tmpResult = globalRM.GetString("success") Then
+					strResult = tmpResult
 				End If
 			Next
 			
@@ -155,50 +142,32 @@ Public Partial Class ApprovalProgressForm
 				intCurrentRow = Me.dgvProgress.Rows.Add(New String() {strAction})
 				Me.Refresh
 				
-				Try
-					' If the installation isn't possible then use the metadata to republish it with the binaries.
-					If update.State = UpdateState.InstallationImpossible Then
-						'SDP Path.
-						Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), update.Id.UpdateId.ToString() & ".xml") 
-						
-						'Export the udpate's metadata to the sdp path.
-						update.ExportPackageMetadata(sdpFilePath)
-						
-						'Publish the update as a catalog snippet which will download the files.
-						Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFilePath) 
-						ConnectionManager.PublishPackageFromCatalog(tmpSdp, sdpFilePath, Me) 
-						update.Refresh
-					End If
+				
+				' If the installation isn't possible then use the metadata to republish it with the binaries.
+				If update.State = UpdateState.InstallationImpossible Then
+					'SDP Path.
+					Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), update.Id.UpdateId.ToString() & ".xml")
 					
-					'Msgbox ( tempRow.Cells.Item("Deadline").Value.ToString )
-					If Not tempRow.Cells.Item("Deadline").Value Is Nothing AndAlso Not IsDBNull(tempRow.Cells.Item("Deadline").Value)  Then
-						update.Approve( _
-							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup), _
-							DirectCast(tempRow.Cells.Item("Deadline").Value, Date))
-					Else
-						update.Approve( _
-							DirectCast(tempRow.Cells.Item("ApprovalAction").Value, UpdateApprovalAction), _
-							DirectCast(tempRow.Cells.Item("TargetGroup").Value, IComputerTargetGroup))
-					End If
+					'Export the udpate's metadata to the sdp path.
+					update.ExportPackageMetadata(sdpFilePath)
 					
-				Catch x As ArgumentOutOfRangeException
-					strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
-				Catch x As ArgumentNullException
-					strResult = globalRM.GetString("exception_argument_null") & ": " & x.Message
-				Catch x As InvalidOperationException
-					strResult = globalRM.GetString("exception_invalid_operation") & ": " & x.Message
-				Catch x As WsusObjectNotFoundException
-					strResult = globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message
-				Catch x As Exception
-					strResult = globalRM.GetString("exception") & ": " & x.Message
-				End Try
+					'Publish the update as a catalog snippet which will download the files.
+					Dim tmpSdp As SoftwareDistributionPackage = New SoftwareDistributionPackage(sdpFilePath)
+					ConnectionManager.PublishPackageFromCatalog(tmpSdp, sdpFilePath, Me)
+					update.Refresh
+				End If
+				
+				'Approve the Update
+				Me.dgvProgress.Rows(intCurrentRow).Cells("Result").Value = ApproveUpdate( update, _
+					tempRow.Cells.Item("ApprovalAction").Value, _
+					tempRow.Cells.Item("TargetGroup").Value, _
+					tempRow.Cells.Item("OptionalInstall").Value, _
+					tempRow.Cells.Item("Deadline").Value)
+				
 				Me.pbUpdateApprovals.PerformStep
 				
 			End If
 			
-			'If we added a row, then set the result.
-			If intCurrentRow > -1 Then Me.dgvProgress.Rows(intCurrentRow).Cells("Result").Value = strResult
 			Me.Refresh
 			
 		Next
@@ -209,6 +178,46 @@ Public Partial Class ApprovalProgressForm
 		
 	End Function
 	
+	'Approve update handles the actual approval of the updates and returns the results as a string.
+	Function ApproveUpdate(update As IUpdate, approvalAction As Object, targetGroup As Object, optionalInstall As Object, deadline As Object) As String
+		'Set default result to success.
+		Dim strResult As String = globalRM.GetString("success")
+		
+		If Not update Is Nothing AndAlso _
+			Not targetGroup Is Nothing AndAlso TypeOf targetGroup Is IComputerTargetGroup AndAlso _
+			Not approvalAction Is Nothing AndAlso TypeOf approvalAction Is UpdateApprovalAction Then
+			Try
+				'If optionalInstall is populated, a boolean, and true then optionally approve the update.
+				If  Not optionalInstall Is Nothing AndAlso TypeOf optionalInstall Is Boolean AndAlso DirectCast(optionalInstall, Boolean) Then
+					update.ApproveForOptionalInstall( DirectCast(targetGroup, IComputerTargetGroup) )
+					'If there is a deadline then approve it with a deadline.
+				Else If Not deadline Is Nothing AndAlso TypeOf deadline Is Date AndAlso Not DirectCast(deadline, Date) = Date.MinValue
+					update.Approve( _
+						DirectCast(approvalAction, UpdateApprovalAction), _
+						DirectCast(targetGroup, IComputerTargetGroup), _
+						DirectCast(deadline, Date))
+					'Otherwise just approve this normally.
+				Else
+					update.Approve( _
+						DirectCast(approvalAction, UpdateApprovalAction), _
+						DirectCast(targetGroup, IComputerTargetGroup))
+				End If
+			Catch x As ArgumentOutOfRangeException
+				strResult = globalRM.GetString("exception_argument_out_of_range") & ": " & x.Message
+			Catch x As ArgumentNullException
+				strResult = globalRM.GetString("exception_argument_null") & ": " & x.Message
+			Catch x As InvalidOperationException
+				strResult = globalRM.GetString("exception_invalid_operation") & ": " & x.Message
+			Catch x As WsusObjectNotFoundException
+				strResult = globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message
+			Catch x As Exception
+				strResult = globalRM.GetString("exception") & ": " & x.Message
+			End Try
+		End If
+		
+		'If we get this far, return generic error
+		Return strResult
+	End Function
 	
 	Sub BtnPauseClick(sender As Object, e As EventArgs)
 		Me.btnCancel.Enabled = True

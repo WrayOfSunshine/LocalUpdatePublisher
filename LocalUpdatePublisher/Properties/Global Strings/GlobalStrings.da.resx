@@ -84,22 +84,25 @@
     <value>Deadline</value>
   </data>
   <data name="IsInstallable_Instructions">
-    <value>Brug denne formular til at oprette, redigere, fjerne, og gruppe regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se det automatisk genererede reglen på installerbare vareniveau. Som standard reglerne er i en og gruppe.</value>
+    <value>Brug denne formular til at oprette, redigere, fjernesamt gruppe-regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, vil du se de automatisk genererede regler på installations-niveau. Som standard er reglerne i en "AND" gruppe.</value>
   </data>
   <data name="IsInstallable_Title">
-    <value>Pakke Level - Installerbare Regler</value>
+    <value>Pakkeniveau - Installerbare regler</value>
   </data>
   <data name="IsInstallable_TitleItemLevel">
-    <value>Installation Item Level</value>
+    <value>Installation på Objekt niveau</value>
   </data>
   <data name="IsInstalled_Instructions">
-    <value>Brug denne formular til at oprette, redigere, fjerne, og gruppe regler, der bestemmer, om denne software pakke allerede er installeret. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se det automatisk genererede reglen på installerbare vareniveau. Som standard reglerne er i en og gruppe.</value>
+    <value>Brug denne formular til at oprette, redigere, fjerne samt gruppe-regler, der bestemmer, om denne software-pakke allerede er installeret. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, vil du se de automatisk genererede regler på installations-niveau. Som standard er reglerne i en "AND" gruppe.</value>
   </data>
   <data name="IsInstalled_Title">
-    <value>Pakke Level - Installeret Regler</value>
+    <value>Pakke-niveau - Installerede regler</value>
   </data>
   <data name="IsInstalled_TitleItemLevel">
-    <value>Installation Item Level</value>
+    <value>Installation på Objekt niveau</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Godkendt til Valgfri Installer</value>
   </data>
   <data name="Result">
     <value>Resultat</value>
@@ -109,7 +112,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="RulesEditor_EditPrompt">
-    <value>Rediger regel</value>
+    <value>Rediger Regel</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="TargetGroup">

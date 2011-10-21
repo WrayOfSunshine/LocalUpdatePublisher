@@ -101,6 +101,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Asennus alkiotason</value>
   </data>
+  <data name="OptionalInstall">
+    <value>Hyväksytty Valinnainen asennus</value>
+  </data>
   <data name="Result">
     <value>Tulos</value>
   </data>

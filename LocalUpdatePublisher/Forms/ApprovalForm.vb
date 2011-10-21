@@ -65,6 +65,10 @@ Public Partial Class ApprovalForm
 		Call SetApprovals(UpdateApprovalAction.Install)
 	End Sub
 	
+	Sub ApproveForOptionalInstallToolStripMenuItemClick(sender As Object, e As EventArgs)
+		Call SetApprovals(UpdateApprovalAction.Install, True)
+	End Sub
+	
 	'Approve for Removal.
 	Private Sub ApproveForRemovalToolStripMenuItemClick(sender As Object, e As EventArgs)
 		'Make sure this is a single update that can be uninstalled
@@ -89,17 +93,28 @@ Public Partial Class ApprovalForm
 	End Sub
 	
 	'Set the current group's approval based on the Approval Type passed in.
-	Sub SetApprovals(approval As Microsoft.UpdateServices.Administration.UpdateApprovalAction)
+	Sub SetApprovals(approval As UpdateApprovalAction, optionalInstall As Boolean)
 		
 		'Enable to Approve button.
 		Me.btnOK.Enabled = True
 		
 		'Set the current row to approve the update.
-		Me.dgvApprovals.CurrentRow.Cells("approval").Value = approval.ToDisplayString()
-		Me.dgvApprovals.CurrentRow.Cells("ApprovalAction").Value = approval
+		If optionalInstall Then
+			Me.dgvApprovals.CurrentRow.Cells("approval").Value = globalRM.GetString("OptionalInstall")
+			Me.dgvApprovals.CurrentRow.Cells("ApprovalAction").Value = approval
+			Me.dgvApprovals.CurrentRow.Cells("OptionalInstall").Value = True
+		Else
+			Me.dgvApprovals.CurrentRow.Cells("approval").Value = approval.ToDisplayString()
+			Me.dgvApprovals.CurrentRow.Cells("ApprovalAction").Value = approval
+			Me.dgvApprovals.CurrentRow.Cells("OptionalInstall").Value = False
+		End If
 		
 	End Sub
 	
+	'Call with default parameters
+	Sub SetApprovals(approval As UpdateApprovalAction)
+		Call SetApprovals( approval, False)
+	End Sub
 	
 	'Pressing this button will set the approvals for the update.
 	Private Sub btnOKClick(sender As Object, e As EventArgs)
@@ -125,8 +140,6 @@ Public Partial Class ApprovalForm
 	'Load the current update's approvals into the data grid view.
 	Sub LoadData( node as TreeNode )
 		Dim tmpApprovals As UpdateApprovalCollection
-		Dim tmpApproval As IUpdateApproval
-		Dim tmpRow As Integer
 		
 		'If the main computer node has been passed.
 		If node.Equals(My.Forms.MainForm.ComputerNode) Then
@@ -142,39 +155,28 @@ Public Partial Class ApprovalForm
 			
 			'Load the existing approvals.
 			If  _multipleUpdates Then
-				'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
-				tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, globalRM.GetString("no_approval")})
+				'There is no parent approval.
+				Call AddApprovalRow(computerGroup, Nothing)
 				
 			Else If Not _selectedUpdate Is Nothing Then
 				'Get the approvals
 				tmpApprovals =_selectedUpdate.GetUpdateApprovals(computerGroup)
 				
 				If tmpApprovals.Count > 0 Then
-					tmpApproval = tmpApprovals.Item(0) 'Save  approval.
-					tmpRow = Me.dgvApprovals.Rows.Add(New String() { computerGroup.Name, tmpApproval.Action.ToDisplayString()})
-					Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
-					Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
-					
-					'If the deadline is the max date then there is no deadling so set the value to nothing.
-					If tmpApproval.Deadline = Date.MaxValue Then
-						Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = Nothing
-					Else
-						Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = tmpApproval.Deadline
-					End If
-					
+					Call AddApprovalRow(computerGroup, tmpApprovals.Item(0))
 				Else
-					'tmpApproval = DirectCast(-1, UpdateApprovalAction) 'There is no parent approval.
-					tmpRow = Me.dgvApprovals.Rows.Add(New String() {computerGroup.Name, globalRM.GetString("no_approval")})
+					'There is no parent approval.
+					Call AddApprovalRow(computerGroup, Nothing)
 				End If
 			End If
 			
-			'Make sure a row was added and tmpRow is a valid index.
-			If tmpRow < Me.dgvApprovals.Rows.Count
-				'Set the target group value to equal the computerGroup.
-				Me.dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = computerGroup
-				
-				Call LoadData(My.Forms.MainForm.ComputerNode.Nodes(0))
-			End If
+			'			'Make sure a row was added and tmpRow is a valid index.
+			'			If tmpRow < Me.dgvApprovals.Rows.Count
+			'				'Set the target group value to equal the computerGroup.
+			'				Me.dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = computerGroup
+			'
+			Call LoadData(My.Forms.MainForm.ComputerNode.Nodes(0))
+			'			End If
 			
 		Else 'Is not the main computer node.
 			
@@ -186,14 +188,8 @@ Public Partial Class ApprovalForm
 				For Each tmpNode As TreeNode In node.Nodes
 					
 					If  _multipleUpdates Then
-						tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, globalRM.GetString("no_approval")})
-						
-						'Set padding depth.
-						Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
-						tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
-						dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
-						
-						dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
+						'No approval
+						Call AddApprovalRow(DirectCast(tmpNode.Tag, IComputerTargetGroup), Nothing, False, startingDepth , tmpNode.Level)
 						
 					Else If Not _selectedUpdate Is Nothing Then
 						
@@ -202,24 +198,9 @@ Public Partial Class ApprovalForm
 						
 						'If there is an approval already then load it, do not over-ride with the parent's approval.
 						If tmpApprovals.Count > 0 Then
-							tmpApproval = tmpApprovals.Item(0)
-							tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text ,tmpApproval.Action.ToDisplayString()})
-							Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = tmpApproval.Action
-							Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = tmpApproval.CreationDate.ToShortDateString
 							
-							'If the deadline is the max date then there is no deadling so set the value to nothing.
-							If tmpApproval.Deadline = Date.MaxValue Then
-								Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = Nothing
-							Else
-								Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = tmpApproval.Deadline
-							End If
+							Call AddApprovalRow(DirectCast(tmpNode.Tag, IComputerTargetGroup), tmpApprovals.Item(0), False, startingDepth , tmpNode.Level)
 							
-							'Set padding depth.
-							Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
-							tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
-							dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
-							
-							dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
 							'If there is no approval then inherit the parent's approval.
 						Else
 							
@@ -228,30 +209,71 @@ Public Partial Class ApprovalForm
 							
 							'If there is an approval already then load it, do not over-ride with the parent's approval.
 							If tmpApprovals.Count > 0 Then
-								tmpApproval = tmpApprovals.Item(0)
-								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.Action.ToDisplayString() & " (" & globalRM.GetString("inherited") & ")"})
+								'tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, tmpApproval.Action.ToDisplayString() & " (" & globalRM.GetString("inherited") & ")"})
 								
-								'Set padding depth.
-								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
-								tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
-								dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+								Call AddApprovalRow(DirectCast(tmpNode.Tag, IComputerTargetGroup), tmpApprovals.Item(0), True, startingDepth , tmpNode.Level)
 								
 								'If there is no approval then inherit the parent's approval.
 							Else
-								tmpRow = Me.dgvApprovals.Rows.Add(New String() {tmpNode.Text, globalRM.GetString("no_approval")})
-								
-								'Set padding depth.
-								Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
-								tmpPadding.Left = defaultPaddingSize * ( tmpNode.Level - startingDepth )
-								dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+								'No approval
+								Call AddApprovalRow(DirectCast(tmpNode.Tag, IComputerTargetGroup), Nothing, False, startingDepth , tmpNode.Level)
 							End If
-							dgvApprovals.Rows.Item(tmpRow).Cells("TargetGroup").Value = tmpNode.Tag
 						End If
 					End If
 					Call LoadData(tmpNode)
 				Next
 			End If 'Selected update is nothing.
 		End If 'Main computer node or child node.
+	End Sub
+	
+	'Create a new row in the data grid view for this target group's approval.
+	Sub AddApprovalRow (targetGroup As IComputerTargetGroup, approval As IUpdateApproval, inherited As Boolean, startingDepth As Integer, padding As Integer)
+		Dim tmpRow As Integer
+		tmpRow = Me.dgvApprovals.Rows.Add()
+		
+		'Set common fields
+		Me.dgvApprovals.Rows(tmpRow).Cells("ComputerGroup").Value = targetGroup.Name
+		Me.dgvApprovals.Rows(tmpRow).Cells("TargetGroup").Value = targetGroup
+		
+		If approval Is Nothing Then
+			Me.dgvApprovals.Rows(tmpRow).Cells("ComputerGroup").Value = targetGroup.Name
+			Me.dgvApprovals.Rows(tmpRow).Cells("Approval").Value = globalRM.GetString("no_approval")
+		Else
+			
+			'Set common fields
+			Me.dgvApprovals.Rows(tmpRow).Cells("ApprovalAction").Value = approval.Action
+			Me.dgvApprovals.Rows(tmpRow).Cells("CreationDate").Value = approval.CreationDate.ToShortDateString
+			
+			'Set fields affected by the optional install.
+			If approval.IsOptional Then
+				Me.dgvApprovals.Rows(tmpRow).Cells("Approval").Value = globalRM.GetString("OptionalInstall")
+				Me.dgvApprovals.Rows(tmpRow).Cells("OptionalInstall").Value = True
+			Else
+				Me.dgvApprovals.Rows(tmpRow).Cells("Approval").Value = approval.Action.ToDisplayString()
+				Me.dgvApprovals.Rows(tmpRow).Cells("OptionalInstall").Value = False
+			End If
+			
+			If inherited Then
+				Me.dgvApprovals.Rows(tmpRow).Cells("Approval").Value = DirectCast(Me.dgvApprovals.Rows(tmpRow).Cells("Approval").Value,String) & " (" & globalRM.GetString("inherited") & ")"
+			End If
+			
+			'If the deadline is the max date then there is no deadling so set the value to nothing.
+			If approval.Deadline = Date.MaxValue Then
+				Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = Nothing
+			Else
+				Me.dgvApprovals.Rows(tmpRow).Cells("Deadline").Value = approval.Deadline
+			End If
+			
+			'Set padding depth.
+			Dim tmpPadding As Padding = dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding
+			tmpPadding.Left = defaultPaddingSize * ( padding - startingDepth )
+			dgvApprovals.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
+		End If
+	End Sub
+	
+	'Call AddApprovalRow without boolean or padding options
+	Sub AddApprovalRow (targetGroup As IComputerTargetGroup, approval As IUpdateApproval)
+		Call AddApprovalRow (targetGroup, approval, False, 0, 0)
 	End Sub
 	
 	'Get approvals recursively.

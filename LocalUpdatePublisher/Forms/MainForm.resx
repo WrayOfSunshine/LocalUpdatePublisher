@@ -2773,10 +2773,10 @@
     <value>0</value>
   </data>
   <metadata name="cmDgvMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>197, 11</value>
   </metadata>
   <data name="cmDgvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 4</value>
+    <value>36, 4</value>
   </data>
   <data name="&gt;&gt;cmDgvMain.Name" xml:space="preserve">
     <value>cmDgvMain</value>
@@ -2845,13 +2845,13 @@
     <value>735, 17</value>
   </metadata>
   <data name="createCategoryUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
+    <value>131, 22</value>
   </data>
   <data name="createCategoryUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>Create Update</value>
   </data>
   <data name="cmCreateCategoryUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
+    <value>132, 48</value>
   </data>
   <data name="&gt;&gt;cmCreateCategoryUpdate.Name" xml:space="preserve">
     <value>cmCreateCategoryUpdate</value>

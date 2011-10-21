@@ -1494,7 +1494,7 @@ Public Partial Class MainForm
 			
 			' Go to the node that the user clicked
 			Dim node As TreeNode = treeView.GetNodeAt(p)
-			If Not node Is Nothing Then
+			If Not node Is Nothing AndAlso Not node.Tag Is Nothing AndAlso TypeOf node.Tag Is IUpdateCategory Then
 				
 				' Highlight the node that the user clicked.
 				treeView.SelectedNode = node

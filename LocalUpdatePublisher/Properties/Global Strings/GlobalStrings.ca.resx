@@ -84,28 +84,31 @@
     <value>Data límit</value>
   </data>
   <data name="IsInstallable_Instructions">
-    <value>Utilitzi aquest formulari per crear, editar, eliminar, i les regles del grup de determinar si aquest paquet de programari pot ser instal · lat. Si heu creat aquesta actualització amb un arxiu MSI o MSP podrà veure l'estat genera automàticament en el nivell d'ítem instal · lable. Per defecte les regles estan en un grup d'AND.</value>
+    <value>Utilitzeu aquest formulari per crear, editar, esborrar i agrupar regles que determinim si aquest paquet de programari es pot instal·lar. Si creeu aquesta actualització utilitzant un arxiu MSI o MSP, veureu la regla generada automàticament a nivell d'instal·lació de l'article. Per defecte, les regles són en un grup "AND".</value>
   </data>
   <data name="IsInstallable_Title">
-    <value>Nivell de paquet - Regles instal</value>
+    <value>Nivell de Paquets - Regles Instal·lables</value>
   </data>
   <data name="IsInstallable_TitleItemLevel">
-    <value>Instal · lació de nivell d'element</value>
+    <value>Nivell d'Instal·lació de l'Article</value>
   </data>
   <data name="IsInstalled_Instructions">
-    <value>Utilitzi aquest formulari per crear, editar, eliminar, i les regles del grup de determinar si aquest paquet de programari ja està instal · lat. Si heu creat aquesta actualització amb un arxiu MSI o MSP podrà veure l'estat genera automàticament en el nivell d'ítem instal · lable. Per defecte les regles estan en un grup d'AND.</value>
+    <value>Utilitzeu aquest formulari per crear, editar, esborrar i agrupar regles que determinim si aquest paquet de programari ja és instal·lat. Si creeu aquesta actualització utilitzant un arxiu MSI o MSP, veureu la regla generada automàticament a nivell d'instal·lació de l'article. Per defecte, les regles són en un grup "AND".</value>
   </data>
   <data name="IsInstalled_Title">
-    <value>Nivell de paquet - Regles Instal</value>
+    <value>Nivell de Paquets - Regles Instal·lades</value>
   </data>
   <data name="IsInstalled_TitleItemLevel">
-    <value>Instal · lació de nivell d'element</value>
+    <value>Nivell d'Instal·lació de l'Article</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Aprovada per instal · lar opcional</value>
   </data>
   <data name="Result">
     <value>Resultat</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
-    <value>Crear regla</value>
+    <value>Crear una regla</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="RulesEditor_EditPrompt">
@@ -204,7 +207,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="create_rule">
-    <value>Crear regla</value>
+    <value>Crear una regla</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="created">

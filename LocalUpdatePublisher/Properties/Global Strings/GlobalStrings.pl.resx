@@ -101,6 +101,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Na poziomie elementu instalacji</value>
   </data>
+  <data name="OptionalInstall">
+    <value>Zatwierdzony do Opcjonalnie Zainstaluj</value>
+  </data>
   <data name="Result">
     <value>Wynik</value>
   </data>

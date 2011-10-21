@@ -83,7 +83,7 @@
     <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
   </data>
   <data name="IsInstallable_Title">
-    <value>Niveau de paquet – Règles installables</value>
+    <value>Package Level - Installable Rules</value>
   </data>
   <data name="IsInstallable_TitleItemLevel">
     <value>Installation Item Level</value>
@@ -96,6 +96,9 @@
   </data>
   <data name="IsInstalled_TitleItemLevel">
     <value>Installation Item Level</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Approved for Optional Install</value>
   </data>
   <data name="Result">
     <value>Result</value>

@@ -97,6 +97,9 @@
   <data name="IsInstalled_TitleItemLevel">
     <value>Niveau d’Installation</value>
   </data>
+  <data name="OptionalInstall">
+    <value>Approuvé pour installer en option</value>
+  </data>
   <data name="Result">
     <value>Résultat</value>
   </data>
