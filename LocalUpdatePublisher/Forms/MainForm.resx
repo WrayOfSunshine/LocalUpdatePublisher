@@ -2851,7 +2851,7 @@
     <value>Create Update</value>
   </data>
   <data name="cmCreateCategoryUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 48</value>
+    <value>132, 26</value>
   </data>
   <data name="&gt;&gt;cmCreateCategoryUpdate.Name" xml:space="preserve">
     <value>cmCreateCategoryUpdate</value>

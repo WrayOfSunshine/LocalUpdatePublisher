@@ -110,7 +110,7 @@
     <value>Description</value>
   </data>
   <data name="lblInfo.Text">
-    <value>This wizard will bring you through the process of create a locally published software package.  You must select an MSI, MSP, or EXE file as the update file.  If the EXE file has an embedded MSI file then you must enter the relative path.  If there are other supporting files needed, such as transform files, then use the additional files list to add them.</value>
+    <value>This wizard will bring you through the process of creating a locally published software package.  You must select an MSI, MSP, or EXE file as the update file.  If the EXE file has an embedded MSI file then you must enter the relative path.  If there are other supporting files needed, such as transform files, then use the additional files list to add them.</value>
   </data>
   <data name="lblIsSuperceded_InstallableItem.Text">
     <value>Installation Item Level - Superseded Rules</value>

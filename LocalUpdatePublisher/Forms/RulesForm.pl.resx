@@ -102,10 +102,6 @@
     <value>Dane</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>w bajtach (np. 1024)</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblDate.Text">
     <value>Data utworzenia</value>
     <comment>Automatically translated using Google</comment>
@@ -139,6 +135,7 @@
   </data>
   <data name="lblPath.Text">
     <value>Ścieżka</value>
+    <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblProcessorType.Text">
     <value>Typ procesora</value>

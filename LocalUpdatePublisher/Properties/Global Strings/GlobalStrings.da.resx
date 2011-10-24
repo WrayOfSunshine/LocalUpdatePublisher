@@ -186,6 +186,9 @@
     <value>Sammenligning</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="component_codes">
+    <value>Komponent Koder</value>
+  </data>
   <data name="components">
     <value>Komponenter</value>
     <comment>Automatically translated using Google</comment>
@@ -575,8 +578,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="false">
-    <value>falsk</value>
+    <value>Falsk</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Feature Navne</value>
   </data>
   <data name="features">
     <value>Funktioner</value>
@@ -890,6 +896,9 @@
     <value>Product kode</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="product_codes">
+    <value>Produkt Koder</value>
+  </data>
   <data name="product_type">
     <value>Produkt Type</value>
     <comment>Automatically translated using Google</comment>
@@ -1191,7 +1200,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="success_connection_cert_import">
-    <value>Dit certifikat blev importeret. Dette certifikat skal nu distribueres til hver enkelt klient efter Microsofts Local Publishing dokumentation.</value>
+    <value>Dit certifikat blev importeret. Dette certifikat skal nu distribueres til hver enkelt klient efter Microsoft's Local Publishing dokumentation.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="success_packages_expired">
@@ -1207,8 +1216,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Erstatter</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Overflødiggjort</value>
   </data>
   <data name="title">
     <value>Titel</value>

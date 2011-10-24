@@ -163,6 +163,9 @@
   <data name="comparison">
     <value>Vergleich</value>
   </data>
+  <data name="component_codes">
+    <value>Component Codes</value>
+  </data>
   <data name="components">
     <value>Komponenten</value>
   </data>
@@ -460,7 +463,10 @@
     <value>Fehlgeschlagen oder erforderlich</value>
   </data>
   <data name="false">
-    <value>falsch</value>
+    <value>Falsch</value>
+  </data>
+  <data name="feature_names">
+    <value>Feature-Namen</value>
   </data>
   <data name="features">
     <value>Funktionen</value>
@@ -695,6 +701,9 @@
   </data>
   <data name="product_code">
     <value>Produkt-Code</value>
+  </data>
+  <data name="product_codes">
+    <value>Product Codes</value>
   </data>
   <data name="product_type">
     <value>Produkt-Typ</value>
@@ -934,7 +943,7 @@
     <value>Update wurde erfolgreich importiert.</value>
   </data>
   <data name="superseded">
-    <value>Ersetzt</value>
+    <value>Abgelöst</value>
   </data>
   <data name="title">
     <value>Titel</value>

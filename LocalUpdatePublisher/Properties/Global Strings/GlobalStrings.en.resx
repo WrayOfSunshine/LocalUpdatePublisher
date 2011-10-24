@@ -163,6 +163,9 @@
   <data name="comparison">
     <value>Comparison</value>
   </data>
+  <data name="component_codes">
+    <value>Component Codes</value>
+  </data>
   <data name="components">
     <value>Components</value>
   </data>
@@ -293,7 +296,7 @@
     <value>You are not connected to a WSUS server.</value>
   </data>
   <data name="error_export_catalog_no_url">
-    <value>This update cannot be exported because an Original URL has not be entered.</value>
+    <value>This update cannot be exported because an Original URL has not been entered.</value>
   </data>
   <data name="error_export_catalog_no_url_multiple">
     <value>Some packages could not be added because an Original URL was not entered.</value>
@@ -455,7 +458,10 @@
     <value>Failed or Needed</value>
   </data>
   <data name="false">
-    <value>false</value>
+    <value>False</value>
+  </data>
+  <data name="feature_names">
+    <value>Feature Names</value>
   </data>
   <data name="features">
     <value>Features</value>
@@ -691,6 +697,9 @@
   <data name="product_code">
     <value>Product Code</value>
   </data>
+  <data name="product_codes">
+    <value>Product Codes</value>
+  </data>
   <data name="product_type">
     <value>Product Type</value>
   </data>
@@ -917,7 +926,7 @@
     <value>A self-signed certificate has been created. This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.</value>
   </data>
   <data name="success_connection_cert_import">
-    <value>Your certificate was imported successfully. This certificate must now be distributed to each client according the Microsofts Local Publsihing documentation.</value>
+    <value>Your certificate was imported successfully. This certificate must now be distributed to each client according the Microsoft's Local Publsihing documentation.</value>
   </data>
   <data name="success_packages_expired">
     <value>Packages successfully expired.</value>
@@ -929,7 +938,7 @@
     <value>Update was successfully imported.</value>
   </data>
   <data name="superseded">
-    <value>Supersedes</value>
+    <value>Superseded</value>
   </data>
   <data name="title">
     <value>Title</value>

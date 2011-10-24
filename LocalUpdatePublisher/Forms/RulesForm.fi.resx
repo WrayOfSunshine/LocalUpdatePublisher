@@ -102,10 +102,6 @@
     <value>Tiedot</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>tavuina (esim. 1024)</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblDate.Text">
     <value>Luontipäivämäärä</value>
     <comment>Automatically translated using Google</comment>
@@ -139,6 +135,7 @@
   </data>
   <data name="lblPath.Text">
     <value>Polku</value>
+    <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblProcessorType.Text">
     <value>Prosessorin tyyppi</value>

@@ -186,6 +186,9 @@
     <value>Porównanie</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="component_codes">
+    <value>Kody składnik</value>
+  </data>
   <data name="components">
     <value>Components</value>
     <comment>Automatically translated using Google</comment>
@@ -575,8 +578,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="false">
-    <value>fałszywy</value>
+    <value>Fałszywy</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Nazwy funkcji</value>
   </data>
   <data name="features">
     <value>Opis</value>
@@ -889,6 +895,9 @@
   <data name="product_code">
     <value>Product Code</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Kody produktów</value>
   </data>
   <data name="product_type">
     <value>Rodzaj produktu</value>
@@ -1207,8 +1216,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Zastępuje</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Zastąpiony</value>
   </data>
   <data name="title">
     <value>Tytuł</value>

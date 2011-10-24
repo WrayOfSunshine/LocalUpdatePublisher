@@ -619,7 +619,7 @@ Partial Class RulesForm
 		'
 		'gceFeatureCollection
 		'
-		Me.gceFeatureCollection.Header = "Nom de l'Entité"
+		Me.gceFeatureCollection.Header = "Feature Name"
 		Me.gceFeatureCollection.Items = CType(resources.GetObject("gceFeatureCollection.Items"),System.Collections.Generic.List(Of String))
 		resources.ApplyResources(Me.gceFeatureCollection, "gceFeatureCollection")
 		Me.gceFeatureCollection.Name = "gceFeatureCollection"
@@ -648,7 +648,7 @@ Partial Class RulesForm
 		'
 		'gceComponentCollection
 		'
-		Me.gceComponentCollection.Header = "Codes des Appareils"
+		Me.gceComponentCollection.Header = "Component Codes"
 		Me.gceComponentCollection.Items = CType(resources.GetObject("gceComponentCollection.Items"),System.Collections.Generic.List(Of String))
 		resources.ApplyResources(Me.gceComponentCollection, "gceComponentCollection")
 		Me.gceComponentCollection.Name = "gceComponentCollection"
@@ -677,7 +677,7 @@ Partial Class RulesForm
 		'
 		'gceProductCollection
 		'
-		Me.gceProductCollection.Header = "Codes des Produits"
+		Me.gceProductCollection.Header = "Product Codes"
 		Me.gceProductCollection.Items = CType(resources.GetObject("gceProductCollection.Items"),System.Collections.Generic.List(Of String))
 		resources.ApplyResources(Me.gceProductCollection, "gceProductCollection")
 		Me.gceProductCollection.Name = "gceProductCollection"

@@ -708,7 +708,7 @@ Public Partial Class MainForm
 	
 	'Go to the help forum.
 	Sub HelpForumsToolStripMenuItemClick(sender As Object, e As EventArgs)
-		System.Diagnostics.Process.Start("http://sourceforge.net/projects/localupdatepubl/forums")
+		System.Diagnostics.Process.Start("http://sourceforge.net/projects/localupdatepubl/forums/forum/1076879")
 	End Sub
 	
 	#End Region

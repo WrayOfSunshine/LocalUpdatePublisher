@@ -102,10 +102,6 @@
     <value>Data</value>
     <comment>Automatically translated using Google</comment>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>i byte (ex. 1024)</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
   <data name="lblDate.Text">
     <value>Oprettelsesdato</value>
     <comment>Automatically translated using Google</comment>
@@ -139,6 +135,7 @@
   </data>
   <data name="lblPath.Text">
     <value>Sti</value>
+    <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblProcessorType.Text">
     <value>Processor Type</value>

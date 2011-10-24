@@ -2337,7 +2337,7 @@
     <value>gceFeatureCollection</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.27493, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceFeatureCollection.Parent" xml:space="preserve">
     <value>pnlFeatureCollection</value>
@@ -2450,7 +2450,7 @@
     <value>gceComponentCollection</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.27493, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceComponentCollection.Parent" xml:space="preserve">
     <value>pnlComponentCollection</value>
@@ -2563,7 +2563,7 @@
     <value>gceProductCollection</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=0.1.0.27493, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;gceProductCollection.Parent" xml:space="preserve">
     <value>pnlProductCollection</value>

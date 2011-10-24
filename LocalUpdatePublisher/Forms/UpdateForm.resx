@@ -117,375 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tlpIntro.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tlpIntro.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="tlpIntro.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 13</value>
-  </data>
-  <data name="lblInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblInfo.Text" xml:space="preserve">
-    <value>lblInfo</value>
-  </data>
-  <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
-    <value>lblInfo</value>
-  </data>
-  <data name="&gt;&gt;lblInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInfo.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;lblInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtMSIPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="txtMSIPath.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtMSIPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 47</value>
-  </data>
-  <data name="txtMSIPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 20</value>
-  </data>
-  <data name="txtMSIPath.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtMSIPath.Name" xml:space="preserve">
-    <value>txtMSIPath</value>
-  </data>
-  <data name="&gt;&gt;txtMSIPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtMSIPath.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;txtMSIPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnUpdateFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnUpdateFile.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="btnUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 16</value>
-  </data>
-  <data name="btnUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
-  </data>
-  <data name="btnUpdateFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnUpdateFile.Text" xml:space="preserve">
-    <value>Browse</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateFile.Name" xml:space="preserve">
-    <value>btnUpdateFile</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateFile.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateFile.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="FileName.HeaderText" xml:space="preserve">
-    <value>File Name</value>
-  </data>
-  <data name="FileName.Width" type="System.Int32, mscorlib">
-    <value>270</value>
-  </data>
-  <data name="RemoveFile.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RemoveFile.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="FileObject.HeaderText" xml:space="preserve">
-    <value>File Object</value>
-  </data>
-  <data name="FileObject.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dgvAdditionalFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 73</value>
-  </data>
-  <data name="dgvAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 423</value>
-  </data>
-  <data name="dgvAdditionalFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;dgvAdditionalFiles.Name" xml:space="preserve">
-    <value>dgvAdditionalFiles</value>
-  </data>
-  <data name="&gt;&gt;dgvAdditionalFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvAdditionalFiles.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;dgvAdditionalFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblUpdateFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblUpdateFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="lblUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 13</value>
-  </data>
-  <data name="lblUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 31</value>
-  </data>
-  <data name="lblUpdateFile.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblUpdateFile.Text" xml:space="preserve">
-    <value>Update File</value>
-  </data>
-  <data name="lblUpdateFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblUpdateFile.Name" xml:space="preserve">
-    <value>lblUpdateFile</value>
-  </data>
-  <data name="&gt;&gt;lblUpdateFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUpdateFile.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;lblUpdateFile.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblMSIPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMSIPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblMSIPath.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="lblMSIPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 44</value>
-  </data>
-  <data name="lblMSIPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 26</value>
-  </data>
-  <data name="lblMSIPath.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblMSIPath.Text" xml:space="preserve">
-    <value>MSI Path</value>
-  </data>
-  <data name="lblMSIPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblMSIPath.Name" xml:space="preserve">
-    <value>lblMSIPath</value>
-  </data>
-  <data name="&gt;&gt;lblMSIPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMSIPath.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;lblMSIPath.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblAdditionalFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAdditionalFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblAdditionalFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="lblAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 70</value>
-  </data>
-  <data name="lblAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 31</value>
-  </data>
-  <data name="lblAdditionalFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblAdditionalFiles.Text" xml:space="preserve">
-    <value>Additional Files</value>
-  </data>
-  <data name="lblAdditionalFiles.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblAdditionalFiles.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblAdditionalFiles.Name" xml:space="preserve">
-    <value>lblAdditionalFiles</value>
-  </data>
-  <data name="&gt;&gt;lblAdditionalFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdditionalFiles.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;lblAdditionalFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="txtUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 16</value>
-  </data>
-  <data name="txtUpdateFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 20, 3</value>
-  </data>
-  <data name="txtUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 20</value>
-  </data>
-  <data name="txtUpdateFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtUpdateFile.Name" xml:space="preserve">
-    <value>txtUpdateFile</value>
-  </data>
-  <data name="&gt;&gt;txtUpdateFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUpdateFile.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;txtUpdateFile.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnAddFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnAddFiles.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="btnAddFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 104</value>
-  </data>
-  <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
-  </data>
-  <data name="btnAddFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnAddFiles.Text" xml:space="preserve">
-    <value>Add Files</value>
-  </data>
-  <data name="&gt;&gt;btnAddFiles.Name" xml:space="preserve">
-    <value>btnAddFiles</value>
-  </data>
-  <data name="&gt;&gt;btnAddFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddFiles.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;btnAddFiles.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnAddDir.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnAddDir.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="btnAddDir.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 73</value>
-  </data>
-  <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 25</value>
-  </data>
-  <data name="btnAddDir.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnAddDir.Text" xml:space="preserve">
-    <value>Add Dir</value>
-  </data>
-  <data name="&gt;&gt;btnAddDir.Name" xml:space="preserve">
-    <value>btnAddDir</value>
-  </data>
-  <data name="&gt;&gt;btnAddDir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddDir.Parent" xml:space="preserve">
-    <value>tlpIntro</value>
-  </data>
-  <data name="&gt;&gt;btnAddDir.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tlpIntro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpIntro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tlpIntro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpIntro.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tlpIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 499</value>
-  </data>
-  <data name="tlpIntro.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;tlpIntro.Name" xml:space="preserve">
     <value>tlpIntro</value>
   </data>
@@ -498,9 +129,11 @@
   <data name="&gt;&gt;tlpIntro.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tlpIntro.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="txtMSIPath" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnUpdateFile" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="dgvAdditionalFiles" Row="3" RowSpan="2" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblUpdateFile" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMSIPath" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAdditionalFiles" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtUpdateFile" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnAddFiles" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnAddDir" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tabIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
@@ -510,6 +143,7 @@
   <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
     <value>546, 505</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -556,7 +190,7 @@
     <value>3, 3, 20, 3</value>
   </data>
   <data name="txtUninstall.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 20</value>
+    <value>73, 20</value>
   </data>
   <data name="txtUninstall.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -583,7 +217,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="lblNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 0</value>
+    <value>99, 0</value>
   </data>
   <data name="lblNetwork.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 26</value>
@@ -613,7 +247,7 @@
     <value>Left</value>
   </data>
   <data name="txtNetwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 3</value>
+    <value>214, 3</value>
   </data>
   <data name="txtNetwork.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 20, 3</value>
@@ -1830,6 +1464,756 @@
   <data name="tlpOptions.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;lblLanguages.Name" xml:space="preserve">
+    <value>lblLanguages</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.Parent" xml:space="preserve">
+    <value>tlpOptions</value>
+  </data>
+  <data name="&gt;&gt;lblLanguages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Name" xml:space="preserve">
+    <value>lblPrerequisites</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.Parent" xml:space="preserve">
+    <value>tlpOptions</value>
+  </data>
+  <data name="&gt;&gt;lblPrerequisites.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Name" xml:space="preserve">
+    <value>lblReturnCodes</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.Parent" xml:space="preserve">
+    <value>tlpOptions</value>
+  </data>
+  <data name="&gt;&gt;lblReturnCodes.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Name" xml:space="preserve">
+    <value>lblSupersedes</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.Parent" xml:space="preserve">
+    <value>tlpOptions</value>
+  </data>
+  <data name="&gt;&gt;lblSupersedes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="tlpOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 481</value>
+  </data>
+  <data name="tlpOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpOptions.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 18</value>
+  </data>
+  <data name="tlpOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;tlpOptions.Name" xml:space="preserve">
+    <value>tlpOptions</value>
+  </data>
+  <data name="&gt;&gt;tlpOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpOptions.Parent" xml:space="preserve">
+    <value>tlpPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tlpOptions.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="tlpOptions.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblLanguages" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblPrerequisites" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblReturnCodes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblSupersedes" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,18" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpPackageInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpPackageInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpPackageInfo.RowCount" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="tlpPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 499</value>
+  </data>
+  <data name="tlpPackageInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageInfo.Name" xml:space="preserve">
+    <value>tlpPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageInfo.Parent" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tlpPackageInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpPackageInfo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpPackageIinfoUninstall" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRebootBehavior" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboPackageType" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtOriginalURI" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageType" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="txtCommandLine" Row="17" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCommandLine" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblOriginalURI" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboRebootBehavior" Row="16" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblUninstall" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblImpact" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPackageTitle" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageTitle" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboSeverity" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtBulletinID" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboImpact" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblClassification" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboVendor" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboProduct" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblBullitinID" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtArticleID" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtCVEID" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSeverity" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMoreInfoURL" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMoreInfoURL" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSupportURL" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblVendor" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSupportURL" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCVEID" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblProduct" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblArticleID" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboClassification" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblDescription" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpOptions" Row="18" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabPackageInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabPackageInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPackageInfo.Text" xml:space="preserve">
+    <value>Package Info</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Name" xml:space="preserve">
+    <value>tabPackageInfo</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabPackageInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Name" xml:space="preserve">
+    <value>isInstalledRules</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
+    <value>tabIsInstalled</value>
+  </data>
+  <data name="&gt;&gt;isInstalledRules.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstalled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsInstalled.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabIsInstalled.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabIsInstalled.Text" xml:space="preserve">
+    <value>IsInstalled</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Name" xml:space="preserve">
+    <value>tabIsInstalled</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstalled.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Name" xml:space="preserve">
+    <value>isInstallableRules</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
+    <value>tabIsInstallable</value>
+  </data>
+  <data name="&gt;&gt;isInstallableRules.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstallable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsInstallable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabIsInstallable.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabIsInstallable.Text" xml:space="preserve">
+    <value>IsInstallable</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Name" xml:space="preserve">
+    <value>tabIsInstallable</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsInstallable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Name" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpIsSuperseded.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnIsSupersededEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtIsSuperceded_InstallableItem" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperseded" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperceded_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabIsSuperseded.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabIsSuperseded.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tabIsSuperseded.Text" xml:space="preserve">
+    <value>IsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Name" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabIsSuperseded.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Name" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpMetaData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnMetaDataEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInstallableItemMetaData" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabMetaData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabMetaData.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabMetaData.Text" xml:space="preserve">
+    <value>MetaData</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Name" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabMetaData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Name" xml:space="preserve">
+    <value>tlpSummary</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Parent" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpSummary.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSummary" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSummary" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabSummary.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 505</value>
+  </data>
+  <data name="tabSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabSummary.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Name" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.Parent" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabSummary.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabsUpdate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabsUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabsUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 532</value>
+  </data>
+  <data name="tabsUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabsUpdate.Name" xml:space="preserve">
+    <value>tabsUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabsUpdate.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabsUpdate.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tabsUpdate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpIntro.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpIntro.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpIntro.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="lblInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 13</value>
+  </data>
+  <data name="lblInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblInfo.Text" xml:space="preserve">
+    <value>lblInfo</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
+    <value>lblInfo</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtMSIPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtMSIPath.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtMSIPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 47</value>
+  </data>
+  <data name="txtMSIPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 20</value>
+  </data>
+  <data name="txtMSIPath.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Name" xml:space="preserve">
+    <value>txtMSIPath</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;txtMSIPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnUpdateFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnUpdateFile.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 16</value>
+  </data>
+  <data name="btnUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 25</value>
+  </data>
+  <data name="btnUpdateFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnUpdateFile.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Name" xml:space="preserve">
+    <value>btnUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateFile.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dgvAdditionalFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 73</value>
+  </data>
+  <data name="dgvAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 423</value>
+  </data>
+  <data name="dgvAdditionalFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Name" xml:space="preserve">
+    <value>dgvAdditionalFiles</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;dgvAdditionalFiles.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUpdateFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblUpdateFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 13</value>
+  </data>
+  <data name="lblUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 31</value>
+  </data>
+  <data name="lblUpdateFile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblUpdateFile.Text" xml:space="preserve">
+    <value>Update File</value>
+  </data>
+  <data name="lblUpdateFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Name" xml:space="preserve">
+    <value>lblUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateFile.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblMSIPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMSIPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblMSIPath.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblMSIPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 44</value>
+  </data>
+  <data name="lblMSIPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 26</value>
+  </data>
+  <data name="lblMSIPath.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblMSIPath.Text" xml:space="preserve">
+    <value>MSI Path</value>
+  </data>
+  <data name="lblMSIPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Name" xml:space="preserve">
+    <value>lblMSIPath</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;lblMSIPath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblAdditionalFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAdditionalFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblAdditionalFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 70</value>
+  </data>
+  <data name="lblAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 31</value>
+  </data>
+  <data name="lblAdditionalFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblAdditionalFiles.Text" xml:space="preserve">
+    <value>Additional Files</value>
+  </data>
+  <data name="lblAdditionalFiles.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblAdditionalFiles.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Name" xml:space="preserve">
+    <value>lblAdditionalFiles</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;lblAdditionalFiles.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtUpdateFile.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 16</value>
+  </data>
+  <data name="txtUpdateFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtUpdateFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Name" xml:space="preserve">
+    <value>txtUpdateFile</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;txtUpdateFile.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnAddFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnAddFiles.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnAddFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 104</value>
+  </data>
+  <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 25</value>
+  </data>
+  <data name="btnAddFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAddFiles.Text" xml:space="preserve">
+    <value>Add Files</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Name" xml:space="preserve">
+    <value>btnAddFiles</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;btnAddFiles.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnAddDir.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnAddDir.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnAddDir.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 73</value>
+  </data>
+  <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 25</value>
+  </data>
+  <data name="btnAddDir.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnAddDir.Text" xml:space="preserve">
+    <value>Add Dir</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.Name" xml:space="preserve">
+    <value>btnAddDir</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.Parent" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;btnAddDir.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tlpIntro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpIntro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpIntro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpIntro.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tlpIntro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 499</value>
+  </data>
+  <data name="tlpIntro.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpIntro.Name" xml:space="preserve">
+    <value>tlpIntro</value>
+  </data>
+  <data name="&gt;&gt;tlpIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpIntro.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;tlpIntro.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpIntro.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="txtMSIPath" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnUpdateFile" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="dgvAdditionalFiles" Row="3" RowSpan="2" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblUpdateFile" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMSIPath" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAdditionalFiles" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtUpdateFile" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnAddFiles" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnAddDir" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="FileName.HeaderText" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="FileName.Width" type="System.Int32, mscorlib">
+    <value>270</value>
+  </data>
+  <data name="RemoveFile.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemoveFile.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="FileObject.HeaderText" xml:space="preserve">
+    <value>File Object</value>
+  </data>
+  <data name="FileObject.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblLanguages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1989,99 +2373,6 @@
   <data name="&gt;&gt;lblSupersedes.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tlpOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="tlpOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 481</value>
-  </data>
-  <data name="tlpOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpOptions.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 18</value>
-  </data>
-  <data name="tlpOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="&gt;&gt;tlpOptions.Name" xml:space="preserve">
-    <value>tlpOptions</value>
-  </data>
-  <data name="&gt;&gt;tlpOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpOptions.Parent" xml:space="preserve">
-    <value>tlpPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;tlpOptions.ZOrder" xml:space="preserve">
-    <value>35</value>
-  </data>
-  <data name="tlpOptions.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblLanguages" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="lblPrerequisites" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblReturnCodes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblSupersedes" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,18" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tlpPackageInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tlpPackageInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpPackageInfo.RowCount" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="tlpPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 499</value>
-  </data>
-  <data name="tlpPackageInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tlpPackageInfo.Name" xml:space="preserve">
-    <value>tlpPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;tlpPackageInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpPackageInfo.Parent" xml:space="preserve">
-    <value>tabPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;tlpPackageInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpPackageInfo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpPackageIinfoUninstall" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRebootBehavior" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboPackageType" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtOriginalURI" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageType" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="txtCommandLine" Row="17" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCommandLine" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblOriginalURI" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboRebootBehavior" Row="16" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblUninstall" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblImpact" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPackageTitle" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPackageTitle" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboSeverity" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtBulletinID" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboImpact" Row="14" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblClassification" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboVendor" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="cboProduct" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblBullitinID" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtArticleID" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtCVEID" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSeverity" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMoreInfoURL" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMoreInfoURL" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSupportURL" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblVendor" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSupportURL" Row="12" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCVEID" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblProduct" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblArticleID" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboClassification" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblDescription" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpOptions" Row="18" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPackageInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabPackageInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabPackageInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPackageInfo.Text" xml:space="preserve">
-    <value>Package Info</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Name" xml:space="preserve">
-    <value>tabPackageInfo</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabPackageInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="isInstalledRules.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2113,40 +2404,13 @@
     <value>isInstalledRules</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.Parent" xml:space="preserve">
     <value>tabIsInstalled</value>
   </data>
   <data name="&gt;&gt;isInstalledRules.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tabIsInstalled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsInstalled.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsInstalled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabIsInstalled.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabIsInstalled.Text" xml:space="preserve">
-    <value>IsInstalled</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Name" xml:space="preserve">
-    <value>tabIsInstalled</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstalled.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="isInstallableRules.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2179,40 +2443,13 @@
     <value>isInstallableRules</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
+    <value>LocalUpdatePublisher.RulesEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.Parent" xml:space="preserve">
     <value>tabIsInstallable</value>
   </data>
   <data name="&gt;&gt;isInstallableRules.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tabIsInstallable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsInstallable.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsInstallable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabIsInstallable.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabIsInstallable.Text" xml:space="preserve">
-    <value>IsInstallable</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Name" xml:space="preserve">
-    <value>tabIsInstallable</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsInstallable.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="tlpIsSuperseded.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2222,6 +2459,87 @@
   </data>
   <data name="tlpIsSuperseded.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Name" xml:space="preserve">
+    <value>btnIsSupersededEdit</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.Parent" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;btnIsSupersededEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Name" xml:space="preserve">
+    <value>txtIsSuperceded_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.Parent" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;txtIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Name" xml:space="preserve">
+    <value>lblIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.Parent" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperseded.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Name" xml:space="preserve">
+    <value>lblIsSuperceded_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.Parent" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;lblIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpIsSuperseded.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpIsSuperseded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpIsSuperseded.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlpIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 499</value>
+  </data>
+  <data name="tlpIsSuperseded.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Name" xml:space="preserve">
+    <value>tlpIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.Parent" xml:space="preserve">
+    <value>tabIsSuperseded</value>
+  </data>
+  <data name="&gt;&gt;tlpIsSuperseded.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpIsSuperseded.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnIsSupersededEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtIsSuperceded_InstallableItem" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperseded" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperceded_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnIsSupersededEdit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2352,66 +2670,6 @@
   <data name="&gt;&gt;lblIsSuperceded_InstallableItem.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tlpIsSuperseded.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tlpIsSuperseded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpIsSuperseded.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tlpIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 499</value>
-  </data>
-  <data name="tlpIsSuperseded.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tlpIsSuperseded.Name" xml:space="preserve">
-    <value>tlpIsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tlpIsSuperseded.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpIsSuperseded.Parent" xml:space="preserve">
-    <value>tabIsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tlpIsSuperseded.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpIsSuperseded.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnIsSupersededEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtIsSuperceded_InstallableItem" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperseded" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblIsSuperceded_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabIsSuperseded.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabIsSuperseded.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabIsSuperseded.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tabIsSuperseded.Text" xml:space="preserve">
-    <value>IsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Name" xml:space="preserve">
-    <value>tabIsSuperseded</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabIsSuperseded.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tlpMetaData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2420,6 +2678,87 @@
   </data>
   <data name="tlpMetaData.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Name" xml:space="preserve">
+    <value>btnMetaDataEdit</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.Parent" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;btnMetaDataEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Name" xml:space="preserve">
+    <value>txtInstallableItemMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.Parent" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;txtInstallableItemMetaData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Name" xml:space="preserve">
+    <value>lblMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.Parent" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Name" xml:space="preserve">
+    <value>lblMetaData_InstallableItem</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.Parent" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;lblMetaData_InstallableItem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpMetaData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpMetaData.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlpMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 499</value>
+  </data>
+  <data name="tlpMetaData.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Name" xml:space="preserve">
+    <value>tlpMetaData</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.Parent" xml:space="preserve">
+    <value>tabMetaData</value>
+  </data>
+  <data name="&gt;&gt;tlpMetaData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpMetaData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnMetaDataEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInstallableItemMetaData" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnMetaDataEdit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2550,66 +2889,6 @@
   <data name="&gt;&gt;lblMetaData_InstallableItem.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tlpMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpMetaData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tlpMetaData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpMetaData.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tlpMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 499</value>
-  </data>
-  <data name="tlpMetaData.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tlpMetaData.Name" xml:space="preserve">
-    <value>tlpMetaData</value>
-  </data>
-  <data name="&gt;&gt;tlpMetaData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpMetaData.Parent" xml:space="preserve">
-    <value>tabMetaData</value>
-  </data>
-  <data name="&gt;&gt;tlpMetaData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpMetaData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnMetaDataEdit" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtInstallableItemMetaData" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblMetaData_InstallableItem" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabMetaData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabMetaData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabMetaData.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tabMetaData.Text" xml:space="preserve">
-    <value>MetaData</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Name" xml:space="preserve">
-    <value>tabMetaData</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabMetaData.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="tlpSummary.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2618,6 +2897,63 @@
   </data>
   <data name="tlpSummary.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Name" xml:space="preserve">
+    <value>txtSummary</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.Parent" xml:space="preserve">
+    <value>tlpSummary</value>
+  </data>
+  <data name="&gt;&gt;txtSummary.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Name" xml:space="preserve">
+    <value>lblSummary</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.Parent" xml:space="preserve">
+    <value>tlpSummary</value>
+  </data>
+  <data name="&gt;&gt;lblSummary.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpSummary.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpSummary.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpSummary.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tlpSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 499</value>
+  </data>
+  <data name="tlpSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Name" xml:space="preserve">
+    <value>tlpSummary</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.Parent" xml:space="preserve">
+    <value>tabSummary</value>
+  </data>
+  <data name="&gt;&gt;tlpSummary.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpSummary.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSummary" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSummary" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="txtSummary.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2683,90 +3019,6 @@
     <value>tlpSummary</value>
   </data>
   <data name="&gt;&gt;lblSummary.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlpSummary.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tlpSummary.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpSummary.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tlpSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 499</value>
-  </data>
-  <data name="tlpSummary.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tlpSummary.Name" xml:space="preserve">
-    <value>tlpSummary</value>
-  </data>
-  <data name="&gt;&gt;tlpSummary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpSummary.Parent" xml:space="preserve">
-    <value>tabSummary</value>
-  </data>
-  <data name="&gt;&gt;tlpSummary.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpSummary.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSummary" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSummary" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="tabSummary.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 505</value>
-  </data>
-  <data name="tabSummary.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabSummary.Text" xml:space="preserve">
-    <value>Summary</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Name" xml:space="preserve">
-    <value>tabSummary</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.Parent" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabSummary.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabsUpdate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabsUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tabsUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 532</value>
-  </data>
-  <data name="tabsUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabsUpdate.Name" xml:space="preserve">
-    <value>tabsUpdate</value>
-  </data>
-  <data name="&gt;&gt;tabsUpdate.Type" xml:space="preserve">
-    <value>LocalUpdatePublisher.CustomTabControl, LocalUpdatePublisher, Version=0.1.0.27177, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tabsUpdate.Parent" xml:space="preserve">
-    <value>tlpMain</value>
-  </data>
-  <data name="&gt;&gt;tabsUpdate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="btnPrevious.AutoSize" type="System.Boolean, mscorlib">
@@ -2976,30 +3228,6 @@
   <data name="tlpFooter.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="tlpButtons.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tlpButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="tlpButtons.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tlpButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="tlpButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 3</value>
-  </data>
-  <data name="tlpButtons.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 31</value>
-  </data>
-  <data name="tlpButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;tlpButtons.Name" xml:space="preserve">
     <value>tlpButtons</value>
   </data>
@@ -3014,33 +3242,6 @@
   </data>
   <data name="tlpButtons.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnCancel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnNext" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPrevious" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="chkMetadataOnly.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="chkMetadataOnly.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="chkMetadataOnly.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="chkMetadataOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkMetadataOnly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="chkMetadataOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 25</value>
-  </data>
-  <data name="chkMetadataOnly.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="chkMetadataOnly.Text" xml:space="preserve">
-    <value>Publish Metadata Only</value>
-  </data>
-  <data name="chkMetadataOnly.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
   </data>
   <data name="&gt;&gt;chkMetadataOnly.Name" xml:space="preserve">
     <value>chkMetadataOnly</value>
@@ -3197,5 +3398,83 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tlpButtons.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpButtons.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlpButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="tlpButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 3</value>
+  </data>
+  <data name="tlpButtons.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 31</value>
+  </data>
+  <data name="tlpButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tlpButtons.Name" xml:space="preserve">
+    <value>tlpButtons</value>
+  </data>
+  <data name="&gt;&gt;tlpButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpButtons.Parent" xml:space="preserve">
+    <value>tlpFooter</value>
+  </data>
+  <data name="&gt;&gt;tlpButtons.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpButtons.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnCancel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnNext" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPrevious" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="chkMetadataOnly.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="chkMetadataOnly.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chkMetadataOnly.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="chkMetadataOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkMetadataOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="chkMetadataOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 25</value>
+  </data>
+  <data name="chkMetadataOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkMetadataOnly.Text" xml:space="preserve">
+    <value>Publish Metadata Only</value>
+  </data>
+  <data name="chkMetadataOnly.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;chkMetadataOnly.Name" xml:space="preserve">
+    <value>chkMetadataOnly</value>
+  </data>
+  <data name="&gt;&gt;chkMetadataOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkMetadataOnly.Parent" xml:space="preserve">
+    <value>tlpFooter</value>
+  </data>
+  <data name="&gt;&gt;chkMetadataOnly.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

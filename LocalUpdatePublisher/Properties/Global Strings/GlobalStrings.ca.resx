@@ -186,6 +186,9 @@
     <value>Comparació</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="component_codes">
+    <value>Codis dels components</value>
+  </data>
   <data name="components">
     <value>Components</value>
     <comment>Automatically translated using Google</comment>
@@ -575,8 +578,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="false">
-    <value>fals</value>
+    <value>Fals</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Els noms de característiques</value>
   </data>
   <data name="features">
     <value>Característiques</value>
@@ -889,6 +895,9 @@
   <data name="product_code">
     <value>Codi del producte</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Codis de producte</value>
   </data>
   <data name="product_type">
     <value>Tipus de producte</value>
@@ -1207,8 +1216,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Reemplaça</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Substituïda</value>
   </data>
   <data name="title">
     <value>Títol</value>

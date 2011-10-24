@@ -91,9 +91,6 @@
   <data name="lblData.Text">
     <value>Data</value>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>in Bytes (ex. 1024)</value>
-  </data>
   <data name="lblDate.Text">
     <value>Creation Date</value>
   </data>
@@ -120,7 +117,6 @@
   </data>
   <data name="lblPath.Text">
     <value>Path</value>
-    <comment>Path</comment>
   </data>
   <data name="lblProcessorType.Text">
     <value>Processor Type</value>

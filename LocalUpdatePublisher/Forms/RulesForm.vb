@@ -68,6 +68,11 @@ Public Partial Class RulesForm
 			cboRuleType.Items.Add([Enum].Parse(GetType(RuleTypes), tmpRuleType))
 		Next
 		
+		'Set localized strings.		
+		Me.gceProductCollection.Header = globalRM.GetString("product_codes")
+		Me.gceComponentCollection.Header = globalRM.GetString("component_codes")
+		Me.gceFeatureCollection.Header = globalRM.GetString("feature_names")
+		
 		Call ValidateFields
 	End Sub
 	

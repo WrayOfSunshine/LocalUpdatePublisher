@@ -186,6 +186,9 @@
     <value>Vertailu</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="component_codes">
+    <value>Komponentti Koodit</value>
+  </data>
   <data name="components">
     <value>Komponentit</value>
     <comment>Automatically translated using Google</comment>
@@ -575,8 +578,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="false">
-    <value>väärä</value>
+    <value>Väärä</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Ominaisuuksien nimet</value>
   </data>
   <data name="features">
     <value>Ominaisuudet</value>
@@ -889,6 +895,9 @@
   <data name="product_code">
     <value>Tuotekoodi</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Tuotekoodit</value>
   </data>
   <data name="product_type">
     <value>Tuotetyyppi</value>
@@ -1207,8 +1216,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="superseded">
-    <value>Korvaa</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Korvattu</value>
   </data>
   <data name="title">
     <value>Otsikko</value>

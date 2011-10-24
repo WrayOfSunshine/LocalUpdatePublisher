@@ -91,9 +91,6 @@
   <data name="lblData.Text">
     <value>Daten</value>
   </data>
-  <data name="lblDataInfo.Text">
-    <value>in Bytes (z. B. 1024)</value>
-  </data>
   <data name="lblDate.Text">
     <value>Erstellungsdatum</value>
   </data>
@@ -119,7 +116,7 @@
     <value>Patch-Code</value>
   </data>
   <data name="lblPath.Text">
-    <value>Weg</value>
+    <value>Pfad</value>
   </data>
   <data name="lblProcessorType.Text">
     <value>Prozessor-Typ</value>
