@@ -13,22 +13,40 @@ Imports Microsoft.UpdateServices.Administration
 Public Partial Class ReturnCodesForm
 	
 	Private Dim _codeList As IList(Of ReturnCode)
+	Private Dim _resultCodes As ArrayList
 	
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-	End Sub
 		
+		'Localize the data grid view
+		For Each colTemp As DataGridViewColumn In Me.dgvReturnCodes.Columns
+			colTemp.HeaderText = globalRM.GetString(colTemp.Name)
+		Next
+		
+		'Populate the Result Code list in a way that mimics the enumeration.
+		_resultCodes = New ArrayList
+		_resultCodes.Add("")
+		_resultCodes.Add(globalRM.GetString("failed"))
+		_resultCodes.Add(globalRM.GetString("Succeeded"))
+		_resultCodes.Add(globalRM.GetString("Cancelled"))
+		
+		'Localize the Result column if it exists.
+		If Me.dgvReturnCodes.Columns.Contains("Result") Then
+			DirectCast(Me.dgvReturnCodes.Columns("Result"), DataGridViewComboBoxColumn).DataSource = _resultCodes
+		End If
+	End Sub
+	
 	'Call ShowDialog with IList of ReturnCode passed in.
 	Public Overloads Function ShowDialog(ByRef codeList As IList(Of ReturnCode)) As DialogResult
 		Dim tmpRow As Integer
 		_codeList = codeList
 		
-		'Load the code list into the DGV
+		'Load the code list into the DGV.
 		Me.dgvReturnCodes.Rows.Clear
 		For Each code As ReturnCode In codeList
 			tmpRow = Me.dgvReturnCodes.Rows.Add
-			Me.dgvReturnCodes.Rows(tmpRow).Cells("Result").Value = [Enum].GetName(GetType(InstallationResult),code.InstallationResult)
+			Me.dgvReturnCodes.Rows(tmpRow).Cells("Result").Value = _resultCodes(code.InstallationResult)   '[Enum].GetName(GetType(InstallationResult),code.InstallationResult)
 			Me.dgvReturnCodes.Rows(tmpRow).Cells("ReturnCode").Value = code.ReturnCodeValue
 			Me.dgvReturnCodes.Rows(tmpRow).Cells("Reboot").Value = code.IsRebootRequired
 			Me.dgvReturnCodes.Rows(tmpRow).Cells("Description").Value = code.Description
@@ -55,7 +73,9 @@ Public Partial Class ReturnCodesForm
 			Else
 				tmpReturnCode = New ReturnCode
 				tmpReturnCode.Language = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName
-				tmpReturnCode.InstallationResult = DirectCast([Enum].Parse(GetType(InstallationResult),tmpRow.Cells("Result").Value.ToString), InstallationResult)
+				
+				'Use the selected index of the Result column to set the InstallationResult property.
+				tmpReturnCode.InstallationResult = DirectCast(DirectCast(tmpRow.Cells("Result"),DataGridViewComboBoxCell).Items.IndexOf(tmpRow.Cells("Result").Value), InstallationResult)
 				tmpReturnCode.ReturnCodeValue = CInt(tmpRow.Cells("ReturnCode").Value)
 				If Not tmpRow.Cells("Reboot").Value Is Nothing Then tmpReturnCode.IsRebootRequired = DirectCast(tmpRow.Cells("Reboot").Value, Boolean)
 				If Not tmpRow.Cells("Description").Value Is Nothing Then tmpReturnCode.Description = tmpRow.Cells("Description").Value.ToString
@@ -107,4 +127,20 @@ Public Partial Class ReturnCodesForm
 		Me.btnOk.Enabled = ValidateDGVReturnCodes
 	End Sub
 	
+	
+	Sub DgvReturnCodesCellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs)
+		Dim comboBoxColumn As DataGridViewComboBoxColumn = DirectCast(Me.dgvReturnCodes.Columns("Result"),DataGridViewComboBoxColumn)
+		If (e.ColumnIndex = comboBoxColumn.DisplayIndex) Then
+			If (Not comboBoxColumn.Items.Contains( e.FormattedValue)) Then
+				comboBoxColumn.Items.Add(e.FormattedValue)
+			End If
+		End If
+	End Sub
+	
+	'The dynamically added items to the Result drop down cause a data validation error that needs to be ignored.
+	Sub DgvReturnCodesDataError(sender As Object, e As DataGridViewDataErrorEventArgs)
+		If Me.dgvReturnCodes.Columns.Contains("Result") AndAlso sender.Equals(Me.dgvReturnCodes.Columns.Contains("Result")) Then
+			e.Cancel = True
+		End If
+	End Sub
 End Class

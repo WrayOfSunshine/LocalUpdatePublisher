@@ -68,6 +68,10 @@
     <value>CSID</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="Cancelled">
+    <value>Peruutettu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="ComputerGroup">
     <value>Computer Group</value>
     <comment>Automatically translated using Google</comment>
@@ -82,6 +86,10 @@
   </data>
   <data name="Deadline">
     <value>Määräaika</value>
+  </data>
+  <data name="Description">
+    <value>Kuvaus</value>
+    <comment>Automatically translated using Google</comment>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto voidaan asentaa. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
@@ -104,8 +112,14 @@
   <data name="OptionalInstall">
     <value>Hyväksytty Valinnainen asennus</value>
   </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
   <data name="Result">
     <value>Tulos</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Return koodi</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Luo sääntö</value>
@@ -113,6 +127,10 @@
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Muokkaa sääntöä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Seuraaja</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="TargetGroup">
@@ -589,15 +607,15 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_cab">
-    <value>CAB tiedostot | *. cab</value>
+    <value>CAB tiedostot|*.cab</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_update_binary">
-    <value>Päivitä Files (*. MSI, *. MSP, *. exe) | *. MSI; *. MSP; *. EXE| MSI-tiedostot (*. MSI) | *. MSI | MSP-tiedostot (*. MSP) | *. MSP | EXE-tiedostot (*. EXE) | *. EXE</value>
+    <value>Päivitä Files (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI-tiedostot (*.MSI)|*.MSI|MSP-tiedostot (*.MSP)|*.MSP|EXE-tiedostot (*.EXE)|*.EXE</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_xml">
-    <value>XML-tiedostot | *. xml</value>
+    <value>XML-tiedostot|*.xml</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="finish">

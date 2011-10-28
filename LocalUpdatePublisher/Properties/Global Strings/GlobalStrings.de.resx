@@ -67,6 +67,9 @@
   <data name="CSID">
     <value>CSID</value>
   </data>
+  <data name="Cancelled">
+    <value>Abgebrochen</value>
+  </data>
   <data name="ComputerGroup">
     <value>Computer Gruppe</value>
   </data>
@@ -78,6 +81,9 @@
   </data>
   <data name="Deadline">
     <value>Frist</value>
+  </data>
+  <data name="Description">
+    <value>Beschreibung</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Verwenden Sie dieses Formular erstellen, bearbeiten, entfernen und Regeln der Gruppe, wenn dieses Software-Paket installiert werden kann bestimmen. Wenn Sie dieses Update mit dem MSI-oder MSP-Datei erstellt werden Sie das automatisch generierte Regel am installierbar Positionsebene sehen. Standardmäßig sind die Regeln in einem UND-Gruppe.</value>
@@ -100,14 +106,23 @@
   <data name="OptionalInstall">
     <value>Zugelassen für Optional Install</value>
   </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
   <data name="Result">
     <value>Ergebnis</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Rückgabecodewerte</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Regel erstellen</value>
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Regel bearbeiten</value>
+  </data>
+  <data name="Succeeded">
+    <value>Erfolgreich</value>
   </data>
   <data name="TargetGroup">
     <value>Zielgruppe</value>

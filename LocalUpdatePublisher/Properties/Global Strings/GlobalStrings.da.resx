@@ -68,6 +68,10 @@
     <value>CSID</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="Cancelled">
+    <value>Aflyste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
   <data name="ComputerGroup">
     <value>Computer Gruppe</value>
     <comment>Automatically translated using Google</comment>
@@ -82,6 +86,10 @@
   </data>
   <data name="Deadline">
     <value>Deadline</value>
+  </data>
+  <data name="Description">
+    <value>Beskrivelse</value>
+    <comment>Automatically translated using Google</comment>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Brug denne formular til at oprette, redigere, fjernesamt gruppe-regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, vil du se de automatisk genererede regler på installations-niveau. Som standard er reglerne i en "AND" gruppe.</value>
@@ -104,8 +112,14 @@
   <data name="OptionalInstall">
     <value>Godkendt til Valgfri Installer</value>
   </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
   <data name="Result">
     <value>Resultat</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Returkode</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Opret regel</value>
@@ -113,6 +127,10 @@
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Rediger Regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Succes</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="TargetGroup">
@@ -589,15 +607,15 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_cab">
-    <value>CAB-filer | *. cab</value>
+    <value>CAB-filer|*. cab</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_update_binary">
-    <value>Update-filer (*. MSI, *. MSP, *. EXE) | *. MSI; *. MSP; *. EXE | MSI-filer (*. MSI) | *. MSI | MSP-filer (*. MSP) | *. MSP | EXE-filer (*. EXE) | *. EXE</value>
+    <value>Update-filer (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI-filer (*.MSI)|*.MSI|MSP-filer (*.MSP)|*.MSP|EXE-filer (*.EXE)|*.EXE</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_xml">
-    <value>XML-filer | *. xml</value>
+    <value>XML-filer|*.xml</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="finish">

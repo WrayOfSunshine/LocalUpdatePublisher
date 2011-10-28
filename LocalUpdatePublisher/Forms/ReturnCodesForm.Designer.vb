@@ -66,12 +66,13 @@ Partial Class ReturnCodesForm
 		Me.dgvReturnCodes.MultiSelect = false
 		Me.dgvReturnCodes.Name = "dgvReturnCodes"
 		AddHandler Me.dgvReturnCodes.RowValidating, AddressOf Me.DgvReturnCodesRowValidating
+		AddHandler Me.dgvReturnCodes.CellValidating, AddressOf Me.DgvReturnCodesCellValidating
+		AddHandler Me.dgvReturnCodes.DataError, AddressOf Me.DgvReturnCodesDataError
 		'
 		'Result
 		'
 		Me.Result.FillWeight = 113.0288!
 		resources.ApplyResources(Me.Result, "Result")
-		Me.Result.Items.AddRange(New Object() {"", "Failed", "Succeeded", "Cancelled"})
 		Me.Result.Name = "Result"
 		'
 		'ReturnCode

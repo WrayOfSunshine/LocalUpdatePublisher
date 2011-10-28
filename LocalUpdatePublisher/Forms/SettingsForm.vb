@@ -43,8 +43,13 @@ Public Partial Class SettingsForm
 		_dtCultures.Rows.Add((New String(){"Deutsch","de-DE"}))
 		_dtCultures.Rows.Add((New String(){"Français","fr-FR"}))
 		_dtCultures.Rows.Add((New String(){"English","en-US"}))
-		_dtCultures.Rows.Add((New String(){"Polski","pl-PL"}))		
-		_dtCultures.Rows.Add((New String(){"Suomi","fi-FI"}))
+		_dtCultures.Rows.Add((New String(){"Español","es-ES"}))
+		_dtCultures.Rows.Add((New String(){"Polski","pl-PL"}))	
+		_dtCultures.Rows.Add((New String(){"Pусский","ru-RU"}))		
+		_dtCultures.Rows.Add((New String(){"Nederlands","nl-NL"}))		
+		_dtCultures.Rows.Add((New String(){"Suomi","fi-FI"}))	
+		_dtCultures.Rows.Add((New String(){"Svenska","sv-SE"}))
+		_dtCultures.Rows.Add((New String(){"中文","zh-CN"}))
 	End Sub
 	
 	'Load the appSetting into the form.

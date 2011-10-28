@@ -67,6 +67,9 @@
   <data name="CSID">
     <value>CSID</value>
   </data>
+  <data name="Cancelled">
+    <value>Cancelled</value>
+  </data>
   <data name="ComputerGroup">
     <value>Computer Group</value>
   </data>
@@ -78,6 +81,9 @@
   </data>
   <data name="Deadline">
     <value>Deadline</value>
+  </data>
+  <data name="Description">
+    <value>Description</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Use this form to create, edit, remove, and group rules that determine if this software package can be installed.  If you created this update using an MSI or MSP file you will see the automatically generated rule at the installable item level.  By default the rules are in an AND group.</value>
@@ -100,14 +106,23 @@
   <data name="OptionalInstall">
     <value>Approved for Optional Install</value>
   </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
   <data name="Result">
     <value>Result</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Return Code</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Create Rule</value>
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Edit Rule</value>
+  </data>
+  <data name="Succeeded">
+    <value>Succeeded</value>
   </data>
   <data name="TargetGroup">
     <value>Target Group</value>

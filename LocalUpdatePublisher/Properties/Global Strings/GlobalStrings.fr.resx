@@ -67,6 +67,9 @@
   <data name="CSID">
     <value>CSID</value>
   </data>
+  <data name="Cancelled">
+    <value>Annulé</value>
+  </data>
   <data name="ComputerGroup">
     <value>Groupe d'Ordinateurs</value>
   </data>
@@ -78,6 +81,9 @@
   </data>
   <data name="Deadline">
     <value>Date limite</value>
+  </data>
+  <data name="Description">
+    <value>Description</value>
   </data>
   <data name="IsInstallable_Instructions">
     <value>Utiliser ce formulaire pour créer, éditer, supprimer et grouper les règles qui déterminent si ce paquet logiciel peut être installé. Si vous avez créé cette mise à jour utilisant un MSI ou un fichier MSP vous verrez la règle automatiquement générée au niveau installable. Par défaut, les règles sont dans un groupe ET.</value>
@@ -100,14 +106,23 @@
   <data name="OptionalInstall">
     <value>Approuvé pour installer en option</value>
   </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
   <data name="Result">
     <value>Résultat</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Code de Retour</value>
   </data>
   <data name="RulesEditor_CreatePrompt">
     <value>Créer une Règle</value>
   </data>
   <data name="RulesEditor_EditPrompt">
     <value>Modifier la Règle</value>
+  </data>
+  <data name="Succeeded">
+    <value>Réussi</value>
   </data>
   <data name="TargetGroup">
     <value>Groupe Cible</value>
