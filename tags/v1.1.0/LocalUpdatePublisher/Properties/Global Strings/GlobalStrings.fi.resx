@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action">
+    <value>Toiminta</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Hyväksyntätoimen</value>
+  </data>
+  <data name="CSID">
+    <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Cancelled">
+    <value>Peruutettu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Luontipäivämäärä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="DWORD_value">
+    <value>DWORD-arvo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Määräaika</value>
+  </data>
+  <data name="Description">
+    <value>Kuvaus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_Instructions">
+    <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto voidaan asentaa. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Package Level - Installable Säännöt</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Asennus alkiotason</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Tällä lomakkeella voit luoda, muokata, poistaa, ja ryhmä säännöt, onko tämä ohjelmisto on jo asennettu. Jos olet luonut tämän päivityksen käyttämällä MSI tai MSP-tiedoston näet automaattisesti luotu sääntö asennettavissa alkiotason. Oletuksena säännöt ovat ja ryhmä.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Asennettu Säännöt</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Asennus alkiotason</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Hyväksytty Valinnainen asennus</value>
+  </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
+  <data name="Result">
+    <value>Tulos</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Return koodi</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Luo sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Muokkaa sääntöä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Seuraaja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Kohderyhmä</value>
+  </data>
+  <data name="add_new_server">
+    <value>Lisää uusi palvelin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_rule">
+    <value>Lisää sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all">
+    <value>Kaikki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all_required">
+    <value>kaikki tarvittavat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="and">
+    <value>JA</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="any">
+    <value>Kaikki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="application">
+    <value>Soveltaminen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approval">
+    <value>Hyväksyminen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approve">
+    <value>Hyväksyä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved">
+    <value>Hyväksytty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved_for_install">
+    <value>Hyväksytty Asenna</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="begins_with">
+    <value>Alkaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="build_number">
+    <value>Rakenna määrä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="cancel">
+    <value>Peruuta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="clear_selection">
+    <value>Selkeä valinta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="close">
+    <value>Sulje</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="comparison">
+    <value>Vertailu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="component_codes">
+    <value>Komponentti Koodit</value>
+  </data>
+  <data name="components">
+    <value>Komponentit</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computer_name">
+    <value>Tietokoneen nimi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers">
+    <value>Tietokoneet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers_shown">
+    <value>{0} tietokoneet osoittanut</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="contains">
+    <value>Sisältää</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="create_rule">
+    <value>Luo sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="created">
+    <value>Luotu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="creation_date">
+    <value>Luontipäivämäärä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="custom_GUID">
+    <value>Custom GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="data">
+    <value>Tiedot</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="date">
+    <value>Päivämäärä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="decline">
+    <value>Kieltäytyä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined">
+    <value>Hylätty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined_expired">
+    <value>Hylätty (päättynyt)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="delete">
+    <value>Poista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="domain_controller">
+    <value>Domain Controller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="downloaded">
+    <value>Ladattu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="driver">
+    <value>Kuljettaja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="edit">
+    <value>Muokkaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ends_with">
+    <value>Loppuu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="equal_to">
+    <value>Yhtä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Tätä päivitystä ei voi poistaa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>Et voi poistaa useita päivityksiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>Et voi tuoda todistuksen ellet ole liitetty lujasti WSUS-palvelimeen SSL.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_arguments">
+    <value>Ei tarpeeksi parametrejä Raportin luominen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_connect">
+    <value>Ei voitu yhdistää {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_computer">
+    <value>Ei löytynyt {0} tietokoneeseen tavoitteeseen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_group">
+    <value>Ei löytynyt {0} ryhmä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_update">
+    <value>Ei löytynyt {0} päivitys.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_unknown">
+    <value>Tuntematon komento</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Oli virhe luoda sertifikaatti.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect">
+    <value>En saanut yhteyttä palvelimeen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>Sinun palvelinnimi ei ole oikein muotoiltu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>Et saa yhteyttä WSUS-palvelimen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>Ei voi kopioida hakemistoon</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_download">
+    <value>Ei voi ladata {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>Voitu viedä SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>Voinut saada SDP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>Paketti ei voitu julkaista.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Tämä tiedosto ei sisällä XML-tiedoston.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Tämä tiedosto ei sisällä cab-tiedoston.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>Ei ole todistus {0}. Kunnes luot tai tuoda todistus et voi julkaista päivityksiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_none">
+    <value>Et ole liitetty WSUS-palvelin.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Tämä päivitys ei voida viedä ulkomaille, koska alkuperäinen URL ei ole merkittävä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Joitakin paketteja ei voitu lisätä, koska alkuperäinen URL ei ole kirjattu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>Sinun täytyy viedä cab-tiedoston.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_update_data">
+    <value>Paketin sisältö ei ole olemassa UpdateServicesPackages kansioon. Sitä ei voi viedä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>Ei XML tiedosto löytyi tämä cab-tiedoston.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_package_resigned">
+    <value>Paketti voisi olla jälleen allekirjoittanut.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_expired">
+    <value>Ei kaikki paketit onnistuneesti päättynyt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_resigned">
+    <value>Ei kaikki paketit onnistuneesti jälleen allekirjoittanut.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_result_code_empty">
+    <value>Tulos ei saa olla tyhjä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>Paluu koodi ei saa olla tyhjä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Tämä rivi ei palannut voimassa UpdateID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>Ei voitu heittää tuoda sääntö tiedosto sääntö kokoelma.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>Ei voitu tuoda sääntö tiedosto.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>Tuo tiedosto ei ole olemassa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>Ei voitu lisää / poista ryhmä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_load">
+    <value>Sääntöjä ei voi ladata.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Tämä sääntö ei tunnisteta.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Tämä sääntö ei tueta vielä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>Et ole valinnut sääntöjä vientiin.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_server_disconnected">
+    <value>Palvelin ei ole kytketty.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Täytyy olla luettelointi.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>Ei voitu luoda Software Distribution paketti.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_imported">
+    <value>Päivitys ei tuotu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>XML SDP on virheellinen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_save">
+    <value>Ei voitu tallentaa päivittää tiedot.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception">
+    <value>Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_IO">
+    <value>IO Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument">
+    <value>Argumentti Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_null">
+    <value>Argumentti Null Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Hakemistoa ei löydy poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Tiedostoa ei löydy poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Virheellisiä tietoja Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Virheellinen toiminta poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_not_supported">
+    <value>Ei tuettu poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Object Myydyt Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Out Of Memory Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_path_too_long">
+    <value>Polku on liian pitkä Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_security">
+    <value>Turvallisuus poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Luvaton käyttö Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_web">
+    <value>Web Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>WSUS palvelimen virheellisten Poikkeus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>WsusObjectNotFoundException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="expire">
+    <value>Päättyy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export">
+    <value>Vienti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export_certificate">
+    <value>Vientitodistuksella</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed">
+    <value>Epäonnistui</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed_or_needed">
+    <value>Epäonnistui tai tarpeen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="false">
+    <value>Väärä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Ominaisuuksien nimet</value>
+  </data>
+  <data name="features">
+    <value>Ominaisuudet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_cab">
+    <value>CAB tiedostot|*.cab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Päivitä Files (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI-tiedostot (*.MSI)|*.MSI|MSP-tiedostot (*.MSP)|*.MSP|EXE-tiedostot (*.EXE)|*.EXE</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_xml">
+    <value>XML-tiedostot|*.xml</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="finish">
+    <value>Maali</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than">
+    <value>Suurempi kuin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Suurempi tai yhtä suuri kuin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group">
+    <value>Ryhmä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_and">
+    <value>Aloita Ja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_or">
+    <value>Aloittaa tai</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_and">
+    <value>Lopeta ja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_or">
+    <value>End tai</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_name">
+    <value>Ryhmän nimi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_and">
+    <value>Poista ja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_or">
+    <value>Poista tai</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="history_for">
+    <value>Historia ja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import">
+    <value>Tuonti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import_certificate">
+    <value>Tuo Cert</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="in_bytes_example">
+    <value>tavuina (esim. 1024)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="inherited">
+    <value>peritty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed">
+    <value>Asennettu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Asennettu / Ei ole</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Asennettu / Ei sovellu tai ei tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ip_address">
+    <value>IP-osoite</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form">
+    <value>Valitse hyväksynnät {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Valitse hyväksynnät {0} päivityksiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Aseta hyväksynnät {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Asettaminen hyväksynnät {0} {1} {2}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>Alta löydät tietoa sertifikaatti asennettu WSUS-palvelin. Tämä todistus on jaettu kullekin asiakkaalle ennen kuin he voivat saada paikallisesti julkaistu päivityksiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Todistusta ei ole vielä luotu. Sinun täytyy tehdä ennen julkaisemista päivityksiä.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Todistuksen on jo luotu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>WMI Nimiavaruus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language">
+    <value>Kieli</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_arabic">
+    <value>Arabialainen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Kiina (Hongkong)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Kiina (yksinkertaistettu)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Kiina (perinteinen)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_czech">
+    <value>Tšekin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_danish">
+    <value>Tanskan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_dutch">
+    <value>Alankomaiden</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_english">
+    <value>Englanti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_finnish">
+    <value>Suomalainen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_french">
+    <value>Ranskan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_german">
+    <value>Saksan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_greek">
+    <value>Kreikan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hebrew">
+    <value>Heprea</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hungarian">
+    <value>Unkarin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_italian">
+    <value>Italian</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_japanese">
+    <value>Japanin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_korean">
+    <value>Korean</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_norwegian">
+    <value>Norja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_polish">
+    <value>Puolan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese">
+    <value>Portugalin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portugali (Brasilia)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_russian">
+    <value>Venäjän</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_spanish">
+    <value>Espanjan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_swedish">
+    <value>Ruotsin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_turkish">
+    <value>Turkin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_status_report">
+    <value>Viime tilanneraportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_updated">
+    <value>Viimeksi päivitetty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than">
+    <value>Less Than</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Vähemmän tai yhtä suuri kuin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="load">
+    <value>Kuormitus</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified">
+    <value>Muokattu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified_date">
+    <value>Muokattu pvm</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="needed">
+    <value>Tarvitaan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="next">
+    <value>Seuraava</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_approval">
+    <value>Ei hyväksyminen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_status">
+    <value>Ei tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="none">
+    <value>Ei</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_applicable">
+    <value>Ei sovellettavissa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_approved">
+    <value>Ei hyväksytty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_installed">
+    <value>Ei asennettuna</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="operating_system">
+    <value>Käyttöjärjestelmä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="or">
+    <value>TAI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="patch_code">
+    <value>PatchCode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="path">
+    <value>Polku</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_code">
+    <value>Tuotekoodi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Tuotekoodit</value>
+  </data>
+  <data name="product_type">
+    <value>Tuotetyyppi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="products">
+    <value>Tuotteet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Haluatko tehdä sen nyt?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Odota, kun päivitys on julkaistu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Odota, kun päivitys on tarkistettu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Haluatko laskea {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Haluatko laskea nämä {0} päivityksiä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Haluatko päättyy {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Haluatko päättyy näihin {0} päivityksiä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Haluatko poistaa {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Haluatko poistaa nämä {0} päivityksiä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Haluatko uudelleen allekirjoittaa {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Haluatko uudelleen allekirjoittaa nämä {0} päivityksiä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Oletko varma että haluat poistaa tämän säännön?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Poista sääntö?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Nimi uusi sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Nimi artikla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Vaihda {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>On jo sääntö nimeltä {0}. Mitä haluaisit tehdä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Oletko varma että haluat poistaa valitun sääntöjä?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Jos muokkaat alkuperäinen URL, se on ladattu tarkastettavaksi. Haluatko jatkaa?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Kirjoita GUID haluat käyttää</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Custom GUID Entry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="query">
+    <value>Kysely</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Virkistävä tietokone luettelo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Virkistävä Päivitä lista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove">
+    <value>Poista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove_group">
+    <value>Poista ryhmä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename">
+    <value>Nimetä uudelleen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename_rule">
+    <value>Nimeä sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="resign">
+    <value>Re-merkki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="revise">
+    <value>Tarkistaa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_component">
+    <value>MSI asennettujen laitteiden osalta tuotteen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>MSI Ominaisuus asennetaan Tuote</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>MSI Patch asennettu tuote</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_product">
+    <value>MSI Tuote asennettuna</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_WMI_query">
+    <value>WMI Query</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation">
+    <value>Tiedoston luominen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>Tiedoston luominen rekisterin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists">
+    <value>Tiedosto on olemassa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>Tiedosto on olemassa rekisterin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified">
+    <value>Tiedoston Muokattu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>Tiedoston muunnettu rekisterin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size">
+    <value>Tiedoston koko</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Tiedoston koko rekisterin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version">
+    <value>Tiedoston versio</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>Tiedoston versio kirjaamoon</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Suoritinarkkitehtuuri</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Rekisterin DWORD-arvo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Rekisterin SZ arvo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Rekisterin Laajenna SZ arvo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>Rekisteriavain on olemassa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>Rekisterin arvo on olemassa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Rekisterin versio ja SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_language">
+    <value>Windows kieli</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_version">
+    <value>Windows-versio</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="save_rule">
+    <value>Tallenna sääntö</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Valitse Säännöt Export</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Valitse Säännöt Tuo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Valitse Säännöt Lisää</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Valitse Säännöt hallinta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="server">
+    <value>Server</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="size">
+    <value>Koko</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="skip">
+    <value>Siirry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status">
+    <value>Tila</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Tiedostojen lataaminen {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Loading tietokone raportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_form">
+    <value>Loading muodossa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Ladataan päivitystä raportti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connected">
+    <value>Yhdistetty {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connecting">
+    <value>Yhteyden {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="string">
+    <value>Jono</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success">
+    <value>Suoritettu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>Itse allekirjoitettu varmenne on luotu. Tämä todistus on nyt jaettu kullekin asiakkaalle mukaan Microsoftin Local Publsihing asiakirjat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>Sertifikaatin tuonti onnistui. Tämä todistus on nyt jaettu kullekin asiakkaalle mukaan Microsoftin Local Publsihing asiakirjat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_expired">
+    <value>Paketit onnistuneesti päättynyt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Paketit onnistuneesti jälleen allekirjoittanut.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_update_imported">
+    <value>Päivitys onnistui maahan.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="superseded">
+    <value>Korvattu</value>
+  </data>
+  <data name="title">
+    <value>Otsikko</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="true">
+    <value>Totta</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="uninstall">
+    <value>Poista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="unknown">
+    <value>Tuntematon</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update">
+    <value>Päivitä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_services">
+    <value>Update Services</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_title">
+    <value>Päivitä osasto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updates">
+    <value>Päivitykset</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value">
+    <value>Value</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value_type">
+    <value>ValueType</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>Ei voitu lisätä tai löydä GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Sertifikaatti on jo olemassa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>Todistus ei voitu tuoda. Sinun tulee toimittaa sekä todistuksen tiedoston ja salasanan käyttö voimassa olevaa todistusta.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>WSUS todistusta ei löydy.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} näyttäisi olevan vain metatietoja päivitys. Tällä hetkellä niitä ei voida päättynyt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Ei rivi valitun</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_value">
+    <value>Sinun on syötettävä arvo.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>Et voi estää asennus kaikkiin tietokoneisiin ryhmässä</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_options_restart">
+    <value>Sinun on käynnistettävä LUP tämä vaihtoehto tulee voimaan.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Oli ongelma poistamalla paketin sisällön UpdateServicesPackages. Käytä tätä UpdateID siihen manuaalisesti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} näyttäisi olevan vain metatietoja päivitys. Tällä hetkellä niitä ei voida jälleen allekirjoittanut.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} näyttäisi olevan vain metatietoja päivitys. Tällä hetkellä niitä ei voida tarkistaa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_packages">
+    <value>Et voi muuttaa useita päivityksiä samalla.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Oli ongelma tarkistaa paketin sisällön UpdateServicesPackages. Tämä päivitys ei voi muuttaa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>Sinun tulee kelvollinen GUID.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_OS">
+    <value>Sinun tulee suurten ja pienten OS-versio.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>Sinun täytyy valita vertailuun.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_date">
+    <value>Sinun täytyy valita päivämäärän.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Tämä sääntö on jo olemassa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>Sinun tulee tiedoston polku.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Tultava tiedostokoko.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_language">
+    <value>Sinun täytyy valita kieli.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Tultava nimiavaruuteen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_processor">
+    <value>Sinun täytyy valita suorittimen tyypin.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_query">
+    <value>Sinun tulee kysely.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>Sinun täytyy valita rekisteriavain.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Sinun tulee rekisterin osa avain.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>Sinun täytyy valita rekisterin arvon tyyppi.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Tultava rekisterin arvon.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_version">
+    <value>Sinun tulee versio.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>Sinun täytyy valita kirjaa poistetaan.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>Et ole valinnut sääntöjä vientiin.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_select_file">
+    <value>Valitse tiedosto.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>Voi ei julkaista URI kun muita tiedostoja ovat mukana.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>Tiedoston nimi ei täsmää.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>Virheellinen URI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Muokkaa tätä XML omalla vastuulla.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>Et voi julkaista vain metatietoja päivitys muita tiedostoja.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>Ei URI Given.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>Paketti ei julkistettu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Paketti onnistui julkaistu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Paketti onnistui tarkistettu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>Paketti ei muutettu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_vendor">
+    <value>Myyjä ei voi olla Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="workstation">
+    <value>Työasema</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

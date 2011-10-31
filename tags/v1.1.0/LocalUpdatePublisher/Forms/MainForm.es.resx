@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text">
+    <value>Sobre</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerListRefresh.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>Refrescar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>Información del certificado</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>Sólo las actualizaciones aprobadas</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>Heredar Aprobaciones</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>Configuración de la conexión</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>Para crear actualizaciones</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>Catálogo de Exportación</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>Exportar lista</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>Exportar informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>Reglas para la exportación</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>Actualización de las exportaciones</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>Expediente</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
+    <value>Ayuda Foro</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpToolStripMenuItem.Text">
+    <value>Ayuda</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>Importación de catálogo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>Normas de importación</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>Actualización de las importaciones</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artículo ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Boletín ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Clasificación</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>Estado</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>Actualización del estado de</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Descripción</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblID.Text">
+    <value>Paquete ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Idiomas</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Más Información URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Requiere red</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Título del paquete</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Tipo de paquete</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Requisitos previos</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Producto</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reinicie el comportamiento</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Códigos de retorno</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>Target seleccionó a Grupo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>(Número de ordenadores se muestra)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Gravedad</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Reemplaza</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Desinstalar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>Actualizaciones sin estado:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Actualización del estado de</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>Actualizaciones instaladas / no aplicable:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>Actualizaciones necesarias:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>Actualizaciones con errores:</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Vendedor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>Soporte Wiki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>Administrar reglas</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>Las reglas guardadas</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Configuración</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>Informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>Grupo de Estado</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>Informe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>Estado</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>Instrumentos</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>Actualización</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

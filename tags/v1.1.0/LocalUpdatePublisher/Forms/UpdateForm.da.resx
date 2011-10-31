@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Importer opdatering fra fil</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddDir.Text">
+    <value>Tilføj mappe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Tilføj filer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Annuller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Rediger</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnMetaDataEdit.Text">
+    <value>Rediger</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnNext.Text">
+    <value>Næste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnPrevious.Text">
+    <value>Forrige</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateFile.Text">
+    <value>Gennemse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkExportSdp.Text">
+    <value>Gem Software definitionspakke</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkMetadataOnly.Text">
+    <value>Udgiv kun metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblAdditionalFiles.Text">
+    <value>Yderligere filer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artikel-id</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Bulletin-id</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Klassificering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Kommandolinie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Beskrivelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Denne guide vil bringe dig gennem processen med at skabe et lokalt offentliggjort softwarepakke. Du skal vælge en MSI, MSP, eller EXE-fil som opdateringsfil. Hvis den EXE fil har en indbygget MSI-fil skal du indtaste den relative sti. Hvis der er andre understøttende nødvendige filer, såsom transformationsfiler, tilføjes disse ti listen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Installation på post-Niveau - Erstattede regler</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Denne formular viser de regler, der bestemmer om software-pakken er erstattet. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, du vil se den automatisk genererede regel på installationsniveau.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Sprog</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMSIPath.Text">
+    <value>MSI sti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData.Text">
+    <value>Brug denne formular til at gennemgå de metadata der brugt tidligere,  kan installeres, er installeret, eller er erstattet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Installation på post-niveau - Regel Metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Mere info URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Netværksforbindelse kræves</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>Original URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Indtast de relevante oplysninger om denne software-pakke her. Der henvises til dokumentationen for spørgsmål vedrørende de enkelte felter.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Pakke Titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Pakketype</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Forudsætninger</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Produkt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Genstart muligheder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Returkoder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Sværhedsgrad</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Brug denne formular til at gennemgå XML-data, som vil blive brugt til at beskrive denne softwarepakke. Vælg Udfør for at offentliggøre denne pakke til WSUS-serveren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Erstatter</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>Support URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Afinstaller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Opdater fil</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Udgiver</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

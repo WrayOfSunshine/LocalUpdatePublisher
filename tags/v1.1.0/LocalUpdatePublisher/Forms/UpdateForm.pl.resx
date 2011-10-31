@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Import z pliku Update</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddDir.Text">
+    <value>Dodaj Dir</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Dodaj pliki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Anuluj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Edytuj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnMetaDataEdit.Text">
+    <value>Edytuj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnNext.Text">
+    <value>Następna</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnPrevious.Text">
+    <value>Poprzedni</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateFile.Text">
+    <value>Przeglądaj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkExportSdp.Text">
+    <value>Zapisz Software Package Definition</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkMetadataOnly.Text">
+    <value>Publikowanie tylko metadanych</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblAdditionalFiles.Text">
+    <value>Dodatkowe pliki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Numer ID artykułu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Biuletyn ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Klasyfikacja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Command Line</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Opis</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Ten kreator zaprowadzi Cię przez proces tworzenia lokalnie opublikowanych oprogramowania. Musisz wybrać MSI, MSP, jako plik EXE lub plik aktualizacji. Jeżeli plik EXE posiada wbudowany plik MSI to musisz wejść na ścieżkę względną. Jeśli istnieją inne pliki pomocnicze niezbędne, takie jak przekształcenie plików, a następnie za pomocą dodatkowej listy plików, aby je dodać.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Instalacja na poziomie elementu - Zastąpiono regulaminu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Ta forma wymienia przepisy, które określają, jeżeli pakiet zostanie zastąpiona. Po utworzeniu tej aktualizacji za pomocą pliku MSI lub MSP pojawi się automatycznie generowane reguły na poziomie zainstalować poz.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Języki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMSIPath.Text">
+    <value>Ścieżka MSI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData.Text">
+    <value>Formularz ten służy do kontroli metadanych stosowanych przez poprzednią zostanie zainstalowany, jest zainstalowana lub została zastąpiona zasad.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Instalacja na poziomie elementu - Metadane art.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Więcej informacji URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Sieciowe wymagane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Wpisz odpowiednie dane na temat pakietu oprogramowania tutaj. Zapoznaj się z dokumentacją na pytania dotyczące poszczególnych pól.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Tytuł pakietu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Rodzaj opakowania</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Wymagania</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Produkt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reboot Behavior</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Kody zwrotne</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Dotkliwość</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Formularz ten służy do przeglądu danych XML, które można używać do opisu pakietu oprogramowania. Wybierz Zakończ, aby opublikować ten pakiet do serwera WSUS.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Zastępuje</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>Adres URL pomocy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Odinstaluj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Aktualizacja plików</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Sprzedawca</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text">
+    <value>About</value>
+  </data>
+  <data name="btnComputerListRefresh.Text">
+    <value>Refresh</value>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>Refresh</value>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>Refresh</value>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>Certificate Information</value>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>Approved Updates Only</value>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>Inherit Approvals</value>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>Connection Settings</value>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>Create Update</value>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>Export Catalog</value>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>Export List</value>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>Export Report</value>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>Export Rules</value>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>Export Update</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>File</value>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
+    <value>Help Forum</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text">
+    <value>Help</value>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>Import Catalog</value>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>Import Rules</value>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>Import Update</value>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Article ID</value>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Bulletin ID</value>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Classification</value>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>Computer Group</value>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>Status</value>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>Update Status</value>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Description</value>
+  </data>
+  <data name="lblID.Text">
+    <value>Package ID</value>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Languages</value>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>More Info URL</value>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Requires Network</value>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Package Title</value>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Package Type</value>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Prerequisites</value>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Product</value>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reboot Behavior</value>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Return Codes</value>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>Selected Target Group</value>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>(# of computers shown)</value>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Severity</value>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Supersedes</value>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Uninstall</value>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>Updates with no status:</value>
+  </data>
+  <data name="lblUpdateStatus.Text">
+    <value>Update Status</value>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>Updates installed/not applicable:</value>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>Updates Needed:</value>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>Updates with Errors:</value>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Vendor</value>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>Support Wiki</value>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>Manage Rules</value>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>Saved Rules</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>Settings</value>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>Report</value>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>Group Status</value>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>Report</value>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>Status</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>Tools</value>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>Update</value>
+  </data>
+</root>

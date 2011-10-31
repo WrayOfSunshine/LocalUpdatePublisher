@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tlpMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tlpMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpMain.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnCancel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCancel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnCancel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>534, 334</value>
+  </data>
+  <data name="btnCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 25</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnOK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnOK.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnOK.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 334</value>
+  </data>
+  <data name="btnOK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 25</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnReload.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnReload.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnReload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="btnReload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 334</value>
+  </data>
+  <data name="btnReload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnReload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 25</value>
+  </data>
+  <data name="btnReload.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnReload.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Name" xml:space="preserve">
+    <value>btnReload</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;btnReload.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ComputerGroup.HeaderText" xml:space="preserve">
+    <value>Computer Group</value>
+  </data>
+  <data name="ComputerGroup.Width" type="System.Int32, mscorlib">
+    <value>207</value>
+  </data>
+  <metadata name="cntxtMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 21</value>
+  </metadata>
+  <data name="approveForOptionalInstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="approveForOptionalInstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Approve for Optional Install</value>
+  </data>
+  <data name="approveForInstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="approveForInstallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Approve for Install</value>
+  </data>
+  <data name="approveForRemovalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="approveForRemovalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Approve for Removal</value>
+  </data>
+  <data name="notApprovedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="notApprovedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Not Approved</value>
+  </data>
+  <data name="cntxtMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 114</value>
+  </data>
+  <data name="&gt;&gt;cntxtMenuStrip.Name" xml:space="preserve">
+    <value>cntxtMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;cntxtMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ApprovalAction.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TargetGroup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dgvApprovals.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dgvApprovals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 20</value>
+  </data>
+  <data name="dgvApprovals.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="dgvApprovals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 300</value>
+  </data>
+  <data name="dgvApprovals.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dgvApprovals.Name" xml:space="preserve">
+    <value>dgvApprovals</value>
+  </data>
+  <data name="&gt;&gt;dgvApprovals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvApprovals.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;dgvApprovals.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUninstallable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblUninstallable.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblUninstallable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 320</value>
+  </data>
+  <data name="lblUninstallable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>608, 14</value>
+  </data>
+  <data name="lblUninstallable.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblUninstallable.Text" xml:space="preserve">
+    <value>This update cannot be uninstalled.</value>
+  </data>
+  <data name="lblUninstallable.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblUninstallable.Name" xml:space="preserve">
+    <value>lblUninstallable</value>
+  </data>
+  <data name="&gt;&gt;lblUninstallable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUninstallable.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;lblUninstallable.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpMain.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 359</value>
+  </data>
+  <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Name" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnCancel" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnOK" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnReload" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dgvApprovals" Row="1" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="lblInfo" Row="0" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="lblUninstallable" Row="2" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="lblInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 20</value>
+  </data>
+  <data name="lblInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Name" xml:space="preserve">
+    <value>lblInfo</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;lblInfo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>42</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>614, 359</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAAAIABoBAAAJgAAACAgAAAAACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAEAE
+        AAAAAAAAAAAAAAAAAAAAAAAA////Af///wH///8B////AQgWCRkeVCC3////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////AQooCh0ubjDdI3cl6////wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////AQs/TxsvcznbPIU+/yN0JO0BeQ4RAoQPEwOI
+        EBMDiBATA4IREwN3EBMDaA4PAlULDwtHEgv///8B////ARRHTxkubzXZQIZC/ziLOv8umzH/Ipwm/R6m
+        Jf0brSP9Fq4e/RGqGf0LnhL9CIoL/QhzCv0cbSLZ////Af///wEjYjOpRYhF/zuPPf8zrTj/LsA2/yjQ
+        NP8h3DH/G+Ms/xPiJv8M1hz/BMER/wGiCP8AbgP/EW0Z3////wH///8BFmWQJRJyKNcJoBb/J8U2/0DR
+        UP9GxlH5WMxh+WDNaPlVzV75QsZM+Ta3QvkmtjP/AZIG/xJ6Gt////8B////ARVvvz8GfNZVIaY940Li
+        Uf9I1FTjJcQ0BS3QPAcy1UEHM9c9By/SNgcntDYlMrM8/weqDv0SkRzf////Af///wEVccJrBH7vg1eu
+        6Is9vFjpc9x74f///wH///8B////Af///wEvVb69EVWCPzi1Qc8OuRe5EqAdpf///wH///8BFW++oQB8
+        6cNEo//JCTeFY0CrRq3///8B////Af///wH///8BZY3X30yR4fEvj1aRE8AdXxSmH1X///8B////ARRq
+        ts8Adt37IpD4/QMhmFsAePkFAXz/BQKA/wUAe/0FAHXxAz531OEslv3/FW7C8QpRWz8UpiAX////Af//
+        /wEZZrHPBnLV/xB73/8fd+H3OXva91WJ2/dgjtv3Woza90SA2Pcrh+79A3fr/wBas/8MPn3tBh5oL///
+        /wH///8BOni2zz+M4P83mOr/MKX5/z+x//9Vuf//Vbj//0Cv//8gnvz/C4rw/wd01f8EXLP/Ak2g/w85
+        etf///8B////AUlso8lahc/9VYfR/VCM1f1Mj9b9TpDX/0iN1/89htb/OHzP/0CG1f9BiNP/On3I/yld
+        oe0MJlQt////Af///wEbN1EHASpSCwI2agsCP3sLAkWHCwJIjQ0CSI0NA0aJDQE/fA9We7rXhLPq/2CK
+        v+8NLVUv////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BfZK90Z20
+        zekfKEIr////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////AV1j
+        dqsmKzMl////Af///wH///8B////AQAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//wAA//8AAP//AAD//wAA//8oAAAAIAAAAEAAAAABACAAAAAAAIAQAAAAAAAAAAAAAAAA
+        AAAAAAAA////Af///wH///8B////Af///wH///8B////Af///wH///8B////ASAkIG0aShur////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wEIFgljLnUw/w9O
+        Ecf///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BDCQNdS1v
+        L/9AmUL/BVcH1////wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////AQoo
+        CnEucy//QY1D/zqJO/8GXAjX////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wEJR2FtLnAr/0ONRP86gzz/OIM6/wVeBtf///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BCz9PaS1wK/9FjUb/PIQ+/zmBO/83gTj/EmwV4QF0Dh0Bfg4jAoIPJQKGECUDiBAlA4kRJQOJ
+        ESUDhxAlA4QRJQOAESUDehAlA3UQJQNtDx8DZA4fA1sMHwJPCh8IRw8hFUcbDf///wH///8B////Af//
+        /wH///8B////AQM1RWcrbin/SI5I/z6EQP87gj3/N4U5/zOQNv8nhSn/GHkZ/Rd8Gf0Wfhn9FoEZ/RaC
+        Gf0VhBn9FYQY/ROEFv0SgxX9EYEV/RB+E/0OexL9DncP+w1zD/sNbw77EXAS+Sd8K/8oYC+l////Af//
+        /wH///8B////Af///wEUR09jKWsn/0qOSv9AhEL/PYM//zmLO/81mjj/Mqc1/y6wMv8vujT/LMEy/ynK
+        Mv8l0jD/Itcv/x/aLP8b2ij/F9kl/xTVIf8Pzxv/C8YV/wa6D/8Eqwv/A5YG/wOABv8CbwP/FHQZ/xFd
+        Gb////8B////Af///wH///8BCDtEWSxsKv9Mj0z/Q4VE/z+EQf88jj3/N6A5/zStOP8xtjb/Lb41/yrF
+        M/8myzL/I9Ew/x/YLv8c3Cz/GN4p/xXeJv8R2yP/Dtce/wrPGf8FxBP/A7kO/wKqCv8BlQX/AXIE/wBe
+        Av8Sbhj/EWkcv////wH///8B////Af///wEIRlpPLHAs/UeKRf8+gkD/PIw9/zefOf8zrzj/Mbg3/y/C
+        OP8szDf/KtU2/yfcNf8j4jT/IOcy/x7pMP8b6i3/F+oq/xLlJv8P3yD/CtYa/wXKFP8DvRD/Aq0L/wGc
+        Bv8BgwT/AGcC/xJtGP8Rch2/////Af///wH///8B////Af///wEYZHlfIG4l+w5zEv8HjBT/DaYa/xu3
+        Kf8oxTb/NNND/0nnWf9b9Wv/Zvx1/3P/gv9//4z/hP+R/4P/kP97/4n/bf97/1/6b/9S72L/RuRW/zrb
+        Sf8oxjf/FbIi/wGYBv8AfAP/EnEY/xJ6Hr////8B////Af///wH///8BDWO0FxhvxB0DZ49rD3oW+wOf
+        Df8QsiD/JcU0/zXVRf9I6Vf/PqNO/SiOLvMvmDTzNZg58zmZPfM8mT/zO5o/8ziZO/M0mTjzL5gy8ymW
+        LvMlkSrzM4k/9zSePv8oxTj/BacN/wCOAv8SfRj/EoMfv////wH///8B////Af///wENZLUlGnPBRQBu
+        6TMKg699FpId/SLBLf8z0kL/ReRU/1n5aP8hnCvLHrUtBSfJNg8szjoPL9M+DzHVQQ8z1kIPM9dCDzPY
+        OQ8w0zkPLtE0DyXBMAUjoDVVJowr/zfTR/8Mshb/AJoD/xKMGf8SjSC/////Af///wH///8B////AQ1k
+        tTMad8dfAHPiWw6G/00vnrGRJaYs/UPiTv9Q8mD/cP99/yqqMsX///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AS7TODcmjyv/Rd9V/xO9H/0AogT9EpYZ/xKWIb3///8B////Af//
+        /wH///8BDWKzQxp6yn0AduN1DIf+dUqi/2tbu7KlM7Y8/2T/cf+P/5r/NK08xf///wH///8B////Af//
+        /wH///8B////Af///wH///8BEjatgwcfnrX///8BO906LySMKu9Q6V/VGsYn0wCoBdMTnhrdEp4hnf//
+        /wH///8B////Af///wENYbBTGnvMmwB34pMIh/yTQqD/k3S6/40VYISxP78/97L/uv89sUTF////Af//
+        /wH///8B////Af///wH///8B////Af///wEPLqLBdar1/wIhmbEux2YbIYYi21jwZ6EhzS6hAKwGoROi
+        G6cTpCJ3////Af///wH///8B////AQ1eq2Uae8y9AHffswKE+rMzmf+zZrb/vQUbjaEnx0A/W7Zh/zak
+        QMf///8B////Af///wH///8B////Af///wH///8B////AQ4vo7+84P//ZKn//Qk1i8kgiiO3X/ZtcybS
+        NHMArgZzE6QbeRaoJVf///8B////Af///wH///8BDVukgxp6y98AdtvTAIH00yCQ/9NXr//hAh6Yq///
+        /wFCzj5TIpEonf///wH///8B////Af///wH///8B////Af///wH///8BCCyjv5jM//91uv//QJzs/xVB
+        b99h/Wk/K9Y4SwCuBk0SpBtPGKonOf///wH///8B////Af///wENV52bGnnJ/wBz1/cAfur3DYX890Sm
+        /f8BIZqx////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wEFKqC/e73+/1Ko
+        //8llv3/I43b/xU+fccv3DYZAK4GJxKjGysZqygd////Af///wH///8B////AQ1TlaEZdsj/AHDT/wB6
+        4f8CefD/Np/7/wUil73///8BAHX5CQB7+gkAef8JAn//CQOB/wkBgP8JAH3/CQB5/AkAdfEJ////AQUm
+        m8VarP3/MJj//wmE/P8EeOP/Gmu+/wgtcb3///8BEqEZCxmrKAn///8B////Af///wH///8BDU6Lnxhz
+        yP8Aa9D/AHba/wFu2v8rmPb/M3ja9RI9rO0YRbLvHEe07yJLte8mTrXvKE617yhOte8mTbXvJEu07yFJ
+        su8bQ67tNV6+9zib/v8Mhf//AHbt/wBnzf8BV6//FU+V/wIiZrf///8B////Af///wH///8B////Af//
+        /wEOSoKfKXvP/w9v0v8Medr/CW7O/wt64f8QjPv/KJn//0mn//9ltf//fMD//4zH//+Vy///l8z//5PL
+        //+Ixf//dbz//1yx//83n///C4b+/wB37f8AbNT/AF64/wBOmv8CP33/FUF5/wYeaLf///8B////Af//
+        /wH///8B////ARFGeJ9Gj9v/MYDa/y2G3v8pjOT/JJLr/x+a9f8dof7/L6n//0Ox//9Rtv//Wbn//1u5
+        //9Yt///ULT//0Ou//8wpf//GJv//wSP/f8AhPH/AHrh/wBv0f8AY77/AFWp/wBJmP8BSZn/FkiL/wUc
+        ZbX///8B////Af///wH///8BE0Ftn2Oj5v9Slub/Tpfl/0ue6/9HpfH/RKv2/0Cv/P9AtP//S7j//1S7
+        //9Xu///Vbr//023//8/sf//Lqn//yGh/P8Zmfj/FpDv/xSH5f8Qe9j/DW/L/wtju/8IV6z/BVKm/wRT
+        q/8VS5T/CSdRrf///wH///8B////Af///wEVPGChhbv0/3u3+f92tvb/c7j4/2+8+/9rwP3/aMP//2TF
+        //9kxv//aMf//2jH//9jxP//WsH//1C8//9Jtf//Ra35/0Ol8v87mur/No/f/zKF1v8ve8z/K3LB/yZt
+        vP8mb8H/KF2l/wwmVLX///8B////Af///wH///8B////AR07VodGWKf/PFOn/TxUqP06VKn9OlWq/ThW
+        rP04V639Nliu/TVZr/01Wa//NFmw/zNZsP8wV7D/L1av/y5Urf8tUav/K02n/zRTrP9bnuL/U5PZ/1CO
+        1P9LitD/TI3W/0d2uv8IJU25////Af///wH///8B////Af///wH///8BGzNLBRs4UxUAJksVAi9aFQI0
+        ZRUCOW8VAj13FQJBfxUCRIUVAkaKFQJHjRcCSY4ZAkmOGQNIjRkDR4sZA0aIGQNEgxkAPHglHDiEvXiq
+        5P90qOT/cKXh/3Kq6P9mjsv/DS1Vu////wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wEIHm6jkbrq/5W/8P+Xw/b/hqjZ/xE0WL3///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQsdaKWwz/H/wN///6fE5P8gKESjA2IWA////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BDRpgpd7v/f+/0OH/JzNApwAAFQP///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wEPF1elxMvR/yYrM5P///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////ASIoLm0zNTef////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Approve Update</value>
+  </data>
+  <data name="&gt;&gt;ComputerGroup.Name" xml:space="preserve">
+    <value>ComputerGroup</value>
+  </data>
+  <data name="&gt;&gt;ComputerGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;approval.Name" xml:space="preserve">
+    <value>approval</value>
+  </data>
+  <data name="&gt;&gt;approval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;approveForOptionalInstallToolStripMenuItem.Name" xml:space="preserve">
+    <value>approveForOptionalInstallToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;approveForOptionalInstallToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;approveForInstallToolStripMenuItem.Name" xml:space="preserve">
+    <value>approveForInstallToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;approveForInstallToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;approveForRemovalToolStripMenuItem.Name" xml:space="preserve">
+    <value>approveForRemovalToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;approveForRemovalToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notApprovedToolStripMenuItem.Name" xml:space="preserve">
+    <value>notApprovedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;notApprovedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Deadline.Name" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="&gt;&gt;Deadline.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.CalendarColumn, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;CreationDate.Name" xml:space="preserve">
+    <value>CreationDate</value>
+  </data>
+  <data name="&gt;&gt;CreationDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ApprovalAction.Name" xml:space="preserve">
+    <value>ApprovalAction</value>
+  </data>
+  <data name="&gt;&gt;ApprovalAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TargetGroup.Name" xml:space="preserve">
+    <value>TargetGroup</value>
+  </data>
+  <data name="&gt;&gt;TargetGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ApprovalForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

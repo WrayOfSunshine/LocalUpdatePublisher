@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Importer la Mise à jour à partir du fichier</value>
+  </data>
+  <data name="btnAddDir.Text">
+    <value>Ajouter répertoire</value>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Ajouter des Fichiers</value>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Annuler</value>
+  </data>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Modifier</value>
+  </data>
+  <data name="btnMetaDataEdit.Text">
+    <value>Modifier</value>
+  </data>
+  <data name="btnNext.Text">
+    <value>Suivant</value>
+  </data>
+  <data name="btnPrevious.Text">
+    <value>Précédent</value>
+  </data>
+  <data name="btnUpdateFile.Text">
+    <value>Parcourir</value>
+  </data>
+  <data name="chkExportSdp.Text">
+    <value>Enregistrer la Définition du paquet Logiciel</value>
+  </data>
+  <data name="chkMetadataOnly.Text">
+    <value>Publier uniquement les Métadonnées</value>
+  </data>
+  <data name="lblAdditionalFiles.Text">
+    <value>Fichiers supplémentaires</value>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>ID d'article</value>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>ID de Bulletin</value>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Classification</value>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Ligne de Commande</value>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Description</value>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Cet assistant vous mènera à travers le processus de création d'un package logiciel publié localement. Vous devez sélectionner un fichier MSI, MSP, ou EXE comme source de mise à jour. Si le fichier EXE a un fichier MSI intégré, vous devez entrer le chemin d'accès relatif. S'il ya d'autres fichiers nécessaires, tels que des fichiers modifiés, alors utilisez la liste des fichiers supplémentaires pour les ajouter.</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Condition d'Installation de l'objet - Règles de remplacement</value>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Ce formulaire énumère les règles qui déterminent si le logiciel est remplacé. Si vous avez créé cette mise à jour en utilisant un fichier MSI ou MSP, vous verrez la règle générée automatiquement avec la condition de l'état installable.</value>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Langues</value>
+  </data>
+  <data name="lblMSIPath.Text">
+    <value>Chemin d'accès au MSI</value>
+  </data>
+  <data name="lblMetaData.Text">
+    <value>Utilisez ce formulaire pour vérifier si les métadonnées utilisées précédement étaient avec une règle installable, installé, ou de remplacement.</value>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Condition d'Installation de l'Objet - Métadonnées de la règle</value>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>URL Plus d'Info</value>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Réseau Requis</value>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>URL d'Origine</value>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Entrez les détails nécessaires sur le logiciel ici. Reportez-vous à la documentation pour les questions relatives aux champs individuels.</value>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Titre du Paquet</value>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Type de paquet</value>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Prérequis</value>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Produit</value>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Comportement pour le Redémarrage</value>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Codes Retour</value>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Gravité</value>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Utilisez ce formulaire pour modifier les données XML qui seront utilisées pour décrire le paquet logiciel. Sélectionnez Terminer pour publier ce paquet au serveur WSUS.</value>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Remplace</value>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>URL du Support</value>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Désinstaller</value>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Mise à Jour du Fichier</value>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Vendeur</value>
+  </data>
+</root>

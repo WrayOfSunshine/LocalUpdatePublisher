@@ -1,0 +1,2994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tlpHeader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tlpHeader.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpHeader.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkNotRule.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkNotRule.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkNotRule.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 3</value>
+  </data>
+  <data name="chkNotRule.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 21</value>
+  </data>
+  <data name="chkNotRule.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkNotRule.Text" xml:space="preserve">
+    <value>Negation Rule</value>
+  </data>
+  <data name="&gt;&gt;chkNotRule.Name" xml:space="preserve">
+    <value>chkNotRule</value>
+  </data>
+  <data name="&gt;&gt;chkNotRule.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkNotRule.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;chkNotRule.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cboRuleType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 3</value>
+  </data>
+  <data name="cboRuleType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 21</value>
+  </data>
+  <data name="cboRuleType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboRuleType.Name" xml:space="preserve">
+    <value>cboRuleType</value>
+  </data>
+  <data name="&gt;&gt;cboRuleType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboRuleType.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;cboRuleType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRuleType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRuleType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblRuleType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblRuleType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 27</value>
+  </data>
+  <data name="lblRuleType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRuleType.Text" xml:space="preserve">
+    <value>Rule Type</value>
+  </data>
+  <data name="lblRuleType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRuleType.Name" xml:space="preserve">
+    <value>lblRuleType</value>
+  </data>
+  <data name="&gt;&gt;lblRuleType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRuleType.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;lblRuleType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpHeader.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpHeader.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 27</value>
+  </data>
+  <data name="tlpHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;tlpHeader.Name" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;tlpHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpHeader.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpHeader.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="chkNotRule" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cboRuleType" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRuleType" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpFooter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpFooter.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpFooter.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnCancel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCancel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnCancel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 3</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 25</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>tlpFooter</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnAdd.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="btnAdd.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 25</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add Rule</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>tlpFooter</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpFooter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="tlpFooter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 974</value>
+  </data>
+  <data name="tlpFooter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpFooter.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpFooter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 31</value>
+  </data>
+  <data name="tlpFooter.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;tlpFooter.Name" xml:space="preserve">
+    <value>tlpFooter</value>
+  </data>
+  <data name="&gt;&gt;tlpFooter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpFooter.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpFooter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpFooter.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnCancel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnAdd" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpRules.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpRules.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpRules.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpComparison.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpComparison.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpComparison.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboComparison.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 3</value>
+  </data>
+  <data name="cboComparison.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboComparison.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboComparison.Name" xml:space="preserve">
+    <value>cboComparison</value>
+  </data>
+  <data name="&gt;&gt;cboComparison.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboComparison.Parent" xml:space="preserve">
+    <value>tlpComparison</value>
+  </data>
+  <data name="&gt;&gt;cboComparison.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblComparison.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblComparison.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblComparison.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 27</value>
+  </data>
+  <data name="lblComparison.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblComparison.Text" xml:space="preserve">
+    <value>Comparison</value>
+  </data>
+  <data name="lblComparison.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblComparison.Name" xml:space="preserve">
+    <value>lblComparison</value>
+  </data>
+  <data name="&gt;&gt;lblComparison.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblComparison.Parent" xml:space="preserve">
+    <value>tlpComparison</value>
+  </data>
+  <data name="&gt;&gt;lblComparison.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpComparison.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpComparison.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tlpComparison.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpComparison.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpComparison.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpComparison.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpComparison.Name" xml:space="preserve">
+    <value>tlpComparison</value>
+  </data>
+  <data name="&gt;&gt;tlpComparison.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpComparison.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpComparison.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpComparison.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboComparison" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblComparison" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpOSVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpOSVersion.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpOSVersion.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtOSMinorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 3</value>
+  </data>
+  <data name="txtOSMinorVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtOSMinorVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="txtOSMinorVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtOSMinorVersion.Name" xml:space="preserve">
+    <value>txtOSMinorVersion</value>
+  </data>
+  <data name="&gt;&gt;txtOSMinorVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOSMinorVersion.Parent" xml:space="preserve">
+    <value>tlpOSVersion</value>
+  </data>
+  <data name="&gt;&gt;txtOSMinorVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblOSVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOSVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblOSVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 27</value>
+  </data>
+  <data name="lblOSVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblOSVersion.Text" xml:space="preserve">
+    <value>OS Version</value>
+  </data>
+  <data name="lblOSVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblOSVersion.Name" xml:space="preserve">
+    <value>lblOSVersion</value>
+  </data>
+  <data name="&gt;&gt;lblOSVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOSVersion.Parent" xml:space="preserve">
+    <value>tlpOSVersion</value>
+  </data>
+  <data name="&gt;&gt;lblOSVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtOSMajorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 3</value>
+  </data>
+  <data name="txtOSMajorVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="txtOSMajorVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtOSMajorVersion.Name" xml:space="preserve">
+    <value>txtOSMajorVersion</value>
+  </data>
+  <data name="&gt;&gt;txtOSMajorVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOSMajorVersion.Parent" xml:space="preserve">
+    <value>tlpOSVersion</value>
+  </data>
+  <data name="&gt;&gt;txtOSMajorVersion.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cboOSVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cboOSVersion.Items" xml:space="preserve">
+    <value>Windows 2000</value>
+  </data>
+  <data name="cboOSVersion.Items1" xml:space="preserve">
+    <value>Windows XP</value>
+  </data>
+  <data name="cboOSVersion.Items2" xml:space="preserve">
+    <value>Windows Server 2003</value>
+  </data>
+  <data name="cboOSVersion.Items3" xml:space="preserve">
+    <value>Windows Vista</value>
+  </data>
+  <data name="cboOSVersion.Items4" xml:space="preserve">
+    <value>Windows Server 2008</value>
+  </data>
+  <data name="cboOSVersion.Items5" xml:space="preserve">
+    <value>Windows 7</value>
+  </data>
+  <data name="cboOSVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 3</value>
+  </data>
+  <data name="cboOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboOSVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboOSVersion.Name" xml:space="preserve">
+    <value>cboOSVersion</value>
+  </data>
+  <data name="&gt;&gt;cboOSVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboOSVersion.Parent" xml:space="preserve">
+    <value>tlpOSVersion</value>
+  </data>
+  <data name="&gt;&gt;cboOSVersion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpOSVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpOSVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 36</value>
+  </data>
+  <data name="tlpOSVersion.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpOSVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpOSVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpOSVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpOSVersion.Name" xml:space="preserve">
+    <value>tlpOSVersion</value>
+  </data>
+  <data name="&gt;&gt;tlpOSVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpOSVersion.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpOSVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpOSVersion.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtOSMinorVersion" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lblOSVersion" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtOSMajorVersion" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cboOSVersion" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpServicePack.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpServicePack.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpServicePack.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtSPMinorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 3</value>
+  </data>
+  <data name="txtSPMinorVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtSPMinorVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="txtSPMinorVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtSPMinorVersion.Name" xml:space="preserve">
+    <value>txtSPMinorVersion</value>
+  </data>
+  <data name="&gt;&gt;txtSPMinorVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSPMinorVersion.Parent" xml:space="preserve">
+    <value>tlpServicePack</value>
+  </data>
+  <data name="&gt;&gt;txtSPMinorVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblServicePack.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblServicePack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblServicePack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblServicePack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 27</value>
+  </data>
+  <data name="lblServicePack.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblServicePack.Text" xml:space="preserve">
+    <value>Service Pack</value>
+  </data>
+  <data name="lblServicePack.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblServicePack.Name" xml:space="preserve">
+    <value>lblServicePack</value>
+  </data>
+  <data name="&gt;&gt;lblServicePack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblServicePack.Parent" xml:space="preserve">
+    <value>tlpServicePack</value>
+  </data>
+  <data name="&gt;&gt;lblServicePack.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSPMajorVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 3</value>
+  </data>
+  <data name="txtSPMajorVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="txtSPMajorVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtSPMajorVersion.Name" xml:space="preserve">
+    <value>txtSPMajorVersion</value>
+  </data>
+  <data name="&gt;&gt;txtSPMajorVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSPMajorVersion.Parent" xml:space="preserve">
+    <value>tlpServicePack</value>
+  </data>
+  <data name="&gt;&gt;txtSPMajorVersion.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cboServicePack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cboServicePack.Items" xml:space="preserve">
+    <value>SP 1</value>
+  </data>
+  <data name="cboServicePack.Items1" xml:space="preserve">
+    <value>SP 2</value>
+  </data>
+  <data name="cboServicePack.Items2" xml:space="preserve">
+    <value>SP 3</value>
+  </data>
+  <data name="cboServicePack.Items3" xml:space="preserve">
+    <value>SP 4</value>
+  </data>
+  <data name="cboServicePack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 3</value>
+  </data>
+  <data name="cboServicePack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboServicePack.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboServicePack.Name" xml:space="preserve">
+    <value>cboServicePack</value>
+  </data>
+  <data name="&gt;&gt;cboServicePack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboServicePack.Parent" xml:space="preserve">
+    <value>tlpServicePack</value>
+  </data>
+  <data name="&gt;&gt;cboServicePack.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpServicePack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpServicePack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 69</value>
+  </data>
+  <data name="tlpServicePack.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpServicePack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpServicePack.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpServicePack.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpServicePack.Name" xml:space="preserve">
+    <value>tlpServicePack</value>
+  </data>
+  <data name="&gt;&gt;tlpServicePack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpServicePack.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpServicePack.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpServicePack.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSPMinorVersion" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="lblServicePack" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtSPMajorVersion" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="cboServicePack" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpProductType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpProductType.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpProductType.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 3</value>
+  </data>
+  <data name="cboProductType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboProductType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboProductType.Name" xml:space="preserve">
+    <value>cboProductType</value>
+  </data>
+  <data name="&gt;&gt;cboProductType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboProductType.Parent" xml:space="preserve">
+    <value>tlpProductType</value>
+  </data>
+  <data name="&gt;&gt;cboProductType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProductType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProductType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 27</value>
+  </data>
+  <data name="lblProductType.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblProductType.Text" xml:space="preserve">
+    <value>Product Type</value>
+  </data>
+  <data name="lblProductType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Name" xml:space="preserve">
+    <value>lblProductType</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Parent" xml:space="preserve">
+    <value>tlpProductType</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpProductType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 102</value>
+  </data>
+  <data name="tlpProductType.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpProductType.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpProductType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpProductType.Name" xml:space="preserve">
+    <value>tlpProductType</value>
+  </data>
+  <data name="&gt;&gt;tlpProductType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpProductType.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpProductType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpProductType.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboProductType" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblProductType" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpLanguage.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpLanguage.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 3</value>
+  </data>
+  <data name="cboLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboLanguage.Name" xml:space="preserve">
+    <value>cboLanguage</value>
+  </data>
+  <data name="&gt;&gt;cboLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboLanguage.Parent" xml:space="preserve">
+    <value>tlpLanguage</value>
+  </data>
+  <data name="&gt;&gt;cboLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 27</value>
+  </data>
+  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblLanguage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
+    <value>lblLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
+    <value>tlpLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpLanguage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 135</value>
+  </data>
+  <data name="tlpLanguage.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpLanguage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpLanguage.Name" xml:space="preserve">
+    <value>tlpLanguage</value>
+  </data>
+  <data name="&gt;&gt;tlpLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpLanguage.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpLanguage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tlpLanguage.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboLanguage" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblLanguage" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpProcessorType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpProcessorType.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpProcessorType.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboProcessorType.Items" xml:space="preserve">
+    <value>x86</value>
+  </data>
+  <data name="cboProcessorType.Items1" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="cboProcessorType.Items2" xml:space="preserve">
+    <value>IA64</value>
+  </data>
+  <data name="cboProcessorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 3</value>
+  </data>
+  <data name="cboProcessorType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboProcessorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboProcessorType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboProcessorType.Name" xml:space="preserve">
+    <value>cboProcessorType</value>
+  </data>
+  <data name="&gt;&gt;cboProcessorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboProcessorType.Parent" xml:space="preserve">
+    <value>tlpProcessorType</value>
+  </data>
+  <data name="&gt;&gt;cboProcessorType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProcessorType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProcessorType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblProcessorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblProcessorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 27</value>
+  </data>
+  <data name="lblProcessorType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblProcessorType.Text" xml:space="preserve">
+    <value>Processor Type</value>
+  </data>
+  <data name="lblProcessorType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblProcessorType.Name" xml:space="preserve">
+    <value>lblProcessorType</value>
+  </data>
+  <data name="&gt;&gt;lblProcessorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProcessorType.Parent" xml:space="preserve">
+    <value>tlpProcessorType</value>
+  </data>
+  <data name="&gt;&gt;lblProcessorType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpProcessorType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpProcessorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 168</value>
+  </data>
+  <data name="tlpProcessorType.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpProcessorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpProcessorType.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpProcessorType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpProcessorType.Name" xml:space="preserve">
+    <value>tlpProcessorType</value>
+  </data>
+  <data name="&gt;&gt;tlpProcessorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpProcessorType.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpProcessorType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tlpProcessorType.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboProcessorType" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblProcessorType" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpRegistryKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpRegistryKey.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpRegistryKey.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtRegistrySubKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtRegistrySubKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 3</value>
+  </data>
+  <data name="txtRegistrySubKey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtRegistrySubKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>407, 20</value>
+  </data>
+  <data name="txtRegistrySubKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtRegistrySubKey.Name" xml:space="preserve">
+    <value>txtRegistrySubKey</value>
+  </data>
+  <data name="&gt;&gt;txtRegistrySubKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRegistrySubKey.Parent" xml:space="preserve">
+    <value>tlpRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;txtRegistrySubKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRegistryKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegistryKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblRegistryKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 27</value>
+  </data>
+  <data name="lblRegistryKey.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblRegistryKey.Text" xml:space="preserve">
+    <value>Registry Key</value>
+  </data>
+  <data name="lblRegistryKey.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryKey.Name" xml:space="preserve">
+    <value>lblRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryKey.Parent" xml:space="preserve">
+    <value>tlpRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cboRegistryKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cboRegistryKey.Items" xml:space="preserve">
+    <value>HKEY_LOCAL_MACHINE</value>
+  </data>
+  <data name="cboRegistryKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 3</value>
+  </data>
+  <data name="cboRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 21</value>
+  </data>
+  <data name="cboRegistryKey.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryKey.Name" xml:space="preserve">
+    <value>cboRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryKey.Parent" xml:space="preserve">
+    <value>tlpRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpRegistryKey.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpRegistryKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 201</value>
+  </data>
+  <data name="tlpRegistryKey.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpRegistryKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpRegistryKey.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpRegistryKey.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryKey.Name" xml:space="preserve">
+    <value>tlpRegistryKey</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryKey.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryKey.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tlpRegistryKey.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtRegistrySubKey" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblRegistryKey" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboRegistryKey" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpRegistryValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpRegistryValue.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpRegistryValue.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkRegistry32Bit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkRegistry32Bit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="chkRegistry32Bit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 3</value>
+  </data>
+  <data name="chkRegistry32Bit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 20</value>
+  </data>
+  <data name="chkRegistry32Bit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkRegistry32Bit.Text" xml:space="preserve">
+    <value>32 Bit Registry</value>
+  </data>
+  <data name="&gt;&gt;chkRegistry32Bit.Name" xml:space="preserve">
+    <value>chkRegistry32Bit</value>
+  </data>
+  <data name="&gt;&gt;chkRegistry32Bit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkRegistry32Bit.Parent" xml:space="preserve">
+    <value>tlpRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;chkRegistry32Bit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtRegistryValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtRegistryValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 3</value>
+  </data>
+  <data name="txtRegistryValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtRegistryValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="txtRegistryValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtRegistryValue.Name" xml:space="preserve">
+    <value>txtRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;txtRegistryValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRegistryValue.Parent" xml:space="preserve">
+    <value>tlpRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;txtRegistryValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRegistryValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegistryValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblRegistryValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblRegistryValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 26</value>
+  </data>
+  <data name="lblRegistryValue.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="lblRegistryValue.Text" xml:space="preserve">
+    <value>Registry Value</value>
+  </data>
+  <data name="lblRegistryValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValue.Name" xml:space="preserve">
+    <value>lblRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValue.Parent" xml:space="preserve">
+    <value>tlpRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpRegistryValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpRegistryValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 234</value>
+  </data>
+  <data name="tlpRegistryValue.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpRegistryValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpRegistryValue.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpRegistryValue.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValue.Name" xml:space="preserve">
+    <value>tlpRegistryValue</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValue.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValue.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tlpRegistryValue.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="chkRegistry32Bit" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtRegistryValue" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRegistryValue" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpRegistryValueType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpRegistryValueType.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpRegistryValueType.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboRegistryValueType.Items" xml:space="preserve">
+    <value>REG_BINARY</value>
+  </data>
+  <data name="cboRegistryValueType.Items1" xml:space="preserve">
+    <value>REG_DWORD</value>
+  </data>
+  <data name="cboRegistryValueType.Items2" xml:space="preserve">
+    <value>REG_EXPAND_SZ</value>
+  </data>
+  <data name="cboRegistryValueType.Items3" xml:space="preserve">
+    <value>REG_SZ</value>
+  </data>
+  <data name="cboRegistryValueType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 3</value>
+  </data>
+  <data name="cboRegistryValueType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboRegistryValueType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboRegistryValueType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryValueType.Name" xml:space="preserve">
+    <value>cboRegistryValueType</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryValueType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryValueType.Parent" xml:space="preserve">
+    <value>tlpRegistryValueType</value>
+  </data>
+  <data name="&gt;&gt;cboRegistryValueType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRegistryValueType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegistryValueType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblRegistryValueType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblRegistryValueType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 27</value>
+  </data>
+  <data name="lblRegistryValueType.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="lblRegistryValueType.Text" xml:space="preserve">
+    <value>Registry Value Type</value>
+  </data>
+  <data name="lblRegistryValueType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValueType.Name" xml:space="preserve">
+    <value>lblRegistryValueType</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValueType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValueType.Parent" xml:space="preserve">
+    <value>tlpRegistryValueType</value>
+  </data>
+  <data name="&gt;&gt;lblRegistryValueType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpRegistryValueType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpRegistryValueType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 266</value>
+  </data>
+  <data name="tlpRegistryValueType.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpRegistryValueType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpRegistryValueType.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpRegistryValueType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValueType.Name" xml:space="preserve">
+    <value>tlpRegistryValueType</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValueType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValueType.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpRegistryValueType.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tlpRegistryValueType.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboRegistryValueType" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblRegistryValueType" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpEnvironmentVariable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpEnvironmentVariable.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpEnvironmentVariable.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cboEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 3</value>
+  </data>
+  <data name="cboEnvironmentVariable.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="cboEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="cboEnvironmentVariable.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cboEnvironmentVariable.Name" xml:space="preserve">
+    <value>cboEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;cboEnvironmentVariable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboEnvironmentVariable.Parent" xml:space="preserve">
+    <value>tlpEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;cboEnvironmentVariable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblEnvironmentVariable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEnvironmentVariable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 27</value>
+  </data>
+  <data name="lblEnvironmentVariable.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblEnvironmentVariable.Text" xml:space="preserve">
+    <value>Environment Variable</value>
+  </data>
+  <data name="lblEnvironmentVariable.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblEnvironmentVariable.Name" xml:space="preserve">
+    <value>lblEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;lblEnvironmentVariable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEnvironmentVariable.Parent" xml:space="preserve">
+    <value>tlpEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;lblEnvironmentVariable.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpEnvironmentVariable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 299</value>
+  </data>
+  <data name="tlpEnvironmentVariable.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 27</value>
+  </data>
+  <data name="tlpEnvironmentVariable.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpEnvironmentVariable.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpEnvironmentVariable.Name" xml:space="preserve">
+    <value>tlpEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;tlpEnvironmentVariable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpEnvironmentVariable.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpEnvironmentVariable.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tlpEnvironmentVariable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cboEnvironmentVariable" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblEnvironmentVariable" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpFilePath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpFilePath.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpFilePath.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtFilePath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 3</value>
+  </data>
+  <data name="txtFilePath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 20</value>
+  </data>
+  <data name="txtFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtFilePath.Name" xml:space="preserve">
+    <value>txtFilePath</value>
+  </data>
+  <data name="&gt;&gt;txtFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFilePath.Parent" xml:space="preserve">
+    <value>tlpFilePath</value>
+  </data>
+  <data name="&gt;&gt;txtFilePath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 26</value>
+  </data>
+  <data name="lblPath.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>lblPath</value>
+  </data>
+  <data name="lblPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblPath.Name" xml:space="preserve">
+    <value>lblPath</value>
+  </data>
+  <data name="&gt;&gt;lblPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPath.Parent" xml:space="preserve">
+    <value>tlpFilePath</value>
+  </data>
+  <data name="&gt;&gt;lblPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpFilePath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 332</value>
+  </data>
+  <data name="tlpFilePath.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpFilePath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpFilePath.Name" xml:space="preserve">
+    <value>tlpFilePath</value>
+  </data>
+  <data name="&gt;&gt;tlpFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpFilePath.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpFilePath.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="tlpFilePath.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtFilePath" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPath" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpVersion.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpVersion.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 3</value>
+  </data>
+  <data name="txtVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="txtVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtVersion.Name" xml:space="preserve">
+    <value>txtVersion</value>
+  </data>
+  <data name="&gt;&gt;txtVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtVersion.Parent" xml:space="preserve">
+    <value>tlpVersion</value>
+  </data>
+  <data name="&gt;&gt;txtVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 26</value>
+  </data>
+  <data name="lblVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblVersion.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="lblVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblVersion.Name" xml:space="preserve">
+    <value>lblVersion</value>
+  </data>
+  <data name="&gt;&gt;lblVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVersion.Parent" xml:space="preserve">
+    <value>tlpVersion</value>
+  </data>
+  <data name="&gt;&gt;lblVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 364</value>
+  </data>
+  <data name="tlpVersion.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpVersion.Name" xml:space="preserve">
+    <value>tlpVersion</value>
+  </data>
+  <data name="&gt;&gt;tlpVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpVersion.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpVersion.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tlpVersion.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtVersion" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblVersion" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpData.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpData.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblDataInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblDataInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 0</value>
+  </data>
+  <data name="lblDataInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 26</value>
+  </data>
+  <data name="lblDataInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblDataInfo.Text" xml:space="preserve">
+    <value>in Bytes (ex. 1024)</value>
+  </data>
+  <data name="lblDataInfo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblDataInfo.Name" xml:space="preserve">
+    <value>lblDataInfo</value>
+  </data>
+  <data name="&gt;&gt;lblDataInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDataInfo.Parent" xml:space="preserve">
+    <value>tlpData</value>
+  </data>
+  <data name="&gt;&gt;lblDataInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 3</value>
+  </data>
+  <data name="txtData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="txtData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtData.Name" xml:space="preserve">
+    <value>txtData</value>
+  </data>
+  <data name="&gt;&gt;txtData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtData.Parent" xml:space="preserve">
+    <value>tlpData</value>
+  </data>
+  <data name="&gt;&gt;txtData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 26</value>
+  </data>
+  <data name="lblData.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblData.Text" xml:space="preserve">
+    <value>Data Label</value>
+  </data>
+  <data name="lblData.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblData.Name" xml:space="preserve">
+    <value>lblData</value>
+  </data>
+  <data name="&gt;&gt;lblData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblData.Parent" xml:space="preserve">
+    <value>tlpData</value>
+  </data>
+  <data name="&gt;&gt;lblData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 396</value>
+  </data>
+  <data name="tlpData.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpData.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpData.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpData.Name" xml:space="preserve">
+    <value>tlpData</value>
+  </data>
+  <data name="&gt;&gt;tlpData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpData.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpData.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tlpData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblDataInfo" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="txtData" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblData" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpDate.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpDate.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dtpDate.CustomFormat" xml:space="preserve">
+    <value>yyyy/MM/dd HH:mm:ss</value>
+  </data>
+  <data name="dtpDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 3</value>
+  </data>
+  <data name="dtpDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="dtpDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="dtpDate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dtpDate.Name" xml:space="preserve">
+    <value>dtpDate</value>
+  </data>
+  <data name="&gt;&gt;dtpDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpDate.Parent" xml:space="preserve">
+    <value>tlpDate</value>
+  </data>
+  <data name="&gt;&gt;dtpDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 26</value>
+  </data>
+  <data name="lblDate.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblDate.Text" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="lblDate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblDate.Name" xml:space="preserve">
+    <value>lblDate</value>
+  </data>
+  <data name="&gt;&gt;lblDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDate.Parent" xml:space="preserve">
+    <value>tlpDate</value>
+  </data>
+  <data name="&gt;&gt;lblDate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 428</value>
+  </data>
+  <data name="tlpDate.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpDate.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpDate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpDate.Name" xml:space="preserve">
+    <value>tlpDate</value>
+  </data>
+  <data name="&gt;&gt;tlpDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpDate.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpDate.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tlpDate.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dtpDate" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblDate" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpProductCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpProductCode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpProductCode.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtProductCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtProductCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 3</value>
+  </data>
+  <data name="txtProductCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtProductCode.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtProductCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 20</value>
+  </data>
+  <data name="txtProductCode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtProductCode.Name" xml:space="preserve">
+    <value>txtProductCode</value>
+  </data>
+  <data name="&gt;&gt;txtProductCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProductCode.Parent" xml:space="preserve">
+    <value>tlpProductCode</value>
+  </data>
+  <data name="&gt;&gt;txtProductCode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProductCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProductCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblProductCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblProductCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 26</value>
+  </data>
+  <data name="lblProductCode.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblProductCode.Text" xml:space="preserve">
+    <value>Product Code</value>
+  </data>
+  <data name="lblProductCode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblProductCode.Name" xml:space="preserve">
+    <value>lblProductCode</value>
+  </data>
+  <data name="&gt;&gt;lblProductCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProductCode.Parent" xml:space="preserve">
+    <value>tlpProductCode</value>
+  </data>
+  <data name="&gt;&gt;lblProductCode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpProductCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpProductCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 492</value>
+  </data>
+  <data name="tlpProductCode.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpProductCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpProductCode.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpProductCode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpProductCode.Name" xml:space="preserve">
+    <value>tlpProductCode</value>
+  </data>
+  <data name="&gt;&gt;tlpProductCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpProductCode.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpProductCode.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="tlpProductCode.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtProductCode" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblProductCode" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpPatchCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpPatchCode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpPatchCode.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtPatchCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtPatchCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 3</value>
+  </data>
+  <data name="txtPatchCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtPatchCode.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>561, 20</value>
+  </data>
+  <data name="txtPatchCode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtPatchCode.Name" xml:space="preserve">
+    <value>txtPatchCode</value>
+  </data>
+  <data name="&gt;&gt;txtPatchCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPatchCode.Parent" xml:space="preserve">
+    <value>tlpPatchCode</value>
+  </data>
+  <data name="&gt;&gt;txtPatchCode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPatchCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPatchCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblPatchCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 26</value>
+  </data>
+  <data name="lblPatchCode.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblPatchCode.Text" xml:space="preserve">
+    <value>Patch Code</value>
+  </data>
+  <data name="lblPatchCode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblPatchCode.Name" xml:space="preserve">
+    <value>lblPatchCode</value>
+  </data>
+  <data name="&gt;&gt;lblPatchCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPatchCode.Parent" xml:space="preserve">
+    <value>tlpPatchCode</value>
+  </data>
+  <data name="&gt;&gt;lblPatchCode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpPatchCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpPatchCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 524</value>
+  </data>
+  <data name="tlpPatchCode.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpPatchCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpPatchCode.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpPatchCode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpPatchCode.Name" xml:space="preserve">
+    <value>tlpPatchCode</value>
+  </data>
+  <data name="&gt;&gt;tlpPatchCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpPatchCode.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpPatchCode.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="tlpPatchCode.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtPatchCode" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblPatchCode" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpMaxVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpMaxVersion.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpMaxVersion.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtMaxVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtMaxVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 3</value>
+  </data>
+  <data name="txtMaxVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="txtMaxVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtMaxVersion.Name" xml:space="preserve">
+    <value>txtMaxVersion</value>
+  </data>
+  <data name="&gt;&gt;txtMaxVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMaxVersion.Parent" xml:space="preserve">
+    <value>tlpMaxVersion</value>
+  </data>
+  <data name="&gt;&gt;txtMaxVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblMaxVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMaxVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblMaxVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 26</value>
+  </data>
+  <data name="lblMaxVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblMaxVersion.Text" xml:space="preserve">
+    <value>Maximum Version</value>
+  </data>
+  <data name="lblMaxVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblMaxVersion.Name" xml:space="preserve">
+    <value>lblMaxVersion</value>
+  </data>
+  <data name="&gt;&gt;lblMaxVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMaxVersion.Parent" xml:space="preserve">
+    <value>tlpMaxVersion</value>
+  </data>
+  <data name="&gt;&gt;lblMaxVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMaxVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMaxVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 556</value>
+  </data>
+  <data name="tlpMaxVersion.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpMaxVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpMaxVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpMaxVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpMaxVersion.Name" xml:space="preserve">
+    <value>tlpMaxVersion</value>
+  </data>
+  <data name="&gt;&gt;tlpMaxVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMaxVersion.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpMaxVersion.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="tlpMaxVersion.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtMaxVersion" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblMaxVersion" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="pnlFeatureCollection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlFeatureCollection.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="gceFeatureCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="gceFeatureCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 0</value>
+  </data>
+  <data name="gceFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 101</value>
+  </data>
+  <data name="gceFeatureCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gceFeatureCollection.Name" xml:space="preserve">
+    <value>gceFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;gceFeatureCollection.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gceFeatureCollection.Parent" xml:space="preserve">
+    <value>pnlFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;gceFeatureCollection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkFeatureCollection_requireAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 0</value>
+  </data>
+  <data name="chkFeatureCollection_requireAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 38</value>
+  </data>
+  <data name="chkFeatureCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkFeatureCollection_requireAll.Text" xml:space="preserve">
+    <value>All Features Required</value>
+  </data>
+  <data name="&gt;&gt;chkFeatureCollection_requireAll.Name" xml:space="preserve">
+    <value>chkFeatureCollection_requireAll</value>
+  </data>
+  <data name="&gt;&gt;chkFeatureCollection_requireAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkFeatureCollection_requireAll.Parent" xml:space="preserve">
+    <value>pnlFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;chkFeatureCollection_requireAll.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblFeatureCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="lblFeatureCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblFeatureCollection.Text" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="lblFeatureCollection.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFeatureCollection.Name" xml:space="preserve">
+    <value>lblFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;lblFeatureCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFeatureCollection.Parent" xml:space="preserve">
+    <value>pnlFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;lblFeatureCollection.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlFeatureCollection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlFeatureCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 840</value>
+  </data>
+  <data name="pnlFeatureCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 104</value>
+  </data>
+  <data name="pnlFeatureCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="pnlFeatureCollection.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlFeatureCollection.Name" xml:space="preserve">
+    <value>pnlFeatureCollection</value>
+  </data>
+  <data name="&gt;&gt;pnlFeatureCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlFeatureCollection.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;pnlFeatureCollection.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="pnlComponentCollection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlComponentCollection.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="gceComponentCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="gceComponentCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 0</value>
+  </data>
+  <data name="gceComponentCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 101</value>
+  </data>
+  <data name="gceComponentCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gceComponentCollection.Name" xml:space="preserve">
+    <value>gceComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;gceComponentCollection.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gceComponentCollection.Parent" xml:space="preserve">
+    <value>pnlComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;gceComponentCollection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkComponentCollection_requireAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 0</value>
+  </data>
+  <data name="chkComponentCollection_requireAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 38</value>
+  </data>
+  <data name="chkComponentCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkComponentCollection_requireAll.Text" xml:space="preserve">
+    <value>All Components Required</value>
+  </data>
+  <data name="&gt;&gt;chkComponentCollection_requireAll.Name" xml:space="preserve">
+    <value>chkComponentCollection_requireAll</value>
+  </data>
+  <data name="&gt;&gt;chkComponentCollection_requireAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkComponentCollection_requireAll.Parent" xml:space="preserve">
+    <value>pnlComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;chkComponentCollection_requireAll.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblComponentCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblComponentCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="lblComponentCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblComponentCollection.Text" xml:space="preserve">
+    <value>Components</value>
+  </data>
+  <data name="lblComponentCollection.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblComponentCollection.Name" xml:space="preserve">
+    <value>lblComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;lblComponentCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblComponentCollection.Parent" xml:space="preserve">
+    <value>pnlComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;lblComponentCollection.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlComponentCollection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlComponentCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 730</value>
+  </data>
+  <data name="pnlComponentCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 104</value>
+  </data>
+  <data name="pnlComponentCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="pnlComponentCollection.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlComponentCollection.Name" xml:space="preserve">
+    <value>pnlComponentCollection</value>
+  </data>
+  <data name="&gt;&gt;pnlComponentCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlComponentCollection.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;pnlComponentCollection.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="pnlProductCollection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlProductCollection.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="gceProductCollection.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5
+        c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAI
+        CAkCAAAAAAAAAAAAAAARAgAAAAAAAAAL
+</value>
+  </data>
+  <data name="gceProductCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 0</value>
+  </data>
+  <data name="gceProductCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 101</value>
+  </data>
+  <data name="gceProductCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gceProductCollection.Name" xml:space="preserve">
+    <value>gceProductCollection</value>
+  </data>
+  <data name="&gt;&gt;gceProductCollection.Type" xml:space="preserve">
+    <value>LocalUpdatePublisher.GuidCollectionEditor, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gceProductCollection.Parent" xml:space="preserve">
+    <value>pnlProductCollection</value>
+  </data>
+  <data name="&gt;&gt;gceProductCollection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkProductCollection_requireAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 0</value>
+  </data>
+  <data name="chkProductCollection_requireAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 38</value>
+  </data>
+  <data name="chkProductCollection_requireAll.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkProductCollection_requireAll.Text" xml:space="preserve">
+    <value>All Products Required</value>
+  </data>
+  <data name="&gt;&gt;chkProductCollection_requireAll.Name" xml:space="preserve">
+    <value>chkProductCollection_requireAll</value>
+  </data>
+  <data name="&gt;&gt;chkProductCollection_requireAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkProductCollection_requireAll.Parent" xml:space="preserve">
+    <value>pnlProductCollection</value>
+  </data>
+  <data name="&gt;&gt;chkProductCollection_requireAll.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblProductCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblProductCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="lblProductCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblProductCollection.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="lblProductCollection.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblProductCollection.Name" xml:space="preserve">
+    <value>lblProductCollection</value>
+  </data>
+  <data name="&gt;&gt;lblProductCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProductCollection.Parent" xml:space="preserve">
+    <value>pnlProductCollection</value>
+  </data>
+  <data name="&gt;&gt;lblProductCollection.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlProductCollection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlProductCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 620</value>
+  </data>
+  <data name="pnlProductCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 104</value>
+  </data>
+  <data name="pnlProductCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="pnlProductCollection.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlProductCollection.Name" xml:space="preserve">
+    <value>pnlProductCollection</value>
+  </data>
+  <data name="&gt;&gt;pnlProductCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlProductCollection.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;pnlProductCollection.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="tlpMinVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpMinVersion.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpMinVersion.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblMinVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMinVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblMinVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblMinVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 26</value>
+  </data>
+  <data name="lblMinVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblMinVersion.Text" xml:space="preserve">
+    <value>Minimum Version</value>
+  </data>
+  <data name="lblMinVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblMinVersion.Name" xml:space="preserve">
+    <value>lblMinVersion</value>
+  </data>
+  <data name="&gt;&gt;lblMinVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMinVersion.Parent" xml:space="preserve">
+    <value>tlpMinVersion</value>
+  </data>
+  <data name="&gt;&gt;lblMinVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtMinVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtMinVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 3</value>
+  </data>
+  <data name="txtMinVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtMinVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="txtMinVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtMinVersion.Name" xml:space="preserve">
+    <value>txtMinVersion</value>
+  </data>
+  <data name="&gt;&gt;txtMinVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMinVersion.Parent" xml:space="preserve">
+    <value>tlpMinVersion</value>
+  </data>
+  <data name="&gt;&gt;txtMinVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMinVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMinVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 588</value>
+  </data>
+  <data name="tlpMinVersion.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpMinVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpMinVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="tlpMinVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpMinVersion.Name" xml:space="preserve">
+    <value>tlpMinVersion</value>
+  </data>
+  <data name="&gt;&gt;tlpMinVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMinVersion.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpMinVersion.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="tlpMinVersion.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblMinVersion" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMinVersion" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpQuery.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpQuery.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpQuery.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtQuery.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 3</value>
+  </data>
+  <data name="txtQuery.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 20, 3</value>
+  </data>
+  <data name="txtQuery.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>589, 20</value>
+  </data>
+  <data name="txtQuery.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtQuery.Name" xml:space="preserve">
+    <value>txtQuery</value>
+  </data>
+  <data name="&gt;&gt;txtQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtQuery.Parent" xml:space="preserve">
+    <value>tlpQuery</value>
+  </data>
+  <data name="&gt;&gt;txtQuery.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblQuery.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQuery.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 26</value>
+  </data>
+  <data name="lblQuery.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblQuery.Text" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="lblQuery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;lblQuery.Name" xml:space="preserve">
+    <value>lblQuery</value>
+  </data>
+  <data name="&gt;&gt;lblQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQuery.Parent" xml:space="preserve">
+    <value>tlpQuery</value>
+  </data>
+  <data name="&gt;&gt;lblQuery.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpQuery.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 460</value>
+  </data>
+  <data name="tlpQuery.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 26</value>
+  </data>
+  <data name="tlpQuery.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="tlpQuery.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tlpQuery.Name" xml:space="preserve">
+    <value>tlpQuery</value>
+  </data>
+  <data name="&gt;&gt;tlpQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpQuery.Parent" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpQuery.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="tlpQuery.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtQuery" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblQuery" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tlpRules.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpRules.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="tlpRules.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpRules.RowCount" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="tlpRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 947</value>
+  </data>
+  <data name="tlpRules.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="&gt;&gt;tlpRules.Name" xml:space="preserve">
+    <value>tlpRules</value>
+  </data>
+  <data name="&gt;&gt;tlpRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpRules.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpRules.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpRules.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpComparison" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpOSVersion" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpServicePack" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpProductType" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpLanguage" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpProcessorType" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpRegistryKey" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpRegistryValue" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpRegistryValueType" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpEnvironmentVariable" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpFilePath" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpVersion" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpData" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpDate" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpProductCode" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpPatchCode" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpMaxVersion" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlFeatureCollection" Row="21" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlComponentCollection" Row="20" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlProductCollection" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpMinVersion" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpQuery" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="errorProviderRules.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, -2</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>588, 1005</value>
+  </data>
+  <data name="tlpMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tlpMain.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpMain.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>588, 1005</value>
+  </data>
+  <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Name" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tlpHeader" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpFooter" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpRules" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
+        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
+        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
+        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
+        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
+        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
+        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
+        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
+        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
+        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
+        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
+        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
+        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Create Rule</value>
+  </data>
+  <data name="&gt;&gt;errorProviderRules.Name" xml:space="preserve">
+    <value>errorProviderRules</value>
+  </data>
+  <data name="&gt;&gt;errorProviderRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RulesForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
