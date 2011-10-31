@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text">
+    <value>关于</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerListRefresh.Text">
+    <value>刷新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnComputerRefreshReport.Text">
+    <value>刷新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateRefreshReport.Text">
+    <value>刷新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="certificateInfoToolStripMenuItem.Text">
+    <value>证书信息</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkApprovedOnly.Text">
+    <value>已批准的更新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkInheritApprovals.Text">
+    <value>继承认证</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="connectionSettingsToolStripMenuItem.Text">
+    <value>连接设置</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="createUpdateToolStripMenuItem.Text">
+    <value>创建更新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportCatalogToolStripMenuItem.Text">
+    <value>出口产品目录</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportListToolStripMenuItem.Text">
+    <value>导出列表</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportReportToolStripMenuItem.Text">
+    <value>导出报告</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportRulesToolStripMenuItem.Text">
+    <value>出口规则</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exportUpdateToolStripMenuItem.Text">
+    <value>出口更新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="fileToolStripMenuItem.Text">
+    <value>文件</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpForumsToolStripMenuItem.Text">
+    <value>帮助论坛</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="helpToolStripMenuItem.Text">
+    <value>帮助</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importCatalogToolStripMenuItem.Text">
+    <value>进口商品目录</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importRulesToolStripMenuItem.Text">
+    <value>导入规则</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="importUpdateToolStripMenuItem.Text">
+    <value>导入更新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>文章编号</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>公告ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>分类</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerGroup.Text">
+    <value>计算机集团</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerStatus.Text">
+    <value>状态</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComputerUpdateStatus.Text">
+    <value>更新状态</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>说明</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblID.Text">
+    <value>包ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>语言</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>更多信息网址</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>需要网络</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>包标题</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>封装类型</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>先决条件</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>产品</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>重新启动行为</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>返回代码</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroup.Text">
+    <value>选定的目标组</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSelectedTargetGroupCount.Text">
+    <value>（电脑显示）</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>严重性</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>取代</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>卸载</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateNoStatus.Text">
+    <value>没有状态的更新：</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateStatus.Text">
+    <value>更新状态</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesInstalledorNA.Text">
+    <value>更新安装/不适用：</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesNeeded.Text">
+    <value>更新所需的：</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdatesWErrors.Text">
+    <value>更新错误：</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>供应商</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lupHelpToolStripMenuItem.Text">
+    <value>支持的Wiki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="manageRulesToolStripMenuItem.Text">
+    <value>管理规则“</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="savedRulesToolStripMenuItem.Text">
+    <value>保存规则</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="settingsToolStripMenuItem.Text">
+    <value>设置</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerReport.Text">
+    <value>报告</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabComputerStatus.Text">
+    <value>组状态</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateReport.Text">
+    <value>报告</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="tabUpdateStatus.Text">
+    <value>状态</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="toolsToolStripMenuItem.Text">
+    <value>工具</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updateToolStripMenuItem.Text">
+    <value>更新</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

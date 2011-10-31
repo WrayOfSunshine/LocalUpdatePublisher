@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action">
+    <value>Action</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Godkendelse Action</value>
+  </data>
+  <data name="CSID">
+    <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Cancelled">
+    <value>Aflyste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Gruppe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Oprettelsesdato</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="DWORD_value">
+    <value>DWORD-værdi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Deadline</value>
+  </data>
+  <data name="Description">
+    <value>Beskrivelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_Instructions">
+    <value>Brug denne formular til at oprette, redigere, fjernesamt gruppe-regler, der bestemmer, om denne software-pakke kan installeres. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, vil du se de automatisk genererede regler på installations-niveau. Som standard er reglerne i en "AND" gruppe.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Pakkeniveau - Installerbare regler</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installation på Objekt niveau</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Brug denne formular til at oprette, redigere, fjerne samt gruppe-regler, der bestemmer, om denne software-pakke allerede er installeret. Hvis du har oprettet denne opdatering ved hjælp af en MSI-eller MSP-fil, vil du se de automatisk genererede regler på installations-niveau. Som standard er reglerne i en "AND" gruppe.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Pakke-niveau - Installerede regler</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installation på Objekt niveau</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Godkendt til Valgfri Installer</value>
+  </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
+  <data name="Result">
+    <value>Resultat</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Returkode</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Opret regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Rediger Regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Succes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Målgruppe</value>
+  </data>
+  <data name="add_new_server">
+    <value>Tilføj ny server</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_rule">
+    <value>Tilføj regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all">
+    <value>Alle</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all_required">
+    <value>Alle kræves</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="and">
+    <value>OG</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="any">
+    <value>Enhver</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="application">
+    <value>Applikation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approval">
+    <value>Godkendelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approve">
+    <value>Godkend</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved">
+    <value>Godkendt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved_for_install">
+    <value>Godkendt til Installering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="begins_with">
+    <value>Begynder med</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="build_number">
+    <value>Build-nummer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="cancel">
+    <value>Annuller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="clear_selection">
+    <value>Ryd markering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="close">
+    <value>Luk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="comparison">
+    <value>Sammenligning</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="component_codes">
+    <value>Komponent Koder</value>
+  </data>
+  <data name="components">
+    <value>Komponenter</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computer_name">
+    <value>Computer Navn</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers">
+    <value>Computere</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers_shown">
+    <value>{0} computere vist</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="contains">
+    <value>Indeholder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="create_rule">
+    <value>Opret regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="created">
+    <value>Oprettet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="creation_date">
+    <value>Oprettelsesdato</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="custom_GUID">
+    <value>Tilpasset GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="data">
+    <value>Data</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="date">
+    <value>Dato</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="decline">
+    <value>Afvis</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined">
+    <value>Afvist</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined_expired">
+    <value>Afvist (Udløbet)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="delete">
+    <value>Slet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="domain_controller">
+    <value>Domain Controller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="downloaded">
+    <value>Downloadet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="driver">
+    <value>Driver</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="edit">
+    <value>Rediger</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ends_with">
+    <value>Slutter med</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="equal_to">
+    <value>Svarende til</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Denne opdatering kan ikke afinstalleres.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>Du kan ikke afinstallere multiple opdateringer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>Du kan ikke importere et certifikat, medmindre du er tilsluttet korrekt til WSUS-serveren med SSL.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_arguments">
+    <value>Ikke nok argumenter for at generere rapporten</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_connect">
+    <value>Kunne ikke forbinde til {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_computer">
+    <value>Kunne ikke finde {0} computer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_group">
+    <value>Kunne ikke finde {0} gruppe.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_update">
+    <value>Kunne ikke finde {0} opdatering.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_unknown">
+    <value>Ukendt Kommando</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Der opstod en fejl under oprettelse af certifikatet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect">
+    <value>Kunne ikke oprette forbindelse til serveren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>Din servernavn er ikke korrekt formateret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>Du har ikke tilladelse at oprette forbindelse til WSUS-serveren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>Kan ikke kopiere bibliotek</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_download">
+    <value>Kunne ikke hente {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>Kunne ikke eksportere SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>Kunne ikke få SDP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>Pakken kunne ikke udgives.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Denne fil indeholder ikke en XML-fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Denne fil indeholder ikke en CAB-fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>Der er ingen attest på {0}. Indtil du opretter eller importere et certifikat, vil du ikke være i stand til at udgive opdateringer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_none">
+    <value>Du er ikke forbundet til en WSUS server.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Denne opdatering kan ikke eksporteres, fordi en Original URL ikke er indtastet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Nogle pakker kunne ikke tilføjes, da en Original URL ikke blev indtastet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>Du skal eksportere til en cab-fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_update_data">
+    <value>Pakkens indhold eksisterer ikke i UpdateServicesPackages mappen. Den kan ikke eksporteres.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>Ingen XML-fil blev fundet i denne Cabinet fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_package_resigned">
+    <value>Pakken kunne ikke blive re-signeret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_expired">
+    <value>Ikke alle pakker blev med held sat til udløbet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_resigned">
+    <value>Ikke alle pakker blev signeret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_result_code_empty">
+    <value>Resultatet må ikke være tomt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>Returkode må ikke være tom.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Denne række returnerede ikke et gyldigt UpdateID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>Kunne ikke importere regel fil til regel-samlingen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>Kunne ikke importere regel fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>Import filen eksisterer ikke.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>Kunne ikke tilføje / fjerne gruppen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_load">
+    <value>Reglerne kunne ikke indlæses.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Denne regel er ikke genkendt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Denne regel er ikke understøttet endnu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>Du har ikke valgt nogen regler til eksport.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_server_disconnected">
+    <value>Serveren er ikke tilsluttet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Skal være en enum.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>Kunne ikke oprette Software Distribution pakke.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_imported">
+    <value>Opdateringen blev ikke importeret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>XML for SDP er ugyldig.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_save">
+    <value>Kunne ikke gemme opdaterings oplysningerne.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception">
+    <value>Undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_IO">
+    <value>IO undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument">
+    <value>Argument undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_null">
+    <value>Argument Null-undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Mappe ikke fundet undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Fil ikke fundet undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Ugyldig data-undtagelser</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Ugyldig undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_not_supported">
+    <value>Ikke-understøttet undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Objekt Afgivet undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Out Of Memory undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_path_too_long">
+    <value>For lang sti undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_security">
+    <value>Sikkerhedsundtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Uautoriseret adgangs-undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_web">
+    <value>Web undtagelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>WSUS Ugyldig Server Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>WsusObjectNotFoundException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="expire">
+    <value>Udløb</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export">
+    <value>Eksport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export_certificate">
+    <value>Eksporter certifikat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed">
+    <value>Mislykkedes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed_or_needed">
+    <value>Mislykket eller krævet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="false">
+    <value>Falsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Feature Navne</value>
+  </data>
+  <data name="features">
+    <value>Funktioner</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_cab">
+    <value>CAB-filer|*. cab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Update-filer (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI-filer (*.MSI)|*.MSI|MSP-filer (*.MSP)|*.MSP|EXE-filer (*.EXE)|*.EXE</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_xml">
+    <value>XML-filer|*.xml</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="finish">
+    <value>Færdig</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than">
+    <value>Større end</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Større end eller lig med</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group">
+    <value>Gruppe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_and">
+    <value>Start og</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_or">
+    <value>Start eller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_and">
+    <value>Slut og</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_or">
+    <value>Slut eller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_name">
+    <value>Gruppenavn</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_and">
+    <value>Fjern og</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_or">
+    <value>Fjern eller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="history_for">
+    <value>Historik for</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import">
+    <value>Import</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import_certificate">
+    <value>Importer Certifikat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="in_bytes_example">
+    <value>i bytes (ex. 1024)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="inherited">
+    <value>arvet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed">
+    <value>Installeret</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Installeret / Ikke relevant</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Installeret / ikke relevant eller ingen status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ip_address">
+    <value>IP-adresse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form">
+    <value>Vælg godkendelser for {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Vælg godkendelser for {0} opdateringer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Angiv godkendelser for {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Angiv godkendelser for {0} til {1} ​​på {2}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>Nedenfor finder du oplysninger om certifikatet som er installeret på din WSUS-serveren. Dette certifikat skal fordeles til hver kunde, før de kan modtage opdateringer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Et certifikat er ikke blevet oprettet endnu. Du skal gøre dette inden offentliggørelse af opdateringer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Et certifikat er allerede oprettet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>WMI Namespace</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language">
+    <value>Sprog</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_arabic">
+    <value>Arabisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Kinesisk (Hong Kong SAR)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Kinesisk (forenklet)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Kinesisk (traditionelt)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_czech">
+    <value>Tjekkisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_danish">
+    <value>Dansk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_dutch">
+    <value>Hollandsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_english">
+    <value>Engelsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_finnish">
+    <value>Finsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_french">
+    <value>Fransk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_german">
+    <value>Tysk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_greek">
+    <value>Græsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hebrew">
+    <value>Hebraisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hungarian">
+    <value>Ungarsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_italian">
+    <value>Italiensk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_japanese">
+    <value>Japansk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_korean">
+    <value>Koreansk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_norwegian">
+    <value>Norsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_polish">
+    <value>Polsk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese">
+    <value>Portugisisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portugisisk (Brasilien)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_russian">
+    <value>Russisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_spanish">
+    <value>Spansk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_swedish">
+    <value>Svensk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_turkish">
+    <value>Tyrkisk</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_status_report">
+    <value>Sidste statusrapport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_updated">
+    <value>Sidst opdateret</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than">
+    <value>Mindre end</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Mindre end eller lig med</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="load">
+    <value>Indlæs</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified">
+    <value>Modificerede</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified_date">
+    <value>Modificeret Dato</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="needed">
+    <value>Krævet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="next">
+    <value>Næste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_approval">
+    <value>Ingen Godkendelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_status">
+    <value>Ingen Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="none">
+    <value>Ingen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_applicable">
+    <value>Ikke relevant</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_approved">
+    <value>Ikke godkendt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_installed">
+    <value>Ikke installeret</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="operating_system">
+    <value>Operativsystem</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="or">
+    <value>ELLER</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="patch_code">
+    <value>PatchCode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="path">
+    <value>Sti</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_code">
+    <value>Product kode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Produkt Koder</value>
+  </data>
+  <data name="product_type">
+    <value>Produkt Type</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="products">
+    <value>Produkter</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Vil du gøre det nu?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Vent venligst, mens opdateringen bliver udgivet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Vent venligst, mens opdateringen bliver revideret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Ønsker du at afvise {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Ønsker du at afvise disse {0} opdateringer?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Ønsker du at sætte disse til udløbet {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Ønsker du at sætte disse {0} opdateringer til udløbet?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Ønsker du at fjerne {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Ønsker du at fjerne disse {0} opdateringer?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Ønsker du at re-signere {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Ønsker du at re-signere disse {0} opdateringer?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Er du sikker på du vil slette denne regel?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Slet regel?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Navngiv den nye regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Navngiv Regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Skift {0} for at</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>Der er allerede en regel kaldt {0}. Hvad vil du gøre?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Er du sikker på du vil slette de valgte regler?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Hvis du ændrer den oprindelige URL, skal det hentes til kontrol. Ønsker du at fortsætte?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Indtast den GUID du gerne vil bruge</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Tilpasset GUID angivelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="query">
+    <value>Forespørgsel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Opdaterer computer liste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Opdaterer liste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove">
+    <value>Fjern</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove_group">
+    <value>Fjern gruppe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename">
+    <value>Omdøb</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename_rule">
+    <value>Omdøb regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="resign">
+    <value>Re-signer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="revise">
+    <value>Revider</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_component">
+    <value>MSI Komponent er installeret for produktet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>MSI Feature installeret for produktet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>MSI patch er installeret for produktet</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_product">
+    <value>MSI Produkt installeret</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_WMI_query">
+    <value>WMI forespørgsel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation">
+    <value>Filoprettelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>Filoprettelse Med Registreringsdatabase</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists">
+    <value>Filen eksisterer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>Filen eksisterer Med Registreringsdatabase</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified">
+    <value>Fil rette</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>Fil rettet med registreringsdatabase</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size">
+    <value>Filstørrelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Filstørrelse Med Registreringsdatabase</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version">
+    <value>Fil Version</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>Fil Version Med Registreringsdatabase</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Processor Arkitektur</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Registreringsdatabase DWORD-værdi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Registreringsdatabase SZ Value</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Registreringsdatabase Udvid SZ Værdi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>Registreringsdatabse-nøgle findes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>Registreringsdatabase-Værdi eksisterer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Registreringsdatabase Version i SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_language">
+    <value>Windows Sprog</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_version">
+    <value>Windows version</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="save_rule">
+    <value>Gem Regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Vælg Regler til Eksport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Vælg Regler tilr Import</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Vælg Regler for indlæsning</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Vælg Regler til Administrering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="server">
+    <value>Server</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="size">
+    <value>Størrelse</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="skip">
+    <value>Spring</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status">
+    <value>Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Downloader filer for {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Indlæser computerrapport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_form">
+    <value>Indlæser formular</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Indlæser opdateringsrapport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connected">
+    <value>Forbundet til {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connecting">
+    <value>Tilslutter til {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="string">
+    <value>Streng</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success">
+    <value>Succes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>En selvsigneret certifikat er blevet oprettet. Dette certifikat skal nu distribueres til hver enkelt klient i henhold Microsofts Local Publishing dokumentation.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>Dit certifikat blev importeret. Dette certifikat skal nu distribueres til hver enkelt klient efter Microsoft's Local Publishing dokumentation.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_expired">
+    <value>Pakker med succes sat til udløbet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Pakker er signeret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_update_imported">
+    <value>Opdateringen blev succesfuldt importeret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="superseded">
+    <value>Overflødiggjort</value>
+  </data>
+  <data name="title">
+    <value>Titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="true">
+    <value>Sand</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="uninstall">
+    <value>Afinstaller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="unknown">
+    <value>Ukendt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update">
+    <value>Opdater</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_services">
+    <value>Update Services</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_title">
+    <value>Opdater Titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updates">
+    <value>Opdateringer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value">
+    <value>Værdi</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value_type">
+    <value>ValueType</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>Kunne ikke tilføje eller finde GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Et certifikat eksisterer allerede.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>Certifikatet kunne ikke importeres. Du skal angive både et certifikat fil og en adgangskode for at bruge et eksisterende certifikat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>WSUS certifikat ikke fundet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} synes udelukkende at være en metadata opdatering. I øjeblikket kan disse ikke sættes til udløbet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Ingen markeret række</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_value">
+    <value>Du skal indtaste en værdi.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>Du kan ikke forhindre installation for alle computere gruppen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_options_restart">
+    <value>Du skal genstarte LUP før ændringen træder i kraft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Der var et problem at slette pakkens indhold fra UpdateServicesPackages. Brug denne UpdateID til at gøre det manuelt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} synes udelukkende at være en metadata opdatering. I øjeblikket kan disse ikke re-signeres.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} synes udelukkende at være en metadata opdatering. I øjeblikket kan disse ikke re-signeres. I øjeblikket kan disse ikke ændres.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_packages">
+    <value>Du kan ikke ændre flere opdateringer på samme tid.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Der var et problem at kontrollere for pakkens indhold fra UpdateServicesPackages. Denne opdatering kan ikke ændres.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>Du skal angive en gyldig GUID.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_OS">
+    <value>Du skal indtaste en større og mindre OS version.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>Du skal vælge en sammenligning.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_date">
+    <value>Du skal vælge en dato.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Denne regel findes allerede.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>Du skal indtaste en filsti.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Skal indtaste filstørrelse.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_language">
+    <value>Du skal vælge et sprog.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Skal indtaste en værdi for namespace.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_processor">
+    <value>Du skal vælge en processor type.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_query">
+    <value>Du skal indtaste en forespørgsel.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>Du skal vælge en værdi for nøgle i registreringsdatabasen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Du skal angive en værdi for registreringsdatabasens sub nøgle.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>Du skal vælge en værdi for registreringsdatabasens type.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Skal indtaste værdi til registreringsdatabasen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_version">
+    <value>Du skal indtaste en version.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>Du skal vælge poster til sletning.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>Du har ikke valgt nogen regler til eksport.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_select_file">
+    <value>Vælg en fil.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>Kan ikke udgive URI når ekstra filer er inkluderet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>Filnavn passer ikke.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>Ugyldig URI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Rediger denne XML på egen risiko.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>Du kan ikke udgive en opdatering kun med metadata, og samtidig tilføje yderligere filer.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>Ingen URI angivet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>Pakken blev ikke udgivet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Pakken er blevet udgivet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Pakke med succes revideret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>Pakken blev ikke revideret.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_vendor">
+    <value>Udgiveren kan ikke være Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="workstation">
+    <value>Arbejdsstation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

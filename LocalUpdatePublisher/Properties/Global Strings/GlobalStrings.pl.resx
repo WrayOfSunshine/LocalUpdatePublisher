@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action">
+    <value>Działanie</value>
+  </data>
+  <data name="ApprovalAction">
+    <value>Action Zatwierdzenie</value>
+  </data>
+  <data name="CSID">
+    <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Cancelled">
+    <value>Odwołany</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Data utworzenia</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="DWORD_value">
+    <value>Wartość DWORD</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Ostateczny termin</value>
+  </data>
+  <data name="Description">
+    <value>Opis</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_Instructions">
+    <value>Użyj tego formularza, aby tworzyć, edytować, usuwać i zasad grupy, które określają, czy to oprogramowanie może być zainstalowane. Jeśli utworzono tej aktualizacji za pomocą pliku MSI lub MSP pojawi się automatycznie generowane reguły na poziomie pozycji do zainstalowania. Domyślnie zasady są w I grupie.</value>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Poziom pakietu - Regulamin Installable</value>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Na poziomie elementu instalacji</value>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Użyj tego formularza, aby tworzyć, edytować, usuwać i zasad grupy, które określają, czy to oprogramowanie jest już zainstalowane. Jeśli utworzono tej aktualizacji za pomocą pliku MSI lub MSP pojawi się automatycznie generowane reguły na poziomie pozycji do zainstalowania. Domyślnie zasady są w I grupie.</value>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Poziom pakietu - Zainstalowane regulaminu</value>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Na poziomie elementu instalacji</value>
+  </data>
+  <data name="OptionalInstall">
+    <value>Zatwierdzony do Opcjonalnie Zainstaluj</value>
+  </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
+  <data name="Result">
+    <value>Wynik</value>
+  </data>
+  <data name="ReturnCode">
+    <value>Return Code</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Utwórz regułę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Edytuj regułę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Następca</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Grupa docelowa</value>
+  </data>
+  <data name="add_new_server">
+    <value>Dodaj nowy serwer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_rule">
+    <value>Dodaj Artykuł</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all">
+    <value>Wszystkie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all_required">
+    <value>wszystkich wymaganych</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="and">
+    <value>I</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="any">
+    <value>Wszelkie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="application">
+    <value>Zastosowanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approval">
+    <value>Zatwierdzenie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approve">
+    <value>Zatwierdzenie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved">
+    <value>Zatwierdzony</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved_for_install">
+    <value>Dopuszczone do instalacji</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="begins_with">
+    <value>Z Begins</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="build_number">
+    <value>Numer kompilacji</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="cancel">
+    <value>Anuluj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="clear_selection">
+    <value>Wyczyść zaznaczenie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="close">
+    <value>Zamknij</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="comparison">
+    <value>Porównanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="component_codes">
+    <value>Kody składnik</value>
+  </data>
+  <data name="components">
+    <value>Components</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computer_name">
+    <value>Nazwa komputera</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers">
+    <value>Komputery</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers_shown">
+    <value>{0} komputery pokazano</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="contains">
+    <value>Zawiera</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="create_rule">
+    <value>Utwórz regułę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="created">
+    <value>Wykonawca</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="creation_date">
+    <value>Data utworzenia</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="custom_GUID">
+    <value>Custom GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="data">
+    <value>Dane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="date">
+    <value>Data</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="decline">
+    <value>Spadek</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined">
+    <value>Odrzucona</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined_expired">
+    <value>Odrzucona (wygasł)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="delete">
+    <value>Usuń</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="domain_controller">
+    <value>Domain Controller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="downloaded">
+    <value>Pobrane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="driver">
+    <value>Sterownik</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="edit">
+    <value>Edytuj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ends_with">
+    <value>Kończy Z</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="equal_to">
+    <value>Równe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Tej aktualizacji nie można odinstalować.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>Nie można odinstalować wielu aktualizacji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>Nie można zaimportować certyfikat, chyba że jesteś podłączony do serwera WSUS przy użyciu protokołu SSL.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_arguments">
+    <value>Za mało argumentów, aby wygenerować raport</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_connect">
+    <value>Nie można połączyć się {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_computer">
+    <value>Nie znaleziono {0} docelowego komputera.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_group">
+    <value>Nie znaleziono {0} grupy.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_update">
+    <value>Nie znaleziono {0} aktualizacji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_unknown">
+    <value>Command: nie wiadomo</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Wystąpił błąd przy tworzeniu świadectwa.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect">
+    <value>Nie udało się połączyć z serwerem.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>Twoje nazwa_serwera nie jest prawidłowo sformatowany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>Nie masz uprawnień, aby połączyć się z serwerem WSUS.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>Nie można skopiować katalogu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_download">
+    <value>Nie można pobrać {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>Nie można wywóz SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>Nie udało się uzyskać SDP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>Pakiet nie może zostać opublikowane.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Ten plik nie zawiera plik XML.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Ten plik nie zawiera pliku CAB.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>Nie ma certyfikatu na {0}. Do tworzenia lub importowania certyfikatu nie będą mogli publikować aktualizacje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_none">
+    <value>Nie jesteś podłączony do serwera WSUS.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Ta aktualizacja nie może być eksportowane, ponieważ URL nie zostaną wpisane.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Niektóre z pakietów nie można dodać ponieważ URL nie został wprowadzony.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>Musisz eksport do pliku CAB.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_update_data">
+    <value>Zawartość pakietu nie ma w folderze UpdateServicesPackages. To nie mogą być wywożone.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>Brak pliku XML został znaleziony w pliku Cabinet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_package_resigned">
+    <value>Pakiet nie może być ponownie podpisany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_expired">
+    <value>Nie wszystkie pakiety zostały pomyślnie wygasła.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_resigned">
+    <value>Nie wszystkie pakiety zostały pomyślnie ponownie podpisany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_result_code_empty">
+    <value>Wynik nie musi być pusty.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>Kod zwrotny nie musi być pusty.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Ten wiersz nie wrócił ważnych UpdateID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>Nie można oddać plik reguł przywozu do państwa kolekcji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>Nie można zaimportować pliku reguły.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>Import plików nie istnieje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>Nie można dodać / usunąć grupy.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_load">
+    <value>Zasady nie może być załadowany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Zasada ta nie jest uznawana.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Tego rodzaju reguły nie jest jeszcze obsługiwany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>Nie wybrano żadnych zasad na eksport.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_server_disconnected">
+    <value>Serwer nie jest podłączony.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Musi być numerator.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>Nie można utworzyć Software Distribution Package.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_imported">
+    <value>Aktualizacja nie został zaimportowany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>XML dla SDP jest nieprawidłowy.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_save">
+    <value>Nie można zapisać informacje o aktualizacji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception">
+    <value>Wyjątkiem</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_IO">
+    <value>Wyjątek IO</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument">
+    <value>Argument Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_null">
+    <value>Wyjątek zerowego argumentu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Nie znaleziono katalogu wyjątków</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Nie znaleziono pliku Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Nieprawidłowe dane Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Wyjątek Nieprawidłowa operacja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_not_supported">
+    <value>Wyjątek Nieobsługiwane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Obiekt Unieszkodliwiane Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Out Of Memory Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_path_too_long">
+    <value>Path Too Long Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_security">
+    <value>Wyjątek zabezpieczeń</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Wyjątek nieautoryzowanym dostępem</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_web">
+    <value>Wyjątek sieci</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>Nieprawidłowy WSUS Server Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>WsusObjectNotFoundException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="expire">
+    <value>Wygaśnięcie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export">
+    <value>Export</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export_certificate">
+    <value>Świadectwa wywozowego</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed">
+    <value>Nie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed_or_needed">
+    <value>Nie lub potrzebne</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="false">
+    <value>Fałszywy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Nazwy funkcji</value>
+  </data>
+  <data name="features">
+    <value>Opis</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_cab">
+    <value>CAB Files|*.cab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Aktualizacja plików (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI Files (*.MSI)|*.MSI|MSP Files (*.MSP)|*.MSP|EXE (*.EXE)|*.EXE</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_xml">
+    <value>Pliki XML|*.xml</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="finish">
+    <value>Wykończenie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than">
+    <value>Większe niż</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Większe lub równe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group">
+    <value>Grupa</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_and">
+    <value>I Begin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_or">
+    <value>Rozpoczęcie lub</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_and">
+    <value>Zakończenia I</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_or">
+    <value>Końcowego lub</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_name">
+    <value>Nazwa grupy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_and">
+    <value>Usuń i</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_or">
+    <value>Usuń lub</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="history_for">
+    <value>Historia dla</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import">
+    <value>Import</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import_certificate">
+    <value>Import Cert</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="in_bytes_example">
+    <value>w bajtach (np. 1024)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="inherited">
+    <value>dziedziczone</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed">
+    <value>Zainstalowana</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Zainstalowane / Nie dotyczy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Zainstalowane / Nie dotyczy lub nr Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ip_address">
+    <value>Adres IP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form">
+    <value>Wybierz homologacji dla {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Wybierz homologacji dla {0} aktualizacji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Aprobat dla {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Otoczenie homologacji dla {0} {1} na {2}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>Poniżej znajdą Państwo informacje dotyczące certyfikatu zainstalowanego na serwerze WSUS. Świadectwo to musi być dystrybuowane do każdego klienta, zanim będą mogły otrzymać lokalnie opublikowane aktualizacje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Certyfikat nie został jeszcze utworzony. Musisz to zrobić przed aktualizacjach publikacji.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Certyfikat został już utworzony.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>Przestrzeń nazw WMI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language">
+    <value>Język</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_arabic">
+    <value>Arabski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Chiński (Hongkong SAR)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Chiński (uproszczony)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Chiński (tradycyjny)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_czech">
+    <value>Czech</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_danish">
+    <value>Duński</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_dutch">
+    <value>Holenderski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_english">
+    <value>Angielski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_finnish">
+    <value>Fiński</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_french">
+    <value>Francuski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_german">
+    <value>Niemiecki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_greek">
+    <value>Grecki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hebrew">
+    <value>Hebrajski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hungarian">
+    <value>Węgierski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_italian">
+    <value>Włoski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_japanese">
+    <value>Japoński</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_korean">
+    <value>Koreański</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_norwegian">
+    <value>Norwegian</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_polish">
+    <value>Polska</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese">
+    <value>Portugalski</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portugalski (Brazylia)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_russian">
+    <value>Rosyjska</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_spanish">
+    <value>Hiszpański</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_swedish">
+    <value>Szwedzki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_turkish">
+    <value>Turecki</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_status_report">
+    <value>Ostatnie Raport o stanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_updated">
+    <value>Zmieniony</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than">
+    <value>Less Than</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Mniejsze lub równe</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="load">
+    <value>Obciążenia</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified">
+    <value>Ostatnia aktualizacja</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified_date">
+    <value>Data modyfikacji</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="needed">
+    <value>Potrzebny</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="next">
+    <value>Następna</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_approval">
+    <value>Brak zgody</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_status">
+    <value>Nr Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="none">
+    <value>Brak</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_applicable">
+    <value>Nie dotyczy</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_approved">
+    <value>Niezatwierdzona</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_installed">
+    <value>Nie zainstalowany</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="operating_system">
+    <value>System operacyjny</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="or">
+    <value>OR</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="patch_code">
+    <value>PatchCode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="path">
+    <value>Ścieżka</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_code">
+    <value>Product Code</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Kody produktów</value>
+  </data>
+  <data name="product_type">
+    <value>Rodzaj produktu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="products">
+    <value>Produkty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Chcesz zrobić to teraz?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Poczekaj, aż aktualizacja zostanie ogłoszony.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Poczekaj, aż aktualizacja zostanie zmienione.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Czy chcesz spadek {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Czy chcesz spadek tych {0} aktualizacji?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Czy chcesz wygasa {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Czy chcesz wygasa {0} te aktualizacje?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Czy chcesz usunąć {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Czy chcesz usunąć te {0} aktualizacji?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Czy chcesz ponownie podpisać {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Czy chcesz ponownie podpisać {0} aktualizacji?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Czy na pewno chcesz usunąć tę regułę?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Usuń regułę?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Nazwa nowej reguły</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Rule Name</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Zmiana {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>Jest już regułę o nazwie {0}. Co chcesz robić?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Czy na pewno chcesz usunąć wybrane przepisy?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Jeśli zmiany URL, należy pobrać w celu weryfikacji. Czy chcesz kontynuować?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Wpisz GUID chcieliby Państwo korzystać</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Wejście Custom GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="query">
+    <value>Zapytanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Odświeżanie listy komputerów</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Aktualizuj listę Odświeżanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove">
+    <value>Usuń</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove_group">
+    <value>Usuń grupę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename">
+    <value>Zmień nazwę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename_rule">
+    <value>Zmień reguły</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="resign">
+    <value>Re-sign</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="revise">
+    <value>Zrewidować</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_component">
+    <value>Component zainstalowanych dla produktów MSI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>Reportaż zainstalowanych dla produktów MSI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>Patch dla produktów MSI zainstalowana</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_product">
+    <value>Produkt MSI zainstalowana</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_WMI_query">
+    <value>WMI Query</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation">
+    <value>Plik Creation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>Tworzenie pliku z rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists">
+    <value>Plik istnieje</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>Plik istnieje z rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified">
+    <value>Plik zmodyfikowany</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>Plik zmodyfikowany Z rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size">
+    <value>Rozmiar pliku</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Rozmiar Z rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version">
+    <value>Wersja pliku</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>Wersja pliku Z rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Architektura procesora</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Wartości DWORD rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Wartość Rejestru SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Rejestr Rozwiń jakości SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>Klucza w rejestrze</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>Wartość w rejestrze</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Wersja rejestru w SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_language">
+    <value>Windows Language</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_version">
+    <value>Wersja Windows</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="save_rule">
+    <value>Zapisz art.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Zasady Wybierz polecenie Eksportuj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Wybierz polecenie Importuj regulaminu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Zasady Wybierz Load</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Wybierz polecenie Zarządzaj regulaminu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="server">
+    <value>Server</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="size">
+    <value>Rozmiar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="skip">
+    <value>Przejdź</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status">
+    <value>Status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Pobieranie plików dla {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Trwa sprawozdanie komputera</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_form">
+    <value>Trwa formie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Trwa aktualizacja raportu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connected">
+    <value>Podłączony do {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connecting">
+    <value>Łączenie się z {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="string">
+    <value>String</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success">
+    <value>Sukces</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>Certyfikat z podpisem własnym zostało stworzone. Świadectwo to musi teraz być rozprowadzane do każdego klienta zgodnie z dokumentacją Publsihing lokalnych Microsoftu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>Certyfikat został zaimportowany. Świadectwo to musi teraz być rozprowadzane do każdego klienta zgodnie z dokumentacją Publsihing lokalnych Microsoftu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_expired">
+    <value>Opakowania z powodzeniem wygasła.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Opakowania z powodzeniem ponownie podpisany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_update_imported">
+    <value>Zaktualizowany został pomyślnie zaimportowany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="superseded">
+    <value>Zastąpiony</value>
+  </data>
+  <data name="title">
+    <value>Tytuł</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="true">
+    <value>True</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="uninstall">
+    <value>Odinstaluj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="unknown">
+    <value>Nieznany</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update">
+    <value>Update</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_services">
+    <value>Update Services</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_title">
+    <value>Zaktualizowany tytuł</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updates">
+    <value>Aktualizacje</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value">
+    <value>Stosunek jakości</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value_type">
+    <value>ValueType</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>Nie można dodać lub znaleźć GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Certyfikat już istnieje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>Certyfikat nie mogą być importowane. Musisz podać zarówno plik certyfikatu, a hasło do istniejącego certyfikatu.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>świadectwo WSUS nie znaleziono.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} wydaje się być tylko metadanych aktualizacji. Obecnie nie można ich ważność.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Nie wybrany wiersz</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_value">
+    <value>Należy podać wartość.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>Nie można zapobiec instalacji dla grupy Wszyscy Komputery</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_options_restart">
+    <value>Należy ponownie uruchomić LUP tej opcji w życie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Wystąpił problem z usunięciem zawartości pakietu z UpdateServicesPackages. Użyj tej UpdateID to zrobić ręcznie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} wydaje się być tylko metadanych aktualizacji. Obecnie nie mogą one być ponownie podpisany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} wydaje się być tylko metadanych aktualizacji. Obecnie, nie może ulec zmianie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_packages">
+    <value>Nie można zmienić wiele aktualizacji w tym samym czasie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Nie było problemem dla kontroli zawartości paczki z UpdateServicesPackages. Ta aktualizacja nie może ulec zmianie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>Musisz podać poprawny identyfikator GUID.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_OS">
+    <value>Musisz wprowadzić większych i mniejszych wersji systemu operacyjnego.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>Musisz wybrać porównania.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_date">
+    <value>Należy wybrać datę.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Zasada ta już istnieje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>Musisz podać ścieżkę do pliku.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Musisz wprowadzić rozmiar pliku.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_language">
+    <value>Należy wybrać język.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Musi wprowadzić nazw.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_processor">
+    <value>Należy wybrać typ procesora.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_query">
+    <value>Należy wpisać zapytanie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>Należy wybrać klucz rejestru.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Musisz wprowadzić pod klucz rejestru.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>Należy wybrać typ wartości rejestru.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Musisz wprowadzić wartość rejestru.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_version">
+    <value>Musisz wprowadzić wersję.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>Należy wybrać rekordy do usunięcia.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>Nie wybrano żadnych zasad na eksport.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_select_file">
+    <value>Wybierz plik.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>Nie można opublikować URI, gdy znajdują się dodatkowe pliki.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>Plik nazwa nie pasuje.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>Nieprawidłowe URI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Edytuj XML na własne ryzyko.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>Nie można opublikować tylko metadanych aktualizacji z dodatkowych plików.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>Nr URI Given.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>Pakiet nie została opublikowana.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Pakiet pomyślnie opublikowany.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Pakiet pomyślnie zmienione.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>Pakiet nie został zmieniony.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_vendor">
+    <value>Sprzedawca nie może być Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="workstation">
+    <value>Workstation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

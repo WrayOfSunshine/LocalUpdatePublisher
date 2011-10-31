@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Import-update uit bestand</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddDir.Text">
+    <value>Voeg Dir</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAddFiles.Text">
+    <value>Bestanden toevoegen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Annuleren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnIsSupersededEdit.Text">
+    <value>Bewerken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnMetaDataEdit.Text">
+    <value>Bewerken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnNext.Text">
+    <value>Volgende</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnPrevious.Text">
+    <value>Vorig</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnUpdateFile.Text">
+    <value>Bladeren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkExportSdp.Text">
+    <value>Op te slaan Software definitie-pakket</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkMetadataOnly.Text">
+    <value>Alleen publiceren Metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblAdditionalFiles.Text">
+    <value>Extra bestanden</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblArticleID.Text">
+    <value>Artikel ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblBullitinID.Text">
+    <value>Bulletin ID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblClassification.Text">
+    <value>Classificatie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblCommandLine.Text">
+    <value>Command Line</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDescription.Text">
+    <value>Beschrijving</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblInfo.Text">
+    <value>Deze wizard zal u door het proces van het creëren van een lokaal wordt gepubliceerd softwarepakket. U moet een MSI, MSP, of EXE-bestand als het update-bestand. Als het EXE-bestand heeft een geïntegreerde MSI-bestand dan moet u het relatieve pad. Als er andere benodigde ondersteunende bestanden, zoals bestanden te transformeren, gebruik dan de extra bestanden lijst om ze toe te voegen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text">
+    <value>Installatie op itemniveau - Vervangen Rules</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblIsSuperseded.Text">
+    <value>Dit formulier bevat de regels die bepalen of de software-pakket is achterhaald. Als u deze update gemaakt met behulp van een MSI-of MSP-bestand ziet u de automatisch gegenereerde regel bij de installeerbare item-niveau.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguages.Text">
+    <value>Talen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMSIPath.Text">
+    <value>MSI Pad</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData.Text">
+    <value>Gebruik dit formulier om de metadata die door de vorige is installeerbaar evaluatie wordt geïnstalleerd of wordt vervangen regels.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text">
+    <value>Installatie op itemniveau - Artikel Metadata</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMoreInfoURL.Text">
+    <value>Meer info URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblNetwork.Text">
+    <value>Netwerk vereist</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOriginalURI.Text">
+    <value>Oorspronkelijke URL</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageInfo.Text">
+    <value>Voer hier de relevante gegevens over de software-pakket. Raadpleeg de documentatie voor vragen over individuele velden.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageTitle.Text">
+    <value>Pakket titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPackageType.Text">
+    <value>Pakkettype</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPrerequisites.Text">
+    <value>Vereisten</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProduct.Text">
+    <value>Product</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRebootBehavior.Text">
+    <value>Reboot Gedrag</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblReturnCodes.Text">
+    <value>Return-codes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSeverity.Text">
+    <value>Strengheid</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSummary.Text">
+    <value>Gebruik dit formulier om de XML-gegevens die zullen worden gebruikt om de software-pakket te beschrijven herzien. Selecteer Voltooien om dit pakket te publiceren naar de WSUS-server.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupersedes.Text">
+    <value>Vervangt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblSupportURL.Text">
+    <value>URL voor ondersteuning</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUninstall.Text">
+    <value>Installatie ongedaan maken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblUpdateFile.Text">
+    <value>Update-bestand</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblVendor.Text">
+    <value>Verkoper</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text">
+    <value>Utwórz regułę</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnAdd.Text">
+    <value>Dodaj Artykuł</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="btnCancel.Text">
+    <value>Anuluj</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkComponentCollection_requireAll.Text">
+    <value>Wszystkich elementów wymaganych</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkFeatureCollection_requireAll.Text">
+    <value>Wszystkie funkcje wymagane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkNotRule.Text">
+    <value>Negacja art.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkProductCollection_requireAll.Text">
+    <value>Wszystkie produkty Wymagane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkRegistry32Bit.Text">
+    <value>32 Bit rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComparison.Text">
+    <value>Porównanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblComponentCollection.Text">
+    <value>Components</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblData.Text">
+    <value>Dane</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblDate.Text">
+    <value>Data utworzenia</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblEnvironmentVariable.Text">
+    <value>Zmienna środowiska</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblFeatureCollection.Text">
+    <value>Opis</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblLanguage.Text">
+    <value>Język</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMaxVersion.Text">
+    <value>Maksymalna Version</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblMinVersion.Text">
+    <value>Minimalnej wersji</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblOSVersion.Text">
+    <value>OS Version</value>
+  </data>
+  <data name="lblPatchCode.Text">
+    <value>PatchCode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblPath.Text">
+    <value>Ścieżka</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProcessorType.Text">
+    <value>Typ procesora</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProductCode.Text">
+    <value>Product Code</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProductCollection.Text">
+    <value>Produkty</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblProductType.Text">
+    <value>Rodzaj produktu</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblQuery.Text">
+    <value>Zapytanie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRegistryKey.Text">
+    <value>Klucza rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRegistryValue.Text">
+    <value>Wartość Rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRegistryValueType.Text">
+    <value>Typ wartości rejestru</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblRuleType.Text">
+    <value>Typ reguły</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="lblServicePack.Text">
+    <value>Service Pack</value>
+  </data>
+  <data name="lblVersion.Text">
+    <value>Wersja</value>
+  </data>
+</root>

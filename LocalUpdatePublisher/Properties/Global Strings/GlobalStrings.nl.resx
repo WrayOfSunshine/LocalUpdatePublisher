@@ -1,0 +1,1483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action">
+    <value>Actie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ApprovalAction">
+    <value>Goedkeuring Actie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CSID">
+    <value>CSID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Cancelled">
+    <value>Geannuleerd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ComputerGroup">
+    <value>Computer Group</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="CreationDate">
+    <value>Aanmaakdatum</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="DWORD_value">
+    <value>DWORD-waarde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Deadline">
+    <value>Termijn</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Description">
+    <value>Beschrijving</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_Instructions">
+    <value>Gebruik dit formulier om maken, bewerken, verwijderen en de groep regels die bepalen of deze software kan worden geïnstalleerd. Als u deze update gemaakt met behulp van een MSI-of MSP-bestand ziet u de automatisch gegenereerde regel bij de installeerbare item-niveau. Standaard zijn de regels in een EN-groep.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_Title">
+    <value>Package Level - Installeerbare Rules</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstallable_TitleItemLevel">
+    <value>Installatie op itemniveau</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstalled_Instructions">
+    <value>Gebruik dit formulier om maken, bewerken, verwijderen en de groep regels die bepalen of dit software pakket is al geïnstalleerd. Als u deze update gemaakt met behulp van een MSI-of MSP-bestand ziet u de automatisch gegenereerde regel bij de installeerbare item-niveau. Standaard zijn de regels in een EN-groep.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstalled_Title">
+    <value>Package Level - Geïnstalleerd Rules</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="IsInstalled_TitleItemLevel">
+    <value>Installatie op itemniveau</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="OptionalInstall">
+    <value>Goedgekeurd voor optionele installatie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Reboot">
+    <value>Reboot</value>
+  </data>
+  <data name="Result">
+    <value>Resultaat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ReturnCode">
+    <value>Return Code</value>
+  </data>
+  <data name="RulesEditor_CreatePrompt">
+    <value>Regel maken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="RulesEditor_EditPrompt">
+    <value>Regel bewerken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="Succeeded">
+    <value>Geslaagd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="TargetGroup">
+    <value>Doelgroep</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_new_server">
+    <value>Nieuwe server toevoegen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="add_rule">
+    <value>Regel toevoegen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all">
+    <value>Alle</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="all_required">
+    <value>alle vereiste</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="and">
+    <value>EN</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="any">
+    <value>Een</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="application">
+    <value>Toepassing</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approval">
+    <value>Goedkeuring</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approve">
+    <value>Goedkeuren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved">
+    <value>Goedgekeurd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="approved_for_install">
+    <value>Goedgekeurd voor installatie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="begins_with">
+    <value>Begint met</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="build_number">
+    <value>Buildnummer</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="cancel">
+    <value>Annuleren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="clear_selection">
+    <value>Selectie wissen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="close">
+    <value>Dicht</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="comparison">
+    <value>Vergelijking</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="component_codes">
+    <value>Component Codes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="components">
+    <value>Componenten</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computer_name">
+    <value>Computer Name</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers">
+    <value>Computers</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="computers_shown">
+    <value>{0} computers getoond</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="contains">
+    <value>Bevat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="create_rule">
+    <value>Regel maken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="created">
+    <value>Gemaakt op</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="creation_date">
+    <value>Aanmaakdatum</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="custom_GUID">
+    <value>Aangepast GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="data">
+    <value>Gegevens</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="date">
+    <value>Goedkeuring Datum</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="decline">
+    <value>Dalen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined">
+    <value>Afgewezen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="declined_expired">
+    <value>Gedaald (Verlopen)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="delete">
+    <value>Verwijderen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="domain_controller">
+    <value>Domain Controller</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="downloaded">
+    <value>Gedownloade</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="driver">
+    <value>Bestuurder</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="edit">
+    <value>Bewerken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ends_with">
+    <value>Eindigt met</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="equal_to">
+    <value>Gelijk aan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall">
+    <value>Deze update kan niet worden verwijderd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_cannot_uninstall_multiple">
+    <value>U kunt niet verwijderen meerdere updates.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_certificate_import_ssl">
+    <value>U kunt niet importeren van een certificaat, tenzij je goed zijn aangesloten op de WSUS-server via SSL.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_arguments">
+    <value>Niet genoeg argumenten om rapport te genereren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_connect">
+    <value>Kon geen verbinding maken met {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_computer">
+    <value>Kon het niet vinden {0} computer doel.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_group">
+    <value>Kon het niet vinden {0}-groep.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_find_update">
+    <value>Kon het niet vinden {0} te werken.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_command_unknown">
+    <value>Unknown Command</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_cert_save">
+    <value>Er was een fout maken van het certificaat.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect">
+    <value>Kan geen verbinding maken met server.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_URI">
+    <value>Uw servernaam is niet correct geformatteerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_connect_security">
+    <value>U bent niet toegestaan ​​om verbinding te maken met de WSUS-server.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_copy_directory">
+    <value>Kan map kopiëren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_download">
+    <value>Kon niet downloaden {0}.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_export_SDP">
+    <value>Kon het niet exporteren SDP.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_get_SDP">
+    <value>Kon niet SDP</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_manager_publish">
+    <value>Het pakket kan niet worden gepubliceerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_XML">
+    <value>Dit bestand bevat geen een XML-bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cab">
+    <value>Dit bestand bevat geen een CAB-bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_no_cert">
+    <value>Er is geen certificaat op {0}. Totdat je maakt of importeert een certificaat dat u niet in staat om updates te publiceren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_connection_none">
+    <value>U bent niet verbonden met een WSUS-server.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url">
+    <value>Deze update kan niet worden geëxporteerd omdat een oorspronkelijke URL niet is ingevoerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_no_url_multiple">
+    <value>Sommige pakketten konden niet worden toegevoegd omdat een oorspronkelijke URL was niet ingevoerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_catalog_not_cab">
+    <value>U moet exporteren naar een cab bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_export_update_data">
+    <value>Het pakket inhoud bestaat niet in de UpdateServicesPackages map. Het kan niet worden geëxporteerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_import_catalog_no_xml">
+    <value>Geen XML-bestand is te vinden in dit kabinet bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_package_resigned">
+    <value>Het pakket kan niet opnieuw worden ondertekend.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_expired">
+    <value>Niet alle pakketten zijn met succes verlopen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_packages_resigned">
+    <value>Niet alle pakketten zijn met succes opnieuw ondertekend.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_result_code_empty">
+    <value>Resultaat moet niet leeg zijn.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_return_codes_empty">
+    <value>Return Code mag niet leeg zijn.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_row_invalid_update_id">
+    <value>Deze rij kwam niet terug van een geldig UpdateID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_cast">
+    <value>Kon het niet gegoten import rule-bestand te verzamelen regel.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_file_open">
+    <value>Kon niet importeren rule-bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rulecollection_import_file_exists">
+    <value>De import bestand bestaat niet.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_editor_add_remove_group">
+    <value>Kon het niet toevoegen / verwijderen-groep.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_load">
+    <value>De regels kunnen niet worden geladen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unrecognized">
+    <value>Deze regel wordt niet herkend.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_rules_unsupported_type">
+    <value>Deze regel type wordt nog niet ondersteund.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_saved_rules_export">
+    <value>U hebt geen regels om te exporteren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_server_disconnected">
+    <value>De server is niet aangesloten.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_sort_enumerator">
+    <value>Moet een teller worden.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_create_SDP">
+    <value>Kon het niet creëren Software Distribution Package.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_imported">
+    <value>Update was niet geïmporteerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_invalid_XML">
+    <value>De XML voor de SDP is ongeldig.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="error_update_save">
+    <value>Kon het niet redden van de update-informatie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception">
+    <value>Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_HTTP_listener">
+    <value>HttpListenerException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_IO">
+    <value>IO Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_URI_format">
+    <value>UriFormatException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML">
+    <value>XMLException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_XML_schema">
+    <value>XmlSchemaException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument">
+    <value>Argument Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_null">
+    <value>Argument Null Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_argument_out_of_range">
+    <value>ArgumentOutOfRangeException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_directory_not_found">
+    <value>Directory niet gevonden Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_file_not_found">
+    <value>Bestand niet gevonden Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_data">
+    <value>Ongeldige gegevens Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_invalid_operation">
+    <value>Ongeldige bewerking Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_not_supported">
+    <value>Niet ondersteund Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_object_disposed">
+    <value>Object Verkocht Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_out_of_memory">
+    <value>Out Of Memory Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_path_too_long">
+    <value>Pad Too Long Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_security">
+    <value>Beveiliging Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_unauthorized_access">
+    <value>Onbevoegde Toegang Uitzondering</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_web">
+    <value>Uitzondering web</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_win32">
+    <value>Win32Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_data">
+    <value>WsusInvalidDataException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_invalid_server">
+    <value>WSUS Ongeldige server Exception</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="exception_wsus_object_not_found">
+    <value>WsusObjectNotFoundException</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="expire">
+    <value>Vervallen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export">
+    <value>Export</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="export_certificate">
+    <value>Export Certificate</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed">
+    <value>Mislukt</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="failed_or_needed">
+    <value>Mislukt of Needed</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="false">
+    <value>Vals</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="feature_names">
+    <value>Functie Namen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="features">
+    <value>Functies</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_cab">
+    <value>Cab-bestanden|*.cab</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_update_binary">
+    <value>Update-bestanden (*.MSI, *.MSP, *.EXE)|*.MSI;*.MSP;*.EXE|MSI-bestanden (*.MSI)|*.MSI|MSP-bestanden (*.MSP)|*.MSP|EXE-bestanden (*.EXE)|*.EXE</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="file_filter_xml">
+    <value>XML-bestanden|*.xml</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="finish">
+    <value>Afwerking</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than">
+    <value>Groter dan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="greater_than_or_equal_to">
+    <value>Groter dan of gelijk aan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group">
+    <value>Groep</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_and">
+    <value>Begin En</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_begin_or">
+    <value>Begin Of</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_and">
+    <value>En het einde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_end_or">
+    <value>End of</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_name">
+    <value>Groepsnaam</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_and">
+    <value>Verwijderen en</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="group_remove_or">
+    <value>Verwijderen of</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="history_for">
+    <value>Geschiedenis voor</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import">
+    <value>Import</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="import_certificate">
+    <value>Import Cert</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="in_bytes_example">
+    <value>in bytes (bijv. 1024)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="inherited">
+    <value>geërfd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed">
+    <value>Geïnstalleerd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable">
+    <value>Geïnstalleerd / Niet van toepassing</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="installed_not_applicable_no_status">
+    <value>Geïnstalleerd / Niet van toepassing of geen status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="ip_address">
+    <value>IP-adres</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form">
+    <value>Selecteer de goedkeuringen voor {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_form_multiple">
+    <value>Selecteer de goedkeuringen voor {0} updates.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_form">
+    <value>Stel goedkeuringen voor {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_approval_progress_status">
+    <value>Instellen van goedkeuringen voor {0} tot {1} op {2}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_exists">
+    <value>Hieronder vindt u informatie over het certificaat geïnstalleerd op uw WSUS-server. Dit certificaat dient te worden uitgedeeld aan elke klant voordat ze kunnen ontvangen die plaatselijk wordt gepubliceerd updates.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_no_cert">
+    <value>Een certificaat is nog niet gemaakt. U moet dit doen voor de publicatie updates.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_certificate_info_preexists">
+    <value>Een certificaat is al gemaakt.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="label_rules_WMI_namespace">
+    <value>WMI Namespace</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language">
+    <value>Taal</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_arabic">
+    <value>Arabisch</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_HK_SAR">
+    <value>Chinees (Hong Kong SAR)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_simplified">
+    <value>Chinees (vereenvoudigd)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_chinese_traditional">
+    <value>Chinees (Traditioneel)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_czech">
+    <value>Tsjechisch</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_danish">
+    <value>Deens</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_dutch">
+    <value>Nederlands</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_english">
+    <value>Engels</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_finnish">
+    <value>Fins</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_french">
+    <value>Frans</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_german">
+    <value>Duits</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_greek">
+    <value>Grieks</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hebrew">
+    <value>Hebreeuws</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_hungarian">
+    <value>Hongaars</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_italian">
+    <value>Italiaans</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_japanese">
+    <value>Japans</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_korean">
+    <value>Koreaans</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_norwegian">
+    <value>Noors</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_polish">
+    <value>Pools</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese">
+    <value>Portugees</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_portuguese_brazil">
+    <value>Portugees (Brazilië)</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_russian">
+    <value>Russisch</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_spanish">
+    <value>Spaans</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_swedish">
+    <value>Zweeds</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="language_turkish">
+    <value>Turks</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_status_report">
+    <value>Laatste Status Report</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="last_updated">
+    <value>Laatst geupdate op</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than">
+    <value>Less Than</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="less_than_or_equal_to">
+    <value>Minder dan of gelijk aan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="load">
+    <value>Belasting</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified">
+    <value>Gewijzigd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="modified_date">
+    <value>Gewijzigd Datum</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="needed">
+    <value>Nodig</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="next">
+    <value>Volgende</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_approval">
+    <value>Geen goedkeuring</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="no_status">
+    <value>Geen status</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="none">
+    <value>Geen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_applicable">
+    <value>Niet van toepassing</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_approved">
+    <value>Niet goedgekeurd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="not_installed">
+    <value>Niet geïnstalleerd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="operating_system">
+    <value>Operating System</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="or">
+    <value>OR</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="patch_code">
+    <value>PatchCode</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="path">
+    <value>Pad</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_code">
+    <value>Product Code</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_codes">
+    <value>Product Codes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="product_type">
+    <value>Producttype</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="products">
+    <value>Producten</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_cert">
+    <value>Wilt u dat nu doen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait">
+    <value>Gelieve te wachten terwijl de update wordt gepubliceerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_connection_wait_revise">
+    <value>Gelieve te wachten terwijl de update wordt herzien.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_package">
+    <value>Wilt u {0} daling?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_decline_packages">
+    <value>Wilt u deze {0} updates afnemen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_package">
+    <value>Wilt u verlopen {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_expire_packages">
+    <value>Wilt u deze {0} updates verlopen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_package">
+    <value>Heeft u wenst te verwijderen {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_remove_packages">
+    <value>Wilt u deze {0} updates verwijderen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_package">
+    <value>Wilt u opnieuw te ondertekenen {0}?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_resign_packages">
+    <value>Wilt u opnieuw te ondertekenen deze {0} updates?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_confirm_delete">
+    <value>Ben je zeker dat je deze regel wilt verwijderen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_ruled_editor_delete">
+    <value>Regel verwijderen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_new_rule">
+    <value>Naam van het nieuwe artikel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_rules_editor_name_rule">
+    <value>Naam Rule</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rename">
+    <value>Verandering {0} om</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saved_rules_rule_exists">
+    <value>Er is al een regel de naam {0}. Wat zou je graag willen doen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_saves_rules_delete">
+    <value>Bent u zeker dat u de geselecteerde regels verwijderen?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_redownload">
+    <value>Als u wijzigt de oorspronkelijke URL, moet het worden gedownload voor verificatie. Wilt u doorgaan?</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID">
+    <value>Voer de GUID die u wilt gebruiken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="prompt_update_selection_GUID_title">
+    <value>Aangepast GUID Entry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="query">
+    <value>Vraag</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_computer_list">
+    <value>Verfrissende computer lijst</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="refreshing_update_list">
+    <value>Verfrissende Lijst bijwerken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove">
+    <value>Verwijderen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="remove_group">
+    <value>Groep verwijderen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename">
+    <value>Andere naam geven</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rename_rule">
+    <value>Wijzig de naam van de regel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="resign">
+    <value>Re-sign</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="revise">
+    <value>Herzien</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_component">
+    <value>MSI Component geïnstalleerd voor Product</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_feature">
+    <value>MSI Feature geïnstalleerd voor Product</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_patch">
+    <value>MSI Patch geïnstalleerd voor Product</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_MSI_product">
+    <value>MSI is geïnstalleerd</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_WMI_query">
+    <value>WMI Query</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation">
+    <value>File Creation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_creation_with_registry">
+    <value>File Creation Met Registry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists">
+    <value>Bestand bestaat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_exists_with_registry">
+    <value>Bestand bestaat Met Registry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified">
+    <value>Gewijzigd bestand</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_modified_with_registry">
+    <value>File Modified Met Registry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size">
+    <value>Bestandsgrootte</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_size_with_registry">
+    <value>Bestandsgrootte Met Registry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version">
+    <value>File Version</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_file_version_with_registry">
+    <value>File Version Met Registry</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_processor_architecture">
+    <value>Processor Architectuur</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_DWORD_value">
+    <value>Register DWORD-waarde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_SZ_value">
+    <value>Register SZ Waarde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_expand_SZ_value">
+    <value>Register Expand SZ Waarde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_key_exists">
+    <value>Registersleutel te zoeken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_value_exists">
+    <value>Register waarde bestaat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_registry_version_in_SZ">
+    <value>Registry Version in SZ</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_language">
+    <value>Windows Taal</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="rule_windows_version">
+    <value>Windows versie</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="save_rule">
+    <value>Regel opslaan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_export">
+    <value>Selecteer Regels voor Export</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_import">
+    <value>Selecteer de regels om te importeren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_load">
+    <value>Selecteer Regels voor Load</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="select_rules_to_manage">
+    <value>Selecteer de regels te beheren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="server">
+    <value>Server</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="service_pack">
+    <value>ServicePack</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="size">
+    <value>Maat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="skip">
+    <value>Overslaan</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status">
+    <value>Staat</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_connection_downloading">
+    <value>Downloaden van bestanden voor {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_computer_report">
+    <value>Het laden van de computer te rapporteren</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_form">
+    <value>Het laden van vorm</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_loading_update_report">
+    <value>Het laden van updates te melden</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connected">
+    <value>Aangesloten op {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="status_server_connecting">
+    <value>Verbinding maken met {0}</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="string">
+    <value>Snaar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success">
+    <value>Succes</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_created">
+    <value>Een zelf-ondertekend certificaat is gemaakt. Dit certificaat moet nu worden uitgekeerd aan elke cliënt volgens de Microsofts Local Publsihing documentatie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_connection_cert_import">
+    <value>Uw certificaat is geïmporteerd. Dit certificaat moet nu worden uitgekeerd aan elke cliënt volgens de plaatselijke Publsihing documentatie van het Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_expired">
+    <value>Pakketten met succes verlopen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_packages_resigned">
+    <value>Pakketten met succes opnieuw ondertekend.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="success_update_imported">
+    <value>Update is succesvol geïmporteerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="superseded">
+    <value>Vervangen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="title">
+    <value>Titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="true">
+    <value>Waar</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="uninstall">
+    <value>Installatie ongedaan maken</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="unknown">
+    <value>Onbekende</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update">
+    <value>Update</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_services">
+    <value>Update Services</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="update_title">
+    <value>Update-titel</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="updates">
+    <value>Updates</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value">
+    <value>Waarde</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="value_type">
+    <value>ValueType</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_maximum">
+    <value>VersionMax</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="version_minimum">
+    <value>VersionMin</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_GUID_not_found">
+    <value>Kon het niet toe te voegen of vinden GUID</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_exists">
+    <value>Een certificaat bestaat reeds.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_cert_import">
+    <value>Het certificaat kan niet worden geïmporteerd. U dient zowel een certificaat bestand en een wachtwoord om een ​​bestaand certificaat te gebruiken.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_connection_no_cert">
+    <value>WSUS certificaat niet gevonden.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_expire_metadata">
+    <value>{0} lijkt een metadata alleen maar te werken. Op dit moment kunnen deze niet worden verstreken.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_row_selected">
+    <value>Geselecteerde geen rij</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_no_value">
+    <value>U moet een waarde.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_not_approved_all">
+    <value>Je kunt niet voorkomen dat de installatie voor de All Computers groep</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_options_restart">
+    <value>U moet herstarten LUP voor deze optie te activeren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_remove_package_data">
+    <value>Er is een probleem het verwijderen van de verpakking de inhoud van de UpdateServicesPackages. Gebruik deze UpdateID om dit handmatig te doen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_resign_metadata">
+    <value>{0} lijkt een metadata alleen maar te werken. Op dit moment kunnen deze niet opnieuw worden ondertekend.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_metadata">
+    <value>{0} lijkt een metadata alleen maar te werken. Op dit moment, kunnen deze niet worden herzien.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revise_packages">
+    <value>U kunt niet herzien meerdere updates op hetzelfde moment.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_revised_package_data">
+    <value>Er is een probleem te controleren voor het pakket inhoud van de UpdateServicesPackages. Deze update kan niet worden herzien.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_GUID">
+    <value>U moet een geldige GUID.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_OS">
+    <value>U moet een grote en kleine versie van het besturingssysteem.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_comparison">
+    <value>U moet een vergelijking.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_date">
+    <value>U moet een datum.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_editor_exists">
+    <value>Deze regel bestaat reeds.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_path">
+    <value>U moet een bestand pad.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_file_size">
+    <value>Moet u bestandsgrootte.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_language">
+    <value>U moet een taal selecteren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_namespace">
+    <value>Moet u een naamruimte.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_processor">
+    <value>U moet een processor type.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_query">
+    <value>U moet een query.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_key">
+    <value>U moet een registersleutel.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_sub_key">
+    <value>Moet u een registersleutel sub-sleutel.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_type">
+    <value>U moet een registerwaarde type.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_registry_value">
+    <value>Moet u het register waarde.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_rules_version">
+    <value>U moet een versie.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_delete">
+    <value>U moet records selecteren voor verwijdering.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_saved_rules_export">
+    <value>U hebt geen regels om te exporteren.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_select_file">
+    <value>Selecteer een bestand.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_additional_files_uri">
+    <value>Kan niet publiceren URI wanneer extra bestanden zijn opgenomen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_file_mismatch">
+    <value>Bestandsnaam komt niet overeen.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_invalid_URI">
+    <value>Ongeldige URI</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_manual_edit">
+    <value>Bewerk dit XML-op eigen risico.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_metadata_additional_files">
+    <value>U kunt niet publiceren een metagegevens alleen te werken met extra files.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_no_uri">
+    <value>Geen URI Given.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_failed">
+    <value>Pakket werd niet gepubliceerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_publish_success">
+    <value>Pakket met succes gepubliceerd.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revise_success">
+    <value>Pakket met succes herzien.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_revised_failed">
+    <value>Pakket was niet herzien.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="warning_update_vendor">
+    <value>De verkoper kan niet Microsoft.</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="workstation">
+    <value>Workstation</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+</root>
