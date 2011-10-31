@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Lokale update Uitgever Versie: {0} Local update Publisher maakt gebruik van de WSUS-API om uw WSUS implementatie uit te breiden tot installaties en updates van derden bevatten. Voor ondersteuning en updates ga naar</value>
+    <value>Lokale update Uitgever Versie: {0} 
+
+Local update Publisher maakt gebruik van de WSUS-API om uw WSUS implementatie uit te breiden tot installaties en updates van derden bevatten. 
+
+Voor ondersteuning en updates ga naar</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>

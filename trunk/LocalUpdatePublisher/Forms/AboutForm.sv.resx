@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Lokala Uppdatera Utgivare Version: {0} Lokala Uppdatera Förlag använder WSUS API för att förlänga din WSUS genomförandet till att omfatta installationer och uppdateringar från tredje part. För support och uppdateringar till</value>
+    <value>Lokala Uppdatera Utgivare Version: {0} 
+
+Lokala Uppdatera Förlag använder WSUS API för att förlänga din WSUS genomförandet till att omfatta installationer och uppdateringar från tredje part. 
+
+För support och uppdateringar till</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>
