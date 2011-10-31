@@ -352,10 +352,12 @@ Public Partial Class MainForm
 			appSettings.TreePath.Trim = _rootNode.Text.Trim Then
 			_rootNode.Expand
 		Else
+			Dim tmpLength As Integer
 			_rootNode.Expand
 			Me.Refresh
 			treeView.BeginUpdate
-			Call SelectNode (_rootNode, Strings.Right(appSettings.TreePath, appSettings.TreePath.Length - (_rootNode.Text.Length + 1)))
+			tmpLength = appSettings.TreePath.Length - (_rootNode.Text.Length + 1)
+			If tmpLength > 0 Then Call SelectNode (_rootNode, Strings.Right(appSettings.TreePath, tmpLength))
 			treeView.EndUpdate
 		End If
 		

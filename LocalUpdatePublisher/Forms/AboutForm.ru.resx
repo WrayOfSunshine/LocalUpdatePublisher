@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Локальная версия Издатель обновление: {0} местный издатель Обновление WSUS использует API продлить WSUS реализации включить устанавливает и обновляет от третьих лиц. Для поддержки и обновлений перейти к</value>
+    <value>Локальная версия Издатель обновление: {0} 
+
+местный издатель Обновление WSUS использует API продлить WSUS реализации включить устанавливает и обновляет от третьих лиц. 
+
+Для поддержки и обновлений перейти к</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>

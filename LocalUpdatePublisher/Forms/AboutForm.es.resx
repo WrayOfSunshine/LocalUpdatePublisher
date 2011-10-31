@@ -63,7 +63,11 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblAbout.Text">
-    <value>Versión local de Autor actualización: {0} editor de Actualización Local utiliza la API de WSUS para extender la implementación de WSUS para incluir instalaciones y actualizaciones de terceros. Para el apoyo y actualizaciones en</value>
+    <value>Versión local de Autor actualización: {0} 
+
+Editor de Actualización Local utiliza la API de WSUS para extender la implementación de WSUS para incluir instalaciones y actualizaciones de terceros. 
+
+Para el apoyo y actualizaciones en</value>
     <comment>Automatically translated using Google</comment>
   </data>
 </root>
