@@ -138,35 +138,35 @@ Public Class PersistWindowState
 	End Sub
 End Class
 
-Public Class AppForm
-	Inherits System.Windows.Forms.Form
-	Private m_windowState As PersistWindowState
-	
-	Public Sub New()
-		Me.Text = "RestoreFormState"
-		
-		m_windowState = New PersistWindowState()
-		m_windowState.Parent = Me
-		' set registry path in HKEY_CURRENT_USER
-		AddHandler m_windowState.LoadStateEvent, New PersistWindowState.WindowStateDelegate(AddressOf LoadState)
-		AddHandler m_windowState.SaveStateEvent, New PersistWindowState.WindowStateDelegate(AddressOf SaveState)
-	End Sub
-	
-	Private m_data As Integer = 34
-	
-	Private Sub LoadState(sender As Object)
-		' get additional state information from registry
-		m_data = appSettings.WindowData
-	End Sub
-	
-	Private Sub SaveState(sender As Object)
-		' save additional state information to registry
-		appSettings.WindowData = m_data
-	End Sub
-	
-	<STAThread> _
-		Private Shared Sub Main()
-		Application.Run(New AppForm())
-	End Sub
-End Class
+'Public Class AppForm
+'	Inherits System.Windows.Forms.Form
+'	Private m_windowState As PersistWindowState
+'	
+'	Public Sub New()
+'		Me.Text = "RestoreFormState"
+'		
+'		m_windowState = New PersistWindowState()
+'		m_windowState.Parent = Me
+'		' set registry path in HKEY_CURRENT_USER
+'		AddHandler m_windowState.LoadStateEvent, New PersistWindowState.WindowStateDelegate(AddressOf LoadState)
+'		AddHandler m_windowState.SaveStateEvent, New PersistWindowState.WindowStateDelegate(AddressOf SaveState)
+'	End Sub
+'	
+'	Private m_data As Integer = 34
+'	
+'	Private Sub LoadState(sender As Object)
+'		' get additional state information from registry
+'		m_data = appSettings.WindowData
+'	End Sub
+'	
+'	Private Sub SaveState(sender As Object)
+'		' save additional state information to registry
+'		appSettings.WindowData = m_data
+'	End Sub
+'	
+'	<STAThread> _
+'		Private Shared Sub Main()
+'		Application.Run(New AppForm())
+'	End Sub
+'End Class
 

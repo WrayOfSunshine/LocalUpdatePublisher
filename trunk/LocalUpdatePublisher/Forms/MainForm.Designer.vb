@@ -64,9 +64,10 @@ Partial Class MainForm
 		Me.tabComputerStatus = New System.Windows.Forms.TabPage
 		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
 		Me.tabComputerReport = New System.Windows.Forms.TabPage
-		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
-		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
+		Me.tlpComputerReport = New System.Windows.Forms.TableLayoutPanel
 		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
+		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
+		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
 		Me.pnlUpdates = New System.Windows.Forms.Panel
 		Me.tabMainUpdates = New System.Windows.Forms.TabControl
 		Me.tabUpdateInfo = New System.Windows.Forms.TabPage
@@ -110,12 +111,13 @@ Partial Class MainForm
 		Me.tabUpdateStatus = New System.Windows.Forms.TabPage
 		Me.dgvUpdateStatus = New System.Windows.Forms.DataGridView
 		Me.tabUpdateReport = New System.Windows.Forms.TabPage
-		Me.btnUpdateRefreshReport = New System.Windows.Forms.Button
-		Me.dgvUpdateReport = New System.Windows.Forms.DataGridView
-		Me.lblUpdateStatus = New System.Windows.Forms.Label
+		Me.tlpUpdateReport = New System.Windows.Forms.TableLayoutPanel
 		Me.lblComputerGroup = New System.Windows.Forms.Label
-		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
+		Me.dgvUpdateReport = New System.Windows.Forms.DataGridView
+		Me.btnUpdateRefreshReport = New System.Windows.Forms.Button
+		Me.lblUpdateStatus = New System.Windows.Forms.Label
 		Me.cboTargetGroup = New System.Windows.Forms.ComboBox
+		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
 		Me.menuStrip = New System.Windows.Forms.MenuStrip
 		Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.importCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -151,6 +153,11 @@ Partial Class MainForm
 		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.bgwComputers = New System.ComponentModel.BackgroundWorker
+		Me.bgwUpdates = New System.ComponentModel.BackgroundWorker
+		Me.bgwServers = New System.ComponentModel.BackgroundWorker
+		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker
+		Me.bgwSelectNode = New System.ComponentModel.BackgroundWorker
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
 		Me.splitContainerVert.SuspendLayout
@@ -170,6 +177,7 @@ Partial Class MainForm
 		Me.tabComputerStatus.SuspendLayout
 		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabComputerReport.SuspendLayout
+		Me.tlpComputerReport.SuspendLayout
 		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.pnlUpdates.SuspendLayout
 		Me.tabMainUpdates.SuspendLayout
@@ -179,6 +187,7 @@ Partial Class MainForm
 		Me.tabUpdateStatus.SuspendLayout
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tabUpdateReport.SuspendLayout
+		Me.tlpUpdateReport.SuspendLayout
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.menuStrip.SuspendLayout
 		Me.statusStrip.SuspendLayout
@@ -443,20 +452,24 @@ Partial Class MainForm
 		'
 		'tabComputerReport
 		'
-		Me.tabComputerReport.Controls.Add(Me.btnComputerRefreshReport)
-		Me.tabComputerReport.Controls.Add(Me.dgvComputerReport)
-		Me.tabComputerReport.Controls.Add(Me.lblComputerUpdateStatus)
+		Me.tabComputerReport.Controls.Add(Me.tlpComputerReport)
 		resources.ApplyResources(Me.tabComputerReport, "tabComputerReport")
 		Me.tabComputerReport.Name = "tabComputerReport"
 		Me.tabComputerReport.UseVisualStyleBackColor = true
 		'
-		'btnComputerRefreshReport
+		'tlpComputerReport
 		'
-		resources.ApplyResources(Me.btnComputerRefreshReport, "btnComputerRefreshReport")
-		Me.btnComputerRefreshReport.MinimumSize = New System.Drawing.Size(80, 25)
-		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
-		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
-		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
+		resources.ApplyResources(Me.tlpComputerReport, "tlpComputerReport")
+		Me.tlpComputerReport.Controls.Add(Me.lblComputerUpdateStatus, 0, 0)
+		Me.tlpComputerReport.Controls.Add(Me.dgvComputerReport, 0, 2)
+		Me.tlpComputerReport.Controls.Add(Me.btnComputerRefreshReport, 1, 1)
+		Me.tlpComputerReport.Name = "tlpComputerReport"
+		'
+		'lblComputerUpdateStatus
+		'
+		resources.ApplyResources(Me.lblComputerUpdateStatus, "lblComputerUpdateStatus")
+		Me.tlpComputerReport.SetColumnSpan(Me.lblComputerUpdateStatus, 2)
+		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
 		'
 		'dgvComputerReport
 		'
@@ -470,6 +483,7 @@ Partial Class MainForm
 		Me.dgvComputerReport.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.dgvComputerReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.dgvComputerReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tlpComputerReport.SetColumnSpan(Me.dgvComputerReport, 2)
 		Me.dgvComputerReport.Name = "dgvComputerReport"
 		Me.dgvComputerReport.ReadOnly = true
 		Me.dgvComputerReport.RowHeadersVisible = false
@@ -477,10 +491,13 @@ Partial Class MainForm
 		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
 		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
 		'
-		'lblComputerUpdateStatus
+		'btnComputerRefreshReport
 		'
-		resources.ApplyResources(Me.lblComputerUpdateStatus, "lblComputerUpdateStatus")
-		Me.lblComputerUpdateStatus.Name = "lblComputerUpdateStatus"
+		resources.ApplyResources(Me.btnComputerRefreshReport, "btnComputerRefreshReport")
+		Me.btnComputerRefreshReport.MinimumSize = New System.Drawing.Size(80, 25)
+		Me.btnComputerRefreshReport.Name = "btnComputerRefreshReport"
+		Me.btnComputerRefreshReport.UseVisualStyleBackColor = true
+		AddHandler Me.btnComputerRefreshReport.Click, AddressOf Me.BtnComputerRefreshReportClick
 		'
 		'pnlUpdates
 		'
@@ -787,15 +804,46 @@ Partial Class MainForm
 		'
 		'tabUpdateReport
 		'
-		Me.tabUpdateReport.Controls.Add(Me.btnUpdateRefreshReport)
-		Me.tabUpdateReport.Controls.Add(Me.dgvUpdateReport)
-		Me.tabUpdateReport.Controls.Add(Me.lblUpdateStatus)
-		Me.tabUpdateReport.Controls.Add(Me.lblComputerGroup)
-		Me.tabUpdateReport.Controls.Add(Me.cboUpdateStatus)
-		Me.tabUpdateReport.Controls.Add(Me.cboTargetGroup)
+		Me.tabUpdateReport.Controls.Add(Me.tlpUpdateReport)
 		resources.ApplyResources(Me.tabUpdateReport, "tabUpdateReport")
 		Me.tabUpdateReport.Name = "tabUpdateReport"
 		Me.tabUpdateReport.UseVisualStyleBackColor = true
+		'
+		'tlpUpdateReport
+		'
+		resources.ApplyResources(Me.tlpUpdateReport, "tlpUpdateReport")
+		Me.tlpUpdateReport.Controls.Add(Me.lblComputerGroup, 0, 0)
+		Me.tlpUpdateReport.Controls.Add(Me.dgvUpdateReport, 0, 2)
+		Me.tlpUpdateReport.Controls.Add(Me.btnUpdateRefreshReport, 2, 1)
+		Me.tlpUpdateReport.Controls.Add(Me.lblUpdateStatus, 1, 0)
+		Me.tlpUpdateReport.Controls.Add(Me.cboTargetGroup, 0, 1)
+		Me.tlpUpdateReport.Controls.Add(Me.cboUpdateStatus, 1, 1)
+		Me.tlpUpdateReport.Name = "tlpUpdateReport"
+		'
+		'lblComputerGroup
+		'
+		resources.ApplyResources(Me.lblComputerGroup, "lblComputerGroup")
+		Me.lblComputerGroup.Name = "lblComputerGroup"
+		'
+		'dgvUpdateReport
+		'
+		Me.dgvUpdateReport.AllowUserToAddRows = false
+		Me.dgvUpdateReport.AllowUserToDeleteRows = false
+		Me.dgvUpdateReport.AllowUserToOrderColumns = true
+		Me.dgvUpdateReport.AllowUserToResizeRows = false
+		Me.dgvUpdateReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.dgvUpdateReport.BackgroundColor = System.Drawing.SystemColors.Window
+		Me.dgvUpdateReport.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.dgvUpdateReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+		Me.dgvUpdateReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.tlpUpdateReport.SetColumnSpan(Me.dgvUpdateReport, 3)
+		resources.ApplyResources(Me.dgvUpdateReport, "dgvUpdateReport")
+		Me.dgvUpdateReport.Name = "dgvUpdateReport"
+		Me.dgvUpdateReport.ReadOnly = true
+		Me.dgvUpdateReport.RowHeadersVisible = false
+		Me.dgvUpdateReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		AddHandler Me.dgvUpdateReport.Sorted, AddressOf Me.DgvUpdateReportSorted
+		AddHandler Me.dgvUpdateReport.CellMouseDown, AddressOf Me.DgvUpdateReportCellMouseDown
 		'
 		'btnUpdateRefreshReport
 		'
@@ -804,41 +852,10 @@ Partial Class MainForm
 		Me.btnUpdateRefreshReport.UseVisualStyleBackColor = true
 		AddHandler Me.btnUpdateRefreshReport.Click, AddressOf Me.BtnUpdateRefreshReportClick
 		'
-		'dgvUpdateReport
-		'
-		Me.dgvUpdateReport.AllowUserToAddRows = false
-		Me.dgvUpdateReport.AllowUserToDeleteRows = false
-		Me.dgvUpdateReport.AllowUserToOrderColumns = true
-		Me.dgvUpdateReport.AllowUserToResizeRows = false
-		resources.ApplyResources(Me.dgvUpdateReport, "dgvUpdateReport")
-		Me.dgvUpdateReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvUpdateReport.BackgroundColor = System.Drawing.SystemColors.Window
-		Me.dgvUpdateReport.BorderStyle = System.Windows.Forms.BorderStyle.None
-		Me.dgvUpdateReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-		Me.dgvUpdateReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvUpdateReport.Name = "dgvUpdateReport"
-		Me.dgvUpdateReport.ReadOnly = true
-		Me.dgvUpdateReport.RowHeadersVisible = false
-		Me.dgvUpdateReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		AddHandler Me.dgvUpdateReport.Sorted, AddressOf Me.DgvUpdateReportSorted
-		AddHandler Me.dgvUpdateReport.CellMouseDown, AddressOf Me.DgvUpdateReportCellMouseDown
-		'
 		'lblUpdateStatus
 		'
 		resources.ApplyResources(Me.lblUpdateStatus, "lblUpdateStatus")
 		Me.lblUpdateStatus.Name = "lblUpdateStatus"
-		'
-		'lblComputerGroup
-		'
-		resources.ApplyResources(Me.lblComputerGroup, "lblComputerGroup")
-		Me.lblComputerGroup.Name = "lblComputerGroup"
-		'
-		'cboUpdateStatus
-		'
-		Me.cboUpdateStatus.FormattingEnabled = true
-		resources.ApplyResources(Me.cboUpdateStatus, "cboUpdateStatus")
-		Me.cboUpdateStatus.Name = "cboUpdateStatus"
-		AddHandler Me.cboUpdateStatus.SelectedIndexChanged, AddressOf Me.cboUpdateStatusSelectedIndexChanged
 		'
 		'cboTargetGroup
 		'
@@ -848,6 +865,13 @@ Partial Class MainForm
 		resources.ApplyResources(Me.cboTargetGroup, "cboTargetGroup")
 		Me.cboTargetGroup.Name = "cboTargetGroup"
 		AddHandler Me.cboTargetGroup.SelectedIndexChanged, AddressOf Me.CboTargetGroupSelectedIndexChanged
+		'
+		'cboUpdateStatus
+		'
+		Me.cboUpdateStatus.FormattingEnabled = true
+		resources.ApplyResources(Me.cboUpdateStatus, "cboUpdateStatus")
+		Me.cboUpdateStatus.Name = "cboUpdateStatus"
+		AddHandler Me.cboUpdateStatus.SelectedIndexChanged, AddressOf Me.cboUpdateStatusSelectedIndexChanged
 		'
 		'menuStrip
 		'
@@ -1056,6 +1080,26 @@ Partial Class MainForm
 		Me.tlpMain.Controls.Add(Me.statusStrip, 0, 2)
 		Me.tlpMain.Name = "tlpMain"
 		'
+		'bgwComputers
+		'
+		AddHandler Me.bgwComputers.DoWork, AddressOf Me.BgwComputersDoWork
+		AddHandler Me.bgwComputers.RunWorkerCompleted, AddressOf Me.BgwComputersRunWorkerCompleted
+		'
+		'bgwUpdates
+		'
+		AddHandler Me.bgwUpdates.DoWork, AddressOf Me.BgwUpdatesDoWork
+		AddHandler Me.bgwUpdates.RunWorkerCompleted, AddressOf Me.BgwUpdatesRunWorkerCompleted
+		'
+		'bgwUpdateNodes
+		'
+		AddHandler Me.bgwUpdateNodes.DoWork, AddressOf Me.BgwUpdateNodesDoWork
+		AddHandler Me.bgwUpdateNodes.RunWorkerCompleted, AddressOf Me.BgwUpdateNodesRunWorkerCompleted
+		'
+		'bgwSelectNode
+		'
+		AddHandler Me.bgwSelectNode.DoWork, AddressOf Me.BgwSelectNodeDoWork
+		AddHandler Me.bgwSelectNode.RunWorkerCompleted, AddressOf Me.BgwSelectNodeRunWorkerCompleted
+		'
 		'MainForm
 		'
 		resources.ApplyResources(Me, "$this")
@@ -1090,7 +1134,8 @@ Partial Class MainForm
 		Me.tabComputerStatus.ResumeLayout(false)
 		CType(Me.dgvComputerGroupStatus,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabComputerReport.ResumeLayout(false)
-		Me.tabComputerReport.PerformLayout
+		Me.tlpComputerReport.ResumeLayout(false)
+		Me.tlpComputerReport.PerformLayout
 		CType(Me.dgvComputerReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.pnlUpdates.ResumeLayout(false)
 		Me.tabMainUpdates.ResumeLayout(false)
@@ -1103,7 +1148,8 @@ Partial Class MainForm
 		Me.tabUpdateStatus.ResumeLayout(false)
 		CType(Me.dgvUpdateStatus,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tabUpdateReport.ResumeLayout(false)
-		Me.tabUpdateReport.PerformLayout
+		Me.tlpUpdateReport.ResumeLayout(false)
+		Me.tlpUpdateReport.PerformLayout
 		CType(Me.dgvUpdateReport,System.ComponentModel.ISupportInitialize).EndInit
 		Me.menuStrip.ResumeLayout(false)
 		Me.menuStrip.PerformLayout
@@ -1115,6 +1161,13 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private tlpUpdateReport As System.Windows.Forms.TableLayoutPanel
+	Private tlpComputerReport As System.Windows.Forms.TableLayoutPanel
+	Private bgwSelectNode As System.ComponentModel.BackgroundWorker
+	Private bgwUpdateNodes As System.ComponentModel.BackgroundWorker
+	Private bgwServers As System.ComponentModel.BackgroundWorker
+	Private bgwUpdates As System.ComponentModel.BackgroundWorker
+	Private bgwComputers As System.ComponentModel.BackgroundWorker
 	Private settingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private tlpComputerInfo As System.Windows.Forms.TableLayoutPanel

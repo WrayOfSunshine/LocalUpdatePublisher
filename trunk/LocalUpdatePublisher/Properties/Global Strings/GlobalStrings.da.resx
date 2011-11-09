@@ -1193,6 +1193,10 @@
     <value>Indlæser formular</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Loading opdatere kategorier</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Indlæser opdateringsrapport</value>
     <comment>Automatically translated using Google</comment>

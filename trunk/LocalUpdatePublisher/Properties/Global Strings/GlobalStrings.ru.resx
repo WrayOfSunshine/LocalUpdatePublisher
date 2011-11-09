@@ -1208,6 +1208,10 @@
     <value>Загрузка формы</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Загрузка обновления категории</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Загрузка обновлений отчет</value>
     <comment>Automatically translated using Google</comment>

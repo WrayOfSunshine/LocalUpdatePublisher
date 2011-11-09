@@ -24,6 +24,7 @@ Public Partial Class MainForm
 	Private _originalValue As String
 	Private _noEvents As Boolean
 	Private _windowState As PersistWindowState
+	Private _dtTemp As DataTable
 	Private ReadOnly _updateStatus As String()
 	
 	#Region "Properties"
@@ -84,9 +85,6 @@ Public Partial Class MainForm
 		
 		'Clear status label.
 		toolStripStatusLabel.Text = ""
-		
-		'Set minimum size to the size at design time.
-		Me.MinimumSize = Me.Size
 		
 		'Hide the header panel by default.
 		Me.scHeader.Panel1Collapsed = True
@@ -347,17 +345,18 @@ Public Partial Class MainForm
 		' there is a saved tree path then load it
 		' after removing the root node from the beginning.
 		' Otherwise just expand the root node.
+		' The call to load the saved node is ran asyncronously in order
+		' to wait for the tree nodes to be fully populated before
+		' making the call.
 		If appSettings.RememberTreePath = False Or _
 			String.IsNullOrEmpty (appSettings.TreePath) Or _
 			appSettings.TreePath.Trim = _rootNode.Text.Trim Then
 			_rootNode.Expand
 		Else
-			Dim tmpLength As Integer
 			_rootNode.Expand
 			Me.Refresh
 			treeView.BeginUpdate
-			tmpLength = appSettings.TreePath.Length - (_rootNode.Text.Length + 1)
-			If tmpLength > 0 Then Call SelectNode (_rootNode, Strings.Right(appSettings.TreePath, tmpLength))
+			Me.bgwSelectNode.RunWorkerAsync
 			treeView.EndUpdate
 		End If
 		
@@ -369,6 +368,8 @@ Public Partial Class MainForm
 	Sub SelectNode (node As TreeNode, path As String)
 		Dim nodeValue As String= path.Split("\"c)(0)
 		Dim foundNode as TreeNode = Nothing
+		
+		
 		
 		'Loop through the node's children to find the correct node,
 		' select it, set the foundNode, and exit the loop.
@@ -397,6 +398,22 @@ Public Partial Class MainForm
 			Call SelectNode(foundNode, Strings.Right(Path, path.Length - (nodeValue.Length + 1)))
 		End If
 		
+	End Sub
+	
+	'Wait until the treeview has been fully populated.
+	Sub BgwSelectNodeDoWork(sender As Object, e As DoWorkEventArgs)
+		While ( Me.bgwUpdateNodes.IsBusy)
+			Threading.Thread.Sleep(500)
+		End While
+	End Sub
+	
+	'With the treeview populated, now load the saved node.
+	Sub BgwSelectNodeRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		Dim tmpLength As Integer = appSettings.TreePath.Length - (_rootNode.Text.Length + 1)
+		If tmpLength > 0 Then
+			'Msgbox ("Load saved node " & Strings.Right(appSettings.TreePath, tmpLength))
+			Call SelectNode (_rootNode, Strings.Right(appSettings.TreePath, tmpLength))
+		End If
 	End Sub
 	
 	'Call Clear Form with defaults settings.
@@ -485,8 +502,6 @@ Public Partial Class MainForm
 			End If
 		Next
 	End Sub
-	
-	
 	#End Region
 	
 	#Region "Form Menu Events"
@@ -1235,7 +1250,7 @@ Public Partial Class MainForm
 			'Add the computer and update nodes
 			_computerNode = _serverNode.Nodes.Add("computers", globalRM.GetString("computers"))
 			_updateNode = _serverNode.Nodes.Add("updates", globalRM.GetString("updates"))
-			
+			treeView.EndUpdate
 			'			'Add the Locally published packages category as the updates base node.
 			'			For Each category As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 			'				category.up
@@ -1250,14 +1265,13 @@ Public Partial Class MainForm
 			'Load the tree nodes.
 			Call LoadComputerNodes(_computerNode)
 			Call LoadUpdateNodes
-			
 			'Open the server node.
 			_rootNode.Expand
 			_serverNode.Expand
 			
 		End If
-		
 		treeView.EndUpdate
+		
 	End Sub
 	
 	Private Sub TreeViewSelectComputerNode(sender As Object, e As TreeViewEventArgs)
@@ -1266,7 +1280,7 @@ Public Partial Class MainForm
 		pnlUpdates.Visible = False
 		splitContainerHorz.SplitterDistance = appSettings.ComputerSplitter
 		pnlComputers.Visible = True
-		Refresh
+		Update
 		
 		'Setup the menus.
 		exportListToolStripMenuItem.Visible = True
@@ -1279,10 +1293,9 @@ Public Partial Class MainForm
 		_noEvents = False
 		
 		'Move the target group combo to the computer report tab.
-		If Not tabComputerReport.Controls.Contains(cboUpdateStatus)
-			tabComputerReport.Controls.Remove(cboUpdateStatus)
-			tabComputerReport.Controls.Add(cboUpdateStatus)
-			cboUpdateStatus.Location = New System.Drawing.Point(50, 35)
+		If Not tlpComputerReport.Controls.Contains(cboUpdateStatus)
+			cboUpdateStatus.Margin = New Padding(20,3,3,3)
+			tlpComputerReport.Controls.Add(cboUpdateStatus,0,1)
 			cboUpdateStatus.SelectedIndex = -1
 		End If
 		
@@ -1296,7 +1309,7 @@ Public Partial Class MainForm
 		scHeader.Panel1Collapsed = True
 		pnlComputers.Visible = False
 		pnlUpdates.Visible = True
-		Refresh
+		Update
 		
 		
 		'Reset the main computers tab.
@@ -1308,10 +1321,9 @@ Public Partial Class MainForm
 		_noEvents = False
 		
 		'Move the target group combo to the update report tab.
-		If Not tabUpdateReport.Controls.Contains(cboUpdateStatus) Then
-			tabUpdateReport.Controls.Remove(cboUpdateStatus)
-			tabUpdateReport.Controls.Add(cboUpdateStatus)
-			cboUpdateStatus.Location = New System.Drawing.Point(307, 35)
+		If Not tlpUpdateReport.Controls.Contains(cboUpdateStatus)
+			cboUpdateStatus.Margin = New Padding(3,3,3,3)
+			tlpUpdateReport.Controls.Add(cboUpdateStatus,1,1)
 			cboUpdateStatus.SelectedIndex = -1
 		End If
 		
@@ -1384,19 +1396,22 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-	
-	'Load the main update node with vendors, product families, and products.
-	Sub LoadUpdateNodes
+	'Asynchronously load the Update Nodes.
+	Sub BgwUpdateNodesDoWork(sender As Object, e As DoWorkEventArgs)
+		Dim startNode As TreeNode = New TreeNode
 		Dim vendorNode As TreeNode
 		Dim tmpVendor As Vendor = New Vendor
 		Dim tmpProductNode As TreeNode
 		Dim tmpProductFamilyNode As TreeNode
 		
+		'If the argument is a tree node then cast it as such.
+		If TypeOf e.Argument Is TreeNode Then startNode = DirectCast(e.Argument, TreeNode)
+		
 		'Clear the updates node and the import update and report comboboxes.
-		If Not _updateNode Is Nothing Then
+		If Not startNode Is Nothing Then
 			
 			'Clear the main update node and the list of vendors.
-			_updateNode.Nodes.Clear
+			startNode.Nodes.Clear
 			Me._vendorCollection.Clear
 			
 			If ConnectionManager.Connected Then 'Make sure we're connected still.
@@ -1405,7 +1420,7 @@ Public Partial Class MainForm
 				For Each vendorCategory As IUpdateCategory In ConnectionManager.CurrentServer.GetRootUpdateCategories
 					
 					'Add the vendor and add its category.
-					vendorNode = _updateNode.Nodes.Add( vendorCategory.Title )
+					vendorNode = startNode.Nodes.Add( vendorCategory.Title )
 					vendorNode.Tag = vendorCategory
 					tmpVendor = New Vendor(vendorCategory.Title)
 					
@@ -1454,12 +1469,36 @@ Public Partial Class MainForm
 					If vendorNode.Nodes.Count > 0 Then
 						_vendorCollection.Add(tmpVendor)
 					Else
-						_updateNode.Nodes.Remove(vendorNode)
+						startNode.Nodes.Remove(vendorNode)
 					End If
 					
 				Next 'Vendor
 				
 			End If
+		End If
+		
+		e.Result = startNode
+	End Sub
+	
+	'When the asynchronous process is complete add the nodes to the update node.
+	Sub BgwUpdateNodesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		If TypeOf e.Result Is TreeNode Then
+			Dim tmpTreeNode As TreeNode = DirectCast ( e.Result, TreeNode )
+			_updateNode.Nodes.Clear
+			
+			For Each tmpNode As TreeNode In tmpTreeNode.Nodes
+				_updateNode.Nodes.Add(tmpNode)
+			Next
+		End If
+		
+		toolStripStatusLabel.Text = ""
+	End Sub
+	
+	'Load the main update node with vendors, product families, and products.
+	Sub LoadUpdateNodes
+		If Not Me.bgwUpdateNodes.IsBusy Then
+			toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_categories")
+			Me.bgwUpdateNodes.RunWorkerAsync(_updateNode.Clone)
 		End If
 	End Sub
 	
@@ -1716,6 +1755,111 @@ Public Partial Class MainForm
 	
 	#Region "DGV Load Methods"
 	
+	'This method is called to perform the work of getting the computer list asynchronously.
+	Sub BgwComputersDoWork(sender As Object, e As DoWorkEventArgs)
+		
+		'If we were passed a RefreshInfo object then use it to call GetComputer list, store the data, and pass it to the result.
+		If TypeOf e.Argument Is RefreshInfo Then
+			Dim riTemp As RefreshInfo = DirectCast(e.Argument, RefreshInfo)
+			If TypeOf riTemp.TreeNodeTag Is IComputerTargetGroup Then
+				riTemp.DataTable = GetComputerList(DirectCast(riTemp.TreeNodeTag, IComputerTargetGroup))
+			End If
+			e.Result = riTemp
+		End If
+	End Sub
+	
+	'When the asynchronous Do Work is completed then load the returned data into the DGV.
+	Sub BgwComputersRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		Dim riTemp As RefreshInfo = New RefreshInfo
+		
+		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
+		If TypeOf e.Result Is RefreshInfo Then
+			riTemp = DirectCast(e.Result, RefreshInfo)
+			_dgvMain.DataSource = riTemp.DataTable
+		End If
+		
+		If _dgvMain.DataSource Is Nothing Then
+			'Update the count.
+			Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), "0")
+			_noEvents = False
+			Me.toolStripStatusLabel.Text = ""
+		Else
+			
+			'Set header texts for main DGV.
+			Me._dgvMain.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
+			Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
+			Me._dgvMain.Columns("IPAddress").HeaderText = globalRM.GetString("ip_address")
+			Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
+			Me._dgvMain.Columns("OperatingSystem").HeaderText = globalRM.GetString("operating_system")
+			Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
+			Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = globalRM.GetString("installed_not_applicable")
+			Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+			Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
+			Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+			Me._dgvMain.Columns("LastStatusReport").HeaderText = globalRM.GetString("last_status_report")
+			Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
+			
+			
+			'Hide some columns.
+			Me._dgvMain.Columns("IComputerTarget").Visible = False
+			Me._dgvMain.Columns("TargetID").Visible = False
+			
+			'Update the count.
+			Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), Me._dgvMain.Rows.Count)
+			
+			'If computers are listed in the DGV.
+			If _dgvMain.Rows.Count > 0 Then
+				
+				Call LoadDgvState(_dgvMain)
+				
+				'If we are maintaining the row.
+				If riTemp.MaintainSelectedRow Then
+					'Select the original row.
+					For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+						If riTemp.OriginalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
+							_dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
+							Exit For
+						Else If tmpRow.Index = _dgvMain.Rows.Count - 1
+							_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("ComputerName")
+						End If
+					Next
+				Else
+					'Select the first row.
+					_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
+				End If
+				
+				btnComputerListRefresh.Enabled = True
+				exportListToolStripMenuItem.Enabled = True
+				
+				'Load the selected computer's info.
+				Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
+				
+				'If the user is currently on the report tab then update it.
+				' Otherwise, clear the combo selections.
+				If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
+					
+					Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
+					Call LoadDgvState(dgvComputerReport)
+				Else
+					Me.dgvComputerReport.DataSource = Nothing
+					Me.cboTargetGroup.SelectedIndex =  -1
+					Me.cboUpdateStatus.SelectedIndex = -1
+				End If
+			Else 'No computers listed in the DGV.
+				btnComputerListRefresh.Enabled = False
+				exportListToolStripMenuItem.Enabled = False
+				
+				'Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
+				Me.dgvUpdateReport.DataSource = Nothing
+				Me.cboTargetGroup.SelectedIndex =  -1
+				Me.cboUpdateStatus.SelectedIndex = -1
+			End If
+		End If
+		
+		_noEvents = False
+		toolStripStatusLabel.Text = ""
+	End Sub
+	
 	'Call RefreshComputerList with defaults.
 	Sub RefreshComputerList
 		Call RefreshComputerList(false)
@@ -1723,111 +1867,110 @@ Public Partial Class MainForm
 	
 	'Refresh the list of computers shown in the main DGV.
 	Sub RefreshComputerList( maintainSelectedRow As Boolean )
-		Dim originalValue As String
-		
-		_noEvents = True
-		toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
-		Me.Update
-		
-		'Make sure a computer tree node it selected
-		If Not treeView.SelectedNode Is Nothing AndAlso _
-			Not treeView.SelectedNode.Tag Is Nothing AndAlso _
-			TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then
+		If Not Me.bgwComputers.IsBusy Then
+			Dim riTemp As RefreshInfo = New RefreshInfo
 			
-			'If we are maintaining the status then save the status.
-			If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
-				originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
+			_noEvents = True
+			toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
+			
+			'Make sure a computer tree node it selected
+			If Not treeView.SelectedNode Is Nothing AndAlso _
+				Not treeView.SelectedNode.Tag Is Nothing AndAlso _
+				TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then
+				
+				'Populate refresh info object
+				riTemp.TreeNodeTag = treeView.SelectedNode.Tag
+				riTemp.MaintainSelectedRow = maintainSelectedRow
+				
+				'If we are maintaining the status then save the status.
+				If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
+					riTemp.OriginalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
+				Else
+					riTemp.OriginalValue = Nothing
+				End If
+				
+				'Make the asynchronous call.
+				Me.bgwComputers.RunWorkerAsync(riTemp)
 			Else
-				maintainSelectedRow = False
-				originalValue = ""
-			End If
-			
-			'Set current row to negative one.
-			'Me._currentRowIndex = -1
-			
-			'Set the datasource to list of computers.  If nothing then exit sub.
-			_dgvMain.DataSource = GetComputerList(DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup))
-			If _dgvMain.DataSource Is Nothing Then
-				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), "0")
 				_noEvents = False
-				Me.toolStripStatusLabel.Text = ""
-				Exit Sub
-			Else
+				toolStripStatusLabel.Text = ""
+			End If
+		End If
+	End Sub
+	
+	Sub BgwUpdatesDoWork(sender As Object, e As DoWorkEventArgs)
+		
+		'If we were passed a RefreshInfo object then use it to call GetUpdateList, store the data, and pass it to the result.
+		If TypeOf e.Argument Is RefreshInfo Then
+			Dim riTemp As RefreshInfo = DirectCast(e.Argument, RefreshInfo)
+			
+			If TypeOf riTemp.TreeNodeTag Is IUpdateCategory Then
+				riTemp.DataTable = GetUpdateList( DirectCast(riTemp.TreeNodeTag, IUpdateCategory) )
+			End If
+			e.Result = riTemp
+		End If
+		
+	End Sub
+	
+	Sub BgwUpdatesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		Dim riTemp As RefreshInfo = New RefreshInfo
+		
+		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
+		If TypeOf e.Result Is RefreshInfo Then
+			riTemp = DirectCast(e.Result, RefreshInfo)
+			_dgvMain.DataSource = riTemp.DataTable
+		End If
+		
+		If Not _dgvMain.DataSource Is Nothing Then
+			
+			'Hide columns.
+			Me._dgvMain.Columns("IUpdate").Visible = False
+			Me._dgvMain.Columns("Id").Visible = False
+			
+			'Change header text.
+			Me._dgvMain.Columns("CreationDate").HeaderText = globalRM.GetString("creation_date")
+			
+			
+			'If updates are loaded in the DGV.
+			If _dgvMain.Rows.Count > 0 Then
+				Call LoadDgvState(_dgvMain)
 				
-				'Set header texts for main DGV.
-				Me._dgvMain.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
-				Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("IPAddress").HeaderText = globalRM.GetString("ip_address")
-				Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("OperatingSystem").HeaderText = globalRM.GetString("operating_system")
-				Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = globalRM.GetString("installed_not_applicable")
-				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
-				Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-				Me._dgvMain.Columns("LastStatusReport").HeaderText = globalRM.GetString("last_status_report")
-				Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
+				'If we are maintaining the row.
+				If riTemp.MaintainSelectedRow Then
+					'Select the original row.
+					For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+						If riTemp.OriginalValue.Equals(DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId) Then
+							_dgvMain.CurrentCell = tmpRow.Cells("Title")
+							Exit For
+						Else If tmpRow.Index = _dgvMain.Rows.Count - 1
+							_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("Title")
+						End If
+					Next
+				Else
+					_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("Title")
+				End If
 				
+				'Load the currently selected update's data.
+				If Not Me._dgvMain.CurrentRow Is Nothing Then
+					Call LoadUpdateInfo( Me._dgvMain.CurrentRow.Index)
+					Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
+				End If
 				
-				'Hide some columns.
-				Me._dgvMain.Columns("IComputerTarget").Visible = False
-				Me._dgvMain.Columns("TargetID").Visible = False
-				
-				'Update the count.
-				Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), Me._dgvMain.Rows.Count)
-				
-				'If computers are listed in the DGV.
-				If _dgvMain.Rows.Count > 0 Then
-					
-					Call LoadDgvState(_dgvMain)
-					
-					'If we are maintaining the row.
-					If maintainSelectedRow Then
-						'Select the original row.
-						For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
-							If originalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
-								_dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
-								Exit For
-							Else If tmpRow.Index = _dgvMain.Rows.Count - 1
-								_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("ComputerName")
-							End If
-						Next
-					Else
-						'Select the first row.
-						_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
+				'If the user is currently on the report tab then update it.
+				' Otherwise, clear the combo selections.
+				If Me.tabMainUpdates.SelectedTab.Name = Me.tabUpdateReport.Name Then
+					If Not Me._dgvMain.CurrentRow Is Nothing Then
+						Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
 					End If
+					Call LoadDgvState(dgvUpdateReport)
 					
-					btnComputerListRefresh.Enabled = True
-					exportListToolStripMenuItem.Enabled = True
+				Else
 					
-					'Load the selected computer's info.
-					Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
-					
-					'If the user is currently on the report tab then update it.
-					' Otherwise, clear the combo selections.
-					If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
-						
-						Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
-						Call LoadDgvState(dgvComputerReport)
-					Else
-						Me.dgvComputerReport.DataSource = Nothing
-						Me.cboTargetGroup.SelectedIndex =  -1
-						Me.cboUpdateStatus.SelectedIndex = -1
-					End If
-				Else 'No computers listed in the DGV.
-					btnComputerListRefresh.Enabled = False
-					exportListToolStripMenuItem.Enabled = False
-					
-					'Call LoadComputerInfo( Me._dgvMain.CurrentRow.Index)
 					Me.dgvUpdateReport.DataSource = Nothing
 					Me.cboTargetGroup.SelectedIndex =  -1
 					Me.cboUpdateStatus.SelectedIndex = -1
 				End If
 			End If
-			
-			_noEvents = False
-			toolStripStatusLabel.Text = ""
 		End If
 	End Sub
 	
@@ -1844,90 +1987,41 @@ Public Partial Class MainForm
 	Sub RefreshUpdateList(maintainSelectedRow As Boolean)
 		Dim originalValue As Guid
 		
-		_noEvents = True
-		toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
-		Me.Update
-		
-		'Set current row to negative one.
-		'Me._currentRowIndex = -1
-		
-		If Me.treeView.SelectedNode Is Nothing OrElse _
-			Me.treeView.SelectedNode.Tag Is Nothing Then
-			_dgvMain.DataSource = Nothing 'Clear the main DGV.
-			'Clear the update data by calling the loads with an index equal to the number of rows.
-			Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
-			Call LoadUpdateStatus( Me._dgvMain.Rows.Count)
+		If Not Me.bgwUpdates.IsBusy Then
+			Dim riTemp As RefreshInfo = New RefreshInfo
 			
-			_noEvents = False
-			toolStripStatusLabel.Text = ""
-			Exit Sub
-		Else If Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-			_noEvents = False
-			toolStripStatusLabel.Text = ""
-			Exit Sub
-		Else
-			If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
+			_noEvents = True
+			toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
+			
+			If Me.treeView.SelectedNode Is Nothing OrElse _
+				Me.treeView.SelectedNode.Tag Is Nothing Then
+				_dgvMain.DataSource = Nothing 'Clear the main DGV.
+				'Clear the update data by calling the loads with an index equal to the number of rows.
+				Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
+				Call LoadUpdateStatus( Me._dgvMain.Rows.Count)
 				
-				'If we are maintaining the status then save the status.
-				If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
-					originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId).UpdateId
-				Else
-					maintainSelectedRow = False
-					originalValue = Nothing
-				End If
-				
-				
-				'Set datasource to list of updates.  Exit if no updates are found.
-				_dgvMain.DataSource = GetUpdateList( DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory) )
-				If _dgvMain.DataSource Is Nothing Then Exit Sub
-				
-				'Hide columns.
-				Me._dgvMain.Columns("IUpdate").Visible = False
-				Me._dgvMain.Columns("Id").Visible = False
-				
-				'Change header text.
-				Me._dgvMain.Columns("CreationDate").HeaderText = globalRM.GetString("creation_date")
-				
-				
-				'If updates are loaded in the DGV.
-				If _dgvMain.Rows.Count > 0 Then
-					Call LoadDgvState(_dgvMain)
+				_noEvents = False
+				toolStripStatusLabel.Text = ""
+				Exit Sub
+			Else If Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
+				_noEvents = False
+				toolStripStatusLabel.Text = ""
+				Exit Sub
+			Else
+				If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
+					'Populate refresh info object
+					riTemp.TreeNodeTag = treeView.SelectedNode.Tag
+					riTemp.MaintainSelectedRow = maintainSelectedRow
 					
-					'If we are maintaining the row.
-					If maintainSelectedRow Then
-						'Select the original row.
-						For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
-							If originalValue.Equals(DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId) Then
-								_dgvMain.CurrentCell = tmpRow.Cells("Title")
-								Exit For
-							Else If tmpRow.Index = _dgvMain.Rows.Count - 1
-								_dgvMain.CurrentCell =  _dgvMain.Rows(0).Cells("Title")
-							End If
-						Next
+					'If we are maintaining the status then save the status.
+					If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
+						originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId).UpdateId
 					Else
-						_dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("Title")
+						originalValue = Nothing
 					End If
 					
-					'Load the currently selected update's data.
-					If Not Me._dgvMain.CurrentRow Is Nothing Then
-						Call LoadUpdateInfo( Me._dgvMain.CurrentRow.Index)
-						Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
-					End If
-					
-					'If the user is currently on the report tab then update it.
-					' Otherwise, clear the combo selections.
-					If Me.tabMainUpdates.SelectedTab.Name = Me.tabUpdateReport.Name Then
-						If Not Me._dgvMain.CurrentRow Is Nothing Then
-							Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
-						End If
-						Call LoadDgvState(dgvUpdateReport)
-						
-					Else
-						
-						Me.dgvUpdateReport.DataSource = Nothing
-						Me.cboTargetGroup.SelectedIndex =  -1
-						Me.cboUpdateStatus.SelectedIndex = -1
-					End If
+					'Make the asynchronous call.
+					Me.bgwUpdates.RunWorkerAsync(riTemp)
 				End If
 			End If
 		End If
@@ -2574,6 +2668,5 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	#End Region
-	
 End Class
 				

@@ -1193,6 +1193,10 @@
     <value>Carregant el formulari</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Carregant categories d'actualització</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Carregant l'informe d'actualització</value>
     <comment>Automatically translated using Google</comment>

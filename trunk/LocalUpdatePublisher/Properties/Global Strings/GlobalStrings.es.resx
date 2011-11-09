@@ -1208,6 +1208,9 @@
     <value>Carga del formulario</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Cargando categorías de actualización</value>
+  </data>
   <data name="status_loading_update_report">
     <value>Cargando actualización del informe</value>
     <comment>Automatically translated using Google</comment>
