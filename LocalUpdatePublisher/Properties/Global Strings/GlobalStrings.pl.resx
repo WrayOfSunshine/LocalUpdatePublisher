@@ -1193,6 +1193,10 @@
     <value>Trwa formie</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Ładowanie kategorii aktualizacja</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Trwa aktualizacja raportu</value>
     <comment>Automatically translated using Google</comment>

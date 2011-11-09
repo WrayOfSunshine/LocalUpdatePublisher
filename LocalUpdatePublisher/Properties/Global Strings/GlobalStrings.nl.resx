@@ -1208,6 +1208,10 @@
     <value>Het laden van vorm</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Het laden van updaten categorieën</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Het laden van updates te melden</value>
     <comment>Automatically translated using Google</comment>

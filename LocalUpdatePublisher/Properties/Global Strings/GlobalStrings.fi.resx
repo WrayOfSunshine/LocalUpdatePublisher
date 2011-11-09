@@ -1193,6 +1193,10 @@
     <value>Loading muodossa</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Ladataan päivitystä luokkia</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Ladataan päivitystä raportti</value>
     <comment>Automatically translated using Google</comment>

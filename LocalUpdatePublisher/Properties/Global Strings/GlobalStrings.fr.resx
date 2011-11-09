@@ -919,6 +919,10 @@
   <data name="status_loading_form">
     <value>Chargement du formulaire</value>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Chargement catégories mise à jour</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Chargement du rapport de mise à jour</value>
   </data>

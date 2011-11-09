@@ -1208,6 +1208,10 @@
     <value>装载形式</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>载入更新类别</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>载入更新报告</value>
     <comment>Automatically translated using Google</comment>

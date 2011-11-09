@@ -1208,6 +1208,10 @@
     <value>Laddar formulär</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Laddar uppdatering kategorier</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Laddar uppdaterade rapport</value>
     <comment>Automatically translated using Google</comment>

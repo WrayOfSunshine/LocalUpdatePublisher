@@ -927,6 +927,10 @@
   <data name="status_loading_form">
     <value>Lade von</value>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Loading Aktualisierung Kategorien</value>
+    <comment>Google</comment>
+  </data>
   <data name="status_loading_update_report">
     <value>Lade Update Bericht</value>
   </data>

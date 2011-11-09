@@ -922,6 +922,9 @@
   <data name="status_loading_form">
     <value>Loading form</value>
   </data>
+  <data name="status_loading_update_categories">
+    <value>Loading update categories</value>
+  </data>
   <data name="status_loading_update_report">
     <value>Loading update report</value>
   </data>

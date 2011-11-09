@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Classes\Languages.vb" />
     <Compile Include="Classes\PersistWindowState.vb" />
+    <Compile Include="Classes\RefreshInfo.vb" />
     <Compile Include="Classes\Rule.vb" />
     <Compile Include="Classes\RuleCollection.vb" />
     <Compile Include="Classes\RulesEditor.Designer.vb">
