@@ -180,6 +180,7 @@ Imports System.Globalization
 		StateComputerGroupStatusDGV = New DataGridViewState
 		StateUpdateReportDGV = New DataGridViewState
 		StateUpdateStatusDGV = New DataGridViewState
+		StateApprovalDGV = New DataGridViewState
 		Culture = Thread.CurrentThread.CurrentCulture.Name
 	End Sub
 	#End Region
@@ -495,6 +496,20 @@ Imports System.Globalization
 		End Get
 		Set
 			_settingsHash("StateUpdateStatusDGV") = value
+		End Set
+	End Property
+	
+	
+		' Property for the approval form's DGV
+	<Browsable(True)> _
+		<Description("Approval DGV state")> _
+		<DefaultValue(0)> _
+		Public Property StateApprovalDGV() As DataGridViewState
+		Get
+			Return CType(_settingsHash("StateApprovalDGV"), DataGridViewState)
+		End Get
+		Set
+			_settingsHash("StateApprovalDGV") = value
 		End Set
 	End Property
 	

@@ -831,11 +831,11 @@ Partial Class UpdateForm
 		'
 		'chkMetadataOnly
 		'
-		Me.chkMetadataOnly.CausesValidation = false
 		resources.ApplyResources(Me.chkMetadataOnly, "chkMetadataOnly")
 		Me.chkMetadataOnly.MinimumSize = New System.Drawing.Size(0, 25)
 		Me.chkMetadataOnly.Name = "chkMetadataOnly"
 		Me.chkMetadataOnly.UseVisualStyleBackColor = true
+		AddHandler Me.chkMetadataOnly.CheckedChanged, AddressOf Me.CboMetadataOnlyCheckedChanged
 		'
 		'UpdateForm
 		'

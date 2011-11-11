@@ -136,6 +136,14 @@ Public Partial Class UpdateForm
 			_UpdateType = LocalUpdateTypes.MSP
 		End If
 		
+		'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
+		' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.	
+		If Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & _SDP.PackageId.ToString) Then
+			Me.chkMetadataOnly.Checked = False
+		Else
+			Me.chkMetadataOnly.Checked = True
+		End If
+		
 		'Disable the MetaData only flag.
 		Me.chkMetadataOnly.Enabled = False
 		
@@ -671,7 +679,7 @@ Public Partial Class UpdateForm
 				If _Revision Then 'This is a revision.
 					Me.Cursor = Cursors.WaitCursor
 					
-					If ConnectionManager.RevisePackage(_Sdp, Me) Then
+					If ConnectionManager.RevisePackage(_Sdp, Me, chkMetaDataOnly.Checked) Then
 						Msgbox (globalRM.GetString("warning_update_revise_success"))
 					Else
 						Msgbox (globalRM.GetString("warning_update_revised_failed"))
@@ -774,7 +782,7 @@ Public Partial Class UpdateForm
 				
 				'Load the Original URI
 				If Not _Sdp.InstallableItems(0).OriginalSourceFile Is Nothing AndAlso _
-					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then										
+					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then
 					Me.txtOriginalURI.Text = _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri.ToString
 				End If
 				
@@ -953,18 +961,17 @@ Public Partial Class UpdateForm
 			Me.dgvAdditionalFiles.Enabled = False
 			
 			'Add the filename to the OriginalURI textbox and set the error handler.
-			If String.IsNullOrEmpty( Me.txtOriginalURI.Text ) Then
+			If String.IsNullOrEmpty( Me.txtOriginalURI.Text ) AndAlso Not Me.txtUpdateFile.Tag Is Nothing Then
 				Me.txtOriginalURI.Text = DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name
-				'Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"No URL Is Given")
 			End If
 		Else
 			Me.btnAddFiles.Enabled = True
 			Me.btnAddDir.Enabled = True
 			Me.dgvAdditionalFiles.Enabled = True
 			
-			'If the original URI field is empty then make it valid.
-			If String.IsNullOrEmpty(Me.txtOriginalURI.Text) Then
-				Me.ErrorProviderUpdate.SetError(Me.txtOriginalURI,"")
+			'If the only thing in the original URI is the name of the file then clear it.
+			If Me.txtOriginalURI.Text = DirectCast( Me.txtUpdateFile.Tag, FileInfo).Name Then
+				Me.txtOriginalURI.Text = ""
 			End If
 		End If
 		

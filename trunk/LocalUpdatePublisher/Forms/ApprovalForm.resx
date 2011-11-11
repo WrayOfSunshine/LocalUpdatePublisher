@@ -243,38 +243,35 @@
   <data name="ComputerGroup.HeaderText" xml:space="preserve">
     <value>Computer Group</value>
   </data>
-  <data name="ComputerGroup.Width" type="System.Int32, mscorlib">
-    <value>207</value>
-  </data>
   <metadata name="cntxtMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>15, 21</value>
   </metadata>
   <data name="approveForOptionalInstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="approveForOptionalInstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Approve for Optional Install</value>
   </data>
   <data name="approveForInstallToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="approveForInstallToolStripMenuItem.Text" xml:space="preserve">
     <value>Approve for Install</value>
   </data>
   <data name="approveForRemovalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="approveForRemovalToolStripMenuItem.Text" xml:space="preserve">
     <value>Approve for Removal</value>
   </data>
   <data name="notApprovedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="notApprovedToolStripMenuItem.Text" xml:space="preserve">
     <value>Not Approved</value>
   </data>
   <data name="cntxtMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 114</value>
+    <value>208, 92</value>
   </data>
   <data name="&gt;&gt;cntxtMenuStrip.Name" xml:space="preserve">
     <value>cntxtMenuStrip</value>
@@ -282,8 +279,29 @@
   <data name="&gt;&gt;cntxtMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="approval.HeaderText" xml:space="preserve">
+    <value>approval</value>
+  </data>
+  <data name="Deadline.HeaderText" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="OptionalInstall.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OptionalInstall.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CreationDate.HeaderText" xml:space="preserve">
+    <value>CreationDate</value>
+  </data>
+  <data name="ApprovalAction.HeaderText" xml:space="preserve">
+    <value />
+  </data>
   <data name="ApprovalAction.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="TargetGroup.HeaderText" xml:space="preserve">
+    <value />
   </data>
   <data name="TargetGroup.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -524,18 +542,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Approve Update</value>
   </data>
-  <data name="&gt;&gt;ComputerGroup.Name" xml:space="preserve">
-    <value>ComputerGroup</value>
-  </data>
-  <data name="&gt;&gt;ComputerGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;approval.Name" xml:space="preserve">
-    <value>approval</value>
-  </data>
-  <data name="&gt;&gt;approval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;approveForOptionalInstallToolStripMenuItem.Name" xml:space="preserve">
     <value>approveForOptionalInstallToolStripMenuItem</value>
   </data>
@@ -560,11 +566,29 @@
   <data name="&gt;&gt;notApprovedToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ComputerGroup.Name" xml:space="preserve">
+    <value>ComputerGroup</value>
+  </data>
+  <data name="&gt;&gt;ComputerGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;approval.Name" xml:space="preserve">
+    <value>approval</value>
+  </data>
+  <data name="&gt;&gt;approval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Deadline.Name" xml:space="preserve">
     <value>Deadline</value>
   </data>
   <data name="&gt;&gt;Deadline.Type" xml:space="preserve">
     <value>LocalUpdatePublisher.CalendarColumn, LocalUpdatePublisher, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;OptionalInstall.Name" xml:space="preserve">
+    <value>OptionalInstall</value>
+  </data>
+  <data name="&gt;&gt;OptionalInstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CreationDate.Name" xml:space="preserve">
     <value>CreationDate</value>

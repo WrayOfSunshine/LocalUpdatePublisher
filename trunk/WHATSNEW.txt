@@ -1,3 +1,7 @@
+Version 1.2
+-Revise and expire metadata only updates.  You will need to install the kb2530709 update on all servers and any machines running LUP remotely.
+
+
 Version 1.1
 -Globalization with translations for Catalan, Danish, French, and German.
 -Add and remove multiple updates when exporting or selecting for prerequisite and superseded.

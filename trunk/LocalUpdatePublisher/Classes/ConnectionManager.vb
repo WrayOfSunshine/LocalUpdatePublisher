@@ -339,9 +339,13 @@ Friend NotInheritable Class ConnectionManager
 	#End Region
 	
 	#Region "Publish Packages"
+	Public Shared Function RevisePackage(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean
+		Call RevisePackage ( sdp, parentForm, False)
+	End Function
+	
 	
 	'Revise package.
-	Public Shared Function RevisePackage(sdp As SoftwareDistributionPackage, parentForm As Form) As Boolean
+	Public Shared Function RevisePackage(sdp As SoftwareDistributionPackage, parentForm As Form, metaDataOnly As Boolean) As Boolean
 		Dim i_Compress As CabLib.Compress = New CabLib.Compress
 		
 		Try
@@ -351,7 +355,7 @@ Friend NotInheritable Class ConnectionManager
 			
 			'Use the SDP file to create a new publisher.
 			Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(sdpFilePath)
-			
+			publisher.MetadataOnly = metaDataOnly
 			
 			'Add the event handler to the publisher to show progress.
 			AddHandler publisher.ProgressHandler, AddressOf PublisherProgressHandler

@@ -14,7 +14,7 @@
 Imports System.ComponentModel
 
 Public Class DataGridViewState
-		Private _name As String
+	Private _name As String
 	Private _sortColumn As String
 	Private _sortDirection As ListSortDirection
 	Private _columnFillWeights() As Integer
@@ -28,6 +28,31 @@ Public Class DataGridViewState
 		
 	End Sub
 	
+	Sub New( dgv As DataGridView )
+		
+		_name = dgv.Name
+		
+		'Set the sort column and order
+		If dgv.SortedColumn Is Nothing Then
+			_sortColumn = ""
+			_sortDirection = ListSortDirection.Descending
+		Else
+			_sortColumn = dgv.SortedColumn.Name
+			
+			
+			If dgv.SortOrder = SortOrder.Ascending Then
+				appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Ascending
+			Else If dgv.SortOrder = SortOrder.Descending Then
+				appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Descending
+			End If
+		End If
+				
+		'Save the dgv's columns to a temporary array.
+		_columnFillWeights = New Integer(dgv.Columns.Count - 1){}
+		For Each column As DataGridViewColumn In dgv.Columns
+			_columnFillWeights (column.Index) = CInt(column.FillWeight)
+		Next
+	End Sub
 	
 	' Property Server Name
 	Public Property Name() As String

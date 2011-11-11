@@ -764,20 +764,6 @@ Public Partial Class MainForm
 			If TypeOf Me._dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
 				tmpRevisionID = DirectCast(Me._dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId)
 				
-				'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
-				' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
-				Dim tmpDirectory As String = "\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString
-				Try
-					If Not Directory.Exists(tmpDirectory) Then
-						Msgbox(String.Format(globalRM.GetString("warning_revise_metadata"),DirectCast(Me._dgvMain.CurrentRow.Cells.Item("Title").Value, String)))
-						Exit Sub
-					End If
-				Catch
-					Msgbox(globalRM.GetString("warning_revised_package_data"))
-					Exit Sub
-				End Try
-				
-				
 				'Export the SDP to a temporary file.
 				Dim packageFile As String = ConnectionManager.ExportSDP(tmpRevisionID)
 				
@@ -926,16 +912,8 @@ Public Partial Class MainForm
 				If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
 					tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
 					
-					'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
-					' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
-					If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
-						Msgbox(String.Format(globalRM.GetString("warning_expire_metadata"),DirectCast(tmpRow.Cells.Item("Title").Value, String)))
-						allExpired = False
-					Else
-						'Make sure we have something selected
-						If Not tmpRow.Cells.Item("Id").Value Is Nothing Then
-							ConnectionManager.ParentServer.ExpirePackage( DirectCast(tmpRow.Cells.Item("Id").Value,UpdateRevisionId) )
-						End If
+					If Not tmpRow.Cells.Item("Id").Value Is Nothing Then
+						ConnectionManager.ParentServer.ExpirePackage( DirectCast(tmpRow.Cells.Item("Id").Value,UpdateRevisionId) )
 					End If
 				Else
 					MsgBox(globalRM.GetString("error_row_invalid_update_id"))
