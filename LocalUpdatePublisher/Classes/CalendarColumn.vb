@@ -138,7 +138,8 @@ Class CalendarEditingControl
 	Private rowIndexNum As Integer
 	
 	Public Sub New()
-		Me.Format = DateTimePickerFormat.Short
+		Me.Format = DateTimePickerFormat.Custom
+		Me.CustomFormat = "yyyy-MM-dd hh:mm tt"
 		Me.ShowCheckBox = True
 	End Sub
 	

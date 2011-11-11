@@ -37,23 +37,23 @@ Partial Class ApprovalForm
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ApprovalForm))
 		Me.lblInfo = New System.Windows.Forms.Label
 		Me.dgvApprovals = New System.Windows.Forms.DataGridView
-		Me.ComputerGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.approval = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.OptionalInstall = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.cntxtMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.approveForOptionalInstallToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.approveForInstallToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.approveForRemovalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.notApprovedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.Deadline = New LocalUpdatePublisher.CalendarColumn
-		Me.CreationDate = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.ApprovalAction = New System.Windows.Forms.DataGridViewTextBoxColumn
-		Me.TargetGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOK = New System.Windows.Forms.Button
 		Me.btnCancel = New System.Windows.Forms.Button
 		Me.lblUninstallable = New System.Windows.Forms.Label
 		Me.btnReload = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
+		Me.ComputerGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.approval = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.Deadline = New LocalUpdatePublisher.CalendarColumn
+		Me.OptionalInstall = New System.Windows.Forms.DataGridViewCheckBoxColumn
+		Me.CreationDate = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.ApprovalAction = New System.Windows.Forms.DataGridViewTextBoxColumn
+		Me.TargetGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
 		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.cntxtMenuStrip.SuspendLayout
 		Me.tlpMain.SuspendLayout
@@ -69,6 +69,7 @@ Partial Class ApprovalForm
 		'
 		Me.dgvApprovals.AllowUserToAddRows = false
 		Me.dgvApprovals.AllowUserToDeleteRows = false
+		Me.dgvApprovals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.dgvApprovals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.dgvApprovals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ComputerGroup, Me.approval, Me.Deadline, Me.OptionalInstall, Me.CreationDate, Me.ApprovalAction, Me.TargetGroup})
 		Me.tlpMain.SetColumnSpan(Me.dgvApprovals, 4)
@@ -76,22 +77,6 @@ Partial Class ApprovalForm
 		Me.dgvApprovals.Name = "dgvApprovals"
 		Me.dgvApprovals.RowHeadersVisible = false
 		AddHandler Me.dgvApprovals.CellMouseDown, AddressOf Me.DtaGridViewCellMouseDown
-		'
-		'ComputerGroup
-		'
-		Me.ComputerGroup.FillWeight = 142.2902!
-		resources.ApplyResources(Me.ComputerGroup, "ComputerGroup")
-		Me.ComputerGroup.Name = "ComputerGroup"
-		Me.ComputerGroup.ReadOnly = true
-		'
-		'approval
-		'
-		Me.approval.ContextMenuStrip = Me.cntxtMenuStrip
-		Me.approval.FillWeight = 96.79607!
-		Me.approval.Name = "approval"
-		Me.approval.ReadOnly = true
-		Me.approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
 		'
 		'cntxtMenuStrip
 		'
@@ -122,34 +107,6 @@ Partial Class ApprovalForm
 		Me.notApprovedToolStripMenuItem.Name = "notApprovedToolStripMenuItem"
 		resources.ApplyResources(Me.notApprovedToolStripMenuItem, "notApprovedToolStripMenuItem")
 		AddHandler Me.notApprovedToolStripMenuItem.Click, AddressOf Me.NotApprovedToolStripMenuItemClick
-		'
-		'Deadline
-		'
-		Me.Deadline.FillWeight = 60.9137!
-		Me.Deadline.Name = "Deadline"
-		'
-		'OptionalInstall
-		'
-		Me.OptionalInstall.Visible = False
-		Me.OptionalInstall.Name = "OptionalInstall"
-		'
-		'CreationDate
-		'
-		Me.CreationDate.FillWeight = 60.9137!
-		Me.CreationDate.Name = "CreationDate"
-		Me.CreationDate.ReadOnly = true
-		'
-		'ApprovalAction
-		'
-		Me.ApprovalAction.Name = "ApprovalAction"
-		Me.ApprovalAction.ReadOnly = true
-		resources.ApplyResources(Me.ApprovalAction, "ApprovalAction")
-		'
-		'TargetGroup
-		'
-		Me.TargetGroup.Name = "TargetGroup"
-		Me.TargetGroup.ReadOnly = true
-		resources.ApplyResources(Me.TargetGroup, "TargetGroup")
 		'
 		'btnOK
 		'
@@ -192,6 +149,53 @@ Partial Class ApprovalForm
 		Me.tlpMain.Controls.Add(Me.lblInfo, 0, 0)
 		Me.tlpMain.Controls.Add(Me.lblUninstallable, 0, 2)
 		Me.tlpMain.Name = "tlpMain"
+		'
+		'ComputerGroup
+		'
+		Me.ComputerGroup.FillWeight = 30!
+		resources.ApplyResources(Me.ComputerGroup, "ComputerGroup")
+		Me.ComputerGroup.Name = "ComputerGroup"
+		Me.ComputerGroup.ReadOnly = true
+		'
+		'approval
+		'
+		Me.approval.ContextMenuStrip = Me.cntxtMenuStrip
+		Me.approval.FillWeight = 30!
+		resources.ApplyResources(Me.approval, "approval")
+		Me.approval.Name = "approval"
+		Me.approval.ReadOnly = true
+		Me.approval.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.approval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+		'
+		'Deadline
+		'
+		Me.Deadline.FillWeight = 25!
+		resources.ApplyResources(Me.Deadline, "Deadline")
+		Me.Deadline.Name = "Deadline"
+		'
+		'OptionalInstall
+		'
+		resources.ApplyResources(Me.OptionalInstall, "OptionalInstall")
+		Me.OptionalInstall.Name = "OptionalInstall"
+		'
+		'CreationDate
+		'
+		Me.CreationDate.FillWeight = 15!
+		resources.ApplyResources(Me.CreationDate, "CreationDate")
+		Me.CreationDate.Name = "CreationDate"
+		Me.CreationDate.ReadOnly = true
+		'
+		'ApprovalAction
+		'
+		resources.ApplyResources(Me.ApprovalAction, "ApprovalAction")
+		Me.ApprovalAction.Name = "ApprovalAction"
+		Me.ApprovalAction.ReadOnly = true
+		'
+		'TargetGroup
+		'
+		resources.ApplyResources(Me.TargetGroup, "TargetGroup")
+		Me.TargetGroup.Name = "TargetGroup"
+		Me.TargetGroup.ReadOnly = true
 		'
 		'ApprovalForm
 		'
