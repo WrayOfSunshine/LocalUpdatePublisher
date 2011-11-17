@@ -67,7 +67,7 @@ Public Class CalendarCell
 	
 	Public Sub New()
 		' Use the short date format.
-		Me.Style.Format = "d"
+		Me.Style.Format = "MM/dd/yyyy hh:mm tt"
 	End Sub
 		
 	Public Overrides Sub InitializeEditingControl(ByVal rowIndex As Integer, _
@@ -84,6 +84,7 @@ Public Class CalendarCell
 			CType(DataGridView.EditingControl, CalendarEditingControl)
 		
 		ctl.ShowCheckBox = _showCheckBox
+		
 		If Not Me.Value is Nothing Then
 			If TypeOF(Me.Value) is DateTime Then
 				ctl.Value = DirectCast(Me.Value, DateTime)
@@ -139,7 +140,7 @@ Class CalendarEditingControl
 	
 	Public Sub New()
 		Me.Format = DateTimePickerFormat.Custom
-		Me.CustomFormat = "yyyy-MM-dd hh:mm tt"
+		Me.CustomFormat = "MM/dd/yyyy hh:mm tt"
 		Me.ShowCheckBox = True
 	End Sub
 	
@@ -148,7 +149,7 @@ Class CalendarEditingControl
 		
 		Get
 			If Me.Checked Then
-				Return Me.Value.ToShortDateString()
+				Return Me.Value.ToString(Me.CustomFormat)
 			Else
 				Return String.Empty
 			End If
@@ -167,7 +168,7 @@ Class CalendarEditingControl
 		Implements IDataGridViewEditingControl.GetEditingControlFormattedValue
 		
 		If Me.Checked Then
-			Return Me.Value.ToShortDateString()
+			Return Me.Value.ToString(Me.CustomFormat)
 		Else
 			Return String.Empty
 		End If
