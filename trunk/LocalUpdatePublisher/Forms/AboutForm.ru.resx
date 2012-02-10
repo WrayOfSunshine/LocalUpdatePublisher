@@ -59,15 +59,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text">
-    <value>О</value>
-    <comment>Automatically translated using Google</comment>
+    <value>О программе</value>
   </data>
   <data name="lblAbout.Text">
-    <value>Локальная версия Издатель обновление: {0} 
+    <value>Версия Local Update Publisher: {0} 
 
-местный издатель Обновление WSUS использует API продлить WSUS реализации включить устанавливает и обновляет от третьих лиц. 
+Local Update Publisher использует WSUS API для расширения возможностей WSUS, что позволяет добавить установку и обновление ПО от третьих лиц. 
 
-Для поддержки и обновлений перейти к</value>
-    <comment>Automatically translated using Google</comment>
+Для поддержки и обновлений перейти на</value>
   </data>
 </root>

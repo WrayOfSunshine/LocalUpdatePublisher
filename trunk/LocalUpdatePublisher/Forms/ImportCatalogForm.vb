@@ -106,9 +106,9 @@ Public Partial Class ImportCatalogForm
 				
 				'Import the SDP file based on the metadata flag.
 				If DirectCast(tmpRow.Cells("Metadata").Value, Boolean) Then
-					ConnectionManager.PublishPackageMetaData(tmpSDP, Me)
+					AsyncPublisher.PublishPackageMetaData(tmpSDP, Me)
 				Else
-					ConnectionManager.PublishPackageFromCatalog(tmpSDP, _extractPath, Me)
+					AsyncPublisher.PublishPackageFromCatalog(tmpSDP, _extractPath, Me)
 				End If
 			End If
 		Next

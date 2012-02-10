@@ -59,32 +59,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aboutToolStripMenuItem.Text">
-    <value>О</value>
-    <comment>Automatically translated using Google</comment>
+    <value>О программе</value>
   </data>
   <data name="btnComputerListRefresh.Text">
-    <value>Обновление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновить</value>
   </data>
   <data name="btnComputerRefreshReport.Text">
-    <value>Обновление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновить</value>
   </data>
   <data name="btnUpdateRefreshReport.Text">
-    <value>Обновление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновить</value>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text">
     <value>Информация о сертификате</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkApprovedOnly.Text">
-    <value>Утвержденные только обновления</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Только одобренные обновления</value>
   </data>
   <data name="chkInheritApprovals.Text">
-    <value>Наследовать Утверждения</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Наследовать Одобрения</value>
   </data>
   <data name="connectionSettingsToolStripMenuItem.Text">
     <value>Параметры подключения</value>
@@ -95,23 +89,21 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exportCatalogToolStripMenuItem.Text">
-    <value>Экспорт каталога</value>
+    <value>Экспорт Каталога</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exportListToolStripMenuItem.Text">
-    <value>Экспортный список</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Экспорт Списка</value>
   </data>
   <data name="exportReportToolStripMenuItem.Text">
-    <value>Экспорт отчета</value>
+    <value>Экспорт Отчета</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exportRulesToolStripMenuItem.Text">
-    <value>Правила экспорта</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Экспорт Правил</value>
   </data>
   <data name="exportUpdateToolStripMenuItem.Text">
-    <value>Экспорт обновлений</value>
+    <value>Экспорт Обновлений</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="fileToolStripMenuItem.Text">
@@ -119,56 +111,50 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="helpForumsToolStripMenuItem.Text">
-    <value>Помощь Форум</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Помощь на Форуме</value>
   </data>
   <data name="helpToolStripMenuItem.Text">
     <value>Помощь</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="importCatalogToolStripMenuItem.Text">
-    <value>Импорт каталога</value>
+    <value>Импорт Каталога</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="importRulesToolStripMenuItem.Text">
-    <value>Импорт правил</value>
+    <value>Импорт Правил</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="importUpdateToolStripMenuItem.Text">
-    <value>Импорт обновлений</value>
+    <value>Импорт Обновлений</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblArticleID.Text">
-    <value>Код статьи</value>
-    <comment>Automatically translated using Google</comment>
+    <value>ID Статьи</value>
   </data>
   <data name="lblBullitinID.Text">
-    <value>Идентификатор бюллетеня</value>
-    <comment>Automatically translated using Google</comment>
+    <value>ID Бюллетеня</value>
   </data>
   <data name="lblClassification.Text">
     <value>Классификация</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblComputerGroup.Text">
-    <value>Computer Group</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Группа Компьютеров</value>
   </data>
   <data name="lblComputerStatus.Text">
     <value>Статус</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblComputerUpdateStatus.Text">
-    <value>Обновление статуса</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Статус Обновлений</value>
   </data>
   <data name="lblDescription.Text">
     <value>Описание</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblID.Text">
-    <value>Идентификатор пакета</value>
-    <comment>Automatically translated using Google</comment>
+    <value>ID Пакета</value>
   </data>
   <data name="lblLanguages.Text">
     <value>Языки</value>
@@ -179,40 +165,33 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblNetwork.Text">
-    <value>Требуется сети</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нуждается в Сети</value>
   </data>
   <data name="lblPackageTitle.Text">
-    <value>Пакет Название</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Название Пакета</value>
   </data>
   <data name="lblPackageType.Text">
-    <value>Тип упаковки</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Тип Пакета</value>
   </data>
   <data name="lblPrerequisites.Text">
-    <value>Предпосылки</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Предварительные условия</value>
   </data>
   <data name="lblProduct.Text">
     <value>Продукт</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblRebootBehavior.Text">
-    <value>Перезагрузка Поведение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Поведение при Перезагрузке</value>
   </data>
   <data name="lblReturnCodes.Text">
-    <value>Коды возврата</value>
+    <value>Коды Возврата</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblSelectedTargetGroup.Text">
-    <value>Выбранный целевой группы</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Выбранная Целевая Группа</value>
   </data>
   <data name="lblSelectedTargetGroupCount.Text">
-    <value>(Кол-во компьютеров показано на рисунке)</value>
-    <comment>Automatically translated using Google</comment>
+    <value>(показано # компьютеров)</value>
   </data>
   <data name="lblSeverity.Text">
     <value>Строгость</value>
@@ -223,43 +202,38 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblUninstall.Text">
-    <value>Удалить</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Деинсталлировать</value>
   </data>
   <data name="lblUpdateNoStatus.Text">
     <value>Обновления без статуса:</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblUpdateStatus.Text">
-    <value>Обновление статуса</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Статус Обновлений</value>
   </data>
   <data name="lblUpdatesInstalledorNA.Text">
-    <value>Установленные обновления / не применимо:</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Установленные обновления/не применимо:</value>
   </data>
   <data name="lblUpdatesNeeded.Text">
-    <value>Обновления, которые:</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Требуется Обновление:</value>
   </data>
   <data name="lblUpdatesWErrors.Text">
     <value>Обновления с ошибками:</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblVendor.Text">
-    <value>Продавец</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Поставщик</value>
   </data>
   <data name="lupHelpToolStripMenuItem.Text">
     <value>Поддержка Wiki</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="manageRulesToolStripMenuItem.Text">
-    <value>Управление правилами</value>
+    <value>Управление Правилами</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="savedRulesToolStripMenuItem.Text">
-    <value>Сохраненные правила</value>
+    <value>Сохраненные Правила</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="settingsToolStripMenuItem.Text">
@@ -271,7 +245,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="tabComputerStatus.Text">
-    <value>Статус группы</value>
+    <value>Статус Группы</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="tabUpdateReport.Text">

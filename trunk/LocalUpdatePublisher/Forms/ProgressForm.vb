@@ -28,6 +28,14 @@ Public Partial Class ProgressForm
 		MyBase.Show()
 	End Sub
 	
+	'If a string is passed then set it as the descriptive text.
+	Public Overloads Sub Show(value as String, parentForm As Form)
+		Me.lblText.Text = value
+		Me.Refresh
+		Me.Owner = parentForm
+		MyBase.Show()
+	End Sub
+	
 	'Change the text of the current step.
 	Public Sub SetCurrentStep(value As String)
 		Me.lblCurrentStep.Text = value

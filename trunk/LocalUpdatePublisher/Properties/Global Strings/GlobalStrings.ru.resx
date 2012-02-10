@@ -63,8 +63,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="ApprovalAction">
-    <value>Утверждение Действие</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобряемое Действие</value>
   </data>
   <data name="CSID">
     <value>CSID</value>
@@ -75,8 +74,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="ComputerGroup">
-    <value>Computer Group</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Группа Компьютеров</value>
   </data>
   <data name="CreationDate">
     <value>Дата создания</value>
@@ -95,35 +93,30 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="IsInstallable_Instructions">
-    <value>Используйте эту форму, чтобы создавать, редактировать, удалять и группа правил, определяющих, если этот программный пакет может быть установлен. Если вы создали это обновление с помощью MSI или MSP файла, который вы увидите автоматически генерируются правила на уровне пункта устанавливается. По умолчанию правила в И группы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Используйте эту форму, чтобы создавать, редактировать, удалять и группа правил, определяющих, если этот программный пакет может быть установлен. Если вы создали это обновление с помощью MSI или MSP файла, вы увидите автоматически сгенерированное правило на том же пункте инсталлятора. По умолчанию все правила в группе И.</value>
   </data>
   <data name="IsInstallable_Title">
-    <value>Пакет уровень - Устанавливаемые правила</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Уровень Пакета - Устанавливаемые правила</value>
   </data>
   <data name="IsInstallable_TitleItemLevel">
     <value>Уровень установки пункта</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="IsInstalled_Instructions">
-    <value>Используйте эту форму, чтобы создавать, редактировать, удалять и группа правил, определяющих, если это программный пакет уже установлен. Если вы создали это обновление с помощью MSI или MSP файла, который вы увидите автоматически генерируются правила на уровне пункта устанавливается. По умолчанию правила в И группы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Используйте эту форму, чтобы создавать, редактировать, удалять и группировать правила, определяющие, если этот программный пакет уже установлен. Если вы создали это обновление с помощью MSI или MSP файла, вы увидите автоматически сгенерированное правило на том же пункте инсталлятора. По умолчанию все правила в группе И.</value>
   </data>
   <data name="IsInstalled_Title">
-    <value>Пакет уровень - Установленные правила</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Уровень Пакета - Установленные правила</value>
   </data>
   <data name="IsInstalled_TitleItemLevel">
     <value>Уровень установки пункта</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="OptionalInstall">
-    <value>Одобрено для Дополнительный Установить</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрено для Дополнительной Установки</value>
   </data>
   <data name="Reboot">
-    <value>перезагружать</value>
+    <value>Перезагрузить</value>
   </data>
   <data name="Result">
     <value>Результат</value>
@@ -141,16 +134,13 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="Succeeded">
-    <value>Преемник:</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Успешно</value>
   </data>
   <data name="TargetGroup">
-    <value>Целевые группы</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Целевая Группа</value>
   </data>
   <data name="add_new_server">
-    <value>Добавить сервер</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Добавить новый сервер</value>
   </data>
   <data name="add_rule">
     <value>Добавить правило</value>
@@ -173,20 +163,17 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="application">
-    <value>Применение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Приложение</value>
   </data>
   <data name="approval">
-    <value>Утверждение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрение</value>
   </data>
   <data name="approve">
     <value>Одобрять</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="approved">
-    <value>Утвержденный</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрено</value>
   </data>
   <data name="approved_for_install">
     <value>Одобрено для установки</value>
@@ -205,20 +192,17 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="clear_selection">
-    <value>Открытый выбор</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Очистить Выделение</value>
   </data>
   <data name="close">
-    <value>Близко</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Закрыть</value>
   </data>
   <data name="comparison">
     <value>Сравнение</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="component_codes">
-    <value>Компонент коды</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Коды Компонентов</value>
   </data>
   <data name="components">
     <value>Компоненты</value>
@@ -233,8 +217,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="computers_shown">
-    <value>{0} компьютеры показали</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Показано {0} компьютеров</value>
   </data>
   <data name="contains">
     <value>Содержит</value>
@@ -245,7 +228,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="created">
-    <value>Созданный</value>
+    <value>Создан</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="creation_date">
@@ -253,32 +236,27 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="custom_GUID">
-    <value>Custom GUID</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Настроить GUID</value>
   </data>
   <data name="data">
     <value>Данные</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="date">
-    <value>Дата утверждения</value>
+    <value>Дата одобрения</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="decline">
-    <value>Снижение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Отклонить</value>
   </data>
   <data name="declined">
-    <value>Отказался</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Отклонено</value>
   </data>
   <data name="declined_expired">
-    <value>Отказался (Истекла)</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Отклонено (Завершено)</value>
   </data>
   <data name="delete">
-    <value>Удалять</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Удалить</value>
   </data>
   <data name="domain_controller">
     <value>Контроллер домена</value>
@@ -289,32 +267,28 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="driver">
-    <value>Водитель</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Драйвер</value>
   </data>
   <data name="edit">
     <value>Редактировать</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="ends_with">
-    <value>Кончается С</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Оканчивается на</value>
   </data>
   <data name="equal_to">
     <value>Равно</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_cannot_uninstall">
-    <value>Это обновление не может быть удален.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Это обновление не может быть удалено.</value>
   </data>
   <data name="error_cannot_uninstall_multiple">
     <value>Вы не можете удалить несколько обновлений.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_certificate_import_ssl">
-    <value>Вы не можете импортировать сертификат, если вы не надежно подсоединен к WSUS-серверу с помощью протокола SSL.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы не можете импортировать сертификат, пока не установите защищенное соединение с WSUS-сервером с помощью протокола SSL.</value>
   </data>
   <data name="error_command_arguments">
     <value>Не достаточно аргументов, чтобы сгенерировать отчет</value>
@@ -325,24 +299,20 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_command_find_computer">
-    <value>Не удалось найти {0} целевой компьютер.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не удалось найти целевой компьютер {0} .</value>
   </data>
   <data name="error_command_find_group">
-    <value>Не удалось найти {0} группы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не удалось найти группу {0} .</value>
   </data>
   <data name="error_command_find_update">
-    <value>Не удалось найти {0} обновление.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не удалось найти обновление {0} .</value>
   </data>
   <data name="error_command_unknown">
     <value>Неизвестная команда</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_connection_cert_save">
-    <value>Существовал ошибка при создании сертификата.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Ошибка при создании сертификата.</value>
   </data>
   <data name="error_connection_connect">
     <value>Не удалось подключиться к серверу.</value>
@@ -373,8 +343,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_connection_manager_publish">
-    <value>Пакет не может быть опубликована.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакет не может быть опубликован.</value>
   </data>
   <data name="error_connection_no_XML">
     <value>Этот файл не содержит XML-файл.</value>
@@ -385,76 +354,62 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_connection_no_cert">
-    <value>Существует нет сертификата на {0}. Пока вы не создать или импортировать сертификат, который Вы не сможете публиковать обновления.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нет сертификата на {0}. Пока вы не создадите или импортируете сертификат, Вы не сможете публиковать обновления.</value>
   </data>
   <data name="error_connection_none">
     <value>Вы не подключены к серверу WSUS.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_export_catalog_no_url">
-    <value>Это обновление не может быть экспортирован потому, что первоначальный URL не был введен.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Это обновление не может быть экспортировано потому, что исходный URL не был введен.</value>
   </data>
   <data name="error_export_catalog_no_url_multiple">
-    <value>Некоторые пакеты не могут быть добавлены потому, что первоначальный URL не был введен.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Некоторые пакеты не могут быть добавлены потому, что исходный URL не был введен.</value>
   </data>
   <data name="error_export_catalog_not_cab">
-    <value>Вы должны экспортировать в кабине файла.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны экспортировать в cab-файл.</value>
   </data>
   <data name="error_export_update_data">
-    <value>Содержимое пакета не существует в папке UpdateServicesPackages. Она не может быть экспортирована.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Содержимое пакета не существует в папке UpdateServicesPackages. Он не может быть экспортирован.</value>
   </data>
   <data name="error_import_catalog_no_xml">
-    <value>Нет XML-файл был найден в этом Кабинет файл.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не был найден XML-файл в этом cab-файле.</value>
   </data>
   <data name="error_package_resigned">
-    <value>Пакет не может быть повторно подписал.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакет не может быть переподписан.</value>
   </data>
   <data name="error_packages_expired">
-    <value>Не все пакеты были успешно истек.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не все пакеты успешно завершились.</value>
   </data>
   <data name="error_packages_resigned">
-    <value>Не все пакеты были успешно повторно подписал.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не все пакеты были успешно переподписаны.</value>
   </data>
   <data name="error_result_code_empty">
     <value>Результат не должен быть пустым.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_return_codes_empty">
-    <value>Код возврата не должно быть пустым.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Код возврата не должен быть пустым.</value>
   </data>
   <data name="error_row_invalid_update_id">
-    <value>Эта строка не вернулся действительны UpdateID</value>
+    <value>Эта строка не вернула действительный UpdateID</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_rulecollection_cast">
-    <value>Не могли бы не бросили файла импорта правило коллекции правил.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Невозможно разработать файл для правила импорта для контроля коллекции .</value>
   </data>
   <data name="error_rulecollection_file_open">
     <value>Не удалось импортировать файл правил.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_rulecollection_import_file_exists">
-    <value>Импортировать файл не существует.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Файл импорта не существует.</value>
   </data>
   <data name="error_rules_editor_add_remove_group">
-    <value>Не могу добавлять / удалять группы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не могу добавить/удалить группу.</value>
   </data>
   <data name="error_rules_load">
-    <value>Правил не может быть загружен.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Правила не могут быть загружены.</value>
   </data>
   <data name="error_rules_unrecognized">
     <value>Это правило не распознается.</value>
@@ -473,24 +428,20 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_sort_enumerator">
-    <value>Должен быть перечислителя.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Должен быть перечислитель.</value>
   </data>
   <data name="error_update_create_SDP">
-    <value>Не удается создать пакет распространения программного обеспечения.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не удается создать пакет распространения ПО.</value>
   </data>
   <data name="error_update_imported">
-    <value>Обновление не был импортирован.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновление не было импортировано.</value>
   </data>
   <data name="error_update_invalid_XML">
-    <value>XML для SDP является недействительным.</value>
+    <value>XML для SDP недействительный.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="error_update_save">
-    <value>Невозможно сохранить обновления информации.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Невозможно сохранить информацию о обновлении.</value>
   </data>
   <data name="exception">
     <value>Исключение</value>
@@ -517,56 +468,44 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exception_argument">
-    <value>Аргумент Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение Аргумента</value>
   </data>
   <data name="exception_argument_null">
-    <value>Исключение Аргумент Null</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Пустой Аргумент</value>
   </data>
   <data name="exception_argument_out_of_range">
     <value>ArgumentOutOfRangeException</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exception_directory_not_found">
-    <value>Каталог не найден Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Каталог не найден </value>
   </data>
   <data name="exception_file_not_found">
-    <value>Файл не найден Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Файл не найден</value>
   </data>
   <data name="exception_invalid_data">
-    <value>Неверные данные Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Неверные данные</value>
   </data>
   <data name="exception_invalid_operation">
-    <value>Недопустимая операция Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Недопустимая операция </value>
   </data>
   <data name="exception_not_supported">
-    <value>Не поддерживается Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение не поддерживается </value>
   </data>
   <data name="exception_object_disposed">
-    <value>Объект Disposed Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Объект Расположен</value>
   </data>
   <data name="exception_out_of_memory">
-    <value>Out Of Memory исключений</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Недостаточно памяти</value>
   </data>
   <data name="exception_path_too_long">
-    <value>Путь Too Long Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Путь слишком длинный</value>
   </data>
   <data name="exception_security">
-    <value>Исключение в отношении безопасности</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение безопасности</value>
   </data>
   <data name="exception_unauthorized_access">
-    <value>Несанкционированный доступ Исключение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Исключение - Несанкционированный доступ</value>
   </data>
   <data name="exception_web">
     <value>Веб Исключение</value>
@@ -581,43 +520,37 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="exception_wsus_invalid_server">
-    <value>WSUS Недопустимая Исключение сервера</value>
-    <comment>Automatically translated using Google</comment>
+    <value>WSUS Недопустимое Исключение Сервера</value>
   </data>
   <data name="exception_wsus_object_not_found">
     <value>WsusObjectNotFoundException</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="expire">
-    <value>Истекать</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Завершить</value>
   </data>
   <data name="export">
     <value>Экспорт</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="export_certificate">
-    <value>Экспортный сертификат</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Экспортировать сертификат</value>
   </data>
   <data name="failed">
-    <value>Ошибка</value>
+    <value>Неудачно</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="failed_or_needed">
-    <value>Сбой или необходимые</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Сбойные или Нуждающиеся</value>
   </data>
   <data name="false">
-    <value>Ложный</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Ложь</value>
   </data>
   <data name="feature_names">
-    <value>Наименований компонентов</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Имя Функций</value>
   </data>
   <data name="features">
-    <value>Особенности</value>
+    <value>Функции</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_cab">
@@ -625,16 +558,14 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="file_filter_update_binary">
-    <value>Обновление файлов (*.MSI; *.MSP; *.EXE)|*.MSI;*. MSP;*.EXE|MSI файлы (*.MSI)|*.MSI|MSP файлы (*.MSP)|*.MSP|Файлы EXE (*.EXE)|*.EXE</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Файлы обновлений (*.MSI; *.MSP; *.EXE)|*.MSI;*. MSP;*.EXE|MSI файлы (*.MSI)|*.MSI|MSP файлы (*.MSP)|*.MSP|Файлы EXE (*.EXE)|*.EXE</value>
   </data>
   <data name="file_filter_xml">
     <value>XML-файлы|*.XML</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="finish">
-    <value>Отделка</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Готово</value>
   </data>
   <data name="greater_than">
     <value>Больше</value>
@@ -649,32 +580,26 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="group_begin_and">
-    <value>Начните И</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Начало И</value>
   </data>
   <data name="group_begin_or">
-    <value>Начните Или</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Начало Или</value>
   </data>
   <data name="group_end_and">
-    <value>Конец А</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Конец И</value>
   </data>
   <data name="group_end_or">
     <value>Конец Или</value>
-    <comment>Automatically translated using Google</comment>
   </data>
   <data name="group_name">
-    <value>Название группы</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Имя группы</value>
   </data>
   <data name="group_remove_and">
     <value>Удалить И</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="group_remove_or">
-    <value>Удалить или</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Удалить Или</value>
   </data>
   <data name="history_for">
     <value>История для</value>
@@ -685,7 +610,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="import_certificate">
-    <value>Импорт Cert</value>
+    <value>Импорт Серт.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="in_bytes_example">
@@ -697,43 +622,37 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="installed">
-    <value>Установленная</value>
+    <value>Установлен</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="installed_not_applicable">
-    <value>Установленная / Не используется</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Установлено/Не применимо</value>
   </data>
   <data name="installed_not_applicable_no_status">
-    <value>Установленная / Не используется или нет статус</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Установлено/Не Применимо или Нет Статуса</value>
   </data>
   <data name="ip_address">
     <value>IP-адрес</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="label_approval_form">
-    <value>Выберите разрешений на {0}</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Выберите одобрения для {0}</value>
   </data>
   <data name="label_approval_form_multiple">
-    <value>Выберите разрешений на {0} обновлений.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Выберите ободрения для {0} обновлений.</value>
   </data>
   <data name="label_approval_progress_form">
-    <value>Установите разрешения на {0}</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Установить одобрения для {0}</value>
   </data>
   <data name="label_approval_progress_status">
-    <value>Настройка разрешений на {0} {1} {2}</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Настройка одобрения для {0}  {1} на {2}</value>
   </data>
   <data name="label_certificate_info_exists">
-    <value>Ниже вы найдете информацию о сертификате установлены на вашем сервере WSUS. Это свидетельство должно быть распределены к каждому клиенту, прежде чем они могут получить локально опубликованных обновлений.</value>
+    <value>Ниже вы найдете информацию о сертификате установленном на вашем сервере WSUS. Этот сертификат должен быть распространен на каждого клиента, прежде чем они могут получить локально опубликованных обновлений.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="label_certificate_info_no_cert">
-    <value>Сертификат не был создан. Вы должны сделать это до публикации обновлений.</value>
+    <value>Сертификат еще не был создан. Вы должны сделать это до публикации обновлений.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="label_certificate_info_preexists">
@@ -857,40 +776,34 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="less_than">
-    <value>Меньше чем</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Меньше</value>
   </data>
   <data name="less_than_or_equal_to">
     <value>Меньше или равно</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="load">
-    <value>Нагрузка</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Загрузить</value>
   </data>
   <data name="modified">
-    <value>Модифицированный</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Изменен</value>
   </data>
   <data name="modified_date">
     <value>Дата изменения</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="needed">
-    <value>Необходимый</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нуждаются</value>
   </data>
   <data name="next">
     <value>Следующий</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="no_approval">
-    <value>Нет Утверждение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нет Одобрено</value>
   </data>
   <data name="no_status">
-    <value>Нет Положение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нет Статуса</value>
   </data>
   <data name="none">
     <value>Ни один</value>
@@ -925,8 +838,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="product_code">
-    <value>Код товара</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Код Продукта</value>
   </data>
   <data name="product_codes">
     <value>Коды продуктов</value>
@@ -945,44 +857,36 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="prompt_connection_wait">
-    <value>Подождите, пока обновление опубликованы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Подождите, пока обновление публикуется.</value>
   </data>
   <data name="prompt_connection_wait_revise">
-    <value>Подождите, пока обновление пересмотрены.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Подождите, пока обновление проверяется.</value>
   </data>
   <data name="prompt_decline_package">
-    <value>Желаете ли Вы снижение {0}?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы хотите отклонить{0}?</value>
   </data>
   <data name="prompt_decline_packages">
-    <value>Желаете ли Вы снижение этих {0} обновления?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы хотите отклонить эти {0} обновлений?</value>
   </data>
   <data name="prompt_expire_package">
     <value>Желаете ли Вы истекает {0}?</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="prompt_expire_packages">
-    <value>Желаете ли Вы истекают эти {0} обновления?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Желаете ли Вы завершить эти {0} обновлений?</value>
   </data>
   <data name="prompt_remove_package">
     <value>Вы хотите удалить {0}?</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="prompt_remove_packages">
-    <value>Вы хотите, чтобы удалить эти {0} обновления?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы хотите удалить эти {0} обновлений?</value>
   </data>
   <data name="prompt_resign_package">
-    <value>Желаете ли Вы повторно подписать {0}?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Желаете ли Вы переподписать {0}?</value>
   </data>
   <data name="prompt_resign_packages">
-    <value>Желаете ли Вы повторно подписать эти {0} обновления?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Желаете ли Вы переподписать эти {0} обновлений?</value>
   </data>
   <data name="prompt_ruled_editor_confirm_delete">
     <value>Вы действительно хотите удалить это правило?</value>
@@ -1005,8 +909,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="prompt_saved_rules_rule_exists">
-    <value>Существует уже правило называется {0}. Что бы вы хотели делать?</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Уже существует правило с именем {0}. Что бы вы хотели делать?</value>
   </data>
   <data name="prompt_saves_rules_delete">
     <value>Вы действительно хотите удалить выбранные правила?</value>
@@ -1017,12 +920,10 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="prompt_update_selection_GUID">
-    <value>Введите GUID вы хотели бы использовать</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Введите GUID, который вы хотели бы использовать</value>
   </data>
   <data name="prompt_update_selection_GUID_title">
-    <value>Custom GUID Вступление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Настроить запись GUID</value>
   </data>
   <data name="query">
     <value>Запрос</value>
@@ -1033,16 +934,17 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="refreshing_update_list">
-    <value>Обновление Обновление списка</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновление Списка Обновлений</value>
   </data>
   <data name="remove">
-    <value>Удаление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Удалить</value>
   </data>
   <data name="remove_group">
-    <value>Удалить группу</value>
+    <value>Удалить Группу</value>
     <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="removing">
+    <value>Удаление {0}</value>
   </data>
   <data name="rename">
     <value>Переименовать</value>
@@ -1053,72 +955,60 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="resign">
-    <value>Повторно знак</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Переподписать</value>
   </data>
   <data name="revise">
-    <value>Пересматривать</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Проверить</value>
   </data>
   <data name="rule_MSI_component">
     <value>MSI Компонент установлен для продукта</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_MSI_feature">
-    <value>Функция MSI установлен для продукта</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Функция MSI установлена для продукта</value>
   </data>
   <data name="rule_MSI_patch">
-    <value>MSI установлен патч для продукта</value>
-    <comment>Automatically translated using Google</comment>
+    <value>MSI патч установлен для продукта</value>
   </data>
   <data name="rule_MSI_product">
-    <value>MSI установке продукта</value>
-    <comment>Automatically translated using Google</comment>
+    <value>MSI продукт установлен</value>
   </data>
   <data name="rule_WMI_query">
-    <value>WMI Query</value>
-    <comment>Automatically translated using Google</comment>
+    <value>WMI Запрос</value>
   </data>
   <data name="rule_file_creation">
     <value>Создание файла</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_file_creation_with_registry">
-    <value>Создание файла с Registry</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Создание файла с реестром</value>
   </data>
   <data name="rule_file_exists">
     <value>Файл существует</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_file_exists_with_registry">
-    <value>Файл существует С Registry</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Файл существует с реестром</value>
   </data>
   <data name="rule_file_modified">
-    <value>Измененный файл</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Файл изменен</value>
   </data>
   <data name="rule_file_modified_with_registry">
-    <value>Измененный файл с Registry</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Файл изменен с реестром</value>
   </data>
   <data name="rule_file_size">
     <value>Размер файла</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_file_size_with_registry">
-    <value>Размер файла с Registry</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Размер файла с реестром</value>
   </data>
   <data name="rule_file_version">
     <value>Версия файла</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_file_version_with_registry">
-    <value>Версия файла с Registry</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Версия файла с реестром</value>
   </data>
   <data name="rule_processor_architecture">
     <value>Архитектура процессора</value>
@@ -1133,32 +1023,26 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_registry_expand_SZ_value">
-    <value>Реестр Развернуть С. З. Значение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Значение Реестра Expand SZ</value>
   </data>
   <data name="rule_registry_key_exists">
-    <value>Реестра существует</value>
+    <value>Ключ Реестра существует</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="rule_registry_value_exists">
-    <value>Параметр реестра Exists</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Параметр реестра существует</value>
   </data>
   <data name="rule_registry_version_in_SZ">
-    <value>Реестр Версия в SZ</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Версия Реестра в SZ</value>
   </data>
   <data name="rule_windows_language">
-    <value>Windows Язык</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Язык Windows</value>
   </data>
   <data name="rule_windows_version">
-    <value>Версия для Windows</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Версия Windows</value>
   </data>
   <data name="save_rule">
-    <value>Сохранить правила</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Сохранить правило</value>
   </data>
   <data name="select_rules_to_export">
     <value>Выберите Правила для экспорта</value>
@@ -1189,8 +1073,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="skip">
-    <value>Пропускать</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пропустить</value>
   </data>
   <data name="status">
     <value>Статус</value>
@@ -1201,28 +1084,24 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="status_loading_computer_report">
-    <value>Загрузка компьютера отчет</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Загрузка отчета о компьютерах</value>
   </data>
   <data name="status_loading_form">
     <value>Загрузка формы</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="status_loading_update_categories">
-    <value>Загрузка обновления категории</value>
-    <comment>Google</comment>
+    <value>Загрузка категорий обновления</value>
   </data>
   <data name="status_loading_update_report">
-    <value>Загрузка обновлений отчет</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Загрузка отчета о обновлениях</value>
   </data>
   <data name="status_server_connected">
     <value>Подключено к {0}</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="status_server_connecting">
-    <value>Подключение к {0}</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Подключаюсь к {0}</value>
   </data>
   <data name="string">
     <value>Строка</value>
@@ -1233,24 +1112,19 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="success_connection_cert_created">
-    <value>Собственный сертификат был создан. Этот сертификат должен теперь быть распределены к каждому клиенту в соответствии Microsofts Локальная документация Publsihing.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Был создан самоподписанный сертификат. Этот сертификат должен теперь быть предоставлен каждому клиенту в соответствии с документацией Microsofts Local Publsihing.</value>
   </data>
   <data name="success_connection_cert_import">
-    <value>Ваш сертификат был успешно импортирован. Этот сертификат должен теперь быть распределены к каждому клиенту в соответствии Локальная документация Publsihing Microsoft.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Ваш сертификат был успешно импортирован. Этот сертификат должен теперь быть предоставлен каждому клиенту в соответствии документацией Microsoft's Local Publsihing.</value>
   </data>
   <data name="success_packages_expired">
-    <value>Пакеты, успешно закончился.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакеты успешно завершились.</value>
   </data>
   <data name="success_packages_resigned">
-    <value>Пакеты, успешно повторно подписал.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакеты успешно переподписаны.</value>
   </data>
   <data name="success_update_imported">
-    <value>Обновление успешно импортированы.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Обновление успешно импортировано.</value>
   </data>
   <data name="superseded">
     <value>Заменен</value>
@@ -1265,8 +1139,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="uninstall">
-    <value>Удалить</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Деинсталлировать</value>
   </data>
   <data name="unknown">
     <value>Неизвестный</value>
@@ -1293,8 +1166,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="value_type">
-    <value>ValueType</value>
-    <comment>Automatically translated using Google</comment>
+    <value>ТипЗначения</value>
   </data>
   <data name="version_maximum">
     <value>VersionMax</value>
@@ -1313,7 +1185,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_connection_cert_import">
-    <value>Сертификат не может быть импортирован. Необходимо указать как файл сертификата и пароль для использования существующего сертификата.</value>
+    <value>Сертификат не может быть импортирован. Необходимо указать файл сертификата и пароль для использования существующего сертификата.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_connection_no_cert">
@@ -1321,52 +1193,43 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_expire_metadata">
-    <value>{0}, кажется, только метаданные обновления. В настоящее время они не могут быть истек.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>{0}, кажется, только метаданные обновятся. В настоящее время они не могут завершиться.</value>
   </data>
   <data name="warning_no_row_selected">
-    <value>Нет строки выбранной</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Не выбрана строка</value>
   </data>
   <data name="warning_no_value">
     <value>Вы должны ввести значение.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_not_approved_all">
-    <value>Вы не можете предотвратить установку на все группы компьютеров</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы не можете предупредить установку на группу Все Компьютеры</value>
   </data>
   <data name="warning_options_restart">
-    <value>Вы должны перезагрузить LUP для этого параметра вступили в силу.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны перезагрузить LUP, чтобы этот параметр вступил в силу.</value>
   </data>
   <data name="warning_remove_package_data">
-    <value>Существовал проблема удаления содержимого пакета от UpdateServicesPackages. Используйте этот UpdateID делать это вручную</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Проблема удаления содержимого пакета из UpdateServicesPackages. Используйте этот UpdateID, чтобы сделать это вручную</value>
   </data>
   <data name="warning_resign_metadata">
-    <value>{0}, кажется, только метаданные обновления. В настоящее время они не могут быть повторно подписал.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>{0}, кажется, только метаданные обновятся. В настоящее время они не могут быть переподписаны.</value>
   </data>
   <data name="warning_revise_metadata">
-    <value>{0}, кажется, только метаданные обновления. В настоящее время они не могут быть пересмотрены.</value>
+    <value>{0}, кажется, только метаданные обновятся. В настоящее время они не могут быть пересмотрены.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_revise_packages">
-    <value>Вы не можете пересмотреть несколько обновлений в то же время.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы не можете пересмотреть несколько обновлений в одно и то же время.</value>
   </data>
   <data name="warning_revised_package_data">
-    <value>Существовал проблема проверки содержимого пакета от UpdateServicesPackages. Это обновление не может быть пересмотрена.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Проблема проверки содержимого пакета от UpdateServicesPackages. Это обновление не может быть пересмотрено.</value>
   </data>
   <data name="warning_rules_GUID">
     <value>Вы должны ввести корректный GUID.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_rules_OS">
-    <value>Вы должны ввести крупные и мелкие версии ОС.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны ввести мин. и макс. версии ОС.</value>
   </data>
   <data name="warning_rules_comparison">
     <value>Вы должны выбрать сравнение.</value>
@@ -1393,8 +1256,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_rules_namespace">
-    <value>Необходимо ввести имен.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Необходимо ввести пространство имён.</value>
   </data>
   <data name="warning_rules_processor">
     <value>Вы должны выбрать тип процессора.</value>
@@ -1405,12 +1267,10 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_rules_registry_key">
-    <value>Вы должны выбрать реестра.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны выбрать ключ реестра.</value>
   </data>
   <data name="warning_rules_registry_sub_key">
-    <value>Вы должны ввести реестр под ключ.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны ввести подключ реестра.</value>
   </data>
   <data name="warning_rules_registry_type">
     <value>Вы должны выбрать тип значения реестра.</value>
@@ -1421,8 +1281,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_rules_version">
-    <value>Вы должны ввести версии.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы должны ввести версию.</value>
   </data>
   <data name="warning_saved_rules_delete">
     <value>Вы должны выбрать записи для удаления.</value>
@@ -1453,12 +1312,10 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_update_metadata_additional_files">
-    <value>Вы не можете публиковать метаданные только обновление с дополнительными файлами.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Вы не можете публиковать метаданные, только обновление с дополнительными файлами.</value>
   </data>
   <data name="warning_update_no_uri">
-    <value>Нет URI учетом.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Нет URI.</value>
   </data>
   <data name="warning_update_publish_failed">
     <value>Пакет не был опубликован.</value>
@@ -1469,16 +1326,13 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="warning_update_revise_success">
-    <value>Пакет успешно пересмотрена.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакет успешно проверен.</value>
   </data>
   <data name="warning_update_revised_failed">
-    <value>Пакет не был пересмотрен.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Пакет не был проверен.</value>
   </data>
   <data name="warning_update_vendor">
-    <value>Продавец не может быть Microsoft.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Поставщик не может быть Microsoft.</value>
   </data>
   <data name="workstation">
     <value>Рабочая станция</value>

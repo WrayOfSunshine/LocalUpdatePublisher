@@ -67,20 +67,18 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="btnExportImportCert.Text">
-    <value>Экспортный сертификат</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Экспортировать сертификат</value>
   </data>
   <data name="lblEffectiveDates.Text">
     <value>Эффективный</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblHash.Text">
-    <value>Hash</value>
+    <value>Хэш</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblIssuer.Text">
-    <value>Выдан</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Выпущено</value>
   </data>
   <data name="lblSerial.Text">
     <value>Серийный номер</value>
@@ -88,7 +86,6 @@
   </data>
   <data name="lblSubject.Text">
     <value>Тема</value>
-    <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblTo.Text">
     <value>К</value>

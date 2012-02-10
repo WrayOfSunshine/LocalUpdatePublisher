@@ -59,28 +59,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text">
-    <value>Утвердить обновление</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрить Обновление</value>
   </data>
   <data name="approveForInstallToolStripMenuItem.Text">
-    <value>Утвердить к установке</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрить установку</value>
   </data>
   <data name="approveForRemovalToolStripMenuItem.Text">
-    <value>Утвердить для удаления</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Одобрить удаление</value>
   </data>
   <data name="btnCancel.Text">
     <value>Отменить</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="btnReload.Text">
-    <value>Перезагружать</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Перезагрузить</value>
   </data>
   <data name="lblUninstallable.Text">
-    <value>Это обновление не может быть удален.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Это обновление не может быть удалено.</value>
   </data>
   <data name="notApprovedToolStripMenuItem.Text">
     <value>Не одобрено</value>

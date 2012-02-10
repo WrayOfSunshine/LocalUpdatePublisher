@@ -799,6 +799,9 @@
   <data name="remove_group">
     <value>Remove Group</value>
   </data>
+  <data name="removing">
+    <value>Removing {0}</value>
+  </data>
   <data name="rename">
     <value>Rename</value>
   </data>

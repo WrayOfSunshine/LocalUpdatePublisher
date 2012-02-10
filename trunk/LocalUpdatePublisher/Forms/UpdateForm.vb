@@ -57,6 +57,7 @@ Public Partial Class UpdateForm
 		Me.isInstalledRules.Instructions = globalRM.GetString("IsInstalled_Instructions")
 		Me.isInstalledRules.Title = globalRM.GetString("IsInstalled_Title")
 		Me.isInstalledRules.TitleItemLevel = globalRM.GetString("IsInstalled_TitleItemLevel")
+		
 	End Sub
 	
 	#Region "Form Methods"
@@ -137,7 +138,7 @@ Public Partial Class UpdateForm
 		End If
 		
 		'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
-		' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.	
+		' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
 		If Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & _SDP.PackageId.ToString) Then
 			Me.chkMetadataOnly.Checked = False
 		Else
@@ -223,7 +224,7 @@ Public Partial Class UpdateForm
 			Exit Sub
 			'User has selected the finish button so close the form.
 		Else If Me.TabsUpdate.SelectedIndex = Me.TabsUpdate.TabCount - 1 Then
-			Me.Close
+			Me.btnNext.Enabled = False
 			Exit Sub
 		End If
 		
@@ -679,13 +680,11 @@ Public Partial Class UpdateForm
 				If _Revision Then 'This is a revision.
 					Me.Cursor = Cursors.WaitCursor
 					
-					If ConnectionManager.RevisePackage(_Sdp, Me, chkMetaDataOnly.Checked) Then
-						Msgbox (globalRM.GetString("warning_update_revise_success"))
-					Else
-						Msgbox (globalRM.GetString("warning_update_revised_failed"))
-					End If
-					Me.Cursor = Cursors.Arrow
-					Me.DialogResult = DialogResult.OK
+					'Add the handler for when the publisher finishes.
+					AddHandler AsyncPublisher.Completed, AddressOf Me.RevisionResults
+					
+					'Revise the package asyncronously.
+					Call AsyncPublisher.RevisePackage(_Sdp, Me, chkMetaDataOnly.Checked)
 					
 					Return True
 					
@@ -700,33 +699,55 @@ Public Partial Class UpdateForm
 						FileList.Add(TmpRow.Cells("FileObject").Value)
 					Next
 					
-					Me.Cursor = Cursors.WaitCursor
+					'Add the handler for when the publisher finishes.
+					AddHandler AsyncPublisher.Completed, AddressOf Me.PublishingResults
 					
-					'Publish package according to the metadata only checkbox.
-					Dim Result As Boolean = False
+					'Publish package asycronously according to the metadata only checkbox.
 					If chkMetadataOnly.Checked Then
-						Result = ConnectionManager.PublishPackageMetaData(_Sdp, Me)
+						Call AsyncPublisher.PublishPackageMetaData(_Sdp, Me)
 					Else
-						Result = ConnectionManager.PublishPackage(_Sdp,FileList, Me)
+						Call AsyncPublisher.PublishPackage(_Sdp,FileList, Me)
 					End If
 					
-					Me.Cursor = Cursors.Arrow
-					
-					If Result Then
-						Msgbox (globalRM.GetString("warning_update_publish_success"))
-					Else
-						Msgbox (globalRM.GetString("warning_update_publish_failed"))
-					End If
-					
-					Me.DialogResult = DialogResult.OK
 					Return True
 				End If
-				Return False 'If we got this far we failed.
+				
 		End Select
 		
 		Return True 'If we got this far we succeeded.
 	End Function 'PerformAction
 	
+	'When the asyncronous publishing call completes this will run.
+	Sub PublishingResults ( result As Boolean )
+		If Result Then
+			Msgbox (globalRM.GetString("warning_update_publish_success"))
+			Me.DialogResult = DialogResult.OK
+			Me.Close
+		Else
+			Msgbox (globalRM.GetString("warning_update_publish_failed"))
+			Me.DialogResult = DialogResult.Cancel
+			Me.btnNext.Enabled = True
+		End If
+		
+		'Remove the handler.
+		RemoveHandler AsyncPublisher.Completed, AddressOf Me.PublishingResults
+	End Sub
+	
+	'When the asyncronous revision call completes this will run.
+	Sub RevisionResults ( result As Boolean )
+		If Result Then
+			Msgbox (globalRM.GetString("warning_update_revise_success"))
+			Me.DialogResult = DialogResult.OK
+			Me.Close
+		Else
+			Msgbox (globalRM.GetString("warning_update_revised_failed"))
+			Me.DialogResult = DialogResult.Cancel
+			Me.btnNext.Enabled = True
+		End If
+		
+		'Remove the handler.
+		RemoveHandler AsyncPublisher.Completed, AddressOf Me.RevisionResults
+	End Sub
 	
 	'This routine loads the SDP passed into the form and
 	' loads the form with the appropriate data.  This is the first
@@ -1172,4 +1193,5 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	#End Region
+	
 End Class
