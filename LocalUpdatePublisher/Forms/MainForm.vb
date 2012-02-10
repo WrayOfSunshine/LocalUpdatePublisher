@@ -502,6 +502,29 @@ Public Partial Class MainForm
 			End If
 		Next
 	End Sub
+	
+	'This is a routine which will check the background threads and manage
+	' the UI while they do their work.  The goal of the BGWs are to keep the
+	' UI responsive, not to allow the user to continue working with the program.
+	Sub CheckBGWThreads
+		If Me.bgwComputerList.IsBusy Then
+			Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
+			Me.Enabled = False
+		Else If Me.bgwSelectNode.IsBusy Then
+			Me.Enabled = False
+		Else If Me.bgwServers.IsBusy
+			Me.Enabled = False
+		Else If Me.bgwUpdateNodes.IsBusy Then
+			toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_categories")
+			Me.Enabled = False
+		Else If Me.bgwUpdateList.IsBusy Then
+			toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
+			Me.Enabled = False
+		Else
+			toolStripStatusLabel.Text = Nothing
+			Me.Enabled = True
+		End If
+	End Sub
 	#End Region
 	
 	#Region "Form Menu Events"
@@ -639,17 +662,26 @@ Public Partial Class MainForm
 		If ConnectionManager.Connected AndAlso _
 			Not importFileDialog.ShowDialog = DialogResult.Cancel Then
 			
-			'Publish the CAB
-			If ConnectionManager.PublishPackageFromCAB(New FileInfo(importFileDialog.FileName), Me) Then
-				Msgbox ("success_update_imported")
-				Call LoadUpdateNodes()
-				Call RefreshUpdateList()
-			Else
-				Msgbox (globalRM.GetString("error_update_imported"))
-			End If
+			'Add the handler for when the publisher finishes.
+			AddHandler AsyncPublisher.Completed, AddressOf Me.PublishingResults
 			
+			'Publish the CAB asyconously.
+			Call AsyncPublisher.PublishPackageFromCAB(New FileInfo(importFileDialog.FileName), Me)
 			
 		End If
+	End Sub
+	
+	'When the asyncronous publishing call completes this will run.
+	Sub PublishingResults ( result As Boolean )
+		If Result Then
+			Msgbox (globalRM.GetString("success_update_imported"))
+			Call LoadUpdateNodes()
+			Call RefreshUpdateList()
+		Else
+			Msgbox (globalRM.GetString("error_update_imported"))
+		End If
+		
+		RemoveHandler AsyncPublisher.Completed, AddressOf Me.PublishingResults
 	End Sub
 	
 	'Show the connection settings.
@@ -830,13 +862,18 @@ Public Partial Class MainForm
 		
 		'If user really wants to remove the updates then do so
 		If response = MsgBoxResult.Yes Then
+			Me.Enabled = False
 			Me.Cursor = Cursors.WaitCursor
+			
 			'Loop through and delete rows that have an Id listed.
 			For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
 				
 				If Not tmpRow.Cells("IUpdate").Value Is Nothing Then
 					'Get update.
 					tmpUpdate = DirectCast( tmpRow.Cells("IUpdate").Value, IUpdate)
+					
+					'Set status.
+					Me.toolStripStatusLabel.Text = String.Format(globalRM.GetString("removing"), tmpUpdate.Title)
 					
 					'Remove the approvals
 					For Each approval As IUpdateApproval In tmpUpdate.GetUpdateApprovals
@@ -867,21 +904,20 @@ Public Partial Class MainForm
 					Catch
 						Msgbox(globalRM.GetString("warning_remove_package_data") & ": " & vbNewline & tmpUpdate.Id.UpdateId.ToString)
 					End Try
-				End IF
+					
+					'Clear the status
+					Me.toolStripStatusLabel.Text = Nothing
+				End If
 			Next
 			
-			Call LoadUpdateNodes
-			
-			'If at some point the tmpUpdate object was instantiated then try to reload its vendor and product.
+			'Reload the update nodes in case they have changed.  Attempt to re-select the currently selected node.
 			If Not tmpUpdate Is Nothing Then
-				Call SelectNode(Me._updateNode, Path.Combine ( tmpUpdate.CompanyTitles(0) , tmpUpdate.ProductTitles(0)))
-				
-				'If the vendor or product wasn't found, refresh the list to clear the DGV.
-				If Me.treeView.SelectedNode.Equals(Me._updateNode) Then
-					Call RefreshUpdateList
-				End If
+				Call LoadUpdateNodes(Path.Combine ( tmpUpdate.CompanyTitles(0) , tmpUpdate.ProductTitles(0)))
+			Else
+				Call LoadUpdateNodes()
 			End If
 			
+			Me.Enabled = True
 			Me.Cursor = Cursors.Arrow
 		End If
 		
@@ -1253,6 +1289,10 @@ Public Partial Class MainForm
 	End Sub
 	
 	Private Sub TreeViewSelectComputerNode(sender As Object, e As TreeViewEventArgs)
+		
+		'Update the selected group label.
+		lblSelectedTargetGroup.Text = DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup ).Name
+		
 		'Setup the panels.
 		scHeader.Panel1Collapsed = False
 		pnlUpdates.Visible = False
@@ -1279,7 +1319,7 @@ Public Partial Class MainForm
 		
 		Call RefreshComputerList
 		Call LoadComputerGroupStatus
-		lblSelectedTargetGroup.Text = DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup ).Name
+		
 	End Sub
 	
 	Private Sub TreeViewSelectUpdateNode(sender As Object, e As TreeViewEventArgs)
@@ -1382,8 +1422,7 @@ Public Partial Class MainForm
 		Dim tmpProductNode As TreeNode
 		Dim tmpProductFamilyNode As TreeNode
 		
-		'If the argument is a tree node then cast it as such.
-		If TypeOf e.Argument Is TreeNode Then startNode = DirectCast(e.Argument, TreeNode)
+		startNode = DirectCast(Me._updateNode.Clone, TreeNode)
 		
 		'Clear the updates node and the import update and report comboboxes.
 		If Not startNode Is Nothing Then
@@ -1455,28 +1494,51 @@ Public Partial Class MainForm
 			End If
 		End If
 		
-		e.Result = startNode
+		'If the argument is a string then pass it along as the selected node path
+		If Not E.Argument Is Nothing AndAlso TypeOf e.Argument Is String Then
+			e.Result = New AsyncNodeDetails ( startNode, DirectCast ( e.Argument , String) )
+		Else
+			e.Result = New AsyncNodeDetails ( startNode, Nothing )
+		End If
 	End Sub
 	
 	'When the asynchronous process is complete add the nodes to the update node.
 	Sub BgwUpdateNodesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
-		If TypeOf e.Result Is TreeNode Then
-			Dim tmpTreeNode As TreeNode = DirectCast ( e.Result, TreeNode )
+		If TypeOf e.Result Is AsyncNodeDetails Then
+			Dim tmpAsyncNodeDetails As AsyncNodeDetails = DirectCast ( e.Result, AsyncNodeDetails)
 			_updateNode.Nodes.Clear
 			
-			For Each tmpNode As TreeNode In tmpTreeNode.Nodes
+			
+			For Each tmpNode As TreeNode In tmpAsyncNodeDetails.Node.Nodes
 				_updateNode.Nodes.Add(tmpNode)
 			Next
+			
+			'If a path was passed along then try to select it, otherwise just refresh the update list.
+			If Not tmpAsyncNodeDetails.SelectedNodePath Is Nothing Then
+				'If at some point the tmpUpdate object was instantiated then try to reload its vendor and product.
+				Call SelectNode(Me._updateNode, tmpAsyncNodeDetails.SelectedNodePath)
+				
+				'If the vendor or product wasn't found, refresh the list to clear the DGV.
+				If Me.treeView.SelectedNode.Equals(Me._updateNode) Then
+					Call RefreshUpdateList
+				End If
+			Else
+				Call RefreshUpdateList
+			End If
+			
 		End If
-		
-		toolStripStatusLabel.Text = ""
+		Call CheckBGWThreads
 	End Sub
 	
 	'Load the main update node with vendors, product families, and products.
-	Sub LoadUpdateNodes
+	Sub LoadUpdateNodes()
+		Call LoadUpdateNodes( Nothing )
+	End Sub
+	
+	Sub LoadUpdateNodes( selectedNodePath As String)
 		If Not Me.bgwUpdateNodes.IsBusy Then
-			toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_categories")
-			Me.bgwUpdateNodes.RunWorkerAsync(_updateNode.Clone)
+			Me.bgwUpdateNodes.RunWorkerAsync(selectedNodePath)
+			Call CheckBGWThreads
 		End If
 	End Sub
 	
@@ -1734,7 +1796,7 @@ Public Partial Class MainForm
 	#Region "DGV Load Methods"
 	
 	'This method is called to perform the work of getting the computer list asynchronously.
-	Sub BgwComputersDoWork(sender As Object, e As DoWorkEventArgs)
+	Sub BgwComputerListDoWork(sender As Object, e As DoWorkEventArgs)
 		
 		'If we were passed a RefreshInfo object then use it to call GetComputer list, store the data, and pass it to the result.
 		If TypeOf e.Argument Is RefreshInfo Then
@@ -1747,7 +1809,7 @@ Public Partial Class MainForm
 	End Sub
 	
 	'When the asynchronous Do Work is completed then load the returned data into the DGV.
-	Sub BgwComputersRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+	Sub BgwComputerListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
 		Dim riTemp As RefreshInfo = New RefreshInfo
 		
 		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
@@ -1759,8 +1821,6 @@ Public Partial Class MainForm
 		If _dgvMain.DataSource Is Nothing Then
 			'Update the count.
 			Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), "0")
-			_noEvents = False
-			Me.toolStripStatusLabel.Text = ""
 		Else
 			
 			'Set header texts for main DGV.
@@ -1835,7 +1895,7 @@ Public Partial Class MainForm
 		End If
 		
 		_noEvents = False
-		toolStripStatusLabel.Text = ""
+		Call CheckBGWThreads
 	End Sub
 	
 	'Call RefreshComputerList with defaults.
@@ -1845,11 +1905,10 @@ Public Partial Class MainForm
 	
 	'Refresh the list of computers shown in the main DGV.
 	Sub RefreshComputerList( maintainSelectedRow As Boolean )
-		If Not Me.bgwComputers.IsBusy Then
+		If Not Me.bgwComputerList.IsBusy Then
 			Dim riTemp As RefreshInfo = New RefreshInfo
 			
 			_noEvents = True
-			toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
 			
 			'Make sure a computer tree node it selected
 			If Not treeView.SelectedNode Is Nothing AndAlso _
@@ -1867,16 +1926,22 @@ Public Partial Class MainForm
 					riTemp.OriginalValue = Nothing
 				End If
 				
+				'Clear the main DGV and computers listed count.
+				_dgvMain.DataSource = Nothing
+				Me.lblSelectedTargetGroupCount.Text = Nothing
+				
 				'Make the asynchronous call.
-				Me.bgwComputers.RunWorkerAsync(riTemp)
+				Me.bgwComputerList.RunWorkerAsync(riTemp)
+				
+				Call Me.CheckBGWThreads
 			Else
 				_noEvents = False
-				toolStripStatusLabel.Text = ""
+				Call CheckBGWThreads
 			End If
 		End If
 	End Sub
 	
-	Sub BgwUpdatesDoWork(sender As Object, e As DoWorkEventArgs)
+	Sub BgwUpdateListDoWork(sender As Object, e As DoWorkEventArgs)
 		
 		'If we were passed a RefreshInfo object then use it to call GetUpdateList, store the data, and pass it to the result.
 		If TypeOf e.Argument Is RefreshInfo Then
@@ -1890,7 +1955,7 @@ Public Partial Class MainForm
 		
 	End Sub
 	
-	Sub BgwUpdatesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+	Sub BgwUpdateListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
 		Dim riTemp As RefreshInfo = New RefreshInfo
 		
 		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
@@ -1950,6 +2015,8 @@ Public Partial Class MainForm
 				End If
 			End If
 		End If
+		
+		Call CheckBGWThreads
 	End Sub
 	
 	'Call RefreshUpdateList with defaults.
@@ -1965,26 +2032,23 @@ Public Partial Class MainForm
 	Sub RefreshUpdateList(maintainSelectedRow As Boolean)
 		Dim originalValue As Guid
 		
-		If Not Me.bgwUpdates.IsBusy Then
+		If Not Me.bgwUpdateList.IsBusy Then
 			Dim riTemp As RefreshInfo = New RefreshInfo
 			
 			_noEvents = True
-			toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
-			
 			If Me.treeView.SelectedNode Is Nothing OrElse _
 				Me.treeView.SelectedNode.Tag Is Nothing Then
-				_dgvMain.DataSource = Nothing 'Clear the main DGV.
+				
+				'Clear the main DGV.
+				_dgvMain.DataSource = Nothing
+				
 				'Clear the update data by calling the loads with an index equal to the number of rows.
 				Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
 				Call LoadUpdateStatus( Me._dgvMain.Rows.Count)
 				
-				_noEvents = False
-				toolStripStatusLabel.Text = ""
-				Exit Sub
+				
 			Else If Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-				_noEvents = False
-				toolStripStatusLabel.Text = ""
-				Exit Sub
+				_dgvMain.DataSource = Nothing 'Clear the main DGV.
 			Else
 				If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
 					'Populate refresh info object
@@ -1998,13 +2062,16 @@ Public Partial Class MainForm
 						originalValue = Nothing
 					End If
 					
+					'Clear the main DGV.
+					_dgvMain.DataSource = Nothing
+					
 					'Make the asynchronous call.
-					Me.bgwUpdates.RunWorkerAsync(riTemp)
+					Me.bgwUpdateList.RunWorkerAsync(riTemp)
 				End If
 			End If
 		End If
 		
-		toolStripStatusLabel.Text = ""
+		Call CheckBGWThreads
 		_noEvents = False
 	End Sub
 	#End Region
@@ -2647,4 +2714,39 @@ Public Partial Class MainForm
 	End Sub
 	#End Region
 End Class
-				
+
+#Region "AsyncNodeDetails Class"
+Public Class AsyncNodeDetails
+	Public Sub New()
+	End Sub
+	
+	Public Sub New(node As Treenode , selectedNodePath As String)
+		_node = node
+		_selectedNodePath = selectedNodePath
+	End Sub
+	
+	#Region "Properties"
+	Private _node As TreeNode
+	Public Property Node() As TreeNode
+		Get
+			Return _node
+		End Get
+		Set
+			_node = Value
+		End Set
+	End Property
+	
+	Private _selectedNodePath As String
+	Public Property SelectedNodePath() As String
+		Get
+			Return _selectedNodePath
+		End Get
+		Set
+			_selectedNodePath = Value
+		End Set
+	End Property
+	
+	
+	#End Region
+End Class
+			#End Region

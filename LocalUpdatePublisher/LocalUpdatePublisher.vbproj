@@ -73,6 +73,7 @@
     <Import Include="System.Diagnostics" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+    <Compile Include="Classes\AsyncPublisher.vb" />
     <Compile Include="Classes\CalendarColumn.vb" />
     <Compile Include="Classes\ComboTargetGroups.vb" />
     <Compile Include="Classes\ComboVendors.vb" />
@@ -149,6 +150,12 @@
       <DependentUpon>PrerequisiteUpdatesForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\PrerequisiteUpdatesForm.vb" />
+    <Compile Include="Forms\ProgressForm.Designer.vb">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ReturnCodesForm.Designer.vb">
       <DependentUpon>ReturnCodesForm.vb</DependentUpon>
     </Compile>
@@ -179,12 +186,6 @@
       <DependentUpon>PasswordForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\PasswordForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProgressForm.Designer.vb">
-      <DependentUpon>ProgressForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProgressForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SettingsForm.Designer.vb">
@@ -673,6 +674,9 @@
     <EmbeddedResource Include="Forms\ProgressForm.pl.resx">
       <DependentUpon>ProgressForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressForm.resx">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProgressForm.ru.resx">
       <DependentUpon>ProgressForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -798,9 +802,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PasswordForm.resx">
       <DependentUpon>PasswordForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProgressForm.resx">
-      <DependentUpon>ProgressForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SavedRulesForm.ru.resx">
       <DependentUpon>SavedRulesForm.vb</DependentUpon>

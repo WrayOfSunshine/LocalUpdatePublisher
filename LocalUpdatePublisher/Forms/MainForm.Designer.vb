@@ -153,8 +153,8 @@ Partial Class MainForm
 		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		Me.bgwComputers = New System.ComponentModel.BackgroundWorker
-		Me.bgwUpdates = New System.ComponentModel.BackgroundWorker
+		Me.bgwComputerList = New System.ComponentModel.BackgroundWorker
+		Me.bgwUpdateList = New System.ComponentModel.BackgroundWorker
 		Me.bgwServers = New System.ComponentModel.BackgroundWorker
 		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker
 		Me.bgwSelectNode = New System.ComponentModel.BackgroundWorker
@@ -1080,15 +1080,15 @@ Partial Class MainForm
 		Me.tlpMain.Controls.Add(Me.statusStrip, 0, 2)
 		Me.tlpMain.Name = "tlpMain"
 		'
-		'bgwComputers
+		'bgwComputerList
 		'
-		AddHandler Me.bgwComputers.DoWork, AddressOf Me.BgwComputersDoWork
-		AddHandler Me.bgwComputers.RunWorkerCompleted, AddressOf Me.BgwComputersRunWorkerCompleted
+		AddHandler Me.bgwComputerList.DoWork, AddressOf Me.BgwComputerListDoWork
+		AddHandler Me.bgwComputerList.RunWorkerCompleted, AddressOf Me.BgwComputerListRunWorkerCompleted
 		'
-		'bgwUpdates
+		'bgwUpdateList
 		'
-		AddHandler Me.bgwUpdates.DoWork, AddressOf Me.BgwUpdatesDoWork
-		AddHandler Me.bgwUpdates.RunWorkerCompleted, AddressOf Me.BgwUpdatesRunWorkerCompleted
+		AddHandler Me.bgwUpdateList.DoWork, AddressOf Me.BgwUpdateListDoWork
+		AddHandler Me.bgwUpdateList.RunWorkerCompleted, AddressOf Me.BgwUpdateListRunWorkerCompleted
 		'
 		'bgwUpdateNodes
 		'
@@ -1161,13 +1161,13 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private bgwComputerList As System.ComponentModel.BackgroundWorker
+	Private bgwUpdateList As System.ComponentModel.BackgroundWorker
 	Private tlpUpdateReport As System.Windows.Forms.TableLayoutPanel
 	Private tlpComputerReport As System.Windows.Forms.TableLayoutPanel
 	Private bgwSelectNode As System.ComponentModel.BackgroundWorker
 	Private bgwUpdateNodes As System.ComponentModel.BackgroundWorker
 	Private bgwServers As System.ComponentModel.BackgroundWorker
-	Private bgwUpdates As System.ComponentModel.BackgroundWorker
-	Private bgwComputers As System.ComponentModel.BackgroundWorker
 	Private settingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private tlpComputerInfo As System.Windows.Forms.TableLayoutPanel

@@ -804,6 +804,9 @@
   <data name="remove_group">
     <value>Gruppe entfernen</value>
   </data>
+  <data name="removing">
+    <value>Entfernen von {0}</value>
+  </data>
   <data name="rename">
     <value>Umbenennen</value>
   </data>

@@ -59,15 +59,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text">
-    <value>Утверждение Прогресс</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Ход Одобрения</value>
   </data>
   <data name="btnCancel.Text">
     <value>Отменить</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="btnClose.Text">
-    <value>Близко</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Закрыть</value>
   </data>
 </root>

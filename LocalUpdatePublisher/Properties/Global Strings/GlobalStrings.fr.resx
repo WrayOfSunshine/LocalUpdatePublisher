@@ -796,6 +796,9 @@
   <data name="remove_group">
     <value>Supprimer le Groupe</value>
   </data>
+  <data name="removing">
+    <value>Retrait {0}</value>
+  </data>
   <data name="rename">
     <value>Renommer</value>
   </data>

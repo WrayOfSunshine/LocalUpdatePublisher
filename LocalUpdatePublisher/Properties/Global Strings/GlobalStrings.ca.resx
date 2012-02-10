@@ -1029,6 +1029,9 @@
     <value>Esborrar grup</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="removing">
+    <value>Extracció  {0}</value>
+  </data>
   <data name="rename">
     <value>Reanomenar</value>
     <comment>Automatically translated using Google</comment>

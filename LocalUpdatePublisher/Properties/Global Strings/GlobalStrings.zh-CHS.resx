@@ -1044,6 +1044,9 @@
     <value>删除组</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="removing">
+    <value>卸下  {0}</value>
+  </data>
   <data name="rename">
     <value>重命名</value>
     <comment>Automatically translated using Google</comment>

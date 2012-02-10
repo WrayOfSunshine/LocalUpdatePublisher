@@ -63,24 +63,20 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="btnClose.Text">
-    <value>Близко</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Закрыть</value>
   </data>
   <data name="chkDemoteClassification.Text">
-    <value>Понизить Критические и обновлений безопасности.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Понизить уровень Критических и обновлений Безопасности.</value>
   </data>
   <data name="chkHideOfficialUpdates.Text">
-    <value>Скрыть официальных обновлений Microsoft.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Скрыть официальные обновления Microsoft.</value>
   </data>
   <data name="chkRememberTreeNode.Text">
     <value>Запомнить последний выбор.</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkReportRollup.Text">
-    <value>Накопительный пакет вниз по течению клиентов.</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Накатить нисходящим клиентам.</value>
   </data>
   <data name="lblCulture.Text">
     <value>Культура</value>

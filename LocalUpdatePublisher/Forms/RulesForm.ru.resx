@@ -71,24 +71,19 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="chkComponentCollection_requireAll.Text">
-    <value>Все компоненты, необходимые</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Все Необходимые Компоненты</value>
   </data>
   <data name="chkFeatureCollection_requireAll.Text">
-    <value>Все функции, необходимые</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Все необходимые Функции</value>
   </data>
   <data name="chkNotRule.Text">
-    <value>Отрицание правила</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Отрицательное Правило</value>
   </data>
   <data name="chkProductCollection_requireAll.Text">
-    <value>Все продукты обязательно</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Все неодходимые Продукты</value>
   </data>
   <data name="chkRegistry32Bit.Text">
-    <value>32 Bit реестра</value>
-    <comment>Automatically translated using Google</comment>
+    <value>32-битный Реестр</value>
   </data>
   <data name="lblComparison.Text">
     <value>Сравнение</value>
@@ -111,7 +106,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblFeatureCollection.Text">
-    <value>Особенности</value>
+    <value>Функции</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblLanguage.Text">
@@ -143,8 +138,7 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblProductCode.Text">
-    <value>Код товара</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Код Продукта</value>
   </data>
   <data name="lblProductCollection.Text">
     <value>Продукты</value>
@@ -159,16 +153,14 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblRegistryKey.Text">
-    <value>Реестра</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Ключ Реестра</value>
   </data>
   <data name="lblRegistryValue.Text">
     <value>Параметр реестра</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblRegistryValueType.Text">
-    <value>Реестра Тип Значение</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Тип Значения Реестра</value>
   </data>
   <data name="lblRuleType.Text">
     <value>Тип правила</value>

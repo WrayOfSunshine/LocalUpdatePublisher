@@ -1044,6 +1044,9 @@
     <value>Ta bort grupp</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="removing">
+    <value>Ta bort {0}</value>
+  </data>
   <data name="rename">
     <value>Byt namn</value>
     <comment>Automatically translated using Google</comment>

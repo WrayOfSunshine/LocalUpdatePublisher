@@ -25,6 +25,7 @@ Imports System.Globalization
 
 Namespace My
 	' This file controls the behavior of the application.
+	
 	Partial Class MyApplication
 		
 		Public Sub New()
@@ -38,7 +39,8 @@ Namespace My
 			
 		End Sub 'New
 		
-		Private Sub MyApplication_Startup( _
+		<STAThread()> _
+		Private Sub Main( _
 			ByVal sender As Object, _
 			ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs _
 			) Handles Me.Startup

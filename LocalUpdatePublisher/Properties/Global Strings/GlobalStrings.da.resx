@@ -1029,6 +1029,9 @@
     <value>Fjern gruppe</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="removing">
+    <value>Fjernelse {0}</value>
+  </data>
   <data name="rename">
     <value>Omdøb</value>
     <comment>Automatically translated using Google</comment>

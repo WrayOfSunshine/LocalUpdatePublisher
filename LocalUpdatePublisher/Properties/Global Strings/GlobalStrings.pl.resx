@@ -1029,6 +1029,9 @@
     <value>Usuń grupę</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="removing">
+    <value>Usuwanie {0}</value>
+  </data>
   <data name="rename">
     <value>Zmień nazwę</value>
     <comment>Automatically translated using Google</comment>

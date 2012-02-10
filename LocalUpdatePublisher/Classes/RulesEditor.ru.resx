@@ -71,12 +71,10 @@
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="btnGroup.Text">
-    <value>Группа правил</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Группировать правила</value>
   </data>
   <data name="btnLoadRules.Text">
-    <value>Нагрузка правил</value>
-    <comment>Automatically translated using Google</comment>
+    <value>Загрузить правила</value>
   </data>
   <data name="btnRemove.Text">
     <value>Удалить правило</value>
