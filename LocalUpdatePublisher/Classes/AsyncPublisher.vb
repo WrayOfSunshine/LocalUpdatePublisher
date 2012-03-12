@@ -364,6 +364,22 @@ Public Class AsyncPublisher
 	#End Region
 	
 	#Region "BackGroundWorker Details"
+	'Instantiate the bgwPublisher object if it hasn't been done so already.
+	Private Shared Sub SetupBgwPublisher
+		
+		If _bgwPublisher Is Nothing Then
+			_bgwPublisher = New System.ComponentModel.BackgroundWorker
+			_bgwPublisher.WorkerReportsProgress = True
+			AddHandler _bgwPublisher.DoWork, AddressOf _bgwPublisherDoWork
+			AddHandler _bgwPublisher.ProgressChanged, AddressOf _bgwPublisherProgressChanged
+			AddHandler _bgwPublisher.RunWorkerCompleted, AddressOf _bgwPublisherRunWorkerCompleted
+		End If
+		
+	End Sub
+	
+	'This routine does the actual publishing work.  It needs to receive a Publishing Details object which tells
+	' it what to do and also sets up the event handler to update the progress.  This is done here so that the
+	' progress handler runs and fires events on the BGW thread.
 	Private Shared Sub _bgwPublisherDoWork(sender As Object, e As DoWorkEventArgs)
 		
 		'Make sure an argument was passed and that it is a PublishignDetails object.
@@ -398,6 +414,13 @@ Public Class AsyncPublisher
 		End If
 	End Sub
 	
+	'This progress handler is assigned and thus runs in the BGW thread.  It then call the BGW's Report Progress routine
+	' to interact with the main UI thread to update the progress bar.
+	Private Shared Sub PublisherProgressHandler (sender As Object, e As Microsoft.UpdateServices.Administration.PublishingEventArgs)
+		_bgwPublisher.ReportProgress(0,e)
+	End Sub
+	
+	'This routine is called from the BGW thread and updates the progress form on the UI thread.
 	Private Shared Sub _bgwPublisherProgressChanged(sender As Object, e As ProgressChangedEventArgs)
 		
 		'If the UserState object is instantiated and a PublishingEventArgs then update the progress form.
@@ -415,7 +438,8 @@ Public Class AsyncPublisher
 		End If
 	End Sub
 	
-	'If
+	
+	'When the asyncronous publishing work is done handle the results.
 	Private Shared Sub _bgwPublisherRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
 		
 		If e.Cancelled Or Not e.Error Is Nothing Then
@@ -456,23 +480,6 @@ Public Class AsyncPublisher
 		End If
 	End Sub
 	
-	'Handle the progress of the publisher object by updating the progress form.
-	Private Shared Sub PublisherProgressHandler (sender As Object, e As Microsoft.UpdateServices.Administration.PublishingEventArgs)
-		_bgwPublisher.ReportProgress(0,e)
-	End Sub
-	
-	'Instantiage the bgwPublisher object if it hasn't been done so already.
-	Private Shared Sub SetupBgwPublisher
-		
-		If _bgwPublisher Is Nothing Then
-			_bgwPublisher = New System.ComponentModel.BackgroundWorker
-			_bgwPublisher.WorkerReportsProgress = True
-			AddHandler _bgwPublisher.DoWork, AddressOf _bgwPublisherDoWork
-			AddHandler _bgwPublisher.ProgressChanged, AddressOf _bgwPublisherProgressChanged
-			AddHandler _bgwPublisher.RunWorkerCompleted, AddressOf _bgwPublisherRunWorkerCompleted
-		End If
-		
-	End Sub
 	#End Region
 	
 	#Region "Misc"
