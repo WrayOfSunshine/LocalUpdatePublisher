@@ -799,15 +799,18 @@ Public Partial Class MainForm
 				'Export the SDP to a temporary file.
 				Dim packageFile As String = ConnectionManager.ExportSDP(tmpRevisionID)
 				
-				'Bring Up the approval dialog and dispose it when finished.
-				My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
-				tmpSDP = My.Forms.UpdateForm.ShowDialog(packageFile)
-				My.Forms.UpdateForm.Dispose
-				
-				'If the user completed the revision then refresh the list.
-				If Not tmpSDP Is Nothing Then
-					'Refresh the DGV.
-					Call RefreshUpdateList(True)
+				'If the package file exists.
+				If Not packageFile Is Nothing Then
+					'Bring Up the approval dialog and dispose it when finished.
+					My.Forms.UpdateForm.Location =  New Point(Me.Location.X + 100, Me.Location.Y + 100)
+					tmpSDP = My.Forms.UpdateForm.ShowDialog(packageFile)
+					My.Forms.UpdateForm.Dispose
+					
+					'If the user completed the revision then refresh the list.
+					If Not tmpSDP Is Nothing Then
+						'Refresh the DGV.
+						Call RefreshUpdateList(True)
+					End If
 				End If
 			Else
 				MsgBox(globalRM.GetString("error_row_invalid_update_id"))
@@ -1064,7 +1067,7 @@ Public Partial Class MainForm
 	
 	#Region "Context Menu Methods"
 	'Setup the context menus based on the currently selected node.
-	Sub SetupContextMenu
+	Sub SetupContextMenu(  rowIndex As Integer  )
 		'Clear the context menu.
 		Me.cmDgvMain.Items.Clear
 		
@@ -1096,28 +1099,43 @@ Public Partial Class MainForm
 			
 			'Add the items to both the context menu and the update menustrip if
 			' this server is not a replica server.
-			If ConnectionManager.Connected AndAlso Not ConnectionManager.CurrentServerConfiguration.IsReplicaServer
-				Me.cmDgvMain.Items.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
-				Me.cmDgvMain.Items.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
-				Me.cmDgvMain.Items.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
-				Me.cmDgvMain.Items.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
-				Me.cmDgvMain.Items.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
-				Me.cmDgvMain.Items.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
-				Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
-				'			Future Functionality:
-				'			Me.cmDgvMain.Items.Add(New ToolStripSeparator)
-				'			Me.updateToolStripMenuItem.DropDownItems.Add(New ToolStripSeparator)
-				'			Me.cmDgvMain.Items.Add("Revisions", Nothing , New EventHandler(AddressOf RevisionHistoryUpdate_Click))
-				'			Me.updateToolStripMenuItem.DropDownItems.Add("Revisions", Nothing , New EventHandler(AddressOf RevisionHistoryUpdate_Click))
-				'			Me.cmDgvMain.Items.Add("File Info", Nothing , New EventHandler(AddressOf FileInfoUpdate_Click))
-				'			Me.updateToolStripMenuItem.DropDownItems.Add("File Info", Nothing , New EventHandler(AddressOf FileInfoUpdate_Click))
-				'			Me.cmDgvMain.Items.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
-				'			Me.updateToolStripMenuItem.DropDownItems.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
+			
+			'Set the list based on the update source.
+			If Not Me._dgvMain.Rows(rowIndex) Is Nothing _
+				AndAlso Not Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is Nothing _
+				AndAlso TypeOf Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is IUpdate Then
+				
+				If DirectCast(Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value, IUpdate).UpdateSource = UpdateSource.Other Then
+					Me.cmDgvMain.Items.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("revise"), Nothing , New EventHandler(AddressOf ReviseUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("resign"), Nothing , New EventHandler(AddressOf ResignUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("remove"), Nothing , New EventHandler(AddressOf RemoveUpdate_Click))
+					'			Future Functionality:
+					'			Me.cmDgvMain.Items.Add(New ToolStripSeparator)
+					'			Me.updateToolStripMenuItem.DropDownItems.Add(New ToolStripSeparator)
+					'			Me.cmDgvMain.Items.Add("Revisions", Nothing , New EventHandler(AddressOf RevisionHistoryUpdate_Click))
+					'			Me.updateToolStripMenuItem.DropDownItems.Add("Revisions", Nothing , New EventHandler(AddressOf RevisionHistoryUpdate_Click))
+					'			Me.cmDgvMain.Items.Add("File Info", Nothing , New EventHandler(AddressOf FileInfoUpdate_Click))
+					'			Me.updateToolStripMenuItem.DropDownItems.Add("File Info", Nothing , New EventHandler(AddressOf FileInfoUpdate_Click))
+					'			Me.cmDgvMain.Items.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
+					'			Me.updateToolStripMenuItem.DropDownItems.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
+				Else
+					Me.cmDgvMain.Items.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("approve"), Nothing , New EventHandler(AddressOf ApproveUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("expire"), Nothing , New EventHandler(AddressOf ExpireUpdate_Click))
+					Me.cmDgvMain.Items.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+					Me.updateToolStripMenuItem.DropDownItems.Add( globalRM.GetString("decline"), Nothing , New EventHandler(AddressOf DeclineUpdate_Click))
+					
+				End If
 			End If
 			
 			'Enable the update item on the menustrip.
@@ -1224,7 +1242,6 @@ Public Partial Class MainForm
 			_noEvents = False
 		End If 'Node tag instantiated.
 		
-		Call SetupContextMenu()
 		Cursor = Cursors.Arrow
 	End Sub
 	
@@ -1648,7 +1665,7 @@ Public Partial Class MainForm
 			_dgvMain.CurrentCell = _dgvMain.Rows(e.RowIndex).Cells(e.ColumnIndex)
 			
 			
-			Dim r As Rectangle = _dgvMain.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true)
+			Dim r As Rectangle = _dgvMain.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
 			cmDgvMain.Show(DirectCast(sender, Control), r.Left + e.X, r.Top + e.Y)
 			'If user left clicks on a header row and rows are selected.
 		Else If  _dgvMain.SelectedRows.Count = 1 AndAlso e.Button = MouseButtons.Left Then
@@ -2083,17 +2100,20 @@ Public Partial Class MainForm
 	' might click multiple times on the same row we track the current row
 	' ourselves using the intCurrentRow object.  In this way we do not
 	' load the same row twice.
-	Sub LoadRow( rowIndex As Integer)
+	Sub LoadRow( rowIndex As Integer )
 		'If the current row hasn't changed, there is no selected treenode,
 		' or that tree node's tag is not populated then exit this routine.
 		If  Me.treeView.SelectedNode Is Nothing OrElse _
 			Me.treeView.SelectedNode.Tag Is Nothing Then
+			Call SetupContextMenu( -1 )
 			Exit Sub
 			'Computer Node
 		ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
 			'_currentRowIndex = rowIndex 'Set new row as current.
 			
+			
 			Call LoadComputerInfo( rowIndex )
+			Call SetupContextMenu( rowIndex )
 			
 			'If the user is currently on the Report tab then update it
 			' Otherwise clear the combo selections.
@@ -2112,6 +2132,7 @@ Public Partial Class MainForm
 			'Load the currently selected update's data.
 			Call LoadUpdateInfo( rowIndex )
 			Call LoadUpdateStatus( rowIndex )
+			Call SetupContextMenu( rowIndex )
 			
 			'If the user is currently on the report tab then update it.
 			' Otherwise clear the combo selections.
