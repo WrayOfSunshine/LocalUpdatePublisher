@@ -1,6 +1,8 @@
 Version 1.2
 -Revise and expire metadata only updates.  You will need to install the kb2530709 update on all servers and any machines running LUP remotely.
-
+-Add proper Russian translation. (Alexey)
+-Add tree images. (Michael Lob)
+-Implement rollup reporting for update status tab.
 
 Version 1.1
 -Globalization with translations for Catalan, Danish, French, and German.
