@@ -36,7 +36,7 @@ Partial Class MainForm
 		Me.components = New System.ComponentModel.Container
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
 		Me.splitContainerVert = New System.Windows.Forms.SplitContainer
-		Me.treeView = New System.Windows.Forms.TreeView
+		Me.treeView = New CustomTreeView
 		Me.splitContainerHorz = New System.Windows.Forms.SplitContainer
 		Me.scHeader = New System.Windows.Forms.SplitContainer
 		Me.tlpHeader = New System.Windows.Forms.TableLayoutPanel
@@ -158,6 +158,7 @@ Partial Class MainForm
 		Me.bgwServers = New System.ComponentModel.BackgroundWorker
 		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker
 		Me.bgwSelectNode = New System.ComponentModel.BackgroundWorker
+		Me.ilTreeView = New System.Windows.Forms.ImageList(Me.components)
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
 		Me.splitContainerVert.SuspendLayout
@@ -214,6 +215,7 @@ Partial Class MainForm
 		'
 		resources.ApplyResources(Me.treeView, "treeView")
 		Me.treeView.HideSelection = false
+		Me.treeView.ImageList = Me.ilTreeView
 		Me.treeView.Name = "treeView"
 		AddHandler Me.treeView.MouseUp, AddressOf Me.TreeViewMouseUp
 		AddHandler Me.treeView.AfterSelect, AddressOf Me.TreeViewAfterSelect
@@ -1100,6 +1102,14 @@ Partial Class MainForm
 		AddHandler Me.bgwSelectNode.DoWork, AddressOf Me.BgwSelectNodeDoWork
 		AddHandler Me.bgwSelectNode.RunWorkerCompleted, AddressOf Me.BgwSelectNodeRunWorkerCompleted
 		'
+		'ilTreeView
+		'
+		Me.ilTreeView.ImageStream = CType(resources.GetObject("ilTreeView.ImageStream"),System.Windows.Forms.ImageListStreamer)
+		Me.ilTreeView.TransparentColor = System.Drawing.Color.Transparent
+		Me.ilTreeView.Images.SetKeyName(0, "computer.ico")
+		Me.ilTreeView.Images.SetKeyName(1, "server.ico")
+		Me.ilTreeView.Images.SetKeyName(2, "updates.ico")
+		'
 		'MainForm
 		'
 		resources.ApplyResources(Me, "$this")
@@ -1161,6 +1171,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private ilTreeView As System.Windows.Forms.ImageList
 	Private bgwComputerList As System.ComponentModel.BackgroundWorker
 	Private bgwUpdateList As System.ComponentModel.BackgroundWorker
 	Private tlpUpdateReport As System.Windows.Forms.TableLayoutPanel
@@ -1275,7 +1286,7 @@ Partial Class MainForm
 	Private splitContainerVert As System.Windows.Forms.SplitContainer
 	Private splitContainerHorz As System.Windows.Forms.SplitContainer
 	Private cmDgvMain As System.Windows.Forms.ContextMenuStrip
-	Private treeView As System.Windows.Forms.TreeView
+	Private treeView As CustomTreeView
 	Private certificateInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private menuStrip As System.Windows.Forms.MenuStrip
 	Private aboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

@@ -82,6 +82,7 @@
     <Compile Include="Classes\CustomTabControl.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\CustomTreeView.vb" />
     <Compile Include="Classes\DataGridViewState.vb">
     </Compile>
     <Compile Include="Classes\GuidCollectionEditor.Designer.vb">
@@ -992,10 +993,13 @@
     <None Include="Resources\add.ico" />
     <None Include="Resources\attention.ico" />
     <None Include="Resources\check.ico" />
+    <None Include="Resources\computer.ico" />
     <None Include="Resources\delete.ico" />
     <None Include="Resources\info.ico" />
     <None Include="Resources\previous.ico" />
     <None Include="Resources\reload.ico" />
+    <None Include="Resources\server.ico" />
+    <None Include="Resources\updates.ico" />
     <Folder Include="Modules" />
     <Folder Include="Properties\Global Strings" />
   </ItemGroup>

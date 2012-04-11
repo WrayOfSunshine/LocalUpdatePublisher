@@ -1362,7 +1362,7 @@ Public Partial Class RulesForm
 				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
 				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
+					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss" & "Z") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileCreationWithRegistry
 				'Set the readable rule.
@@ -1379,7 +1379,7 @@ Public Partial Class RulesForm
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
+					"Created=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss" & "Z") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileModified
 				'Set the readable rule
@@ -1393,7 +1393,7 @@ Public Partial Class RulesForm
 				'If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) Then _xmlRule += "Csidl=""" & GetCSIDCode(Me.cboEnvironmentVariable.Text) & """ "
 				If Not String.IsNullOrEmpty(Me.cboEnvironmentVariable.Text) AndAlso Not Me.cboEnvironmentVariable.Text = "NONE" Then _xmlRule += "Csidl=""" & DirectCast(Me.cboEnvironmentVariable.SelectedValue, Integer).ToString & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
+					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss" & "Z") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileModifiedWithRegistry
 				'Set the readable rule.
@@ -1410,7 +1410,7 @@ Public Partial Class RulesForm
 				If Me.chkRegistry32Bit.Checked Then _xmlRule += "RegType32=""true"" "
 				_xmlRule += "Path=""" & StringToXML(Me.txtFilePath.Text.Trim("\"c)) & """ "
 				_xmlRule += "Comparison=""" & GetComparisonCode(Me.cboComparison.Text) & """ " & _
-					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss") & """ "
+					"Modified=""" & Format(Me.dtpDate.Value.ToUniversalTime,"yyyy-MM-dd'T'HH:mm:ss" & "Z") & """ "
 				_xmlRule += " />"
 			Case RuleTypes.FileSize
 				'Set the readable rule.
@@ -1764,7 +1764,7 @@ Public Partial Class RulesForm
 					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
 					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 					Me.dtpDate.Checked = True
-					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created")).ToLocalTime
 					
 					
 				Case "FileCreatedPrependRegSz"
@@ -1779,7 +1779,7 @@ Public Partial Class RulesForm
 					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 					Me.dtpDate.Checked = True
-					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created"))
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Created")).ToLocalTime
 				Case "FileModified"
 					'Select the Rule.
 					Me.cboRuleType.SelectedIndex = RuleTypes.FileModified
@@ -1790,7 +1790,7 @@ Public Partial Class RulesForm
 					Me.cboEnvironmentVariable.Text = [Enum].GetName(GetType(CSIDL), Convert.ToInt32(xmlReader.GetAttribute("Csidl")) )
 					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 					Me.dtpDate.Checked = True
-					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified")).ToLocalTime
 					
 				Case "FileModifiedPrependRegSz"
 					'Select the rule.
@@ -1804,7 +1804,7 @@ Public Partial Class RulesForm
 					Me.txtFilePath.Text = xmlReader.GetAttribute("Path")
 					Me.cboComparison.Text = GetComparisonText(xmlReader.GetAttribute("Comparison"))
 					Me.dtpDate.Checked = True
-					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified"))
+					Me.dtpDate.Value = Date.Parse(xmlReader.GetAttribute("Modified")).ToLocalTime
 					
 				Case "FileSize"
 					'Select the rule.

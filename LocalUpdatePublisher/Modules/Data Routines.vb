@@ -281,7 +281,7 @@ Public Module Data_Routines
 			For Each tmpUpdate As IUpdate In tmpUpdateCollection
 				If Not tmpUpdate.Id.UpdateId.Equals(hiddenUpdate)
 					Dim tmpRow As DataRow = dt.NewRow()
-															
+					
 					tmpRow("IUpdate") = tmpUpdate
 					tmpRow("Id") = tmpUpdate.Id
 					tmpRow("Title") = tmpUpdate.Title
@@ -368,41 +368,78 @@ Public Module Data_Routines
 		Return Nothing
 	End Function
 	
-	Function GetUpdateStatus(update As IUpdate) As DataTable
-		If Not "" Is Nothing Then
+	'Sets up the data table and search scope and calls the recursive function.
+	Function GetUpdateStatus(update As IUpdate, node As TreeNode) As DataTable
+		'Create a new Data Table
+		Dim dt As DataTable = New DataTable("Status")
+		dt.Locale = System.Globalization.CultureInfo.CurrentCulture
+		
+		'Add the Columns to the data table.
+		dt.Columns.Add("GroupName", System.Type.GetType("System.String"))
+		dt.Columns.Add("InstalledCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("NotInstalledCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("NotApplicableCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("FailedCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("DownloadedCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("UnknownCount", System.Type.GetType("System.Int16"))
+		dt.Columns.Add("LastUpdated", System.Type.GetType("System.DateTime"))
+		
+		'If the update and node object check out then populate the data table.
+		If Not update Is Nothing AndAlso Not node Is Nothing Then
+			Dim computerTargetScope As ComputerTargetScope = New ComputerTargetScope
 			
-			'Create a new Data Table
-			Dim dt As DataTable = New DataTable("Status")
-			dt.Locale = System.Globalization.CultureInfo.CurrentCulture
+			'Set downstream computer target boolean
+			computerTargetScope.IncludeDownstreamComputerTargets = appSettings.RollupReporting
 			
-			'Add the Columns to the data table.
-			dt.Columns.Add("GroupName", System.Type.GetType("System.String"))
-			dt.Columns.Add("InstalledCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("NotInstalledCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("NotApplicableCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("FailedCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("DownloadedCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("UnknownCount", System.Type.GetType("System.Int16"))
-			dt.Columns.Add("LastUpdated", System.Type.GetType("System.DateTime"))
-			
-			'Loop through update summary collection and add rows accordingly to the data table.
-			For Each tmpSummary as IUpdateSummary In update.GetSummaryPerComputerTargetGroup
-				Dim tmpRow As DataRow = dt.NewRow()
-				tmpRow("GroupName") = ConnectionManager.CurrentServer.GetComputerTargetGroup(tmpSummary.ComputerTargetGroupId).Name
-				tmpRow("InstalledCount") = tmpSummary.InstalledCount + tmpSummary.InstalledPendingRebootCount
-				tmpRow("NotInstalledCount") = tmpSummary.NotInstalledCount
-				tmpRow("NotApplicableCount") = tmpSummary.NotApplicableCount
-				tmpRow("FailedCount") = tmpSummary.FailedCount
-				tmpRow("DownloadedCount") = tmpSummary.DownloadedCount
-				tmpRow("UnknownCount") = tmpSummary.UnknownCount
-				tmpRow("LastUpdated") = tmpSummary.LastUpdated.ToLocalTime
-				dt.Rows.Add(tmpRow)
-			Next
-			
-			Return dt
-		Else
-			Return Nothing
+			dt = GetTargetGroupStatus(update, dt , node, computerTargetScope )
 		End If
+		
+		Return dt
+	End Function
+	
+	'This is a recursive function that parses the tree for computer targets, gets a summary
+	' for each group, and adds the results to the data table.
+	Private Function GetTargetGroupStatus(update As IUpdate, dt As DataTable , node As TreeNode, computerTargetScope As ComputerTargetScope ) As DataTable
+		
+		'If the node tag is a computer group then add the summary results to the data table.
+		If Not node.Tag Is Nothing AndAlso TypeOf node.Tag Is IComputerTargetGroup Then
+			Dim updateSummary As IUpdateSummary
+			Dim dataRow As DataRow
+			Dim computerTargetGroup As IComputerTargetGroup = DirectCast(node.Tag, IComputerTargetGroup)
+			
+			'Set target group scope.
+			computerTargetScope.ComputerTargetGroups.Clear
+			computerTargetScope.ComputerTargetGroups.Add(computerTargetGroup)
+			
+			Try
+				'Get the summary and it to the data table.
+				updateSummary  = update.GetSummary(computerTargetScope)
+				dataRow = dt.NewRow()
+				dataRow("GroupName") = computerTargetGroup.Name
+				dataRow("InstalledCount") = updateSummary.InstalledCount + updateSummary.InstalledPendingRebootCount
+				dataRow("NotInstalledCount") = updateSummary.NotInstalledCount
+				dataRow("NotApplicableCount") = updateSummary.NotApplicableCount
+				dataRow("FailedCount") = updateSummary.FailedCount
+				dataRow("DownloadedCount") = updateSummary.DownloadedCount
+				dataRow("UnknownCount") = updateSummary.UnknownCount
+				dataRow("LastUpdated") = updateSummary.LastUpdated.ToLocalTime
+				dt.Rows.Add(dataRow)
+			Catch x As ArgumentNullException
+				Msgbox (globalRM.GetString("exception_argument_null") & ": GetTargetGroupStatus" & vbNewLine & x.Message)
+			Catch x As ArgumentOutOfRangeException
+				Msgbox (globalRM.GetString("exception_argument_out_of_range") & ": GetTargetGroupStatus" & vbNewLine & x.Message)
+			Catch x As WsusObjectNotFoundException
+				Msgbox (globalRM.GetString("exception_wsus_object_not_found") & ": GetTargetGroupStatus" & vbNewLine & computerTargetGroup.Name & vbNewLine & x.Message)
+			End Try
+			
+		End If
+		
+		'Recursively call on child nodes.
+		For Each tmpNode As TreeNode In node.Nodes
+			dt = GetTargetGroupStatus(update, dt, tmpNode, computerTargetScope)
+		Next
+		
+		Return dt
 	End Function
 	
 	'Get update report with defaults.
