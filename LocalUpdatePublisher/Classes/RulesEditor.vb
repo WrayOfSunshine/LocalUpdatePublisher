@@ -265,7 +265,11 @@ Public Partial Class RulesEditor
 				tmpPadding.Left = defaultPaddingSize * indentationDepth
 				dgvRules.Rows(tmpRow).Cells(0).Style.Padding = tmpPadding
 				
-				dgvRules.Rows(tmpRow).Cells(0).Value = "End " & xmlReader.LocalName
+				If xmlReader.LocalName = "And" Then
+					dgvRules.Rows(tmpRow).Cells(0).Value = _End_And
+				Else
+					dgvRules.Rows(tmpRow).Cells(0).Value = _End_Or
+				End If
 				dgvRules.Rows(tmpRow).Cells(1).Value = "</" & xmlReader.Name & ">"
 				'Loop through XML.
 			End If
@@ -325,24 +329,32 @@ Public Partial Class RulesEditor
 	
 	'Group rules.
 	Private Sub btnGroup_Click(sender As Object, e As EventArgs)
-		'this code handles the button if it is not in "Make Group" mode
+		
+		'Make sure the sender is a button
 		If TypeOf sender Is Button Then
-			If DirectCast(sender, Button).Text <> _add_Group Then
+			
+			'If the button was the Add Group button then show the grouping options.
+			If DirectCast(sender, Button).Text = _Add_Group Then
+				Dim tmpContextMenu As New ContextMenu()
+				tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("and"), New EventHandler(AddressOf menuDoGrouping_Click)))
+				tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("or"), New EventHandler(AddressOf menuDoGrouping_Click)))
+				tmpContextMenu.Show(DirectCast(sender, Control), New Point(1, 1))
+				
+				'If the button was one of the remove options then remove the group.
+			ElseIf DirectCast(sender, Button).Text = _Remove_And OrElse DirectCast(sender, Button).Text = _Remove_Or
 				GroupRules(False)
-				Return
 			End If
 		End If
-		
-		Dim tmpContextMenu As New ContextMenu()
-		tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("and"), New EventHandler(AddressOf menuDoGrouping_Click)))
-		tmpContextMenu.MenuItems.Add(New MenuItem(globalRM.GetString("or"), New EventHandler(AddressOf menuDoGrouping_Click)))
-		tmpContextMenu.Show(DirectCast(sender, Control), New Point(1, 1))
 	End Sub
 	
 	'Do the grouping.
 	Private Sub menuDoGrouping_Click(sender As Object, e As EventArgs)
 		If TypeOf sender Is MenuItem Then
-			GroupRules(DirectCast(sender, MenuItem).Text = "AND")
+			If DirectCast(sender, MenuItem).Text = globalRM.GetString("and")
+				GroupRules(True)
+			Else
+				GroupRules(False)
+			End If
 		End If
 	End Sub
 	
@@ -378,7 +390,6 @@ Public Partial Class RulesEditor
 						dgvRules.Rows.Insert(tmpLowestIndex, New String() {_Begin_And, "<lar:And>"})
 					Else
 						'Add an Or grouping.
-						
 						dgvRules.Rows.Insert(tmpHighestIndex + 1, New String() {_end_Or, "</lar:Or>"})
 						dgvRules.Rows.Insert(tmpLowestIndex, New String() {_begin_Or, "<lar:Or>"})
 					End If
@@ -509,7 +520,7 @@ Public Partial Class RulesEditor
 			Return Nothing
 		Else
 			Dim construct As String = row.Cells(0).Value.ToString()
-			Return ((construct = _Begin_And) OrElse (construct = _end_And) OrElse (construct = _begin_Or) OrElse (construct = _end_Or))
+			Return ((construct = _Begin_And) OrElse (construct = _End_And) OrElse (construct = _Begin_Or) OrElse (construct = _End_Or))
 		End If
 	End Function
 	
