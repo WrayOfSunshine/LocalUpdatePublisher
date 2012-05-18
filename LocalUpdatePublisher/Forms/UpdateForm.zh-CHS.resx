@@ -102,6 +102,13 @@
     <value>仅发布元数据</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>网络要求</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>要求用户输入</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>附加文件</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>更多信息网址</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>网络要求</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

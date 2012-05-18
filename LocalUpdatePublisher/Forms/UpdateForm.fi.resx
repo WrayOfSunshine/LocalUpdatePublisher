@@ -102,6 +102,13 @@
     <value>Julkaise vain metatietoja</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Verkko Pakollinen</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Edellyttää käyttäjän syötettä</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Lisää tiedostoja</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Lisätietoja URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Verkko Pakollinen</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

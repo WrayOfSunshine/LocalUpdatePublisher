@@ -178,6 +178,7 @@ Friend NotInheritable Class ConnectionManager
 		Dim packageFile As String
 		If ConnectionManager.Connected Then
 			Try
+
 				'Export the SDP to a temporary file.
 				packageFile = Path.Combine(Path.GetTempPath, updateRevisionId.UpdateId.ToString & ".xml")
 				ConnectionManager.ParentServer.ExportPackageMetadata(updateRevisionId, packageFile)

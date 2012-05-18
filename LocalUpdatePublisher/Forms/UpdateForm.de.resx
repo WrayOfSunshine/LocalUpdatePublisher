@@ -91,6 +91,12 @@
   <data name="chkMetadataOnly.Text">
     <value>Nur Metadaten veröffentlichen</value>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Netzwerk erforderlich</value>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Benötigt Ihre Eingabe</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Zusätzliche Dateien</value>
   </data>
@@ -132,9 +138,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Mehr Info URL</value>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Netzwerk erforderlich</value>
   </data>
   <data name="lblOriginalURI.Text">
     <value>Original-URL</value>

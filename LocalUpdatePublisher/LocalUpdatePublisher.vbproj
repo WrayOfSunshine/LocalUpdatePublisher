@@ -924,6 +924,9 @@
     <EmbeddedResource Include="Forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.ru-RU.resx">
+      <DependentUpon>UpdateForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.ru.resx">
       <DependentUpon>UpdateForm.vb</DependentUpon>
     </EmbeddedResource>
