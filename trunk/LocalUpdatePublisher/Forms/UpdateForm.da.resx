@@ -102,6 +102,13 @@
     <value>Udgiv kun metadata</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Netværksforbindelse kræves</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Kræver brugerinput</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Yderligere filer</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Mere info URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Netværksforbindelse kræves</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

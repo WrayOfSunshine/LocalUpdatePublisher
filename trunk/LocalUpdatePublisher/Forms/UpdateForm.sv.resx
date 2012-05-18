@@ -102,6 +102,13 @@
     <value>Publicera metadata Endast</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Nätverk krävs</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Kräver indata</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Ytterligare filer</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Mer info URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Nätverk krävs</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

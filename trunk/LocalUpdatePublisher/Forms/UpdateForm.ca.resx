@@ -102,6 +102,13 @@
     <value>Publicar només les metadades</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Xarxa requerida</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Cal que l'usuari</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Arxius addicionals</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Més Informació URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Xarxa requerida</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

@@ -67,6 +67,6 @@ Public Partial Class MessageBoxForm
 	End Sub
 	
 	Shadows Sub TextChanged(sender As Object, e As EventArgs)
-		CustomResize.ResizeVertically( sender, e)
+		CustomResize.ResizeVertically( sender)
 	End Sub
 End Class

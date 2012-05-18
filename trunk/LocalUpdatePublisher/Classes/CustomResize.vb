@@ -10,7 +10,7 @@ Friend NotInheritable Class CustomResize
 	Private Sub New()
 	End Sub
 	
-	Public Shared Sub ResizeVertically(sender As Object, e As EventArgs)
+	Public Shared Sub ResizeVertically(sender As Object)
 	Dim sz As Size
 	Dim borders As Integer
 	Dim h as Integer

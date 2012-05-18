@@ -58,6 +58,29 @@ Public Partial Class UpdateForm
 		Me.isInstalledRules.Title = globalRM.GetString("IsInstalled_Title")
 		Me.isInstalledRules.TitleItemLevel = globalRM.GetString("IsInstalled_TitleItemLevel")
 		
+		'Resize the Reboot Behavior combo based on the options.
+		Dim cellWidth As Integer
+		For Each cboItem As String In Me.cboRebootBehavior.Items
+			If cboItem.Length > cellWidth Then cellWidth = cboItem.Length
+		Next			
+		Me.cboRebootBehavior.Width = 30 + (cellWidth * 5)
+
+		'Resize the Impact combo based on the options.
+		cellWidth = 0
+		For Each cboItem As String In Me.cboImpact.Items
+			If cboItem.Length > cellWidth Then cellWidth = cboItem.Length
+		Next			
+		Me.cboImpact.Width = 30 + (cellWidth * 5)
+		
+		'Resize the package info label vertically.		
+		CustomResize.ResizeVertically( lblPackageInfo )
+		
+		'The tab control will not auto resize so once initialized, we reset the size of it
+		' to make sure the package info table layout panel will fit.
+		Dim tmpSize As Size = Me.tlpPackageInfo.Size
+		tmpSize.Height = tmpSize.Height + 5
+		Me.tabsUpdate.Size = tmpSize
+		
 	End Sub
 	
 	#Region "Form Methods"
@@ -489,8 +512,12 @@ Public Partial Class UpdateForm
 							Next
 						End If
 						
-						_Sdp.InstallableItems.Item(0).InstallBehavior.Impact = DirectCast(Me.CboImpact.SelectedIndex, InstallationImpact)
-						_Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior = DirectCast(Me.CboRebootBehavior.SelectedIndex, RebootBehavior)
+						With _Sdp.InstallableItems.Item(0).InstallBehavior
+							.Impact = DirectCast(Me.CboImpact.SelectedIndex, InstallationImpact)
+							.RebootBehavior = DirectCast(Me.CboRebootBehavior.SelectedIndex, RebootBehavior)
+							.CanRequestUserInput = Me.chkUserInput.Checked
+							.RequiresNetworkConnectivity = Me.chkNetwork.Checked
+						End With
 						
 						'If there is a command line string then set it based on the update type otherwise set it to null.
 						' The type of the Installable Items objects depends on the type of file we populated
@@ -772,41 +799,44 @@ Public Partial Class UpdateForm
 			
 			'Load the Installable Item info
 			If _Sdp.InstallableItems.Count > 0 Then 'There is an Installable Item.
-				
-				_Languages = _Sdp.InstallableItems.Item(0).Languages
-				
-				If _Sdp.InstallableItems.Item(0).UninstallBehavior Is Nothing Then
-					Me.TxtUninstall.Text = globalRM.GetString("false")
-				Else
-					Me.TxtUninstall.Text = globalRM.GetString("true")
-				End If
-				
-				Me.CboImpact.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.Impact
-				Me.CboRebootBehavior.SelectedIndex = _Sdp.InstallableItems.Item(0).InstallBehavior.RebootBehavior
-				Me.txtNetwork.Text = _Sdp.InstallableItems.Item(0).InstallBehavior.RequiresNetworkConnectivity.ToString
-				
-				'Set the command line based on the update type.
-				Select Case _UpdateType
-					Case LocalUpdateTypes.EXE
-						Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), CommandLineItem).Arguments
-					Case LocalUpdateTypes.MSI
-						Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerItem).InstallCommandLine
-					Case LocalUpdateTypes.MSP
-						Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerPatchItem).InstallCommandLine
-				End Select
-				
-				'Load the Installable Item level applicability rules.
-				Me.IsInstalledRules.ApplicabilityRule = _Sdp.InstallableItems(0).IsInstalledApplicabilityRule
-				Me.IsInstallableRules.ApplicabilityRule = _Sdp.InstallableItems(0).IsInstallableApplicabilityRule
-				Me.TxtIsSuperceded_InstallableItem.Text = _Sdp.InstallableItems(0).IsSupersededApplicabilityRule
-				Me.TxtInstallableItemMetaData.Text = _Sdp.InstallableItems(0).ApplicabilityMetadata
-				
-				'Load the Original URI
-				If Not _Sdp.InstallableItems(0).OriginalSourceFile Is Nothing AndAlso _
-					Not _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri Is Nothing Then
-					Me.txtOriginalURI.Text = _Sdp.InstallableItems(0).OriginalSourceFile.OriginUri.ToString
-				End If
-				
+				With _Sdp.InstallableItems.Item(0)
+					_Languages = .Languages
+					
+					If .UninstallBehavior Is Nothing Then
+						Me.TxtUninstall.Text = globalRM.GetString("false")
+					Else
+						Me.TxtUninstall.Text = globalRM.GetString("true")
+					End If
+					
+					With .InstallBehavior
+						Me.CboImpact.SelectedIndex = .Impact
+						Me.CboRebootBehavior.SelectedIndex = .RebootBehavior
+						Me.chkNetwork.Checked = .RequiresNetworkConnectivity
+						Me.chkUserInput.Checked = .CanRequestUserInput
+					End With
+					
+					'Set the command line based on the update type.
+					Select Case _UpdateType
+						Case LocalUpdateTypes.EXE
+							Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), CommandLineItem).Arguments
+						Case LocalUpdateTypes.MSI
+							Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerItem).InstallCommandLine
+						Case LocalUpdateTypes.MSP
+							Me.TxtCommandLine.Text = CType(_Sdp.InstallableItems.Item(0), WindowsInstallerPatchItem).InstallCommandLine
+					End Select
+					
+					'Load the Installable Item level applicability rules.
+					Me.IsInstalledRules.ApplicabilityRule = .IsInstalledApplicabilityRule
+					Me.IsInstallableRules.ApplicabilityRule = .IsInstallableApplicabilityRule
+					Me.TxtIsSuperceded_InstallableItem.Text = .IsSupersededApplicabilityRule
+					Me.TxtInstallableItemMetaData.Text = .ApplicabilityMetadata
+					
+					'Load the Original URI
+					If Not .OriginalSourceFile Is Nothing AndAlso _
+						Not .OriginalSourceFile.OriginUri Is Nothing Then
+						Me.txtOriginalURI.Text = .OriginalSourceFile.OriginUri.ToString
+					End If
+				End With
 			End If 'There is a Installable Item.
 			
 			'Note: In previous versions of LUP we didn't check to see if the IsInstalled or
@@ -959,7 +989,7 @@ Public Partial Class UpdateForm
 	End Sub
 	
 	Shadows Sub TextChanged(sender As Object, e As EventArgs)
-		CustomResize.ResizeVertically( sender, e)
+		CustomResize.ResizeVertically( sender )
 	End Sub
 	
 	#End Region

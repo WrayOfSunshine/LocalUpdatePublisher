@@ -102,6 +102,13 @@
     <value>Alleen publiceren Metadata</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="chkNetwork.Text">
+    <value>Netwerk vereist</value>
+    <comment>Automatically translated using Google</comment>
+  </data>
+  <data name="chkUserInput.Text">
+    <value>Vereist gebruikersinvoer</value>
+  </data>
   <data name="lblAdditionalFiles.Text">
     <value>Extra bestanden</value>
     <comment>Automatically translated using Google</comment>
@@ -156,10 +163,6 @@
   </data>
   <data name="lblMoreInfoURL.Text">
     <value>Meer info URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblNetwork.Text">
-    <value>Netwerk vereist</value>
     <comment>Automatically translated using Google</comment>
   </data>
   <data name="lblOriginalURI.Text">

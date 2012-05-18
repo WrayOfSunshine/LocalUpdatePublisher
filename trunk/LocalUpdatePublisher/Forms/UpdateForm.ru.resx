@@ -1,5 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -58,145 +117,981 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text">
-    <value>Импорт Обновления из Файла </value>
+  <data name="btnCancel.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="btnAddDir.Text">
-    <value>Добавить Папку</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="btnAddFiles.Text">
-    <value>Добавить файлы</value>
-    <comment>Automatically translated using Google</comment>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 3</value>
   </data>
-  <data name="btnCancel.Text">
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 25</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnIsSupersededEdit.Text">
-    <value>Редактировать</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="btnNext.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="btnMetaDataEdit.Text">
-    <value>Редактировать</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="btnNext.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="btnNext.Text">
+  <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 3</value>
+  </data>
+  <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 25</value>
+  </data>
+  <data name="btnNext.Text" xml:space="preserve">
     <value>Следующий</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnPrevious.Text">
+  <data name="btnPrevious.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPrevious.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 25</value>
+  </data>
+  <data name="btnPrevious.Text" xml:space="preserve">
     <value>Предыдущий</value>
-    <comment>Automatically translated using Google</comment>
   </data>
-  <data name="btnUpdateFile.Text">
-    <value>Просматреть</value>
+  <data name="tlpButtons.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="chkExportSdp.Text">
-    <value>Сохранить Пакет Определений ПО</value>
+  <data name="tlpButtons.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="chkMetadataOnly.Text">
+  <data name="tlpButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 3</value>
+  </data>
+  <data name="tlpButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 31</value>
+  </data>
+  <data name="chkMetadataOnly.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMetadataOnly.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkMetadataOnly.Text" xml:space="preserve">
     <value>Публикация только метаданных </value>
   </data>
-  <data name="lblAdditionalFiles.Text">
-    <value>Дополнительные файлы</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpFooter.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblArticleID.Text">
-    <value>ID Статьи</value>
+  <data name="tlpFooter.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblBullitinID.Text">
-    <value>ID Бюллетеня</value>
+  <data name="chkExportSdp.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblClassification.Text">
-    <value>Классификация</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="chkExportSdp.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblCommandLine.Text">
-    <value>Командная строка</value>
+  <data name="chkExportSdp.Text" xml:space="preserve">
+    <value>Сохранить Пакет Определений ПО</value>
   </data>
-  <data name="lblDescription.Text">
-    <value>Описание</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="tlpMain.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblInfo.Text">
+  <data name="tlpMain.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wEHFwgZGDEZpyVFJ8X///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEIMj4TGjsgqTd1OfkZXx3N////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEJMkIZGUQ+rzt6Pfs7hDz/JHAp8xlTHsMZVR7DGVYewxhWHcMYVh3DFlQcwxZR
+        G8MVTRrDFkgawxhIHDUfSkYfI045u0F7Pf0+iD//NZI3/zapOv8nsi/9I74t/R7HK/0ZyCj9FcMi/Q62
+        G/0LoxP9CoAP/Q5aE/0YWh5FLWE/RUd+Sv8/iED/NJk3/zCwNf8vyDf/L9c7/yzhOv8n6Df/IOcx/xfe
+        J/8MzRr/BbMN/wGEBP8HVgv/D1oXRxRZgS0dbGnLQ6FW/SK1Lf9I1FT/c9h//3vfhf2E5I/9iOWT/YPk
+        jf144oH9bdR4+1zOav0Roxr/B2cK/xBiFkcHUpkxKXnHuSOaoeFV0Wn/bO93/0CwTeUoizSDKY01gyqO
+        NoMqjjWDKYw0gyaJMZVKxlrlIr8u/weDDP8RdBZHCFyoPyJ80OUflfbfSr6w8X3skf1cwGXN////Af//
+        /wH///8B////AR1xxpMYc5+jVddmzzDUPfkHlw/7EX8XRQhfq0Ufe8/9EYz5/SWP2t82o2WnSadQk///
+        /wH///8B////Af///wEoh87JUqjf/zOlk+c22Uy3CJcQuRB6FzcHXKhHH3fL/wt/7/8RftnvBFGlnQVb
+        tn0FW7Z/BVu2fwVbtn8GW7eDFXLF4yyh/f8Kds//EXxrvwV/EmEJTQ4bDFyqRyJ2yv8LeOP/CYDp/RGI
+        7PssnPL7RKry+02u8vtEqfH7Lpzv+xmN7v8Ff/X/AGTX/wFEm/kDQU27B040Jyx2tUc9jtb/L5nv/yKh
+        9f8hrv7/M7n//0K///9Bv///LrX//xqm//8Jkfj/BHfk/wNkzf8DUbr/BEWd/wZAd0VFi8BHT6Hi/1G2
+        /P9Jv///P8T//0DI//9Fyf//Pcb//yi5//8crP//KZrr/yWK4f8jgNr/G23G/QdSgL8GTWcjRorAOUKN
+        yc88ktPPOZfZzzWc3c8yn+DPMZ/h0Syd4dElld/RIozZ0Sl0uvFvufP/VJzb+xh1gLMDUD8fBmI4A///
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wEzaJzHlL7b9zBbh6kIU00X////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BI0Zuv0BaeKMKJU4b////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Импорт Обновления из Файла </value>
+  </data>
+  <data name="lblInfo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInfo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 65</value>
+  </data>
+  <data name="lblInfo.Text" xml:space="preserve">
     <value>Этот мастер проведет вас через процесс создания локально опубликованного пакета ПО. Вы должны выбрать MSI, MSP, или EXE-файл в качестве файла обновления. Если EXE-файл имеет встроенный MSI файл, то вы должны ввести относительный путь. Если есть другие необходимые вспомогательные файлы, например, файлы преобразования, то используйте дополнительный список файлов для их добавления.</value>
   </data>
-  <data name="lblIsSuperceded_InstallableItem.Text">
-    <value>Уровень Установки -  Правила Замены</value>
+  <data name="txtMSIPath.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblIsSuperseded.Text">
-    <value>Эта форма перечисляет правила, определяющие, если программный пакет заменен. Если вы создали это обновление с помощью MSI или MSP файла, вы увидите автоматически сгенерированное правило на том же пункте инсталлятора.</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="txtMSIPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblLanguages.Text">
-    <value>Языки</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="txtMSIPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 99</value>
   </data>
-  <data name="lblMSIPath.Text">
-    <value>MSI Путь</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="txtMSIPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 20</value>
   </data>
-  <data name="lblMetaData.Text">
-    <value>Используйте эту форму для обзора метаданных, используемых в предыдущими правилами "может устанавливаться", "установлен" или "заменен".</value>
+  <data name="btnUpdateFile.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblMetaData_InstallableItem.Text">
-    <value>Уровень Установки -  Правила  Метаданных</value>
+  <data name="btnUpdateFile.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblMoreInfoURL.Text">
-    <value>Подробнее URL</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="btnUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 68</value>
   </data>
-  <data name="lblNetwork.Text">
-    <value>Трубуется Сеть</value>
+  <data name="btnUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 25</value>
   </data>
-  <data name="lblOriginalURI.Text">
-    <value>Исходный URL</value>
+  <data name="btnUpdateFile.Text" xml:space="preserve">
+    <value>Просматреть</value>
   </data>
-  <data name="lblPackageInfo.Text">
-    <value>Введите соответствующие данные о пакете ПО здесь. Обратитесь к документации по вопросам, касающимся отдельных полей.</value>
+  <data name="dgvAdditionalFiles.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblPackageTitle.Text">
-    <value>Название Пакета</value>
+  <data name="dgvAdditionalFiles.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblPackageType.Text">
-    <value>Тип Пакета</value>
+  <data name="dgvAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 125</value>
   </data>
-  <data name="lblPrerequisites.Text">
-    <value>Предварительные условия</value>
+  <data name="dgvAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 477</value>
   </data>
-  <data name="lblProduct.Text">
-    <value>Продукт</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblUpdateFile.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblRebootBehavior.Text">
-    <value>Поведение при Перезагрузке</value>
+  <data name="lblUpdateFile.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblReturnCodes.Text">
-    <value>Коды Возврата</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 65</value>
   </data>
-  <data name="lblSeverity.Text">
-    <value>Строгость</value>
-    <comment>Automatically translated using Google</comment>
+  <data name="lblUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 31</value>
   </data>
-  <data name="lblSummary.Text">
-    <value>Используйте эту форму для обзора XML-данных, которые будут использоваться для описания программного пакета. Выберите Готово, чтобы опубликовать этот пакет на WSUS-сервер.</value>
-  </data>
-  <data name="lblSupersedes.Text">
-    <value>Заменяет</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblSupportURL.Text">
-    <value>Поддержка URL</value>
-    <comment>Automatically translated using Google</comment>
-  </data>
-  <data name="lblUninstall.Text">
-    <value>Деинсталлировать</value>
-  </data>
-  <data name="lblUpdateFile.Text">
+  <data name="lblUpdateFile.Text" xml:space="preserve">
     <value>Файл Обновления</value>
   </data>
-  <data name="lblVendor.Text">
+  <data name="lblMSIPath.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMSIPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMSIPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 96</value>
+  </data>
+  <data name="lblMSIPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 26</value>
+  </data>
+  <data name="lblMSIPath.Text" xml:space="preserve">
+    <value>MSI Путь</value>
+  </data>
+  <data name="lblAdditionalFiles.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAdditionalFiles.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAdditionalFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 122</value>
+  </data>
+  <data name="lblAdditionalFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 31</value>
+  </data>
+  <data name="lblAdditionalFiles.Text" xml:space="preserve">
+    <value>Дополнительные файлы</value>
+  </data>
+  <data name="txtUpdateFile.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUpdateFile.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtUpdateFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 68</value>
+  </data>
+  <data name="txtUpdateFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 20</value>
+  </data>
+  <data name="btnAddFiles.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAddFiles.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 156</value>
+  </data>
+  <data name="btnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 25</value>
+  </data>
+  <data name="btnAddFiles.Text" xml:space="preserve">
+    <value>Добавить файлы</value>
+  </data>
+  <data name="btnAddDir.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAddDir.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAddDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 125</value>
+  </data>
+  <data name="btnAddDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 25</value>
+  </data>
+  <data name="btnAddDir.Text" xml:space="preserve">
+    <value>Добавить Папку</value>
+  </data>
+  <data name="tlpIntro.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpIntro.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabIntro.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabIntro.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtUninstall.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUninstall.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtUninstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 432</value>
+  </data>
+  <data name="cboImpact.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboImpact.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboImpact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 21</value>
+  </data>
+  <data name="chkNetwork.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkNetwork.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkNetwork.Location" type="System.Drawing.Point, System.Drawing">
+    <value>417, 3</value>
+  </data>
+  <data name="chkNetwork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 21</value>
+  </data>
+  <data name="chkNetwork.Text" xml:space="preserve">
+    <value>Трубуется Сеть</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpPackageIinfoBehavior1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 375</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 27</value>
+  </data>
+  <data name="lblRebootBehavior.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRebootBehavior.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRebootBehavior.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblRebootBehavior.Text" xml:space="preserve">
+    <value>Поведение при Перезагрузке</value>
+  </data>
+  <data name="cboPackageType.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboPackageType.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 16</value>
+  </data>
+  <data name="cboPackageType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 21</value>
+  </data>
+  <data name="txtOriginalURI.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOriginalURI.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtOriginalURI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 300</value>
+  </data>
+  <data name="txtOriginalURI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="lblPackageType.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPackageType.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblPackageType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblPackageType.Text" xml:space="preserve">
+    <value>Тип Пакета</value>
+  </data>
+  <data name="lblPackageInfo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPackageInfo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblPackageInfo.Text" xml:space="preserve">
+    <value>Введите соответствующие данные о пакете ПО здесь. Обратитесь к документации по вопросам, касающимся отдельных полей.</value>
+  </data>
+  <data name="txtCommandLine.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCommandLine.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtCommandLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 458</value>
+  </data>
+  <data name="txtCommandLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="lblCommandLine.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCommandLine.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblCommandLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblCommandLine.Text" xml:space="preserve">
+    <value>Командная строка</value>
+  </data>
+  <data name="lblOriginalURI.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOriginalURI.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblOriginalURI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblOriginalURI.Text" xml:space="preserve">
+    <value>Исходный URL</value>
+  </data>
+  <data name="lblUninstall.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUninstall.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblUninstall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblUninstall.Text" xml:space="preserve">
+    <value>Деинсталлировать</value>
+  </data>
+  <data name="txtPackageTitle.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPackageTitle.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtPackageTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 43</value>
+  </data>
+  <data name="txtPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="txtDescription.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescription.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 69</value>
+  </data>
+  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 39</value>
+  </data>
+  <data name="lblPackageTitle.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPackageTitle.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblPackageTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblPackageTitle.Text" xml:space="preserve">
+    <value>Название Пакета</value>
+  </data>
+  <data name="cboSeverity.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverity.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboSeverity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 167</value>
+  </data>
+  <data name="txtBulletinID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtBulletinID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtBulletinID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 141</value>
+  </data>
+  <data name="txtBulletinID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="lblClassification.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblClassification.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblClassification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblClassification.Text" xml:space="preserve">
+    <value>Классификация</value>
+  </data>
+  <data name="cboVendor.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVendor.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboVendor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 194</value>
+  </data>
+  <data name="cboVendor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 21</value>
+  </data>
+  <data name="cboProduct.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboProduct.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 221</value>
+  </data>
+  <data name="cboProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 21</value>
+  </data>
+  <data name="lblBullitinID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBullitinID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblBullitinID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblBullitinID.Text" xml:space="preserve">
+    <value>ID Бюллетеня</value>
+  </data>
+  <data name="txtArticleID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtArticleID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtArticleID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 248</value>
+  </data>
+  <data name="txtCVEID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCVEID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtCVEID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 274</value>
+  </data>
+  <data name="lblSeverity.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverity.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSeverity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblSeverity.Text" xml:space="preserve">
+    <value>Строгость</value>
+  </data>
+  <data name="lblMoreInfoURL.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMoreInfoURL.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblMoreInfoURL.Text" xml:space="preserve">
+    <value>Подробнее URL</value>
+  </data>
+  <data name="txtMoreInfoURL.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtMoreInfoURL.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtMoreInfoURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 352</value>
+  </data>
+  <data name="txtMoreInfoURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="lblSupportURL.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSupportURL.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSupportURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblSupportURL.Text" xml:space="preserve">
+    <value>Поддержка URL</value>
+  </data>
+  <data name="lblVendor.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVendor.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVendor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblVendor.Text" xml:space="preserve">
     <value>Поставщик</value>
+  </data>
+  <data name="txtSupportURL.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSupportURL.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtSupportURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 326</value>
+  </data>
+  <data name="txtSupportURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 20</value>
+  </data>
+  <data name="lblCVEID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCVEID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblCVEID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblProduct.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProduct.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="lblProduct.Text" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="lblArticleID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArticleID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblArticleID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="lblArticleID.Text" xml:space="preserve">
+    <value>ID Статьи</value>
+  </data>
+  <data name="cboClassification.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboClassification.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cboClassification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 114</value>
+  </data>
+  <data name="cboClassification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 21</value>
+  </data>
+  <data name="lblDescription.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescription.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 45</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="lblLanguages.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLanguages.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblLanguages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 0</value>
+  </data>
+  <data name="lblLanguages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lblLanguages.Text" xml:space="preserve">
+    <value>Языки</value>
+  </data>
+  <data name="lblPrerequisites.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPrerequisites.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblPrerequisites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 13</value>
+  </data>
+  <data name="lblPrerequisites.Text" xml:space="preserve">
+    <value>Предварительные условия</value>
+  </data>
+  <data name="lblReturnCodes.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReturnCodes.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblReturnCodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 0</value>
+  </data>
+  <data name="lblReturnCodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="lblReturnCodes.Text" xml:space="preserve">
+    <value>Коды Возврата</value>
+  </data>
+  <data name="lblSupersedes.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSupersedes.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSupersedes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 0</value>
+  </data>
+  <data name="lblSupersedes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="lblSupersedes.Text" xml:space="preserve">
+    <value>Заменяет</value>
+  </data>
+  <data name="tlpOptions.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpOptions.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tlpOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 481</value>
+  </data>
+  <data name="tlpOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 13</value>
+  </data>
+  <data name="lblImpact.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblImpact.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblImpact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 27</value>
+  </data>
+  <data name="cboRebootBehavior.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboRebootBehavior.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkUserInput.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUserInput.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkUserInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 21</value>
+  </data>
+  <data name="chkUserInput.Text" xml:space="preserve">
+    <value>Требуется ввод данных пользователем</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpPackageIinfoBehavior2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 402</value>
+  </data>
+  <data name="tlpPackageIinfoBehavior2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 27</value>
+  </data>
+  <data name="tlpPackageInfo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpPackageInfo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tlpPackageInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>747, 494</value>
+  </data>
+  <data name="tabPackageInfo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPackageInfo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="isInstalledRules.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="isInstalledRules.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstalled.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabIsInstalled.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="isInstallableRules.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="isInstallableRules.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabIsInstallable.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabIsInstallable.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnIsSupersededEdit.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnIsSupersededEdit.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnIsSupersededEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 42</value>
+  </data>
+  <data name="btnIsSupersededEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="btnIsSupersededEdit.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 73</value>
+  </data>
+  <data name="txtIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 436</value>
+  </data>
+  <data name="lblIsSuperseded.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIsSuperseded.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblIsSuperseded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 39</value>
+  </data>
+  <data name="lblIsSuperseded.Text" xml:space="preserve">
+    <value>Эта форма перечисляет правила, определяющие, если программный пакет заменен. Если вы создали это обновление с помощью MSI или MSP файла, вы увидите автоматически сгенерированное правило на том же пункте инсталлятора.</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 39</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 31</value>
+  </data>
+  <data name="lblIsSuperceded_InstallableItem.Text" xml:space="preserve">
+    <value>Уровень Установки -  Правила Замены</value>
+  </data>
+  <data name="tlpIsSuperseded.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpIsSuperseded.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabIsSuperseded.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabIsSuperseded.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnMetaDataEdit.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMetaDataEdit.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnMetaDataEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 29</value>
+  </data>
+  <data name="btnMetaDataEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="btnMetaDataEdit.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInstallableItemMetaData.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="txtInstallableItemMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 449</value>
+  </data>
+  <data name="lblMetaData.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMetaData.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 26</value>
+  </data>
+  <data name="lblMetaData.Text" xml:space="preserve">
+    <value>Используйте эту форму для обзора метаданных, используемых в предыдущими правилами "может устанавливаться", "установлен" или "заменен".</value>
+  </data>
+  <data name="lblMetaData_InstallableItem.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMetaData_InstallableItem.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMetaData_InstallableItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="lblMetaData_InstallableItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 31</value>
+  </data>
+  <data name="lblMetaData_InstallableItem.Text" xml:space="preserve">
+    <value>Уровень Установки -  Правила  Метаданных</value>
+  </data>
+  <data name="tlpMetaData.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpMetaData.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabMetaData.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabMetaData.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtSummary.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSummary.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSummary.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSummary.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSummary.Text" xml:space="preserve">
+    <value>Используйте эту форму для обзора XML-данных, которые будут использоваться для описания программного пакета. Выберите Готово, чтобы опубликовать этот пакет на WSUS-сервер.</value>
+  </data>
+  <data name="tlpSummary.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tlpSummary.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabSummary.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabSummary.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabsUpdate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabsUpdate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
 </root>

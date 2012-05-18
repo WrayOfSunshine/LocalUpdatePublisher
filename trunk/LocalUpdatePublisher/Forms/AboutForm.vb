@@ -31,6 +31,6 @@ Public Partial Class AboutForm
 	
 	
 	Shadows Sub TextChanged(sender As Object, e As EventArgs)
-		CustomResize.ResizeVertically( sender, e)
+		CustomResize.ResizeVertically( sender)
 	End Sub
 End Class
