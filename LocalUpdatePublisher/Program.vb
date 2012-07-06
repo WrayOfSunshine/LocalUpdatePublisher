@@ -16,6 +16,7 @@
 
 Imports System.Net
 Imports System.Diagnostics
+Imports System.Security.Permissions
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.UpdateServices.Administration
 Imports System.Resources
@@ -39,12 +40,18 @@ Namespace My
 			
 		End Sub 'New
 		
-		<STAThread()> _
-		Private Sub Main( _
+		<SecurityPermission(SecurityAction.Demand, Flags:=SecurityPermissionFlag.ControlAppDomain)> _
+			Private Sub Main( _
 			ByVal sender As Object, _
 			ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs _
 			) Handles Me.Startup
-			'Initialize and load the settings.
+			
+			
+			' Add the event handler for handling non-UI thread exceptions to the event.
+			AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
+			
+			
+			'Initialize and load the settings.						
 			appSettings = New Settings()
 			appSettings = Settings.LoadSettingsFromFile
 			
@@ -297,9 +304,50 @@ Namespace My
 		End Function
 		
 		'Create Main Form.
-		Protected Overrides Sub OnCreateMainForm()
+		Protected Overrides Sub OnCreateMainForm()			
 			Me.MainForm = My.Forms.MainForm
 		End Sub
+		
+				
+		' Handle the exceptions by showing a dialog box, and asking the user whether
+		' or not they wish to abort execution.
+		' NOTE: This exception cannot be kept from terminating the application - it can only
+		' log the event, and inform the user about it.
+		Private Shared Sub CurrentDomain_UnhandledException(ByVal sender As Object, ByVal e As System.UnhandledExceptionEventArgs)
+			Try
+				Dim ex As Exception = DirectCast ( e.ExceptionObject , Exception )
+				Dim errorMsg As String = "An application error occurred. Please contact the adminstrator " & _
+					"with the following information:" & ControlChars.Lf & ControlChars.Lf
+				
+				' Since we can't prevent the app from terminating, log this to the event log.
+				If (Not EventLog.SourceExists("ThreadException")) Then
+					EventLog.CreateEventSource("ThreadException", "Application")
+				End If
+				
+				' Create an EventLog instance and assign its source.
+				Dim myLog As New EventLog()
+				myLog.Source = "ThreadException"
+				myLog.WriteEntry((errorMsg + ex.Message & ControlChars.Lf & ControlChars.Lf & _
+					"Stack Trace:" & ControlChars.Lf & ex.StackTrace))
+			Catch exc As Exception
+				Try
+					MessageBox.Show("Fatal Non-UI Error", "Fatal Non-UI Error. Could not write the error to the event log. " & _
+						"Reason: " & exc.Message, MessageBoxButtons.OK, MessageBoxIcon.Stop)
+				Finally
+					End
+				End Try
+			End Try
+		End Sub
+		
+		' Creates the error message and displays it.
+		Private Shared Function ShowThreadExceptionDialog(ByVal title As String, ByVal e As Exception) As DialogResult
+			Dim errorMsg As String = "An application error occurred. Please contact the adminstrator " & _
+				"with the following information:" & ControlChars.Lf & ControlChars.Lf
+			errorMsg = errorMsg & e.Message & ControlChars.Lf & _
+				ControlChars.Lf & "Stack Trace:" & ControlChars.Lf & e.StackTrace
+			
+			Return MessageBox.Show(errorMsg, title, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Stop)
+		End Function
 		
 	End Class
 End Namespace
