@@ -425,7 +425,7 @@ Public Partial Class MainForm
 	
 	'With the treeview populated, now load the saved node.
 	Sub BgwSelectNodeRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
-		Msgbox("Loaded saved node")
+		'Msgbox("Loaded saved node")
 	End Sub
 	
 	'Call Clear Form with defaults settings.

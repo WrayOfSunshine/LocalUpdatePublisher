@@ -106,6 +106,7 @@ Partial Class ConnectionSettingsForm
 		'
 		Me.tlpMain.SetColumnSpan(Me.cboServers, 2)
 		resources.ApplyResources(Me.cboServers, "cboServers")
+		Me.cboServers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboServers.FormattingEnabled = true
 		Me.cboServers.Name = "cboServers"
 		AddHandler Me.cboServers.SelectedIndexChanged, AddressOf Me.CboServersSelectedIndexChanged
