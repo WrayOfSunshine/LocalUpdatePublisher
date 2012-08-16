@@ -163,6 +163,9 @@
   <data name="begins_with">
     <value>Begins With</value>
   </data>
+  <data name="bits">
+    <value>bits</value>
+  </data>
   <data name="build_number">
     <value>Build Number</value>
   </data>

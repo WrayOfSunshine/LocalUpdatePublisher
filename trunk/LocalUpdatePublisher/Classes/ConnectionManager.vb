@@ -53,8 +53,8 @@ Friend NotInheritable Class ConnectionManager
 		End Get
 	End Property
 	
-	Private Shared _currentServerCertificate As X509Certificate
-	Public Shared Property CurrentServerCertificate() As X509Certificate
+	Private Shared _currentServerCertificate As X509Certificate2
+	Public Shared Property CurrentServerCertificate() As X509Certificate2
 		Get
 			Return _currentServerCertificate
 		End Get
@@ -88,8 +88,8 @@ Friend NotInheritable Class ConnectionManager
 		_currentServerConfiguration = Nothing
 		ConnectionManager.ClearCert
 		
-		My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connecting"), server.Name)
-		My.Forms.MainForm.Update
+		''My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connecting"), server.Name)
+		''My.Forms.MainForm.Update
 		
 		Try
 			'Connect to the server using the appropriate call.
@@ -112,8 +112,8 @@ Friend NotInheritable Class ConnectionManager
 			
 			'Get update server configuration.
 			_currentServerConfiguration = _currentServer.GetConfiguration
-			My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connected") , _currentServer.Name)
-			My.Forms.MainForm.Update
+			''My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connected") , _currentServer.Name)
+			''My.Forms.MainForm.Update
 			
 			
 			'Try to retrieve cert info from server.
@@ -157,6 +157,15 @@ Friend NotInheritable Class ConnectionManager
 		Return False
 	End Function 'Connect
 	
+	'Wait until a connection is made or the timeout is reached.
+	Public Shared Sub WaitForConnection(timeOut As Integer)
+		Dim startTime As DateTime = DateTime.Now
+		
+		Do
+			System.Threading.Thread.Sleep(200)	
+		Loop While (Not Connected AndAlso DateTime.Now.Subtract(startTime).Seconds <= timeOut)
+	End Sub
+	
 	'If we are connected to the server
 	Public Shared ReadOnly Property Connected() As Boolean
 		Get
@@ -178,7 +187,7 @@ Friend NotInheritable Class ConnectionManager
 		Dim packageFile As String
 		If ConnectionManager.Connected Then
 			Try
-
+				
 				'Export the SDP to a temporary file.
 				packageFile = Path.Combine(Path.GetTempPath, updateRevisionId.UpdateId.ToString & ".xml")
 				ConnectionManager.ParentServer.ExportPackageMetadata(updateRevisionId, packageFile)
@@ -311,7 +320,7 @@ Friend NotInheritable Class ConnectionManager
 		Dim tempFile As String = Path.GetTempFileName()
 		Try
 			_currentServerConfiguration.GetSigningCertificate(tempFile)
-			_currentServerCertificate = X509Certificate.CreateFromCertFile(tempFile)
+			_currentServerCertificate = New X509Certificate2(tempFile)
 			File.Delete(tempFile)
 			Return True
 		Catch

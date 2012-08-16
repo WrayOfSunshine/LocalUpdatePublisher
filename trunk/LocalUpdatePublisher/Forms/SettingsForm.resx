@@ -160,7 +160,7 @@
     <value>Right</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 122</value>
+    <value>218, 148</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
@@ -285,6 +285,42 @@
   <data name="tlpCulture.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="lblTimeOut.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTimeOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblTimeOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 26</value>
+  </data>
+  <data name="lblTimeOut.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblTimeOut.Text" xml:space="preserve">
+    <value>Time Out (sec)</value>
+  </data>
+  <data name="lblTimeOut.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOut.Name" xml:space="preserve">
+    <value>lblTimeOut</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOut.Parent" xml:space="preserve">
+    <value>tlpCulture</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOut.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblCulture.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -292,10 +328,10 @@
     <value>Fill</value>
   </data>
   <data name="lblCulture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>3, 26</value>
   </data>
   <data name="lblCulture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 27</value>
+    <value>76, 27</value>
   </data>
   <data name="lblCulture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -316,16 +352,16 @@
     <value>tlpCulture</value>
   </data>
   <data name="&gt;&gt;lblCulture.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cboCulture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="cboCulture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 3</value>
+    <value>85, 29</value>
   </data>
   <data name="cboCulture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 21</value>
+    <value>213, 21</value>
   </data>
   <data name="cboCulture.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -340,7 +376,31 @@
     <value>tlpCulture</value>
   </data>
   <data name="&gt;&gt;cboCulture.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="txtTimeOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 3</value>
+  </data>
+  <data name="txtTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="txtTimeOut.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Name" xml:space="preserve">
+    <value>txtTimeOut</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.Parent" xml:space="preserve">
+    <value>tlpCulture</value>
+  </data>
+  <data name="&gt;&gt;txtTimeOut.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="tlpCulture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -351,8 +411,11 @@
   <data name="tlpCulture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="tlpCulture.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="tlpCulture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 27</value>
+    <value>301, 53</value>
   </data>
   <data name="tlpCulture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,7 +433,7 @@
     <value>0</value>
   </data>
   <data name="tlpCulture.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblCulture" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboCulture" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblTimeOut" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCulture" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cboCulture" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtTimeOut" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -379,7 +442,7 @@
     <value>0, 0</value>
   </data>
   <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 148</value>
+    <value>301, 176</value>
   </data>
   <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -412,7 +475,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>301, 148</value>
+    <value>301, 176</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>

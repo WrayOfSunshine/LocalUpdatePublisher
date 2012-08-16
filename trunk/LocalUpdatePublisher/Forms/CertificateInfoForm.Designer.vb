@@ -54,8 +54,10 @@ Partial Class CertificateInfoForm
 		Me.saveFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.openFileDialog = New System.Windows.Forms.OpenFileDialog
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		Me.txtCertInfo = New System.Windows.Forms.TextBox
+		Me.txtSize = New System.Windows.Forms.TextBox
+		Me.lblSize = New System.Windows.Forms.Label
 		Me.tlpButtonsLeft = New System.Windows.Forms.TableLayoutPanel
+		Me.txtCertInfo = New System.Windows.Forms.TextBox
 		Me.tlpMain.SuspendLayout
 		Me.tlpButtonsLeft.SuspendLayout
 		Me.SuspendLayout
@@ -167,7 +169,9 @@ Partial Class CertificateInfoForm
 		'tlpMain
 		'
 		resources.ApplyResources(Me.tlpMain, "tlpMain")
-		Me.tlpMain.Controls.Add(Me.tlpButtonsLeft, 0, 6)
+		Me.tlpMain.Controls.Add(Me.txtSize, 1, 6)
+		Me.tlpMain.Controls.Add(Me.lblSize, 0, 6)
+		Me.tlpMain.Controls.Add(Me.tlpButtonsLeft, 0, 7)
 		Me.tlpMain.Controls.Add(Me.txtCertInfo, 0, 0)
 		Me.tlpMain.Controls.Add(Me.lblTo, 2, 3)
 		Me.tlpMain.Controls.Add(Me.txtEndDate, 3, 3)
@@ -181,9 +185,29 @@ Partial Class CertificateInfoForm
 		Me.tlpMain.Controls.Add(Me.txtSerial, 1, 4)
 		Me.tlpMain.Controls.Add(Me.txtIssuer, 1, 2)
 		Me.tlpMain.Controls.Add(Me.lblHash, 0, 5)
-		Me.tlpMain.Controls.Add(Me.btnOK, 3, 6)
+		Me.tlpMain.Controls.Add(Me.btnOK, 3, 7)
 		Me.tlpMain.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
 		Me.tlpMain.Name = "tlpMain"
+		'
+		'txtSize
+		'
+		Me.tlpMain.SetColumnSpan(Me.txtSize, 3)
+		resources.ApplyResources(Me.txtSize, "txtSize")
+		Me.txtSize.Name = "txtSize"
+		Me.txtSize.ReadOnly = true
+		'
+		'lblSize
+		'
+		resources.ApplyResources(Me.lblSize, "lblSize")
+		Me.lblSize.Name = "lblSize"
+		'
+		'tlpButtonsLeft
+		'
+		resources.ApplyResources(Me.tlpButtonsLeft, "tlpButtonsLeft")
+		Me.tlpMain.SetColumnSpan(Me.tlpButtonsLeft, 2)
+		Me.tlpButtonsLeft.Controls.Add(Me.btnExportImportCert, 0, 0)
+		Me.tlpButtonsLeft.Controls.Add(Me.btnCreateCert, 1, 0)
+		Me.tlpButtonsLeft.Name = "tlpButtonsLeft"
 		'
 		'txtCertInfo
 		'
@@ -193,14 +217,6 @@ Partial Class CertificateInfoForm
 		Me.txtCertInfo.Name = "txtCertInfo"
 		Me.txtCertInfo.ReadOnly = true
 		AddHandler Me.txtCertInfo.TextChanged, AddressOf Me.TextChanged
-		'
-		'tlpButtonsLeft
-		'
-		resources.ApplyResources(Me.tlpButtonsLeft, "tlpButtonsLeft")
-		Me.tlpMain.SetColumnSpan(Me.tlpButtonsLeft, 2)
-		Me.tlpButtonsLeft.Controls.Add(Me.btnExportImportCert, 0, 0)
-		Me.tlpButtonsLeft.Controls.Add(Me.btnCreateCert, 1, 0)
-		Me.tlpButtonsLeft.Name = "tlpButtonsLeft"
 		'
 		'CertificateInfoForm
 		'
@@ -223,6 +239,8 @@ Partial Class CertificateInfoForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private lblSize As System.Windows.Forms.Label
+	Private txtSize As System.Windows.Forms.TextBox
 	Private tlpButtonsLeft As System.Windows.Forms.TableLayoutPanel
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private txtCertInfo As System.Windows.Forms.TextBox
