@@ -82,4 +82,7 @@
     <value>Культура</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblTimeOut.Text">
+    <value>Time Out (sec)</value>
+  </data>
 </root>

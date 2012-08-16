@@ -85,4 +85,7 @@
   <data name="lblTo.Text">
     <value>Jusqu'à</value>
   </data>
+  <data name="lblSize.Text">
+    <value>Size</value>
+  </data>
 </root>
