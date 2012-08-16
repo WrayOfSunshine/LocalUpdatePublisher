@@ -141,8 +141,8 @@ Public Partial Class ApprovalForm
 	Sub LoadData( node as TreeNode )
 		Dim tmpApprovals As UpdateApprovalCollection
 		
-		'If the main computer node has been passed.
-		If node.Equals(My.Forms.MainForm.ComputerNode) Then
+		'If the main computer node has been passed and it has children.
+		If node.Equals(My.Forms.MainForm.ComputerNode) and node.Nodes.Count > 0 Then
 			
 			'Clear the datagridview.
 			Me.dgvApprovals.Rows.Clear

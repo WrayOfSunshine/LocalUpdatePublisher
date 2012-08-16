@@ -84,4 +84,7 @@
   <data name="lblCulture.Text">
     <value>Kultura</value>
   </data>
+  <data name="lblTimeOut.Text">
+    <value>Time Out (sec)</value>
+  </data>
 </root>

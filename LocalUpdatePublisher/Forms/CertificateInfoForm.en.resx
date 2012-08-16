@@ -79,6 +79,9 @@
   <data name="lblSerial.Text">
     <value>Serial Number</value>
   </data>
+  <data name="lblSize.Text">
+    <value>Size</value>
+  </data>
   <data name="lblSubject.Text">
     <value>Subject</value>
   </data>

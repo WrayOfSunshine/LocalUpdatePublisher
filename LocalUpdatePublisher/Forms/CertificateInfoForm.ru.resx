@@ -91,4 +91,7 @@
     <value>К</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="lblSize.Text">
+    <value>Size</value>
+  </data>
 </root>

@@ -362,9 +362,9 @@ Public Partial Class MainForm
 		Else
 			_rootNode.Expand
 			Me.Refresh
-			treeView.BeginUpdate
+			'treeView.BeginUpdate
 			Call SelectNode (_rootNode, appSettings.TreePath)
-			treeView.EndUpdate
+			'treeView.EndUpdate
 		End If
 		
 		Me.Cursor = Cursors.Arrow 'Set arrow cursor.
@@ -1217,9 +1217,9 @@ Public Partial Class MainForm
 			
 			If TypeOf e.Node.Tag Is UpdateServer Then 'Server Node
 				Call ClearForm(False)
-				treeview.BeginUpdate
+				'treeview.BeginUpdate
 				Call TreeViewSelectServerNode( e.Node )
-				treeview.EndUpdate
+				'treeview.EndUpdate
 			Else If TypeOf e.Node.Tag Is IComputerTargetGroup Then 'Computer Note
 				Call TreeViewSelectComputerNode(sender, e)
 			Else If TypeOf e.Node.Tag Is IUpdateCategory Then 'Update Node
@@ -1244,6 +1244,9 @@ Public Partial Class MainForm
 	End Sub
 	
 	Private Sub TreeViewSelectServerNode(node As TreeNode)
+		
+		'If this node is already the current server then exit.
+		If Not _serverNode Is Nothing AndAlso _serverNode.Equals(node) Then Exit Sub
 		
 		'If this is a parent node then clear
 		' everything but the current server node.
@@ -1283,7 +1286,7 @@ Public Partial Class MainForm
 			_updateNode.SelectedImageIndex = 2
 			
 			'Load the tree nodes.
-			Call LoadComputerNodes(_computerNode)
+			Call LoadComputerNodes
 			Call LoadUpdateNodes
 			
 			'Open the server node.
@@ -1357,21 +1360,24 @@ Public Partial Class MainForm
 	#End Region
 	
 	#Region "TreeView Methods"
+	Sub LoadComputerNodes()
+		Call LoadComputerNodes( _computerNode )
+	End Sub
+	
 	'Load up the computer nodes.  This is a recursive subroutine.  When the form
 	' loads it calls this with the based computer node.  If that node hasn't been
 	' populated yet then we add the all computers node and recursively call
 	' the routine to fill in the rest.
-	Sub LoadComputerNodes( node as TreeNode )
+	Sub LoadComputerNodes(node as TreeNode )
 		
-		'If the all computer node has been passed and it doesn't have a tag.
-		If node.Equals(_computerNode) And node.GetNodeCount(False) = 0 Then
+		'If the all computer node has been passed.
+		If node.Equals(_computerNode) Then
 			
 			'Clear the computers node.
-			_computerNode.Nodes.Clear
+			node.Nodes.Clear
 			
 			'Clear the computer group combobox.
-			Me.cboTargetGroup.Items.Clear
-			
+			Me.cboTargetGroup.Items.Clear			
 			
 			'Wait until a connection to the server is made.
 			ConnectionManager.WaitForConnection(appSettings.TimeOut)
@@ -1383,7 +1389,7 @@ Public Partial Class MainForm
 				Dim allComputersGroup As IComputerTargetGroup = ConnectionManager.CurrentServer.GetComputerTargetGroup(ComputerTargetGroupId.AllComputers)
 				
 				'Add all computers group to which we'll add the groups.
-				Dim tmpNode As TreeNode = _computerNode.Nodes.Add(allComputersGroup.Id.ToString,allComputersGroup.Name)
+				Dim tmpNode As TreeNode = node.Nodes.Add(allComputersGroup.Id.ToString,allComputersGroup.Name)
 				tmpNode.Tag = allComputersGroup
 				
 				'Call recursively.
@@ -1393,8 +1399,7 @@ Public Partial Class MainForm
 				LoadComputerCombo ( tmpNode )
 			End If
 		Else If Not node.Tag Is Nothing
-			
-			
+						
 			'Wait until a connection to the server is made.
 			ConnectionManager.WaitForConnection(appSettings.TimeOut)
 			
@@ -1413,7 +1418,7 @@ Public Partial Class MainForm
 		End If
 		
 		'See if a node is still being looked for.
-		Call SelectNode
+		'Call SelectNode
 	End Sub
 	
 	'This routine adds the computer groups to the combo box for the reports.
