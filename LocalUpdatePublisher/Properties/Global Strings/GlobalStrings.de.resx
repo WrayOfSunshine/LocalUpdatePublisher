@@ -1139,4 +1139,7 @@
   <data name="workstation">
     <value>Arbeitsplatz</value>
   </data>
+  <data name="bits">
+    <value>bits</value>
+  </data>
 </root>

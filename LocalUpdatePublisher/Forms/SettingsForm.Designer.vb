@@ -41,8 +41,10 @@ Partial Class SettingsForm
 		Me.chkHideOfficialUpdates = New System.Windows.Forms.CheckBox
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpCulture = New System.Windows.Forms.TableLayoutPanel
+		Me.lblTimeOut = New System.Windows.Forms.Label
 		Me.lblCulture = New System.Windows.Forms.Label
 		Me.cboCulture = New System.Windows.Forms.ComboBox
+		Me.txtTimeOut = New System.Windows.Forms.TextBox
 		Me.tlpMain.SuspendLayout
 		Me.tlpCulture.SuspendLayout
 		Me.SuspendLayout
@@ -81,7 +83,7 @@ Partial Class SettingsForm
 		resources.ApplyResources(Me.chkHideOfficialUpdates, "chkHideOfficialUpdates")
 		Me.chkHideOfficialUpdates.Name = "chkHideOfficialUpdates"
 		Me.chkHideOfficialUpdates.UseVisualStyleBackColor = true
-		AddHandler Me.chkHideOfficialUpdates.MouseClick, AddressOf Me.ChkHideOfficialUpdatesMouseClick
+		AddHandler Me.chkHideOfficialUpdates.CheckedChanged, AddressOf Me.ChkHideOfficialUpdatesCheckedChanged
 		'
 		'tlpMain
 		'
@@ -97,9 +99,16 @@ Partial Class SettingsForm
 		'tlpCulture
 		'
 		resources.ApplyResources(Me.tlpCulture, "tlpCulture")
-		Me.tlpCulture.Controls.Add(Me.lblCulture, 0, 0)
-		Me.tlpCulture.Controls.Add(Me.cboCulture, 1, 0)
+		Me.tlpCulture.Controls.Add(Me.lblTimeOut, 0, 0)
+		Me.tlpCulture.Controls.Add(Me.lblCulture, 0, 1)
+		Me.tlpCulture.Controls.Add(Me.cboCulture, 1, 1)
+		Me.tlpCulture.Controls.Add(Me.txtTimeOut, 1, 0)
 		Me.tlpCulture.Name = "tlpCulture"
+		'
+		'lblTimeOut
+		'
+		resources.ApplyResources(Me.lblTimeOut, "lblTimeOut")
+		Me.lblTimeOut.Name = "lblTimeOut"
 		'
 		'lblCulture
 		'
@@ -113,6 +122,13 @@ Partial Class SettingsForm
 		Me.cboCulture.Name = "cboCulture"
 		AddHandler Me.cboCulture.SelectionChangeCommitted, AddressOf Me.CboCultureSelectionChangeCommitted
 		AddHandler Me.cboCulture.SelectedIndexChanged, AddressOf Me.CboCultureSelectedIndexChanged
+		'
+		'txtTimeOut
+		'
+		resources.ApplyResources(Me.txtTimeOut, "txtTimeOut")
+		Me.txtTimeOut.MaximumSize = New System.Drawing.Size(50, 100)
+		Me.txtTimeOut.Name = "txtTimeOut"
+		AddHandler Me.txtTimeOut.TextChanged, AddressOf Me.TxtTimeOutTextChanged
 		'
 		'SettingsForm
 		'
@@ -133,6 +149,8 @@ Partial Class SettingsForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private txtTimeOut As System.Windows.Forms.TextBox
+	Private lblTimeOut As System.Windows.Forms.Label
 	Private tlpMain As System.Windows.Forms.TableLayoutPanel
 	Private cboCulture As System.Windows.Forms.ComboBox
 	Private lblCulture As System.Windows.Forms.Label

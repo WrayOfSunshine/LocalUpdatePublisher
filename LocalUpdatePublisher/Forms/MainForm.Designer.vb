@@ -157,7 +157,6 @@ Partial Class MainForm
 		Me.bgwUpdateList = New System.ComponentModel.BackgroundWorker
 		Me.bgwServers = New System.ComponentModel.BackgroundWorker
 		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker
-		Me.bgwSelectNode = New System.ComponentModel.BackgroundWorker
 		Me.ilTreeView = New System.Windows.Forms.ImageList(Me.components)
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
@@ -1095,12 +1094,7 @@ Partial Class MainForm
 		'bgwUpdateNodes
 		'
 		AddHandler Me.bgwUpdateNodes.DoWork, AddressOf Me.BgwUpdateNodesDoWork
-		AddHandler Me.bgwUpdateNodes.RunWorkerCompleted, AddressOf Me.BgwUpdateNodesRunWorkerCompleted
-		'
-		'bgwSelectNode
-		'
-		AddHandler Me.bgwSelectNode.DoWork, AddressOf Me.BgwSelectNodeDoWork
-		AddHandler Me.bgwSelectNode.RunWorkerCompleted, AddressOf Me.BgwSelectNodeRunWorkerCompleted
+		AddHandler Me.bgwUpdateNodes.RunWorkerCompleted, AddressOf Me.BgwUpdateNodesRunWorkerCompleted		
 		'
 		'ilTreeView
 		'
@@ -1176,7 +1170,6 @@ Partial Class MainForm
 	Private bgwUpdateList As System.ComponentModel.BackgroundWorker
 	Private tlpUpdateReport As System.Windows.Forms.TableLayoutPanel
 	Private tlpComputerReport As System.Windows.Forms.TableLayoutPanel
-	Private bgwSelectNode As System.ComponentModel.BackgroundWorker
 	Private bgwUpdateNodes As System.ComponentModel.BackgroundWorker
 	Private bgwServers As System.ComponentModel.BackgroundWorker
 	Private settingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

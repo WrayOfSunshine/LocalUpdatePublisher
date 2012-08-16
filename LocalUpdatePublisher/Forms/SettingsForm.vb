@@ -44,10 +44,10 @@ Public Partial Class SettingsForm
 		_dtCultures.Rows.Add((New String(){"Français","fr-FR"}))
 		_dtCultures.Rows.Add((New String(){"English","en-US"}))
 		_dtCultures.Rows.Add((New String(){"Español","es-ES"}))
-		_dtCultures.Rows.Add((New String(){"Polski","pl-PL"}))	
-		_dtCultures.Rows.Add((New String(){"Pусский","ru-RU"}))		
-		_dtCultures.Rows.Add((New String(){"Nederlands","nl-NL"}))		
-		_dtCultures.Rows.Add((New String(){"Suomi","fi-FI"}))	
+		_dtCultures.Rows.Add((New String(){"Polski","pl-PL"}))
+		_dtCultures.Rows.Add((New String(){"Pусский","ru-RU"}))
+		_dtCultures.Rows.Add((New String(){"Nederlands","nl-NL"}))
+		_dtCultures.Rows.Add((New String(){"Suomi","fi-FI"}))
 		_dtCultures.Rows.Add((New String(){"Svenska","sv-SE"}))
 		_dtCultures.Rows.Add((New String(){"中文","zh-CN"}))
 	End Sub
@@ -59,6 +59,7 @@ Public Partial Class SettingsForm
 		Me.chkDemoteClassification.Checked = appSettings.DemoteClassification
 		Me.chkHideOfficialUpdates.Checked = appSettings.HideOfficialUpdates
 		Me.cboCulture.SelectedValue = appSettings.Culture
+		Me.txtTimeOut.Text = appSettings.TimeOut.ToString
 	End Sub
 	
 	Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs)
@@ -74,18 +75,20 @@ Public Partial Class SettingsForm
 		appSettings.DemoteClassification = Me.chkDemoteClassification.Checked
 	End Sub
 	
-	
-	Sub ChkHideOfficialUpdatesMouseClick(sender As Object, e As MouseEventArgs)
-		appSettings.HideOfficialUpdates = Me.chkHideOfficialUpdates.Checked
-		Msgbox (globalRM.GetString("warning_options_restart"))
-	End Sub
-	
 	Sub CboCultureSelectedIndexChanged(sender As Object, e As EventArgs)
 		appSettings.Culture = DirectCast(cboCulture.SelectedValue, String)
 	End Sub
 	
 	Sub CboCultureSelectionChangeCommitted(sender As Object, e As EventArgs)
-		
+		Msgbox (globalRM.GetString("warning_options_restart"))
+	End Sub
+	
+	Sub TxtTimeOutTextChanged(sender As Object, e As EventArgs)
+		appSettings.TimeOut = Convert.ToInt32(txtTimeOut.Text)
+	End Sub
+	
+	Sub ChkHideOfficialUpdatesCheckedChanged(sender As Object, e As EventArgs)
+		appSettings.HideOfficialUpdates = Me.chkHideOfficialUpdates.Checked
 		Msgbox (globalRM.GetString("warning_options_restart"))
 	End Sub
 End Class

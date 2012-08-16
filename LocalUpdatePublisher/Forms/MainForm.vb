@@ -25,6 +25,7 @@ Public Partial Class MainForm
 	Private _noEvents As Boolean
 	Private _windowState As PersistWindowState
 	Private _dtTemp As DataTable
+	Private _remainingTreePath As String
 	Private ReadOnly _updateStatus As String()
 	
 	#Region "Properties"
@@ -362,7 +363,7 @@ Public Partial Class MainForm
 			_rootNode.Expand
 			Me.Refresh
 			treeView.BeginUpdate
-			Me.bgwSelectNode.RunWorkerAsync(treeview)
+			Call SelectNode (_rootNode, appSettings.TreePath)
 			treeView.EndUpdate
 		End If
 		
@@ -370,62 +371,46 @@ Public Partial Class MainForm
 		
 	End Sub
 	
-	Sub SelectNode (node As TreeNode, path As String)
-		Call SelectNode(treeview , node , path)
+	'
+	Sub SelectNode()
+		SelectNode( treeView.SelectedNode, Me._remainingTreePath)
 	End Sub
 	
 	'Recall the node that was previously selected.
-	Sub SelectNode (mytreeview As TreeView,node As TreeNode, path As String)
+	Sub SelectNode (node As TreeNode, path As String)
 		Dim nodeValue As String= path.Split("\"c)(0)
-		Dim foundNode as TreeNode = Nothing
+		Dim foundNode As TreeNode = Nothing
 		
-		'Loop through the node's children to find the correct node,
-		' select it, set the foundNode, and exit the loop.
-		For Each tmpNode As TreeNode In node.Nodes
-			If tmpNode.Text.Trim = nodeValue.Trim Then
-				foundNode = tmpNode
-				
-				'Only select the server nodes so that they are loaded or
-				' the final node we are looking for.
-				If Not tmpNode.Tag Is Nothing Then
-					If TypeOf tmpNode.Tag Is UpdateServer Or _
-						tmpNode.Text.Trim = path.Trim Then
-						mytreeView.SelectedNode = tmpNode
-					End If
+		If path = String.Empty Then Exit Sub
+		
+		Me._remainingTreePath = path
+		
+		'If the passed in node is the one we're looking for, select it.  Otherwise, loop through the children.
+		If node.Text.Trim = nodeValue.Trim Then
+			foundNode = node
+			Call TreeViewAfterSelect(Me, New TreeViewEventArgs(node))
+			foundNode.Expand
+		Else
+			'Loop through the node's children to find the correct node,
+			' select it, set the foundNode, and exit the loop.
+			For Each tmpNode As TreeNode In node.Nodes
+				If tmpNode.Text.Trim = nodeValue.Trim Then
+					foundNode = tmpNode
+					treeView.SelectedNode = tmpNode
+					Call TreeViewAfterSelect(Me, New TreeViewEventArgs(tmpNode))
+					Exit For
 				End If
-				
-				tmpNode.Expand
-				Exit For
-			End If
-		Next
+			Next
+		End If
 		
 		'If we found a node and there's more levels in the path continue.
-		If Not foundNode Is Nothing And path.Contains("\") Then
-			Call SelectNode(treeview, foundNode, Strings.Right(Path, path.Length - (nodeValue.Length + 1)))
-		End If
-		
-	End Sub
-	
-	'Wait until the treeview has been fully populated.
-	Sub BgwSelectNodeDoWork(sender As Object, ByVal e As DoWorkEventArgs)
-		If TypeOf e.Argument Is Treeview Then
-			Dim asyncTreeView As TreeView = DirectCast(e.Argument, Treeview)
-			
-			If asyncTreeView.Nodes.Count > 0 Then
-				Dim asyncRootNode As TreeNode = asyncTreeView.Nodes.Item(0)
-				
-				Dim tmpLength As Integer = appSettings.TreePath.Length - (asyncRootNode.Text.Length + 1)
-				If tmpLength > 0 Then
-					'Msgbox ("Load saved node " & Strings.Right(appSettings.TreePath, tmpLength))
-					Call SelectNode (asyncTreeView, DirectCast(asyncRootNode.Clone, TreeNode), Strings.Right(appSettings.TreePath, tmpLength))
-				End If
+		If Not foundNode Is Nothing Then
+			If path.Contains("\")  Then
+				Call SelectNode(foundNode, Strings.Right(Path, path.Length - (nodeValue.Length + 1)))
+			Else
+				Me._remainingTreePath = String.Empty
 			End If
 		End If
-	End Sub
-	
-	'With the treeview populated, now load the saved node.
-	Sub BgwSelectNodeRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
-		'Msgbox("Loaded saved node")
 	End Sub
 	
 	'Call Clear Form with defaults settings.
@@ -521,8 +506,6 @@ Public Partial Class MainForm
 	Sub CheckBGWThreads
 		If Me.bgwComputerList.IsBusy Then
 			Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
-			Me.Enabled = False
-		Else If Me.bgwSelectNode.IsBusy Then
 			Me.Enabled = False
 		Else If Me.bgwServers.IsBusy
 			Me.Enabled = False
@@ -1272,7 +1255,7 @@ Public Partial Class MainForm
 		
 		'If this node already has child nodes then
 		' do not reload it and exit the routine.
-		If node.Nodes.Count > 0 Then			
+		If node.Nodes.Count > 0 Then
 			Exit Sub
 		End If
 		
@@ -1298,7 +1281,7 @@ Public Partial Class MainForm
 			_updateNode = _serverNode.Nodes.Add("updates", globalRM.GetString("updates"))
 			_updateNode.ImageIndex = 2
 			_updateNode.SelectedImageIndex = 2
-				
+			
 			'Load the tree nodes.
 			Call LoadComputerNodes(_computerNode)
 			Call LoadUpdateNodes
@@ -1307,7 +1290,7 @@ Public Partial Class MainForm
 			_rootNode.Expand
 			_serverNode.Expand
 			
-		End If		
+		End If
 	End Sub
 	
 	Private Sub TreeViewSelectComputerNode(sender As Object, e As TreeViewEventArgs)
@@ -1389,6 +1372,10 @@ Public Partial Class MainForm
 			'Clear the computer group combobox.
 			Me.cboTargetGroup.Items.Clear
 			
+			
+			'Wait until a connection to the server is made.
+			ConnectionManager.WaitForConnection(appSettings.TimeOut)
+			
 			If ConnectionManager.Connected Then
 				
 				'Load the top level computer groups, starting at the All Computers group
@@ -1407,6 +1394,10 @@ Public Partial Class MainForm
 			End If
 		Else If Not node.Tag Is Nothing
 			
+			
+			'Wait until a connection to the server is made.
+			ConnectionManager.WaitForConnection(appSettings.TimeOut)
+			
 			If ConnectionManager.Connected Then
 				'Loop through the collection of groups, add them to the all computers node,
 				' and set their tag object to the target group.
@@ -1420,6 +1411,9 @@ Public Partial Class MainForm
 				Next
 			End If
 		End If
+		
+		'See if a node is still being looked for.
+		Call SelectNode
 	End Sub
 	
 	'This routine adds the computer groups to the combo box for the reports.
@@ -1452,6 +1446,9 @@ Public Partial Class MainForm
 			'Clear the main update node and the list of vendors.
 			startNode.Nodes.Clear
 			Me._vendorCollection.Clear
+			
+			'Wait until a connection to the server is made.
+			ConnectionManager.WaitForConnection(appSettings.TimeOut)
 			
 			If ConnectionManager.Connected Then 'Make sure we're connected still.
 				
@@ -1550,6 +1547,9 @@ Public Partial Class MainForm
 			
 		End If
 		Call CheckBGWThreads
+		
+		'See if a node is still being looked for.
+		Call SelectNode
 	End Sub
 	
 	'Load the main update node with vendors, product families, and products.

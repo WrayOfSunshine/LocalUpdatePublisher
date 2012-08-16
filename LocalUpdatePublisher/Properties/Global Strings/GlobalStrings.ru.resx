@@ -1338,4 +1338,7 @@
     <value>Рабочая станция</value>
     <comment>Automatically translated using Google</comment>
   </data>
+  <data name="bits">
+    <value>bits</value>
+  </data>
 </root>

@@ -182,6 +182,7 @@ Imports System.Globalization
 		StateUpdateStatusDGV = New DataGridViewState
 		StateApprovalDGV = New DataGridViewState
 		Culture = Thread.CurrentThread.CurrentCulture.Name
+		TimeOut = 90
 	End Sub
 	#End Region
 	
@@ -500,7 +501,7 @@ Imports System.Globalization
 	End Property
 	
 	
-		' Property for the approval form's DGV
+	' Property for the approval form's DGV
 	<Browsable(True)> _
 		<Description("Approval DGV state")> _
 		<DefaultValue(0)> _
@@ -526,5 +527,17 @@ Imports System.Globalization
 		End Set
 	End Property
 	
+	' Property for the asyncronous time out.
+	<Browsable(True)> _
+		<Description("Time Out Value")> _
+		<DefaultValue(0)> _
+		Public Property TimeOut() As Integer
+		Get
+			Return CType(_settingsHash("TimeOut"), Integer)
+		End Get
+		Set
+			_settingsHash("TimeOut") = value
+		End Set
+	End Property
 	#End Region
 End Class

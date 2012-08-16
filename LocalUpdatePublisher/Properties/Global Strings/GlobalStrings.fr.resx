@@ -1130,6 +1130,9 @@
   <data name="workstation">
     <value>Station de Travail</value>
   </data>
+  <data name="bits">
+    <value>bits</value>
+  </data>
   <data name="exception_object_disposed">
     <value>Object Disposed Exception</value>
   </data>

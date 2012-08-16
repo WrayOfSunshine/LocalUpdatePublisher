@@ -84,6 +84,7 @@ Public Partial Class CertificateInfoForm
 			Me.txtEndDate.Text = ConnectionManager.CurrentServerCertificate.GetExpirationDateString
 			Me.txtSerial.Text = ConnectionManager.CurrentServerCertificate.GetSerialNumberString
 			Me.txtHash.Text = ConnectionManager.CurrentServerCertificate.GetCertHashString
+			Me.txtSize.Text = ConnectionManager.CurrentServerCertificate.PublicKey.Key.KeySize.ToString & " " & globalRM.GetString("bits")
 		End If
 	End Sub
 	
