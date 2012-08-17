@@ -1341,4 +1341,19 @@
   <data name="bits">
     <value>bits</value>
   </data>
+  <data name="refreshing_computer_report">
+    <value>Loading computer report</value>
+  </data>
+  <data name="refreshing_update_report">
+    <value>Loading update report</value>
+  </data>
+  <data name="resigning">
+    <value>Re-signing {0}</value>
+  </data>
+  <data name="resigning_in_progress">
+    <value>Updates are currently being re-signed.  Please wait until they are finished.</value>
+  </data>
+  <data name="resigning_updates">
+    <value>Re-signing Updates</value>
+  </data>
 </root>
