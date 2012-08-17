@@ -793,8 +793,14 @@
   <data name="refreshing_computer_list">
     <value>Refreshing computer list</value>
   </data>
+  <data name="refreshing_computer_report">
+    <value>Loading computer report</value>
+  </data>
   <data name="refreshing_update_list">
     <value>Refreshing Update List</value>
+  </data>
+  <data name="refreshing_update_report">
+    <value>Loading update report</value>
   </data>
   <data name="remove">
     <value>Remove</value>
@@ -813,6 +819,15 @@
   </data>
   <data name="resign">
     <value>Re-sign</value>
+  </data>
+  <data name="resigning">
+    <value>Re-signing {0}</value>
+  </data>
+  <data name="resigning_in_progress">
+    <value>Updates are currently being re-signed.  Please wait until they are finished.</value>
+  </data>
+  <data name="resigning_updates">
+    <value>Re-signing Updates</value>
   </data>
   <data name="revise">
     <value>Revise</value>

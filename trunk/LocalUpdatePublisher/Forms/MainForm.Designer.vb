@@ -33,131 +33,134 @@ Partial Class MainForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Me.components = New System.ComponentModel.Container
+		Me.components = New System.ComponentModel.Container()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-		Me.splitContainerVert = New System.Windows.Forms.SplitContainer
-		Me.treeView = New CustomTreeView
-		Me.splitContainerHorz = New System.Windows.Forms.SplitContainer
-		Me.scHeader = New System.Windows.Forms.SplitContainer
-		Me.tlpHeader = New System.Windows.Forms.TableLayoutPanel
-		Me.chkInheritApprovals = New System.Windows.Forms.CheckBox
-		Me.chkApprovedOnly = New System.Windows.Forms.CheckBox
-		Me.lblComputerStatus = New System.Windows.Forms.Label
-		Me.btnComputerListRefresh = New System.Windows.Forms.Button
-		Me.cboComputerStatus = New System.Windows.Forms.ComboBox
-		Me.tlpHeaderTop = New System.Windows.Forms.TableLayoutPanel
-		Me.lblSelectedTargetGroup = New System.Windows.Forms.Label
-		Me.lblSelectedTargetGroupCount = New System.Windows.Forms.Label
-		Me._dgvMain = New System.Windows.Forms.DataGridView
-		Me.pnlComputers = New System.Windows.Forms.Panel
-		Me.tabMainComputers = New System.Windows.Forms.TabControl
-		Me.tabComputerInfo = New System.Windows.Forms.TabPage
-		Me.tlpComputerInfo = New System.Windows.Forms.TableLayoutPanel
-		Me.lblUpdatesWErrors = New System.Windows.Forms.Label
-		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox
-		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox
-		Me.lblUpdatesNeeded = New System.Windows.Forms.Label
-		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label
-		Me.lblUpdateNoStatus = New System.Windows.Forms.Label
-		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox
-		Me.tabComputerStatus = New System.Windows.Forms.TabPage
-		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView
-		Me.tabComputerReport = New System.Windows.Forms.TabPage
-		Me.tlpComputerReport = New System.Windows.Forms.TableLayoutPanel
-		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label
-		Me.dgvComputerReport = New System.Windows.Forms.DataGridView
-		Me.btnComputerRefreshReport = New System.Windows.Forms.Button
-		Me.pnlUpdates = New System.Windows.Forms.Panel
-		Me.tabMainUpdates = New System.Windows.Forms.TabControl
-		Me.tabUpdateInfo = New System.Windows.Forms.TabPage
-		Me.tlpUpdateInfo = New System.Windows.Forms.TableLayoutPanel
-		Me.lblUninstall = New System.Windows.Forms.Label
-		Me.tlpUpdateInfoUninstall = New System.Windows.Forms.TableLayoutPanel
-		Me.txtNetwork = New System.Windows.Forms.TextBox
-		Me.txtUninstall = New System.Windows.Forms.TextBox
-		Me.lblNetwork = New System.Windows.Forms.Label
-		Me.txtPackageType = New System.Windows.Forms.TextBox
-		Me.lblRebootBehavior = New System.Windows.Forms.Label
-		Me.txtPackage = New System.Windows.Forms.TextBox
-		Me.lblPackageType = New System.Windows.Forms.Label
-		Me.txtPackageTitle = New System.Windows.Forms.TextBox
-		Me.txtDescription = New System.Windows.Forms.TextBox
-		Me.txtRebootBehavior = New System.Windows.Forms.TextBox
-		Me.txtImpact = New System.Windows.Forms.TextBox
-		Me.txtClassification = New System.Windows.Forms.TextBox
-		Me.txtVendor = New System.Windows.Forms.TextBox
-		Me.txtBulletinID = New System.Windows.Forms.TextBox
-		Me.lblID = New System.Windows.Forms.Label
-		Me.lblPrerequisites = New System.Windows.Forms.Label
-		Me.txtProduct = New System.Windows.Forms.TextBox
-		Me.lblSupersedes = New System.Windows.Forms.Label
-		Me.lblReturnCodes = New System.Windows.Forms.Label
-		Me.lblPackageTitle = New System.Windows.Forms.Label
-		Me.lblDescription = New System.Windows.Forms.Label
-		Me.lblImpact = New System.Windows.Forms.Label
-		Me.lblMoreInfoURL = New System.Windows.Forms.Label
-		Me.lblSeverity = New System.Windows.Forms.Label
-		Me.lblCVEID = New System.Windows.Forms.Label
-		Me.lblClassification = New System.Windows.Forms.Label
-		Me.lblBullitinID = New System.Windows.Forms.Label
-		Me.lblVendor = New System.Windows.Forms.Label
-		Me.lblArticleID = New System.Windows.Forms.Label
-		Me.txtArticleID = New System.Windows.Forms.TextBox
-		Me.txtServerity = New System.Windows.Forms.TextBox
-		Me.lblProduct = New System.Windows.Forms.Label
-		Me.txtCVEID = New System.Windows.Forms.TextBox
-		Me.txtMoreInfoURL = New System.Windows.Forms.TextBox
-		Me.tabUpdateStatus = New System.Windows.Forms.TabPage
-		Me.dgvUpdateStatus = New System.Windows.Forms.DataGridView
-		Me.tabUpdateReport = New System.Windows.Forms.TabPage
-		Me.tlpUpdateReport = New System.Windows.Forms.TableLayoutPanel
-		Me.lblComputerGroup = New System.Windows.Forms.Label
-		Me.dgvUpdateReport = New System.Windows.Forms.DataGridView
-		Me.btnUpdateRefreshReport = New System.Windows.Forms.Button
-		Me.lblUpdateStatus = New System.Windows.Forms.Label
-		Me.cboTargetGroup = New System.Windows.Forms.ComboBox
-		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox
-		Me.menuStrip = New System.Windows.Forms.MenuStrip
-		Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.importCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.exportCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.toolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-		Me.exportListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.exportReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-		Me.exitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.toolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.createUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.importUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.exportUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-		Me.savedRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.manageRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.importRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.exportRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.certificateInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.connectionSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.settingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.updateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.helpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.aboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.helpForumsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.lupHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.cmDgvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
-		Me.statusStrip = New System.Windows.Forms.StatusStrip
-		Me.toolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
-		Me.toolStripStatusLabelLink = New System.Windows.Forms.ToolStripStatusLabel
-		Me.importFileDialog = New System.Windows.Forms.OpenFileDialog
-		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
-		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
-		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		Me.bgwComputerList = New System.ComponentModel.BackgroundWorker
-		Me.bgwUpdateList = New System.ComponentModel.BackgroundWorker
-		Me.bgwServers = New System.ComponentModel.BackgroundWorker
-		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker
+		Me.splitContainerVert = New System.Windows.Forms.SplitContainer()
+		Me.treeView = New LocalUpdatePublisher.CustomTreeView()
 		Me.ilTreeView = New System.Windows.Forms.ImageList(Me.components)
+		Me.splitContainerHorz = New System.Windows.Forms.SplitContainer()
+		Me.scHeader = New System.Windows.Forms.SplitContainer()
+		Me.tlpHeader = New System.Windows.Forms.TableLayoutPanel()
+		Me.chkInheritApprovals = New System.Windows.Forms.CheckBox()
+		Me.chkApprovedOnly = New System.Windows.Forms.CheckBox()
+		Me.lblComputerStatus = New System.Windows.Forms.Label()
+		Me.btnComputerListRefresh = New System.Windows.Forms.Button()
+		Me.cboComputerStatus = New System.Windows.Forms.ComboBox()
+		Me.tlpHeaderTop = New System.Windows.Forms.TableLayoutPanel()
+		Me.lblSelectedTargetGroup = New System.Windows.Forms.Label()
+		Me.lblSelectedTargetGroupCount = New System.Windows.Forms.Label()
+		Me._dgvMain = New System.Windows.Forms.DataGridView()
+		Me.pnlComputers = New System.Windows.Forms.Panel()
+		Me.tabMainComputers = New System.Windows.Forms.TabControl()
+		Me.tabComputerInfo = New System.Windows.Forms.TabPage()
+		Me.tlpComputerInfo = New System.Windows.Forms.TableLayoutPanel()
+		Me.lblUpdatesWErrors = New System.Windows.Forms.Label()
+		Me.txtUpdateNoStatusNum = New System.Windows.Forms.TextBox()
+		Me.txtUpdatesInstalledorNANum = New System.Windows.Forms.TextBox()
+		Me.txtUpdatesNeededNum = New System.Windows.Forms.TextBox()
+		Me.lblUpdatesNeeded = New System.Windows.Forms.Label()
+		Me.lblUpdatesInstalledorNA = New System.Windows.Forms.Label()
+		Me.lblUpdateNoStatus = New System.Windows.Forms.Label()
+		Me.txtUpdatesWErrorsNum = New System.Windows.Forms.TextBox()
+		Me.tabComputerStatus = New System.Windows.Forms.TabPage()
+		Me.dgvComputerGroupStatus = New System.Windows.Forms.DataGridView()
+		Me.tabComputerReport = New System.Windows.Forms.TabPage()
+		Me.tlpComputerReport = New System.Windows.Forms.TableLayoutPanel()
+		Me.lblComputerUpdateStatus = New System.Windows.Forms.Label()
+		Me.dgvComputerReport = New System.Windows.Forms.DataGridView()
+		Me.btnComputerRefreshReport = New System.Windows.Forms.Button()
+		Me.pnlUpdates = New System.Windows.Forms.Panel()
+		Me.tabMainUpdates = New System.Windows.Forms.TabControl()
+		Me.tabUpdateInfo = New System.Windows.Forms.TabPage()
+		Me.tlpUpdateInfo = New System.Windows.Forms.TableLayoutPanel()
+		Me.lblUninstall = New System.Windows.Forms.Label()
+		Me.tlpUpdateInfoUninstall = New System.Windows.Forms.TableLayoutPanel()
+		Me.txtNetwork = New System.Windows.Forms.TextBox()
+		Me.txtUninstall = New System.Windows.Forms.TextBox()
+		Me.lblNetwork = New System.Windows.Forms.Label()
+		Me.txtPackageType = New System.Windows.Forms.TextBox()
+		Me.lblRebootBehavior = New System.Windows.Forms.Label()
+		Me.txtPackage = New System.Windows.Forms.TextBox()
+		Me.lblPackageType = New System.Windows.Forms.Label()
+		Me.txtPackageTitle = New System.Windows.Forms.TextBox()
+		Me.txtDescription = New System.Windows.Forms.TextBox()
+		Me.txtRebootBehavior = New System.Windows.Forms.TextBox()
+		Me.txtImpact = New System.Windows.Forms.TextBox()
+		Me.txtClassification = New System.Windows.Forms.TextBox()
+		Me.txtVendor = New System.Windows.Forms.TextBox()
+		Me.txtBulletinID = New System.Windows.Forms.TextBox()
+		Me.lblID = New System.Windows.Forms.Label()
+		Me.lblPrerequisites = New System.Windows.Forms.Label()
+		Me.txtProduct = New System.Windows.Forms.TextBox()
+		Me.lblSupersedes = New System.Windows.Forms.Label()
+		Me.lblReturnCodes = New System.Windows.Forms.Label()
+		Me.lblPackageTitle = New System.Windows.Forms.Label()
+		Me.lblDescription = New System.Windows.Forms.Label()
+		Me.lblImpact = New System.Windows.Forms.Label()
+		Me.lblMoreInfoURL = New System.Windows.Forms.Label()
+		Me.lblSeverity = New System.Windows.Forms.Label()
+		Me.lblCVEID = New System.Windows.Forms.Label()
+		Me.lblClassification = New System.Windows.Forms.Label()
+		Me.lblBullitinID = New System.Windows.Forms.Label()
+		Me.lblVendor = New System.Windows.Forms.Label()
+		Me.lblArticleID = New System.Windows.Forms.Label()
+		Me.txtArticleID = New System.Windows.Forms.TextBox()
+		Me.txtServerity = New System.Windows.Forms.TextBox()
+		Me.lblProduct = New System.Windows.Forms.Label()
+		Me.txtCVEID = New System.Windows.Forms.TextBox()
+		Me.txtMoreInfoURL = New System.Windows.Forms.TextBox()
+		Me.tabUpdateStatus = New System.Windows.Forms.TabPage()
+		Me.dgvUpdateStatus = New System.Windows.Forms.DataGridView()
+		Me.tabUpdateReport = New System.Windows.Forms.TabPage()
+		Me.tlpUpdateReport = New System.Windows.Forms.TableLayoutPanel()
+		Me.lblComputerGroup = New System.Windows.Forms.Label()
+		Me.dgvUpdateReport = New System.Windows.Forms.DataGridView()
+		Me.btnUpdateRefreshReport = New System.Windows.Forms.Button()
+		Me.lblUpdateStatus = New System.Windows.Forms.Label()
+		Me.cboTargetGroup = New System.Windows.Forms.ComboBox()
+		Me.cboUpdateStatus = New System.Windows.Forms.ComboBox()
+		Me.menuStrip = New System.Windows.Forms.MenuStrip()
+		Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.importCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.exportCatalogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.toolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+		Me.exportListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.exportReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+		Me.exitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.toolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.createUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.importUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.exportUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.savedRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.manageRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.importRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.exportRulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.certificateInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.connectionSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.settingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.updateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.helpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.aboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.helpForumsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.lupHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.cmDgvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.statusStrip = New System.Windows.Forms.StatusStrip()
+		Me.toolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+		Me.toolStripStatusLabelLink = New System.Windows.Forms.ToolStripStatusLabel()
+		Me.importFileDialog = New System.Windows.Forms.OpenFileDialog()
+		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog()
+		Me.cmCreateCategoryUpdate = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.createCategoryUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel()
+		Me.bgwComputerList = New System.ComponentModel.BackgroundWorker()
+		Me.bgwUpdateList = New System.ComponentModel.BackgroundWorker()
+		Me.bgwServers = New System.ComponentModel.BackgroundWorker()
+		Me.bgwUpdateNodes = New System.ComponentModel.BackgroundWorker()
+		Me.bgwResign = New System.ComponentModel.BackgroundWorker()
+		Me.bgwUpdateReport = New System.ComponentModel.BackgroundWorker()
+		Me.bgwComputerReport = New System.ComponentModel.BackgroundWorker()
 		Me.splitContainerVert.Panel1.SuspendLayout
 		Me.splitContainerVert.Panel2.SuspendLayout
 		Me.splitContainerVert.SuspendLayout
@@ -213,12 +216,22 @@ Partial Class MainForm
 		'treeView
 		'
 		resources.ApplyResources(Me.treeView, "treeView")
+		Me.treeView.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll
 		Me.treeView.HideSelection = false
 		Me.treeView.ImageList = Me.ilTreeView
+		Me.treeView.LineColor = System.Drawing.Color.FromArgb(CType(CType(172,Byte),Integer), CType(CType(168,Byte),Integer), CType(CType(153,Byte),Integer))
 		Me.treeView.Name = "treeView"
-		AddHandler Me.treeView.MouseUp, AddressOf Me.TreeViewMouseUp
-		AddHandler Me.treeView.AfterSelect, AddressOf Me.TreeViewAfterSelect
 		AddHandler Me.treeView.BeforeSelect, AddressOf Me.TreeViewBeforeSelect
+		AddHandler Me.treeView.AfterSelect, AddressOf Me.TreeViewAfterSelect
+		AddHandler Me.treeView.MouseUp, AddressOf Me.TreeViewMouseUp
+		'
+		'ilTreeView
+		'
+		Me.ilTreeView.ImageStream = CType(resources.GetObject("ilTreeView.ImageStream"),System.Windows.Forms.ImageListStreamer)
+		Me.ilTreeView.TransparentColor = System.Drawing.Color.Transparent
+		Me.ilTreeView.Images.SetKeyName(0, "computer.ico")
+		Me.ilTreeView.Images.SetKeyName(1, "server.ico")
+		Me.ilTreeView.Images.SetKeyName(2, "updates.ico")
 		'
 		'splitContainerHorz
 		'
@@ -332,11 +345,11 @@ Partial Class MainForm
 		Me._dgvMain.ReadOnly = true
 		Me._dgvMain.RowHeadersVisible = false
 		Me._dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		AddHandler Me._dgvMain.Sorted, AddressOf Me.DgvMainSorted
-		AddHandler Me._dgvMain.RowEnter, AddressOf Me.dgvMainRowEnter
 		AddHandler Me._dgvMain.CellMouseDown, AddressOf Me.dgvMainCellMouseDown
-		AddHandler Me._dgvMain.Leave, AddressOf Me.dgvMainLeave
+		AddHandler Me._dgvMain.RowEnter, AddressOf Me.dgvMainRowEnter
+		AddHandler Me._dgvMain.Sorted, AddressOf Me.DgvMainSorted
 		AddHandler Me._dgvMain.KeyUp, AddressOf Me.dgvMainKeyUp
+		AddHandler Me._dgvMain.Leave, AddressOf Me.dgvMainLeave
 		'
 		'pnlComputers
 		'
@@ -489,8 +502,8 @@ Partial Class MainForm
 		Me.dgvComputerReport.ReadOnly = true
 		Me.dgvComputerReport.RowHeadersVisible = false
 		Me.dgvComputerReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
 		AddHandler Me.dgvComputerReport.CellMouseDown, AddressOf Me.DgvComputerReportCellMouseDown
+		AddHandler Me.dgvComputerReport.Sorted, AddressOf Me.DgvComputerReportSorted
 		'
 		'btnComputerRefreshReport
 		'
@@ -843,8 +856,8 @@ Partial Class MainForm
 		Me.dgvUpdateReport.ReadOnly = true
 		Me.dgvUpdateReport.RowHeadersVisible = false
 		Me.dgvUpdateReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		AddHandler Me.dgvUpdateReport.Sorted, AddressOf Me.DgvUpdateReportSorted
 		AddHandler Me.dgvUpdateReport.CellMouseDown, AddressOf Me.DgvUpdateReportCellMouseDown
+		AddHandler Me.dgvUpdateReport.Sorted, AddressOf Me.DgvUpdateReportSorted
 		'
 		'btnUpdateRefreshReport
 		'
@@ -1094,15 +1107,24 @@ Partial Class MainForm
 		'bgwUpdateNodes
 		'
 		AddHandler Me.bgwUpdateNodes.DoWork, AddressOf Me.BgwUpdateNodesDoWork
-		AddHandler Me.bgwUpdateNodes.RunWorkerCompleted, AddressOf Me.BgwUpdateNodesRunWorkerCompleted		
+		AddHandler Me.bgwUpdateNodes.RunWorkerCompleted, AddressOf Me.BgwUpdateNodesRunWorkerCompleted
 		'
-		'ilTreeView
+		'bgwResign
 		'
-		Me.ilTreeView.ImageStream = CType(resources.GetObject("ilTreeView.ImageStream"),System.Windows.Forms.ImageListStreamer)
-		Me.ilTreeView.TransparentColor = System.Drawing.Color.Transparent
-		Me.ilTreeView.Images.SetKeyName(0, "computer.ico")
-		Me.ilTreeView.Images.SetKeyName(1, "server.ico")
-		Me.ilTreeView.Images.SetKeyName(2, "updates.ico")
+		Me.bgwResign.WorkerReportsProgress = true
+		AddHandler Me.bgwResign.DoWork, AddressOf Me.BgwResignDoWork
+		AddHandler Me.bgwResign.ProgressChanged, AddressOf Me.BgwResignProgressChanged
+		AddHandler Me.bgwResign.RunWorkerCompleted, AddressOf Me.BgwResignRunWorkerCompleted
+		'
+		'bgwUpdateReport
+		'
+		AddHandler Me.bgwUpdateReport.DoWork, AddressOf Me.BgwUpdateReportDoWork
+		AddHandler Me.bgwUpdateReport.RunWorkerCompleted, AddressOf Me.BgwUpdateReportRunWorkerCompleted
+		'
+		'bgwComputerReport
+		'
+		AddHandler Me.bgwComputerReport.DoWork, AddressOf Me.BgwComputerReportDoWork
+		AddHandler Me.bgwComputerReport.RunWorkerCompleted, AddressOf Me.BgwComputerReportRunWorkerCompleted
 		'
 		'MainForm
 		'
@@ -1111,9 +1133,9 @@ Partial Class MainForm
 		Me.Controls.Add(Me.tlpMain)
 		Me.MainMenuStrip = Me.menuStrip
 		Me.Name = "MainForm"
-		AddHandler Load, AddressOf Me.MainFormLoad
 		AddHandler Activated, AddressOf Me.MainFormActivated
 		AddHandler FormClosing, AddressOf Me.MainFormFormClosing
+		AddHandler Load, AddressOf Me.MainFormLoad
 		Me.splitContainerVert.Panel1.ResumeLayout(false)
 		Me.splitContainerVert.Panel2.ResumeLayout(false)
 		Me.splitContainerVert.ResumeLayout(false)
@@ -1165,6 +1187,9 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
+	Private bgwComputerReport As System.ComponentModel.BackgroundWorker
+	Private bgwUpdateReport As System.ComponentModel.BackgroundWorker
+	Private bgwResign As System.ComponentModel.BackgroundWorker
 	Private ilTreeView As System.Windows.Forms.ImageList
 	Private bgwComputerList As System.ComponentModel.BackgroundWorker
 	Private bgwUpdateList As System.ComponentModel.BackgroundWorker
@@ -1279,7 +1304,7 @@ Partial Class MainForm
 	Private splitContainerVert As System.Windows.Forms.SplitContainer
 	Private splitContainerHorz As System.Windows.Forms.SplitContainer
 	Private cmDgvMain As System.Windows.Forms.ContextMenuStrip
-	Private treeView As CustomTreeView
+	Private treeView As LocalUpdatePublisher.CustomTreeView
 	Private certificateInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private menuStrip As System.Windows.Forms.MenuStrip
 	Private aboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

@@ -23,6 +23,7 @@ Public Partial Class MainForm
 	Private _rootNode As TreeNode
 	Private _originalValue As String
 	Private _noEvents As Boolean
+	Private _dgvMainLoading As Boolean
 	Private _windowState As PersistWindowState
 	Private _dtTemp As DataTable
 	Private _remainingTreePath As String
@@ -436,7 +437,9 @@ Public Partial Class MainForm
 		pnlComputers.Visible = False
 		Refresh
 		
+		_dgvMainLoading = True
 		_dgvMain.DataSource = Nothing
+		_dgvMainLoading = False
 		
 		_noEvents = False
 	End Sub
@@ -507,6 +510,9 @@ Public Partial Class MainForm
 		If Me.bgwComputerList.IsBusy Then
 			Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
 			Me.Enabled = False
+		Else If Me.bgwComputerReport.IsBusy Then
+			Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_report")
+			Me.Enabled = False
 		Else If Me.bgwServers.IsBusy
 			Me.Enabled = False
 		Else If Me.bgwUpdateNodes.IsBusy Then
@@ -515,6 +521,12 @@ Public Partial Class MainForm
 		Else If Me.bgwUpdateList.IsBusy Then
 			toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
 			Me.Enabled = False
+		Else If Me.bgwUpdateReport.IsBusy Then
+			toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_report")
+			Me.Enabled = False
+		Else If Me.bgwResign.IsBusy
+			toolStripStatusLabel.Text =globalRM.GetString("resigning_updates")
+			Me.Enabled = True
 		Else
 			toolStripStatusLabel.Text = Nothing
 			Me.Enabled = True
@@ -971,13 +983,12 @@ Public Partial Class MainForm
 	'Resign the update.  This is only needed if the certificate has changed
 	' since the update was initially created.
 	Private Sub ResignUpdate_Click(sender As Object, e As EventArgs)
-		Dim packageFile As String
-		Dim tmpRevisionID As UpdateRevisionId
-		Dim allResigned As Boolean = True
 		
 		'Make sure a current row is selected.
 		If Me._dgvMain.SelectedRows.Count < 1 Then
 			msgbox(globalRM.GetString("warning_no_row_selected"))
+		Else If Me.bgwResign.IsBusy Then
+			msgbox(globalRM.GetString("resigning_in_progress"))
 		Else
 			Dim response As MsgBoxResult
 			
@@ -989,62 +1000,95 @@ Public Partial Class MainForm
 					vbYesNo)
 			End If
 			
-			'If user really wants to remove the updates then do so
-			If response = MsgBoxResult.Yes Then
+			'If user really wants to remove the updates then do so asynchronously.
+			If response = MsgBoxResult.Yes Then				
 				
-				Me.Cursor = Cursors.WaitCursor
-				
-				For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
-					
-					'Make Sure the current row has an UpdateID.
-					If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
-						tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
-						
-						'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
-						' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
-						If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
-							Msgbox(String.Format(globalRM.GetString("warning_resign_metadata"),DirectCast(tmpRow.Cells.Item("Title").Value, String)))
-							allResigned = False
-						Else
-							Try
-								
-								'Export the SDP to a temporary file.
-								packageFile = ConnectionManager.ExportSDP(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ))
-								'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
-								
-								'Create a publisher object with the SDP and resign the package.
-								Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(packageFile)
-								publisher.ResignPackage()
-								My.Computer.FileSystem.DeleteFile(packageFile)
-								
-							Catch x As UnauthorizedAccessException
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							Catch x As ArgumentNullException
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							Catch x As FileNotFoundException
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_file_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							Catch x As InvalidDataException
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_data") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							Catch x As InvalidOperationException
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							Catch x As Exception
-								Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
-							End Try
-						End If
-					Else
-						MsgBox(globalRM.GetString("error_row_invalid_update_id"))
-					End If
-				Next
-				
-				Me.Cursor = Cursors.Arrow
-				If allResigned Then
-					Msgbox (globalRM.GetString("success_packages_resigned"))
-				Else
-					Msgbox (globalRM.GetString("error_packages_resigned"))
-				End If
+				Me.bgwResign.RunWorkerAsync(Me._dgvMain.SelectedRows)
 				
 			End If
 		End If
+	End Sub
+	
+	Sub BgwResignDoWork(sender As Object, e As DoWorkEventArgs)
+		Dim packageFile As String
+		Dim packageCount As Integer = 0
+		Dim tmpRevisionID As UpdateRevisionId	
+		Dim allResigned As Boolean = True
+		Dim selectedRows As DataGridViewSelectedRowCollection
+		
+		
+		'Make sure we were passed a collection of selected DGV rows.
+		If TypeOf e.Argument Is DataGridViewSelectedRowCollection Then 
+			selectedRows = DirectCast( e.Argument, DataGridViewSelectedRowCollection)
+		Else
+			Exit Sub
+		End If
+		
+		For Each tmpRow As DataGridViewRow In selectedRows
+			packageCount+=1
+			
+			'Make Sure the current row has an UpdateID.
+			If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
+				tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
+				
+				'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
+				' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
+				If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
+					Msgbox(String.Format(globalRM.GetString("warning_resign_metadata"),DirectCast(tmpRow.Cells.Item("Title").Value, String)))
+					allResigned = False
+				Else
+					Try											
+						
+						Me.bgwResign.ReportProgress(Convert.ToInt32(packageCount / selectedRows.Count * 100), tmpRow.Cells.Item("Title").Value)
+						
+						'Export the SDP to a temporary file.
+						packageFile = ConnectionManager.ExportSDP(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ))
+						'ConnectionManager.ParentServer.ExportPackageMetadata(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId ), packageFile)
+						
+						'Create a publisher object with the SDP and resign the package.
+						Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(packageFile)
+						publisher.ResignPackage()
+						My.Computer.FileSystem.DeleteFile(packageFile)
+						
+					Catch x As UnauthorizedAccessException
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					Catch x As ArgumentNullException
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					Catch x As FileNotFoundException
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_file_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					Catch x As InvalidDataException
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_data") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					Catch x As InvalidOperationException
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					Catch x As Exception
+						Msgbox (globalRM.GetString("error_package_resigned") & vbNewline & globalRM.GetString("exception") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+					End Try
+				End If
+			Else
+				MsgBox(globalRM.GetString("error_row_invalid_update_id"))
+			End If
+		Next
+		
+		e.Result = allResigned
+	End Sub
+	
+	Sub BgwResignProgressChanged(sender As Object, e As ProgressChangedEventArgs)
+		If TypeOf e.UserState Is String Then
+			Me.toolStripStatusLabel.Text = String.Format(globalRM.GetString("resigning"), DirectCast(e.UserState, String)) & " " & e.ProgressPercentage & "%"
+		Else
+			Me.toolStripStatusLabel.Text = String.Empty
+		End If
+	End Sub
+	
+	Sub BgwResignRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		
+		If TypeOf e.Result Is Boolean AndAlso DirectCast(e.Result, Boolean) Then
+			Msgbox (globalRM.GetString("success_packages_resigned"))
+		Else
+			Msgbox (globalRM.GetString("error_packages_resigned"))
+		End If
+		
+		Call CheckBGWThreads
 	End Sub
 	
 	Private Sub RevisionHistoryUpdate_Click(sender As Object, e As EventArgs)
@@ -1236,7 +1280,9 @@ Public Partial Class MainForm
 			pnlUpdates.Visible = False
 			pnlComputers.Visible = False
 			Update
+			_dgvMainLoading = True
 			_dgvMain.DataSource = Nothing
+			_dgvMainLoading = False
 			_noEvents = False
 		End If 'Node tag instantiated.
 		
@@ -1399,7 +1445,7 @@ Public Partial Class MainForm
 				LoadComputerCombo ( tmpNode )
 			End If
 		Else If Not node.Tag Is Nothing
-						
+			
 			'Wait until a connection to the server is made.
 			ConnectionManager.WaitForConnection(appSettings.TimeOut)
 			
@@ -1520,16 +1566,16 @@ Public Partial Class MainForm
 		
 		'If the argument is a string then pass it along as the selected node path
 		If Not E.Argument Is Nothing AndAlso TypeOf e.Argument Is String Then
-			e.Result = New AsyncNodeDetails ( startNode, DirectCast ( e.Argument , String) )
+			e.Result = New NodeDetails ( startNode, DirectCast ( e.Argument , String) )
 		Else
-			e.Result = New AsyncNodeDetails ( startNode, Nothing )
+			e.Result = New NodeDetails ( startNode, Nothing )
 		End If
 	End Sub
 	
 	'When the asynchronous process is complete add the nodes to the update node.
 	Sub BgwUpdateNodesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
-		If TypeOf e.Result Is AsyncNodeDetails Then
-			Dim tmpAsyncNodeDetails As AsyncNodeDetails = DirectCast ( e.Result, AsyncNodeDetails)
+		If TypeOf e.Result Is NodeDetails Then
+			Dim tmpAsyncNodeDetails As NodeDetails = DirectCast ( e.Result, NodeDetails)
 			_updateNode.Nodes.Clear
 			
 			
@@ -1648,7 +1694,7 @@ Public Partial Class MainForm
 	
 	'If the user uses the up or down keys then load the new row.
 	Sub dgvMainKeyUp(sender As Object, e As KeyEventArgs)
-		If Not _noEvents AndAlso Not _dgvMain.CurrentRow Is Nothing AndAlso _dgvMain.CurrentRow.Index >= 0 AndAlso _
+		If Not _dgvMainLoading AndAlso Not _dgvMain.CurrentRow Is Nothing AndAlso _dgvMain.CurrentRow.Index >= 0 AndAlso _
 			(e.KeyCode = 40 OrElse _
 			e.KeyCode = 38 ) Then
 			_dgvMain.Update
@@ -1658,7 +1704,7 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub dgvMainRowEnter(sender As Object, e As DataGridViewCellEventArgs)
-		If  Not _noEvents Then
+		If  Not _dgvMainLoading Then
 			'Load the newly selected row.
 			Call LoadRow(e.RowIndex)
 		End If
@@ -1842,7 +1888,9 @@ Public Partial Class MainForm
 		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
 		If TypeOf e.Result Is RefreshInfo Then
 			riTemp = DirectCast(e.Result, RefreshInfo)
+			_dgvMainLoading = True
 			_dgvMain.DataSource = riTemp.DataTable
+			_dgvMainLoading = False
 		End If
 		
 		If _dgvMain.DataSource Is Nothing Then
@@ -1899,17 +1947,18 @@ Public Partial Class MainForm
 				'Load the selected computer's info.
 				Call LoadComputerInfo ( Me._dgvMain.CurrentRow.Index)
 				
-				'If the user is currently on the report tab then update it.
-				' Otherwise, clear the combo selections.
-				If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
-					
-					Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
-					Call LoadDgvState(dgvComputerReport)
-				Else
-					Me.dgvComputerReport.DataSource = Nothing
-					Me.cboTargetGroup.SelectedIndex =  -1
-					Me.cboUpdateStatus.SelectedIndex = -1
-				End If
+				'				I believe this is not needed; the Load Row method called via the current cell assignment above will take care of it.
+				'				'If the user is currently on the report tab then update it.
+				'				' Otherwise, clear the combo selections.
+				'				If Me.tabMainComputers.SelectedTab.Name = Me.tabComputerReport.Name Then
+				'					
+				'					Call LoadComputerReport(Me._dgvMain.CurrentRow.Index)
+				'					Call LoadDgvState(dgvComputerReport)
+				'				Else
+				'					Me.dgvComputerReport.DataSource = Nothing
+				'					Me.cboTargetGroup.SelectedIndex =  -1
+				'					Me.cboUpdateStatus.SelectedIndex = -1
+				'				End If
 			Else 'No computers listed in the DGV.
 				btnComputerListRefresh.Enabled = False
 				exportListToolStripMenuItem.Enabled = False
@@ -1954,7 +2003,9 @@ Public Partial Class MainForm
 				End If
 				
 				'Clear the main DGV and computers listed count.
+				_dgvMainLoading = True
 				_dgvMain.DataSource = Nothing
+				_dgvMainLoading = False
 				Me.lblSelectedTargetGroupCount.Text = Nothing
 				
 				'Make the asynchronous call.
@@ -1988,7 +2039,9 @@ Public Partial Class MainForm
 		'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
 		If TypeOf e.Result Is RefreshInfo Then
 			riTemp = DirectCast(e.Result, RefreshInfo)
+			_dgvMainLoading = True
 			_dgvMain.DataSource = riTemp.DataTable
+			_dgvMainLoading = False
 		End If
 		
 		If Not _dgvMain.DataSource Is Nothing Then
@@ -2026,20 +2079,21 @@ Public Partial Class MainForm
 					Call LoadUpdateStatus( Me._dgvMain.CurrentRow.Index)
 				End If
 				
-				'If the user is currently on the report tab then update it.
-				' Otherwise, clear the combo selections.
-				If Me.tabMainUpdates.SelectedTab.Name = Me.tabUpdateReport.Name Then
-					If Not Me._dgvMain.CurrentRow Is Nothing Then
-						Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
-					End If
-					Call LoadDgvState(dgvUpdateReport)
-					
-				Else
-					
-					Me.dgvUpdateReport.DataSource = Nothing
-					Me.cboTargetGroup.SelectedIndex =  -1
-					Me.cboUpdateStatus.SelectedIndex = -1
-				End If
+'				I believe this is not needed;  the Load Row method called via the current cell assignment above will take care of it.
+'				'If the user is currently on the report tab then update it.
+'				' Otherwise, clear the combo selections.
+'				If Me.tabMainUpdates.SelectedTab.Name = Me.tabUpdateReport.Name Then
+'					If Not Me._dgvMain.CurrentRow Is Nothing Then
+'						Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index)
+'					End If
+'					Call LoadDgvState(dgvUpdateReport)
+'					
+'				Else
+'					
+'					Me.dgvUpdateReport.DataSource = Nothing
+'					Me.cboTargetGroup.SelectedIndex =  -1
+'					Me.cboUpdateStatus.SelectedIndex = -1
+'				End If
 			End If
 		End If
 		
@@ -2067,7 +2121,9 @@ Public Partial Class MainForm
 				Me.treeView.SelectedNode.Tag Is Nothing Then
 				
 				'Clear the main DGV.
+				_dgvMainLoading = True
 				_dgvMain.DataSource = Nothing
+				_dgvMainLoading = False
 				
 				'Clear the update data by calling the loads with an index equal to the number of rows.
 				Call LoadUpdateInfo( Me._dgvMain.Rows.Count)
@@ -2075,7 +2131,9 @@ Public Partial Class MainForm
 				
 				
 			Else If Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
+				_dgvMainLoading = True
 				_dgvMain.DataSource = Nothing 'Clear the main DGV.
+				_dgvMainLoading = False
 			Else
 				If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False  Then
 					'Populate refresh info object
@@ -2090,7 +2148,9 @@ Public Partial Class MainForm
 					End If
 					
 					'Clear the main DGV.
+					_dgvMainLoading = True
 					_dgvMain.DataSource = Nothing
+					_dgvMainLoading = False
 					
 					'Make the asynchronous call.
 					Me.bgwUpdateList.RunWorkerAsync(riTemp)
@@ -2334,54 +2394,94 @@ Public Partial Class MainForm
 				originalValue = ""
 			End If
 			
+			'Get the computer report data asynchronously.
+			If Not Me.bgwComputerReport.IsBusy Then
+				Me.bgwComputerReport.RunWorkerAsync(New ComputerReportDetails(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("TargetID").Value, String), Me.cboUpdateStatus.Text, originalValue))			
+			End If
 			
-			
-			'Set the data source.
-			dgvComputerReport.DataSource = GetComputerReport(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("TargetID").Value, String), Me.cboUpdateStatus.Text)
-			
-			'Hide columns
-			dgvComputerReport.Columns("IUpdate").Visible = False
-			dgvComputerReport.Columns("UpdateID").Visible = False
-			
-			'Rename some columns.
-			dgvComputerReport.Columns("UpdateTitle").HeaderText = globalRM.GetString("update_title")
-			dgvComputerReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
-			dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
-			
-			'Make the status column's text blue
-			dgvComputerReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue
-			
-			'If updates are loaded in the DGV.
-			If dgvComputerReport.Rows.Count > 0 Then
-				btnComputerRefreshReport.Enabled = True
-				ExportReportToolStripMenuItem.Enabled = True
-				
-				Call LoadDgvState(dgvComputerReport)
-				
-				'If we are maintaining the selected row.
-				If maintainSelectedRow Then
-					
-					'Select and load the original row.
-					For Each tmpRow As DataGridViewRow In dgvComputerReport.Rows
-						If originalValue = DirectCast(tmpRow.Cells("UpdateTitle").Value, String) Then
-							dgvComputerReport.CurrentCell = tmpRow.Cells("UpdateTitle")
-							Exit For
-						Else If tmpRow.Index = dgvComputerReport.Rows.Count - 1
-							dgvComputerReport.CurrentCell =  dgvComputerReport.Rows(0).Cells("UpdateTitle")
-						End If
-					Next
-				Else 'Select first row.
-					dgvComputerReport.CurrentCell =  dgvComputerReport.Rows(0).Cells("UpdateTitle")
-				End If
-			Else 'No rows returned.
-				btnComputerRefreshReport.Enabled = False
-				exportReportToolStripMenuItem.Enabled = False
-			End If 'Rows returned.
-			
+			Call CheckBGWThreads
 		End If 'Nothing selected in cboUpdateStatus.
-		
 		_noEvents = False
 		Me.Cursor = Cursors.Arrow 'Set arrow cursor
+	End Sub
+	
+	Sub BgwComputerReportDoWork(sender As Object, e As DoWorkEventArgs)
+		Try
+			Dim computerReportDetails As ComputerReportDetails = Nothing
+			
+			If TypeOf e.Argument Is ComputerReportDetails Then
+				computerReportDetails = DirectCast ( e.Argument, ComputerReportDetails)
+				
+				'Get the data.			
+				computerReportDetails.Data = GetComputerReport(computerReportDetails.ComputerID, computerReportDetails.Status)
+				
+			End If
+			
+			e.Result = computerReportDetails
+			
+		Catch x As Exception
+			MsgBox ( "BgwComputerReportDoWork: " & x.Message)
+		End Try
+	End Sub
+	
+	Sub BgwComputerReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		Dim computerReportDetails As ComputerReportDetails
+		
+		Try
+			If TypeOf e.Result Is ComputerReportDetails Then				
+				computerReportDetails = DirectCast ( e.Result, ComputerReportDetails)
+				
+				
+				'Set the data source.	
+				_noEvents = True
+				dgvComputerReport.DataSource = computerReportDetails.Data
+				_noEvents = False
+				
+				'Hide columns
+				dgvComputerReport.Columns("IUpdate").Visible = False
+				dgvComputerReport.Columns("UpdateID").Visible = False
+				
+				'Rename some columns.
+				dgvComputerReport.Columns("UpdateTitle").HeaderText = globalRM.GetString("update_title")
+				dgvComputerReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
+				dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
+				
+				'Make the status column's text blue
+				dgvComputerReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue
+				
+				'If updates are loaded in the DGV.
+				If dgvComputerReport.Rows.Count > 0 Then
+					btnComputerRefreshReport.Enabled = True
+					ExportReportToolStripMenuItem.Enabled = True
+					
+					Call LoadDgvState(dgvComputerReport)
+					
+					'If we are maintaining the selected row.
+					If Not String.IsNullOrEmpty(computerReportDetails.OriginalValue)  Then
+						
+						'Select and load the original row.
+						For Each tmpRow As DataGridViewRow In dgvComputerReport.Rows
+							If computerReportDetails.OriginalValue = DirectCast(tmpRow.Cells("UpdateTitle").Value, String) Then
+								dgvComputerReport.CurrentCell = tmpRow.Cells("UpdateTitle")
+								Exit For
+							Else If tmpRow.Index = dgvComputerReport.Rows.Count - 1
+								dgvComputerReport.CurrentCell =  dgvComputerReport.Rows(0).Cells("UpdateTitle")
+							End If
+						Next
+					Else 'Select first row.
+						dgvComputerReport.CurrentCell =  dgvComputerReport.Rows(0).Cells("UpdateTitle")
+					End If
+				Else 'No rows returned.
+					btnComputerRefreshReport.Enabled = False
+					exportReportToolStripMenuItem.Enabled = False
+				End If 'Rows returned.			
+			End If
+			
+			Call CheckBGWThreads
+			
+		Catch x As Exception
+			MsgBox ( "BgwComputerReportRunWorkerCompleted: " & x.Message)
+		End Try
 	End Sub
 	
 	'Call LoadUpdateReport with defaults.
@@ -2412,8 +2512,39 @@ Public Partial Class MainForm
 				originalValue = ""
 			End If
 			
+			
+			'Get the computer report data asynchronously.
+			If Not Me.bgwUpdateReport.IsBusy Then
+				Me.bgwUpdateReport.RunWorkerAsync(New UpdateReportDetails(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), DirectCast(Me.cboTargetGroup.SelectedItem,ComboTargetGroups).Value,Me.cboUpdateStatus.Text, originalValue))			
+			End If						
+			
+		End If 'Status of combobox.
+		
+		_noEvents = False
+		Me.Cursor = Cursors.Arrow 'Set arrow cursor.
+	End Sub
+	
+	Sub BgwUpdateReportDoWork(sender As Object, e As DoWorkEventArgs)
+		Dim updateReportDetails As UpdateReportDetails = Nothing
+		
+		If TypeOf e.Argument Is UpdateReportDetails Then 
+			updateReportDetails = DirectCast( e.Argument, UpdateReportDetails)
+			
 			'Set the data source.
-			dgvUpdateReport.DataSource = GetUpdateReport(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), DirectCast(Me.cboTargetGroup.SelectedItem,ComboTargetGroups).Value,Me.cboUpdateStatus.Text)
+			updateReportDetails.Data = GetUpdateReport(updateReportDetails.Update, updateReportDetails.TargetGroup, updateReportDetails.Status)
+		End If
+		
+		e.Result = updateReportDetails
+	End Sub
+	
+	Sub BgwUpdateReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+		Dim updateReportDetails As UpdateReportDetails
+		
+		If TypeOf e.Result Is UpdateReportDetails Then 
+			updateReportDetails = DirectCast( e.Result, UpdateReportDetails)
+			
+			'Set the data source.
+			dgvUpdateReport.DataSource = updateReportDetails.Data
 			
 			'Hide the ID column.
 			dgvUpdateReport.Columns("ComputerID").Visible = False
@@ -2434,11 +2565,11 @@ Public Partial Class MainForm
 				Call LoadDgvState(dgvUpdateReport)
 				
 				'If we are maintaining the selected row.
-				If maintainSelectedRow Then
+				If Not String.IsNullOrEmpty(updateReportDetails.OriginalValue) Then
 					
 					'Select and load the original row.
 					For Each tmpRow As DataGridViewRow In dgvUpdateReport.Rows
-						If originalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
+						If updateReportDetails.OriginalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
 							dgvUpdateReport.CurrentCell = tmpRow.Cells("ComputerName")
 							Exit For
 						Else If tmpRow.Index = dgvUpdateReport.Rows.Count - 1
@@ -2453,12 +2584,8 @@ Public Partial Class MainForm
 				btnUpdateRefreshReport.Enabled = False
 				exportReportToolStripMenuItem.Enabled = False
 			End If
-		End If 'Status of combobox.
-		
-		_noEvents = False
-		Me.Cursor = Cursors.Arrow 'Set arrow cursor.
+		End If
 	End Sub
-	
 	'Load the state of the passed in DGV using saved settings.
 	' Only do so if the number of columns match. While the
 	' state is being loaded prevent any events from happening.
@@ -2744,10 +2871,129 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	#End Region
+	
 End Class
 
-#Region "AsyncNodeDetails Class"
-Public Class AsyncNodeDetails
+#Region "Backgroundworker Object Classes"
+Public Class UpdateReportDetails
+	Public Sub New()
+	End Sub
+	
+	Public Sub New(update As IUpdate, targetGroup As IComputerTargetGroup, status As String, originalValue As String)
+		_update = update
+		_targetGroup = targetGroup
+		_status = status
+		_originalValue = originalValue
+		_data = Nothing
+		
+	End Sub
+	
+	Private _update As IUpdate
+	Public Property Update() As IUpdate
+		Get
+			Return _update
+		End Get
+		Set
+			_update = Value
+		End Set
+	End Property
+	
+	Private _targetGroup As IComputerTargetGroup
+	Public Property TargetGroup() As IComputerTargetGroup
+		Get
+			Return _targetGroup
+		End Get
+		Set
+			_targetGroup = Value
+		End Set
+	End Property
+	
+	Private _status As String
+	Public Property Status() As String
+		Get
+			Return _status
+		End Get
+		Set
+			_status = Value
+		End Set
+	End Property
+	
+	Private _originalValue As String
+	Public Property OriginalValue() As String
+		Get
+			Return _originalValue
+		End Get
+		Set
+			_originalValue = Value
+		End Set
+	End Property
+	
+	Private _data As DataTable
+	Public Property Data() As DataTable
+		Get
+			Return _data
+		End Get
+		Set
+			_data = Value
+		End Set
+	End Property
+End Class	
+
+Public Class ComputerReportDetails
+	Public Sub New()
+	End Sub
+	
+	Public Sub New(computerID As String , status As String, originalValue As String)
+		_computerID = computerID
+		_status = status
+		_originalValue = originalValue
+		_data = Nothing
+		
+	End Sub
+	
+	Private _computerID As String
+	Public Property ComputerID() As String
+		Get
+			Return _computerID
+		End Get
+		Set
+			_computerID = Value
+		End Set
+	End Property
+	
+	Private _status As String
+	Public Property Status() As String
+		Get
+			Return _status
+		End Get
+		Set
+			_status = Value
+		End Set
+	End Property
+	
+	Private _originalValue As String
+	Public Property OriginalValue() As String
+		Get
+			Return _originalValue
+		End Get
+		Set
+			_originalValue = Value
+		End Set
+	End Property
+	
+	Private _data As DataTable
+	Public Property Data() As DataTable
+		Get
+			Return _data
+		End Get
+		Set
+			_data = Value
+		End Set
+	End Property
+End Class	
+
+
+Public Class NodeDetails
 	Public Sub New()
 	End Sub
 	
@@ -2756,7 +3002,6 @@ Public Class AsyncNodeDetails
 		_selectedNodePath = selectedNodePath
 	End Sub
 	
-	#Region "Properties"
 	Private _node As TreeNode
 	Public Property Node() As TreeNode
 		Get
@@ -2776,8 +3021,6 @@ Public Class AsyncNodeDetails
 			_selectedNodePath = Value
 		End Set
 	End Property
-	
-	
-	#End Region
 End Class
-			#End Region
+
+#End Region
