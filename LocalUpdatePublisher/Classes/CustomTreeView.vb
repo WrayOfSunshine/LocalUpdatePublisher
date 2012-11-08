@@ -1,3 +1,5 @@
+Option Explicit On
+Option Strict On
 Imports System.Diagnostics
 Imports System.Drawing
 Imports System.Drawing.Drawing2D

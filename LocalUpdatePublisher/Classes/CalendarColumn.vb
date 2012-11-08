@@ -1,4 +1,6 @@
-﻿' From http://msdn.microsoft.com/library/7tas5c80%28en-us,vs.80%29.aspx
+﻿Option Explicit On
+Option Strict On
+' From http://msdn.microsoft.com/library/7tas5c80%28en-us,vs.80%29.aspx
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 2/14/2011

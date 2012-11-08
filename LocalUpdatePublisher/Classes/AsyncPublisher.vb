@@ -1,10 +1,9 @@
-﻿'
-' Created by SharpDevelop.
+﻿Option Explicit On
+Option Strict On
+'
 ' User: Bryan Dam
 ' Date: 2/10/2012
 ' Time: 10:29 AM
-'
-' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Imports System.ComponentModel
 Imports Microsoft.UpdateServices.Administration

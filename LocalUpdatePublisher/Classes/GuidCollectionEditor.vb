@@ -1,3 +1,5 @@
+Option Explicit On
+Option Strict On
 ' Copyright (c) <2010> <Bryan R. Dam>
 ' Released under the MIT license as found in LICENSE.txt
 '
