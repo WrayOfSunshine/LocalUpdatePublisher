@@ -1,4 +1,6 @@
-﻿'
+﻿Option Explicit On
+Option Strict On
+'
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 3/25/2010

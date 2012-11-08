@@ -1,4 +1,6 @@
-﻿' Copyright (C) <2010> <Bryan R. Dam>
+﻿Option Explicit On
+Option Strict On
+' Copyright (C) <2010> <Bryan R. Dam>
 ' Released Under The MIT License As Found In LICENSE.Txt
 '
 ' UpdateForm

@@ -1,4 +1,6 @@
-﻿' PersistWindowState
+﻿Option Explicit On
+Option Strict On
+' PersistWindowState
 '
 ' Based on Joel Matthias's class found here: http://www.codeproject.com/KB/cs/restoreformstate.aspx
 ' Created by SharpDevelop.

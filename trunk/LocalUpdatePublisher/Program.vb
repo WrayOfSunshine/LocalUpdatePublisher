@@ -53,8 +53,8 @@ Namespace My
 			
 			'Initialize and load the settings.						
 			appSettings = New Settings()
-			appSettings = Settings.LoadSettingsFromFile
-			
+            appSettings = LocalUpdatePublisher.Settings.LoadSettingsFromFile
+
 			'Set default scope based on the app settings.
 			localUpdatesScope = New UpdateScope()
 			If appSettings.HideOfficialUpdates Then

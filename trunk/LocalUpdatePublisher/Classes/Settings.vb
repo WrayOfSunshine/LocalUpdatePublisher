@@ -1,3 +1,5 @@
+Option Explicit On
+Option Strict On
 ' Copyright (c) <2010> <Bryan R. Dam>
 ' Released under the MIT license as found in LICENSE.txt
 '
@@ -110,26 +112,25 @@ Imports System.Globalization
 		Dim userfile As String
 		
 		Try
-			Directory.CreateDirectory(SettingsDirectory)
+            Directory.CreateDirectory(SettingsDirectory)
+            userfile = SettingsDirectory & "\config.xml"
+            SaveSettingsToFile(userfile, settings)
+
 		Catch x As UnauthorizedAccessException
-			Msgbox (globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message)
 		Catch x As ArgumentNullException
-			Msgbox (globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message)
 		Catch x As ArgumentException
-			Msgbox (globalRM.GetString("exception_argument") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_argument") & ": " & vbNewLine & x.Message)
 		Catch x As PathTooLongException
-			Msgbox (globalRM.GetString("exception_path_too_long") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_path_too_long") & ": " & vbNewLine & x.Message)
 		Catch x As DirectoryNotFoundException
-			Msgbox (globalRM.GetString("exception_directory_not_found") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_directory_not_found") & ": " & vbNewLine & x.Message)
 		Catch x As IOException
-			Msgbox (globalRM.GetString("exception_IO") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_IO") & ": " & vbNewLine & x.Message)
 		Catch x As NotSupportedException
-			Msgbox (globalRM.GetString("exception_not_supported") & ": " & vbNewLine & x.Message)
+            MsgBox("Settings.SaveSettingsToFile" & vbNewLine & globalRM.GetString("exception_not_supported") & ": " & vbNewLine & x.Message)
 		End Try
-		
-		userfile = SettingsDirectory & "\config.xml"
-		
-		SaveSettingsToFile(userfile, settings)
 	End Sub
 	
 	'Persists the settings to the specified filename.
@@ -172,8 +173,12 @@ Imports System.Globalization
 		TreeSplitter = 175
 		UpdateSplitter = 175
 		ComputerSplitter = 175
-		WindowState = 0
-		SavedRuleCollection = New RuleCollection
+        WindowState = 0
+        Me.WindowWidth = CInt(My.Computer.Screen.WorkingArea.Width * 0.75)
+        Me.WindowHeight = CInt(My.Computer.Screen.WorkingArea.Height * 0.75)
+        Me.WindowTop = CInt((My.Computer.Screen.WorkingArea.Height - Me.WindowHeight) * 0.5)
+        Me.WindowLeft = CInt((My.Computer.Screen.WorkingArea.Width - Me.WindowWidth) * 0.5)
+        SavedRuleCollection = New RuleCollection
 		StateMainComputersDGV = New DataGridViewState
 		StateMainUpdatesDGV = New DataGridViewState
 		StateComputerReportDGV = New DataGridViewState
@@ -344,7 +349,7 @@ Imports System.Globalization
 		End Set
 	End Property
 	
-	' Property for the main form's window state
+    ' Property for the main form's window left position.
 	<Browsable(True)> _
 		<Description("Main window location")> _
 		<DefaultValue(0)> _
@@ -357,7 +362,7 @@ Imports System.Globalization
 		End Set
 	End Property
 	
-	' Property for the main form's window state
+    ' Property for the main form's window top position.
 	<Browsable(True)> _
 		<Description("Main window location")> _
 		<DefaultValue(0)> _
@@ -370,7 +375,7 @@ Imports System.Globalization
 		End Set
 	End Property
 	
-	' Property for the main form's window state
+    ' Property for the main form's window width.
 	<Browsable(True)> _
 		<Description("Main window location")> _
 		<DefaultValue(0)> _
@@ -383,7 +388,7 @@ Imports System.Globalization
 		End Set
 	End Property
 	
-	' Property for the main form's window state
+    ' Property for the main form's window height.
 	<Browsable(True)> _
 		<Description("Main window location")> _
 		<DefaultValue(0)> _

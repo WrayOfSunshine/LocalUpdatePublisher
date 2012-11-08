@@ -1,4 +1,6 @@
-﻿' SupersededUpdatesForm allows the user to view and manage the list of packages superseded by the current package.
+﻿Option Explicit On
+Option Strict On
+' SupersededUpdatesForm allows the user to view and manage the list of packages superseded by the current package.
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 3/25/2010

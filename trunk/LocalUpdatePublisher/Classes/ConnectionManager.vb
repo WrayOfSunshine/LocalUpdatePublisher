@@ -1,3 +1,5 @@
+Option Explicit On
+Option Strict On
 ' Copyright (c) <2010> <Bryan R. Dam>
 ' Released under the MIT license as found in LICENSE.txt
 '
@@ -94,7 +96,7 @@ Friend NotInheritable Class ConnectionManager
 		Try
 			'Connect to the server using the appropriate call.
 			If String.IsNullOrEmpty(server.Name) OrElse lcase(server.Name) = "localhost" Then
-				_currentServer = AdminProxy.GetUpdateServer()
+                _currentServer = AdminProxy.GetUpdateServer("localhost", server.Ssl, server.Port)
 			Else
 				_currentServer = AdminProxy.GetUpdateServer(server.Name,server.Ssl,server.Port)
 			End If
