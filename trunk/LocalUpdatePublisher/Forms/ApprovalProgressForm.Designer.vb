@@ -132,13 +132,13 @@ Partial Class ApprovalProgressForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private pbUpdateApprovals As System.Windows.Forms.ProgressBar
-	Private dgvProgress As System.Windows.Forms.DataGridView
-	Private lblProgress As System.Windows.Forms.Label
-	Private btnPause As System.Windows.Forms.Button
-	Private btnCancel As System.Windows.Forms.Button
-	Private btnClose As System.Windows.Forms.Button
-	Private Result As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private Action As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents pbUpdateApprovals As System.Windows.Forms.ProgressBar
+    Private WithEvents dgvProgress As System.Windows.Forms.DataGridView
+    Private WithEvents lblProgress As System.Windows.Forms.Label
+    Private WithEvents btnPause As System.Windows.Forms.Button
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents btnClose As System.Windows.Forms.Button
+    Private WithEvents Result As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents Action As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

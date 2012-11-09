@@ -129,12 +129,12 @@ Partial Class SavedRulesForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private tlpButtonsRight As System.Windows.Forms.TableLayoutPanel
-	Private btnAction2 As System.Windows.Forms.Button
-	Private RuleName As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private btnAction As System.Windows.Forms.Button
-	Private btnCancel As System.Windows.Forms.Button
-	Private Include As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private dgvRules As System.Windows.Forms.DataGridView
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpButtonsRight As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents btnAction2 As System.Windows.Forms.Button
+    Private WithEvents RuleName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents btnAction As System.Windows.Forms.Button
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents Include As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents dgvRules As System.Windows.Forms.DataGridView
 End Class

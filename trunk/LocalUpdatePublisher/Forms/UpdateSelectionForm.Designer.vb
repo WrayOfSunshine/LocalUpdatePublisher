@@ -134,12 +134,12 @@ Partial Class UpdateSelectionForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpHeader As System.Windows.Forms.TableLayoutPanel
-	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private lblVendor As System.Windows.Forms.Label
-	Private cboVendor As System.Windows.Forms.ComboBox
-	Private dgvUpdates As System.Windows.Forms.DataGridView
-	Private btnSelect As System.Windows.Forms.Button
-	Private btnCancel As System.Windows.Forms.Button
+    Private WithEvents tlpHeader As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpButtons As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents lblVendor As System.Windows.Forms.Label
+    Private WithEvents cboVendor As System.Windows.Forms.ComboBox
+    Private WithEvents dgvUpdates As System.Windows.Forms.DataGridView
+    Private WithEvents btnSelect As System.Windows.Forms.Button
+    Private WithEvents btnCancel As System.Windows.Forms.Button
 End Class

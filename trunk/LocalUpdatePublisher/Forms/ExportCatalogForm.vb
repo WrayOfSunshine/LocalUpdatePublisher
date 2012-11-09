@@ -40,11 +40,11 @@ Partial Public Class ExportCatalogForm
         Dim tmpFileList As ArrayList
 
         'Select a file and open the export catalog dialog.
-        exportFileDialog.Filter = globalRM.GetString("file_filter_cab")
+        exportFileDialog.Filter = Globals.globalRM.GetString("file_filter_cab")
         If exportFileDialog.ShowDialog = DialogResult.Cancel Then
             Exit Sub
         ElseIf Not Strings.Right(exportFileDialog.FileName, 3).ToLower = "cab" Then
-            MsgBox(globalRM.GetString("error_export_catalog_not_cab"))
+            MsgBox(Globals.globalRM.GetString("error_export_catalog_not_cab"))
             Exit Sub
         End If
 
@@ -147,7 +147,7 @@ Partial Public Class ExportCatalogForm
         For Each tmpUpdate As IUpdate In UpdateSelectionForm.ShowDialog
 
             If AddSDPtoDGV(ConnectionManager.ExportSDP(tmpUpdate.Id)) = False Then
-                MsgBox(globalRM.GetString("error_export_catalog_no_url"))
+                MsgBox(Globals.globalRM.GetString("error_export_catalog_no_url"))
             End If
 
         Next
@@ -161,7 +161,7 @@ Partial Public Class ExportCatalogForm
     Sub BtnAddAllClick(sender As Object, e As EventArgs)
         Dim errorBool As Boolean = False
         If ConnectionManager.Connected Then
-            For Each tmpUpdate As IUpdate In ConnectionManager.CurrentServer.GetUpdates(localUpdatesScope)
+            For Each tmpUpdate As IUpdate In ConnectionManager.CurrentServer.GetUpdates(Globals.localUpdatesScope)
 
                 'Add the packages and track if any of them were not added.
                 If AddSDPtoDGV(ConnectionManager.ExportSDP(tmpUpdate.Id)) = False Then
@@ -171,7 +171,7 @@ Partial Public Class ExportCatalogForm
 
             'If any of the packages cannot be added, warn the user.
             If errorBool Then
-                MsgBox(globalRM.GetString("error_export_catalog_no_url_multiple"))
+                MsgBox(Globals.globalRM.GetString("error_export_catalog_no_url_multiple"))
             End If
         End If
     End Sub

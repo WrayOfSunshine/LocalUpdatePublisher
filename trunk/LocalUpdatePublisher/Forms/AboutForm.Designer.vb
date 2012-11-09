@@ -79,9 +79,9 @@ Partial Class AboutForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
-	Private linkLabel As System.Windows.Forms.LinkLabel
-	Private lblAbout As System.Windows.Forms.Label
+    Private WithEvents tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents linkLabel As System.Windows.Forms.LinkLabel
+    Private WithEvents lblAbout As System.Windows.Forms.Label
 	
 	Sub AboutFormKeyUp(sender As Object, e As KeyEventArgs)
 		Msgbox ( e.KeyValue )

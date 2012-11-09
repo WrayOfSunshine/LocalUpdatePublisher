@@ -170,17 +170,17 @@ Partial Class ReturnCodesForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private Reboot As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private ReturnCode As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private Description As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private Result As System.Windows.Forms.DataGridViewComboBoxColumn
-	Private contextMenuCodeType As System.Windows.Forms.ContextMenuStrip
-	Private btnOk As System.Windows.Forms.Button
-	Private btnDelete As System.Windows.Forms.Button
-	Private succeededToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private failedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private cancelledToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private dgvReturnCodes As System.Windows.Forms.DataGridView
-	Private btnCancel As System.Windows.Forms.Button
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents Reboot As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents ReturnCode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents Description As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents Result As System.Windows.Forms.DataGridViewComboBoxColumn
+    Private WithEvents contextMenuCodeType As System.Windows.Forms.ContextMenuStrip
+    Private WithEvents btnOk As System.Windows.Forms.Button
+    Private WithEvents btnDelete As System.Windows.Forms.Button
+    Private WithEvents succeededToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents failedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents cancelledToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents dgvReturnCodes As System.Windows.Forms.DataGridView
+    Private WithEvents btnCancel As System.Windows.Forms.Button
 End Class

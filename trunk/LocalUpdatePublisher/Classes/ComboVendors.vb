@@ -17,27 +17,27 @@ Option Strict On
 Imports Microsoft.UpdateServices.Administration
 
 Public Class ComboVendors
-	Private _name As String
-	ReadOnly Property Name() As String
-		Get
-			Return _name
-		End Get
-	End Property
-	
-	Private _value As IUpdateCategory
-	ReadOnly Property Value()  As IUpdateCategory
-		Get
-			Return _value
-		End Get
-	End Property
-	
-	Public Sub New(value As IUpdateCategory)
-		Me._name = value.Title
-		Me._value = value
-	End Sub		
-	
-	Public Overrides Function ToString() As String
-		Return _name
-	End Function	
-	
+    Private m_name As String
+    ReadOnly Property Name() As String
+        Get
+            Return m_name
+        End Get
+    End Property
+
+    Private m_value As IUpdateCategory
+    ReadOnly Property Value() As IUpdateCategory
+        Get
+            Return m_value
+        End Get
+    End Property
+
+    Public Sub New(value As IUpdateCategory)
+        Me.m_name = value.Title
+        Me.m_value = value
+    End Sub
+
+    Public Overrides Function ToString() As String
+        Return m_name
+    End Function
+
 End Class

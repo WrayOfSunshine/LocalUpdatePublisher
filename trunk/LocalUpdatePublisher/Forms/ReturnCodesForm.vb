@@ -23,15 +23,15 @@ Partial Public Class ReturnCodesForm
 
         'Localize the data grid view
         For Each colTemp As DataGridViewColumn In Me.dgvReturnCodes.Columns
-            colTemp.HeaderText = globalRM.GetString(colTemp.Name)
+            colTemp.HeaderText = Globals.globalRM.GetString(colTemp.Name)
         Next
 
         'Populate the Result Code list in a way that mimics the enumeration.
         m_resultCodes = New ArrayList
         m_resultCodes.Add("")
-        m_resultCodes.Add(globalRM.GetString("failed"))
-        m_resultCodes.Add(globalRM.GetString("Succeeded"))
-        m_resultCodes.Add(globalRM.GetString("Cancelled"))
+        m_resultCodes.Add(Globals.globalRM.GetString("failed"))
+        m_resultCodes.Add(Globals.globalRM.GetString("Succeeded"))
+        m_resultCodes.Add(Globals.globalRM.GetString("Cancelled"))
 
         'Localize the Result column if it exists.
         If Me.dgvReturnCodes.Columns.Contains("Result") Then
@@ -135,9 +135,9 @@ Partial Public Class ReturnCodesForm
         If dgvReturnCodes.Rows(e.RowIndex).IsNewRow Then 'Don't validate new rows.
             errorText = String.Empty
         ElseIf (String.IsNullOrEmpty(DirectCast(dgvReturnCodes.Rows(e.RowIndex).Cells("Result").Value, String))) Then
-            errorText = globalRM.GetString("error_result_code_empty")
+            errorText = Globals.globalRM.GetString("error_result_code_empty")
         ElseIf (String.IsNullOrEmpty(CStr(dgvReturnCodes.Rows(e.RowIndex).Cells("ReturnCode").Value))) Then
-            errorText = globalRM.GetString("error_return_codes_empty")
+            errorText = Globals.globalRM.GetString("error_return_codes_empty")
         Else 'No errors in row.
             errorText = String.Empty
         End If

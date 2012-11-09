@@ -110,10 +110,10 @@ Partial Class MessageBoxForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private btnThree As System.Windows.Forms.Button
-	Private btnTwo As System.Windows.Forms.Button
-	Private btnOne As System.Windows.Forms.Button
-	Private lblText As System.Windows.Forms.Label
+    Private WithEvents tlpButtons As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents btnThree As System.Windows.Forms.Button
+    Private WithEvents btnTwo As System.Windows.Forms.Button
+    Private WithEvents btnOne As System.Windows.Forms.Button
+    Private WithEvents lblText As System.Windows.Forms.Label
 End Class

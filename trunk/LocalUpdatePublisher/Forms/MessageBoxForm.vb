@@ -104,6 +104,6 @@ Partial Public Class MessageBoxForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Shadows Sub TextChanged(sender As Object, e As EventArgs)
-        CustomResize.ResizeVertically(sender)
+        Globals.ResizeVertically(sender)
     End Sub
 End Class

@@ -149,15 +149,15 @@ Partial Class SettingsForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private txtTimeOut As System.Windows.Forms.TextBox
-	Private lblTimeOut As System.Windows.Forms.Label
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private cboCulture As System.Windows.Forms.ComboBox
-	Private lblCulture As System.Windows.Forms.Label
-	Private tlpCulture As System.Windows.Forms.TableLayoutPanel
-	Private chkHideOfficialUpdates As System.Windows.Forms.CheckBox
-	Private chkDemoteClassification As System.Windows.Forms.CheckBox
-	Private chkReportRollup As System.Windows.Forms.CheckBox
-	Private btnClose As System.Windows.Forms.Button
-	Private chkRememberTreeNode As System.Windows.Forms.CheckBox
+    Private WithEvents txtTimeOut As System.Windows.Forms.TextBox
+    Private WithEvents lblTimeOut As System.Windows.Forms.Label
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents cboCulture As System.Windows.Forms.ComboBox
+    Private WithEvents lblCulture As System.Windows.Forms.Label
+    Private WithEvents tlpCulture As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents chkHideOfficialUpdates As System.Windows.Forms.CheckBox
+    Private WithEvents chkDemoteClassification As System.Windows.Forms.CheckBox
+    Private WithEvents chkReportRollup As System.Windows.Forms.CheckBox
+    Private WithEvents btnClose As System.Windows.Forms.Button
+    Private WithEvents chkRememberTreeNode As System.Windows.Forms.CheckBox
 End Class

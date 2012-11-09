@@ -814,91 +814,91 @@ Partial Class RulesForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private lblPath As System.Windows.Forms.Label
-	Private lblOSVersion As System.Windows.Forms.Label
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private tlpRules As System.Windows.Forms.TableLayoutPanel
-	Private tlpHeader As System.Windows.Forms.TableLayoutPanel
-	Private tlpFooter As System.Windows.Forms.TableLayoutPanel
-	Private tlpOSVersion As System.Windows.Forms.TableLayoutPanel
-	Private tlpComparison As System.Windows.Forms.TableLayoutPanel
-	Private tlpServicePack As System.Windows.Forms.TableLayoutPanel
-	Private tlpQuery As System.Windows.Forms.TableLayoutPanel
-	Private tlpMinVersion As System.Windows.Forms.TableLayoutPanel
-	Private tlpMaxVersion As System.Windows.Forms.TableLayoutPanel
-	Private tlpPatchCode As System.Windows.Forms.TableLayoutPanel
-	Private tlpProductCode As System.Windows.Forms.TableLayoutPanel
-	Private tlpDate As System.Windows.Forms.TableLayoutPanel
-	Private tlpData As System.Windows.Forms.TableLayoutPanel
-	Private tlpVersion As System.Windows.Forms.TableLayoutPanel
-	Private tlpFilePath As System.Windows.Forms.TableLayoutPanel
-	Private tlpEnvironmentVariable As System.Windows.Forms.TableLayoutPanel
-	Private tlpRegistryValueType As System.Windows.Forms.TableLayoutPanel
-	Private tlpRegistryValue As System.Windows.Forms.TableLayoutPanel
-	Private tlpRegistryKey As System.Windows.Forms.TableLayoutPanel
-	Private tlpProcessorType As System.Windows.Forms.TableLayoutPanel
-	Private tlpLanguage As System.Windows.Forms.TableLayoutPanel
-	Private tlpProductType As System.Windows.Forms.TableLayoutPanel
-	Private errorProviderRules As System.Windows.Forms.ErrorProvider
-	Private chkComponentCollection_requireAll As System.Windows.Forms.CheckBox
-	Private lblComponentCollection As System.Windows.Forms.Label
-	Private chkFeatureCollection_requireAll As System.Windows.Forms.CheckBox
-	Private lblFeatureCollection As System.Windows.Forms.Label
-	Private pnlProductCollection As System.Windows.Forms.Panel
-	Private gceFeatureCollection As LocalUpdatePublisher.GuidCollectionEditor
-	Private pnlFeatureCollection As System.Windows.Forms.Panel
-	Private gceComponentCollection As LocalUpdatePublisher.GuidCollectionEditor
-	Private pnlComponentCollection As System.Windows.Forms.Panel
-	Private gceProductCollection As LocalUpdatePublisher.GuidCollectionEditor
-	Private lblProductCode As System.Windows.Forms.Label
-	Private txtProductCode As System.Windows.Forms.TextBox
-	Private lblPatchCode As System.Windows.Forms.Label
-	Private txtPatchCode As System.Windows.Forms.TextBox
-	Private lblMaxVersion As System.Windows.Forms.Label
-	Private txtMaxVersion As System.Windows.Forms.TextBox
-	Private lblMinVersion As System.Windows.Forms.Label
-	Private txtMinVersion As System.Windows.Forms.TextBox
-	Private lblProductCollection As System.Windows.Forms.Label
-	Private chkProductCollection_requireAll As System.Windows.Forms.CheckBox
-	Private cboProductType As System.Windows.Forms.ComboBox
-	Private cboRegistryKey As System.Windows.Forms.ComboBox
-	Private cboEnvironmentVariable As System.Windows.Forms.ComboBox
-	Private cboRuleType As System.Windows.Forms.ComboBox
-	Private cboServicePack As System.Windows.Forms.ComboBox
-	Private cboOSVersion As System.Windows.Forms.ComboBox
-	Private cboComparison As System.Windows.Forms.ComboBox
-	Private cboProcessorType As System.Windows.Forms.ComboBox
-	Private cboLanguage As System.Windows.Forms.ComboBox
-	Private cboRegistryValueType As System.Windows.Forms.ComboBox
-	Private lblRegistryValueType As System.Windows.Forms.Label
-	Private lblProcessorType As System.Windows.Forms.Label
-	Private lblLanguage As System.Windows.Forms.Label
-	Private lblVersion As System.Windows.Forms.Label
-	Private txtVersion As System.Windows.Forms.TextBox
-	Private txtSPMajorVersion As System.Windows.Forms.TextBox
-	Private txtSPMinorVersion As System.Windows.Forms.TextBox
-	Private txtOSMinorVersion As System.Windows.Forms.TextBox
-	Private txtOSMajorVersion As System.Windows.Forms.TextBox
-	Private lblServicePack As System.Windows.Forms.Label
-	Private lblComparison As System.Windows.Forms.Label
-	Private lblEnvironmentVariable As System.Windows.Forms.Label
-	Private txtQuery As System.Windows.Forms.TextBox
-	Private lblQuery As System.Windows.Forms.Label
-	Private lblProductType As System.Windows.Forms.Label
-	Private txtRegistryValue As System.Windows.Forms.TextBox
-	Private lblRegistryValue As System.Windows.Forms.Label
-	Private chkRegistry32Bit As System.Windows.Forms.CheckBox
-	Private txtRegistrySubKey As System.Windows.Forms.TextBox
-	Private lblRegistryKey As System.Windows.Forms.Label
-	Private txtFilePath As System.Windows.Forms.TextBox
-	Private dtpDate As System.Windows.Forms.DateTimePicker
-	Private lblDate As System.Windows.Forms.Label
-	Private lblDataInfo As System.Windows.Forms.Label
-	Private txtData As System.Windows.Forms.TextBox
-	Private lblData As System.Windows.Forms.Label
-	Private btnCancel As System.Windows.Forms.Button
-	Private btnAdd As System.Windows.Forms.Button
-	Private chkNotRule As System.Windows.Forms.CheckBox
-	Private lblRuleType As System.Windows.Forms.Label
+    Private WithEvents lblPath As System.Windows.Forms.Label
+    Private WithEvents lblOSVersion As System.Windows.Forms.Label
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpRules As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpHeader As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpFooter As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpOSVersion As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpComparison As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpServicePack As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpQuery As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMinVersion As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMaxVersion As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpPatchCode As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpProductCode As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpDate As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpData As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpVersion As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpFilePath As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpEnvironmentVariable As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpRegistryValueType As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpRegistryValue As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpRegistryKey As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpProcessorType As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpLanguage As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpProductType As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents errorProviderRules As System.Windows.Forms.ErrorProvider
+    Private WithEvents chkComponentCollection_requireAll As System.Windows.Forms.CheckBox
+    Private WithEvents lblComponentCollection As System.Windows.Forms.Label
+    Private WithEvents chkFeatureCollection_requireAll As System.Windows.Forms.CheckBox
+    Private WithEvents lblFeatureCollection As System.Windows.Forms.Label
+    Private WithEvents pnlProductCollection As System.Windows.Forms.Panel
+    Private WithEvents gceFeatureCollection As LocalUpdatePublisher.GuidCollectionEditor
+    Private WithEvents pnlFeatureCollection As System.Windows.Forms.Panel
+    Private WithEvents gceComponentCollection As LocalUpdatePublisher.GuidCollectionEditor
+    Private WithEvents pnlComponentCollection As System.Windows.Forms.Panel
+    Private WithEvents gceProductCollection As LocalUpdatePublisher.GuidCollectionEditor
+    Private WithEvents lblProductCode As System.Windows.Forms.Label
+    Private WithEvents txtProductCode As System.Windows.Forms.TextBox
+    Private WithEvents lblPatchCode As System.Windows.Forms.Label
+    Private WithEvents txtPatchCode As System.Windows.Forms.TextBox
+    Private WithEvents lblMaxVersion As System.Windows.Forms.Label
+    Private WithEvents txtMaxVersion As System.Windows.Forms.TextBox
+    Private WithEvents lblMinVersion As System.Windows.Forms.Label
+    Private WithEvents txtMinVersion As System.Windows.Forms.TextBox
+    Private WithEvents lblProductCollection As System.Windows.Forms.Label
+    Private WithEvents chkProductCollection_requireAll As System.Windows.Forms.CheckBox
+    Private WithEvents cboProductType As System.Windows.Forms.ComboBox
+    Private WithEvents cboRegistryKey As System.Windows.Forms.ComboBox
+    Private WithEvents cboEnvironmentVariable As System.Windows.Forms.ComboBox
+    Private WithEvents cboRuleType As System.Windows.Forms.ComboBox
+    Private WithEvents cboServicePack As System.Windows.Forms.ComboBox
+    Private WithEvents cboOSVersion As System.Windows.Forms.ComboBox
+    Private WithEvents cboComparison As System.Windows.Forms.ComboBox
+    Private WithEvents cboProcessorType As System.Windows.Forms.ComboBox
+    Private WithEvents cboLanguage As System.Windows.Forms.ComboBox
+    Private WithEvents cboRegistryValueType As System.Windows.Forms.ComboBox
+    Private WithEvents lblRegistryValueType As System.Windows.Forms.Label
+    Private WithEvents lblProcessorType As System.Windows.Forms.Label
+    Private WithEvents lblLanguage As System.Windows.Forms.Label
+    Private WithEvents lblVersion As System.Windows.Forms.Label
+    Private WithEvents txtVersion As System.Windows.Forms.TextBox
+    Private WithEvents txtSPMajorVersion As System.Windows.Forms.TextBox
+    Private WithEvents txtSPMinorVersion As System.Windows.Forms.TextBox
+    Private WithEvents txtOSMinorVersion As System.Windows.Forms.TextBox
+    Private WithEvents txtOSMajorVersion As System.Windows.Forms.TextBox
+    Private WithEvents lblServicePack As System.Windows.Forms.Label
+    Private WithEvents lblComparison As System.Windows.Forms.Label
+    Private WithEvents lblEnvironmentVariable As System.Windows.Forms.Label
+    Private WithEvents txtQuery As System.Windows.Forms.TextBox
+    Private WithEvents lblQuery As System.Windows.Forms.Label
+    Private WithEvents lblProductType As System.Windows.Forms.Label
+    Private WithEvents txtRegistryValue As System.Windows.Forms.TextBox
+    Private WithEvents lblRegistryValue As System.Windows.Forms.Label
+    Private WithEvents chkRegistry32Bit As System.Windows.Forms.CheckBox
+    Private WithEvents txtRegistrySubKey As System.Windows.Forms.TextBox
+    Private WithEvents lblRegistryKey As System.Windows.Forms.Label
+    Private WithEvents txtFilePath As System.Windows.Forms.TextBox
+    Private WithEvents dtpDate As System.Windows.Forms.DateTimePicker
+    Private WithEvents lblDate As System.Windows.Forms.Label
+    Private WithEvents lblDataInfo As System.Windows.Forms.Label
+    Private WithEvents txtData As System.Windows.Forms.TextBox
+    Private WithEvents lblData As System.Windows.Forms.Label
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents btnAdd As System.Windows.Forms.Button
+    Private WithEvents chkNotRule As System.Windows.Forms.CheckBox
+    Private WithEvents lblRuleType As System.Windows.Forms.Label
 	
 End Class
