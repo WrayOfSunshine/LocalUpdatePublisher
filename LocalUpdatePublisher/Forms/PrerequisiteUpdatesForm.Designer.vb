@@ -135,12 +135,12 @@ Partial Class PrerequisiteUpdatesForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private btnCancel As System.Windows.Forms.Button
-	Private btnOk As System.Windows.Forms.Button
-	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private dgvUpdates As System.Windows.Forms.DataGridView
-	Private btnAdd As System.Windows.Forms.Button
-	Private btnRemove As System.Windows.Forms.Button
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents btnOk As System.Windows.Forms.Button
+    Private WithEvents Title As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents dgvUpdates As System.Windows.Forms.DataGridView
+    Private WithEvents btnAdd As System.Windows.Forms.Button
+    Private WithEvents btnRemove As System.Windows.Forms.Button
 End Class

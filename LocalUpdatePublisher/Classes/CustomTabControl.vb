@@ -7,13 +7,13 @@ Option Strict On
 ' Provides a tab control with the ability to hide the tab labels
 ' which allows the tab to be used in a wizard-like fashion.
 '
+' This class is directly based off of Mick Doherty class published here:
+' http://dotnetrix.co.uk/tabcontrol.htm
+'
 ' Created by SharpDevelop.
 ' User: Bryan Dam
 ' Date: 11/1/2009
 ' Time: 9:06 PM
-'
-' This class is directly based off of Mick Doherty class published here:
-' http://dotnetrix.co.uk/tabcontrol.htm
 
 Imports System.ComponentModel
 
@@ -21,20 +21,24 @@ Imports System.ComponentModel
 	Public Class CustomTabControl
 	Inherits System.Windows.Forms.TabControl
 	
-	Private _hideTabs As Boolean
-	
-	<DefaultValue(False), RefreshProperties(RefreshProperties.All)> _
-		Public Property HideTabs() As Boolean
-		Get
-			Return _hideTabs
-		End Get
-		Set(ByVal value As Boolean)
-			If _hideTabs = Value Then Return
-			_hideTabs = Value
-			If value = True Then Me.Multiline = True
-			Me.UpdateStyles()
-		End Set
-	End Property
+    Private m_hideTabs As Boolean
+    ''' <summary>
+    ''' Hide Tabs
+    ''' </summary>
+    ''' <value>Boolean</value>
+    ''' <remarks>Indicates if tabs are hidden.</remarks>
+    <DefaultValue(False), RefreshProperties(RefreshProperties.All)> _
+    Public Property HideTabs() As Boolean
+        Get
+            Return m_hideTabs
+        End Get
+        Set(ByVal value As Boolean)
+            If m_hideTabs = Value Then Return
+            m_hideTabs = Value
+            If value = True Then Me.Multiline = True
+            Me.UpdateStyles()
+        End Set
+    End Property
 	
 	<RefreshProperties(RefreshProperties.All)> _
 		Public Overloads Property Multiline() As Boolean

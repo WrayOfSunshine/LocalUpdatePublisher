@@ -12,43 +12,55 @@ Option Strict On
 ' Date: 1/28/2010
 ' Time: 1:33 PM
 Public Class Vendor
-	Private _name As String
-	Private _products As Collections.Generic.List(Of String)
-	
-	Sub New
-		_name = ""
-		_products = New Collections.Generic.List(Of String)
-	End Sub
-	
-	Sub New ( name As String )
-		_name = name
-		_products = New Collections.Generic.List(Of String)
-	End Sub
-	
-	Sub New( name As String, products As Collections.Generic.List(Of String))
-		_name = name
-		_products = products
-	End Sub
-	
-	' Property Vendor Name
-	Public Property Name() As String
-		Get
-			Return _name
-		End Get
-		Set
-			_name = value
-		End Set
-	End Property
-	
-	' Property Products
-	Public Property Products() As Collections.Generic.List(Of String)
-		Get
-			Return _products
-		End Get
-		Set
-			_products = value
-		End Set
-	End Property
-	
+    Private m_name As String
+    Private m_products As Collections.Generic.List(Of String)
+
+    Sub New()
+        m_name = ""
+        m_products = New Collections.Generic.List(Of String)
+    End Sub
+    ''' <summary>
+    ''' Create vendor object.
+    ''' </summary>
+    ''' <param name="name">Name of vendor.</param>
+    Sub New(name As String)
+        m_name = name
+        m_products = New Collections.Generic.List(Of String)
+    End Sub
+    ''' <summary>
+    ''' Create vendor object.
+    ''' </summary>
+    ''' <param name="name">Name of vendor.</param>
+    ''' <param name="products"Collection of vendor's products.></param>
+    ''' <remarks></remarks>
+    Sub New(name As String, products As Collections.Generic.List(Of String))
+        m_name = name
+        m_products = products
+    End Sub
+
+    ''' <summary>
+    ''' Property Vendor Name
+    ''' </summary>
+    Public Property Name() As String
+        Get
+            Return m_name
+        End Get
+        Set(value As String)
+            m_name = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Property Products
+    ''' </summary>
+    Public Property Products() As Collections.Generic.List(Of String)
+        Get
+            Return m_products
+        End Get
+        Set(value As Collections.Generic.List(Of String))
+            m_products = value
+        End Set
+    End Property
+
 End Class
 

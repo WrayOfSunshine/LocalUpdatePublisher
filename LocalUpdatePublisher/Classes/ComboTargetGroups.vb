@@ -17,41 +17,46 @@ Option Strict On
 Imports Microsoft.UpdateServices.Administration
 
 Public Class ComboTargetGroups
-	Private _name As String
-	ReadOnly Property Name() As String
-		Get
-			Return _name
-		End Get
-	End Property
-	
-	Private _value As IComputerTargetGroup
-	ReadOnly Property Value()  As IComputerTargetGroup
-		Get
-			Return _value
-		End Get
-	End Property
-	
-	Public Sub New(value As IComputerTargetGroup)
-		Me._name = value.Name
-		Me._value = value
-	End Sub
-		
-	Public Sub New(value As IComputerTargetGroup, depth as Integer)
-		Me._name = GetComboIndentation(depth) & value.Name
-		Me._value = value
-	End Sub
-	
-	Public Overrides Function ToString() As String
-		Return _name
-	End Function
-	
-	Private Function GetComboIndentation (depth As Integer) As String
-		Dim tmpStr As String = ""
-		For i As Integer = 0 To depth
-			tmpStr += "   "
-		Next
-		Return tmpStr
-	End Function
-	
-	
+    Private m_name As String
+    ReadOnly Property Name() As String
+        Get
+            Return m_name
+        End Get
+    End Property
+
+    Private m_value As IComputerTargetGroup
+    ReadOnly Property Value() As IComputerTargetGroup
+        Get
+            Return m_value
+        End Get
+    End Property
+
+    Public Sub New(value As IComputerTargetGroup)
+        Me.m_name = value.Name
+        Me.m_value = value
+    End Sub
+
+    Public Sub New(value As IComputerTargetGroup, depth As Integer)
+        Me.m_name = GetComboIndentation(depth) & value.Name
+        Me.m_value = value
+    End Sub
+
+    Public Overrides Function ToString() As String
+        Return m_name
+    End Function
+    ''' <summary>
+    ''' Get indentation for the combobox item.
+    ''' </summary>
+    ''' <param name="depth"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetComboIndentation(depth As Integer) As String
+        Dim tmpStr As String = ""
+        For i As Integer = 0 To depth
+            tmpStr += "   "
+        Next
+        Return tmpStr
+    End Function
+
+
 End Class

@@ -80,8 +80,8 @@ Partial Class ProgressForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
-	Private lblCurrentStep As System.Windows.Forms.Label
-	Private lblText As System.Windows.Forms.Label
-	Public progressBar As System.Windows.Forms.ProgressBar
+    Private WithEvents tableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents lblCurrentStep As System.Windows.Forms.Label
+    Private WithEvents lblText As System.Windows.Forms.Label
+    Public WithEvents progressBar As System.Windows.Forms.ProgressBar
 End Class

@@ -215,23 +215,23 @@ Partial Class ApprovalForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private approval As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private approveForOptionalInstallToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private Deadline As LocalUpdatePublisher.CalendarColumn
-	Private CreationDate As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private OptionalInstall As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private btnOK As System.Windows.Forms.Button
-	Private btnReload As System.Windows.Forms.Button
-	Private dgvApprovals As System.Windows.Forms.DataGridView
-	Private TargetGroup As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private ApprovalAction As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private notApprovedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private approveForRemovalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private approveForInstallToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private ComputerGroup As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private lblUninstallable As System.Windows.Forms.Label
-	Private cntxtMenuStrip As System.Windows.Forms.ContextMenuStrip
-	Private btnCancel As System.Windows.Forms.Button
-	Private lblInfo As System.Windows.Forms.Label
+    Private WithEvents approval As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents approveForOptionalInstallToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents Deadline As LocalUpdatePublisher.CalendarColumn
+    Private WithEvents CreationDate As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents OptionalInstall As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents btnOK As System.Windows.Forms.Button
+    Private WithEvents btnReload As System.Windows.Forms.Button
+    Private WithEvents dgvApprovals As System.Windows.Forms.DataGridView
+    Private WithEvents TargetGroup As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents ApprovalAction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents notApprovedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents approveForRemovalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents approveForInstallToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents ComputerGroup As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents lblUninstallable As System.Windows.Forms.Label
+    Private WithEvents cntxtMenuStrip As System.Windows.Forms.ContextMenuStrip
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents lblInfo As System.Windows.Forms.Label
 End Class

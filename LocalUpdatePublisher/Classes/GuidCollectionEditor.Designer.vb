@@ -105,11 +105,11 @@ Partial Class GuidCollectionEditor
 	
 	#End Region
 	
-	Private dgv As System.Windows.Forms.DataGridView
-	Private panel1 As System.Windows.Forms.Panel
-	Private btnRemove As System.Windows.Forms.Button
-	Private btnAdd As System.Windows.Forms.Button
-	Private dgvItems As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents dgv As System.Windows.Forms.DataGridView
+    Private WithEvents panel1 As System.Windows.Forms.Panel
+    Private WithEvents btnRemove As System.Windows.Forms.Button
+    Private WithEvents btnAdd As System.Windows.Forms.Button
+    Private WithEvents dgvItems As System.Windows.Forms.DataGridViewTextBoxColumn
 	
 End Class
 

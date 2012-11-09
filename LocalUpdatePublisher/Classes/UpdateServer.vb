@@ -14,80 +14,96 @@ Option Strict On
 ' Time: 1:33 PM
 
 Public Class UpdateServer
-	Private _name As String
-	Private _port As Integer
-	Private _ssl As Boolean
-	Private _childServer As Boolean
-	Private _replicaServer as Boolean
-	
-	Sub New()
-		'Set defaults.
-		_name = ""
-		_port = 80
-		_ssl = False
-		_childServer = False
-		_replicaServer = False
-		
-	End Sub
-	
-	Sub New (name As String, port As Integer, ssl As Boolean, childServer As Boolean, replicaServer As Boolean)
-		'Set defaults.
-		_name = name
-		_port = port
-		_ssl = ssl
-		_childServer = childServer
-		_replicaServer = replicaServer
-	End Sub
-	
-	
-	' Property Server Name
-	Public Property Name() As String
-		Get
-			Return _name
-		End Get
-		Set
-			_name = value
-		End Set
-	End Property
-	
-	' Property Port Number
-	Public Property Port() As Integer
-		Get
-			Return _port
-		End Get
-		Set
-			_port = value
-		End Set
-	End Property
-	
-	' Property use SSL
-	Public Property Ssl() As Boolean
-		Get
-			Return _ssl
-		End Get
-		Set
-			_ssl = value
-		End Set
-	End Property
-	
-	' Property ChildServer
-	Public Property ChildServer() As Boolean
-		Get
-			Return _childServer
-		End Get
-		Set
-			_childServer = value
-		End Set
-	End Property
-	
-	' Property ChildServer
-	Public Property ReplicaServer() As Boolean
-		Get
-			Return _replicaServer
-		End Get
-		Set
-			_replicaServer = value
-		End Set
-	End Property
-	
+    Private m_name As String
+    Private m_port As Integer
+    Private m_ssl As Boolean
+    Private m_childServer As Boolean
+    Private m_replicaServer As Boolean
+
+    Sub New()
+        'Set defaults.
+        m_name = ""
+        m_port = 80
+        m_ssl = False
+        m_childServer = False
+        m_replicaServer = False
+
+    End Sub
+
+    Sub New(name As String, port As Integer, ssl As Boolean, childServer As Boolean, replicaServer As Boolean)
+        'Set defaults.
+        m_name = name
+        m_port = port
+        m_ssl = ssl
+        m_childServer = childServer
+        m_replicaServer = replicaServer
+    End Sub
+
+
+    ''' <summary>
+    ''' Server Name
+    ''' </summary>
+    ''' <value>String</value>
+    Public Property Name() As String
+        Get
+            Return m_name
+        End Get
+        Set(value As String)
+            m_name = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Port Number
+    ''' </summary>
+    ''' <value>Integer</value>
+    Public Property Port() As Integer
+        Get
+            Return m_port
+        End Get
+        Set(value As Integer)
+            m_port = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' SSL
+    ''' </summary>
+    ''' <value>Boolean</value>
+    ''' <remarks>Indicates if connection should use SSL.</remarks>
+    Public Property Ssl() As Boolean
+        Get
+            Return m_ssl
+        End Get
+        Set(value As Boolean)
+            m_ssl = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Child Server
+    ''' </summary>
+    ''' <value>Boolean</value>
+    Public Property ChildServer() As Boolean
+        Get
+            Return m_childServer
+        End Get
+        Set(value As Boolean)
+            m_childServer = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Replica Server
+    ''' </summary>
+    ''' <value>Boolean</value>
+    Public Property ReplicaServer() As Boolean
+        Get
+            Return m_replicaServer
+        End Get
+        Set(value As Boolean)
+            m_replicaServer = value
+        End Set
+    End Property
+
 End Class

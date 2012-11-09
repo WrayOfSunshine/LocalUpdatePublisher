@@ -112,7 +112,7 @@
     <Compile Include="Classes\ComboTargetGroups.vb" />
     <Compile Include="Classes\ComboVendors.vb" />
     <Compile Include="Classes\ConnectionManager.vb" />
-    <Compile Include="Classes\CustomResize.vb" />
+    <Compile Include="Classes\Globals.vb" />
     <Compile Include="Classes\CustomTabControl.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -271,9 +271,8 @@
     <Compile Include="Forms\UpdateSelectionForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Data Routines.vb" />
+    <Compile Include="Classes\DataRoutines.vb" />
     <Compile Include="Modules\Enumerations.vb" />
-    <Compile Include="Modules\Globals.vb" />
     <Compile Include="Program.vb" />
     <Compile Include="Properties\AssemblyInfo.vb" />
     <Compile Include="Properties\Resources.Designer.vb">
@@ -1088,4 +1087,5 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
 </Project>

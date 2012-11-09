@@ -16,386 +16,431 @@ Imports System.Security
 Imports System.ComponentModel
 Imports Microsoft.UpdateServices.Administration
 Imports System.Security.Cryptography.X509Certificates
-'Imports System.Security.Cryptography.DSACryptoServiceProvider
-'Imports System.Security.Cryptography.RSACryptoServiceProvider
 Imports System.IO
 Imports System.Xml.Schema
 
 
 Friend NotInheritable Class ConnectionManager
-	Private Sub New()
-	End Sub
-	
-	#Region "Properties"
-	Private Shared  _serverCollection As UpdateServerCollection
-	Public Shared ReadOnly Property ServerCollection()  As UpdateServerCollection
-		Get
-			Return _serverCollection
-		End Get
-	End Property
-	
-	Private Shared _parentServer As IUpdateServer
-	Public Shared ReadOnly Property ParentServer()  As IUpdateServer
-		Get
-			Return _parentServer
-		End Get
-	End Property
-	
-	Private Shared  _currentServer As IUpdateServer
-	Public Shared ReadOnly Property CurrentServer()  As IUpdateServer
-		Get
-			Return _currentServer
-		End Get
-	End Property
-	
-	Private Shared  _currentServerConfiguration As IUpdateServerConfiguration
-	Public Shared ReadOnly Property CurrentServerConfiguration()  As IUpdateServerConfiguration
-		Get
-			Return _currentServerConfiguration
-		End Get
-	End Property
-	
-	Private Shared _currentServerCertificate As X509Certificate2
-	Public Shared Property CurrentServerCertificate() As X509Certificate2
-		Get
-			Return _currentServerCertificate
-		End Get
-		Private Set
-			_currentServerCertificate = Value
-		End Set
-	End Property
-	#End Region
-	
-	#Region "Connection"
-	Public Shared Sub LoadServerList()
-		_serverCollection = appSettings.UpdateServers
-		'If there are no servers then prompt for initial connection info.
-		If _serverCollection.Count = 0 Then
-			My.Forms.ConnectionSettingsForm.Location =  New Point(My.Forms.MainForm.Location.X + 100, _
-				My.Forms.MainForm.Location.Y + 100)
-			
-			Dim DialogReturn As DialogResult = My.Forms.ConnectionSettingsForm.ShowDialog
-			
-			'If user doesn't enter settings then continue.
-			If DialogReturn = DialogResult.Cancel Then
-				Exit Sub
-			End If
-		End If
-	End Sub
-	
-	'Connect to server.
-	Public Shared Function Connect(server as UpdateServer) As Boolean
-		'Set our Global to nothing
-		_currentServer = Nothing
-		_currentServerConfiguration = Nothing
-		ConnectionManager.ClearCert
-		
-		''My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connecting"), server.Name)
-		''My.Forms.MainForm.Update
-		
-		Try
-			'Connect to the server using the appropriate call.
-			If String.IsNullOrEmpty(server.Name) OrElse lcase(server.Name) = "localhost" Then
-                _currentServer = AdminProxy.GetUpdateServer("localhost", server.Ssl, server.Port)
-			Else
-				_currentServer = AdminProxy.GetUpdateServer(server.Name,server.Ssl,server.Port)
-			End If
-			
-			'Set the culture for the server.
-			Try
-				_currentServer.PreferredCulture = appSettings.Culture
-			Catch x As ArgumentOutOfRangeException
-				'This culture is not supported.
-			End Try
-			
-			'If this is a not a child server then set the parent server to
-			' be the current server.
-			If Not server.ChildServer Then _parentServer = _currentServer
-			
-			'Get update server configuration.
-			_currentServerConfiguration = _currentServer.GetConfiguration
-			''My.Forms.MainForm.Status = String.Format(globalRM.GetString("status_server_connected") , _currentServer.Name)
-			''My.Forms.MainForm.Update
-			
-			
-			'Try to retrieve cert info from server.
-			'If there is no cert info, prompt the user to create it.
-			If Not ConnectionManager.LoadCert Then
-				If server.ChildServer AndAlso Not currentserverconfiguration.IsReplicaServer
-					MsgBox (String.Format(globalRM.GetString("error_connection_no_cert"), server.Name))
-				Else
-					If (MsgBox ( _
-						String.Format(globalRM.GetString("error_connection_no_cert"), server.Name) & vbNewLine & globalRM.GetString("prompt_connection_cert"), _
-						MsgBoxStyle.YesNo, _
-						globalRM.GetString("warning_connection_no_cert")) _
-						) = vbYes Then
-						My.Forms.MainForm.Status = globalRM.GetString("warning_connection_no_cert")
-						My.Forms.MainForm.Update
-						
-						'Show Cert Info form.
-						My.Forms.CertificateInfoForm.ShowDialog
-						
-					End If
-				End If
-			End If
-			
-			'If we have gotten this far without an exception then we are connected.
-			Return True
-			
-			'Handle the various exceptions that could occur.
-		Catch x As WebException
-			msgbox(globalRM.GetString("exception_web") & ": " & globalRM.GetString("error_connection_connect") & vbNewline & x.Message)
-		Catch x As WsusInvalidServerException
-			msgbox(globalRM.GetString("exception_wsus_invalid_server") & ": " & globalRM.GetString("error_connection_connect") & vbNewline & x.Message)
-		Catch x As SecurityException
-			msgbox(globalRM.GetString("exception_security") & ": " & globalRM.GetString("error_connection_connect_security") & vbNewline & x.Message)
-		Catch x As UriFormatException
-			msgbox(globalRM.GetString("exception_URI_format") & ": " & globalRM.GetString("error_connection_connect_URI") & vbNewline & x.Message)
-		End Try
-		
-		'If we got this far then we failed to connect.
-		My.Forms.MainForm.Status = globalRM.GetString("error_connection_connect")
-		My.Forms.MainForm.Update
-		Return False
-	End Function 'Connect
-	
-	'Wait until a connection is made or the timeout is reached.
-	Public Shared Sub WaitForConnection(timeOut As Integer)
-		Dim startTime As DateTime = DateTime.Now
-		
-		Do
-			System.Threading.Thread.Sleep(200)	
-		Loop While (Not Connected AndAlso DateTime.Now.Subtract(startTime).Seconds <= timeOut)
-	End Sub
-	
-	'If we are connected to the server
-	Public Shared ReadOnly Property Connected() As Boolean
-		Get
-			If CurrentServer Is Nothing Or CurrentServerConfiguration Is Nothing Then
-				Return False
-			Else
-				Return True
-			End If
-		End Get
-	End Property
-	
-	
-	#End Region
-	
-	#Region "Software Definition Packages"
-	
-	'Return a file path to an SDP file of the given update id.
-	Public Shared Function ExportSDP (updateRevisionId As UpdateRevisionId) As String
-		Dim packageFile As String
-		If ConnectionManager.Connected Then
-			Try
-				
-				'Export the SDP to a temporary file.
-				packageFile = Path.Combine(Path.GetTempPath, updateRevisionId.UpdateId.ToString & ".xml")
-				ConnectionManager.ParentServer.ExportPackageMetadata(updateRevisionId, packageFile)
-				Return packageFile
-				
-			Catch x As InvalidOperationException
-				Msgbox (globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
-			Catch x As ArgumentNullException
-				Msgbox (globalRM.GetString("exception_argument_null") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
-			Catch x As ArgumentOutOfRangeException
-				Msgbox (globalRM.GetString("exception_argument_out_of_range") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
-			Catch x As WsusObjectNotFoundException
-				Msgbox (globalRM.GetString("exception_wsus_object_not_found") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
-			Catch x As Exception
-				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_export_SDP") & vbNewline & x.Message)
-			End Try
-		End If
-		
-		Return Nothing
-	End Function
-	
-	'Return an SDP object from the given update id.
-	Public Shared Function GetSDP (updateRevisionId As UpdateRevisionId) As SoftwareDistributionPackage
-		Dim tmpSDP As SoftwareDistributionPackage
-		Dim packageFile As String
-		If ConnectionManager.Connected Then
-			Try
-				
-				'Export the SDP to a temporary file.
-				packageFile = ExportSDP (updateRevisionId)
-				tmpSDP = New SoftwareDistributionPackage(packageFile)
-				DeleteSDP (packageFile)
-				Return tmpSDP
-				
-			Catch x As FileNotFoundException
-				Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
-			Catch x As XmlSchemaValidationException
-				Msgbox (globalRM.GetString("exception_XML_schema") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
-			Catch x As Exception
-				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewline & x.Message)
-			End Try
-		End If
-		
-		Return Nothing
-	End Function
-	
-	'Return an SDP object from the given SDP file.
-	Public Shared Function GetSDP ( packageFile As String ) As SoftwareDistributionPackage
-		Dim tmpSDP As SoftwareDistributionPackage
-		
-		If ConnectionManager.Connected Then
-			Try
-				
-				'Export the SDP to a temporary file.
-				tmpSDP = New SoftwareDistributionPackage(packageFile)
-				Return tmpSDP
-				
-			Catch x As FileNotFoundException
-				Msgbox (globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
-			Catch x As XmlSchemaValidationException
-				Msgbox (globalRM.GetString("exception_XML_schema") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
-			Catch x As Exception
-				Msgbox (globalRM.GetString("exception") & ": " & globalRM.GetString("error_connection_get_SDP") & vbNewline & x.Message)
-			End Try
-		End If
-		
-		Return Nothing
-	End Function
-	
-	'Delete the SDP file and ignore any errors.
-	Public Shared Sub DeleteSDP ( packageFile As String )
-		
-		Try
-			My.Computer.FileSystem.DeleteFile( packageFile )
-		Catch
-		End Try
-		
-	End Sub
-	
-	#End Region
-	
-	#Region "Certificates"
-	Public Shared ReadOnly Property CertExists() As Boolean
-		Get
-			If CurrentServerCertificate Is Nothing Then
-				Return False
-			Else
-				Return True
-			End If
-		End Get
-	End Property
-	
-	'This function creates a certificate on the WSUS service.  If the user
-	' has provided a certificate path AND a password then import their certificate.
-	' If the user has provided neither than create a self-signed certificate.  If the user
-	' has provided one but not the other, error out.
-	Public Shared Sub CreateCert(pfxFile As String, password As SecureString)
-		If CertExists Then
-			MessageBox.Show(globalRM.GetString("warning_connection_cert_exists"))
-		Else
-			Try
-				If (pfxFile IsNot Nothing) AndAlso (password IsNot Nothing) Then
-					_currentServerConfiguration.SetSigningCertificate(pfxFile, password)
-					_currentServerConfiguration.Save()
-					MessageBox.Show(globalRM.GetString("success_connection_cert_import"))
-					LoadCert()
-				ElseIf pfxFile Is Nothing AndAlso password Is Nothing Then
-					_currentServerConfiguration.SetSigningCertificate()
-					_currentServerConfiguration.Save()
-					MessageBox.Show(globalRM.GetString("success_connection_cert_created"))
-					LoadCert()
-				Else
-					MessageBox.Show(globalRM.GetString("warning_connection_cert_import"))
-				End If
-				'Handle the exceptions that could occur.
-			Catch x As WsusInvalidDataException
-				MessageBox.Show(globalRM.GetString("exception_wsus_invalid_data") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
-			Catch x As InvalidOperationException
-				MessageBox.Show(globalRM.GetString("exception_invalid_operation") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
-			Catch x As FileNotFoundException
-				MessageBox.Show(globalRM.GetString("exception_file_not_found") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
-			Catch x As Win32Exception
-				MessageBox.Show(globalRM.GetString("exception_win32") & ": " & globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
-			End Try
-		End If
-	End Sub
-	
-	'This function loads the certificate from the WSUS service.
-	Public Shared Function LoadCert() As Boolean
-		Dim tempFile As String = Path.GetTempFileName()
-		Try
-			_currentServerConfiguration.GetSigningCertificate(tempFile)
-			_currentServerCertificate = New X509Certificate2(tempFile)
-			File.Delete(tempFile)
-			Return True
-		Catch
-			'If there was a problem loading the certificate
-			' then make the cert nothing
-			_currentServerCertificate = Nothing
-		End Try
-		
-		'If we got this far an exception was thrown so return false
-		Return False
-	End Function
-	
-	'This function clears the certificate.
-	Public Shared Sub ClearCert()
-		_currentServerCertificate = Nothing
-	End Sub
-	
-	'This function exports the certificate from the WSUS service
-	Public Shared Sub ExportCert(fileName As String)
-		_currentServerConfiguration.GetSigningCertificate(fileName)
-	End Sub
-	#End Region
-	
-	#Region "Misc"
-	'Modified from a posting: http://www.vbdotnetforums.com/remoting/82-webclient-download-progress.html
-	'Download file and update the Progress Bar.
-	Public Shared Sub DownloadChunks(ByVal sURL As Uri, ByVal pProgress As ProgressBar, ByVal Filename As String)
-		'Dim wRemote As System.Net.WebRequest
-		Dim URLReq As WebRequest
-		Dim URLRes As WebResponse
-		Dim FileStreamer As New FileStream(Filename, FileMode.Create)
-		Dim sChunks As Stream = Nothing
-		Dim bBuffer(999) As Byte
-		Dim iBytesRead As Integer
-		
-		Try
-			'By using CreateDefault we can handle both http:// and file://
-			' URIs which allow us to both download from the internet and use
-			' local paths.
-			URLReq = WebRequest.CreateDefault(sURL)
-			
-			'Handle FTP and File URLS.
-			If sURL.Scheme = "ftp" Then
-				URLReq.Method = WebRequestMethods.Ftp.DownloadFile
-			Else If Not sURL.IsFile Then
-				'If this is a file url then we do not need credentials.
-				URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
-			End If
-			
-			
-			URLRes = URLReq.GetResponse
-			sChunks = URLReq.GetResponse.GetResponseStream
-			pProgress.Maximum = CInt(URLRes.ContentLength)
-			
-			Do
-				iBytesRead = sChunks.Read(bBuffer, 0, 1000)
-				FileStreamer.Write(bBuffer, 0, iBytesRead)
-				If pProgress.Value + iBytesRead <= pProgress.Maximum Then
-					pProgress.Value += iBytesRead
-				Else
-					pProgress.Value = pProgress.Maximum
-				End If
-				Application.DoEvents
-			Loop Until iBytesRead = 0
-			pProgress.Value = pProgress.Maximum
-			sChunks.Close()
-			FileStreamer.Close()
-			'Return sResponseData
-		Catch
-			If Not sChunks Is Nothing Then sChunks.Close()
-			If Not FileStreamer Is Nothing Then FileStreamer.Close()
-			MsgBox(String.Format(globalRM.GetString("error_connection_download") , sURL.AbsolutePath) & vbNewLine & Err.Description)
-		End Try
-	End Sub
-	#End Region
+    Private Sub New()
+    End Sub
+
+#Region "Properties"
+    Private Shared m_serverCollection As UpdateServerCollection
+    Public Shared ReadOnly Property ServerCollection() As UpdateServerCollection
+        Get
+            Return m_serverCollection
+        End Get
+    End Property
+
+    Private Shared m_parentServer As IUpdateServer
+    Public Shared ReadOnly Property ParentServer() As IUpdateServer
+        Get
+            Return m_parentServer
+        End Get
+    End Property
+
+    Private Shared m_currentServer As IUpdateServer
+    Public Shared ReadOnly Property CurrentServer() As IUpdateServer
+        Get
+            Return m_currentServer
+        End Get
+    End Property
+
+    Private Shared m_currentServerConfiguration As IUpdateServerConfiguration
+    Public Shared ReadOnly Property CurrentServerConfiguration() As IUpdateServerConfiguration
+        Get
+            Return m_currentServerConfiguration
+        End Get
+    End Property
+
+    Private Shared m_currentServerCertificate As X509Certificate2
+    Public Shared Property CurrentServerCertificate() As X509Certificate2
+        Get
+            Return m_currentServerCertificate
+        End Get
+        Private Set(value As X509Certificate2)
+            m_currentServerCertificate = value
+        End Set
+    End Property
+#End Region
+
+#Region "Connection"
+    ''' <summary>
+    ''' Load the list of available servers from the Globals.appSettings global.
+    ''' If there are none, prompt the user to enter server info.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Shared Sub LoadServerList()
+        m_serverCollection = Globals.appSettings.UpdateServers
+        'If there are no servers then prompt for initial connection info.
+        If m_serverCollection.Count = 0 Then
+            My.Forms.ConnectionSettingsForm.Location = New Point(My.Forms.MainForm.Location.X + 100, _
+                My.Forms.MainForm.Location.Y + 100)
+
+            Dim DialogReturn As DialogResult = My.Forms.ConnectionSettingsForm.ShowDialog
+
+            'If user doesn't enter settings then continue.
+            If DialogReturn = DialogResult.Cancel Then
+                Exit Sub
+            End If
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Connect to server.
+    ''' </summary>
+    ''' <param name="server">UpdateServer object to connect to.</param>
+    ''' <returns>Boolean indicating if the connection was successful.</returns>
+    Public Shared Function Connect(server As UpdateServer) As Boolean
+        'Set our Global to nothing
+        m_currentServer = Nothing
+        m_currentServerConfiguration = Nothing
+        ConnectionManager.ClearCert()
+
+        ''My.Forms.MainForm.Status = String.Format(Globals.globalRM.GetString("status_server_connecting"), server.Name)
+        ''My.Forms.MainForm.Update
+
+        Try
+            'Connect to the server using the appropriate call.
+            If String.IsNullOrEmpty(server.Name) OrElse LCase(server.Name) = "localhost" Then
+                m_currentServer = AdminProxy.GetUpdateServer("localhost", server.Ssl, server.Port)
+            Else
+                m_currentServer = AdminProxy.GetUpdateServer(server.Name, server.Ssl, server.Port)
+            End If
+
+            'Set the culture for the server.
+            Try
+                m_currentServer.PreferredCulture = Globals.appSettings.Culture
+            Catch x As ArgumentOutOfRangeException
+                'This culture is not supported.
+            End Try
+
+            'If this is a not a child server then set the parent server to
+            ' be the current server.
+            If Not server.ChildServer Then m_parentServer = m_currentServer
+
+            'Get update server configuration.
+            m_currentServerConfiguration = m_currentServer.GetConfiguration
+            ''My.Forms.MainForm.Status = String.Format(Globals.globalRM.GetString("status_server_connected") , _currentServer.Name)
+            ''My.Forms.MainForm.Update
+
+            'Try to retrieve cert info from server.
+            'If there is no cert info, prompt the user to create it.
+            If Not ConnectionManager.LoadCert Then
+                If server.ChildServer AndAlso Not CurrentServerConfiguration.IsReplicaServer Then
+                    MsgBox(String.Format(Globals.globalRM.GetString("error_connection_no_cert"), server.Name))
+                Else
+                    If (MsgBox( _
+                        String.Format(Globals.globalRM.GetString("error_connection_no_cert"), server.Name) & vbNewLine & Globals.globalRM.GetString("prompt_connection_cert"), _
+                        MsgBoxStyle.YesNo, _
+                        Globals.globalRM.GetString("warning_connection_no_cert")) _
+                        ) = vbYes Then
+                        My.Forms.MainForm.Status = Globals.globalRM.GetString("warning_connection_no_cert")
+                        My.Forms.MainForm.Update()
+
+                        'Show Cert Info form.
+                        My.Forms.CertificateInfoForm.ShowDialog()
+
+                    End If
+                End If
+            End If
+
+            'If we have gotten this far without an exception then we are connected.
+            Return True
+
+            'Handle the various exceptions that could occur.
+        Catch x As WebException
+            MsgBox(Globals.globalRM.GetString("exception_web") & ": " & Globals.globalRM.GetString("error_connection_connect") & vbNewLine & x.Message)
+        Catch x As WsusInvalidServerException
+            MsgBox(Globals.globalRM.GetString("exception_wsus_invalid_server") & ": " & Globals.globalRM.GetString("error_connection_connect") & vbNewLine & x.Message)
+        Catch x As SecurityException
+            MsgBox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_connect_security") & vbNewLine & x.Message)
+        Catch x As UriFormatException
+            MsgBox(Globals.globalRM.GetString("exception_URI_format") & ": " & Globals.globalRM.GetString("error_connection_connect_URI") & vbNewLine & x.Message)
+        End Try
+
+        'If we got this far then we failed to connect.
+        My.Forms.MainForm.Status = Globals.globalRM.GetString("error_connection_connect")
+        My.Forms.MainForm.Update()
+        Return False
+    End Function 'Connect
+
+    ''' <summary>
+    ''' Wait until a connection is made or the timeout is reached.
+    ''' </summary>
+    ''' <param name="timeOut">Number of seconds to wait for connection.</param>
+    Public Shared Sub WaitForConnection(timeOut As Integer)
+        Dim startTime As DateTime = DateTime.Now
+
+        Do
+            System.Threading.Thread.Sleep(200)
+        Loop While (Not Connected AndAlso DateTime.Now.Subtract(startTime).Seconds <= timeOut)
+    End Sub
+
+    ''' <summary>
+    ''' Tests to see if there is a current server connection.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>Boolean indicating if a current server connection exists.</returns>
+    Public Shared ReadOnly Property Connected() As Boolean
+        Get
+            If CurrentServer Is Nothing Or CurrentServerConfiguration Is Nothing Then
+                Return False
+            Else
+                Return True
+            End If
+        End Get
+    End Property
+#End Region
+
+#Region "Software Definition Packages"
+
+    ''' <summary>
+    ''' Export an SDP XML file from the parent server.
+    ''' </summary>
+    ''' <param name="updateRevisionId">UpdateRevisionId of the package to be exported.</param>
+    ''' <returns>String holding the path to the SDP XMP file that was exported.</returns>
+    Public Shared Function ExportSDP(updateRevisionId As UpdateRevisionId) As String
+        Dim packageFile As String
+        If ConnectionManager.Connected Then
+            Try
+
+                'Export the SDP to a temporary file.
+                packageFile = Path.Combine(Path.GetTempPath, updateRevisionId.UpdateId.ToString & ".xml")
+                ConnectionManager.ParentServer.ExportPackageMetadata(updateRevisionId, packageFile)
+                Return packageFile
+
+            Catch x As InvalidOperationException
+                MsgBox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
+            Catch x As ArgumentNullException
+                MsgBox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
+            Catch x As ArgumentOutOfRangeException
+                MsgBox(Globals.globalRM.GetString("exception_argument_out_of_range") & ": " & Globals.globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
+            Catch x As WsusObjectNotFoundException
+                MsgBox(Globals.globalRM.GetString("exception_wsus_object_not_found") & ": " & Globals.globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
+            Catch x As Exception
+                MsgBox(Globals.globalRM.GetString("exception") & ": " & Globals.globalRM.GetString("error_connection_export_SDP") & vbNewLine & x.Message)
+            End Try
+        End If
+
+        Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Retrieve a SoftwareDistributionPackage from the current parent server.
+    ''' </summary>
+    ''' <param name="updateRevisionId">UpdateRevisionID to be retrieved.</param>
+    ''' <returns>SoftwareDistributionPackage</returns>
+    Public Shared Function GetSDP(updateRevisionId As UpdateRevisionId) As SoftwareDistributionPackage
+        Dim tmpSDP As SoftwareDistributionPackage
+        Dim packageFile As String
+        If ConnectionManager.Connected Then
+            Try
+
+                'Export the SDP to a temporary file.
+                packageFile = ExportSDP(updateRevisionId)
+                tmpSDP = New SoftwareDistributionPackage(packageFile)
+                DeleteSDP(packageFile)
+                Return tmpSDP
+
+            Catch x As FileNotFoundException
+                MsgBox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            Catch x As XmlSchemaValidationException
+                MsgBox(Globals.globalRM.GetString("exception_XML_schema") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            Catch x As Exception
+                MsgBox(Globals.globalRM.GetString("exception") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            End Try
+        End If
+
+        Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Create an SDP object from the given file path.
+    ''' </summary>
+    ''' <param name="packageFile">The path to the SDP XML file.</param>
+    ''' <returns>SoftwareDistributionPackage</returns>
+    Public Shared Function GetSDP(packageFile As String) As SoftwareDistributionPackage
+        Dim tmpSDP As SoftwareDistributionPackage
+
+        If ConnectionManager.Connected Then
+            Try
+
+                'Export the SDP to a temporary file.
+                tmpSDP = New SoftwareDistributionPackage(packageFile)
+                Return tmpSDP
+
+            Catch x As FileNotFoundException
+                MsgBox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            Catch x As XmlSchemaValidationException
+                MsgBox(Globals.globalRM.GetString("exception_XML_schema") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            Catch x As Exception
+                MsgBox(Globals.globalRM.GetString("exception") & ": " & Globals.globalRM.GetString("error_connection_get_SDP") & vbNewLine & x.Message)
+            End Try
+        End If
+
+        Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Delete the SDP file and ignore any errors.
+    ''' </summary>
+    ''' <param name="packageFile">Path to file.</param>
+    Public Shared Sub DeleteSDP(packageFile As String)
+
+        Try
+            My.Computer.FileSystem.DeleteFile(packageFile)
+        Catch
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Certificates"
+    Public Shared ReadOnly Property CertExists() As Boolean
+        Get
+            If CurrentServerCertificate Is Nothing Then
+                Return False
+            Else
+                Return True
+            End If
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Creates a certificate on the WSUS server.  
+    ''' </summary>
+    ''' <param name="pfxFile">Path to a certificate file.</param>
+    ''' <param name="password">Password for opening the certificate file.</param>
+    ''' <remarks>
+    ''' If the user has provided a certificate path AND a password then import their certificate.
+    ''' If the user has provided neither than create a self-signed certificate.  If the user
+    ''' has provided one but not the other, error out.
+    ''' </remarks>
+    Public Shared Sub CreateCert(pfxFile As String, password As SecureString)
+        If CertExists Then
+            MessageBox.Show(Globals.globalRM.GetString("warning_connection_cert_exists"))
+        Else
+            Try
+                If (pfxFile IsNot Nothing) AndAlso (password IsNot Nothing) Then
+                    m_currentServerConfiguration.SetSigningCertificate(pfxFile, password)
+                    m_currentServerConfiguration.Save()
+                    MessageBox.Show(Globals.globalRM.GetString("success_connection_cert_import"))
+                    LoadCert()
+                ElseIf pfxFile Is Nothing AndAlso password Is Nothing Then
+                    m_currentServerConfiguration.SetSigningCertificate()
+                    m_currentServerConfiguration.Save()
+                    MessageBox.Show(Globals.globalRM.GetString("success_connection_cert_created"))
+                    LoadCert()
+                Else
+                    MessageBox.Show(Globals.globalRM.GetString("warning_connection_cert_import"))
+                End If
+                'Handle the exceptions that could occur.
+            Catch x As WsusInvalidDataException
+                MessageBox.Show(Globals.globalRM.GetString("exception_wsus_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
+            Catch x As InvalidOperationException
+                MessageBox.Show(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
+            Catch x As FileNotFoundException
+                MessageBox.Show(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
+            Catch x As Win32Exception
+                MessageBox.Show(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_cert_save") & Environment.NewLine & x.Message)
+            End Try
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Loads the certificate from the WSUS server.
+    ''' </summary>
+    ''' <returns>Boolean that indicates if the certificate was successfully loaded.</returns>
+    Public Shared Function LoadCert() As Boolean
+        Dim tempFile As String = Path.GetTempFileName()
+        Try
+            m_currentServerConfiguration.GetSigningCertificate(tempFile)
+            m_currentServerCertificate = New X509Certificate2(tempFile)
+            File.Delete(tempFile)
+            Return True
+        Catch
+            'If there was a problem loading the certificate
+            ' then make the cert nothing
+            m_currentServerCertificate = Nothing
+        End Try
+
+        'If we got this far an exception was thrown so return false
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Clear the certificate.
+    ''' </summary>
+    Public Shared Sub ClearCert()
+        m_currentServerCertificate = Nothing
+    End Sub
+
+    ''' <summary>
+    ''' Export the certificate from the WSUS service.
+    ''' </summary>
+    ''' <param name="fileName"></param>
+    Public Shared Sub ExportCert(fileName As String)
+        m_currentServerConfiguration.GetSigningCertificate(fileName)
+    End Sub
+#End Region
+
+#Region "Misc"
+    ''' <summary>
+    ''' Download a file in smaller pieces.
+    ''' </summary>
+    ''' <param name="URL">URL to be downloaded.</param>
+    ''' <param name="progress">ProgressBar to update.</param>
+    ''' <param name="path">File path to save downloaded file to.</param>
+    ''' <remarks>Modified from a posting: http://www.vbdotnetforums.com/remoting/82-webclient-download-progress.html</remarks>
+    Public Shared Sub DownloadChunks(ByVal URL As Uri, ByVal progress As ProgressBar, ByVal path As String)
+        'Dim wRemote As System.Net.WebRequest
+        Dim URLReq As WebRequest
+        Dim URLRes As WebResponse
+        Dim FileStreamer As New FileStream(path, FileMode.Create)
+        Dim sChunks As Stream = Nothing
+        Dim bBuffer(999) As Byte
+        Dim iBytesRead As Integer
+
+        Try
+            'By using CreateDefault we can handle both http:// and file://
+            ' URIs which allow us to both download from the internet and use
+            ' local paths.
+            URLReq = WebRequest.CreateDefault(URL)
+
+            'Handle FTP and File URLS.
+            If URL.Scheme = "ftp" Then
+                URLReq.Method = WebRequestMethods.Ftp.DownloadFile
+            ElseIf Not URL.IsFile Then
+                'If this is a file url then we do not need credentials.
+                URLReq.Proxy.Credentials = CredentialCache.DefaultCredentials
+            End If
+
+
+            URLRes = URLReq.GetResponse
+            sChunks = URLReq.GetResponse.GetResponseStream
+            progress.Maximum = CInt(URLRes.ContentLength)
+
+            Do
+                iBytesRead = sChunks.Read(bBuffer, 0, 1000)
+                FileStreamer.Write(bBuffer, 0, iBytesRead)
+                If progress.Value + iBytesRead <= progress.Maximum Then
+                    progress.Value += iBytesRead
+                Else
+                    progress.Value = progress.Maximum
+                End If
+                Application.DoEvents()
+            Loop Until iBytesRead = 0
+            progress.Value = progress.Maximum
+            sChunks.Close()
+            FileStreamer.Close()
+            'Return sResponseData
+        Catch
+            If Not sChunks Is Nothing Then sChunks.Close()
+            If Not FileStreamer Is Nothing Then FileStreamer.Close()
+            MsgBox(String.Format(Globals.globalRM.GetString("error_connection_download"), URL.AbsolutePath) & vbNewLine & Err.Description)
+        End Try
+    End Sub
+#End Region
 End Class

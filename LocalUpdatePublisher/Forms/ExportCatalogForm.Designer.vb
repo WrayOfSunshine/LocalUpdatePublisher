@@ -150,15 +150,15 @@ Partial Class ExportCatalogForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private File As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private exportFileDialog As System.Windows.Forms.SaveFileDialog
-	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private btnAddAll As System.Windows.Forms.Button
-	Private btnAdd As System.Windows.Forms.Button
-	Private btnExport As System.Windows.Forms.Button
-	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private dgvUpdates As System.Windows.Forms.DataGridView
-	Private Include As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private btnCancel As System.Windows.Forms.Button
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents File As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents exportFileDialog As System.Windows.Forms.SaveFileDialog
+    Private WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents btnAddAll As System.Windows.Forms.Button
+    Private WithEvents btnAdd As System.Windows.Forms.Button
+    Private WithEvents btnExport As System.Windows.Forms.Button
+    Private WithEvents Title As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents dgvUpdates As System.Windows.Forms.DataGridView
+    Private WithEvents Include As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents btnCancel As System.Windows.Forms.Button
 End Class

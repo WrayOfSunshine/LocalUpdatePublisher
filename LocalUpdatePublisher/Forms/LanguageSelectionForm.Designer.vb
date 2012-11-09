@@ -122,11 +122,11 @@ Partial Class LanguageSelectionForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private dgvLanguages As System.Windows.Forms.DataGridView
-	Private Id As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private btnOk As System.Windows.Forms.Button
-	Private btnCancel As System.Windows.Forms.Button
-	Private Language As System.Windows.Forms.DataGridViewComboBoxColumn
-	Private btnRemove As System.Windows.Forms.Button
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents dgvLanguages As System.Windows.Forms.DataGridView
+    Private WithEvents Id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents btnOk As System.Windows.Forms.Button
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents Language As System.Windows.Forms.DataGridViewComboBoxColumn
+    Private WithEvents btnRemove As System.Windows.Forms.Button
 End Class

@@ -112,16 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainerVert.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="splitContainerVert.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
@@ -131,11 +131,11 @@
   <data name="treeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="treeView.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <metadata name="ilTreeView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ilTreeView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
   </metadata>
   <data name="ilTreeView.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -143,7 +143,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAY
-        CQAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAwEAARQBAAEUAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -191,7 +191,7 @@
     <value>0</value>
   </data>
   <data name="treeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 891</value>
+    <value>175, 828</value>
   </data>
   <data name="treeView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -366,6 +366,9 @@
   </data>
   <data name="btnComputerListRefresh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnComputerListRefresh.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 25</value>
   </data>
   <data name="btnComputerListRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 27</value>
@@ -571,28 +574,28 @@
   <data name="&gt;&gt;scHeader.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="_dgvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="m_dgvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="_dgvMain.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_dgvMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="_dgvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 358</value>
+  <data name="m_dgvMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1036, 327</value>
   </data>
-  <data name="_dgvMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="m_dgvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;_dgvMain.Name" xml:space="preserve">
-    <value>_dgvMain</value>
+  <data name="&gt;&gt;m_dgvMain.Name" xml:space="preserve">
+    <value>m_dgvMain</value>
   </data>
-  <data name="&gt;&gt;_dgvMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_dgvMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_dgvMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_dgvMain.Parent" xml:space="preserve">
     <value>scHeader.Panel2</value>
   </data>
-  <data name="&gt;&gt;_dgvMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_dgvMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;scHeader.Panel2.Name" xml:space="preserve">
@@ -608,7 +611,7 @@
     <value>1</value>
   </data>
   <data name="scHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 412</value>
+    <value>1036, 381</value>
   </data>
   <data name="scHeader.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -827,7 +830,7 @@
     <value>8, 67</value>
   </data>
   <data name="lblUpdateNoStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 385</value>
+    <value>162, 353</value>
   </data>
   <data name="lblUpdateNoStatus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -890,7 +893,7 @@
     <value>4</value>
   </data>
   <data name="tlpComputerInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tlpComputerInfo.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -917,7 +920,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabComputerInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabComputerInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -944,7 +947,7 @@
     <value>0, 0</value>
   </data>
   <data name="dgvComputerGroupStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="dgvComputerGroupStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -968,7 +971,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabComputerStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabComputerStatus.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1028,7 +1031,7 @@
     <value>3, 67</value>
   </data>
   <data name="dgvComputerReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1022, 382</value>
+    <value>1022, 350</value>
   </data>
   <data name="dgvComputerReport.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1055,7 +1058,10 @@
     <value>False</value>
   </data>
   <data name="btnComputerRefreshReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>945, 36</value>
+    <value>15, 36</value>
+  </data>
+  <data name="btnComputerRefreshReport.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 25</value>
   </data>
   <data name="btnComputerRefreshReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
@@ -1088,7 +1094,7 @@
     <value>3</value>
   </data>
   <data name="tlpComputerReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tlpComputerReport.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1115,7 +1121,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabComputerReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabComputerReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1145,7 +1151,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabMainComputers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 478</value>
+    <value>1036, 446</value>
   </data>
   <data name="tabMainComputers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1169,7 +1175,7 @@
     <value>0, 0</value>
   </data>
   <data name="pnlComputers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 478</value>
+    <value>1036, 446</value>
   </data>
   <data name="pnlComputers.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
@@ -2303,7 +2309,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabUpdateInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2330,7 +2336,7 @@
     <value>0, 0</value>
   </data>
   <data name="dgvUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="dgvUpdateStatus.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2354,7 +2360,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabUpdateStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabUpdateStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2417,7 +2423,7 @@
     <value>3, 65</value>
   </data>
   <data name="dgvUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1022, 384</value>
+    <value>1022, 352</value>
   </data>
   <data name="dgvUpdateReport.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2552,7 +2558,7 @@
     <value>3</value>
   </data>
   <data name="tlpUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tlpUpdateReport.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2579,7 +2585,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabUpdateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 452</value>
+    <value>1028, 420</value>
   </data>
   <data name="tabUpdateReport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2606,7 +2612,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabMainUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 478</value>
+    <value>1036, 446</value>
   </data>
   <data name="tabMainUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -2630,7 +2636,7 @@
     <value>0, 0</value>
   </data>
   <data name="pnlUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 478</value>
+    <value>1036, 446</value>
   </data>
   <data name="pnlUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2663,10 +2669,10 @@
     <value>1</value>
   </data>
   <data name="splitContainerHorz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1036, 891</value>
+    <value>1036, 828</value>
   </data>
   <data name="splitContainerHorz.SplitterDistance" type="System.Int32, mscorlib">
-    <value>412</value>
+    <value>381</value>
   </data>
   <data name="splitContainerHorz.SplitterWidth" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2699,7 +2705,7 @@
     <value>1</value>
   </data>
   <data name="splitContainerVert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1212, 891</value>
+    <value>1212, 828</value>
   </data>
   <data name="splitContainerVert.SplitterDistance" type="System.Int32, mscorlib">
     <value>175</value>
@@ -2722,32 +2728,32 @@
   <data name="&gt;&gt;splitContainerVert.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
   <data name="menuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="importCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="importCatalogToolStripMenuItem.Text" xml:space="preserve">
     <value>Import Catalog</value>
   </data>
   <data name="exportCatalogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="exportCatalogToolStripMenuItem.Text" xml:space="preserve">
     <value>Export Catalog</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 6</value>
+    <value>151, 6</value>
   </data>
   <data name="exportListToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="exportListToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="exportListToolStripMenuItem.Text" xml:space="preserve">
     <value>Export List</value>
@@ -2759,7 +2765,7 @@
     <value>False</value>
   </data>
   <data name="exportReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="exportReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Export Report</value>
@@ -2768,91 +2774,91 @@
     <value>False</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 6</value>
+    <value>151, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
+    <value>37, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
   <data name="createUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="createUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>Create Update</value>
   </data>
   <data name="importUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="importUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>Import Update</value>
   </data>
   <data name="exportUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="exportUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>Export Update</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 6</value>
+    <value>178, 6</value>
   </data>
   <data name="manageRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="manageRulesToolStripMenuItem.Text" xml:space="preserve">
     <value>Manage Rules</value>
   </data>
   <data name="importRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="importRulesToolStripMenuItem.Text" xml:space="preserve">
     <value>Import Rules</value>
   </data>
   <data name="exportRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="exportRulesToolStripMenuItem.Text" xml:space="preserve">
     <value>Export Rules</value>
   </data>
   <data name="savedRulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="savedRulesToolStripMenuItem.Text" xml:space="preserve">
     <value>Saved Rules</value>
   </data>
   <data name="certificateInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="certificateInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>Certificate Info</value>
   </data>
   <data name="connectionSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="connectionSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Connection Settings</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+    <value>48, 20</value>
   </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>57, 20</value>
   </data>
   <data name="updateToolStripMenuItem.Text" xml:space="preserve">
     <value>Update</value>
@@ -2861,25 +2867,25 @@
     <value>False</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="helpForumsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="helpForumsToolStripMenuItem.Text" xml:space="preserve">
     <value>Help Forum</value>
   </data>
   <data name="lupHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="lupHelpToolStripMenuItem.Text" xml:space="preserve">
     <value>Support Wiki</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+    <value>44, 20</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
@@ -2908,7 +2914,7 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="cmDgvMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="cmDgvMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>197, 11</value>
   </metadata>
   <data name="cmDgvMain.Size" type="System.Drawing.Size, System.Drawing">
@@ -2920,7 +2926,7 @@
   <data name="&gt;&gt;cmDgvMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>121, 54</value>
   </metadata>
   <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2945,7 +2951,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 915</value>
+    <value>0, 852</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>1212, 22</value>
@@ -2968,26 +2974,26 @@
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="importFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="importFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>469, 17</value>
   </metadata>
-  <metadata name="exportFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="exportFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>602, 17</value>
   </metadata>
   <data name="exportFileDialog.Filter" xml:space="preserve">
     <value>Tab Delimited|*.tab</value>
   </data>
-  <metadata name="cmCreateCategoryUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="cmCreateCategoryUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>735, 17</value>
   </metadata>
   <data name="createCategoryUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="createCategoryUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>Create Update</value>
   </data>
   <data name="cmCreateCategoryUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 26</value>
+    <value>125, 26</value>
   </data>
   <data name="&gt;&gt;cmCreateCategoryUpdate.Name" xml:space="preserve">
     <value>cmCreateCategoryUpdate</value>
@@ -3017,7 +3023,7 @@
     <value>3</value>
   </data>
   <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1212, 937</value>
+    <value>1212, 874</value>
   </data>
   <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3037,38 +3043,38 @@
   <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="menuStrip" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="splitContainerVert" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="statusStrip" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <metadata name="bgwComputerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwComputerList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>918, 17</value>
   </metadata>
-  <metadata name="bgwUpdateList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwUpdateList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1150, 17</value>
   </metadata>
-  <metadata name="bgwServers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwServers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1045, 19</value>
   </metadata>
-  <metadata name="bgwUpdateNodes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwUpdateNodes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>69, 10</value>
   </metadata>
-  <metadata name="bgwResign.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwResign.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1190, 53</value>
   </metadata>
-  <metadata name="bgwUpdateReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwUpdateReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1035, 94</value>
   </metadata>
-  <metadata name="bgwComputerReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwComputerReport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1011, 58</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>153</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1212, 937</value>
+    <value>1212, 874</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

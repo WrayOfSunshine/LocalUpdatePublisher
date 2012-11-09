@@ -77,7 +77,7 @@ Partial Public Class PrerequisiteUpdatesForm
                 Try
                     tmpTitle = ConnectionManager.CurrentServer.GetUpdate(New UpdateRevisionId(tmpUpdateGuid)).Title
                 Catch
-                    tmpTitle = globalRM.GetString("unknown")
+                    tmpTitle = Globals.globalRM.GetString("unknown")
                 End Try
 
                 dgvUpdates.Rows(tmpRow).Cells("Title").Value = tmpTitle

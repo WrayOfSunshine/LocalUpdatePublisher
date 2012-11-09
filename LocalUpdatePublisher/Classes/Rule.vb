@@ -12,38 +12,44 @@ Option Strict On
 ' Time: 8:27 PM
 
 Public Class Rule
-	Private _name As String
-	Private _xml As String
-	
-	Sub New()
-		'Set defaults.
-		_name = ""
-		_xml = ""
-	End Sub
-	
-	Sub New(name as String, xml As String)
-		'Set defaults.
-		_name = name
-		_xml = xml
-	End Sub
-	
-	' Property Rule Name.
-	Public Property Name() As String
-		Get
-			Return _name
-		End Get
-		Set
-			_name = value
-		End Set
-	End Property
-	
-	' Property Xml.
-	Public Property Xml() As String
-		Get
-			Return _xml
-		End Get
-		Set
-			_xml = value
-		End Set
-	End Property
+    Private m_name As String
+    Private m_xml As String
+
+    Sub New()
+        'Set defaults.
+        m_name = ""
+        m_xml = ""
+    End Sub
+
+    Sub New(name As String, xml As String)
+        'Set defaults.
+        m_name = name
+        m_xml = xml
+    End Sub
+
+    ''' <summary>
+    ''' Rule name.
+    ''' </summary>
+    ''' <value>String</value>
+    Public Property Name() As String
+        Get
+            Return m_name
+        End Get
+        Set(value As String)
+            m_name = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' XML
+    ''' </summary>
+    ''' <value>String</value>
+    Public Property Xml() As String
+        Get
+            Return m_xml
+        End Get
+        Set(value As String)
+            m_xml = value
+        End Set
+    End Property
 End Class

@@ -239,26 +239,26 @@ Partial Class CertificateInfoForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private lblSize As System.Windows.Forms.Label
-	Private txtSize As System.Windows.Forms.TextBox
-	Private tlpButtonsLeft As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private txtCertInfo As System.Windows.Forms.TextBox
-	Private btnExportImportCert As System.Windows.Forms.Button
-	Private openFileDialog As System.Windows.Forms.OpenFileDialog
-	Private saveFileDialog As System.Windows.Forms.SaveFileDialog
-	Private btnCreateCert As System.Windows.Forms.Button
-	Private txtHash As System.Windows.Forms.TextBox
-	Private btnOK As System.Windows.Forms.Button
-	Private txtSerial As System.Windows.Forms.TextBox
-	Private lblTo As System.Windows.Forms.Label
-	Private txtIssuer As System.Windows.Forms.TextBox
-	Private txtStartDate As System.Windows.Forms.TextBox
-	Private txtEndDate As System.Windows.Forms.TextBox
-	Private txtSubject As System.Windows.Forms.TextBox
-	Private lblHash As System.Windows.Forms.Label
-	Private lblSerial As System.Windows.Forms.Label
-	Private lblEffectiveDates As System.Windows.Forms.Label
-	Private lblIssuer As System.Windows.Forms.Label
-	Private lblSubject As System.Windows.Forms.Label
+    Private WithEvents lblSize As System.Windows.Forms.Label
+    Private WithEvents txtSize As System.Windows.Forms.TextBox
+    Private WithEvents tlpButtonsLeft As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents txtCertInfo As System.Windows.Forms.TextBox
+    Private WithEvents btnExportImportCert As System.Windows.Forms.Button
+    Private WithEvents openFileDialog As System.Windows.Forms.OpenFileDialog
+    Private WithEvents saveFileDialog As System.Windows.Forms.SaveFileDialog
+    Private WithEvents btnCreateCert As System.Windows.Forms.Button
+    Private WithEvents txtHash As System.Windows.Forms.TextBox
+    Private WithEvents btnOK As System.Windows.Forms.Button
+    Private WithEvents txtSerial As System.Windows.Forms.TextBox
+    Private WithEvents lblTo As System.Windows.Forms.Label
+    Private WithEvents txtIssuer As System.Windows.Forms.TextBox
+    Private WithEvents txtStartDate As System.Windows.Forms.TextBox
+    Private WithEvents txtEndDate As System.Windows.Forms.TextBox
+    Private WithEvents txtSubject As System.Windows.Forms.TextBox
+    Private WithEvents lblHash As System.Windows.Forms.Label
+    Private WithEvents lblSerial As System.Windows.Forms.Label
+    Private WithEvents lblEffectiveDates As System.Windows.Forms.Label
+    Private WithEvents lblIssuer As System.Windows.Forms.Label
+    Private WithEvents lblSubject As System.Windows.Forms.Label
 End Class

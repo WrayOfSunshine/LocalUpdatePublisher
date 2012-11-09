@@ -118,11 +118,11 @@ Partial Class ImportCatalogForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private Metadata As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private btnImport As System.Windows.Forms.Button
-	Private Title As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private dgvUpdates As System.Windows.Forms.DataGridView
-	Private Include As System.Windows.Forms.DataGridViewCheckBoxColumn
-	Private btnCancel As System.Windows.Forms.Button
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents Metadata As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents btnImport As System.Windows.Forms.Button
+    Private WithEvents Title As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents dgvUpdates As System.Windows.Forms.DataGridView
+    Private WithEvents Include As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Private WithEvents btnCancel As System.Windows.Forms.Button
 End Class

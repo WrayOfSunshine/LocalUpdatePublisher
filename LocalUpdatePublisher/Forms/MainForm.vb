@@ -76,7 +76,7 @@ Partial Public Class MainForm
         Me.InitializeComponent()
 
         'Populate the dropdowns
-        m_updateStatus = New String() {globalRM.GetString("failed_or_needed"), globalRM.GetString("installed_not_applicable_no_status"), globalRM.GetString("failed"), globalRM.GetString("needed"), globalRM.GetString("installed_not_applicable"), globalRM.GetString("no_status"), globalRM.GetString("any")}
+        m_updateStatus = New String() {Globals.globalRM.GetString("failed_or_needed"), Globals.globalRM.GetString("installed_not_applicable_no_status"), Globals.globalRM.GetString("failed"), Globals.globalRM.GetString("needed"), Globals.globalRM.GetString("installed_not_applicable"), Globals.globalRM.GetString("no_status"), Globals.globalRM.GetString("any")}
         Me.cboUpdateStatus.Items.AddRange(m_updateStatus)
         Me.cboComputerStatus.Items.AddRange(m_updateStatus)
 
@@ -97,8 +97,8 @@ Partial Public Class MainForm
         Me.scHeader.Panel1Collapsed = True
 
         'Load settings.
-        Me.chkApprovedOnly.Checked = appSettings.ApprovedUpdatesOnly
-        Me.chkInheritApprovals.Checked = appSettings.InheritApprovals
+        Me.chkApprovedOnly.Checked = Globals.appSettings.ApprovedUpdatesOnly
+        Me.chkInheritApprovals.Checked = Globals.appSettings.InheritApprovals
         Me.chkInheritApprovals.Enabled = Me.chkApprovedOnly.Checked
 
     End Sub
@@ -109,7 +109,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub MainFormActivated(sender As Object, e As EventArgs)
+    Private Sub MainFormActivated(sender As Object, e As EventArgs) Handles MyBase.Activated
         Call SetToolStrip()
     End Sub
 
@@ -119,8 +119,8 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub MainFormLoad(sender As Object, e As EventArgs)
-        toolStripStatusLabel.Text = globalRM.GetString("status_loading_form")
+    Private Sub MainFormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_form")
         Me.Update()
         m_noEvents = True
         Call LoadMainForm()
@@ -135,7 +135,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub MainFormFormClosing(sender As Object, e As FormClosingEventArgs)
+    Sub MainFormFormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         'Save the current DGV states.
         If Not treeView.SelectedNode Is Nothing AndAlso _
             Not treeView.SelectedNode.Tag Is Nothing Then
@@ -144,11 +144,11 @@ Partial Public Class MainForm
 
         'Save the currently selected node's path
         If Not treeView.SelectedNode Is Nothing Then
-            appSettings.TreePath = treeView.SelectedNode.FullPath
+            Globals.appSettings.TreePath = treeView.SelectedNode.FullPath
         End If
 
         'Save the settings to file
-        Settings.SaveSettingsToFile(appSettings)
+        Settings.SaveSettingsToFile(Globals.appSettings)
     End Sub
 
     ''' <summary>
@@ -156,16 +156,16 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub SplitContainerSplitterMoved(sender As Object, e As SplitterEventArgs)
+    Private Sub SplitContainerSplitterMoved(sender As Object, e As SplitterEventArgs) Handles splitContainerHorz.SplitterMoved
         'Save the settings to the settings object depending on the selected node type.
         If Not m_noEvents AndAlso _
             Not treeView.SelectedNode Is Nothing AndAlso _
             Not treeView.SelectedNode.Tag Is Nothing Then
 
             If TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then 'Computer Note
-                appSettings.ComputerSplitter = Me.splitContainerHorz.SplitterDistance
+                Globals.appSettings.ComputerSplitter = Me.splitContainerHorz.SplitterDistance
             ElseIf TypeOf treeView.SelectedNode.Tag Is IUpdateCategory Then 'Update Node
-                appSettings.UpdateSplitter = Me.splitContainerHorz.SplitterDistance
+                Globals.appSettings.UpdateSplitter = Me.splitContainerHorz.SplitterDistance
             End If
 
             'This shouldn't be necessary but fixes a bug with the background when expanding a panel.
@@ -181,8 +181,8 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub SplitContainerVertSplitterMoved(sender As Object, e As SplitterEventArgs)
-        appSettings.TreeSplitter = splitContainerVert.SplitterDistance
+    Sub SplitContainerVertSplitterMoved(sender As Object, e As SplitterEventArgs) Handles splitContainerVert.SplitterMoved
+        Globals.appSettings.TreeSplitter = splitContainerVert.SplitterDistance
     End Sub
 
     ''' <summary>
@@ -190,9 +190,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ChkApprovedOnlyCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkApprovedOnlyCheckedChanged(sender As Object, e As EventArgs) Handles chkApprovedOnly.CheckedChanged
         'Save the change.
-        appSettings.ApprovedUpdatesOnly = Me.chkApprovedOnly.Checked
+        Globals.appSettings.ApprovedUpdatesOnly = Me.chkApprovedOnly.Checked
 
         'Enable/Disable the inherit checkbox appropriately.
         Me.chkInheritApprovals.Enabled = Me.chkApprovedOnly.Checked
@@ -213,9 +213,9 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub ChkInheritApprovalsCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkInheritApprovalsCheckedChanged(sender As Object, e As EventArgs) Handles chkInheritApprovals.CheckedChanged
         'Save the change.
-        appSettings.InheritApprovals = Me.chkInheritApprovals.Checked
+        Globals.appSettings.InheritApprovals = Me.chkInheritApprovals.Checked
 
         'Refresh the computer list.
         If m_noEvents = False Then
@@ -233,13 +233,13 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub CboTargetGroupSelectedIndexChanged(sender As Object, e As EventArgs)
+    Sub CboTargetGroupSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTargetGroup.SelectedIndexChanged
         If m_noEvents = False Then
             m_noEvents = True
-            toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
+            toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
             Me.Update()
-            If Not Me._dgvMain.CurrentRow Is Nothing Then
-                Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+            If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+                Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
             End If
             toolStripStatusLabel.Text = ""
             m_noEvents = False
@@ -251,7 +251,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub CboComputerStatusSelectedIndexChanged(sender As Object, e As EventArgs)
+    Sub CboComputerStatusSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboComputerStatus.SelectedIndexChanged
         If m_noEvents = False Then
             Cursor = Cursors.WaitCursor 'Set wait cursor.
             m_noEvents = True
@@ -266,24 +266,24 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub cboUpdateStatusSelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cboUpdateStatusSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboUpdateStatus.SelectedIndexChanged
         If m_noEvents = False Then
             m_noEvents = True
             If Not Me.treeView.SelectedNode Is Nothing AndAlso _
                 Not Me.treeView.SelectedNode.Tag Is Nothing AndAlso _
                 Me.cboUpdateStatus.SelectedIndex <> -1 AndAlso _
-                Not Me._dgvMain.CurrentRow Is Nothing Then
+                Not Me.m_dgvMain.CurrentRow Is Nothing Then
                 'If type is a ComputerTargetGroup load the computers in the DGV.
                 If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-                    toolStripStatusLabel.Text = globalRM.GetString("status_loading_computer_report")
+                    toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_computer_report")
                     Me.Update()
-                    Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
+                    Call LoadComputerReport(Me.m_dgvMain.CurrentRow.Index, True)
 
                     'If type is an update node.
                 ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-                    toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
+                    toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
                     Me.Update()
-                    Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+                    Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
                 End If
                 toolStripStatusLabel.Text = ""
             End If
@@ -296,17 +296,17 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BtnComputerRefreshReportClick(sender As Object, e As EventArgs)
+    Sub BtnComputerRefreshReportClick(sender As Object, e As EventArgs) Handles btnComputerRefreshReport.Click
         Cursor = Cursors.WaitCursor 'Set wait cursor.
 
         'Save the state.
         SaveDgvState(dgvComputerReport)
 
         m_noEvents = True
-        toolStripStatusLabel.Text = globalRM.GetString("status_loading_computer_report")
+        toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_computer_report")
         Me.Update()
-        If Not Me._dgvMain.CurrentRow Is Nothing Then
-            Call LoadComputerReport(Me._dgvMain.CurrentRow.Index, True)
+        If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            Call LoadComputerReport(Me.m_dgvMain.CurrentRow.Index, True)
         End If
         toolStripStatusLabel.Text = ""
         m_noEvents = False
@@ -319,18 +319,18 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BtnUpdateRefreshReportClick(sender As Object, e As EventArgs)
+    Sub BtnUpdateRefreshReportClick(sender As Object, e As EventArgs) Handles btnUpdateRefreshReport.Click
         Cursor = Cursors.WaitCursor 'Set wait cursor.
 
         'Save the state.
         SaveDgvState(dgvUpdateReport)
 
         m_noEvents = True
-        toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_report")
+        toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
         Me.Update()
 
         If Not Me.DgvMain.CurrentRow Is Nothing Then
-            Call LoadUpdateReport(Me._dgvMain.CurrentRow.Index, True)
+            Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
         End If
 
         toolStripStatusLabel.Text = ""
@@ -343,11 +343,11 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BtnComputerListRefreshClick(sender As Object, e As EventArgs)
+    Sub BtnComputerListRefreshClick(sender As Object, e As EventArgs) Handles btnComputerListRefresh.Click
         Cursor = Cursors.WaitCursor 'Set wait cursor.
 
         'Save the state.
-        SaveDgvState(_dgvMain)
+        SaveDgvState(m_dgvMain)
 
         m_noEvents = True
         Call RefreshComputerList(True)
@@ -360,9 +360,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub LblPrerequisitesClick(sender As Object, e As EventArgs)
-        If Not Me._dgvMain.CurrentRow Is Nothing Then
-            PrerequisiteUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+    Sub LblPrerequisitesClick(sender As Object, e As EventArgs) Handles lblPrerequisites.Click
+        If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            PrerequisiteUpdatesForm.ShowDialog(DirectCast(Me.m_dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
         End If
     End Sub
 
@@ -371,9 +371,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub LblSupersedesClick(sender As Object, e As EventArgs)
-        If Not Me._dgvMain.CurrentRow Is Nothing Then
-            SupersededUpdatesForm.ShowDialog(DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
+    Sub LblSupersedesClick(sender As Object, e As EventArgs) Handles lblSupersedes.Click
+        If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            SupersededUpdatesForm.ShowDialog(DirectCast(Me.m_dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate))
         End If
     End Sub
 
@@ -382,7 +382,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ToolStripStatusLabelLinkClick(sender As Object, e As EventArgs)
+    Sub ToolStripStatusLabelLinkClick(sender As Object, e As EventArgs) Handles toolStripStatusLabelLink.Click
         'Launch home page
         System.Diagnostics.Process.Start("http://www.localupdatepublisher.com")
     End Sub
@@ -395,7 +395,7 @@ Partial Public Class MainForm
     ''' </summary>
     Sub LoadMainForm()
         Me.Cursor = Cursors.WaitCursor 'Set wait cursor.
-        splitContainerVert.SplitterDistance = appSettings.TreeSplitter
+        splitContainerVert.SplitterDistance = Globals.appSettings.TreeSplitter
 
         Call ClearForm()
 
@@ -405,7 +405,7 @@ Partial Public Class MainForm
         End If
 
         'Add to the base nodes.
-        m_rootNode = Me.treeView.Nodes.Add("root", globalRM.GetString("update_services"))
+        m_rootNode = Me.treeView.Nodes.Add("root", Globals.globalRM.GetString("update_services"))
         'Load tree with server nodes.
         For Each server As UpdateServer In ConnectionManager.ServerCollection
             Dim tmpServerName As String
@@ -430,15 +430,15 @@ Partial Public Class MainForm
         ' The call to load the saved node is ran asyncronously in order
         ' to wait for the tree nodes to be fully populated before
         ' making the call.
-        If appSettings.RememberTreePath = False Or _
-            String.IsNullOrEmpty(appSettings.TreePath) Or _
-            appSettings.TreePath.Trim = m_rootNode.Text.Trim Then
+        If Globals.appSettings.RememberTreePath = False Or _
+            String.IsNullOrEmpty(Globals.appSettings.TreePath) Or _
+            Globals.appSettings.TreePath.Trim = m_rootNode.Text.Trim Then
             m_rootNode.Expand()
         Else
             m_rootNode.Expand()
             Me.Refresh()
             'treeView.BeginUpdate
-            Call SelectNode(m_rootNode, appSettings.TreePath)
+            Call SelectNode(m_rootNode, Globals.appSettings.TreePath)
             'treeView.EndUpdate
         End If
 
@@ -523,7 +523,7 @@ Partial Public Class MainForm
         Refresh()
 
         m_dgvMainLoading = True
-        _dgvMain.DataSource = Nothing
+        m_dgvMain.DataSource = Nothing
         m_dgvMainLoading = False
 
         m_noEvents = False
@@ -607,24 +607,24 @@ Partial Public Class MainForm
     ''' </summary>
     Sub CheckBGWThreads()
         If Me.bgwComputerList.IsBusy Then
-            Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_list")
+            Me.toolStripStatusLabel.Text = Globals.globalRM.GetString("refreshing_computer_list")
             Me.Enabled = False
         ElseIf Me.bgwComputerReport.IsBusy Then
-            Me.toolStripStatusLabel.Text = globalRM.GetString("refreshing_computer_report")
+            Me.toolStripStatusLabel.Text = Globals.globalRM.GetString("refreshing_computer_report")
             Me.Enabled = False
         ElseIf Me.bgwServers.IsBusy Then
             Me.Enabled = False
         ElseIf Me.bgwUpdateNodes.IsBusy Then
-            toolStripStatusLabel.Text = globalRM.GetString("status_loading_update_categories")
+            toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_categories")
             Me.Enabled = False
         ElseIf Me.bgwUpdateList.IsBusy Then
-            toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_list")
+            toolStripStatusLabel.Text = Globals.globalRM.GetString("refreshing_update_list")
             Me.Enabled = False
         ElseIf Me.bgwUpdateReport.IsBusy Then
-            toolStripStatusLabel.Text = globalRM.GetString("refreshing_update_report")
+            toolStripStatusLabel.Text = Globals.globalRM.GetString("refreshing_update_report")
             Me.Enabled = False
         ElseIf Me.bgwResign.IsBusy Then
-            toolStripStatusLabel.Text = globalRM.GetString("resigning_updates")
+            toolStripStatusLabel.Text = Globals.globalRM.GetString("resigning_updates")
             Me.Enabled = True
         Else
             toolStripStatusLabel.Text = Nothing
@@ -640,13 +640,13 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ImportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ImportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs) Handles importCatalogToolStripMenuItem.Click
 
         If ConnectionManager.Connected Then
 
             ImportCatalogForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
             'Select a file and open the import catalog dialog.
-            importFileDialog.Filter = globalRM.GetString("file_filter_cab") & "|" & globalRM.GetString("file_filter_xml")
+            importFileDialog.Filter = Globals.globalRM.GetString("file_filter_cab") & "|" & Globals.globalRM.GetString("file_filter_xml")
             If Not importFileDialog.ShowDialog = DialogResult.Cancel Then
                 My.Forms.ImportCatalogForm.ShowDialog(importFileDialog.FileName)
                 Call LoadUpdateNodes()
@@ -654,7 +654,7 @@ Partial Public Class MainForm
             End If
 
         Else
-            MsgBox(globalRM.GetString("error_connection_none"))
+            MsgBox(Globals.globalRM.GetString("error_connection_none"))
         End If
     End Sub
 
@@ -663,14 +663,14 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ExportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ExportCatalogToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exportCatalogToolStripMenuItem.Click
         If ConnectionManager.Connected Then
 
             ExportCatalogForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
             My.Forms.ExportCatalogForm.ShowDialog()
 
         Else
-            MsgBox(globalRM.GetString("error_connection_none"))
+            MsgBox(Globals.globalRM.GetString("error_connection_none"))
         End If
 
     End Sub
@@ -680,7 +680,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ExitToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Private Sub ExitToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exitToolStripMenuItem.Click
         Me.Close()
     End Sub
 
@@ -689,7 +689,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ExportListToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ExportListToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exportListToolStripMenuItem.Click
         'Make sure a computer tree node it selected
         If Not treeView.SelectedNode Is Nothing AndAlso _
             Not treeView.SelectedNode.Tag Is Nothing AndAlso _
@@ -697,7 +697,7 @@ Partial Public Class MainForm
 
             'Get file to save data to.
             If Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
-                ExportData(DirectCast(_dgvMain.DataSource, DataTable), exportFileDialog.FileName)
+                DataRoutines.ExportData(DirectCast(m_dgvMain.DataSource, DataTable), exportFileDialog.FileName)
             End If
         End If
     End Sub
@@ -707,7 +707,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub createUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Private Sub createUpdateToolStripMenuItemClick(sender As Object, e As EventArgs) Handles createUpdateToolStripMenuItem.Click
         Dim tmpSDP As SoftwareDistributionPackage
         Dim tmpRevisionId As UpdateRevisionId
 
@@ -723,9 +723,9 @@ Partial Public Class MainForm
             Call SelectNode(Me.m_updateNode, Path.Combine(tmpSDP.VendorName, tmpSDP.ProductNames(0)))
 
             tmpRevisionId = New UpdateRevisionId(tmpSDP.PackageId)
-            For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+            For Each tmpRow As DataGridViewRow In Me.m_dgvMain.Rows
                 If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionId.UpdateId) Then
-                    Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
+                    Me.m_dgvMain.CurrentCell = tmpRow.Cells("Title")
                 End If
             Next
         End If
@@ -738,13 +738,13 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ExportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ExportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exportUpdateToolStripMenuItem.Click
 
-        If Not Me._dgvMain.CurrentRow Is Nothing Then
-            Dim update As IUpdate = DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate)
+        If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            Dim update As IUpdate = DirectCast(Me.m_dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate)
 
             exportFileDialog.Reset()
-            exportFileDialog.Filter = globalRM.GetString("file_filter_cab")
+            exportFileDialog.Filter = Globals.globalRM.GetString("file_filter_cab")
 
             If Not update Is Nothing AndAlso _
                 Not exportFileDialog.ShowDialog = DialogResult.Cancel Then
@@ -772,7 +772,7 @@ Partial Public Class MainForm
                         Dim cabCompressed As CabLib.Compress = New CabLib.Compress
                         cabCompressed.CompressFolder(tmpFolder.ToString, exportFileDialog.FileName, "", True, True, 0)
                     Else
-                        MsgBox(globalRM.GetString("error_export_update_data"))
+                        MsgBox(Globals.globalRM.GetString("error_export_update_data"))
                     End If
 
                     'Delete the temporary folder.
@@ -788,9 +788,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ImportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ImportUpdateToolStripMenuItemClick(sender As Object, e As EventArgs) Handles importUpdateToolStripMenuItem.Click
         importFileDialog.Reset()
-        importFileDialog.Filter = globalRM.GetString("file_filter_cab")
+        importFileDialog.Filter = Globals.globalRM.GetString("file_filter_cab")
 
         'If we're connected and a file was chosen.
         If ConnectionManager.Connected AndAlso _
@@ -811,11 +811,11 @@ Partial Public Class MainForm
     ''' <param name="result"></param>
     Sub PublishingResults(result As Boolean)
         If result Then
-            MsgBox(globalRM.GetString("success_update_imported"))
+            MsgBox(Globals.globalRM.GetString("success_update_imported"))
             Call LoadUpdateNodes()
             Call RefreshUpdateList()
         Else
-            MsgBox(globalRM.GetString("error_update_imported"))
+            MsgBox(Globals.globalRM.GetString("error_update_imported"))
         End If
 
         RemoveHandler AsyncPublisher.Completed, AddressOf Me.PublishingResults
@@ -826,7 +826,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ConnectionSettingsToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Private Sub ConnectionSettingsToolStripMenuItemClick(sender As Object, e As EventArgs) Handles connectionSettingsToolStripMenuItem.Click
 
         'Show connection settings dialog.
         My.Forms.ConnectionSettingsForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
@@ -843,7 +843,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ManageRulesToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ManageRulesToolStripMenuItemClick(sender As Object, e As EventArgs) Handles manageRulesToolStripMenuItem.Click
         My.Forms.SavedRulesForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.SavedRulesForm.ShowDialog(SavedRulesFormUses.Manage)
     End Sub
@@ -853,7 +853,7 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub ImportRulesToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ImportRulesToolStripMenuItemClick(sender As Object, e As EventArgs) Handles importRulesToolStripMenuItem.Click
         My.Forms.SavedRulesForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.SavedRulesForm.ShowDialog(SavedRulesFormUses.Import)
     End Sub
@@ -863,7 +863,7 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub ExportRulesToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ExportRulesToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exportRulesToolStripMenuItem.Click
         My.Forms.SavedRulesForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.SavedRulesForm.ShowDialog(SavedRulesFormUses.Export)
     End Sub
@@ -873,7 +873,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub ExportReportToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub ExportReportToolStripMenuItemClick(sender As Object, e As EventArgs) Handles exportReportToolStripMenuItem.Click
 
         'Make sure we can export the report and that the user has provided a filename.
         If Not cboUpdateStatus.SelectedIndex = -1 AndAlso _
@@ -883,9 +883,9 @@ Partial Public Class MainForm
 
             'Export the data based on the selected node's tag type.
             If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-                ExportData(DirectCast(dgvComputerReport.DataSource, DataTable), exportFileDialog.FileName)
+                DataRoutines.ExportData(DirectCast(dgvComputerReport.DataSource, DataTable), exportFileDialog.FileName)
             ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-                ExportData(DirectCast(dgvUpdateReport.DataSource, DataTable), exportFileDialog.FileName)
+                DataRoutines.ExportData(DirectCast(dgvUpdateReport.DataSource, DataTable), exportFileDialog.FileName)
             End If
         End If
     End Sub
@@ -895,7 +895,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub OptionsToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub OptionsToolStripMenuItemClick(sender As Object, e As EventArgs) Handles settingsToolStripMenuItem.Click
         My.Forms.SettingsForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.SettingsForm.ShowDialog()
     End Sub
@@ -905,7 +905,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub AboutToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Private Sub AboutToolStripMenuItemClick(sender As Object, e As EventArgs) Handles aboutToolStripMenuItem.Click
         My.Forms.AboutForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.AboutForm.Show()
     End Sub
@@ -915,7 +915,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub CertificateInfoToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Private Sub CertificateInfoToolStripMenuItemClick(sender As Object, e As EventArgs) Handles certificateInfoToolStripMenuItem.Click
         'Show certificate info
         My.Forms.CertificateInfoForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
         My.Forms.CertificateInfoForm.ShowDialog()
@@ -926,7 +926,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub LupHelpToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub LupHelpToolStripMenuItemClick(sender As Object, e As EventArgs) Handles lupHelpToolStripMenuItem.Click
         System.Diagnostics.Process.Start("http://sourceforge.net/apps/mediawiki/localupdatepubl")
     End Sub
 
@@ -935,7 +935,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub HelpForumsToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub HelpForumsToolStripMenuItemClick(sender As Object, e As EventArgs) Handles helpForumsToolStripMenuItem.Click
         System.Diagnostics.Process.Start("http://sourceforge.net/projects/localupdatepubl/forums/forum/1076879")
     End Sub
 
@@ -950,14 +950,14 @@ Partial Public Class MainForm
     Private Sub ApproveUpdate_Click(sender As Object, e As EventArgs)
 
         'Make sure a current row is selected.
-        If Me._dgvMain.SelectedRows.Count < 1 Then
-            MsgBox(globalRM.GetString("warning_no_row_selected"))
+        If Me.m_dgvMain.SelectedRows.Count < 1 Then
+            MsgBox(Globals.globalRM.GetString("warning_no_row_selected"))
         Else
             'Display the approval dialog.
             My.Forms.ApprovalForm.Location = New Point(Me.Location.X + 100, Me.Location.Y + 100)
 
             'Get result.
-            If My.Forms.ApprovalForm.ShowDialog(Me._dgvMain.SelectedRows) = DialogResult.OK Then
+            If My.Forms.ApprovalForm.ShowDialog(Me.m_dgvMain.SelectedRows) = DialogResult.OK Then
                 'Refresh the DGV.
                 Call RefreshUpdateList(True)
             End If
@@ -974,14 +974,14 @@ Partial Public Class MainForm
         Dim tmpRevisionID As UpdateRevisionId
 
         'Make sure a current row is selected.
-        If Me._dgvMain.CurrentRow Is Nothing Then
-            MsgBox(globalRM.GetString("warning_no_row_selected"))
-        ElseIf Me._dgvMain.SelectedRows.Count > 1 Then
-            MsgBox(globalRM.GetString("warning_revise_packages"))
+        If Me.m_dgvMain.CurrentRow Is Nothing Then
+            MsgBox(Globals.globalRM.GetString("warning_no_row_selected"))
+        ElseIf Me.m_dgvMain.SelectedRows.Count > 1 Then
+            MsgBox(Globals.globalRM.GetString("warning_revise_packages"))
         Else
             'Make Sure the current row has an UpdateID.
-            If TypeOf Me._dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
-                tmpRevisionID = DirectCast(Me._dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId)
+            If TypeOf Me.m_dgvMain.CurrentRow.Cells.Item("Id").Value Is UpdateRevisionId Then
+                tmpRevisionID = DirectCast(Me.m_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId)
 
                 'Export the SDP to a temporary file.
                 Dim packageFile As String = ConnectionManager.ExportSDP(tmpRevisionID)
@@ -1000,7 +1000,7 @@ Partial Public Class MainForm
                     End If
                 End If
             Else
-                MsgBox(globalRM.GetString("error_row_invalid_update_id"))
+                MsgBox(Globals.globalRM.GetString("error_row_invalid_update_id"))
             End If
         End If
     End Sub
@@ -1015,10 +1015,10 @@ Partial Public Class MainForm
 
 
         'Prompt user for confirmation.
-        If Me._dgvMain.SelectedRows.Count > 1 Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_decline_packages"), Me._dgvMain.SelectedRows.Count), vbYesNo)
-        ElseIf Not Me._dgvMain.CurrentRow Is Nothing Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_decline_package"), DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)), _
+        If Me.m_dgvMain.SelectedRows.Count > 1 Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_decline_packages"), Me.m_dgvMain.SelectedRows.Count), vbYesNo)
+        ElseIf Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_decline_package"), DirectCast(Me.m_dgvMain.CurrentRow.Cells("Title").Value, String)), _
                 vbYesNo)
         End If
 
@@ -1026,7 +1026,7 @@ Partial Public Class MainForm
         If response = MsgBoxResult.Yes Then
             Me.Cursor = Cursors.WaitCursor
             'Loop through and delete rows that have an Id listed.
-            For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
+            For Each tmpRow As DataGridViewRow In Me.m_dgvMain.SelectedRows
                 If Not tmpRow.Cells("IUpdate").Value Is Nothing Then
                     'Decline update.
                     DirectCast(tmpRow.Cells("IUpdate").Value, IUpdate).Decline()
@@ -1051,10 +1051,10 @@ Partial Public Class MainForm
         Dim tmpUpdate As IUpdate = Nothing
 
         'Prompt user for confirmation.
-        If Me._dgvMain.SelectedRows.Count > 1 Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_remove_packages"), Me._dgvMain.SelectedRows.Count), vbYesNo)
-        ElseIf Not Me._dgvMain.CurrentRow Is Nothing Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_remove_package"), DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)), _
+        If Me.m_dgvMain.SelectedRows.Count > 1 Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_remove_packages"), Me.m_dgvMain.SelectedRows.Count), vbYesNo)
+        ElseIf Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_remove_package"), DirectCast(Me.m_dgvMain.CurrentRow.Cells("Title").Value, String)), _
                 vbYesNo)
         End If
 
@@ -1064,14 +1064,14 @@ Partial Public Class MainForm
             Me.Cursor = Cursors.WaitCursor
 
             'Loop through and delete rows that have an Id listed.
-            For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
+            For Each tmpRow As DataGridViewRow In Me.m_dgvMain.SelectedRows
 
                 If Not tmpRow.Cells("IUpdate").Value Is Nothing Then
                     'Get update.
                     tmpUpdate = DirectCast(tmpRow.Cells("IUpdate").Value, IUpdate)
 
                     'Set status.
-                    Me.toolStripStatusLabel.Text = String.Format(globalRM.GetString("removing"), tmpUpdate.Title)
+                    Me.toolStripStatusLabel.Text = String.Format(Globals.globalRM.GetString("removing"), tmpUpdate.Title)
 
                     'Remove the approvals
                     For Each approval As IUpdateApproval In tmpUpdate.GetUpdateApprovals
@@ -1082,11 +1082,11 @@ Partial Public Class MainForm
                         'Remove the package.
                         ConnectionManager.ParentServer.DeleteUpdate(tmpUpdate.Id.UpdateId)
                     Catch x As WsusObjectNotFoundException
-                        MsgBox(globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
+                        MsgBox(Globals.globalRM.GetString("exception_wsus_object_not_found") & ": " & x.Message)
                     Catch x As InvalidOperationException
-                        MsgBox(globalRM.GetString("exception_invalid_operation") & ": " & x.Message)
+                        MsgBox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & x.Message)
                     Catch x As Exception
-                        MsgBox(globalRM.GetString("exception") & ": " & x.Message)
+                        MsgBox(Globals.globalRM.GetString("exception") & ": " & x.Message)
                     End Try
 
                     'Delete the package's folder from the ~\WSUS\UpdateServicesPackages folder.
@@ -1100,7 +1100,7 @@ Partial Public Class MainForm
                             Directory.Delete(tmpDirectory, True)
                         End If
                     Catch
-                        MsgBox(globalRM.GetString("warning_remove_package_data") & ": " & vbNewLine & tmpUpdate.Id.UpdateId.ToString)
+                        MsgBox(Globals.globalRM.GetString("warning_remove_package_data") & ": " & vbNewLine & tmpUpdate.Id.UpdateId.ToString)
                     End Try
 
                     'Clear the status
@@ -1133,10 +1133,10 @@ Partial Public Class MainForm
         Dim allExpired As Boolean = True
 
         'Prompt user for confirmation.
-        If Me._dgvMain.SelectedRows.Count > 1 Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_expire_packages"), Me._dgvMain.SelectedRows.Count), vbYesNo)
-        ElseIf Not Me._dgvMain.CurrentRow Is Nothing Then
-            response = MsgBox(String.Format(globalRM.GetString("prompt_expire_package"), DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)), _
+        If Me.m_dgvMain.SelectedRows.Count > 1 Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_expire_packages"), Me.m_dgvMain.SelectedRows.Count), vbYesNo)
+        ElseIf Not Me.m_dgvMain.CurrentRow Is Nothing Then
+            response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_expire_package"), DirectCast(Me.m_dgvMain.CurrentRow.Cells("Title").Value, String)), _
                 vbYesNo)
         End If
 
@@ -1144,7 +1144,7 @@ Partial Public Class MainForm
         If response = MsgBoxResult.Yes Then
             Me.Cursor = Cursors.WaitCursor
             'Loop through selected rows.
-            For Each tmpRow As DataGridViewRow In Me._dgvMain.SelectedRows
+            For Each tmpRow As DataGridViewRow In Me.m_dgvMain.SelectedRows
 
                 'Make Sure the current row has an UpdateID.
                 If TypeOf tmpRow.Cells.Item("Id").Value Is UpdateRevisionId Then
@@ -1154,7 +1154,7 @@ Partial Public Class MainForm
                         ConnectionManager.ParentServer.ExpirePackage(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId))
                     End If
                 Else
-                    MsgBox(globalRM.GetString("error_row_invalid_update_id"))
+                    MsgBox(Globals.globalRM.GetString("error_row_invalid_update_id"))
                 End If
             Next
 
@@ -1164,9 +1164,9 @@ Partial Public Class MainForm
             Me.Cursor = Cursors.Arrow
 
             If allExpired Then
-                MsgBox(globalRM.GetString("success_packages_expired"))
+                MsgBox(Globals.globalRM.GetString("success_packages_expired"))
             Else
-                MsgBox(globalRM.GetString("error_packages_expired"))
+                MsgBox(Globals.globalRM.GetString("error_packages_expired"))
             End If
         End If
 
@@ -1181,25 +1181,25 @@ Partial Public Class MainForm
     Private Sub ResignUpdate_Click(sender As Object, e As EventArgs)
 
         'Make sure a current row is selected.
-        If Me._dgvMain.SelectedRows.Count < 1 Then
-            MsgBox(globalRM.GetString("warning_no_row_selected"))
+        If Me.m_dgvMain.SelectedRows.Count < 1 Then
+            MsgBox(Globals.globalRM.GetString("warning_no_row_selected"))
         ElseIf Me.bgwResign.IsBusy Then
-            MsgBox(globalRM.GetString("resigning_in_progress"))
+            MsgBox(Globals.globalRM.GetString("resigning_in_progress"))
         Else
             Dim response As MsgBoxResult
 
             'Prompt user for confirmation.
-            If Me._dgvMain.SelectedRows.Count > 1 Then
-                response = MsgBox(String.Format(globalRM.GetString("prompt_resign_packages"), Me._dgvMain.SelectedRows.Count), vbYesNo)
-            ElseIf Not Me._dgvMain.CurrentRow Is Nothing Then
-                response = MsgBox(String.Format(globalRM.GetString("prompt_resign_package"), DirectCast(Me._dgvMain.CurrentRow.Cells("Title").Value, String)), _
+            If Me.m_dgvMain.SelectedRows.Count > 1 Then
+                response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_resign_packages"), Me.m_dgvMain.SelectedRows.Count), vbYesNo)
+            ElseIf Not Me.m_dgvMain.CurrentRow Is Nothing Then
+                response = MsgBox(String.Format(Globals.globalRM.GetString("prompt_resign_package"), DirectCast(Me.m_dgvMain.CurrentRow.Cells("Title").Value, String)), _
                     vbYesNo)
             End If
 
             'If user really wants to remove the updates then do so asynchronously.
             If response = MsgBoxResult.Yes Then
 
-                Me.bgwResign.RunWorkerAsync(Me._dgvMain.SelectedRows)
+                Me.bgwResign.RunWorkerAsync(Me.m_dgvMain.SelectedRows)
 
             End If
         End If
@@ -1209,7 +1209,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwResignDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwResignDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwResign.DoWork
         Dim packageFile As String
         Dim packageCount As Integer = 0
         Dim tmpRevisionID As UpdateRevisionId
@@ -1234,7 +1234,7 @@ Partial Public Class MainForm
                 'Check to see if this is a metadata-only update.  There is no good way to do this so the current method is to
                 ' see if any binary data exists in \\%WSUSSERVER%\UpdateServicesPackages.
                 If Not Directory.Exists("\\" & ConnectionManager.ParentServer.Name & "\UpdateServicesPackages\" & tmpRevisionID.UpdateId.ToString) Then
-                    MsgBox(String.Format(globalRM.GetString("warning_resign_metadata"), DirectCast(tmpRow.Cells.Item("Title").Value, String)))
+                    MsgBox(String.Format(Globals.globalRM.GetString("warning_resign_metadata"), DirectCast(tmpRow.Cells.Item("Title").Value, String)))
                     allResigned = False
                 Else
                     Try
@@ -1251,21 +1251,21 @@ Partial Public Class MainForm
                         My.Computer.FileSystem.DeleteFile(packageFile)
 
                     Catch x As UnauthorizedAccessException
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     Catch x As ArgumentNullException
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     Catch x As FileNotFoundException
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception_file_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception_file_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     Catch x As InvalidDataException
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception_invalid_data") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception_invalid_data") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     Catch x As InvalidOperationException
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     Catch x As Exception
-                        MsgBox(globalRM.GetString("error_package_resigned") & vbNewLine & globalRM.GetString("exception") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                        MsgBox(Globals.globalRM.GetString("error_package_resigned") & vbNewLine & Globals.globalRM.GetString("exception") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
                     End Try
                 End If
             Else
-                MsgBox(globalRM.GetString("error_row_invalid_update_id"))
+                MsgBox(Globals.globalRM.GetString("error_row_invalid_update_id"))
             End If
         Next
 
@@ -1276,9 +1276,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwResignProgressChanged(sender As Object, e As ProgressChangedEventArgs)
+    Sub BgwResignProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles bgwResign.ProgressChanged
         If TypeOf e.UserState Is String Then
-            Me.toolStripStatusLabel.Text = String.Format(globalRM.GetString("resigning"), DirectCast(e.UserState, String)) & " " & e.ProgressPercentage & "%"
+            Me.toolStripStatusLabel.Text = String.Format(Globals.globalRM.GetString("resigning"), DirectCast(e.UserState, String)) & " " & e.ProgressPercentage & "%"
         Else
             Me.toolStripStatusLabel.Text = String.Empty
         End If
@@ -1288,12 +1288,12 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwResignRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwResignRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwResign.RunWorkerCompleted
 
         If TypeOf e.Result Is Boolean AndAlso DirectCast(e.Result, Boolean) Then
-            MsgBox(globalRM.GetString("success_packages_resigned"))
+            MsgBox(Globals.globalRM.GetString("success_packages_resigned"))
         Else
-            MsgBox(globalRM.GetString("error_packages_resigned"))
+            MsgBox(Globals.globalRM.GetString("error_packages_resigned"))
         End If
 
         Call CheckBGWThreads()
@@ -1351,23 +1351,23 @@ Partial Public Class MainForm
             ' this server is not a replica server.
 
             'Set the list based on the update source.
-            If Not Me._dgvMain.Rows(rowIndex) Is Nothing _
-                AndAlso Not Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is Nothing _
-                AndAlso TypeOf Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is IUpdate Then
+            If Not Me.m_dgvMain.Rows(rowIndex) Is Nothing _
+                AndAlso Not Me.m_dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is Nothing _
+                AndAlso TypeOf Me.m_dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value Is IUpdate Then
 
-                If DirectCast(Me._dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value, IUpdate).UpdateSource = UpdateSource.Other Then
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("revise"), Nothing, New EventHandler(AddressOf ReviseUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("revise"), Nothing, New EventHandler(AddressOf ReviseUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("resign"), Nothing, New EventHandler(AddressOf ResignUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("resign"), Nothing, New EventHandler(AddressOf ResignUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("remove"), Nothing, New EventHandler(AddressOf RemoveUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("remove"), Nothing, New EventHandler(AddressOf RemoveUpdate_Click))
+                If DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells.Item("IUpdate").Value, IUpdate).UpdateSource = UpdateSource.Other Then
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("revise"), Nothing, New EventHandler(AddressOf ReviseUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("revise"), Nothing, New EventHandler(AddressOf ReviseUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("resign"), Nothing, New EventHandler(AddressOf ResignUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("resign"), Nothing, New EventHandler(AddressOf ResignUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("remove"), Nothing, New EventHandler(AddressOf RemoveUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("remove"), Nothing, New EventHandler(AddressOf RemoveUpdate_Click))
                     '			Future Functionality:
                     '			Me.cmDgvMain.Items.Add(New ToolStripSeparator)
                     '			Me.updateToolStripMenuItem.DropDownItems.Add(New ToolStripSeparator)
@@ -1378,12 +1378,12 @@ Partial Public Class MainForm
                     '			Me.cmDgvMain.Items.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
                     '			Me.updateToolStripMenuItem.DropDownItems.Add("Status Report", Nothing , New EventHandler(AddressOf StatusReportUpdate_Click))
                 Else
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
-                    Me.cmDgvMain.Items.Add(globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
-                    Me.updateToolStripMenuItem.DropDownItems.Add(globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("approve"), Nothing, New EventHandler(AddressOf ApproveUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("expire"), Nothing, New EventHandler(AddressOf ExpireUpdate_Click))
+                    Me.cmDgvMain.Items.Add(Globals.globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
+                    Me.updateToolStripMenuItem.DropDownItems.Add(Globals.globalRM.GetString("decline"), Nothing, New EventHandler(AddressOf DeclineUpdate_Click))
 
                 End If
             End If
@@ -1405,7 +1405,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub createCategoryUpdateToolStripMenuItemClick(sender As Object, e As EventArgs)
+    Sub createCategoryUpdateToolStripMenuItemClick(sender As Object, e As EventArgs) Handles createCategoryUpdateToolStripMenuItem.Click
 
         'Make sure the selected node has a tag and that the tag is an update category.
         If Not treeView.SelectedNode.Tag Is Nothing AndAlso TypeOf (treeView.SelectedNode.Tag) Is IUpdateCategory Then
@@ -1437,9 +1437,9 @@ Partial Public Class MainForm
                 Call SelectNode(Me.m_updateNode, Path.Combine(tmpSDP.VendorName, tmpSDP.ProductNames(0)))
 
                 tmpRevisionId = New UpdateRevisionId(tmpSDP.PackageId)
-                For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+                For Each tmpRow As DataGridViewRow In Me.m_dgvMain.Rows
                     If DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId.Equals(tmpRevisionId.UpdateId) Then
-                        Me._dgvMain.CurrentCell = tmpRow.Cells("Title")
+                        Me.m_dgvMain.CurrentCell = tmpRow.Cells("Title")
                     End If
                 Next
             End If
@@ -1457,9 +1457,9 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub TreeViewBeforeSelect(sender As Object, e As TreeViewCancelEventArgs)
+    Sub TreeViewBeforeSelect(sender As Object, e As TreeViewCancelEventArgs) Handles treeView.BeforeSelect
         'If there are rows loaded and the previous node has a tag.
-        If _dgvMain.Rows.Count > 0 AndAlso _
+        If m_dgvMain.Rows.Count > 0 AndAlso _
             Not treeView.SelectedNode Is Nothing AndAlso _
             Not treeView.SelectedNode.Tag Is Nothing Then
             Call SaveDgvState(treeView.SelectedNode)
@@ -1476,7 +1476,7 @@ Partial Public Class MainForm
     ''' First, if the tag isn't instantiated then do nothing.  If the tag is instantiated 
     ''' then find its type and act accordingly.
     ''' </remarks>
-    Private Sub TreeViewAfterSelect(sender As Object, e As TreeViewEventArgs)
+    Private Sub TreeViewAfterSelect(sender As Object, e As TreeViewEventArgs) Handles treeView.AfterSelect
         Cursor = Cursors.WaitCursor
 
         'Make sure the correct server is selected.
@@ -1507,7 +1507,7 @@ Partial Public Class MainForm
             pnlComputers.Visible = False
             Update()
             m_dgvMainLoading = True
-            _dgvMain.DataSource = Nothing
+            m_dgvMain.DataSource = Nothing
             m_dgvMainLoading = False
             m_noEvents = False
         End If 'Node tag instantiated.
@@ -1552,11 +1552,11 @@ Partial Public Class MainForm
             Next
 
             'Add the computer and update nodes
-            m_computerNode = m_serverNode.Nodes.Add("computers", globalRM.GetString("computers"))
+            m_computerNode = m_serverNode.Nodes.Add("computers", Globals.globalRM.GetString("computers"))
             m_computerNode.ImageIndex = 0
             m_computerNode.SelectedImageIndex = 0
 
-            m_updateNode = m_serverNode.Nodes.Add("updates", globalRM.GetString("updates"))
+            m_updateNode = m_serverNode.Nodes.Add("updates", Globals.globalRM.GetString("updates"))
             m_updateNode.ImageIndex = 2
             m_updateNode.SelectedImageIndex = 2
 
@@ -1583,7 +1583,7 @@ Partial Public Class MainForm
         'Setup the panels.
         scHeader.Panel1Collapsed = False
         pnlUpdates.Visible = False
-        splitContainerHorz.SplitterDistance = appSettings.ComputerSplitter
+        splitContainerHorz.SplitterDistance = Globals.appSettings.ComputerSplitter
         pnlComputers.Visible = True
         Update()
 
@@ -1626,7 +1626,7 @@ Partial Public Class MainForm
         tabMainComputers.SelectedIndex = 0
 
         m_noEvents = True
-        splitContainerHorz.SplitterDistance = appSettings.UpdateSplitter
+        splitContainerHorz.SplitterDistance = Globals.appSettings.UpdateSplitter
         dgvUpdateReport.DataSource = Nothing 'Clear report.
         m_noEvents = False
 
@@ -1674,7 +1674,7 @@ Partial Public Class MainForm
             Me.cboTargetGroup.Items.Clear()
 
             'Wait until a connection to the server is made.
-            ConnectionManager.WaitForConnection(appSettings.TimeOut)
+            ConnectionManager.WaitForConnection(Globals.appSettings.TimeOut)
 
             If ConnectionManager.Connected Then
 
@@ -1695,7 +1695,7 @@ Partial Public Class MainForm
         ElseIf Not node.Tag Is Nothing Then
 
             'Wait until a connection to the server is made.
-            ConnectionManager.WaitForConnection(appSettings.TimeOut)
+            ConnectionManager.WaitForConnection(Globals.appSettings.TimeOut)
 
             If ConnectionManager.Connected Then
                 'Loop through the collection of groups, add them to the all computers node,
@@ -1737,7 +1737,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwUpdateNodesDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwUpdateNodesDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwUpdateNodes.DoWork
         Dim startNode As TreeNode = New TreeNode
         Dim vendorNode As TreeNode
         Dim tmpVendor As Vendor = New Vendor
@@ -1754,7 +1754,7 @@ Partial Public Class MainForm
             Me.m_vendorCollection.Clear()
 
             'Wait until a connection to the server is made.
-            ConnectionManager.WaitForConnection(appSettings.TimeOut)
+            ConnectionManager.WaitForConnection(Globals.appSettings.TimeOut)
 
             If ConnectionManager.Connected Then 'Make sure we're connected still.
 
@@ -1772,7 +1772,7 @@ Partial Public Class MainForm
                         'If this is a product category then add it.
                         If category.Type = UpdateCategoryType.Product Then
 
-                            If category.UpdateSource = UpdateSource.Other OrElse Not appSettings.HideOfficialUpdates Then
+                            If category.UpdateSource = UpdateSource.Other OrElse Not Globals.appSettings.HideOfficialUpdates Then
                                 tmpVendor.Products.Add(category.Title)
                                 tmpProductNode = vendorNode.Nodes.Add(category.Title)
                                 tmpProductNode.Tag = category
@@ -1787,7 +1787,7 @@ Partial Public Class MainForm
                             'Loop through each product in the product family.
                             For Each product As IUpdateCategory In category.GetSubcategories
 
-                                If product.UpdateSource = UpdateSource.Other OrElse Not appSettings.HideOfficialUpdates Then
+                                If product.UpdateSource = UpdateSource.Other OrElse Not Globals.appSettings.HideOfficialUpdates Then
                                     tmpVendor.Products.Add(product.Title)
                                     tmpProductNode = tmpProductFamilyNode.Nodes.Add(product.Title)
                                     tmpProductNode.Tag = product
@@ -1832,7 +1832,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwUpdateNodesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwUpdateNodesRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwUpdateNodes.RunWorkerCompleted
         If TypeOf e.Result Is NodeDetails Then
             Dim tmpAsyncNodeDetails As NodeDetails = DirectCast(e.Result, NodeDetails)
             m_updateNode.Nodes.Clear()
@@ -1909,7 +1909,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub TreeViewMouseUp(sender As Object, e As MouseEventArgs)
+    Sub TreeViewMouseUp(sender As Object, e As MouseEventArgs) Handles treeView.MouseUp
 
         ' Show menu only if Right Mouse button is clicked
         If e.Button = MouseButtons.Right Then
@@ -1965,7 +1965,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub dgvMainLeave(sender As Object, e As EventArgs)
+    Sub dgvMainLeave(sender As Object, e As EventArgs) Handles m_dgvMain.Leave
         'Save the dgvstate
         SaveDgvState(treeView.SelectedNode)
     End Sub
@@ -1975,13 +1975,13 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub dgvMainKeyUp(sender As Object, e As KeyEventArgs)
-        If Not m_dgvMainLoading AndAlso Not _dgvMain.CurrentRow Is Nothing AndAlso _dgvMain.CurrentRow.Index >= 0 AndAlso _
+    Sub dgvMainKeyUp(sender As Object, e As KeyEventArgs) Handles m_dgvMain.KeyUp
+        If Not m_dgvMainLoading AndAlso Not m_dgvMain.CurrentRow Is Nothing AndAlso m_dgvMain.CurrentRow.Index >= 0 AndAlso _
             (e.KeyCode = 40 OrElse _
             e.KeyCode = 38) Then
-            _dgvMain.Update()
+            m_dgvMain.Update()
 
-            Call LoadRow(_dgvMain.CurrentRow.Index)
+            Call LoadRow(m_dgvMain.CurrentRow.Index)
         End If
     End Sub
     ''' <summary>
@@ -1990,7 +1990,7 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub dgvMainRowEnter(sender As Object, e As DataGridViewCellEventArgs)
+    Sub dgvMainRowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles m_dgvMain.RowEnter
         If Not m_dgvMainLoading Then
             'Load the newly selected row.
             Call LoadRow(e.RowIndex)
@@ -2003,25 +2003,25 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub dgvMainCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
+    Private Sub dgvMainCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles m_dgvMain.CellMouseDown
 
         'If user right clicks on a non-header row
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 AndAlso e.Button = MouseButtons.Right Then
 
             'Update current cell to load the new row
-            _dgvMain.CurrentCell = _dgvMain.Rows(e.RowIndex).Cells(e.ColumnIndex)
+            m_dgvMain.CurrentCell = m_dgvMain.Rows(e.RowIndex).Cells(e.ColumnIndex)
 
 
-            Dim r As Rectangle = _dgvMain.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
+            Dim r As Rectangle = m_dgvMain.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, True)
             cmDgvMain.Show(DirectCast(sender, Control), r.Left + e.X, r.Top + e.Y)
             'If user left clicks on a header row and rows are selected.
-        ElseIf _dgvMain.SelectedRows.Count = 1 AndAlso e.Button = MouseButtons.Left Then
+        ElseIf m_dgvMain.SelectedRows.Count = 1 AndAlso e.Button = MouseButtons.Left Then
             'Save the currently selected row based on the currently selected tree node.
             If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-                m_originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
+                m_originalValue = DirectCast(m_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
 
             ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-                m_originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Title").Value, String)
+                m_originalValue = DirectCast(m_dgvMain.CurrentRow.Cells.Item("Title").Value, String)
             End If
         Else
             m_originalValue = Nothing
@@ -2034,12 +2034,12 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub DgvComputerReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
+    Sub DgvComputerReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvComputerReport.CellMouseDown
         'If a valid header was clicked and there is a row selected then save its info.
         If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvComputerReport.SelectedRows.Count = 1 Then
             'Save the currently selected update.
             m_originalValue = DirectCast(dgvComputerReport.CurrentRow.Cells.Item("UpdateTitle").Value, String)
-        ElseIf e.RowIndex <> -1 AndAlso Not Me._dgvMain.CurrentRow Is Nothing Then
+        ElseIf e.RowIndex <> -1 AndAlso Not Me.m_dgvMain.CurrentRow Is Nothing Then
             m_originalValue = Nothing
 
             'If the column is the status column then display the history.
@@ -2047,13 +2047,13 @@ Partial Public Class MainForm
                 Dim tmpMessage As String = ""
                 Me.Cursor = Cursors.WaitCursor
                 For Each tmpEvent As IUpdateEvent In DirectCast(Me.dgvComputerReport.Rows(e.RowIndex).Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
-                    If DirectCast(_dgvMain.CurrentRow.Cells("TargetID").Value, String) = tmpEvent.ComputerId Then
-                        tmpMessage += globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewLine
+                    If DirectCast(m_dgvMain.CurrentRow.Cells("TargetID").Value, String) = tmpEvent.ComputerId Then
+                        tmpMessage += Globals.globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewLine
                     End If
                 Next
                 Me.Cursor = Cursors.Arrow
                 If Not String.IsNullOrEmpty(tmpMessage) Then
-                    MsgBox(tmpMessage, MsgBoxStyle.OkOnly, globalRM.GetString("History for") & " " & DirectCast(dgvComputerReport.Rows(e.RowIndex).Cells("UpdateTitle").Value, String))
+                    MsgBox(tmpMessage, MsgBoxStyle.OkOnly, Globals.globalRM.GetString("History for") & " " & DirectCast(dgvComputerReport.Rows(e.RowIndex).Cells("UpdateTitle").Value, String))
                 End If
             End If
         Else
@@ -2067,7 +2067,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub DgvUpdateReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs)
+    Sub DgvUpdateReportCellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvUpdateReport.CellMouseDown
         'If a valid header was clicked and there is a row selected then save its info.
         If e.RowIndex = -1 And e.ColumnIndex > -1 And dgvUpdateReport.SelectedRows.Count = 1 Then
             'Save the currently selected update.
@@ -2076,17 +2076,17 @@ Partial Public Class MainForm
             m_originalValue = Nothing
 
             'If the column is the status column then display the error history.
-            If dgvUpdateReport.Columns(e.ColumnIndex).Name = "UpdateInstallationState" AndAlso Not Me._dgvMain.CurrentRow Is Nothing Then
+            If dgvUpdateReport.Columns(e.ColumnIndex).Name = "UpdateInstallationState" AndAlso Not Me.m_dgvMain.CurrentRow Is Nothing Then
                 Dim tmpMessage As String = ""
                 Me.Cursor = Cursors.WaitCursor
-                For Each tmpEvent As IUpdateEvent In DirectCast(Me._dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
+                For Each tmpEvent As IUpdateEvent In DirectCast(Me.m_dgvMain.CurrentRow.Cells("IUpdate").Value, IUpdate).GetUpdateEventHistory(Date.MinValue, Date.MaxValue)
                     If DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerID").Value, String) = tmpEvent.ComputerId Then
-                        tmpMessage += globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewLine
+                        tmpMessage += Globals.globalRM.GetString("date") & ": " & tmpEvent.CreationDate.ToLocalTime & vbTab & "  " & tmpEvent.Message & vbNewLine
                     End If
                 Next
                 Me.Cursor = Cursors.Arrow
                 If Not String.IsNullOrEmpty(tmpMessage) Then
-                    MsgBox(tmpMessage, MsgBoxStyle.OkOnly, globalRM.GetString("History for") & " " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
+                    MsgBox(tmpMessage, MsgBoxStyle.OkOnly, Globals.globalRM.GetString("History for") & " " & DirectCast(dgvUpdateReport.Rows(e.RowIndex).Cells("ComputerName").Value, String))
                 End If
             End If
         Else
@@ -2100,11 +2100,11 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub DgvMainSorted(sender As Object, e As EventArgs)
+    Private Sub DgvMainSorted(sender As Object, e As EventArgs) Handles m_dgvMain.Sorted
         Dim columnName As String = ""
         If Not m_noEvents Then
 
-            If _dgvMain.Rows.Count > 0 Then
+            If m_dgvMain.Rows.Count > 0 Then
                 If Not m_originalValue = Nothing Then
 
                     'Choose the column name based on the tree view node.
@@ -2115,17 +2115,17 @@ Partial Public Class MainForm
                     End If
 
                     'Select and load the original row.
-                    For Each tmpRow As DataGridViewRow In _dgvMain.Rows
+                    For Each tmpRow As DataGridViewRow In m_dgvMain.Rows
                         If m_originalValue = DirectCast(tmpRow.Cells(columnName).Value, String) Then
-                            _dgvMain.CurrentCell = tmpRow.Cells(columnName)
+                            m_dgvMain.CurrentCell = tmpRow.Cells(columnName)
                             Exit For
-                        ElseIf tmpRow.Index = _dgvMain.Rows.Count - 1 Then
-                            _dgvMain.CurrentCell = _dgvMain.Rows(0).Cells(columnName)
+                        ElseIf tmpRow.Index = m_dgvMain.Rows.Count - 1 Then
+                            m_dgvMain.CurrentCell = m_dgvMain.Rows(0).Cells(columnName)
                         End If
                     Next
                 End If
-                If Not Me._dgvMain.CurrentRow Is Nothing Then
-                    Call LoadRow(_dgvMain.CurrentRow.Index)
+                If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+                    Call LoadRow(m_dgvMain.CurrentRow.Index)
                 End If
             End If
         End If
@@ -2136,7 +2136,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub DgvComputerReportSorted(sender As Object, e As EventArgs)
+    Sub DgvComputerReportSorted(sender As Object, e As EventArgs) Handles dgvComputerReport.Sorted
         If m_noEvents = False Then
 
             If Not m_originalValue = Nothing And dgvComputerReport.Rows.Count > 0 Then
@@ -2158,7 +2158,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub DgvUpdateReportSorted(sender As Object, e As EventArgs)
+    Sub DgvUpdateReportSorted(sender As Object, e As EventArgs) Handles dgvUpdateReport.Sorted
         If m_noEvents = False Then
 
             If Not m_originalValue = Nothing And dgvUpdateReport.Rows.Count > 0 Then
@@ -2183,13 +2183,13 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwComputerListDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwComputerListDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwComputerList.DoWork
 
         'If we were passed a RefreshInfo object then use it to call GetComputer list, store the data, and pass it to the result.
         If TypeOf e.Argument Is RefreshInfo Then
             Dim riTemp As RefreshInfo = DirectCast(e.Argument, RefreshInfo)
             If TypeOf riTemp.TreeNodeTag Is IComputerTargetGroup Then
-                riTemp.DataTable = GetComputerList(DirectCast(riTemp.TreeNodeTag, IComputerTargetGroup))
+                riTemp.DataTable = DataRoutines.GetComputerList(DirectCast(riTemp.TreeNodeTag, IComputerTargetGroup))
             End If
             e.Result = riTemp
         End If
@@ -2200,70 +2200,70 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwComputerListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwComputerListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwComputerList.RunWorkerCompleted
         Dim riTemp As RefreshInfo = New RefreshInfo
 
         'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
         If TypeOf e.Result Is RefreshInfo Then
             riTemp = DirectCast(e.Result, RefreshInfo)
             m_dgvMainLoading = True
-            _dgvMain.DataSource = riTemp.DataTable
+            m_dgvMain.DataSource = riTemp.DataTable
             m_dgvMainLoading = False
         End If
 
-        If _dgvMain.DataSource Is Nothing Then
+        If m_dgvMain.DataSource Is Nothing Then
             'Update the count.
-            Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), "0")
+            Me.lblSelectedTargetGroupCount.Text = String.Format(Globals.globalRM.GetString("computers_shown"), "0")
         Else
 
             'Set header texts for main DGV.
-            Me._dgvMain.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
-            Me._dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
-            Me._dgvMain.Columns("IPAddress").HeaderText = globalRM.GetString("ip_address")
-            Me._dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
-            Me._dgvMain.Columns("OperatingSystem").HeaderText = globalRM.GetString("operating_system")
-            Me._dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
-            Me._dgvMain.Columns("InstalledNotApplicable").HeaderText = globalRM.GetString("installed_not_applicable")
-            Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-            Me._dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
-            Me._dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
-            Me._dgvMain.Columns("LastStatusReport").HeaderText = globalRM.GetString("last_status_report")
-            Me._dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("ComputerName").HeaderText = Globals.globalRM.GetString("computer_name")
+            Me.m_dgvMain.Columns("ComputerName").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("IPAddress").HeaderText = Globals.globalRM.GetString("ip_address")
+            Me.m_dgvMain.Columns("IPAddress").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("OperatingSystem").HeaderText = Globals.globalRM.GetString("operating_system")
+            Me.m_dgvMain.Columns("OperatingSystem").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("InstalledNotApplicable").HeaderText = Globals.globalRM.GetString("installed_not_applicable")
+            Me.m_dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("InstalledNotApplicable").DefaultCellStyle.Format = "p0"
+            Me.m_dgvMain.Columns("InstalledNotApplicable").SortMode = DataGridViewColumnSortMode.Automatic
+            Me.m_dgvMain.Columns("LastStatusReport").HeaderText = Globals.globalRM.GetString("last_status_report")
+            Me.m_dgvMain.Columns("LastStatusReport").SortMode = DataGridViewColumnSortMode.Automatic
 
 
             'Hide some columns.
-            Me._dgvMain.Columns("IComputerTarget").Visible = False
-            Me._dgvMain.Columns("TargetID").Visible = False
+            Me.m_dgvMain.Columns("IComputerTarget").Visible = False
+            Me.m_dgvMain.Columns("TargetID").Visible = False
 
             'Update the count.
-            Me.lblSelectedTargetGroupCount.Text = String.Format(globalRM.GetString("computers_shown"), Me._dgvMain.Rows.Count)
+            Me.lblSelectedTargetGroupCount.Text = String.Format(Globals.globalRM.GetString("computers_shown"), Me.m_dgvMain.Rows.Count)
 
             'If computers are listed in the DGV.
-            If _dgvMain.Rows.Count > 0 Then
+            If m_dgvMain.Rows.Count > 0 Then
 
-                Call LoadDgvState(_dgvMain)
+                Call LoadDgvState(m_dgvMain)
 
                 'If we are maintaining the row.
                 If riTemp.MaintainSelectedRow Then
                     'Select the original row.
-                    For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+                    For Each tmpRow As DataGridViewRow In Me.m_dgvMain.Rows
                         If riTemp.OriginalValue = DirectCast(tmpRow.Cells("ComputerName").Value, String) Then
-                            _dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
+                            m_dgvMain.CurrentCell = tmpRow.Cells("ComputerName")
                             Exit For
-                        ElseIf tmpRow.Index = _dgvMain.Rows.Count - 1 Then
-                            _dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
+                        ElseIf tmpRow.Index = m_dgvMain.Rows.Count - 1 Then
+                            m_dgvMain.CurrentCell = m_dgvMain.Rows(0).Cells("ComputerName")
                         End If
                     Next
                 Else
                     'Select the first row.
-                    _dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("ComputerName")
+                    m_dgvMain.CurrentCell = m_dgvMain.Rows(0).Cells("ComputerName")
                 End If
 
                 btnComputerListRefresh.Enabled = True
                 exportListToolStripMenuItem.Enabled = True
 
                 'Load the selected computer's info.
-                Call LoadComputerInfo(Me._dgvMain.CurrentRow.Index)
+                Call LoadComputerInfo(Me.m_dgvMain.CurrentRow.Index)
 
                 '				I believe this is not needed; the Load Row method called via the current cell assignment above will take care of it.
                 '				'If the user is currently on the report tab then update it.
@@ -2319,15 +2319,15 @@ Partial Public Class MainForm
                 riTemp.MaintainSelectedRow = maintainSelectedRow
 
                 'If we are maintaining the status then save the status.
-                If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
-                    riTemp.OriginalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
+                If maintainSelectedRow And m_dgvMain.SelectedRows.Count = 1 Then
+                    riTemp.OriginalValue = DirectCast(m_dgvMain.CurrentRow.Cells.Item("ComputerName").Value, String)
                 Else
                     riTemp.OriginalValue = Nothing
                 End If
 
                 'Clear the main DGV and computers listed count.
                 m_dgvMainLoading = True
-                _dgvMain.DataSource = Nothing
+                m_dgvMain.DataSource = Nothing
                 m_dgvMainLoading = False
                 Me.lblSelectedTargetGroupCount.Text = Nothing
 
@@ -2347,14 +2347,14 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub BgwUpdateListDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwUpdateListDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwUpdateList.DoWork
 
         'If we were passed a RefreshInfo object then use it to call GetUpdateList, store the data, and pass it to the result.
         If TypeOf e.Argument Is RefreshInfo Then
             Dim riTemp As RefreshInfo = DirectCast(e.Argument, RefreshInfo)
 
             If TypeOf riTemp.TreeNodeTag Is IUpdateCategory Then
-                riTemp.DataTable = GetUpdateList(DirectCast(riTemp.TreeNodeTag, IUpdateCategory))
+                riTemp.DataTable = DataRoutines.GetUpdateList(DirectCast(riTemp.TreeNodeTag, IUpdateCategory))
             End If
             e.Result = riTemp
         End If
@@ -2365,50 +2365,50 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwUpdateListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwUpdateListRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwUpdateList.RunWorkerCompleted
         Dim riTemp As RefreshInfo = New RefreshInfo
 
         'If the result of the background work process was a RefreshInfo object then set the datasource to the returned data table.
         If TypeOf e.Result Is RefreshInfo Then
             riTemp = DirectCast(e.Result, RefreshInfo)
             m_dgvMainLoading = True
-            _dgvMain.DataSource = riTemp.DataTable
+            m_dgvMain.DataSource = riTemp.DataTable
             m_dgvMainLoading = False
         End If
 
-        If Not _dgvMain.DataSource Is Nothing Then
+        If Not m_dgvMain.DataSource Is Nothing Then
 
             'Hide columns.
-            Me._dgvMain.Columns("IUpdate").Visible = False
-            Me._dgvMain.Columns("Id").Visible = False
+            Me.m_dgvMain.Columns("IUpdate").Visible = False
+            Me.m_dgvMain.Columns("Id").Visible = False
 
             'Change header text.
-            Me._dgvMain.Columns("CreationDate").HeaderText = globalRM.GetString("creation_date")
+            Me.m_dgvMain.Columns("CreationDate").HeaderText = Globals.globalRM.GetString("creation_date")
 
 
             'If updates are loaded in the DGV.
-            If _dgvMain.Rows.Count > 0 Then
-                Call LoadDgvState(_dgvMain)
+            If m_dgvMain.Rows.Count > 0 Then
+                Call LoadDgvState(m_dgvMain)
 
                 'If we are maintaining the row.
                 If riTemp.MaintainSelectedRow Then
                     'Select the original row.
-                    For Each tmpRow As DataGridViewRow In Me._dgvMain.Rows
+                    For Each tmpRow As DataGridViewRow In Me.m_dgvMain.Rows
                         If riTemp.OriginalValue.Equals(DirectCast(tmpRow.Cells("Id").Value, UpdateRevisionId).UpdateId) Then
-                            _dgvMain.CurrentCell = tmpRow.Cells("Title")
+                            m_dgvMain.CurrentCell = tmpRow.Cells("Title")
                             Exit For
-                        ElseIf tmpRow.Index = _dgvMain.Rows.Count - 1 Then
-                            _dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("Title")
+                        ElseIf tmpRow.Index = m_dgvMain.Rows.Count - 1 Then
+                            m_dgvMain.CurrentCell = m_dgvMain.Rows(0).Cells("Title")
                         End If
                     Next
                 Else
-                    _dgvMain.CurrentCell = _dgvMain.Rows(0).Cells("Title")
+                    m_dgvMain.CurrentCell = m_dgvMain.Rows(0).Cells("Title")
                 End If
 
                 'Load the currently selected update's data.
-                If Not Me._dgvMain.CurrentRow Is Nothing Then
-                    Call LoadUpdateInfo(Me._dgvMain.CurrentRow.Index)
-                    Call LoadUpdateStatus(Me._dgvMain.CurrentRow.Index)
+                If Not Me.m_dgvMain.CurrentRow Is Nothing Then
+                    Call LoadUpdateInfo(Me.m_dgvMain.CurrentRow.Index)
+                    Call LoadUpdateStatus(Me.m_dgvMain.CurrentRow.Index)
                 End If
 
                 '				I believe this is not needed;  the Load Row method called via the current cell assignment above will take care of it.
@@ -2455,17 +2455,17 @@ Partial Public Class MainForm
 
                 'Clear the main DGV.
                 m_dgvMainLoading = True
-                _dgvMain.DataSource = Nothing
+                m_dgvMain.DataSource = Nothing
                 m_dgvMainLoading = False
 
                 'Clear the update data by calling the loads with an index equal to the number of rows.
-                Call LoadUpdateInfo(Me._dgvMain.Rows.Count)
-                Call LoadUpdateStatus(Me._dgvMain.Rows.Count)
+                Call LoadUpdateInfo(Me.m_dgvMain.Rows.Count)
+                Call LoadUpdateStatus(Me.m_dgvMain.Rows.Count)
 
 
             ElseIf Not TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
                 m_dgvMainLoading = True
-                _dgvMain.DataSource = Nothing 'Clear the main DGV.
+                m_dgvMain.DataSource = Nothing 'Clear the main DGV.
                 m_dgvMainLoading = False
             Else
                 If DirectCast(Me.treeView.SelectedNode.Tag, IUpdateCategory).ProhibitsUpdates = False Then
@@ -2474,15 +2474,15 @@ Partial Public Class MainForm
                     riTemp.MaintainSelectedRow = maintainSelectedRow
 
                     'If we are maintaining the status then save the status.
-                    If maintainSelectedRow And _dgvMain.SelectedRows.Count = 1 Then
-                        originalValue = DirectCast(_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId).UpdateId
+                    If maintainSelectedRow And m_dgvMain.SelectedRows.Count = 1 Then
+                        originalValue = DirectCast(m_dgvMain.CurrentRow.Cells.Item("Id").Value, UpdateRevisionId).UpdateId
                     Else
                         originalValue = Nothing
                     End If
 
                     'Clear the main DGV.
                     m_dgvMainLoading = True
-                    _dgvMain.DataSource = Nothing
+                    m_dgvMain.DataSource = Nothing
                     m_dgvMainLoading = False
 
                     'Make the asynchronous call.
@@ -2572,17 +2572,17 @@ Partial Public Class MainForm
 
         'Make sure that the rowIndex is within range, at least one row is selected, and the node selected
         ' is an update category.
-        If Me._dgvMain.Rows.Count > rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 AndAlso _
+        If Me.m_dgvMain.Rows.Count > rowIndex AndAlso Me.m_dgvMain.SelectedRows.Count = 1 AndAlso _
             TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
 
             'Load the data
-            Dim update As IUpdate = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
+            Dim update As IUpdate = DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate)
             If update.UpdateType = UpdateType.Software Then
-                Me.txtPackageType.Text = globalRM.GetString("update")
+                Me.txtPackageType.Text = Globals.globalRM.GetString("update")
             ElseIf update.UpdateType = UpdateType.SoftwareApplication Then
-                Me.txtPackageType.Text = globalRM.GetString("application")
+                Me.txtPackageType.Text = Globals.globalRM.GetString("application")
             ElseIf update.UpdateType = UpdateType.Driver Then
-                Me.txtPackageType.Text = globalRM.GetString("driver")
+                Me.txtPackageType.Text = Globals.globalRM.GetString("driver")
             Else
                 Me.txtPackageType.Text = String.Empty
             End If
@@ -2630,7 +2630,7 @@ Partial Public Class MainForm
 
         'Make sure we are in a data row, not the header and that the tree node
         ' selected has a tag on which we can base how to load the data
-        If Me._dgvMain.Rows.Count <= rowIndex OrElse Me._dgvMain.SelectedRows.Count <> 1 Then
+        If Me.m_dgvMain.Rows.Count <= rowIndex OrElse Me.m_dgvMain.SelectedRows.Count <> 1 Then
             m_noEvents = True
             'Clear the data source of the status DGV.
             Me.dgvUpdateStatus.DataSource = Nothing
@@ -2639,17 +2639,17 @@ Partial Public Class MainForm
 
 
             'Set the data source of the status DGV.
-            Me.dgvUpdateStatus.DataSource = GetUpdateStatus(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), Me.m_computerNode)
+            Me.dgvUpdateStatus.DataSource = DataRoutines.GetUpdateStatus(DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), Me.m_computerNode)
 
             'Set header texts for status DGV.
-            Me.dgvUpdateStatus.Columns("GroupName").HeaderText = globalRM.GetString("group_name")
-            Me.dgvUpdateStatus.Columns("InstalledCount").HeaderText = globalRM.GetString("installed")
-            Me.dgvUpdateStatus.Columns("NotInstalledCount").HeaderText = globalRM.GetString("not_installed")
-            Me.dgvUpdateStatus.Columns("NotApplicableCount").HeaderText = globalRM.GetString("not_applicable")
-            Me.dgvUpdateStatus.Columns("FailedCount").HeaderText = globalRM.GetString("failed")
-            Me.dgvUpdateStatus.Columns("DownloadedCount").HeaderText = globalRM.GetString("downloaded")
-            Me.dgvUpdateStatus.Columns("UnknownCount").HeaderText = globalRM.GetString("unknown")
-            Me.dgvUpdateStatus.Columns("LastUpdated").HeaderText = globalRM.GetString("last_updated")
+            Me.dgvUpdateStatus.Columns("GroupName").HeaderText = Globals.globalRM.GetString("group_name")
+            Me.dgvUpdateStatus.Columns("InstalledCount").HeaderText = Globals.globalRM.GetString("installed")
+            Me.dgvUpdateStatus.Columns("NotInstalledCount").HeaderText = Globals.globalRM.GetString("not_installed")
+            Me.dgvUpdateStatus.Columns("NotApplicableCount").HeaderText = Globals.globalRM.GetString("not_applicable")
+            Me.dgvUpdateStatus.Columns("FailedCount").HeaderText = Globals.globalRM.GetString("failed")
+            Me.dgvUpdateStatus.Columns("DownloadedCount").HeaderText = Globals.globalRM.GetString("downloaded")
+            Me.dgvUpdateStatus.Columns("UnknownCount").HeaderText = Globals.globalRM.GetString("unknown")
+            Me.dgvUpdateStatus.Columns("LastUpdated").HeaderText = Globals.globalRM.GetString("last_updated")
 
             If dgvUpdateStatus.Rows.Count > 0 Then
                 Call LoadDgvState(dgvUpdateStatus)
@@ -2667,17 +2667,17 @@ Partial Public Class MainForm
 
         Call ClearComputerInfo()
 
-        If Me._dgvMain.Rows.Count >= rowIndex AndAlso Me._dgvMain.SelectedRows.Count = 1 Then
+        If Me.m_dgvMain.Rows.Count >= rowIndex AndAlso Me.m_dgvMain.SelectedRows.Count = 1 Then
             'Set the update scope to only include locally published updates for the selected group.
             Dim tmpUpdateScope As UpdateScope = New UpdateScope
             tmpUpdateScope.UpdateSources = UpdateSources.Other
 
             'Add groups to approvals reported based on application settings.
-            If appSettings.ApprovedUpdatesOnly Then
-                AddParentGroupApprovals(tmpUpdateScope, DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup), appSettings.InheritApprovals) 'Add groups recursively.
+            If Globals.appSettings.ApprovedUpdatesOnly Then
+                DataRoutines.AddParentGroupApprovals(tmpUpdateScope, DirectCast(treeView.SelectedNode.Tag, IComputerTargetGroup), Globals.appSettings.InheritApprovals) 'Add groups recursively.
             End If
 
-            Dim tmpUpdateSummary As IUpdateSummary = DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IComputerTarget").Value, IComputerTarget).GetUpdateInstallationSummary(tmpUpdateScope)
+            Dim tmpUpdateSummary As IUpdateSummary = DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("IComputerTarget").Value, IComputerTarget).GetUpdateInstallationSummary(tmpUpdateScope)
             Me.txtUpdatesWErrorsNum.Text = CStr(tmpUpdateSummary.FailedCount)
             Me.txtUpdatesNeededNum.Text = CStr(tmpUpdateSummary.NotInstalledCount + tmpUpdateSummary.DownloadedCount)
             Me.txtUpdatesInstalledorNANum.Text = CStr(tmpUpdateSummary.NotApplicableCount + tmpUpdateSummary.InstalledCount + tmpUpdateSummary.InstalledPendingRebootCount)
@@ -2699,17 +2699,17 @@ Partial Public Class MainForm
         ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
 
             'Set the data source of the status DGV.
-            Me.dgvComputerGroupStatus.DataSource = GetComputerGroupStatus(DirectCast(Me.treeView.SelectedNode.Tag, IComputerTargetGroup))
+            Me.dgvComputerGroupStatus.DataSource = DataRoutines.GetComputerGroupStatus(DirectCast(Me.treeView.SelectedNode.Tag, IComputerTargetGroup))
 
             'Set header texts for status DGV.
-            dgvComputerGroupStatus.Columns("Title").HeaderText = globalRM.GetString("title")
-            dgvComputerGroupStatus.Columns("InstalledCount").HeaderText = globalRM.GetString("installed")
-            dgvComputerGroupStatus.Columns("NotInstalledCount").HeaderText = globalRM.GetString("not_installed")
-            dgvComputerGroupStatus.Columns("NotApplicableCount").HeaderText = globalRM.GetString("not_applicable")
-            dgvComputerGroupStatus.Columns("FailedCount").HeaderText = globalRM.GetString("failed")
-            dgvComputerGroupStatus.Columns("DownloadedCount").HeaderText = globalRM.GetString("downloaded")
-            dgvComputerGroupStatus.Columns("UnknownCount").HeaderText = globalRM.GetString("unknown")
-            dgvComputerGroupStatus.Columns("LastUpdated").HeaderText = globalRM.GetString("last_updated")
+            dgvComputerGroupStatus.Columns("Title").HeaderText = Globals.globalRM.GetString("title")
+            dgvComputerGroupStatus.Columns("InstalledCount").HeaderText = Globals.globalRM.GetString("installed")
+            dgvComputerGroupStatus.Columns("NotInstalledCount").HeaderText = Globals.globalRM.GetString("not_installed")
+            dgvComputerGroupStatus.Columns("NotApplicableCount").HeaderText = Globals.globalRM.GetString("not_applicable")
+            dgvComputerGroupStatus.Columns("FailedCount").HeaderText = Globals.globalRM.GetString("failed")
+            dgvComputerGroupStatus.Columns("DownloadedCount").HeaderText = Globals.globalRM.GetString("downloaded")
+            dgvComputerGroupStatus.Columns("UnknownCount").HeaderText = Globals.globalRM.GetString("unknown")
+            dgvComputerGroupStatus.Columns("LastUpdated").HeaderText = Globals.globalRM.GetString("last_updated")
 
             If dgvComputerGroupStatus.Rows.Count > 0 Then
                 Call LoadDgvState(dgvComputerGroupStatus)
@@ -2752,7 +2752,7 @@ Partial Public Class MainForm
 
             'Get the computer report data asynchronously.
             If Not Me.bgwComputerReport.IsBusy Then
-                Me.bgwComputerReport.RunWorkerAsync(New ComputerReportDetails(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("TargetID").Value, String), Me.cboUpdateStatus.Text, originalValue))
+                Me.bgwComputerReport.RunWorkerAsync(New ComputerReportDetails(DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("TargetID").Value, String), Me.cboUpdateStatus.Text, originalValue))
             End If
 
             Call CheckBGWThreads()
@@ -2765,7 +2765,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwComputerReportDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwComputerReportDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwComputerReport.DoWork
         Try
             Dim computerReportDetails As ComputerReportDetails = Nothing
 
@@ -2773,7 +2773,7 @@ Partial Public Class MainForm
                 computerReportDetails = DirectCast(e.Argument, ComputerReportDetails)
 
                 'Get the data.			
-                computerReportDetails.Data = GetComputerReport(computerReportDetails.ComputerID, computerReportDetails.Status)
+                computerReportDetails.Data = DataRoutines.GetComputerReport(computerReportDetails.ComputerID, computerReportDetails.Status)
 
             End If
 
@@ -2788,7 +2788,7 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub BgwComputerReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwComputerReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwComputerReport.RunWorkerCompleted
         Dim computerReportDetails As ComputerReportDetails
 
         Try
@@ -2806,9 +2806,9 @@ Partial Public Class MainForm
                 dgvComputerReport.Columns("UpdateID").Visible = False
 
                 'Rename some columns.
-                dgvComputerReport.Columns("UpdateTitle").HeaderText = globalRM.GetString("update_title")
-                dgvComputerReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
-                dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
+                dgvComputerReport.Columns("UpdateTitle").HeaderText = Globals.globalRM.GetString("update_title")
+                dgvComputerReport.Columns("UpdateInstallationState").HeaderText = Globals.globalRM.GetString("status")
+                dgvComputerReport.Columns("UpdateApprovalAction").HeaderText = Globals.globalRM.GetString("approval")
 
                 'Make the status column's text blue
                 dgvComputerReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue
@@ -2867,7 +2867,7 @@ Partial Public Class MainForm
         m_noEvents = True
 
         'If an Update Status was selected or no update is selected.
-        If cboTargetGroup.SelectedIndex = -1 OrElse Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value Is Nothing Then
+        If cboTargetGroup.SelectedIndex = -1 OrElse Me.m_dgvMain.Rows(rowIndex).Cells("IUpdate").Value Is Nothing Then
             'Clear the DGV.
             Me.dgvUpdateReport.DataSource = Nothing
         Else
@@ -2886,7 +2886,7 @@ Partial Public Class MainForm
 
             'Get the computer report data asynchronously.
             If Not Me.bgwUpdateReport.IsBusy Then
-                Me.bgwUpdateReport.RunWorkerAsync(New UpdateReportDetails(DirectCast(Me._dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), DirectCast(Me.cboTargetGroup.SelectedItem, ComboTargetGroups).Value, Me.cboUpdateStatus.Text, originalValue))
+                Me.bgwUpdateReport.RunWorkerAsync(New UpdateReportDetails(DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("IUpdate").Value, IUpdate), DirectCast(Me.cboTargetGroup.SelectedItem, ComboTargetGroups).Value, Me.cboUpdateStatus.Text, originalValue))
             End If
 
         End If 'Status of combobox.
@@ -2900,14 +2900,14 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub BgwUpdateReportDoWork(sender As Object, e As DoWorkEventArgs)
+    Sub BgwUpdateReportDoWork(sender As Object, e As DoWorkEventArgs) Handles bgwUpdateReport.DoWork
         Dim updateReportDetails As UpdateReportDetails = Nothing
 
         If TypeOf e.Argument Is UpdateReportDetails Then
             updateReportDetails = DirectCast(e.Argument, UpdateReportDetails)
 
             'Set the data source.
-            updateReportDetails.Data = GetUpdateReport(updateReportDetails.Update, updateReportDetails.TargetGroup, updateReportDetails.Status)
+            updateReportDetails.Data = DataRoutines.GetUpdateReport(updateReportDetails.Update, updateReportDetails.TargetGroup, updateReportDetails.Status)
         End If
 
         e.Result = updateReportDetails
@@ -2918,7 +2918,7 @@ Partial Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Sub BgwUpdateReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+    Sub BgwUpdateReportRunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles bgwUpdateReport.RunWorkerCompleted
         Dim updateReportDetails As UpdateReportDetails
 
         If TypeOf e.Result Is UpdateReportDetails Then
@@ -2931,9 +2931,9 @@ Partial Public Class MainForm
             dgvUpdateReport.Columns("ComputerID").Visible = False
 
             'Rename some columns.
-            dgvUpdateReport.Columns("ComputerName").HeaderText = globalRM.GetString("computer_name")
-            dgvUpdateReport.Columns("UpdateInstallationState").HeaderText = globalRM.GetString("status")
-            dgvUpdateReport.Columns("UpdateApprovalAction").HeaderText = globalRM.GetString("approval")
+            dgvUpdateReport.Columns("ComputerName").HeaderText = Globals.globalRM.GetString("computer_name")
+            dgvUpdateReport.Columns("UpdateInstallationState").HeaderText = Globals.globalRM.GetString("status")
+            dgvUpdateReport.Columns("UpdateApprovalAction").HeaderText = Globals.globalRM.GetString("approval")
 
             'Make the status column's text blue
             dgvUpdateReport.Columns("UpdateInstallationState").DefaultCellStyle.ForeColor = Color.Blue
@@ -2978,7 +2978,7 @@ Partial Public Class MainForm
         m_noEvents = True
 
         'Differentiate the right setting by the DGV's name.
-        If dgv.Name = Me._dgvMain.Name Then
+        If dgv.Name = Me.m_dgvMain.Name Then
 
             'Make sure a node is selected and has a tag.
             If Not treeView.SelectedNode Is Nothing AndAlso _
@@ -2988,32 +2988,32 @@ Partial Public Class MainForm
                 If TypeOf treeView.SelectedNode.Tag Is IComputerTargetGroup Then
 
                     'Sort the columns if a sort order is saved.
-                    If Not appSettings.StateMainComputersDGV.SortColumn Is Nothing AndAlso _
-                        Not dgv.Columns(appSettings.StateMainComputersDGV.SortColumn) Is Nothing Then
+                    If Not Globals.appSettings.StateMainComputersDGV.SortColumn Is Nothing AndAlso _
+                        Not dgv.Columns(Globals.appSettings.StateMainComputersDGV.SortColumn) Is Nothing Then
 
-                        dgv.Sort(dgv.Columns(appSettings.StateMainComputersDGV.SortColumn), _
-                            appSettings.StateMainComputersDGV.SortDirection)
+                        dgv.Sort(dgv.Columns(Globals.appSettings.StateMainComputersDGV.SortColumn), _
+                            Globals.appSettings.StateMainComputersDGV.SortDirection)
                     End If
 
                     'Set the widths using the saved values
-                    If appSettings.StateMainComputersDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+                    If Globals.appSettings.StateMainComputersDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
                         For Each column As DataGridViewColumn In dgv.Columns
-                            column.FillWeight = appSettings.StateMainComputersDGV.ColumnFillWeights(column.Index)
+                            column.FillWeight = Globals.appSettings.StateMainComputersDGV.ColumnFillWeights(column.Index)
                         Next
                     End If
                     'If type is an Update node.
                 ElseIf TypeOf treeView.SelectedNode.Tag Is IUpdateCategory Then
 
                     'Sort the columns if a sort order is saved.
-                    If Not appSettings.StateMainUpdatesDGV.SortColumn Is Nothing AndAlso _
-                        Not dgv.Columns(appSettings.StateMainUpdatesDGV.SortColumn) Is Nothing Then
-                        dgv.Sort(dgv.Columns(appSettings.StateMainUpdatesDGV.SortColumn), _
-                            appSettings.StateMainUpdatesDGV.SortDirection)
+                    If Not Globals.appSettings.StateMainUpdatesDGV.SortColumn Is Nothing AndAlso _
+                        Not dgv.Columns(Globals.appSettings.StateMainUpdatesDGV.SortColumn) Is Nothing Then
+                        dgv.Sort(dgv.Columns(Globals.appSettings.StateMainUpdatesDGV.SortColumn), _
+                            Globals.appSettings.StateMainUpdatesDGV.SortDirection)
                     End If
 
-                    If appSettings.StateMainUpdatesDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+                    If Globals.appSettings.StateMainUpdatesDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
                         For Each column As DataGridViewColumn In dgv.Columns
-                            column.FillWeight = appSettings.StateMainUpdatesDGV.ColumnFillWeights(column.Index)
+                            column.FillWeight = Globals.appSettings.StateMainUpdatesDGV.ColumnFillWeights(column.Index)
                         Next
                     End If
                 End If
@@ -3021,65 +3021,65 @@ Partial Public Class MainForm
         ElseIf dgv.Name = Me.dgvComputerReport.Name Then
 
             'Sort the columns if a sort order is saved.
-            If Not appSettings.StateComputerReportDGV.SortColumn = Nothing AndAlso _
-                Not dgv.Columns(appSettings.StateComputerReportDGV.SortColumn) Is Nothing Then
+            If Not Globals.appSettings.StateComputerReportDGV.SortColumn = Nothing AndAlso _
+                Not dgv.Columns(Globals.appSettings.StateComputerReportDGV.SortColumn) Is Nothing Then
 
-                dgv.Sort(dgv.Columns(appSettings.StateComputerReportDGV.SortColumn), _
-                    appSettings.StateComputerReportDGV.SortDirection)
+                dgv.Sort(dgv.Columns(Globals.appSettings.StateComputerReportDGV.SortColumn), _
+                    Globals.appSettings.StateComputerReportDGV.SortDirection)
             End If
 
-            If appSettings.StateComputerReportDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+            If Globals.appSettings.StateComputerReportDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
 
                 For Each column As DataGridViewColumn In dgv.Columns
-                    column.FillWeight = appSettings.StateComputerReportDGV.ColumnFillWeights(column.Index)
+                    column.FillWeight = Globals.appSettings.StateComputerReportDGV.ColumnFillWeights(column.Index)
                 Next
             End If
         ElseIf dgv.Name = Me.dgvComputerGroupStatus.Name Then
 
             'Sort the columns if a sort order is saved.
-            If Not appSettings.StateComputerGroupStatusDGV.SortColumn = Nothing AndAlso _
-                Not dgv.Columns(appSettings.StateComputerGroupStatusDGV.SortColumn) Is Nothing Then
+            If Not Globals.appSettings.StateComputerGroupStatusDGV.SortColumn = Nothing AndAlso _
+                Not dgv.Columns(Globals.appSettings.StateComputerGroupStatusDGV.SortColumn) Is Nothing Then
 
-                dgv.Sort(dgv.Columns(appSettings.StateComputerGroupStatusDGV.SortColumn), _
-                    appSettings.StateComputerGroupStatusDGV.SortDirection)
+                dgv.Sort(dgv.Columns(Globals.appSettings.StateComputerGroupStatusDGV.SortColumn), _
+                    Globals.appSettings.StateComputerGroupStatusDGV.SortDirection)
             End If
 
-            If appSettings.StateComputerGroupStatusDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+            If Globals.appSettings.StateComputerGroupStatusDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
 
                 For Each column As DataGridViewColumn In dgv.Columns
-                    column.FillWeight = appSettings.StateComputerGroupStatusDGV.ColumnFillWeights(column.Index)
+                    column.FillWeight = Globals.appSettings.StateComputerGroupStatusDGV.ColumnFillWeights(column.Index)
                 Next
             End If
         ElseIf dgv.Name = Me.dgvUpdateReport.Name Then
 
             'Sort the columns if a sort order is saved.
-            If Not appSettings.StateUpdateReportDGV.SortColumn = Nothing AndAlso _
-                Not dgv.Columns(appSettings.StateUpdateReportDGV.SortColumn) Is Nothing Then
+            If Not Globals.appSettings.StateUpdateReportDGV.SortColumn = Nothing AndAlso _
+                Not dgv.Columns(Globals.appSettings.StateUpdateReportDGV.SortColumn) Is Nothing Then
 
-                dgv.Sort(dgv.Columns(appSettings.StateUpdateReportDGV.SortColumn), _
-                    appSettings.StateUpdateReportDGV.SortDirection)
+                dgv.Sort(dgv.Columns(Globals.appSettings.StateUpdateReportDGV.SortColumn), _
+                    Globals.appSettings.StateUpdateReportDGV.SortDirection)
             End If
 
-            If appSettings.StateUpdateReportDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+            If Globals.appSettings.StateUpdateReportDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
 
                 For Each column As DataGridViewColumn In dgv.Columns
-                    column.FillWeight = appSettings.StateUpdateReportDGV.ColumnFillWeights(column.Index)
+                    column.FillWeight = Globals.appSettings.StateUpdateReportDGV.ColumnFillWeights(column.Index)
                 Next
             End If
         ElseIf dgv.Name = Me.dgvUpdateStatus.Name Then
 
             'Sort the columns if a sort order is saved.
-            If Not appSettings.StateUpdateStatusDGV.SortColumn = Nothing AndAlso _
-                Not dgv.Columns(appSettings.StateUpdateStatusDGV.SortColumn) Is Nothing Then
+            If Not Globals.appSettings.StateUpdateStatusDGV.SortColumn = Nothing AndAlso _
+                Not dgv.Columns(Globals.appSettings.StateUpdateStatusDGV.SortColumn) Is Nothing Then
 
-                dgv.Sort(dgv.Columns(appSettings.StateUpdateStatusDGV.SortColumn), _
-                    appSettings.StateUpdateStatusDGV.SortDirection)
+                dgv.Sort(dgv.Columns(Globals.appSettings.StateUpdateStatusDGV.SortColumn), _
+                    Globals.appSettings.StateUpdateStatusDGV.SortDirection)
             End If
 
-            If appSettings.StateUpdateStatusDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
+            If Globals.appSettings.StateUpdateStatusDGV.ColumnFillWeights.Length = dgv.Columns.Count Then
 
                 For Each column As DataGridViewColumn In dgv.Columns
-                    column.FillWeight = appSettings.StateUpdateStatusDGV.ColumnFillWeights(column.Index)
+                    column.FillWeight = Globals.appSettings.StateUpdateStatusDGV.ColumnFillWeights(column.Index)
                 Next
             End If
         End If
@@ -3096,14 +3096,14 @@ Partial Public Class MainForm
         'If the node has a tag then save the appropriate DGVs.
         If Not node Is Nothing AndAlso Not node.Tag Is Nothing Then
             If TypeOf node.Tag Is IComputerTargetGroup Then 'Computer Note
-                Call SaveDgvState(_dgvMain)
+                Call SaveDgvState(m_dgvMain)
                 If tabMainComputers.SelectedTab.Equals(tabComputerReport) Then
                     Call SaveDgvState(dgvComputerReport)
                 ElseIf tabMainComputers.SelectedTab.Equals(tabComputerStatus) Then
                     Call SaveDgvState(dgvComputerGroupStatus)
                 End If
             ElseIf TypeOf node.Tag Is IUpdateCategory Then 'Update Node
-                Call SaveDgvState(_dgvMain)
+                Call SaveDgvState(m_dgvMain)
                 If tabMainUpdates.SelectedTab.Equals(tabUpdateReport) Then
                     Call SaveDgvState(dgvUpdateReport)
                 ElseIf tabMainUpdates.SelectedTab.Equals(tabUpdateStatus) Then
@@ -3126,7 +3126,7 @@ Partial Public Class MainForm
         Next
 
         'Differentiate the right setting by the DGV's name.
-        If dgv.Name = Me._dgvMain.Name Then
+        If dgv.Name = Me.m_dgvMain.Name Then
 
             'Make sure a node is selected and has a tag.
             If Not treeView.SelectedNode Is Nothing AndAlso _
@@ -3138,126 +3138,126 @@ Partial Public Class MainForm
                     'Save the sort column if the DGV is sorted.
                     If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
 
-                        appSettings.StateMainComputersDGV.SortColumn = Nothing
-                        appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Descending
+                        Globals.appSettings.StateMainComputersDGV.SortColumn = Nothing
+                        Globals.appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Descending
                     ElseIf Not dgv.SortedColumn Is Nothing Then
-                        appSettings.StateMainComputersDGV.SortColumn = dgv.SortedColumn.Name
+                        Globals.appSettings.StateMainComputersDGV.SortColumn = dgv.SortedColumn.Name
 
                         'Save the sort order.
                         If dgv.SortOrder = SortOrder.Ascending Then
-                            appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Ascending
+                            Globals.appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Ascending
                         ElseIf dgv.SortOrder = SortOrder.Descending Then
-                            appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Descending
+                            Globals.appSettings.StateMainComputersDGV.SortDirection = ListSortDirection.Descending
                         End If
                     End If
 
                     'Save the column fill weights and the dgv name.
-                    appSettings.StateMainComputersDGV.ColumnFillWeights = tmpArray
-                    appSettings.StateMainComputersDGV.Name = dgv.Name
+                    Globals.appSettings.StateMainComputersDGV.ColumnFillWeights = tmpArray
+                    Globals.appSettings.StateMainComputersDGV.Name = dgv.Name
                     'If type is an Update node.
                 ElseIf TypeOf treeView.SelectedNode.Tag Is IUpdateCategory Then
 
                     'Save the sort column if the DGV is sorted.
                     If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
 
-                        appSettings.StateMainUpdatesDGV.SortColumn = Nothing
-                        appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Descending
+                        Globals.appSettings.StateMainUpdatesDGV.SortColumn = Nothing
+                        Globals.appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Descending
                     ElseIf Not dgv.SortedColumn Is Nothing Then
-                        appSettings.StateMainUpdatesDGV.SortColumn = dgv.SortedColumn.Name
+                        Globals.appSettings.StateMainUpdatesDGV.SortColumn = dgv.SortedColumn.Name
 
                         'Save the sort order.
                         If dgv.SortOrder = SortOrder.Ascending Then
-                            appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Ascending
+                            Globals.appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Ascending
                         ElseIf dgv.SortOrder = SortOrder.Descending Then
-                            appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Descending
+                            Globals.appSettings.StateMainUpdatesDGV.SortDirection = ListSortDirection.Descending
                         End If
                     End If
 
                     'Save the column fill weights and the dgv name.
-                    appSettings.StateMainUpdatesDGV.ColumnFillWeights = tmpArray
-                    appSettings.StateMainUpdatesDGV.Name = dgv.Name
+                    Globals.appSettings.StateMainUpdatesDGV.ColumnFillWeights = tmpArray
+                    Globals.appSettings.StateMainUpdatesDGV.Name = dgv.Name
                 End If
             End If 'Node is selected tag instantiated.
         ElseIf dgv.Name = Me.dgvComputerReport.Name Then
 
             'Save the sort column if the DGV is sorted.
             If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
-                appSettings.StateComputerReportDGV.SortColumn = Nothing
-                appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Descending
+                Globals.appSettings.StateComputerReportDGV.SortColumn = Nothing
+                Globals.appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Descending
             ElseIf Not dgv.SortedColumn Is Nothing Then
-                appSettings.StateComputerReportDGV.SortColumn = dgv.SortedColumn.Name
+                Globals.appSettings.StateComputerReportDGV.SortColumn = dgv.SortedColumn.Name
 
                 'Save the sort order.
                 If dgv.SortOrder = SortOrder.Ascending Then
-                    appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Ascending
+                    Globals.appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Ascending
                 ElseIf dgv.SortOrder = SortOrder.Descending Then
-                    appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Descending
+                    Globals.appSettings.StateComputerReportDGV.SortDirection = ListSortDirection.Descending
                 End If
             End If
 
             'Save the column fill weights and the dgv name.
-            appSettings.StateComputerReportDGV.ColumnFillWeights = tmpArray
-            appSettings.StateComputerReportDGV.Name = dgv.Name
+            Globals.appSettings.StateComputerReportDGV.ColumnFillWeights = tmpArray
+            Globals.appSettings.StateComputerReportDGV.Name = dgv.Name
         ElseIf dgv.Name = Me.dgvComputerGroupStatus.Name Then
 
             'Save the sort column if the DGV is sorted.
             If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
-                appSettings.StateComputerGroupStatusDGV.SortColumn = Nothing
-                appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Descending
+                Globals.appSettings.StateComputerGroupStatusDGV.SortColumn = Nothing
+                Globals.appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Descending
             ElseIf Not dgv.SortedColumn Is Nothing Then
-                appSettings.StateComputerGroupStatusDGV.SortColumn = dgv.SortedColumn.Name
+                Globals.appSettings.StateComputerGroupStatusDGV.SortColumn = dgv.SortedColumn.Name
 
                 'Save the sort order.
                 If dgv.SortOrder = SortOrder.Ascending Then
-                    appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Ascending
+                    Globals.appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Ascending
                 ElseIf dgv.SortOrder = SortOrder.Descending Then
-                    appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Descending
+                    Globals.appSettings.StateComputerGroupStatusDGV.SortDirection = ListSortDirection.Descending
                 End If
             End If
 
             'Save the column fill weights and the dgv name.
-            appSettings.StateComputerGroupStatusDGV.ColumnFillWeights = tmpArray
-            appSettings.StateComputerGroupStatusDGV.Name = dgv.Name
+            Globals.appSettings.StateComputerGroupStatusDGV.ColumnFillWeights = tmpArray
+            Globals.appSettings.StateComputerGroupStatusDGV.Name = dgv.Name
         ElseIf dgv.Name = Me.dgvUpdateReport.Name Then
 
             'Save the sort column if the DGV is sorted.
             If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
-                appSettings.StateUpdateReportDGV.SortColumn = Nothing
-                appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Descending
+                Globals.appSettings.StateUpdateReportDGV.SortColumn = Nothing
+                Globals.appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Descending
             ElseIf Not dgv.SortedColumn Is Nothing Then
-                appSettings.StateUpdateReportDGV.SortColumn = dgv.SortedColumn.Name
+                Globals.appSettings.StateUpdateReportDGV.SortColumn = dgv.SortedColumn.Name
 
                 'Save the sort order.
                 If dgv.SortOrder = SortOrder.Ascending Then
-                    appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Ascending
+                    Globals.appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Ascending
                 ElseIf dgv.SortOrder = SortOrder.Descending Then
-                    appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Descending
+                    Globals.appSettings.StateUpdateReportDGV.SortDirection = ListSortDirection.Descending
                 End If
             End If
 
             'Save the column fill weights and the dgv name.
-            appSettings.StateUpdateReportDGV.ColumnFillWeights = tmpArray
-            appSettings.StateUpdateReportDGV.Name = dgv.Name
+            Globals.appSettings.StateUpdateReportDGV.ColumnFillWeights = tmpArray
+            Globals.appSettings.StateUpdateReportDGV.Name = dgv.Name
 
         ElseIf dgv.Name = Me.dgvUpdateStatus.Name Then
 
             'Save the sort column if the DGV is sorted.
             If dgv.SortedColumn Is Nothing AndAlso dgv.Rows.Count > 0 Then
-                appSettings.StateUpdateStatusDGV.SortColumn = Nothing
-                appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Descending
+                Globals.appSettings.StateUpdateStatusDGV.SortColumn = Nothing
+                Globals.appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Descending
             ElseIf Not dgv.SortedColumn Is Nothing Then
-                appSettings.StateUpdateStatusDGV.SortColumn = dgv.SortedColumn.Name
+                Globals.appSettings.StateUpdateStatusDGV.SortColumn = dgv.SortedColumn.Name
 
                 'Save the sort order.
                 If dgv.SortOrder = SortOrder.Ascending Then
-                    appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Ascending
+                    Globals.appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Ascending
                 ElseIf dgv.SortOrder = SortOrder.Descending Then
-                    appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Descending
+                    Globals.appSettings.StateUpdateStatusDGV.SortDirection = ListSortDirection.Descending
                 End If
 
                 'Save the column fill weights and the dgv name.
-                appSettings.StateUpdateStatusDGV.ColumnFillWeights = tmpArray
-                appSettings.StateUpdateReportDGV.Name = dgv.Name
+                Globals.appSettings.StateUpdateStatusDGV.ColumnFillWeights = tmpArray
+                Globals.appSettings.StateUpdateReportDGV.Name = dgv.Name
             End If
         End If
     End Sub

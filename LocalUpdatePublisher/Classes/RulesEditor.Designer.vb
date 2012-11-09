@@ -209,22 +209,22 @@ Partial Class RulesEditor
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private txtXml As System.Windows.Forms.TextBox
-	Private lblXml As System.Windows.Forms.Label
-	Private btnAdd As System.Windows.Forms.Button
-	Private dgvRules As System.Windows.Forms.DataGridView
-	Private btnRemove As System.Windows.Forms.Button
-	Private btnEdit As System.Windows.Forms.Button
-	Private btnGroup As System.Windows.Forms.Button
-	Private lblTitle As System.Windows.Forms.Label
-	Private lblInstructions As System.Windows.Forms.Label
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private Rule As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private RuleCol As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private XML As System.Windows.Forms.DataGridViewTextBoxColumn
-	Private btnEditInstallableItem As System.Windows.Forms.Button
-	Private btnSaveRules As System.Windows.Forms.Button
-	Private btnLoadRules As System.Windows.Forms.Button
+    Private WithEvents txtXml As System.Windows.Forms.TextBox
+    Private WithEvents lblXml As System.Windows.Forms.Label
+    Private WithEvents btnAdd As System.Windows.Forms.Button
+    Private WithEvents dgvRules As System.Windows.Forms.DataGridView
+    Private WithEvents btnRemove As System.Windows.Forms.Button
+    Private WithEvents btnEdit As System.Windows.Forms.Button
+    Private WithEvents btnGroup As System.Windows.Forms.Button
+    Private WithEvents lblTitle As System.Windows.Forms.Label
+    Private WithEvents lblInstructions As System.Windows.Forms.Label
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents Rule As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents RuleCol As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents XML As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents btnEditInstallableItem As System.Windows.Forms.Button
+    Private WithEvents btnSaveRules As System.Windows.Forms.Button
+    Private WithEvents btnLoadRules As System.Windows.Forms.Button
 	
 	#End Region
 	

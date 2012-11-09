@@ -106,10 +106,10 @@ Partial Class PasswordForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private btnCancel As System.Windows.Forms.Button
-	Private stbPassword As LocalUpdatePublisher.SecureTextBox
-	Private btnOK As System.Windows.Forms.Button
-	Private lblPassword As System.Windows.Forms.Label
+    Private WithEvents tlpButtons As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents stbPassword As LocalUpdatePublisher.SecureTextBox
+    Private WithEvents btnOK As System.Windows.Forms.Button
+    Private WithEvents lblPassword As System.Windows.Forms.Label
 End Class

@@ -167,17 +167,17 @@ Partial Class ConnectionSettingsForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
 	End Sub
-	Private tlpButtons As System.Windows.Forms.TableLayoutPanel
-	Private tlpMain As System.Windows.Forms.TableLayoutPanel
-	Private chkSsl As System.Windows.Forms.CheckBox
-	Private btnDelete As System.Windows.Forms.Button
-	Private lblServers As System.Windows.Forms.Label
-	Private cboServers As System.Windows.Forms.ComboBox
-	Private lblName As System.Windows.Forms.Label
-	Private txtName As System.Windows.Forms.TextBox
-	Private btnCancel As System.Windows.Forms.Button
-	Private btnConnect As System.Windows.Forms.Button
-	Private lblPort As System.Windows.Forms.Label
-	Private txtPort As System.Windows.Forms.TextBox
-	Private lblLocalServer As System.Windows.Forms.Label
+    Private WithEvents tlpButtons As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents tlpMain As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents chkSsl As System.Windows.Forms.CheckBox
+    Private WithEvents btnDelete As System.Windows.Forms.Button
+    Private WithEvents lblServers As System.Windows.Forms.Label
+    Private WithEvents cboServers As System.Windows.Forms.ComboBox
+    Private WithEvents lblName As System.Windows.Forms.Label
+    Private WithEvents txtName As System.Windows.Forms.TextBox
+    Private WithEvents btnCancel As System.Windows.Forms.Button
+    Private WithEvents btnConnect As System.Windows.Forms.Button
+    Private WithEvents lblPort As System.Windows.Forms.Label
+    Private WithEvents txtPort As System.Windows.Forms.TextBox
+    Private WithEvents lblLocalServer As System.Windows.Forms.Label
 End Class
