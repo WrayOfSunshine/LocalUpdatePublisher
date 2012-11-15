@@ -354,7 +354,21 @@ Friend NotInheritable Class ConnectionManager
     ''' </summary>
     ''' <returns>Boolean that indicates if the certificate was successfully loaded.</returns>
     Public Shared Function LoadCert() As Boolean
-        Dim tempFile As String = Path.GetTempFileName()
+        Dim tempFile As String = String.Empty
+
+        Try
+            tempFile = Path.GetTempFileName()
+        Catch ex As IOException
+            MsgBox("ConnectionManager.LoadCert" & vbNewLine & Globals.globalRM.GetString("exception_IO") & ": " & vbNewLine & ex.Message)
+            Return False
+        Catch ex As SecurityException
+            MsgBox("ConnectionManager.LoadCert" & vbNewLine & Globals.globalRM.GetString("exception_security") & ": " & vbNewLine & ex.Message)
+            Return False
+        Catch ex As UnauthorizedAccessException
+            MsgBox("ConnectionManager.LoadCert" & vbNewLine & Globals.globalRM.GetString("exception_unauthorized_access") & ": " & vbNewLine & ex.Message)
+            Return False
+        End Try
+
         Try
             m_currentServerConfiguration.GetSigningCertificate(tempFile)
             m_currentServerCertificate = New X509Certificate2(tempFile)
