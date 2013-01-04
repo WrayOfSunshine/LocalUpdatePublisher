@@ -6,6 +6,8 @@
 ' User: Bryan
 ' Date: 10/22/2009
 ' Time: 9:19 PM
+Imports System.ComponentModel.Container
+
 
 Partial Class UpdateForm
 	Inherits System.Windows.Forms.Form

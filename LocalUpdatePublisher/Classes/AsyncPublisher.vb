@@ -174,7 +174,7 @@ Public Class AsyncPublisher
             Try
                 'Extract the CAB to a new temporary path.
                 Dim tmpExtract As New CabLib.Extract()
-                Dim extractPath As New DirectoryInfo(System.IO.Path.Combine(path.GetTempPath, path.GetRandomFileName))
+                Dim extractPath As New DirectoryInfo(System.IO.Path.Combine(Path.GetTempPath, Path.GetRandomFileName))
                 tmpExtract.ExtractFile(file.FullName, extractPath.ToString)
 
                 'Loop through the temp folder and find the XML and CAB files.
@@ -188,10 +188,10 @@ Public Class AsyncPublisher
 
                 'Make sure an SDP and CAB file were found.
                 If sdpFile Is Nothing Then
-                    Msgbox(Globals.globalRM.GetString("error_connection_no_XML"))
+                    MsgBox(Globals.globalRM.GetString("error_connection_no_XML"))
                     RaiseEvent Completed(False)
                 ElseIf packageCab Is Nothing Then
-                    Msgbox(Globals.globalRM.GetString("error_connection_no_cab"))
+                    MsgBox(Globals.globalRM.GetString("error_connection_no_cab"))
                     RaiseEvent Completed(False)
                 End If
 
@@ -268,27 +268,27 @@ Public Class AsyncPublisher
                 Exit Sub
 
             Catch x As PathTooLongException
-                Msgbox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As SecurityException
-                Msgbox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As UnauthorizedAccessException
-                Msgbox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As NotSupportedException
-                Msgbox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As ArgumentNullException
-                Msgbox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As FileNotFoundException
-                Msgbox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As InvalidDataException
-                Msgbox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As InvalidOperationException
-                Msgbox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As ArgumentException
-                Msgbox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As IOException
-                Msgbox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             Catch x As Win32Exception
-                Msgbox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+                MsgBox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
             End Try
 
             RaiseEvent Completed(False)
