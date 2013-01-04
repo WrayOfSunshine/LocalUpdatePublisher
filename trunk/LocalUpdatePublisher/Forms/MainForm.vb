@@ -236,12 +236,10 @@ Partial Public Class MainForm
     Sub CboTargetGroupSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTargetGroup.SelectedIndexChanged
         If m_noEvents = False Then
             m_noEvents = True
-            toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
             Me.Update()
             If Not Me.m_dgvMain.CurrentRow Is Nothing Then
                 Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
             End If
-            toolStripStatusLabel.Text = ""
             m_noEvents = False
         End If
     End Sub
@@ -259,6 +257,9 @@ Partial Public Class MainForm
             m_noEvents = False
             Cursor = Cursors.Arrow 'Set arrow cursor.
         End If
+
+        CheckBGWThreads()
+
     End Sub
 
     ''' <summary>
@@ -275,20 +276,19 @@ Partial Public Class MainForm
                 Not Me.m_dgvMain.CurrentRow Is Nothing Then
                 'If type is a ComputerTargetGroup load the computers in the DGV.
                 If TypeOf Me.treeView.SelectedNode.Tag Is IComputerTargetGroup Then
-                    toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_computer_report")
                     Me.Update()
                     Call LoadComputerReport(Me.m_dgvMain.CurrentRow.Index, True)
 
                     'If type is an update node.
                 ElseIf TypeOf Me.treeView.SelectedNode.Tag Is IUpdateCategory Then
-                    toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
-                    Me.Update()
                     Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
                 End If
-                toolStripStatusLabel.Text = ""
             End If
             m_noEvents = False
         End If
+
+        CheckBGWThreads()
+
     End Sub
 
     ''' <summary>
@@ -303,14 +303,14 @@ Partial Public Class MainForm
         SaveDgvState(dgvComputerReport)
 
         m_noEvents = True
-        toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_computer_report")
-        Me.Update()
         If Not Me.m_dgvMain.CurrentRow Is Nothing Then
             Call LoadComputerReport(Me.m_dgvMain.CurrentRow.Index, True)
         End If
-        toolStripStatusLabel.Text = ""
         m_noEvents = False
         Cursor = Cursors.Arrow 'Set arrow cursor.
+
+        CheckBGWThreads()
+
     End Sub
 
 
@@ -326,16 +326,16 @@ Partial Public Class MainForm
         SaveDgvState(dgvUpdateReport)
 
         m_noEvents = True
-        toolStripStatusLabel.Text = Globals.globalRM.GetString("status_loading_update_report")
-        Me.Update()
 
         If Not Me.DgvMain.CurrentRow Is Nothing Then
             Call LoadUpdateReport(Me.m_dgvMain.CurrentRow.Index, True)
         End If
 
-        toolStripStatusLabel.Text = ""
         m_noEvents = False
         Cursor = Cursors.Arrow 'Set arrow cursor.
+
+        CheckBGWThreads()
+
     End Sub
 
     ''' <summary>
@@ -625,12 +625,14 @@ Partial Public Class MainForm
             Me.Enabled = False
         ElseIf Me.bgwResign.IsBusy Then
             toolStripStatusLabel.Text = Globals.globalRM.GetString("resigning_updates")
-            Me.Enabled = True
+            Me.Enabled = False
         Else
             toolStripStatusLabel.Text = Nothing
             Me.Enabled = True
         End If
+
     End Sub
+
 #End Region
 
 #Region "Form Menu Events"
@@ -1856,6 +1858,7 @@ Partial Public Class MainForm
             End If
 
         End If
+
         Call CheckBGWThreads()
 
         'See if a node is still being looked for.
@@ -1875,8 +1878,9 @@ Partial Public Class MainForm
     Sub LoadUpdateNodes(selectedNodePath As String)
         If Not Me.bgwUpdateNodes.IsBusy Then
             Me.bgwUpdateNodes.RunWorkerAsync(selectedNodePath)
-            Call CheckBGWThreads()
         End If
+
+        Call CheckBGWThreads()
     End Sub
 
     ''' <summary>
@@ -2289,6 +2293,7 @@ Partial Public Class MainForm
         End If
 
         m_noEvents = False
+
         Call CheckBGWThreads()
     End Sub
 
@@ -2333,13 +2338,12 @@ Partial Public Class MainForm
 
                 'Make the asynchronous call.
                 Me.bgwComputerList.RunWorkerAsync(riTemp)
-
-                Call Me.CheckBGWThreads()
             Else
                 m_noEvents = False
-                Call CheckBGWThreads()
             End If
         End If
+
+        Call CheckBGWThreads()
     End Sub
     ''' <summary>
     ''' Asynchronously create a table with the update list.
@@ -2755,10 +2759,11 @@ Partial Public Class MainForm
                 Me.bgwComputerReport.RunWorkerAsync(New ComputerReportDetails(DirectCast(Me.m_dgvMain.Rows(rowIndex).Cells("TargetID").Value, String), Me.cboUpdateStatus.Text, originalValue))
             End If
 
-            Call CheckBGWThreads()
         End If 'Nothing selected in cboUpdateStatus.
         m_noEvents = False
         Me.Cursor = Cursors.Arrow 'Set arrow cursor
+
+        Call CheckBGWThreads()
     End Sub
     ''' <summary>
     ''' Asynchronously get the computer report.
@@ -2893,6 +2898,9 @@ Partial Public Class MainForm
 
         m_noEvents = False
         Me.Cursor = Cursors.Arrow 'Set arrow cursor.
+
+
+        Call CheckBGWThreads()
     End Sub
     ''' <summary>
     ''' Asynchronously get the update report.
@@ -2966,6 +2974,9 @@ Partial Public Class MainForm
                 exportReportToolStripMenuItem.Enabled = False
             End If
         End If
+
+        Call CheckBGWThreads()
+
     End Sub
     ''' <summary>
     ''' Load the state of the passed in DGV using saved settings.
