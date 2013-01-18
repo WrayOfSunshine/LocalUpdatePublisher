@@ -41,7 +41,6 @@ Partial Class LanguageSelectionForm
 		Me.Language = New System.Windows.Forms.DataGridViewComboBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvLanguages,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -116,7 +115,6 @@ Partial Class LanguageSelectionForm
 		Me.MinimizeBox = false
 		Me.Name = "LanguageSelectionForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvLanguages,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

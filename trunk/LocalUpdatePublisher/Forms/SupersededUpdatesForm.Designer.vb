@@ -42,7 +42,6 @@ Partial Class SupersededUpdatesForm
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -129,7 +128,6 @@ Partial Class SupersededUpdatesForm
 		Me.MinimizeBox = false
 		Me.Name = "SupersededUpdatesForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

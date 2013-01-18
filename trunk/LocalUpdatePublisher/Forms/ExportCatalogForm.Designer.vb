@@ -45,7 +45,6 @@ Partial Class ExportCatalogForm
 		Me.btnAddAll = New System.Windows.Forms.Button
 		Me.exportFileDialog = New System.Windows.Forms.SaveFileDialog
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -144,7 +143,6 @@ Partial Class ExportCatalogForm
 		Me.Name = "ExportCatalogForm"
 		Me.ShowInTaskbar = false
 		AddHandler FormClosed, AddressOf Me.ExportCatalogFormFormClosed
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

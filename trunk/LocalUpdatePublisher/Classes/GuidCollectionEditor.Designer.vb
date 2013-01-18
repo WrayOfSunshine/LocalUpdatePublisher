@@ -33,9 +33,7 @@ Partial Class GuidCollectionEditor
 		Me.btnRemove = New System.Windows.Forms.Button
 		Me.btnAdd = New System.Windows.Forms.Button
 		Me.errorProviderGUID = New System.Windows.Forms.ErrorProvider(Me.components)
-		CType(Me.dgv,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.panel1.SuspendLayout
-		CType(Me.errorProviderGUID,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.SuspendLayout
 		'
 		'dgv
@@ -96,9 +94,7 @@ Partial Class GuidCollectionEditor
 		Me.Controls.Add(Me.panel1)
 		Me.Name = "GuidCollectionEditor"
 		AddHandler Load, AddressOf Me.GuidCollectionEditor_Load
-		CType(Me.dgv,System.ComponentModel.ISupportInitialize).EndInit
 		Me.panel1.ResumeLayout(false)
-		CType(Me.errorProviderGUID,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 	End Sub
 	Private errorProviderGUID As System.Windows.Forms.ErrorProvider

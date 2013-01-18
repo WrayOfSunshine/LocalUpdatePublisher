@@ -43,7 +43,6 @@ Partial Class ApprovalProgressForm
 		Me.btnPause = New System.Windows.Forms.Button
 		Me.lblProgress = New System.Windows.Forms.Label
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -126,7 +125,6 @@ Partial Class ApprovalProgressForm
 		Me.MinimizeBox = false
 		Me.Name = "ApprovalProgressForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvProgress,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

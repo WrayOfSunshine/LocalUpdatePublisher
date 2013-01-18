@@ -54,7 +54,6 @@ Partial Class ApprovalForm
 		Me.CreationDate = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.ApprovalAction = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.TargetGroup = New System.Windows.Forms.DataGridViewTextBoxColumn
-		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.cntxtMenuStrip.SuspendLayout
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
@@ -208,7 +207,6 @@ Partial Class ApprovalForm
 		Me.ShowIcon = false
 		Me.ShowInTaskbar = false
 		AddHandler FormClosed, AddressOf Me.UpdateApprovalFormFormClosed
-		CType(Me.dgvApprovals,System.ComponentModel.ISupportInitialize).EndInit
 		Me.cntxtMenuStrip.ResumeLayout(false)
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout

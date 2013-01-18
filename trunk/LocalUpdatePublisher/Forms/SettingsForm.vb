@@ -61,7 +61,7 @@ Partial Public Class SettingsForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub SettingsLoad(sender As Object, e As EventArgs)
+    Sub SettingsLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.chkRememberTreeNode.Checked = Globals.appSettings.RememberTreePath
         Me.chkReportRollup.Checked = Globals.appSettings.RollupReporting
         Me.chkDemoteClassification.Checked = Globals.appSettings.DemoteClassification
@@ -70,32 +70,32 @@ Partial Public Class SettingsForm
         Me.txtTimeOut.Text = Globals.appSettings.TimeOut.ToString
     End Sub
 
-    Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkRememberTreeNodeCheckedChanged(sender As Object, e As EventArgs) Handles chkRememberTreeNode.CheckedChanged
         Globals.appSettings.RememberTreePath = Me.chkRememberTreeNode.Checked
     End Sub
 
 
-    Sub ChkReportRollupCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkReportRollupCheckedChanged(sender As Object, e As EventArgs) Handles chkReportRollup.CheckedChanged
         Globals.appSettings.RollupReporting = Me.chkReportRollup.Checked
     End Sub
 
-    Sub ChkDemoteClassificationCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkDemoteClassificationCheckedChanged(sender As Object, e As EventArgs) Handles chkDemoteClassification.CheckedChanged
         Globals.appSettings.DemoteClassification = Me.chkDemoteClassification.Checked
     End Sub
 
-    Sub CboCultureSelectedIndexChanged(sender As Object, e As EventArgs)
+    Sub CboCultureSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCulture.SelectedIndexChanged
         Globals.appSettings.Culture = DirectCast(cboCulture.SelectedValue, String)
     End Sub
 
-    Sub CboCultureSelectionChangeCommitted(sender As Object, e As EventArgs)
+    Sub CboCultureSelectionChangeCommitted(sender As Object, e As EventArgs) Handles cboCulture.SelectionChangeCommitted
         MsgBox(Globals.globalRM.GetString("warning_options_restart"))
     End Sub
 
-    Sub TxtTimeOutTextChanged(sender As Object, e As EventArgs)
+    Sub TxtTimeOutTextChanged(sender As Object, e As EventArgs) Handles txtTimeOut.TextChanged
         Globals.appSettings.TimeOut = Convert.ToInt32(txtTimeOut.Text)
     End Sub
 
-    Sub ChkHideOfficialUpdatesCheckedChanged(sender As Object, e As EventArgs)
+    Sub ChkHideOfficialUpdatesCheckedChanged(sender As Object, e As EventArgs) Handles chkHideOfficialUpdates.CheckedChanged
         Globals.appSettings.HideOfficialUpdates = Me.chkHideOfficialUpdates.Checked
         MsgBox(Globals.globalRM.GetString("warning_options_restart"))
     End Sub

@@ -42,7 +42,6 @@ Partial Class UpdateSelectionForm
 		Me.tlpHeader = New System.Windows.Forms.TableLayoutPanel
 		Me.lblVendor = New System.Windows.Forms.Label
 		Me.cboVendor = New System.Windows.Forms.ComboBox
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.tlpButtons.SuspendLayout
 		Me.tlpHeader.SuspendLayout
@@ -124,7 +123,6 @@ Partial Class UpdateSelectionForm
 		Me.MinimizeBox = false
 		Me.Name = "UpdateSelectionForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.tlpButtons.ResumeLayout(false)
