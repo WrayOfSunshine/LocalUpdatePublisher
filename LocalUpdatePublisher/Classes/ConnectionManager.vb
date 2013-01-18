@@ -11,7 +11,8 @@ Option Strict On
 ' Time: 11:10 AM
 ' Factored out of code originally developed by BRD.
 
-
+Imports System
+Imports System.Reflection
 Imports System.Net
 Imports System.Security
 Imports System.ComponentModel
@@ -125,6 +126,9 @@ Friend NotInheritable Class ConnectionManager
             ''My.Forms.MainForm.Status = String.Format(Globals.globalRM.GetString("status_server_connected") , _currentServer.Name)
             ''My.Forms.MainForm.Update
 
+            'Check the server version
+            ConnectionManager.CheckAPIVersion()
+
             'Try to retrieve cert info from server.
             'If there is no cert info, prompt the user to create it.
             If Not ConnectionManager.LoadCert Then
@@ -165,6 +169,29 @@ Friend NotInheritable Class ConnectionManager
         My.Forms.MainForm.Update()
         Return False
     End Function 'Connect
+
+    ''' <summary>
+    ''' Check the API version of the client and server.
+    ''' </summary>
+    Public Shared Sub CheckAPIVersion()
+        Dim serverVersion As Version = m_currentServer.Version        
+
+        Dim a As Assembly = System.Reflection.Assembly.GetExecutingAssembly()
+        Assembly.GetExecutingAssembly()
+        For Each an As AssemblyName In a.GetReferencedAssemblies()
+            If an.Name = "Microsoft.UpdateServices.Administration" Then
+                Dim clientVersion As Version = New Version(FileVersionInfo.GetVersionInfo(Assembly.ReflectionOnlyLoad(an.ToString).Location).FileVersion)
+
+                If Not serverVersion = clientVersion Then
+                    MsgBox("The version of the client WSUS API does not match the server.  You will be unable to publish updates." & vbNewLine & "Server: " & serverVersion.ToString & vbNewLine & "Client: " & clientVersion.ToString)
+                End If
+
+
+            End If
+
+
+        Next
+    End Sub
 
     ''' <summary>
     ''' Wait until a connection is made or the timeout is reached.

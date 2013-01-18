@@ -41,7 +41,6 @@ Partial Class ImportCatalogForm
 		Me.Metadata = New System.Windows.Forms.DataGridViewCheckBoxColumn
 		Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -112,7 +111,6 @@ Partial Class ImportCatalogForm
 		Me.Name = "ImportCatalogForm"
 		Me.ShowInTaskbar = false
 		AddHandler FormClosed, AddressOf Me.ImportCatalogFormFormClosed
-		CType(Me.dgvUpdates,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

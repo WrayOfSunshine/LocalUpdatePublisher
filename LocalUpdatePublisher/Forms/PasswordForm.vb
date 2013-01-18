@@ -21,9 +21,9 @@ Public Partial Class PasswordForm
 		
 	End Sub
 	
-	Private Sub BtnOKClick(sender As Object, e As EventArgs)
-		Me.Close
-	End Sub
+    Private Sub BtnOKClick(sender As Object, e As EventArgs) Handles btnOK.Click
+        Me.Close()
+    End Sub
 	
 	ReadOnly Property Password() As SecureString
 		Get

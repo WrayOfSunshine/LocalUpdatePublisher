@@ -42,7 +42,6 @@ Partial Class SavedRulesForm
 		Me.btnAction2 = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		Me.tlpButtonsRight = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.tlpButtonsRight.SuspendLayout
 		Me.SuspendLayout
@@ -121,7 +120,6 @@ Partial Class SavedRulesForm
 		Me.MinimizeBox = false
 		Me.Name = "SavedRulesForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.tlpButtonsRight.ResumeLayout(false)

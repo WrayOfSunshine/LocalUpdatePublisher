@@ -48,7 +48,6 @@ Partial Class ReturnCodesForm
 		Me.succeededToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.cancelledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
-		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.contextMenuCodeType.SuspendLayout
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
@@ -163,7 +162,6 @@ Partial Class ReturnCodesForm
 		Me.MinimizeBox = false
 		Me.Name = "ReturnCodesForm"
 		Me.ShowInTaskbar = false
-		CType(Me.dgvReturnCodes,System.ComponentModel.ISupportInitialize).EndInit
 		Me.contextMenuCodeType.ResumeLayout(false)
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout

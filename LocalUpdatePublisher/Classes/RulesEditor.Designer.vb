@@ -42,7 +42,6 @@ Partial Class RulesEditor
 		Me.btnEditInstallableItem = New System.Windows.Forms.Button
 		Me.tlpMain = New System.Windows.Forms.TableLayoutPanel
 		Me.lblXml = New System.Windows.Forms.Label
-		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.tlpMain.SuspendLayout
 		Me.SuspendLayout
 		'
@@ -203,7 +202,6 @@ Partial Class RulesEditor
 		Me.CausesValidation = false
 		Me.Controls.Add(Me.tlpMain)
 		Me.Name = "RulesEditor"
-		CType(Me.dgvRules,System.ComponentModel.ISupportInitialize).EndInit
 		Me.tlpMain.ResumeLayout(false)
 		Me.tlpMain.PerformLayout
 		Me.ResumeLayout(false)

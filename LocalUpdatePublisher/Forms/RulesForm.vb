@@ -148,7 +148,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub cboRuleTypeSelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub cboRuleTypeSelectedIndexChanged(sender As Object, e As EventArgs) Handles cboRuleType.SelectedIndexChanged
         'Loop through each panel on the lower split-panel.  Hide the panels we don't
         ' need and position the items that we do need.
         If Me.cboRuleType.SelectedIndex >= 0 Then 'The combobox must be populated.
@@ -908,7 +908,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub BtnAddClick(sender As Object, e As EventArgs)
+    Private Sub BtnAddClick(sender As Object, e As EventArgs) Handles btnAdd.Click
         Call GenerateRule()
     End Sub
 
@@ -918,7 +918,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub GetOSVersionCodes(sender As Object, e As EventArgs)
+    Private Sub GetOSVersionCodes(sender As Object, e As EventArgs) Handles cboOSVersion.SelectedIndexChanged
         'Clear the service pack combobox.
         Me.cboServicePack.SelectedIndex = -1
         Me.cboServicePack.Items.Clear()
@@ -968,7 +968,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub GetServicePackCode(sender As Object, e As EventArgs)
+    Private Sub GetServicePackCode(sender As Object, e As EventArgs) Handles cboServicePack.SelectedIndexChanged
         Select Case Me.cboServicePack.Text
             Case "SP 1"
                 Me.txtSPMajorVersion.Text = "1"
@@ -2129,7 +2129,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Sub CboRuleTypeFormat(sender As Object, e As ListControlConvertEventArgs)
+    Sub CboRuleTypeFormat(sender As Object, e As ListControlConvertEventArgs) Handles cboRuleType.Format
         If TypeOf e.ListItem Is RuleTypes Then
             e.Value = CType(e.ListItem, RuleTypes).ToDisplayString()
         Else
@@ -2187,7 +2187,7 @@ Partial Public Class RulesForm
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub ValidateForm(sender As Object, e As EventArgs)
+    Private Sub ValidateForm(sender As Object, e As EventArgs) Handles txtVersion.TextChanged, txtRegistryValue.TextChanged, txtRegistrySubKey.TextChanged, txtQuery.TextChanged, txtProductCode.TextChanged, txtPatchCode.TextChanged, txtOSMinorVersion.TextChanged, txtOSMajorVersion.TextChanged, txtMinVersion.TextChanged, txtMaxVersion.TextChanged, txtFilePath.TextChanged, txtData.TextChanged, gceProductCollection.ValidInputChanged, gceFeatureCollection.ValidInputChanged, gceComponentCollection.ValidInputChanged, dtpDate.ValueChanged, cboRegistryValueType.SelectedIndexChanged, cboRegistryKey.SelectedIndexChanged, cboProcessorType.SelectedIndexChanged, cboLanguage.SelectedIndexChanged, cboComparison.SelectedIndexChanged
         ValidateForm()
     End Sub
 

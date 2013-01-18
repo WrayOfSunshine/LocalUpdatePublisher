@@ -812,10 +812,16 @@ Partial Public Class MainForm
     ''' </summary>
     ''' <param name="result"></param>
     Sub PublishingResults(result As Boolean)
+        Dim treePath As String = String.Empty
+
+
         If result Then
+            If Not treeView.SelectedNode Is Nothing Then treePath = treeView.SelectedNode.FullPath
             MsgBox(Globals.globalRM.GetString("success_update_imported"))
             Call LoadUpdateNodes()
             Call RefreshUpdateList()
+
+            'If Not treePath = String.Empty Then Call SelectNode(Me.m_rootNode, treePath)
         Else
             MsgBox(Globals.globalRM.GetString("error_update_imported"))
         End If
@@ -1062,7 +1068,6 @@ Partial Public Class MainForm
 
         'If user really wants to remove the updates then do so
         If response = MsgBoxResult.Yes Then
-            Me.Enabled = False
             Me.Cursor = Cursors.WaitCursor
 
             'Loop through and delete rows that have an Id listed.
@@ -1117,7 +1122,6 @@ Partial Public Class MainForm
                 Call LoadUpdateNodes()
             End If
 
-            Me.Enabled = True
             Me.Cursor = Cursors.Arrow
         End If
 
@@ -1507,7 +1511,7 @@ Partial Public Class MainForm
             scHeader.Panel1Collapsed = True 'Hide the header panel.
             pnlUpdates.Visible = False
             pnlComputers.Visible = False
-            Update()
+            Me.Update()
             m_dgvMainLoading = True
             m_dgvMain.DataSource = Nothing
             m_dgvMainLoading = False
@@ -1621,7 +1625,7 @@ Partial Public Class MainForm
         scHeader.Panel1Collapsed = True
         pnlComputers.Visible = False
         pnlUpdates.Visible = True
-        Update()
+        Me.Update()
 
 
         'Reset the main computers tab.
