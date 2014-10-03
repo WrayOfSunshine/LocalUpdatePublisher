@@ -14,14 +14,15 @@ Imports Microsoft.UpdateServices.Administration
 Imports System.IO
 Imports System.Security
 Imports System.Net
+Imports System.Drawing
 
 Public Class AsyncPublisher
-	
-	Public Sub New()
-	End Sub
-	
-	#Region "Properties"
-	
+
+    Public Sub New()
+    End Sub
+
+#Region "Properties"
+
     Private Shared m_bgwPublisher As BackgroundWorker
 
 #End Region
@@ -70,27 +71,27 @@ Public Class AsyncPublisher
             Exit Sub
 
         Catch x As PathTooLongException
-            Msgbox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As SecurityException
-            Msgbox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As UnauthorizedAccessException
-            Msgbox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As NotSupportedException
-            Msgbox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As ArgumentNullException
-            Msgbox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As FileNotFoundException
-            Msgbox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As InvalidDataException
-            Msgbox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As InvalidOperationException
-            Msgbox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As ArgumentException
-            Msgbox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As IOException
-            Msgbox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As Win32Exception
-            Msgbox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         End Try
         RaiseEvent Completed(False)
     End Sub
@@ -129,7 +130,7 @@ Public Class AsyncPublisher
                         fileList.Add(New FileInfo(tmpFilePath)) 'Add it to the list.
                     Next
 
-                    Call PublishPackage(Sdp, fileList, parentForm) 'Publish it.
+                    Call PublishPackage(sdp, fileList, parentForm) 'Publish it.
                 Else
                     Dim tmpFilePath As String = System.IO.Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.InstallableItems(0).OriginalSourceFile.FileName)
                     'Get download location.
@@ -144,7 +145,7 @@ Public Class AsyncPublisher
                     ConnectionManager.DownloadChunks(tmpFileUri, My.Forms.ProgressForm.progressBar, tmpFilePath)
                     fileList.Add(New FileInfo(tmpFilePath)) 'Add it to the list.
 
-                    Call PublishPackage(Sdp, fileList, parentForm) 'Publish it.
+                    Call PublishPackage(sdp, fileList, parentForm) 'Publish it.
                     'TODO System.IO.File.Delete(tmpFilePath) 'Delete the temp file.
                 End If
 
@@ -319,8 +320,8 @@ Public Class AsyncPublisher
             'Save the SDP, use it to create a publisher object, and then delete it.
             Dim sdpFilePath As String = Path.Combine(Environment.GetEnvironmentVariable("TEMP"), sdp.PackageId.ToString() & ".xml")
             sdp.Save(sdpFilePath)
-            Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(SdpFilePath)
-            File.Delete(SdpFilePath)
+            Dim publisher As IPublisher = ConnectionManager.ParentServer.GetPublisher(sdpFilePath)
+            File.Delete(sdpFilePath)
 
             'If no files were passed in then only publish the metadata.
             If updateFiles Is Nothing Then publisher.MetadataOnly = True
@@ -362,27 +363,27 @@ Public Class AsyncPublisher
 
             Exit Sub
         Catch x As PathTooLongException
-            Msgbox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_path_too_long") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As SecurityException
-            Msgbox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_security") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As UnauthorizedAccessException
-            Msgbox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_unauthorized_access") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As NotSupportedException
-            Msgbox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_not_supported") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As ArgumentNullException
-            Msgbox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_argument_null") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As FileNotFoundException
-            Msgbox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_file_not_found") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As InvalidDataException
-            Msgbox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_invalid_data") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As InvalidOperationException
-            Msgbox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_invalid_operation") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As ArgumentException
-            Msgbox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_argument") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As IOException
-            Msgbox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_IO") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         Catch x As Win32Exception
-            Msgbox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
+            MsgBox(Globals.globalRM.GetString("exception_win32") & ": " & Globals.globalRM.GetString("error_connection_manager_publish") & vbNewLine & x.Message)
         End Try
 
         RaiseEvent Completed(False)
@@ -554,25 +555,25 @@ Public Class AsyncPublisher
             Next
 
         Catch
-            Msgbox(Globals.globalRM.GetString("error_connection_copy_directory") & ": " & vbNewline & sourceDirectoryName)
+            MsgBox(Globals.globalRM.GetString("error_connection_copy_directory") & ": " & vbNewLine & sourceDirectoryName)
         End Try
 
     End Sub
 #End Region
-	
-	
+
+
 End Class
 
 'A simple class to pass the object we need through the backgroundworker thread.
 #Region "AsyncPublishingDetails Class"
 Public Class AsyncPublishingDetails
-	Public Sub New()
-	End Sub
-	
-	Public Sub New(publisher As IPublisher, publishMethod As PublishMethod)
+    Public Sub New()
+    End Sub
+
+    Public Sub New(publisher As IPublisher, publishMethod As PublishMethod)
         m_publisher = publisher
         m_publishMethod = publishMethod
-        m_updateDir = updateDir
+        m_updateDir = UpdateDir
     End Sub
 
     Public Sub New(publisher As IPublisher, publishMethod As PublishMethod, updateDir As DirectoryInfo)
@@ -594,7 +595,7 @@ Public Class AsyncPublishingDetails
             Return m_publisher
         End Get
         Set(value As IPublisher)
-            m_publisher = Value
+            m_publisher = value
         End Set
     End Property
 
@@ -604,7 +605,7 @@ Public Class AsyncPublishingDetails
             Return m_publishMethod
         End Get
         Set(value As PublishMethod)
-            m_publishMethod = Value
+            m_publishMethod = value
         End Set
     End Property
 
@@ -614,7 +615,7 @@ Public Class AsyncPublishingDetails
             Return m_updateDir
         End Get
         Set(value As DirectoryInfo)
-            m_updateDir = Value
+            m_updateDir = value
         End Set
     End Property
 
@@ -624,7 +625,7 @@ Public Class AsyncPublishingDetails
             Return m_updateFile
         End Get
         Set(value As FileInfo)
-            m_updateFile = Value
+            m_updateFile = value
         End Set
     End Property
 
@@ -633,7 +634,7 @@ End Class
 #End Region
 
 Public Enum PublishMethod
-Revise
-Publish
-PublishCAB
+    Revise
+    Publish
+    PublishCAB
 End Enum

@@ -16,11 +16,12 @@ Option Strict On
 ' Time: 9:06 PM
 
 Imports System.ComponentModel
+Imports System.Drawing
 
 <ToolboxBitmap(GetType(System.Windows.Forms.TabControl))> _
-	Public Class CustomTabControl
-	Inherits System.Windows.Forms.TabControl
-	
+Public Class CustomTabControl
+    Inherits System.Windows.Forms.TabControl
+
     Private m_hideTabs As Boolean
     ''' <summary>
     ''' Hide Tabs
@@ -33,60 +34,59 @@ Imports System.ComponentModel
             Return m_hideTabs
         End Get
         Set(ByVal value As Boolean)
-            If m_hideTabs = Value Then Return
-            m_hideTabs = Value
+            If m_hideTabs = value Then Return
+            m_hideTabs = value
             If value = True Then Me.Multiline = True
             Me.UpdateStyles()
         End Set
     End Property
-	
-	<RefreshProperties(RefreshProperties.All)> _
-		Public Overloads Property Multiline() As Boolean
-		Get
-			If Me.HideTabs Then Return True
-			Return MyBase.Multiline
-		End Get
-		Set(ByVal value As Boolean)
-			If Me.HideTabs Then
-				MyBase.Multiline = True
-			Else
-				MyBase.Multiline = value
-			End If
-		End Set
-	End Property
-	
-	Public Overrides ReadOnly Property DisplayRectangle() As System.Drawing.Rectangle
-		Get
-			If Me.HideTabs Then
-				Return New Rectangle(0, 0, Width, Height)
-			Else
-				Dim tabStripHeight, itemHeight As Int32
-				
-				If Me.Alignment <= TabAlignment.Bottom Then
-					itemHeight = Me.ItemSize.Height
-				Else
-					itemHeight = Me.ItemSize.Width
-				End If
-				
-				If Me.Appearance = TabAppearance.Normal Then
-					tabStripHeight = 5 + (itemHeight * Me.RowCount)
-				Else
-					tabStripHeight = (3 + itemHeight) * Me.RowCount
-				End If
-				Select Case Me.Alignment
-					Case TabAlignment.Top
-						Return New Rectangle(4, tabStripHeight, Width - 8, Height - tabStripHeight - 4)
-					Case TabAlignment.Bottom
-						Return New Rectangle(4, 4, Width - 8, Height - tabStripHeight - 4)
-					Case TabAlignment.Left
-						Return New Rectangle(tabStripHeight, 4, Width - tabStripHeight - 4, Height - 8)
-					Case TabAlignment.Right
-						Return New Rectangle(4, 4, Width - tabStripHeight - 4, Height - 8)
-				End Select
-			End If
-		End Get
-	End Property
-	
+
+    <RefreshProperties(RefreshProperties.All)> _
+    Public Overloads Property Multiline() As Boolean
+        Get
+            If Me.HideTabs Then Return True
+            Return MyBase.Multiline
+        End Get
+        Set(ByVal value As Boolean)
+            If Me.HideTabs Then
+                MyBase.Multiline = True
+            Else
+                MyBase.Multiline = value
+            End If
+        End Set
+    End Property
+
+    Public Overrides ReadOnly Property DisplayRectangle() As System.Drawing.Rectangle
+        Get
+            If Me.HideTabs Then
+                Return New Rectangle(0, 0, Width, Height)
+            Else
+                Dim tabStripHeight, itemHeight As Int32
+
+                If Me.Alignment <= TabAlignment.Bottom Then
+                    itemHeight = Me.ItemSize.Height
+                Else
+                    itemHeight = Me.ItemSize.Width
+                End If
+
+                If Me.Appearance = TabAppearance.Normal Then
+                    tabStripHeight = 5 + (itemHeight * Me.RowCount)
+                Else
+                    tabStripHeight = (3 + itemHeight) * Me.RowCount
+                End If
+                Select Case Me.Alignment
+                    Case TabAlignment.Top
+                        Return New Rectangle(4, tabStripHeight, Width - 8, Height - tabStripHeight - 4)
+                    Case TabAlignment.Bottom
+                        Return New Rectangle(4, 4, Width - 8, Height - tabStripHeight - 4)
+                    Case TabAlignment.Left
+                        Return New Rectangle(tabStripHeight, 4, Width - tabStripHeight - 4, Height - 8)
+                    Case TabAlignment.Right
+                        Return New Rectangle(4, 4, Width - tabStripHeight - 4, Height - 8)
+                End Select
+            End If
+        End Get
+    End Property
+
 End Class
-	
-                    
+

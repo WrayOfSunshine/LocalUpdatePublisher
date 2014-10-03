@@ -14,6 +14,7 @@ Imports System.IO
 Imports System.Xml
 Imports System.Xml.XPath
 Imports System.Xml.Schema
+Imports System.Drawing
 
 
 Partial Public Class ExportCatalogForm

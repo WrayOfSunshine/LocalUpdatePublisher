@@ -19,6 +19,7 @@ Imports System.Net
 Imports System.Security
 Imports System.ComponentModel
 Imports System.Security.Cryptography.X509Certificates
+Imports System.Drawing
 
 Partial Public Class MainForm
     Private m_serverNode As TreeNode
@@ -1157,7 +1158,19 @@ Partial Public Class MainForm
                     tmpRevisionID = DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId)
 
                     If Not tmpRow.Cells.Item("Id").Value Is Nothing Then
-                        ConnectionManager.ParentServer.ExpirePackage(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId))
+                        Try
+                            ConnectionManager.ParentServer.ExpirePackage(DirectCast(tmpRow.Cells.Item("Id").Value, UpdateRevisionId))
+                        Catch x As InvalidOperationException
+                            MsgBox(Globals.globalRM.GetString("error_package_expired") & vbNewLine & Globals.globalRM.GetString("exception_invalid_operation") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                            allExpired = False
+                        Catch x As ArgumentNullException
+                            MsgBox(Globals.globalRM.GetString("error_package_expired") & vbNewLine & Globals.globalRM.GetString("exception_argument_null") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                            allExpired = False
+                        Catch x As WsusObjectNotFoundException
+                            MsgBox(Globals.globalRM.GetString("error_package_expired") & vbNewLine & Globals.globalRM.GetString("exception_wsus_object_not_found") & ": " & vbNewLine & x.Message & vbNewLine & x.StackTrace)
+                            allExpired = False
+                        End Try
+
                     End If
                 Else
                     MsgBox(Globals.globalRM.GetString("error_row_invalid_update_id"))
@@ -1999,7 +2012,9 @@ Partial Public Class MainForm
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Sub dgvMainRowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles m_dgvMain.RowEnter
-        If Not m_dgvMainLoading Then
+
+        'Make sure the main data grid view isn't loading and that the new index is different than the current row.
+        If Not m_dgvMainLoading AndAlso Not m_dgvMain.CurrentRow Is Nothing AndAlso Not m_dgvMain.CurrentRow.Index = e.RowIndex Then
             'Load the newly selected row.
             Call LoadRow(e.RowIndex)
         End If

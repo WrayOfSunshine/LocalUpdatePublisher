@@ -9,6 +9,7 @@ Option Strict On
 ' Date: 3/25/2010
 ' Time: 11:44 AM
 Imports Microsoft.UpdateServices.Administration
+Imports System.Drawing
 
 Partial Public Class SupersededUpdatesForm
     Private m_updateGuids As IList(Of Guid)

@@ -9,6 +9,7 @@ Option Strict On
 ' Time: 9:20 AM
 Imports Microsoft.UpdateServices.Administration
 Imports System.Resources
+Imports System.Drawing
 
 Friend NotInheritable Class Globals
     Public Shared appSettings As Settings
