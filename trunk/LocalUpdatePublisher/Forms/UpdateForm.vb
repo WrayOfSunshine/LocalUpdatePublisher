@@ -27,6 +27,7 @@ Imports System.ComponentModel
 Imports System.Security
 Imports System.Security.Cryptography
 Imports System.Collections.Specialized
+Imports System.Drawing
 
 Partial Public Class UpdateForm
 

@@ -1,5 +1,8 @@
 ﻿Option Explicit On
 Option Strict On
+
+Imports System.Drawing
+
 ' Copyright (c) <2010> <Bryan R. Dam>
 ' Released under the MIT license as found in LICENSE.txt
 ' Modified by kdixon Jan 10

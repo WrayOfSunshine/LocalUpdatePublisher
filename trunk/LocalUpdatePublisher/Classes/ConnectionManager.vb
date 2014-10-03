@@ -20,6 +20,7 @@ Imports Microsoft.UpdateServices.Administration
 Imports System.Security.Cryptography.X509Certificates
 Imports System.IO
 Imports System.Xml.Schema
+Imports System.Drawing
 
 
 Friend NotInheritable Class ConnectionManager
@@ -127,7 +128,8 @@ Friend NotInheritable Class ConnectionManager
             ''My.Forms.MainForm.Update
 
             'Check the server version
-            ConnectionManager.CheckAPIVersion()
+            'TODO: This check isn't accurate because the file version of the referenced DLL doesn't correlate to the API version.
+            'ConnectionManager.CheckAPIVersion()
 
             'Try to retrieve cert info from server.
             'If there is no cert info, prompt the user to create it.
@@ -174,7 +176,10 @@ Friend NotInheritable Class ConnectionManager
     ''' Check the API version of the client and server.
     ''' </summary>
     Public Shared Sub CheckAPIVersion()
-        Dim serverVersion As Version = m_currentServer.Version        
+
+
+
+        Dim serverVersion As Version = m_currentServer.Version
 
         Dim a As Assembly = System.Reflection.Assembly.GetExecutingAssembly()
         Assembly.GetExecutingAssembly()

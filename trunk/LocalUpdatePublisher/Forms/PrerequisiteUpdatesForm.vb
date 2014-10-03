@@ -11,6 +11,7 @@ Option Strict On
 ' Time: 11:44 AM
 
 Imports Microsoft.UpdateServices.Administration
+Imports System.Drawing
 
 Partial Public Class PrerequisiteUpdatesForm
     Private m_prerequisiteGroups As IList(Of PrerequisiteGroup)
